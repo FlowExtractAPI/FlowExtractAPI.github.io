@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowExtract API - Data Extraction & Automation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #0a1929 0%, #1a2332 100%);
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .logo {
+            font-size: 48px;
+            font-weight: bold;
+            background: linear-gradient(135deg, #00d9ff 0%, #0099ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .tagline {
+            font-size: 24px;
+            color: #a0aec0;
+            margin-bottom: 40px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #00d9ff 0%, #0099ff 100%);
+            color: #fff;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 2px solid #00d9ff;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 217, 255, 0.3);
+        }
+        
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 30px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #00d9ff;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            color: #00d9ff;
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+        
+        .service-card p {
+            color: #a0aec0;
+            line-height: 1.8;
+        }
+        
+        .tech-stack {
+            text-align: center;
+            padding: 60px 20px;
+            background: rgba(0, 0, 0, 0.2);
+        }
+        
+        .tech-stack h2 {
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #00d9ff;
+        }
+        
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        
+        .tech-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            font-weight: 600;
+            color: #00d9ff;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 60px;
+        }
+        
+        .contact-info {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .contact-item {
+            color: #a0aec0;
+        }
+        
+        .contact-item a {
+            color: #00d9ff;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 36px;
+            }
+            
+            .tagline {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">FlowExtract API</div>
+            <p class="tagline">Turn Any Website Into Structured Data</p>
+            <div class="cta-buttons">
+                <a href="mailto:FlowExtractAPI@gmail.com" class="btn btn-primary">Get Started</a>
+                <a href="https://twitter.com/FlowExtractAPI" class="btn btn-secondary" target="_blank">Follow on Twitter</a>
+            </div>
+        </header>
+        
+        <section class="services">
+            <div class="service-card">
+                <div class="service-icon">🤖</div>
+                <h3>Custom Web Scrapers</h3>
+                <p>Extract data from any website automatically. Built with Python, JavaScript, and powered by Apify for reliable, scalable scraping.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3>API Development</h3>
+                <p>Transform scraped data into clean, easy-to-use APIs. Real-time or scheduled data delivery in JSON format.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🔄</div>
+                <h3>Workflow Automation</h3>
+                <p>Automate your entire data pipeline with n8n. From extraction to delivery in Google Sheets, CRMs, or databases.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🏠</div>
+                <h3>Real Estate Data</h3>
+                <p>Property listings, pricing history, location data, and contact information extracted automatically from major platforms.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">🛒</div>
+                <h3>E-commerce Monitoring</h3>
+                <p>Track product prices, availability, reviews, and competitor data. Perfect for market research and price optimization.</p>
+            </div>
+            
+            <div class="service-card">
+                <div class="service-icon">📊</div>
+                <h3>Lead Generation</h3>
+                <p>Extract business contacts, emails, and company information from directories, LinkedIn, and business websites.</p>
+            </div>
+        </section>
+        
+        <section class="tech-stack">
+            <h2>Tech Stack</h2>
+            <div class="tech-items">
+                <span class="tech-item">Python</span>
+                <span class="tech-item">JavaScript</span>
+                <span class="tech-item">Apify</span>
+                <span class="tech-item">n8n</span>
+                <span class="tech-item">REST APIs</span>
+                <span class="tech-item">Selenium</span>
+                <span class="tech-item">Beautiful Soup</span>
+                <span class="tech-item">Puppeteer</span>
+            </div>
+        </section>
+        
+        <footer>
+            <div class="contact-info">
+                <div class="contact-item">
+                    📧 <a href="mailto:FlowExtractAPI@gmail.com">FlowExtractAPI@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    🐦 <a href="https://twitter.com/FlowExtractAPI" target="_blank">@FlowExtractAPI</a>
+                </div>
+                <div class="contact-item">
+                    💼 <a href="https://linkedin.com/company/flowextractapi" target="_blank">LinkedIn</a>
+                </div>
+                <div class="contact-item">
+                    💻 <a href="https://github.com/FlowExtractAPI" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <p style="color: #718096; margin-top: 20px;">© 2024 FlowExtract API. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
