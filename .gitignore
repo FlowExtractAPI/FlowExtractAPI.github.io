@@ -35,7 +35,7 @@ npm-debug.log*
 dist/
 build/
 
-README.md
+README-0.md
 COMPLETE-GUIDE.md
 # Generated documentation (we regenerate these)
 # Uncomment if you want to ignore generated HTML files
