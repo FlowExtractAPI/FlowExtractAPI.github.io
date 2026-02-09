@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowExtract API - Data Extraction & Automation</title>
+    <meta name="description" content="Custom web scrapers, APIs, and automation workflows. Turn any website into structured data.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <div class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="var(--accent)" stroke-width="4" />
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="var(--accent)" stroke-width="4" />
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="var(--accent)" stroke-width="4" />
+                    <polygon points="100,75 75,137.5 125,137.5" fill="var(--accent)" opacity="0.7" />
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="var(--accent)" stroke-width="4" />
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="var(--accent)" stroke-width="4" />
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="var(--accent)" stroke-width="4" />
+                </svg>
+                <span class="logo-text" id="logo-text">FlowExtract API</span>
+            </div>
+            <div class="nav-links">
+                <a href="#services">Services</a>
+                <a href="#actors">Actors</a>
+                <a href="#tech">Tech Stack</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title" id="hero-title">FlowExtract API</h1>
+            <p class="hero-tagline" id="hero-tagline">Turn Any Website Into Structured Data</p>
+            <p class="hero-description">
+                Professional data extraction and automation services. Build custom scrapers, APIs, and workflows that scale.
+            </p>
+            <div class="hero-cta" id="hero-cta">
+                <!-- Buttons loaded from config.json -->
+            </div>
+        </div>
+
+        <!-- Stats Section -->
+        <div class="container stats-container" id="stats">
+            <!-- Stats loaded from config.json -->
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services-section" id="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What We Build</h2>
+                <p class="section-subtitle">End-to-end data extraction and automation solutions</p>
+            </div>
+            <div class="services-grid" id="services-grid">
+                <!-- Services loaded from services.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Actors Section -->
+    <section class="section actors-section" id="actors">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Featured Apify Actors</h2>
+                <p class="section-subtitle">Ready-to-use scrapers available on Apify Store</p>
+            </div>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons" id="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="featured">Featured</button>
+                <button class="filter-btn" data-filter="ads">Ad Scrapers</button>
+                <button class="filter-btn" data-filter="social">Social Media</button>
+                <button class="filter-btn" data-filter="real-estate">Real Estate</button>
+                <button class="filter-btn" data-filter="leads">Lead Generation</button>
+            </div>
+
+            <div class="actors-grid" id="actors-grid">
+                <!-- Actors loaded from actors.json -->
+            </div>
+
+            <div class="view-all">
+                <a href="https://apify.com/dz_omar?fpr=smcx63" target="_blank" class="btn btn-secondary">
+                    View All Actors on Apify
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Section -->
+    <section class="section tech-section" id="tech">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Powered By Modern Tech</h2>
+                <p class="section-subtitle">Built with industry-leading tools and frameworks</p>
+            </div>
+            <div class="tech-grid" id="tech-grid">
+                <!-- Tech stack loaded from config.json -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-info">
+                    <h2 class="section-title">Let's Build Something</h2>
+                    <p class="contact-description">
+                        Need a custom scraper, API integration, or automated workflow? We specialize in turning complex data extraction challenges into simple, reliable solutions.
+                    </p>
+
+                    <div class="contact-features">
+                        <div class="contact-feature">
+                            <div class="feature-icon">⚡</div>
+                            <div>
+                                <h4>Fast Turnaround</h4>
+                                <p>Most projects delivered within 48-72 hours</p>
+                            </div>
+                        </div>
+                        <div class="contact-feature">
+                            <div class="feature-icon">🔒</div>
+                            <div>
+                                <h4>Secure & Reliable</h4>
+                                <p>Enterprise-grade infrastructure with 99.9% uptime</p>
+                            </div>
+                        </div>
+                        <div class="contact-feature">
+                            <div class="feature-icon">💰</div>
+                            <div>
+                                <h4>Flexible Pricing</h4>
+                                <p>Pay-per-use or subscription plans available</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links" id="social-links">
+                        <!-- Social links loaded from config.json -->
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/mdalkpqj" method="POST">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Acme Corp">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Tell us about your data extraction needs..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-loading" style="display: none;">Sending...</span>
+                        </button>
+                        <div class="form-message" id="form-message"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+                <p class="footer-email">
+                    <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+</body>
+
+</html>
