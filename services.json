@@ -1,0 +1,68 @@
+[
+  {
+    "id": "custom-scrapers",
+    "title": "Custom Web Scrapers",
+    "description": "Extract data from any website automatically. Built with Python, JavaScript, and powered by Apify for reliable, scalable scraping.",
+    "features": [
+      "Handle dynamic JavaScript sites",
+      "Anti-bot detection bypass",
+      "Scalable cloud infrastructure",
+      "Scheduled automated runs"
+    ]
+  },
+  {
+    "id": "api-development",
+    "title": "API Development",
+    "description": "Transform scraped data into clean, easy-to-use APIs. Real-time or scheduled data delivery in JSON format.",
+    "features": [
+      "RESTful API endpoints",
+      "Real-time data delivery",
+      "Webhook integration",
+      "Comprehensive documentation"
+    ]
+  },
+  {
+    "id": "workflow-automation",
+    "title": "Workflow Automation",
+    "description": "Automate your entire data pipeline with n8n. From extraction to delivery in Google Sheets, CRMs, or databases.",
+    "features": [
+      "n8n workflow integration",
+      "Multi-platform connectivity",
+      "Scheduled automation",
+      "Error handling & alerts"
+    ]
+  },
+  {
+    "id": "real-estate-data",
+    "title": "Real Estate Data",
+    "description": "Property listings, pricing history, location data, and contact information extracted automatically from major platforms.",
+    "features": [
+      "Multi-platform scraping",
+      "Price tracking",
+      "Agent contact extraction",
+      "Property image downloads"
+    ]
+  },
+  {
+    "id": "ecommerce-monitoring",
+    "title": "E-commerce Monitoring",
+    "description": "Track product prices, availability, reviews, and competitor data. Perfect for market research and price optimization.",
+    "features": [
+      "Price monitoring",
+      "Stock availability alerts",
+      "Review sentiment analysis",
+      "Competitor tracking"
+    ]
+  },
+  {
+    "id": "lead-generation",
+    "title": "Lead Generation",
+    "description": "Extract business contacts, emails, and company information from directories, LinkedIn, and business websites.",
+    "features": [
+      "AI-powered extraction",
+      "Email verification",
+      "Company enrichment",
+      "CRM integration ready"
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+{
+  "site": {
+    "title": "FlowExtract API",
+    "tagline": "Turn Any Website Into Structured Data",
+    "description": "Custom web scrapers, APIs, and automation workflows. Professional data extraction services for businesses and developers.",
+    "logo": {
+      "text": "FlowExtract",
+      "subtext": "API"
+    }
+  },
+  "contact": {
+    "email": "flowextractapi@outlook.com",
+    "formEndpoint": ""
+  },
+  "social": {
+    "twitter": "https://x.com/FlowExtractAPI",
+    "linkedin": "https://www.linkedin.com/in/flowextract-api/",
+    "facebook": "https://www.facebook.com/flowextractapi",
+    "tiktok": "https://www.tiktok.com/@flowextractapi",
+    "github": "https://github.com/FlowExtractAPI",
+    "apify": "https://apify.com/dz_omar?fpr=smcx63"
+  },
+  "cta": {
+    "primary": {
+      "text": "Get Started",
+      "url": "https://apify.com/dz_omar?fpr=smcx63"
+    },
+    "secondary": {
+      "text": "View Actors",
+      "url": "#actors"
+    }
+  },
+  "stats": [
+    {
+      "value": "15+",
+      "label": "Ready-to-Use Actors"
+    },
+    {
+      "value": "100+",
+      "label": "Data Sources Supported"
+    },
+    {
+      "value": "99.9%",
+      "label": "Uptime Guaranteed"
+    },
+    {
+      "value": "24/7",
+      "label": "Automated Monitoring"
+    }
+  ],
+  "techStack": [
+    "Python",
+    "JavaScript",
+    "Apify",
+    "n8n",
+    "REST APIs",
+    "Selenium",
+    "Beautiful Soup",
+    "Puppeteer",
+    "Playwright"
+  ]
+}

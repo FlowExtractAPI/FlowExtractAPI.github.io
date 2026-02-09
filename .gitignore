@@ -1,0 +1,43 @@
+# Node modules (if you install any packages later)
+node_modules/
+package-lock.json
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+npm-debug.log*
+
+# Temporary files
+*.tmp
+.cache/
+
+# Environment files (if you add any later)
+.env
+.env.local
+
+# Build files (not needed for this project, but good practice)
+dist/
+build/
+
+README.md
+COMPLETE-GUIDE.md
+# Generated documentation (we regenerate these)
+# Uncomment if you want to ignore generated HTML files
+# docs/*.html
+# !docs/_template.html
