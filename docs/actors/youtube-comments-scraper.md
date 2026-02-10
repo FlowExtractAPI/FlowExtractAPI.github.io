@@ -1,5 +1,3 @@
----
-
 # 💬 YouTube Comments Scraper
 
 **Extract comments from any YouTube video with author information, likes, timestamps, and nested replies - fast, reliable, and built for scale.**

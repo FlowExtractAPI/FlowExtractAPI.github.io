@@ -478,19 +478,23 @@ Comprehensive website security vulnerability scanning.
 ## 💬 Support & Feedback
 
 ### Need Help?
-- 📧 **Email:** [fridaytechnolog@gmail.com](mailto:fridaytechnolog@gmail.com)
-- 🐦 **Twitter:** [@DZ_45Omar](https://x.com/DZ_45Omar)
-- 👨‍💻 **GitHub:** [DZ-ABDLHAKIM](https://github.com/DZ-ABDLHAKIM)
-- 🔧 **Apify Profile:** [dz_omar](https://apify.com/dz_omar)
+
+- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
+- 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
+- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+
+### Social Media
+
+- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+
 
 ### Found a Bug or Have a Feature Request?
 Open an issue or contact us directly. We're committed to continuous improvement and responsive support.
 
 ### Rate This Actor
 If you find this actor valuable, please leave a review! Your feedback helps us improve and helps others discover quality tools.
-
----
-
-**Built with ❤️ by [DZ_OMAR](https://apify.com/dz_omar) | Powered by [Apify Platform](https://apify.com)**
 
 ---
