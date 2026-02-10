@@ -587,10 +587,16 @@ This actor extracts **publicly available** playlist and video metadata from YouT
 
 ### Need Help?
 
-- 📧 **Email:** fridaytechnolog@gmail.com
-- 🔗 **GitHub:** [DZ-ABDLHAKIM](https://github.com/DZ-ABDLHAKIM)
-- 🐦 **Twitter:** [@DZ_45Omar](https://x.com/DZ_45Omar)
-- 📦 **Apify Profile:** [dz_omar](https://apify.com/dz_omar)
+- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
+- 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
+- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+
+### Social Media
+
+- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ### Useful Links
 
