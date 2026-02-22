@@ -271,5 +271,18 @@
     "metaTitle": "Universal Downloader - Download Any File Type",
     "metaDescription": "Download any file type with proxy support, automatic retries, and cloud storage. Perfect for bulk downloads and geo-restricted content.",
     "featured": false
-  }
+  },
+  {
+  "id": "skool-scraper-pro",
+  "name": "Skool Scraper Pro",
+  "image": "",
+  "category": "education",
+  "description": "📚 Extract Skool lessons, 🎥 Mux videos, 📎 attachments, PDFs & polls from any community. 4 URL modes: full classroom, single course, single lesson, or post. Optional file downloads to storage.",
+  "apifyUrl": "https://apify.com/dz_omar/skool-scraper-pro?fpr=smcx63",
+  "docsPath": "skool-scraper-pro",
+  "readmeFile": "skool-scraper-pro.md",
+  "metaTitle": "Skool Scraper Pro - Course & Community Data Extractor",
+  "metaDescription": "Extract Skool classroom lessons, Mux videos, post attachments, PDFs, polls & contributors. 4 URL modes. Optional file downloads. No coding needed.",
+  "featured": true
+}
 ]
