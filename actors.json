@@ -275,7 +275,7 @@
   {
   "id": "skool-scraper-pro",
   "name": "Skool Scraper Pro",
-  "image": "",
+  "image": "https://images.apifyusercontent.com/ishRHBPV1ZoVnHMoWzaOSRFhs3iGafqwoPDfM6858Cc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaEI5SWJIRVZOYjJTZjFQckotQ2doU0l6aWN5Ui1Ta29vbC1TY3JhcGVyLVByby1Mb2dvLnBuZw.png",
   "category": "education",
   "description": "📚 Extract Skool lessons, 🎥 Mux videos, 📎 attachments, PDFs & polls from any community. 4 URL modes: full classroom, single course, single lesson, or post. Optional file downloads to storage.",
   "apifyUrl": "https://apify.com/dz_omar/skool-scraper-pro?fpr=smcx63",
