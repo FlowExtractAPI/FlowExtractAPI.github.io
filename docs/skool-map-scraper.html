@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Skool Map Scraper Ã¢â‚¬â€ Ã°Å¸â€œÂ Member Location Export | FlowExtract API</title>
+    <meta name="title" content="Skool Map Scraper Ã¢â‚¬â€ Ã°Å¸â€œÂ Member Location Export | FlowExtract API">
+    <meta name="description" content="Extract member locations and public profiles from any Skool community map page.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/skool-map-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Skool Map Scraper Ã¢â‚¬â€ Ã°Å¸â€œÂ Member Location Export | FlowExtract API">
+    <meta property="og:description" content="Extract member locations and public profiles from any Skool community map page.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/skool-map-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-PFKiw9SUWTqmu1Izi-J5cMCPE4yh-ChatGPT_Image_Mar_9__2026__12_48_54_AM.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skool Map Scraper Ã¢â‚¬â€ Ã°Å¸â€œÂ Member Location Export | FlowExtract API">
+    <meta name="twitter:description" content="Extract member locations and public profiles from any Skool community map page.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-PFKiw9SUWTqmu1Izi-J5cMCPE4yh-ChatGPT_Image_Mar_9__2026__12_48_54_AM.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Skool Map Scraper","description":"Extract member locations and public profiles from any Skool community map page.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/skool-map-scraper.html","sameAs":"https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-PFKiw9SUWTqmu1Izi-J5cMCPE4yh-ChatGPT_Image_Mar_9__2026__12_48_54_AM.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Skool Map Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Skool Map Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Skool Map Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Skool Map Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"What data can Skool Map Scraper extract?","acceptedAnswer":{"@type":"Answer","text":"- User ID, username, first name, last name, full name - Profile URL (https://www.skool.com/@username)"}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-PFKiw9SUWTqmu1Izi-J5cMCPE4yh-ChatGPT_Image_Mar_9__2026__12_48_54_AM.png" alt="Skool Map Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Education</span>
+                <h1 class="actor-hero-title">Skool Map Scraper</h1>
+                <p class="actor-hero-desc">Extract member locations and public profiles from any Skool community map page.</p>
+                <a href="https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Skool Map Scraper is a ready-to-run Apify actor from FlowExtract API for education. Do I need a paid Apify plan to use this actor? This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>map your members geographically to plan regional events or meetups</li><li>export full member profiles with social links, bios, and engagement levels</li><li>track community growth across regions</li><li>build geo-targeted audience segments from member coordinates</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Skool Map Scraper?</summary><p>Open Skool Map Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Skool Map Scraper free?</summary><p>Skool Map Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>What data can Skool Map Scraper extract?</summary><p>- User ID, username, first name, last name, full name - Profile URL (https://www.skool.com/@username)</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🗺️ Skool Map Scraper  Extract Member Locations &amp; Profiles</h1>
+<p><strong><a href="https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63">Skool Map Scraper</a></strong> extracts <strong>member locations and full public profiles</strong> from any Skool community map  coordinates, names, bios, social links, levels, points, and more  organized and ready to use.</p>
+<p>Perfect for <strong>community owners</strong>, <strong>marketers</strong>, and <strong>researchers</strong> who need geographic member data without manual effort.</p>
+<p><a href="https://www.youtube.com/watch?v=fuxnnvB5538">https://www.youtube.com/watch?v=fuxnnvB5538</a></p>
+<hr>
+<h2>🚀 Key Benefits &amp; Use Cases</h2>
+<h3><strong>📍 For Community Owners</strong></h3>
+<ul>
+<li>Map your members geographically to plan regional events or meetups</li>
+<li>Export full member profiles with social links, bios, and engagement levels</li>
+<li>Track community growth across regions</li>
+</ul>
+<h3><strong>💼 For Marketers &amp; Analysts</strong></h3>
+<ul>
+<li>Build geo-targeted audience segments from member coordinates</li>
+<li>Analyze member distribution across countries and cities</li>
+<li>Cross-reference social profiles (LinkedIn, Instagram, Twitter) for outreach</li>
+</ul>
+<h3><strong>🎯 For Researchers</strong></h3>
+<ul>
+<li>Extract structured member data from any Skool community at scale</li>
+<li>Study community demographics by location, role, and engagement level</li>
+<li>Bulk-export 200,000+ member profiles with full metadata</li>
+</ul>
+<hr>
+<h2>What data can Skool Map Scraper extract?</h2>
+<h3>👤 Member Identity</h3>
+<ul>
+<li>User ID, username, first name, last name, full name</li>
+<li>Profile URL (<code>https://www.skool.com/@username</code>)</li>
+</ul>
+<h3>🖼️ Media</h3>
+<ul>
+<li>Full-size avatar URL</li>
+<li>Thumbnail avatar URL</li>
+</ul>
+<h3>📝 Profile Data</h3>
+<ul>
+<li>Bio text</li>
+<li>Self-reported location (free text)</li>
+<li>Community role (member / admin / moderator)</li>
+<li>Level and points (from Skool&#39;s gamification system)</li>
+</ul>
+<h3>📍 Geographic Coordinates</h3>
+<ul>
+<li>Latitude (WGS-84 decimal degrees)</li>
+<li>Longitude (WGS-84 decimal degrees)</li>
+<li>Country code (ISO 3166-1 alpha-2, e.g. <code>&quot;US&quot;</code>, <code>&quot;GB&quot;</code>, <code>&quot;DZ&quot;</code>)  derived offline via reverse-geocoding</li>
+</ul>
+<h3>📅 Timestamps</h3>
+<ul>
+<li>Joined at, approved at, last offline, account created at</li>
+</ul>
+<h3>🔗 Social Links</h3>
+<ul>
+<li>Facebook, Instagram, LinkedIn, Twitter/X, Website, YouTube</li>
+</ul>
+<h3>📊 Community Stats</h3>
+<ul>
+<li>Total groups member of, total groups created, shared groups count</li>
+</ul>
+<h3>🏷️ Metadata</h3>
+<ul>
+<li>Community slug, community ID, extraction timestamp</li>
+</ul>
+<hr>
+<h2>⚙️ Input Options</h2>
+<h3>🔗 Community URLs</h3>
+<p>The actor accepts one or more Skool community URLs in any format:</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://www.skool.com/learn-ai</code></td>
+<td>All map members from <code>learn-ai</code></td>
+</tr>
+<tr>
+<td><code>https://www.skool.com/learn-ai/-/map</code></td>
+<td>Same  <code>/-/map</code> suffix is stripped</td>
+</tr>
+<tr>
+<td><code>learn-ai</code> (bare slug)</td>
+<td>Same  auto-prefixed with <code>https://www.skool.com/</code></td>
+</tr>
+</tbody></table>
+<p>You can mix multiple URLs to extract from several communities in one run:</p>
+<pre><code class="language-json">{
+    &quot;communityUrl&quot;: [
+        &quot;https://www.skool.com/learn-ai&quot;,
+        &quot;https://www.skool.com/ai-automation-society/-/map&quot;
+    ]
+}
+</code></pre>
+<h3>📊 Extraction Options</h3>
+<h4><code>maxMembersPerCommunity</code> (Integer)</h4>
+<ul>
+<li><strong>Default</strong>: <code>10</code></li>
+<li>To extract all members, set a large number: <code>&quot;maxMembersPerCommunity&quot;: 1000000</code></li>
+<li>Maximum number of member profiles to extract from EACH community</li>
+<li>Set to <code>100</code> → extracts up to 100 members from each community URL</li>
+<li>Useful for testing before running full extractions on large communities (225,000+ members)</li>
+</ul>
+<h4><code>userPreviewConcurrency</code> (Integer)</h4>
+<ul>
+<li><strong>Default</strong>: <code>10</code></li>
+<li>How many user profile requests to fire simultaneously (1–20)</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;communityUrl&quot;: [&quot;https://www.skool.com/learn-ai&quot;],
+    &quot;maxMembersPerCommunity&quot;: 500,
+    &quot;userPreviewConcurrency&quot;: 10
+}
+</code></pre>
+<h3>🌍 Offline Country Filtering</h3>
+<p>The scraper supports <strong>offline country filtering</strong> using reverse-geocoding on map coordinates  no extra API calls needed.</p>
+<p>When you select one or more countries in the <code>filterCountries</code> input, the actor reverse-geocodes each member&#39;s <code>[latitude, longitude]</code> coordinates locally (using the <code>which-country</code> package) <strong>before</strong> making any enrichment API calls. Members whose map pin falls outside the selected countries are skipped entirely, saving API credits and significantly speeding up large extractions.</p>
+<p><strong>How it works:</strong></p>
+<ol>
+<li>Member coordinates are fetched from the Skool map</li>
+<li>Each <code>[lat, lng]</code> pair is reverse-geocoded offline to a country code</li>
+<li>If the country is <strong>not</strong> in your filter list → member is skipped, no API call made</li>
+<li>If the country <strong>matches</strong> → full profile enrichment proceeds as normal</li>
+<li>Every output row includes a new <strong><code>countryCode</code></strong> field (ISO 3166-1 alpha-2, e.g. <code>&quot;US&quot;</code>, <code>&quot;GB&quot;</code>, <code>&quot;DZ&quot;</code>)</li>
+</ol>
+<p><strong>Key points:</strong></p>
+<ul>
+<li>🚫 No external geocoding API  fully offline, instant, zero extra cost</li>
+<li>💰 Skips enrichment API calls for out-of-filter members → saves credits on large communities</li>
+<li>🌐 Leave <code>filterCountries</code> empty to extract <strong>all members regardless of country</strong> (default behavior)</li>
+<li>🏷️ <code>countryCode</code> is always present in every output row, even when no filter is set</li>
+</ul>
+<blockquote>
+<p>💡 <strong>Example:</strong> Filtering a 50,000-member community to US-only members avoids enrichment calls for ~45,000 non-US members, cutting costs by up to 90%.</p>
+</blockquote>
+<hr>
+<h3>🔒 Credentials Security &amp; Encryption</h3>
+<p>Your password and cookies are sensitive credentials  they grant access to your Skool account. Here&#39;s how the Apify platform protects them:</p>
+<ul>
+<li><p><strong>Encrypted at rest</strong>
+The <code>cookies</code> and <code>password</code> fields are marked as <strong>secret inputs</strong>.
+When you save your Actor input, their values are automatically encrypted using <strong>AES-256-GCM</strong>, and the encryption key is further protected by a <strong>2048-bit RSA key</strong> unique to your account and this Actor.</p>
+</li>
+<li><p><strong>Decrypted only inside the Actor</strong>
+The encrypted values are only decrypted within the Actor&#39;s execution environment. No other Actor and no other user can access or decrypt your cookies or password.</p>
+</li>
+<li><p><strong>Never logged or exposed</strong>
+Secret input fields are never written to logs or displayed in the Apify Console UI. If accessed directly from storage, only encrypted ciphertext is visible.</p>
+</li>
+<li><p><strong>Isolated per user and Actor</strong>
+Encryption keys are unique to each user–Actor combination, ensuring complete isolation.</p>
+</li>
+</ul>
+<p><strong>In short:</strong> once you paste your password or cookies into their input fields, they are encrypted before storage and are only decrypted inside the secure Actor runtime  never accessible to anyone else.</p>
+<hr>
+<h3>🔐 Authentication</h3>
+<p>Some Skool communities require authentication to access classroom content.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>How to use</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Email + Password</strong> (recommended)</td>
+<td>Enter credentials in input</td>
+<td>Easiest and most reliable</td>
+</tr>
+<tr>
+<td><strong>Browser Cookies</strong></td>
+<td>Export from your browser session</td>
+<td>Use if login fails or for advanced cases</td>
+</tr>
+<tr>
+<td><strong>None</strong></td>
+<td>No authentication</td>
+<td>Public communities only</td>
+</tr>
+</tbody></table>
+<hr>
+<h3>🍪 How to export your cookies (optional)</h3>
+<ol>
+<li><p><strong>Install the Cookie-Editor extension</strong></p>
+<ul>
+<li><a href="https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm">Chrome</a></li>
+<li><a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/">Firefox</a></li>
+</ul>
+</li>
+<li><p>Log in to <code>skool.com</code> and open your community</p>
+</li>
+<li><p>Open the extension → click <strong>Export</strong></p>
+</li>
+<li><p>Copy the JSON and paste it into the <code>cookies</code> field</p>
+</li>
+</ol>
+<blockquote>
+<p>⚠️ <strong>Security Notice</strong>
+Your cookies and password provide access to your account. They are treated as sensitive secrets and are never logged, exposed, or shared. For maximum safety, consider using a dedicated account.</p>
+</blockquote>
+<blockquote>
+<p>⚠️ <strong>Session Expiry</strong>
+Cookies expire over time. If extraction fails (e.g., 403 errors), export fresh cookies and re-run the Actor.</p>
+</blockquote>
+<hr>
+<h2>💰 Pricing</h2>
+<p>How much does it cost to scrape Skool? Costs depend on your Apify subscription tier:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Per member extracted</td>
+<td>$0.005</td>
+<td>$0.003</td>
+<td>$0.002</td>
+<td>$0.0015</td>
+</tr>
+</tbody></table>
+<p><strong>Example cost estimate:</strong></p>
+<ul>
+<li>Extracting <strong>1,000 members</strong> on a FREE plan: ~$5.00</li>
+<li>Extracting <strong>1,000 members</strong> on a GOLD plan: ~$1.50</li>
+</ul>
+<blockquote>
+<p>💡 Tip: Use <code>maxMembersPerCommunity: 10</code> first to test your setup before running a full extraction.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample Output</h2>
+<pre><code class="language-json">{
+    &quot;extractedAt&quot;: &quot;2026-03-08T19:56:19.151Z&quot;,
+    &quot;community&quot;: &quot;learn-ai&quot;,
+    &quot;communityId&quot;: &quot;83f66d7eb37844e2adbdab53dd48b3ce&quot;,
+    &quot;userId&quot;: &quot;f185d42b54884f669ffb900afe6bb1f1&quot;,
+    &quot;userName&quot;: &quot;nick-neville&quot;,
+    &quot;firstName&quot;: &quot;Nick&quot;,
+    &quot;lastName&quot;: &quot;Neville&quot;,
+    &quot;fullName&quot;: &quot;Nick Neville&quot;,
+    &quot;profileUrl&quot;: &quot;https://www.skool.com/@nick-neville&quot;,
+    &quot;avatarUrl&quot;: &quot;https://assets.skool.com/f/.../md.jpg&quot;,
+    &quot;avatarThumbUrl&quot;: &quot;https://assets.skool.com/f/.../sm.jpg&quot;,
+    &quot;bio&quot;: &quot;Founder of JustCoach\nHelping sports coaches create and scale online coaching businesses.&quot;,
+    &quot;location&quot;: &quot;Scottsdale, AZ&quot;,
+    &quot;latitude&quot;: 33.41689906,
+    &quot;longitude&quot;: -111.88929107,
+    &quot;countryCode&quot;: &quot;US&quot;,
+    &quot;role&quot;: &quot;member&quot;,
+    &quot;level&quot;: 1,
+    &quot;points&quot;: 0,
+    &quot;joinedAt&quot;: &quot;2025-02-21T07:23:44.727202Z&quot;,
+    &quot;approvedAt&quot;: &quot;2025-02-21T07:24:57.47048Z&quot;,
+    &quot;lastOffline&quot;: &quot;2026-03-08T19:36:55.492869Z&quot;,
+    &quot;memberCreatedAt&quot;: &quot;2023-09-30T20:52:43.46592Z&quot;,
+    &quot;totalGroupsMemberOf&quot;: 0,
+    &quot;totalGroupsCreated&quot;: 1,
+    &quot;totalSharedGroups&quot;: 0,
+    &quot;linkFacebook&quot;: &quot;https://www.facebook.com/therealnickneville&quot;,
+    &quot;linkInstagram&quot;: &quot;http://www.instagram.com/therealnickneville&quot;,
+    &quot;linkLinkedIn&quot;: &quot;https://www.linkedin.com/in/nick-neville-justcoach&quot;,
+    &quot;linkTwitter&quot;: &quot;https://x.com/realnickneville&quot;,
+    &quot;linkWebsite&quot;: &quot;linktr.ee/justcoach&quot;,
+    &quot;linkYoutube&quot;: &quot;https://www.youtube.com/@nick_neville&quot;
+}
+</code></pre>
+<hr>
+<h2>🔄 Resumability</h2>
+<p>The actor saves state after every batch of 50 users. If it crashes, gets migrated, or is aborted, it resumes exactly where it left off  no duplicate work.</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>What gets saved</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>After every batch of 50 users</td>
+<td><code>processedUserIds</code> (incremental)</td>
+</tr>
+<tr>
+<td>Apify <code>persistState</code> event (~60s)</td>
+<td>Full state snapshot</td>
+</tr>
+<tr>
+<td>Apify <code>aborting</code> event</td>
+<td>Full state snapshot</td>
+</tr>
+<tr>
+<td>After each community URL completes</td>
+<td><code>processedUrls</code> (new URL appended)</td>
+</tr>
+<tr>
+<td>End of run</td>
+<td>Full state snapshot</td>
+</tr>
+</tbody></table>
+<p>For a 100,000-member community, this guarantees at most 50 duplicate rows on a crash restart. The <code>isUserDone()</code> check on reload skips the duplicates anyway.</p>
+<hr>
+<h2>🌐 Proxy Support</h2>
+<p>The actor routes all HTTP requests through a residential proxy to avoid IP blocks. The proxy is selected automatically based on your Apify pricing tier:</p>
+<table>
+<thead>
+<tr>
+<th>User tier</th>
+<th>Proxy used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💎 Paying</td>
+<td>Premium Residential  faster, more reliable</td>
+</tr>
+<tr>
+<td>🆓 Free</td>
+<td>Apify RESIDENTIAL  built-in, automatic</td>
+</tr>
+<tr>
+<td>⚠️ None</td>
+<td>Direct connection  no proxy configured</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Access Error Handling</h2>
+<p>The actor detects exactly why a community map is inaccessible and gives clear, actionable messages:</p>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Not a member</td>
+<td><code>🚫 ACCESS DENIED</code> box with join link</td>
+<td>Visit the community&#39;s <code>/about</code> page and join</td>
+</tr>
+<tr>
+<td>Membership declined</td>
+<td><code>⛔ MEMBERSHIP DECLINED</code> box</td>
+<td>Contact the admin or try a different account</td>
+</tr>
+<tr>
+<td>Pending approval</td>
+<td><code>⏳ PENDING APPROVAL</code> box</td>
+<td>Wait for admin approval, then re-run</td>
+</tr>
+<tr>
+<td>Empty map</td>
+<td>Warning message</td>
+<td>No members have pinned their location</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔌 Standby Mode (Actor-to-Actor Streaming)</h2>
+<p>This actor supports <strong>Standby mode</strong>  it runs as a persistent HTTP server that another actor can call to stream member data in real-time via NDJSON.</p>
+<p>When launched in Standby mode, the actor starts an Express server and stays alive indefinitely. Another actor (the &quot;caller&quot;) sends a POST request with community URLs, and this actor streams back member data line-by-line as it&#39;s enriched  no waiting for the full extraction to complete.</p>
+<p>The public URL:</p>
+<pre><code>https://dz-omar--skool-map-scraper.apify.actor?token=***
+</code></pre>
+<h3>Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/heartbeat</code></td>
+<td>GET</td>
+<td>Keep-alive ping  wakes the actor if cold</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>GET</td>
+<td>Readiness probe  returns server status</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>POST</td>
+<td>Main endpoint  accepts communities, streams members back</td>
+</tr>
+</tbody></table>
+<h3>POST / Request Body</h3>
+<pre><code class="language-json">{
+    &quot;communityUrls&quot;: [
+        &quot;https://www.skool.com/learn-ai&quot;,
+        &quot;https://www.skool.com/ai-automation-society&quot;
+    ],
+    &quot;email&quot;: &quot;your@email.com&quot;,
+    &quot;password&quot;: &quot;your-password&quot;,
+    &quot;userPreviewConcurrency&quot;: 10,
+    &quot;maxMembersPerCommunity&quot;: 500,
+    &quot;alreadyProcessedUserIds&quot;: [],
+    &quot;startFromCommunityIndex&quot;: 0
+}
+</code></pre>
+<p>The last two fields are for <strong>resumption</strong>  if the connection drops, the caller sends back the user IDs it already received and the community index to resume from.</p>
+<h3>NDJSON Event Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>When</th>
+<th>Key fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>log</code></td>
+<td>Informational message</td>
+<td><code>message</code></td>
+</tr>
+<tr>
+<td><code>batch</code></td>
+<td>Batch of enriched members ready</td>
+<td><code>members</code>, <code>membersSentSoFar</code>, <code>totalInCommunity</code>, <code>completed</code></td>
+</tr>
+<tr>
+<td><code>community_complete</code></td>
+<td>All members for one community sent</td>
+<td><code>communitySlug</code>, <code>communityUrl</code>, <code>membersSent</code></td>
+</tr>
+<tr>
+<td><code>complete</code></td>
+<td>All communities done</td>
+<td></td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Something failed</td>
+<td><code>error</code>, <code>errorType</code>, <code>isRetryable</code></td>
+</tr>
+<tr>
+<td><code>migrating</code></td>
+<td>Apify migrating the server</td>
+<td><code>membersSentSoFar</code>, <code>alreadyProcessedUserIds</code></td>
+</tr>
+<tr>
+<td><code>aborting</code></td>
+<td>Actor shutting down</td>
+<td><code>membersSentSoFar</code>, <code>alreadyProcessedUserIds</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a paid Apify plan to use this actor?</strong>
+No  the actor works on a free Apify plan. However, per-member costs are lower on paid tiers (see Pricing above).</p>
+<p><strong>How many members can I extract for free?</strong>
+Apify&#39;s free tier includes $5 in monthly platform credits. At $0.005 per member on the FREE tier, that covers roughly 1,000 member extractions per month before additional charges apply.</p>
+<p><strong>Is the Skool member map always available?</strong>
+Only communities where the admin has enabled the map feature will have extractable location data. If a community&#39;s map is empty, no members have pinned their location.</p>
+<p><strong>Can I scrape multiple Skool communities in one run?</strong>
+Yes  pass multiple URLs in the <code>communityUrl</code> array. The actor processes them sequentially and applies <code>maxMembersPerCommunity</code> to each one independently.</p>
+<p><strong>What happens if the extraction crashes mid-run?</strong>
+The actor saves progress every 50 users. On restart, it resumes exactly where it left off with no duplicate data.</p>
+<p><strong>What is the <code>countryCode</code> field?</strong>
+Every output row now includes a <code>countryCode</code> field (ISO 3166-1 alpha-2, e.g. <code>&quot;US&quot;</code>, <code>&quot;GB&quot;</code>, <code>&quot;DZ&quot;</code>). It is derived offline by reverse-geocoding the member&#39;s <code>[latitude, longitude]</code> coordinates using the <code>which-country</code> package  no external API, no extra cost.</p>
+<p><strong>Does country filtering save money?</strong>
+Yes. When <code>filterCountries</code> is set, the actor skips full profile enrichment for members outside the selected countries. On a large community, this can reduce API costs by up to 90%.</p>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtractAPI</h2>
+<h3>📚 Education &amp; Community</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/skool-scraper-pro?fpr=smcx63">Skool Scraper Pro</a></strong>  Lessons, videos, posts, and attachments from Skool classrooms</li>
+<li><strong><a href="https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63">Skool Map Scraper</a></strong>  Member locations and profiles from Skool community maps</li>
+</ul>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong>  Loom video &amp; transcript extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong>  Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong>  Download Zoom recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/tiktok-video-downloader?fpr=smcx63">TikTok Video Downloader</a></strong>  TikTok without watermarks</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63">Universal Downloader</a></strong>  Download any file type with proxy support</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>  Advanced website screenshot tool</li>
+</ul>
+<h3>📱 Social &amp; Ads</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>  Facebook Ad Library extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63">Google Ads Scraper</a></strong>  Google Ads Transparency Center data</li>
+</ul>
+<hr>
+<h2>⚖️ Legal &amp; Ethical Use</h2>
+<p>This actor extracts <strong>publicly visible profile data</strong> from Skool community map pages  the same information any logged-in member can see in their browser. Users who pin their location on a Skool map are voluntarily sharing that information with other community members.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only extract data from communities you are a legitimate member of</li>
+<li>Comply with <a href="https://www.skool.com/legal?t=terms">Skool&#39;s Terms of Service</a> and applicable data protection regulations (GDPR, CCPA, etc.)</li>
+<li>Do not use extracted data for spam, harassment, or unsolicited outreach</li>
+<li>If you are processing personal data of EU residents, ensure you have a lawful basis under GDPR</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

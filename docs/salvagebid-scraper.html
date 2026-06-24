@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>SalvageBid Vehicle Scraper &amp; Auction Data API | FlowExtract API</title>
+    <meta name="title" content="SalvageBid Vehicle Scraper &amp; Auction Data API | FlowExtract API">
+    <meta name="description" content="Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/salvagebid-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="SalvageBid Vehicle Scraper &amp; Auction Data API | FlowExtract API">
+    <meta property="og:description" content="Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/salvagebid-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-CBDyjlyDHaSAnFWxD-Cg5qpycVHg-icon.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SalvageBid Vehicle Scraper &amp; Auction Data API | FlowExtract API">
+    <meta name="twitter:description" content="Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-CBDyjlyDHaSAnFWxD-Cg5qpycVHg-icon.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SalvageBid Scraper","description":"Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/salvagebid-scraper.html","sameAs":"https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-CBDyjlyDHaSAnFWxD-Cg5qpycVHg-icon.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run SalvageBid Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open SalvageBid Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is SalvageBid Scraper free?","acceptedAnswer":{"@type":"Answer","text":"SalvageBid Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-CBDyjlyDHaSAnFWxD-Cg5qpycVHg-icon.png" alt="SalvageBid Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">SalvageBid Scraper</h1>
+                <p class="actor-hero-desc">Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images.</p>
+                <a href="https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">SalvageBid Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation &amp; business. Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>listing mode ~2–3 seconds per page (~24 vehicles per page)</li><li>detail mode 5 concurrent detail fetches per batch</li><li>100 vehicles (listing only) ~15–20 seconds</li><li>100 vehicles (with details) ~1–2 minutes</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run SalvageBid Scraper?</summary><p>Open SalvageBid Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is SalvageBid Scraper free?</summary><p>SalvageBid Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🚗 SalvageBid Scraper</h1>
+<p><strong>Extract salvage vehicle auction listings from SalvageBid.com  prices, bids, VIN specs, damage info, auction dates, locations, and images.</strong></p>
+<p>Scrapes any SalvageBid search or category page with full pagination support. Returns clean, structured data for every vehicle on the listing, with optional enrichment from individual vehicle detail pages (live bid data, shipping info, VDP navigation, and more).</p>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Basic  Listing Data Only</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-suvs-for-sale/toyota&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;fetchDetails&quot;: false,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: []
+  }
+}
+</code></pre>
+<h3>Full Details per Vehicle</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-suvs-for-sale/toyota&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;fetchDetails&quot;: true,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: []
+  }
+}
+</code></pre>
+<h3>Start from a Specific Page</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-suvs-for-sale/toyota?page=4&quot; }
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;fetchDetails&quot;: false
+}
+</code></pre>
+<h3>Multiple Search URLs in One Run</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-suvs-for-sale/toyota&quot; },
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-sedans-for-sale/honda&quot; },
+    { &quot;url&quot;: &quot;https://www.salvagebid.com/salvage-trucks-for-sale/ford&quot; }
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;fetchDetails&quot;: true
+}
+</code></pre>
+<hr>
+<h2>📋 Input Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td></td>
+<td>One or more SalvageBid search/category URLs. Supports <code>?page=N</code> to start from a specific page.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>Max vehicles to scrape <strong>per URL</strong>. Set to <code>0</code> for unlimited (all pages).</td>
+</tr>
+<tr>
+<td><code>fetchDetails</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Fetch the full detail page for each vehicle. Adds live bid data, shipping info, and more. Slower but richer.</td>
+</tr>
+<tr>
+<td><code>proxyConfiguration</code></td>
+<td>object</td>
+<td>No proxy</td>
+<td>Apify proxy settings. Recommended to avoid blocks.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output</h2>
+<h3>Listing Mode (<code>fetchDetails: false</code>)</h3>
+<p>Returns the core data available from the search results page:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: 321624186,
+  &quot;stock_number&quot;: 43906790,
+  &quot;vin&quot;: &quot;JTMRFREV3JJ204172&quot;,
+  &quot;vehicle_name&quot;: &quot;2018 TOYOTA RAV4 XLE&quot;,
+  &quot;year&quot;: 2018,
+  &quot;make&quot;: &quot;TOYOTA&quot;,
+  &quot;model&quot;: &quot;RAV4&quot;,
+  &quot;trim&quot;: &quot;XLE&quot;,
+  &quot;vehicle_type&quot;: &quot;CAR&quot;,
+  &quot;body_style&quot;: &quot;SPORT UTILITY&quot;,
+  &quot;color&quot;: &quot;Blue&quot;,
+  &quot;interior_color&quot;: &quot;&quot;,
+  &quot;odometer_value&quot;: 90123,
+  &quot;odometer_type&quot;: &quot;mi&quot;,
+  &quot;odometer_status&quot;: &quot;ACTUAL&quot;,
+  &quot;damage&quot;: &quot;FRONT &amp; REAR&quot;,
+  &quot;primary_damage&quot;: &quot;Front &amp; Rear&quot;,
+  &quot;secondary_damage&quot;: &quot;Mechanical&quot;,
+  &quot;start_code&quot;: &quot;Run &amp; Drive&quot;,
+  &quot;auction_verification&quot;: &quot;Run &amp; Drive Verified&quot;,
+  &quot;key_status&quot;: &quot;Y&quot;,
+  &quot;airbags&quot;: &quot;INTACT&quot;,
+  &quot;loss_type&quot;: &quot;Collision&quot;,
+  &quot;title_name&quot;: &quot;SALVAGE&quot;,
+  &quot;title_state&quot;: &quot;VT&quot;,
+  &quot;title_state_name&quot;: &quot;Vermont&quot;,
+  &quot;doc_type&quot;: &quot;VT SALVAGE&quot;,
+  &quot;current_bid_value&quot;: 0,
+  &quot;retail_value&quot;: 19526,
+  &quot;acv&quot;: 19526,
+  &quot;buy_it_now&quot;: null,
+  &quot;repair_cost&quot;: 19526,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;auction_type_str&quot;: &quot;Preliminary Bidding&quot;,
+  &quot;sale_date&quot;: {
+    &quot;date&quot;: &quot;2026-04-09 06:30:00.000000&quot;,
+    &quot;timezone&quot;: &quot;America/Los_Angeles&quot;,
+    &quot;date_iso&quot;: &quot;2026-04-09T06:30:00-07:00&quot;,
+    &quot;formatted&quot;: &quot;Thu, Apr 9, 06:30am (PDT)&quot;,
+    &quot;seconds_left_to_start&quot;: 50584
+  },
+  &quot;location_city&quot;: &quot;ESSEX JUNCTION&quot;,
+  &quot;location_state&quot;: &quot;VT&quot;,
+  &quot;location_zip&quot;: &quot;05452&quot;,
+  &quot;location_address&quot;: &quot;304 COLCHESTER ROAD&quot;,
+  &quot;selling_branch&quot;: &quot;Burlington, VT&quot;,
+  &quot;auction_location&quot;: {
+    &quot;id&quot;: 645,
+    &quot;name&quot;: &quot;Burlington&quot;,
+    &quot;slug&quot;: &quot;burlington&quot;,
+    &quot;address&quot;: &quot;304 Colchester Road&quot;,
+    &quot;city&quot;: &quot;Essex Junction&quot;,
+    &quot;state&quot;: &quot;VT&quot;,
+    &quot;zip&quot;: &quot;05452&quot;,
+    &quot;phone&quot;: &quot;802-872-7838&quot;
+  },
+  &quot;vin_engine&quot;: &quot;2.5L I-4 DOHC, VVT, 176HP&quot;,
+  &quot;vin_fuel_type&quot;: &quot;Gasoline&quot;,
+  &quot;vin_cylinder&quot;: &quot;4 Cyl&quot;,
+  &quot;vin_transmission&quot;: &quot;Automatic&quot;,
+  &quot;vin_drive_line_type&quot;: &quot;All Wheel Drive&quot;,
+  &quot;images&quot;: [
+    &quot;https://s3-us-west-1.amazonaws.com/vehimg/27390/43906790-1L.jpg&quot;,
+    &quot;https://s3-us-west-1.amazonaws.com/vehimg/27390/43906790-2L.jpg&quot;
+  ],
+  &quot;images_thumbs&quot;: [
+    &quot;https://s3-us-west-1.amazonaws.com/vehimg/27390/43906790-1T.jpg&quot;
+  ],
+  &quot;image_360_url&quot;: &quot;https://vis.iaai.com/Home/ThreeSixtyView?keys=...&quot;,
+  &quot;videos&quot;: [
+    {
+      &quot;url&quot;: &quot;https://mediaretriever.iaai.com/api/EngineVideoRetriever?...&quot;,
+      &quot;title&quot;: &quot;Engine Video&quot;
+    }
+  ],
+  &quot;additional_info&quot;: {
+    &quot;Navigation&quot;: &quot;PRESENT&quot;,
+    &quot;KeyFob&quot;: &quot;PRESENT&quot;,
+    &quot;Stored&quot;: &quot;Offsite&quot;
+  },
+  &quot;details_url&quot;: &quot;https://www.salvagebid.com/vehicle/43906790-2018-toyota-rav4&quot;,
+  &quot;download_all_pictures_url&quot;: &quot;https://www.salvagebid.com/rest-api/v2/lots/43906790/download-all-auction-pictures&quot;
+}
+</code></pre>
+<h3>Detail Mode (<code>fetchDetails: true</code>)</h3>
+<p>Returns everything above plus enriched data fetched from the individual vehicle page:</p>
+<table>
+<thead>
+<tr>
+<th>Additional Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bids.current_bid</code></td>
+<td>Current highest bid value</td>
+</tr>
+<tr>
+<td><code>bids.next_bid</code></td>
+<td>Minimum next bid required</td>
+</tr>
+<tr>
+<td><code>bids.bid_status</code></td>
+<td>Your bid status (<code>have_not_bid</code>, <code>winning</code>, etc.)</td>
+</tr>
+<tr>
+<td><code>bids.highest_bid</code></td>
+<td>Highest bid placed so far</td>
+</tr>
+<tr>
+<td><code>bids.next_bid_default</code></td>
+<td>Suggested default next bid</td>
+</tr>
+<tr>
+<td><code>sale_location</code></td>
+<td>Full formatted sale location string</td>
+</tr>
+<tr>
+<td><code>preliminary_bidding_closed</code></td>
+<td>Whether preliminary bidding has ended</td>
+</tr>
+<tr>
+<td><code>sold</code></td>
+<td>Whether the vehicle has been sold</td>
+</tr>
+<tr>
+<td><code>vdp_navigation.lots_total</code></td>
+<td>Total vehicles in the same search context</td>
+</tr>
+<tr>
+<td><code>vdp_navigation.lot_index</code></td>
+<td>Position of this vehicle in results</td>
+</tr>
+<tr>
+<td><code>vdp_navigation.next_url</code></td>
+<td>URL of the next vehicle in the list</td>
+</tr>
+<tr>
+<td><code>vdp_navigation.prev_url</code></td>
+<td>URL of the previous vehicle in the list</td>
+</tr>
+<tr>
+<td><code>lsa_info.branch_id</code></td>
+<td>Branch ID for live sale info</td>
+</tr>
+<tr>
+<td><code>lsa_info.lane</code></td>
+<td>Auction lane</td>
+</tr>
+<tr>
+<td><code>lsa_info.run_name</code></td>
+<td>Run/item number in the lane</td>
+</tr>
+<tr>
+<td><code>shipping_info.lot</code></td>
+<td>Stock number for shipping lookup</td>
+</tr>
+<tr>
+<td><code>shipping_info.origin_location_id</code></td>
+<td>Shipping origin branch ID</td>
+</tr>
+<tr>
+<td><code>shipping_info.location_zip</code></td>
+<td>Pickup ZIP code</td>
+</tr>
+<tr>
+<td><code>purchase_steps</code></td>
+<td>Step-by-step purchase instructions (if available)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📊 Dataset Views</h2>
+<p>Five pre-configured views are available in the Apify dataset UI:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Overview</strong></td>
+<td>Quick summary  ID, stock #, vehicle name, year, make, model, color, current bid, retail value, sale date, location</td>
+</tr>
+<tr>
+<td><strong>Detailed</strong></td>
+<td>Full vehicle data  VIN, damage, condition flags, title/doc info, auction status, branch</td>
+</tr>
+<tr>
+<td><strong>VIN &amp; Specs</strong></td>
+<td>Decoded VIN specs  engine, fuel type, cylinders, transmission, drivetrain, restraint system</td>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Price data for market analysis  current bid, retail value, ACV, buy-it-now, repair cost</td>
+</tr>
+<tr>
+<td><strong>Locations</strong></td>
+<td>Auction location data  city, state, ZIP, address, branch name, lane, item number</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>⚡ Performance &amp; Reliability</h2>
+<h3>Speed</h3>
+<ul>
+<li><strong>Listing mode</strong>  <del>2–3 seconds per page (</del>24 vehicles per page)</li>
+<li><strong>Detail mode</strong>  5 concurrent detail fetches per batch</li>
+<li><strong>100 vehicles (listing only)</strong>  ~15–20 seconds</li>
+<li><strong>100 vehicles (with details)</strong>  ~1–2 minutes</li>
+</ul>
+<h3>Crash Recovery</h3>
+<p>The scraper uses Apify&#39;s state persistence to survive crashes, migrations, and timeouts. If a run is interrupted:</p>
+<ul>
+<li>Progress is saved automatically every ~60 seconds</li>
+<li>On restart or resurrection, scraping resumes from the last completed page</li>
+<li>Already-completed URLs are skipped automatically</li>
+<li>Already-scraped pages within a URL are not re-processed</li>
+</ul>
+<h3>Error Handling</h3>
+<ul>
+<li>Exponential backoff with 3 retries per failed request</li>
+<li>Continues to the next page after 3 consecutive errors on a single page</li>
+<li>Continues to the next URL if one URL fails entirely</li>
+<li>State is preserved on failure for manual resume</li>
+</ul>
+<h3>Resource Usage</h3>
+<ul>
+<li><strong>Memory</strong>: 512 MB max</li>
+<li><strong>Proxy</strong>: Apify Proxy recommended to avoid Cloudflare blocks</li>
+</ul>
+<hr>
+<h2>🔗 URL Format Reference</h2>
+<p>SalvageBid search URLs follow this structure:</p>
+<pre><code>https://www.salvagebid.com/{category}/{make}?page={N}
+</code></pre>
+<h3>Category Examples</h3>
+<table>
+<thead>
+<tr>
+<th>URL Path</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/salvage-suvs-for-sale/toyota</code></td>
+<td>Toyota SUVs</td>
+</tr>
+<tr>
+<td><code>/salvage-sedans-for-sale/honda</code></td>
+<td>Honda sedans</td>
+</tr>
+<tr>
+<td><code>/salvage-trucks-for-sale/ford</code></td>
+<td>Ford trucks</td>
+</tr>
+<tr>
+<td><code>/salvage-cars-for-sale</code></td>
+<td>All makes, all types</td>
+</tr>
+<tr>
+<td><code>/salvage-cars-for-sale/bmw</code></td>
+<td>BMW (all types)</td>
+</tr>
+</tbody></table>
+<p>You can paste any search results page URL directly from the SalvageBid website  including filtered searches, specific makes, and paginated pages. The scraper will automatically paginate forward from whatever page you provide.</p>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<ul>
+<li>Data is extracted as-is from SalvageBid. Prices, availability, and auction outcomes should be verified directly on the site.</li>
+<li>Built-in random delays and rotating browser fingerprints via <code>got-scraping</code> minimize detection risk.</li>
+<li>SalvageBid is served behind Cloudflare  using Apify Proxy is strongly recommended.</li>
+<li><code>additional_info</code> is returned as a parsed JSON object (not a raw string) for easy access to fields like <code>Navigation</code>, <code>KeyFob</code>, and <code>Stored</code>.</li>
+<li>The <code>details_url</code> and <code>download_all_pictures_url</code> fields are always returned as full absolute URLs.</li>
+</ul>
+<p><strong>The actor creator is not responsible for how users utilize the extracted data. Users must comply with SalvageBid&#39;s Terms of Service and applicable data protection laws.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar. Prices, locations, agent contacts, amenities, and full property details.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access. Get listings, prices, and detailed property information.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata. Perfect for content analysis, SEO, and subtitle generation.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist. Fast, reliable, and built for scale.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Download Loom videos and extract transcripts. Perfect for training content and video documentation.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI. Free regex extraction or paid AI-powered dynamic extraction.</p>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research. Track ad campaigns and strategies.</p>
+<hr>
+<p><strong>Ready to extract SalvageBid data?</strong> <a href="https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63">Start using SalvageBid Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

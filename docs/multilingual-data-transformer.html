@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>AI Translation API for JSON Data - Multilingual Data Transformer | FlowExtract API</title>
+    <meta name="title" content="AI Translation API for JSON Data - Multilingual Data Transformer | FlowExtract API">
+    <meta name="description" content="Transform any data into any language with AI-powered translation. Pay-per-word billing.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/multilingual-data-transformer.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="AI Translation API for JSON Data - Multilingual Data Transformer | FlowExtract API">
+    <meta property="og:description" content="Transform any data into any language with AI-powered translation. Pay-per-word billing.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/multilingual-data-transformer.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/7pOp9WTPUfsgbjUKvigoUnaXgtBS_jDZL3iDGdJGsvY/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQWgwVm1FVWFQeVZnY0VGYlUtMXlxeGgweGZ4SS1hNDdiNWI4Ni0yM2E4LTQ3NDctODg5MS1kZDZjOTY3NGQ4YTItbWQuanBn.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Translation API for JSON Data - Multilingual Data Transformer | FlowExtract API">
+    <meta name="twitter:description" content="Transform any data into any language with AI-powered translation. Pay-per-word billing.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/7pOp9WTPUfsgbjUKvigoUnaXgtBS_jDZL3iDGdJGsvY/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQWgwVm1FVWFQeVZnY0VGYlUtMXlxeGgweGZ4SS1hNDdiNWI4Ni0yM2E4LTQ3NDctODg5MS1kZDZjOTY3NGQ4YTItbWQuanBn.jpg">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Multilingual Data Transformer","description":"Transform any data into any language with AI-powered translation. Pay-per-word billing.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/multilingual-data-transformer.html","sameAs":"https://apify.com/dz_omar/multilingual-data-transformer?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/7pOp9WTPUfsgbjUKvigoUnaXgtBS_jDZL3iDGdJGsvY/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQWgwVm1FVWFQeVZnY0VGYlUtMXlxeGgweGZ4SS1hNDdiNWI4Ni0yM2E4LTQ3NDctODg5MS1kZDZjOTY3NGQ4YTItbWQuanBn.jpg"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Multilingual Data Transformer?","acceptedAnswer":{"@type":"Answer","text":"Open Multilingual Data Transformer on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Multilingual Data Transformer free?","acceptedAnswer":{"@type":"Answer","text":"Multilingual Data Transformer runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why Choose This Translator?","acceptedAnswer":{"@type":"Answer","text":"✅ Accurate Translation - Professional-grade quality with provider redundancy"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,528 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/7pOp9WTPUfsgbjUKvigoUnaXgtBS_jDZL3iDGdJGsvY/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQWgwVm1FVWFQeVZnY0VGYlUtMXlxeGgweGZ4SS1hNDdiNWI4Ni0yM2E4LTQ3NDctODg5MS1kZDZjOTY3NGQ4YTItbWQuanBn.jpg" alt="Multilingual Data Transformer" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">Multilingual Data Transformer</h1>
+                <p class="actor-hero-desc">Transform any data into any language with AI-powered translation. Pay-per-word billing.</p>
+                <a href="https://apify.com/dz_omar/multilingual-data-transformer?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Multilingual Data Transformer is a ready-to-run Apify actor from FlowExtract API for developer tools &amp; utilities. Transform any JSON data into any language instantly with AI-powered translation - fast, reliable, and built for scale. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>full JSON Support - Translate any JSON structure while preserving data organization</li><li>recursive Translation - Automatically handles nested objects and arrays</li><li>text-Only Processing - Intelligently extracts and translates only text values</li><li>multiple Languages - Support for 20+ languages with automatic provider fallback</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Multilingual Data Transformer?</summary><p>Open Multilingual Data Transformer on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Multilingual Data Transformer free?</summary><p>Multilingual Data Transformer runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why Choose This Translator?</summary><p>✅ Accurate Translation - Professional-grade quality with provider redundancy</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🌍 Multilingual Data Transformer</h1>
+<p><strong>Transform any JSON data into any language instantly with AI-powered translation - fast, reliable, and built for scale.</strong></p>
+<p>This powerful Apify actor provides professional-grade translation of structured data. Perfect for developers, businesses, content creators, and organizations who need accurate, multilingual content for global audiences, market expansion, and international operations.</p>
+<p><img src="https://raw.githubusercontent.com/your-repo/multilingual-transformer.jpg" alt="Multilingual Transformer"></p>
+<hr>
+<h2>✨ Key Features</h2>
+<h3>🎯 Complete Data Translation</h3>
+<ul>
+<li><strong>Full JSON Support</strong> - Translate any JSON structure while preserving data organization</li>
+<li><strong>Recursive Translation</strong> - Automatically handles nested objects and arrays</li>
+<li><strong>Text-Only Processing</strong> - Intelligently extracts and translates only text values</li>
+<li><strong>Multiple Languages</strong> - Support for 20+ languages with automatic provider fallback</li>
+<li><strong>Format Preservation</strong> - Original structure and data types remain intact</li>
+</ul>
+<h3>⚡ Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Lightning Fast</strong> - Optimized processing for instant results</li>
+<li><strong>Dual-Provider Fallback</strong> - Seamless switching between Lingo.dev and Anthropic APIs</li>
+<li><strong>Batch Processing</strong> - Handle multiple translation requests simultaneously</li>
+<li><strong>Smart Caching</strong> - Avoid re-processing identical content</li>
+<li><strong>API &amp; Batch Modes</strong> - Choose standby mode for real-time API access or batch processing</li>
+</ul>
+<h3>🛠️ Developer-Friendly</h3>
+<ul>
+<li><strong>Clean JSON Output</strong> - Ready for any data pipeline or application</li>
+<li><strong>Multiple Tiers</strong> - FREE, BRONZE, SILVER, and GOLD pricing for different needs</li>
+<li><strong>Real-time API</strong> - Standby mode provides instant translation via HTTP endpoints</li>
+<li><strong>Comprehensive Logging</strong> - Debug information available for troubleshooting</li>
+<li><strong>Well-Documented</strong> - Clear examples and API documentation included</li>
+</ul>
+<hr>
+<h2>📖 How It Works</h2>
+<ol>
+<li><strong>Input JSON Data</strong> - Provide one or more JSON objects or arrays</li>
+<li><strong>Select Language</strong> - Choose target language from 20+ supported options</li>
+<li><strong>Configure Tier</strong> - Select your pricing tier (FREE, BRONZE, SILVER, GOLD)</li>
+<li><strong>Run Translation</strong> - Fast, automated translation begins</li>
+<li><strong>Get Results</strong> - Receive translated JSON with identical structure</li>
+</ol>
+<h3>Processing Flow</h3>
+<pre><code>Input JSON Data
+    ↓
+Text Extraction (words only)
+    ↓
+Provider Selection (Lingo.dev or Anthropic)
+    ↓
+Translation Processing
+    ↓
+Word Count Calculation
+    ↓
+PPE Billing &amp; Charging
+    ↓
+Output Translated JSON
+</code></pre>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Simple Example</h3>
+<pre><code class="language-json">{
+  &quot;data&quot;: [
+    {
+      &quot;title&quot;: &quot;Hello World&quot;,
+      &quot;description&quot;: &quot;This is a test&quot;
+    }
+  ],
+  &quot;targetLanguage&quot;: &quot;es&quot;
+}
+</code></pre>
+<h3>Advanced Example</h3>
+<pre><code class="language-json">{
+  &quot;data&quot;: [
+    {
+      &quot;title&quot;: &quot;Hello World&quot;,
+      &quot;description&quot;: &quot;This is a test&quot;,
+      &quot;content&quot;: {
+        &quot;main&quot;: &quot;Welcome to our service&quot;,
+        &quot;subtitle&quot;: &quot;Professional translation made easy&quot;
+      }
+    },
+    {
+      &quot;title&quot;: &quot;Good Morning&quot;,
+      &quot;description&quot;: &quot;Have a nice day&quot;
+    }
+  ],
+  &quot;targetLanguage&quot;: &quot;fr&quot;
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td><code>array or object</code></td>
+<td>Required</td>
+<td>Your JSON data to translate (single object or array of objects)</td>
+</tr>
+<tr>
+<td><code>targetLanguage</code></td>
+<td><code>string</code></td>
+<td>Required</td>
+<td>ISO language code for translation target</td>
+</tr>
+<tr>
+<td><code>userTier</code></td>
+<td><code>string</code></td>
+<td><code>FREE</code></td>
+<td>Pricing tier: <code>FREE</code>, <code>BRONZE</code>, <code>SILVER</code>, or <code>GOLD</code></td>
+</tr>
+</tbody></table>
+<h3>Supported Languages</h3>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Language</th>
+<th>Code</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>es</code></td>
+<td>Spanish</td>
+<td><code>tr</code></td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td><code>fr</code></td>
+<td>French</td>
+<td><code>hi</code></td>
+<td>Hindi</td>
+</tr>
+<tr>
+<td><code>de</code></td>
+<td>German</td>
+<td><code>th</code></td>
+<td>Thai</td>
+</tr>
+<tr>
+<td><code>it</code></td>
+<td>Italian</td>
+<td><code>vi</code></td>
+<td>Vietnamese</td>
+</tr>
+<tr>
+<td><code>pt</code></td>
+<td>Portuguese</td>
+<td><code>nl</code></td>
+<td>Dutch</td>
+</tr>
+<tr>
+<td><code>pl</code></td>
+<td>Polish</td>
+<td><code>sv</code></td>
+<td>Swedish</td>
+</tr>
+<tr>
+<td><code>ru</code></td>
+<td>Russian</td>
+<td><code>da</code></td>
+<td>Danish</td>
+</tr>
+<tr>
+<td><code>ar</code></td>
+<td>Arabic</td>
+<td><code>fi</code></td>
+<td>Finnish</td>
+</tr>
+<tr>
+<td><code>zh</code></td>
+<td>Chinese (Simplified)</td>
+<td><code>el</code></td>
+<td>Greek</td>
+</tr>
+<tr>
+<td><code>ja</code></td>
+<td>Japanese</td>
+<td>-</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>ko</code></td>
+<td>Korean</td>
+<td>-</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output Structure</h2>
+<p>Each translation produces a comprehensive JSON result:</p>
+<pre><code class="language-json">[{
+  &quot;original&quot;: {
+    &quot;title&quot;: &quot;Hello World&quot;,
+    &quot;description&quot;: &quot;This is a test&quot;
+  },
+  &quot;translated&quot;: {
+    &quot;title&quot;: &quot;Bonjour le monde&quot;,
+    &quot;description&quot;: &quot;Ceci est un test&quot;
+  },
+  &quot;language&quot;: &quot;fr&quot;
+},
+{
+  &quot;original&quot;: {
+    &quot; YouTube Transcript&quot;: &quot;Hey, it’s Theo. Today, I’ll show you how to scrape Instagram ...&quot;
+  },
+  &quot;translated&quot;: {
+    &quot; YouTube Transcript&quot;: &quot;Salut, c&#39;est Theo. Aujourd&#39;hui, je vais vous montrer comment scraper Instagram ...&quot;
+  },
+  &quot;language&quot;: &quot;fr&quot;
+}]
+</code></pre>
+<h3>Output Fields Explained</h3>
+<h4>Translation Results</h4>
+<ul>
+<li><code>original</code> - Your original JSON data structure</li>
+<li><code>translated</code> - Translated JSON with identical structure</li>
+<li><code>language</code> - Target language code used</li>
+</ul>
+<h2>💰 Pricing Model</h2>
+<h3>Pay-Per-Word Pricing</h3>
+<p>Charges are based on exact word counts with no minimum charge. You pay only for what you translate.</p>
+<h3>Tier Pricing</h3>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Input Price</th>
+<th>Output Price</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FREE</td>
+<td>$0.00035/word</td>
+<td>$0.00035/word</td>
+<td>Standard rate</td>
+</tr>
+<tr>
+<td>BRONZE</td>
+<td>$0.00020/word</td>
+<td>$0.00020/word</td>
+<td>43% discount</td>
+</tr>
+<tr>
+<td>SILVER</td>
+<td>$0.00015/word</td>
+<td>$0.00015/word</td>
+<td>57% discount</td>
+</tr>
+<tr>
+<td>GOLD</td>
+<td>$0.00010/word</td>
+<td>$0.00010/word</td>
+<td>71% discount</td>
+</tr>
+</tbody></table>
+<h3>Example Costs</h3>
+<h4>Small Translation (FREE tier)</h4>
+<pre><code>Input: 8 words × $0.00035 = $0.0028
+Output: 7 words × $0.00035 = $0.0025
+Total: $0.0053
+</code></pre>
+<h4>Medium Translation (BRONZE tier)</h4>
+<pre><code>Input: 250 words × $0.00020 = $0.0500
+Output: 280 words × $0.00020 = $0.0560
+Total: $0.1060
+</code></pre>
+<h4>Large Translation (GOLD tier)</h4>
+<pre><code>Input: 5,000 words × $0.00010 = $0.5000
+Output: 5,500 words × $0.00010 = $0.5500
+Total: $1.0000
+</code></pre>
+<h3>Word Counting</h3>
+<ul>
+<li>Words are counted from text values only (not JSON structure)</li>
+<li>Spaces and punctuation are handled intelligently</li>
+<li>Minimum charge: <strong>None</strong> - Pay only for actual words translated</li>
+<li>Overage: No additional fees, just standard per-word rate</li>
+</ul>
+<hr>
+<h2>🚀 Two Operation Modes</h2>
+<h3>Batch Mode</h3>
+<ul>
+<li>Submit multiple translations in one request</li>
+<li>Ideal for bulk content processing</li>
+<li>Results saved to Apify dataset</li>
+<li>Flexible scheduling and monitoring</li>
+</ul>
+<p><strong>Use when:</strong></p>
+<ul>
+<li>Processing large volumes of content</li>
+<li>Batch workflows or scheduled tasks</li>
+<li>Data pipeline integration</li>
+<li>Cost optimization for bulk operations</li>
+</ul>
+<h3>Standby Mode (Real-time API)</h3>
+<ul>
+<li>Always-running HTTP API endpoint</li>
+<li>Instant translation responses</li>
+<li>No startup delays</li>
+<li>Perfect for real-time applications</li>
+</ul>
+<p><strong>Use when:</strong></p>
+<ul>
+<li>Building real-time translation features</li>
+<li>Integrating into web applications</li>
+<li>Creating translation APIs for end users</li>
+<li>Need instant responses (&lt;2 seconds)</li>
+</ul>
+<p><strong>API Endpoint:</strong></p>
+<pre><code>POST /?token=YOUR_APIFY_TOKEN
+Host: https://your-actor-url.apify.actor
+</code></pre>
+<hr>
+<h2>📚 Professional Use Cases</h2>
+<h3>Content Localization</h3>
+<ul>
+<li><strong>Global Expansion</strong> - Prepare content for international markets</li>
+<li><strong>Product Launches</strong> - Translate product information for multiple regions</li>
+<li><strong>Marketing Materials</strong> - Convert marketing copy for different languages</li>
+<li><strong>Documentation</strong> - Translate technical docs, guides, and manuals</li>
+</ul>
+<h3>Data Processing &amp; Integration</h3>
+<ul>
+<li><strong>API Integration</strong> - Translate API responses before serving to users</li>
+<li><strong>Database Updates</strong> - Bulk translate content in databases</li>
+<li><strong>Multi-language Support</strong> - Power multi-language applications</li>
+<li><strong>Data Migration</strong> - Localize data during system migrations</li>
+</ul>
+<h3>Business &amp; Operations</h3>
+<ul>
+<li><strong>Customer Support</strong> - Translate support tickets and responses</li>
+<li><strong>Email Campaigns</strong> - Localize email content for subscribers</li>
+<li><strong>Mobile Apps</strong> - Translate app content and strings</li>
+<li><strong>Web Applications</strong> - Provide multi-language user experiences</li>
+</ul>
+<h3>Content Creation</h3>
+<ul>
+<li><strong>Blog Posts</strong> - Translate articles for international audiences</li>
+<li><strong>Social Media</strong> - Adapt content for different language communities</li>
+<li><strong>E-learning</strong> - Translate course materials and educational content</li>
+<li><strong>News &amp; Publishing</strong> - Quick translation of breaking content</li>
+</ul>
+<hr>
+<h2>⚙️ Technical Advantages</h2>
+<h3>Built for Performance</h3>
+<ul>
+<li><strong>Optimized Translation</strong> - Uses professional translation APIs (Lingo.dev &amp; Anthropic)</li>
+<li><strong>Automatic Fallback</strong> - Seamlessly switches providers if one fails</li>
+<li><strong>Concurrent Processing</strong> - Handle multiple translations simultaneously</li>
+<li><strong>Efficient Data Handling</strong> - Preserves original JSON structure perfectly</li>
+</ul>
+<h3>Reliable &amp; Robust</h3>
+<ul>
+<li><strong>Error Handling</strong> - Graceful handling of translation failures</li>
+<li><strong>Retry Logic</strong> - Automatic retry on temporary failures</li>
+<li><strong>Provider Redundancy</strong> - Dual API support ensures reliability</li>
+<li><strong>Detailed Logging</strong> - Debug information for troubleshooting</li>
+</ul>
+<h3>Universal Compatibility</h3>
+<ul>
+<li><strong>Any JSON Structure</strong> - Works with any valid JSON format</li>
+<li><strong>Nested Objects</strong> - Handles arrays and deeply nested structures</li>
+<li><strong>All Languages</strong> - 20+ language support with consistent quality</li>
+<li><strong>Platform Integration</strong> - Seamless Apify ecosystem integration</li>
+</ul>
+<hr>
+<h2>📊 Performance Metrics</h2>
+<ul>
+<li><strong>Speed:</strong> 1-5 seconds per translation in standby mode; scalable in batch mode</li>
+<li><strong>Accuracy:</strong> Professional-grade translation with provider redundancy</li>
+<li><strong>Reliability:</strong> 99.5%+ successful translation rate with fallback support</li>
+<li><strong>Scalability:</strong> Handle from single items to thousands of translations</li>
+<li><strong>Cost:</strong> Lowest per-word pricing starting at $0.00010/word with GOLD tier</li>
+</ul>
+<hr>
+<h2>🔄 Data Processing Features</h2>
+<h3>Intelligent Text Extraction</h3>
+<ul>
+<li>Automatically identifies text values in JSON</li>
+<li>Skips non-text data types (numbers, booleans, dates)</li>
+<li>Preserves original data types in output</li>
+<li>Handles null and undefined values gracefully</li>
+</ul>
+<h3>Structure Preservation</h3>
+<ul>
+<li>Input and output JSON structures are identical</li>
+<li>Array and object relationships maintained</li>
+<li>Nested hierarchies fully supported</li>
+<li>Data integrity guaranteed</li>
+</ul>
+<h3>Cleaning &amp; Formatting</h3>
+<ul>
+<li>Consistent text handling</li>
+<li>Proper spacing and punctuation</li>
+<li>Language-specific formatting preserved</li>
+<li>HTML/special characters handled correctly</li>
+</ul>
+<hr>
+<h2>🛡️ Legal &amp; Compliance</h2>
+<p>This actor provides translation of your own data using professional translation APIs.</p>
+<p><strong>Important:</strong> Please ensure your use complies with:</p>
+<ul>
+<li>Your data ownership and rights</li>
+<li>Applicable copyright laws</li>
+<li>Data protection regulations (GDPR, CCPA, etc.)</li>
+<li>Your specific jurisdiction&#39;s laws</li>
+<li>Terms of service of underlying translation providers</li>
+</ul>
+<hr>
+<h2>Why Choose This Translator?</h2>
+<p>✅ <strong>Accurate Translation</strong> - Professional-grade quality with provider redundancy
+✅ <strong>Flexible Pricing</strong> - Pay only for what you use, no hidden minimums
+✅ <strong>Easy Integration</strong> - Clean JSON in/out, REST API available
+✅ <strong>Global Support</strong> - 20+ languages ready to use
+✅ <strong>Reliable</strong> - 99.5%+ uptime with automatic fallback
+✅ <strong>Well-Maintained</strong> - Regular updates and responsive support
+✅ <strong>Apify Platform</strong> - Leverage enterprise infrastructure</p>
+<hr>
+<h2>🚀 Getting Started</h2>
+<h3>Step 1: Prepare Your Data</h3>
+<pre><code class="language-json">{
+  &quot;data&quot;: [{&quot;text&quot;: &quot;Hello World&quot;}],
+  &quot;targetLanguage&quot;: &quot;es&quot;
+}
+</code></pre>
+<h3>Step 2: Run the Actor</h3>
+<ul>
+<li>Visit Apify Console</li>
+<li>Find this actor</li>
+<li>Click &quot;Run&quot; and configure input</li>
+<li>Select your pricing tier</li>
+</ul>
+<h3>Step 3: Get Results</h3>
+<ul>
+<li>Wait for completion (seconds to minutes)</li>
+<li>Download JSON dataset</li>
+<li>Integrate translated data into your system</li>
+</ul>
+<p><strong>No complex setup, no hidden fees, just reliable translation.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<p>Need help or have questions? We&#39;re here for you:</p>
+<h3>Contact Information</h3>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>👤 <strong>Apify Profile:</strong> <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>🐙 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>𝕏 <strong>Twitter:</strong> <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>👍 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></h2>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-extractor?fpr=smcx63">📹 YouTube Transcript Extractor</a></strong>
+Extract complete transcripts with timestamps and comprehensive video metadata. Perfect for content analysis, SEO, and subtitle generation.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">🎯 YouTube Full Channel Extractor</a></strong>
+Extract playlists, videos, shorts, and live streams. Get complete channel data with video lists, durations, and thumbnails.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">🎥 Zoom Scraper</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">📺 Loom Video Scraper</a></strong>
+Download Loom videos and extract transcripts. Perfect for training content and video documentation.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">🏡 Idealista Scraper API</a></strong>
+Advanced property data extraction with API access. Get listings, prices, and detailed property information.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">🔑 Idealista Scraper</a></strong>
+Extract Spanish real estate listings. Perfect for market analysis and property research.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">📸 Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">🔒 Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">📢 Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research. Track campaigns and strategies.</p>
+<hr>
+<p><strong>Ready to translate your data?</strong> <a href="https://apify.com/dz_omar/multilingual-data-transformer?fpr=smcx63">Start using Multilingual Data Transformer now!</a></p>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +583,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/multilingual-data-transformer?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +591,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'multilingual-data-transformer';
-    </script>
 </body>
 </html>

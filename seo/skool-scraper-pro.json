@@ -1,0 +1,21 @@
+{
+  "slug": "skool-scraper-pro",
+  "_drafted": true,
+  "intro": "Skool Scraper Pro is a ready-to-run Apify actor from FlowExtract API for education. Extract structured data from any Skool community classroom lessons, descriptions, videos, attachments, posts, and polls organized and ready to use. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "archive your full course library with descriptions, videos, and lesson resources",
+    "download all Videos Hosted on Skool as MP4 files with selectable quality (1080p → 270p)",
+    "back up post content, attachments, and PDF handouts before they disappear",
+    "generate a searchable index of every lesson across all your courses"
+  ],
+  "faq": [
+    {
+      "q": "How do I run Skool Scraper Pro?",
+      "a": "Open Skool Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Skool Scraper Pro free?",
+      "a": "Skool Scraper Pro runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

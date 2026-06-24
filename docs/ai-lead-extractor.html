@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>AI Lead Extractor - Automated Business Lead Generation | FlowExtract API</title>
+    <meta name="title" content="AI Lead Extractor - Automated Business Lead Generation | FlowExtract API">
+    <meta name="description" content="Extract structured lead intelligence (emails, phones, people, company info) from any website using AI. Per-result pricing, screenshots included, multi-tier discounts.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/ai-lead-extractor.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="AI Lead Extractor - Automated Business Lead Generation | FlowExtract API">
+    <meta property="og:description" content="Extract structured lead intelligence (emails, phones, people, company info) from any website using AI. Per-result pricing, screenshots included, multi-tier discounts.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/ai-lead-extractor.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/BMgcbinktKzZRuHWxXmJAfbURrmJAbfqjFoBGSoUb7I/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItSWVaWk1SMVV2Nko5aDdwZFMtVVp5cWl2UW9lQS1iYWFiOGFjYy0wNDlhLTRkNzAtOTFhOC0yZDcyMGI0NTczMjMucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AI Lead Extractor - Automated Business Lead Generation | FlowExtract API">
+    <meta name="twitter:description" content="Extract structured lead intelligence (emails, phones, people, company info) from any website using AI. Per-result pricing, screenshots included, multi-tier discounts.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/BMgcbinktKzZRuHWxXmJAfbURrmJAbfqjFoBGSoUb7I/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItSWVaWk1SMVV2Nko5aDdwZFMtVVp5cWl2UW9lQS1iYWFiOGFjYy0wNDlhLTRkNzAtOTFhOC0yZDcyMGI0NTczMjMucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AI Lead Extractor","description":"Extract structured lead intelligence (emails, phones, people, company info) from any website using AI. Per-result pricing, screenshots included, multi-tier discounts.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/ai-lead-extractor.html","sameAs":"https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/BMgcbinktKzZRuHWxXmJAfbURrmJAbfqjFoBGSoUb7I/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItSWVaWk1SMVV2Nko5aDdwZFMtVVp5cWl2UW9lQS1iYWFiOGFjYy0wNDlhLTRkNzAtOTFhOC0yZDcyMGI0NTczMjMucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run AI Lead Extractor?","acceptedAnswer":{"@type":"Answer","text":"Open AI Lead Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is AI Lead Extractor free?","acceptedAnswer":{"@type":"Answer","text":"AI Lead Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"🚀 Ready to Start?","acceptedAnswer":{"@type":"Answer","text":"1. [Sign up for Apify](https://apify.com?fpr=smcx63) (free tier available)"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,1014 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/BMgcbinktKzZRuHWxXmJAfbURrmJAbfqjFoBGSoUb7I/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItSWVaWk1SMVV2Nko5aDdwZFMtVVp5cWl2UW9lQS1iYWFiOGFjYy0wNDlhLTRkNzAtOTFhOC0yZDcyMGI0NTczMjMucG5n.png" alt="AI Lead Extractor" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">AI Lead Extractor</h1>
+                <p class="actor-hero-desc">Extract structured lead intelligence (emails, phones, people, company info) from any website using AI. Per-result pricing, screenshots included, multi-tier discounts.</p>
+                <a href="https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">AI Lead Extractor is a ready-to-run Apify actor from FlowExtract API for lead generation &amp; business. 1. Basic Contact Extraction (No Configuration Needed) This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>[Features](#-features)</li><li>[Two Operating Modes](#-two-operating-modes)</li><li>[Input Configuration](#-input-configuration)</li><li>[Output Structure](#-output-structure)</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run AI Lead Extractor?</summary><p>Open AI Lead Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is AI Lead Extractor free?</summary><p>AI Lead Extractor runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>🚀 Ready to Start?</summary><p>1. [Sign up for Apify](https://apify.com?fpr=smcx63) (free tier available)</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🤖 AI Lead Extractor - Dual Mode</h1>
+<p>Extract any information from websites OR analyze any data using intelligent AI. A powerful Apify actor that combines traditional web scraping with advanced AI capabilities to extract contact information, generate summaries, analyze data, or create custom structured outputs from any website or raw data.</p>
+<p><img src="https://img.shields.io/badge/version-4.0-blue" alt="Version">
+<a href="https://apify.com/dz_omar/ai-lead-extractor"><img src="https://apify.com/actor-badge?actor=dz_omar/ai-lead-extractor" alt="AI Lead Extractor Status"></a></p>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Run in 3 Simple Steps</h3>
+<p><strong>1. Basic Contact Extraction (No Configuration Needed)</strong></p>
+<p>Click &quot;Start&quot; with default settings to extract emails, phone numbers, and social links from any website. No AI knowledge required.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{&quot;url&quot;: &quot;https://example.com/contact&quot;}],
+  &quot;useAI&quot;: false
+}
+</code></pre>
+<p><strong>2. AI-Powered Extraction (Tell It What You Want)</strong></p>
+<p>Enable AI and describe what you need in plain English. The AI understands natural language.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{&quot;url&quot;: &quot;https://apify.com/about&quot;}],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Extract company name, CEO, and main contact email&quot;
+}
+</code></pre>
+<p><strong>3. Data Analysis Mode (No Website Needed)</strong></p>
+<p>Analyze your own data directly without scraping. Perfect for transforming CSV, JSON, or any text data.</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: &quot;name,email\nAlice,alice@example.com\nBob,bob@example.com&quot;,
+  &quot;aiInstructions&quot;: &quot;Convert to JSON array with name and email fields&quot;
+}
+</code></pre>
+<h3>First-Time Users</h3>
+<p>New to web scraping? Start here:</p>
+<ol>
+<li><strong>Sign up</strong> for a <a href="https://apify.com?fpr=smcx63">free Apify account</a></li>
+<li><strong>Find this Actor</strong> by searching &quot;AI Lead Extractor&quot; </li>
+<li><strong>Add a URL</strong> in the <code>startUrls</code> field (e.g., &quot;<a href="https://example.com">https://example.com</a>&quot;)</li>
+<li><strong>Click Start</strong> and wait 30-60 seconds</li>
+<li><strong>Download results</strong> as JSON, CSV, or Excel</li>
+</ol>
+<p>That&#39;s it! No coding required.</p>
+<hr>
+<h2>📋 Table of Contents</h2>
+<ul>
+<li><a href="#-features">Features</a></li>
+<li><a href="#-two-operating-modes">Two Operating Modes</a></li>
+<li><a href="#-input-configuration">Input Configuration</a></li>
+<li><a href="#-output-structure">Output Structure</a></li>
+<li><a href="#-pricing--billing">Pricing &amp; Billing</a></li>
+<li><a href="#-use-cases">Use Cases</a></li>
+<li><a href="#-api-usage">API Usage</a></li>
+<li><a href="#-advanced-configuration">Advanced Configuration</a></li>
+<li><a href="#-troubleshooting">Troubleshooting</a></li>
+<li><a href="#-faq">FAQ</a></li>
+<li><a href="#-support">Support</a></li>
+</ul>
+<hr>
+<h2>✨ Features</h2>
+<h3>🎯 Dual Extraction Modes</h3>
+<ul>
+<li><strong>Normal Mode</strong>: Web scraping with full browser automation for JavaScript-heavy sites</li>
+<li><strong>Standby Mode</strong>: Direct data analysis without browser overhead for faster processing</li>
+</ul>
+<h3>🤖 AI-Powered Intelligence</h3>
+<ul>
+<li><strong>Free Tier</strong>: Basic extraction plus AI via OpenRouter (pay-as-you-go)</li>
+<li><strong>Paid Tier</strong>: Advanced AI included with superior accuracy and 60% cost savings</li>
+<li><strong>Natural Language Instructions</strong>: Describe what you want in plain English (max 75 words)</li>
+<li><strong>Flexible Output</strong>: JSON, CSV, markdown, or any custom format you specify</li>
+</ul>
+<h3>⚡ Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Full Browser Rendering</strong>: Handles dynamic JavaScript websites seamlessly</li>
+<li><strong>Automatic Screenshots</strong>: Captures page screenshots for visual reference and verification</li>
+<li><strong>Smart Retry Logic</strong>: Automatically recovers from temporary failures</li>
+<li><strong>Token Management</strong>: Built-in 30K token limit with automatic overflow protection</li>
+<li><strong>Graceful Fallback</strong>: Falls back to basic extraction if AI encounters issues</li>
+</ul>
+<h3>💰 Transparent Billing</h3>
+<ul>
+<li><strong>Memory-Based Pricing</strong>: Predictable costs based on allocated memory (Normal Mode only)</li>
+<li><strong>Word-Based AI Billing</strong>: Pay only for words processed (input + output)</li>
+<li><strong>Detailed Usage Tracking</strong>: Complete breakdown of all charges in results</li>
+<li><strong>Tier-Based Discounts</strong>: Up to 75% savings for Bronze, Silver, and Gold subscribers</li>
+</ul>
+<hr>
+<h2>🎭 Two Operating Modes</h2>
+<h3>1️⃣ Normal Mode - Web Scraping</h3>
+<p><strong>When to use</strong>: Extract data from live websites</p>
+<p><strong>How it works</strong>:</p>
+<ul>
+<li>Launches a full browser using Playwright</li>
+<li>Navigates to your specified URLs</li>
+<li>Extracts content using AI or basic regex patterns</li>
+<li>Captures screenshots for reference</li>
+<li>Returns structured data in your preferred format</li>
+</ul>
+<p><strong>Best for</strong>: Company websites, contact pages, product listings, competitor analysis</p>
+<p><strong>Example</strong>:</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    {&quot;url&quot;: &quot;https://apify.com/about&quot;},
+    {&quot;url&quot;: &quot;https://example.com/contact&quot;}
+  ],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Extract company description, CEO name, and all contact information&quot;
+}
+</code></pre>
+<p><strong>Result</strong>: Structured data with company info, contacts, and a screenshot of each page</p>
+<hr>
+<h3>2️⃣ Standby Mode - Data Analysis</h3>
+<p><strong>When to use</strong>: Analyze existing data without web scraping</p>
+<p><strong>How it works</strong>:</p>
+<ul>
+<li>No browser launched (faster and cheaper)</li>
+<li>Accepts any data format: JSON, CSV, text, XML, HTML</li>
+<li>AI analyzes and transforms your data</li>
+<li>Returns processed results in seconds</li>
+<li>Cost-effective for pure data processing tasks</li>
+</ul>
+<p><strong>Best for</strong>: Data transformation, format conversion, text analysis, report generation</p>
+<p><strong>Example using API</strong>:</p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--ai-lead-extractor.apify.actor?token=YOUR_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;data&quot;: &quot;Company A: info@companya.com, +1-555-0100\nCompany B: contact@companyb.com, +1-555-0200&quot;,
+    &quot;aiInstructions&quot;: &quot;Extract as JSON array with company name, email, and phone&quot;
+  }&#39;
+</code></pre>
+<p><strong>Result</strong>: Instant JSON transformation without any web scraping overhead</p>
+<p><strong>Key Difference</strong>: </p>
+<ul>
+<li><strong>Normal Mode</strong> = Browser required, processes URLs, memory billing applies</li>
+<li><strong>Standby Mode</strong> = No browser, processes your data, no memory billing for creator</li>
+</ul>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Basic Fields</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>Array</td>
+<td>Yes*</td>
+<td><code>[]</code></td>
+<td>URLs to scrape (*not needed in Standby Mode for data analysis)</td>
+</tr>
+<tr>
+<td><code>useAI</code></td>
+<td>Boolean</td>
+<td>No</td>
+<td><code>false</code></td>
+<td>Enable AI-powered extraction</td>
+</tr>
+<tr>
+<td><code>aiInstructions</code></td>
+<td>String</td>
+<td>No</td>
+<td>Auto</td>
+<td>Natural language instructions (max 75 words/500 chars)</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td>String</td>
+<td>No</td>
+<td><code>null</code></td>
+<td>Your data to analyze (Standby Mode only)</td>
+</tr>
+</tbody></table>
+<p><strong>Default AI Instructions</strong> (when <code>useAI: true</code> but no instructions provided):</p>
+<pre><code>&quot;Extract all useful information: emails, phones, social links, descriptions, etc.&quot;
+</code></pre>
+<hr>
+<h3>Example 1: Basic Contact Extraction (No AI)</h3>
+<p>Perfect for simple contact scraping without AI costs.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    {&quot;url&quot;: &quot;https://example.com/contact&quot;},
+    {&quot;url&quot;: &quot;https://example.com/about&quot;}
+  ],
+  &quot;useAI&quot;: false
+}
+</code></pre>
+<p><strong>What you get</strong>: </p>
+<ul>
+<li>Email addresses</li>
+<li>Phone numbers  </li>
+<li>Social media links</li>
+<li>Page screenshots</li>
+</ul>
+<p><strong>Cost</strong>: Memory only (~$0.01 per page)</p>
+<hr>
+<h3>Example 2: AI Extraction (Free Tier - Pay Per Use)</h3>
+<p>AI extraction with usage-based billing for free users.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{&quot;url&quot;: &quot;https://apify.com/about&quot;}],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Summarize this company in 3 bullet points and extract the CEO&#39;s name&quot;
+}
+</code></pre>
+<p><strong>What you get</strong>: </p>
+<ul>
+<li>AI-generated summary</li>
+<li>CEO name</li>
+<li>Basic contacts</li>
+<li>Full cost breakdown</li>
+</ul>
+<p><strong>Cost</strong>: Memory + AI words (~$0.02-$0.05 per page)</p>
+<hr>
+<h3>Example 3: Premium AI (Paid Subscribers - Included)</h3>
+<p>Advanced AI with better accuracy and discounted rates.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{&quot;url&quot;: &quot;https://apify.com/about&quot;}],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Extract: CEO full name, primary support email, company mission statement, year founded, and number of employees if mentioned&quot;
+}
+</code></pre>
+<p><strong>What you get</strong>: </p>
+<ul>
+<li>More accurate extraction</li>
+<li>Better understanding of complex requests</li>
+<li>60% lower costs than free tier</li>
+</ul>
+<p><strong>Cost</strong>: ~$0.01 per page (GOLD tier example)</p>
+<hr>
+<h3>Example 4: Standby Mode - Data Analysis</h3>
+<p>Analyze your own data without any web scraping.</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: &quot;Product A: $299, 4.5 stars, 128 reviews\nProduct B: $399, 4.8 stars, 256 reviews\nProduct C: $199, 4.2 stars, 89 reviews&quot;,
+  &quot;aiInstructions&quot;: &quot;Convert to JSON array with fields: name, price (as number), rating, reviewCount&quot;
+}
+</code></pre>
+<p><strong>What you get</strong>: </p>
+<ul>
+<li>Structured JSON output</li>
+<li>Fast processing (no browser)</li>
+<li>No memory charges (in Standby)</li>
+</ul>
+<p><strong>Cost</strong>: AI words only</p>
+<hr>
+<h3>Example 5: Batch Processing Multiple URLs</h3>
+<p>Process many pages in one run.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    {&quot;url&quot;: &quot;https://company1.com/about&quot;},
+    {&quot;url&quot;: &quot;https://company2.com/contact&quot;},
+    {&quot;url&quot;: &quot;https://company3.com/team&quot;},
+    {&quot;url&quot;: &quot;https://company4.com/careers&quot;}
+  ],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Extract company name, industry, and all email addresses&quot;
+}
+</code></pre>
+<p><strong>What you get</strong>: </p>
+<ul>
+<li>Consistent data structure across all URLs</li>
+<li>Parallel processing for speed</li>
+<li>One dataset with all results</li>
+</ul>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Basic Extraction Output (No AI)</h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://example.com/contact&quot;,
+  &quot;title&quot;: &quot;Contact Us - Example Company&quot;,
+  &quot;basicExtraction&quot;: {
+    &quot;emails&quot;: [&quot;info@example.com&quot;, &quot;support@example.com&quot;],
+    &quot;phones&quot;: [&quot;+1-555-0100&quot;, &quot;+1-800-EXAMPLE&quot;],
+    &quot;socialLinks&quot;: [
+      &quot;https://twitter.com/example&quot;,
+      &quot;https://linkedin.com/company/example&quot;
+    ],
+    &quot;extractionMethod&quot;: &quot;regex&quot;
+  },
+  &quot;screenshot&quot;: {
+    &quot;available&quot;: true,
+    &quot;url&quot;: &quot;https://api.apify.com/v2/key-value-stores/xyz/records/screenshot-123456&quot;
+  },
+  &quot;extractionTier&quot;: &quot;FREE&quot;,
+  &quot;extractionMethod&quot;: &quot;Basic Only&quot;,
+  &quot;scrapedAt&quot;: &quot;2025-01-10T14:30:00.000Z&quot;
+}
+</code></pre>
+<hr>
+<h3>AI-Powered Extraction Output</h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://apify.com/about&quot;,
+  &quot;title&quot;: &quot;About · Apify&quot;,
+  &quot;aiExtraction&quot;: {
+    &quot;company_name&quot;: &quot;Apify&quot;,
+    &quot;ceo_name&quot;: &quot;Jan Čurn&quot;,
+    &quot;support_email&quot;: &quot;support@apify.com&quot;,
+    &quot;company_mission&quot;: &quot;Make the web more programmable&quot;,
+    &quot;year_founded&quot;: &quot;2015&quot;,
+    &quot;summary&quot;: &quot;Apify is a web scraping and automation platform that helps developers extract data from websites and automate web workflows.&quot;
+  },
+  &quot;basicExtraction&quot;: {
+    &quot;emails&quot;: [&quot;support@apify.com&quot;, &quot;hello@apify.com&quot;],
+    &quot;phones&quot;: [&quot;+420-123-456-789&quot;],
+    &quot;socialLinks&quot;: [
+      &quot;https://linkedin.com/company/apify&quot;,
+      &quot;https://twitter.com/apify&quot;
+    ]
+  },
+  &quot;aiCost&quot;: {
+    &quot;inputWords&quot;: 2836,
+    &quot;outputWords&quot;: 2606,
+    &quot;totalWords&quot;: 5442,
+    &quot;cost&quot;: &quot;$0.015981&quot;,
+    &quot;breakdown&quot;: &quot;Processed 2,836 input words, generated 2,606 output words&quot;
+  },
+  &quot;screenshot&quot;: {
+    &quot;available&quot;: true,
+    &quot;url&quot;: &quot;https://api.apify.com/v2/key-value-stores/xyz/records/screenshot-789012&quot;
+  },
+  &quot;extractionTier&quot;: &quot;PAID&quot;,
+  &quot;extractionMethod&quot;: &quot;AI-Powered + Basic&quot;,
+  &quot;userTier&quot;: &quot;GOLD&quot;,
+  &quot;scrapedAt&quot;: &quot;2025-01-10T14:30:00.000Z&quot;
+}
+</code></pre>
+<hr>
+<h3>Output Field Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+<th>Always Present</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>url</code></td>
+<td>The scraped website URL</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>HTML page title</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>aiExtraction</code></td>
+<td>AI-extracted data (structure varies by instructions)</td>
+<td>Only with AI</td>
+</tr>
+<tr>
+<td><code>basicExtraction</code></td>
+<td>Contact info (emails, phones, social links)</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>aiCost</code></td>
+<td>Detailed AI usage breakdown (words processed, cost)</td>
+<td>Only with AI</td>
+</tr>
+<tr>
+<td><code>screenshot</code></td>
+<td>Screenshot URL for visual reference</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>extractionMethod</code></td>
+<td>Method used (Basic, AI-Powered, etc.)</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>extractionTier</code></td>
+<td>User tier (FREE, PAID)</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>userTier</code></td>
+<td>Subscription level (FREE, BRONZE, SILVER, GOLD)</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><code>scrapedAt</code></td>
+<td>ISO 8601 timestamp</td>
+<td>✅ Yes</td>
+</tr>
+</tbody></table>
+<p><strong>Note</strong>: The structure of <code>aiExtraction</code> varies based on your <code>aiInstructions</code>. The AI automatically determines the best format for your requested data.</p>
+<hr>
+<h2>💰 Pricing &amp; Billing</h2>
+<h3>Understanding Costs</h3>
+<p>This actor has two billing components:</p>
+<ol>
+<li><strong>Memory-Based Billing</strong> (Normal Mode only)</li>
+<li><strong>AI Word-Based Billing</strong> (when AI is enabled)</li>
+</ol>
+<hr>
+<h3>1. Memory-Based Billing (Normal Mode Only)</h3>
+<p><strong>Charged every 30 seconds</strong> based on allocated memory. Does NOT apply in Standby Mode.</p>
+<table>
+<thead>
+<tr>
+<th>Memory</th>
+<th>Events per 30s</th>
+<th>FREE Tier</th>
+<th>GOLD Tier</th>
+<th>Savings</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>128 MB</td>
+<td>1</td>
+<td>$0.0008</td>
+<td>$0.0002</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>256 MB</td>
+<td>2</td>
+<td>$0.0016</td>
+<td>$0.0004</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>512 MB</td>
+<td>4</td>
+<td>$0.0032</td>
+<td>$0.0008</td>
+<td>75%</td>
+</tr>
+<tr>
+<td>1024 MB</td>
+<td>8</td>
+<td>$0.0064</td>
+<td>$0.0016</td>
+<td>75%</td>
+</tr>
+</tbody></table>
+<p><strong>Formula</strong>: Events = Memory (MB) ÷ 128</p>
+<p><strong>Example</strong>: Running at 256 MB for 2 minutes</p>
+<ul>
+<li><strong>FREE tier</strong>: 4 intervals × 2 events × $0.0016 = <strong>$0.0128</strong></li>
+<li><strong>GOLD tier</strong>: 4 intervals × 2 events × $0.0004 = <strong>$0.0032</strong> (75% savings)</li>
+</ul>
+<hr>
+<h3>2. AI Word-Based Billing</h3>
+<p><strong>Charged per 1,000 words processed</strong> when AI is enabled.</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Input Words (per 1K)</td>
+<td>$0.0015</td>
+<td>$0.0012</td>
+<td>$0.0010</td>
+<td>$0.0008</td>
+</tr>
+<tr>
+<td>Output Words (per 1K)</td>
+<td>$0.0045</td>
+<td>$0.0036</td>
+<td>$0.0030</td>
+<td>$0.0024</td>
+</tr>
+</tbody></table>
+<p><strong>Conversion</strong>: ~1 token = 0.75 words (approximately 4 characters)</p>
+<p><strong>Example AI extraction</strong> (typical page):</p>
+<ul>
+<li><strong>Input</strong>: 2,836 words (page content)</li>
+<li><strong>Output</strong>: 2,606 words (extracted data)</li>
+<li><strong>FREE tier</strong>: $0.00425 + $0.01173 = <strong>$0.01598</strong></li>
+<li><strong>GOLD tier</strong>: $0.00227 + $0.00625 = <strong>$0.00852</strong> (47% savings)</li>
+</ul>
+<hr>
+<h3>Complete Cost Examples</h3>
+<h4>Example 1: Basic Extraction (No AI)</h4>
+<p><strong>Scenario</strong>: Extract contacts from 5 pages, 2 minutes total, 256 MB memory</p>
+<ul>
+<li><strong>Memory Cost</strong> (FREE): $0.0128</li>
+<li><strong>AI Cost</strong>: $0 (AI disabled)</li>
+<li><strong>Total</strong>: <strong>$0.0128</strong></li>
+</ul>
+<hr>
+<h4>Example 2: AI Extraction - Free Tier</h4>
+<p><strong>Scenario</strong>: AI extract from 3 pages, 3 minutes total, 256 MB memory</p>
+<ul>
+<li><strong>Memory Cost</strong>: 6 intervals × 2 events × $0.0016 = <strong>$0.0192</strong></li>
+<li><strong>AI Cost</strong> (3 pages avg): 3 × $0.016 = <strong>$0.048</strong></li>
+<li><strong>Total</strong>: <strong>$0.0672</strong></li>
+</ul>
+<hr>
+<h4>Example 3: AI Extraction - GOLD Tier</h4>
+<p><strong>Scenario</strong>: Same as Example 2, but with GOLD subscription</p>
+<ul>
+<li><strong>Memory Cost</strong>: 6 intervals × 2 events × $0.0004 = <strong>$0.0048</strong></li>
+<li><strong>AI Cost</strong> (3 pages avg): 3 × $0.0085 = <strong>$0.0255</strong></li>
+<li><strong>Total</strong>: <strong>$0.0303</strong> (55% savings vs FREE)</li>
+</ul>
+<hr>
+<h4>Example 4: Standby Mode - Data Analysis</h4>
+<p><strong>Scenario</strong>: Analyze CSV data with 5,000 words</p>
+<ul>
+<li><strong>Memory Cost</strong>: $0 (no browser in Standby)</li>
+<li><strong>AI Cost</strong> (GOLD): ~$0.005</li>
+<li><strong>Total</strong>: <strong>$0.005</strong></li>
+</ul>
+<p><strong>Note</strong>: In Standby Mode with PPE (Pay-Per-Event), the user pays execution costs, not the creator.</p>
+<hr>
+<h3>Upgrade Benefits</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Free Tier</th>
+<th>Paid Tiers (BRONZE/SILVER/GOLD)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Basic Extraction</td>
+<td>✅ Always included</td>
+<td>✅ Always included</td>
+</tr>
+<tr>
+<td>AI Model</td>
+<td>Simple (OpenRouter)</td>
+<td><strong>Advanced (higher accuracy)</strong></td>
+</tr>
+<tr>
+<td>AI Billing</td>
+<td>Pay-per-use</td>
+<td><strong>20-47% discounts</strong></td>
+</tr>
+<tr>
+<td>Memory Rates</td>
+<td>Standard</td>
+<td><strong>Up to 75% savings</strong></td>
+</tr>
+<tr>
+<td>AI Accuracy</td>
+<td>Good</td>
+<td><strong>Superior</strong></td>
+</tr>
+<tr>
+<td>Complex Instructions</td>
+<td>Limited</td>
+<td><strong>Excellent</strong></td>
+</tr>
+<tr>
+<td>Support Priority</td>
+<td>Standard</td>
+<td><strong>Priority response</strong></td>
+</tr>
+</tbody></table>
+<hr>
+<h3>Cost-Saving Tips</h3>
+<ol>
+<li><strong>Use Basic Extraction First</strong>: If you only need emails/phones, disable AI to save costs</li>
+<li><strong>Batch Processing</strong>: Process multiple URLs in one run to amortize startup costs</li>
+<li><strong>Lower Memory</strong>: Start with 256 MB and increase only if needed</li>
+<li><strong>Upgrade for Volume</strong>: If processing 50+ pages/month with AI, paid tiers save money</li>
+<li><strong>Use Standby Mode</strong>: For data analysis tasks, Standby Mode avoids memory charges</li>
+</ol>
+<hr>
+<h2>🎯 Use Cases</h2>
+<h3>🏢 Lead Generation &amp; Sales Intelligence</h3>
+<p>Extract comprehensive contact information and company data for sales prospecting.</p>
+<p><strong>Example Tasks</strong>:</p>
+<ul>
+<li>Build targeted prospect lists from company websites</li>
+<li>Extract decision-maker names and contact details</li>
+<li>Gather company descriptions for personalized outreach</li>
+<li>Find direct phone numbers and email addresses</li>
+</ul>
+<p><strong>Sample Instructions</strong>:</p>
+<pre><code>&quot;Extract CEO name, CFO name, main company email, phone number, and LinkedIn profile&quot;
+</code></pre>
+<pre><code>&quot;Find all team members listed with their job titles and email addresses&quot;
+</code></pre>
+<pre><code>&quot;Get company size, industry, and all available contact methods&quot;
+</code></pre>
+<p><strong>Real-World Workflow</strong>:</p>
+<ol>
+<li>Input list of 50 competitor/prospect websites</li>
+<li>Extract key decision-makers and contacts</li>
+<li>Export to CSV for CRM import</li>
+<li>Use data for personalized outreach campaigns</li>
+</ol>
+<hr>
+<h3>📊 Market Research &amp; Competitive Analysis</h3>
+<p>Analyze competitor offerings, pricing, and market positioning.</p>
+<p><strong>Example Tasks</strong>:</p>
+<ul>
+<li>Compare pricing plans across multiple competitors</li>
+<li>Extract product features and specifications</li>
+<li>Monitor changes in competitor messaging</li>
+<li>Analyze value propositions</li>
+</ul>
+<p><strong>Sample Instructions</strong>:</p>
+<pre><code>&quot;List all pricing tiers with features and monthly costs&quot;
+</code></pre>
+<pre><code>&quot;Summarize the company&#39;s main value proposition in 2 sentences&quot;
+</code></pre>
+<pre><code>&quot;Extract all product names with their descriptions and target audience&quot;
+</code></pre>
+<pre><code>&quot;Compare this company&#39;s features against industry standard offerings&quot;
+</code></pre>
+<p><strong>Real-World Workflow</strong>:</p>
+<ol>
+<li>Scrape 20 competitor pricing pages</li>
+<li>Extract structured pricing data</li>
+<li>Generate comparison matrix</li>
+<li>Identify pricing gaps and opportunities</li>
+</ol>
+<hr>
+<h3>🤖 Data Processing &amp; Transformation</h3>
+<p>Transform unstructured data into structured formats.</p>
+<p><strong>Example Tasks</strong>:</p>
+<ul>
+<li>Convert CSV to JSON with custom fields</li>
+<li>Clean and normalize messy datasets</li>
+<li>Extract specific information from documents</li>
+<li>Merge and deduplicate data sources</li>
+</ul>
+<p><strong>Sample Instructions</strong>:</p>
+<pre><code>&quot;Convert this CSV to JSON array with fields: name, email, company, title&quot;
+</code></pre>
+<pre><code>&quot;Extract all dates, amounts, and invoice numbers from this text&quot;
+</code></pre>
+<pre><code>&quot;Normalize phone numbers to E.164 format and remove duplicates&quot;
+</code></pre>
+<pre><code>&quot;Parse job postings and extract: position, salary range, location, requirements&quot;
+</code></pre>
+<p><strong>Real-World Workflow</strong>:</p>
+<ol>
+<li>Upload raw CSV/text data via Standby Mode</li>
+<li>Specify desired output structure</li>
+<li>Get clean, structured JSON</li>
+<li>Import directly into your database</li>
+</ol>
+<hr>
+<h3>📝 Content Research &amp; Citation Management</h3>
+<p>Gather information for content creation and fact-checking.</p>
+<p><strong>Example Tasks</strong>:</p>
+<ul>
+<li>Research topics with source attribution</li>
+<li>Extract statistics and data points</li>
+<li>Generate article summaries</li>
+<li>Collect citation information</li>
+</ul>
+<p><strong>Sample Instructions</strong>:</p>
+<pre><code>&quot;Extract all statistics mentioned with their sources&quot;
+</code></pre>
+<p>&quot;Generate a 5-bullet-point summary of the main arguments&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;List all studies/papers cited with publication dates and authors&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;Extract key takeaways and actionable insights&quot;</p>
+<pre><code>
+**Real-World Workflow**:
+1. Input list of research articles/blogs
+2. Extract key facts and statistics
+3. Generate summary report
+4. Use as research base for content creation
+
+---
+
+### 🏪 E-Commerce &amp; Product Intelligence
+
+Monitor product listings, reviews, and market trends.
+
+**Example Tasks**:
+- Extract product specifications
+- Monitor price changes
+- Analyze review sentiment
+- Track competitor inventory
+
+**Sample Instructions**:
+</code></pre>
+<p>&quot;Extract product name, price, rating, and number of reviews&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;List all product features and specifications in JSON format&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;Summarize top 3 positive and negative points from reviews&quot;</p>
+<pre><code>
+**Real-World Workflow**:
+1. Scrape competitor product pages
+2. Extract pricing and features
+3. Monitor changes daily
+4. Adjust your pricing strategy accordingly
+
+---
+
+### 📧 Email Finder &amp; Contact Enrichment
+
+Discover and verify contact information for outreach.
+
+**Example Tasks**:
+- Find verified email addresses
+- Extract phone numbers with validation
+- Discover social media profiles
+- Build contact databases
+
+**Sample Instructions**:
+</code></pre>
+<p>&quot;Find all email addresses and categorize as: sales, support, general&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;Extract contact form URL, main phone, and support email&quot;</p>
+<pre><code>
+</code></pre>
+<p>&quot;List team members with their roles and LinkedIn profiles&quot;</p>
+<pre><code>
+**Real-World Workflow**:
+1. Input list of target company websites
+2. Extract all contact methods
+3. Verify and categorize contacts
+4. Export to your CRM or email tool
+
+---
+
+## 🔌 API Usage
+
+### Method 1: Run Actor via Apify API
+
+Standard actor execution for batch processing.
+
+```bash
+curl -X POST &quot;https://api.apify.com/v2/acts/IeZZMR1Uv6J9h7pdS/runs?token=$APIFY_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;startUrls&quot;: [
+      {&quot;url&quot;: &quot;https://apify.com/about&quot;},
+      {&quot;url&quot;: &quot;https://example.com/contact&quot;}
+    ],
+    &quot;useAI&quot;: true,
+    &quot;aiInstructions&quot;: &quot;Extract company info and contact details&quot;
+  }&#39;
+</code></pre>
+<p><strong>Response</strong>:</p>
+<pre><code class="language-json">{
+  &quot;data&quot;: {
+    &quot;id&quot;: &quot;run_abc123xyz&quot;,
+    &quot;status&quot;: &quot;RUNNING&quot;,
+    &quot;defaultDatasetId&quot;: &quot;dataset_xyz789&quot;
+  }
+}
+</code></pre>
+<p><strong>Then fetch results</strong>:</p>
+<pre><code class="language-bash">curl &quot;https://api.apify.com/v2/datasets/dataset_xyz789/items?token=$APIFY_TOKEN&quot;
+</code></pre>
+<hr>
+<h3>Method 2: Standby Mode (Real-Time API)</h3>
+<p>Fast, synchronous responses for real-time applications.</p>
+<h4>Web Scraping in Standby Mode</h4>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--ai-lead-extractor.apify.actor?token=YOUR_STANDBY_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;url&quot;: &quot;https://example.com/about&quot;,
+    &quot;useAI&quot;: true,
+    &quot;aiInstructions&quot;: &quot;Extract company name, description, and contact email&quot;
+  }&#39;
+</code></pre>
+<p><strong>Response</strong> (immediate):</p>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://example.com/about&quot;,
+  &quot;aiExtraction&quot;: {
+    &quot;company_name&quot;: &quot;Example Corp&quot;,
+    &quot;description&quot;: &quot;Leading provider of...&quot;,
+    &quot;contact_email&quot;: &quot;info@example.com&quot;
+  },
+  &quot;basicExtraction&quot;: {
+    &quot;emails&quot;: [&quot;info@example.com&quot;],
+    &quot;phones&quot;: [&quot;+1-555-0100&quot;]
+  }
+}
+</code></pre>
+<hr>
+<h4>Data Analysis in Standby Mode</h4>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--ai-lead-extractor.apify.actor?token=YOUR_STANDBY_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;data&quot;: &quot;Alice,alice@example.com,CEO\nBob,bob@example.com,CTO\nCarol,carol@example.com,CFO&quot;,
+    &quot;aiInstructions&quot;: &quot;Convert to JSON array with fields: name, email, role&quot;
+  }&#39;
+</code></pre>
+<p><strong>Response</strong> (immediate):</p>
+<pre><code class="language-json">[
+  {&quot;name&quot;: &quot;Alice&quot;, &quot;email&quot;: &quot;alice@example.com&quot;, &quot;role&quot;: &quot;CEO&quot;},
+  {&quot;name&quot;: &quot;Bob&quot;, &quot;email&quot;: &quot;bob@example.com&quot;, &quot;role&quot;: &quot;CTO&quot;},
+  {&quot;name&quot;: &quot;Carol&quot;, &quot;email&quot;: &quot;carol@example.com&quot;, &quot;role&quot;: &quot;CFO&quot;}
+]
+</code></pre>
+<h2>🔧 Advanced Configuration</h2>
+<h3>Custom AI Instructions Best Practices</h3>
+<p><strong>Be Specific</strong>: </p>
+<pre><code>✅ &quot;Extract: CEO full name, primary support email, company mission (max 20 words)&quot;
+❌ &quot;Get company info&quot;
+</code></pre>
+<p><strong>Specify Format</strong>:</p>
+<pre><code>✅ &quot;Return as JSON with fields: name, email, phone. Phone in E.164 format.&quot;
+❌ &quot;Give me contact details&quot;
+</code></pre>
+<p><strong>Set Boundaries</strong>:</p>
+<pre><code>✅ &quot;Summarize in exactly 3 bullet points, max 15 words each&quot;
+❌ &quot;Summarize the page&quot;
+</code></pre>
+<p><strong>Use Examples</strong>:</p>
+<pre><code>✅ &quot;Extract pricing like: {tier: &#39;Pro&#39;, price: 29, features: [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;]}&quot;
+❌ &quot;Extract pricing&quot;
+</code></pre>
+<hr>
+<h3>Memory Allocation Guide</h3>
+<p>Choose memory based on your needs:</p>
+<table>
+<thead>
+<tr>
+<th>Memory</th>
+<th>Use Case</th>
+<th>Typical Speed</th>
+<th>Cost (FREE)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>128 MB</td>
+<td>Simple pages, no JS</td>
+<td>15-30 sec</td>
+<td>$0.0008/30s</td>
+</tr>
+<tr>
+<td>256 MB</td>
+<td><strong>Recommended default</strong></td>
+<td>10-20 sec</td>
+<td>$0.0016/30s</td>
+</tr>
+<tr>
+<td>512 MB</td>
+<td>Complex JS sites</td>
+<td>5-10 sec</td>
+<td>$0.0032/30s</td>
+</tr>
+<tr>
+<td>1024 MB</td>
+<td>Heavy pages, many images</td>
+<td>3-7 sec</td>
+<td>$0.0064/30s</td>
+</tr>
+</tbody></table>
+<p><strong>Recommendation</strong>: Start with 256 MB. Increase only if you see timeout errors or slow performance.</p>
+<hr>
+<h3>Handling Large Datasets</h3>
+<p><strong>Batch Processing</strong> (Normal Mode):</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    {&quot;url&quot;: &quot;https://site1.com&quot;},
+    {&quot;url&quot;: &quot;https://site2.com&quot;},
+    {&quot;url&quot;: &quot;https://site3.com&quot;}
+    // ... up to 1000+ URLs
+  ],
+  &quot;useAI&quot;: true,
+  &quot;aiInstructions&quot;: &quot;Extract contacts&quot;
+}
+</code></pre>
+<p><strong>Pagination Support</strong>:</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    {&quot;url&quot;: &quot;https://example.com/page?p=1&quot;},
+    {&quot;url&quot;: &quot;https://example.com/page?p=2&quot;},
+    {&quot;url&quot;: &quot;https://example.com/page?p=3&quot;}
+  ]
+}
+</code></pre>
+<hr>
+<h3>Error Handling &amp; Retries</h3>
+<p>The actor automatically handles common errors:</p>
+<ul>
+<li><strong>Timeouts</strong>: Automatic retry with increased timeout</li>
+<li><strong>Network errors</strong>: 3 retry attempts with exponential backoff</li>
+<li><strong>AI failures</strong>: Graceful fallback to basic extraction</li>
+<li><strong>Invalid URLs</strong>: Skipped with error logged</li>
+</ul>
+<p><strong>Error Output Example</strong>:</p>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://invalid-site.com&quot;,
+  &quot;error&quot;: &quot;Page timeout after 60 seconds&quot;,
+  &quot;errorType&quot;: &quot;TIMEOUT&quot;,
+  &quot;basicExtraction&quot;: null,
+  &quot;scrapedAt&quot;: &quot;2025-01-10T14:30:00.000Z&quot;
+}
+</code></pre>
+<hr>
+<h2>📞 Support</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h3>Documentation</h3>
+<ul>
+<li>📚 <strong>Apify Docs</strong>: <a href="https://docs.apify.com">docs.apify.com</a></li>
+<li>🔧 <strong>API Reference</strong>: <a href="https://docs.apify.com/api/v2">docs.apify.com/api/v2</a></li>
+<li>🎓 <strong>Tutorials</strong>: Check our blog for guides and examples</li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<h2>📄 License</h2>
+<p>This actor is provided as-is for use on the Apify platform. Use responsibly and in accordance with applicable laws and website terms of service.</p>
+<hr>
+<h2>⚖️ Legal &amp; Compliance</h2>
+<p>This actor extracts <strong>publicly available</strong> information from websites. Ensure your use complies with:</p>
+<ul>
+<li>✅ Website Terms of Service</li>
+<li>✅ Copyright laws</li>
+<li>✅ Data protection regulations (GDPR, CCPA)</li>
+<li>✅ Robots.txt directives</li>
+<li>✅ Your jurisdiction&#39;s laws</li>
+</ul>
+<p><strong>You are responsible</strong> for how you use extracted data. Use ethically and legally.</p>
+<hr>
+<h2>🚀 Ready to Start?</h2>
+<ol>
+<li><strong><a href="https://apify.com?fpr=smcx63">Sign up for Apify</a></strong> (free tier available)</li>
+<li><strong><a href="https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63">Try AI Lead Extractor</a></strong></li>
+<li><strong>Configure your first extraction</strong></li>
+<li><strong>Get results in seconds</strong></li>
+</ol>
+<p><strong>Have questions?</strong> Contact us at <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +1069,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +1077,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'ai-lead-extractor';
-    </script>
 </body>
 </html>

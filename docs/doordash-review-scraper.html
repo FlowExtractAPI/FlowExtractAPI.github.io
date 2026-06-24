@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>DoorDash Review Scraper | FlowExtract API</title>
+    <meta name="title" content="DoorDash Review Scraper | FlowExtract API">
+    <meta name="description" content="Scrape customer reviews from DoorDash stores by direct store URL.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/doordash-review-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="DoorDash Review Scraper | FlowExtract API">
+    <meta property="og:description" content="Scrape customer reviews from DoorDash stores by direct store URL.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/doordash-review-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-U4m85QDKcr-QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-w4fpahwJo5-6ea47d23-39">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DoorDash Review Scraper | FlowExtract API">
+    <meta name="twitter:description" content="Scrape customer reviews from DoorDash stores by direct store URL.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-U4m85QDKcr-QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-w4fpahwJo5-6ea47d23-39">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"DoorDash Review Scraper","description":"Scrape customer reviews from DoorDash stores by direct store URL.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/doordash-review-scraper.html","sameAs":"https://apify.com/dz_omar/doordash-review-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-U4m85QDKcr-QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-w4fpahwJo5-6ea47d23-39"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run DoorDash Review Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open DoorDash Review Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is DoorDash Review Scraper free?","acceptedAnswer":{"@type":"Answer","text":"DoorDash Review Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-U4m85QDKcr-QOYItfcce9nmWZJnD-actor-1QIdz853TNus9Kpco-w4fpahwJo5-6ea47d23-39" alt="DoorDash Review Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">DoorDash Review Scraper</h1>
+                <p class="actor-hero-desc">Scrape customer reviews from DoorDash stores by direct store URL.</p>
+                <a href="https://apify.com/dz_omar/doordash-review-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">DoorDash Review Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation &amp; business. Scrape customer reviews from any DoorDash store with full reviewer profiles, ordered item details, vote ratings, and photo attachments. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>review Content full review text, star rating, verification status, and submission timestamp</li><li>reviewer Identity display name, contributor tier (Local Expert, Emerging Expert), contribution count, and profile URI</li><li>ordered Items every menu item from the associated order, with name, price, CDN image, and upvote/downvote rating</li><li>review Photos all photos attached to the review, with UUID, upload timestamp, and tagged item cross-reference</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run DoorDash Review Scraper?</summary><p>Open DoorDash Review Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is DoorDash Review Scraper free?</summary><p>DoorDash Review Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>💬 DoorDash Review Scraper</h1>
+<p><strong>Scrape customer reviews from any DoorDash store  with full reviewer profiles, ordered item details, vote ratings, and photo attachments.</strong></p>
+<h2>🎬 Video Tutorial</h2>
+<p><a href="https://youtube.com/@FlowExtractAPI"><img src="https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube" alt="Watch the Tutorial"></a></p>
+<p><a href="https://www.youtube.com/watch?v=q5PGi7bmdXw">https://www.youtube.com/watch?v=q5PGi7bmdXw</a></p>
+<hr>
+<h2>Key Features</h2>
+<h3>Customer Review Extraction</h3>
+<ul>
+<li><strong>Review Content</strong>  full review text, star rating, verification status, and submission timestamp</li>
+<li><strong>Reviewer Identity</strong>  display name, contributor tier (Local Expert, Emerging Expert), contribution count, and profile URI</li>
+<li><strong>Ordered Items</strong>  every menu item from the associated order, with name, price, CDN image, and upvote/downvote rating</li>
+<li><strong>Review Photos</strong>  all photos attached to the review, with UUID, upload timestamp, and tagged item cross-reference</li>
+<li><strong>Order Linkage</strong>  <code>order_uuid</code> ties each review back to its originating order</li>
+<li><strong>Moderation &amp; Quality</strong>  <code>moderation_status</code> and <code>quality_rating_v2</code> as returned by DoorDash&#39;s internal scoring</li>
+<li><strong>Platform Metadata</strong>  experience type, review source, and helpful count</li>
+</ul>
+<hr>
+<h2>Quick Start</h2>
+<h3>Scrape reviews from a specific store</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.doordash.com/store/freds-20919&quot; }
+  ],
+  &quot;maxReviews&quot;: 50
+}
+</code></pre>
+<h3>Fetch all available reviews</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.doordash.com/store/freds-20919&quot; }
+  ],
+  &quot;maxReviews&quot;: 0
+}
+</code></pre>
+<h3>Scrape multiple stores in one run</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.doordash.com/store/freds-20919&quot; },
+    { &quot;url&quot;: &quot;https://www.doordash.com/store/shake-shack-12345&quot; }
+  ],
+  &quot;maxReviews&quot;: 100
+}
+</code></pre>
+<hr>
+<h2>📋 Input Configuration</h2>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td>✅</td>
+<td></td>
+<td>One or more direct DoorDash store URLs to scrape reviews from</td>
+</tr>
+<tr>
+<td><code>maxReviews</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>10</td>
+<td>Max reviews to fetch per store. Set to <code>0</code> to fetch all available reviews.</td>
+</tr>
+</tbody></table>
+<h3>Supported URL Formats</h3>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Example URL</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Store (with slug)</td>
+<td><code>https://www.doordash.com/store/freds-manhattan-20919</code></td>
+</tr>
+<tr>
+<td>Store (numeric ID)</td>
+<td><code>https://www.doordash.com/store/20919</code></td>
+</tr>
+<tr>
+<td>Store (full URL)</td>
+<td><code>https://www.doordash.com/store/20919?cursor=...</code></td>
+</tr>
+</tbody></table>
+<p>This Actor only accepts direct store URLs. Search URLs are not supported  use the full <a href="https://apify.com/dz_omar/doordash-scraper?fpr=smcx63">DoorDash Scraper</a> for search-based store discovery.</p>
+<hr>
+<h2>📤 Output Structure</h2>
+<p>Each run produces one dataset record per customer review, identified by <code>record_type: &quot;review&quot;</code>.</p>
+<pre><code class="language-json">{
+  &quot;record_type&quot;: &quot;review&quot;,
+  &quot;store_id&quot;: &quot;20919&quot;,
+  &quot;review_id&quot;: &quot;4e36ee56-a322-4ca6-984f-ed0f75223cb7&quot;,
+  &quot;reviewer_name&quot;: &quot;Hope T&quot;,
+  &quot;reviewer_display_name&quot;: &quot;Hope T&quot;,
+  &quot;num_stars&quot;: 5,
+  &quot;review_text&quot;: &quot;Fred&#39;s makes some of the best Burgers I&#39;ve ever had in this city. Two juicy patties are so filling and fresh every time I get it delivered. One of my faves to grab for lunch.&quot;,
+  &quot;reviewed_at&quot;: &quot;2025-06-06T22:30:08.047245Z&quot;,
+  &quot;is_verified&quot;: true,
+  &quot;tagged_item_ids&quot;: [],
+  &quot;items&quot;: [
+    {
+      &quot;id&quot;: &quot;49793295&quot;,
+      &quot;name&quot;: &quot;Burger Stack&quot;,
+      &quot;price&quot;: {
+        &quot;unit_amount&quot;: 1375,
+        &quot;currency&quot;: &quot;USD&quot;,
+        &quot;display_string&quot;: &quot;$13.75&quot;
+      },
+      &quot;image&quot;: {
+        &quot;url&quot;: &quot;https://img.cdn4dd.com/...&quot;
+      },
+      &quot;rating_info&quot;: {
+        &quot;rating_type&quot;: &quot;RATING_TYPE_VOTE_RATING&quot;,
+        &quot;rating_value&quot;: &quot;RATING_VALUE_UPVOTE&quot;
+      },
+      &quot;orderability_info&quot;: {
+        &quot;orderable&quot;: true,
+        &quot;orderable_path&quot;: [{ &quot;menu_id&quot;: &quot;530519&quot;, &quot;category_id&quot;: &quot;6213939&quot; }]
+      }
+    }
+  ],
+  &quot;reviewer_data&quot;: {
+    &quot;display_name&quot;: &quot;Hope T&quot;,
+    &quot;description&quot;: &quot;Local Expert • 21 contributions&quot;,
+    &quot;profile_image&quot;: { &quot;url&quot;: &quot;&quot; },
+    &quot;id&quot;: &quot;29224299&quot;,
+    &quot;creator_profile_status_icon&quot;: &quot;local_expert_fill_16&quot;,
+    &quot;creator_profile_uri&quot;: &quot;/consumer/profile/29224299&quot;
+  },
+  &quot;review_photo_details&quot;: [
+    {
+      &quot;photo_url&quot;: &quot;https://img.cdn4dd.com/u/media/ac42dc72-003a-48c1-b679-66b4806f558a-npp.jpg&quot;,
+      &quot;photo_uuid&quot;: &quot;ac42dc72-003a-48c1-b679-66b4806f558a&quot;,
+      &quot;created_at&quot;: &quot;2025-06-06T22:30:08.340983Z&quot;,
+      &quot;photo_tagged_items&quot;: [
+        {
+          &quot;item_id&quot;: &quot;49793295&quot;,
+          &quot;item_name&quot;: &quot;Burger Stack&quot;,
+          &quot;price&quot;: { &quot;display_string&quot;: &quot;$13.75&quot; }
+        }
+      ]
+    }
+  ],
+  &quot;order_uuid&quot;: &quot;96cba90a-6f4e-44d5-ba42-007d3a3a9efe&quot;,
+  &quot;experience&quot;: &quot;DOORDASH&quot;,
+  &quot;review_source&quot;: &quot;DOORDASH&quot;,
+  &quot;consumer_review_source&quot;: &quot;CONSUMER_REVIEW_SOURCE_DOORDASH&quot;,
+  &quot;helpful_count&quot;: &quot;0&quot;,
+  &quot;marked_helpful&quot;: false,
+  &quot;moderation_status&quot;: &quot;MODERATION_STATUS_APPROVED&quot;,
+  &quot;quality_rating_v2&quot;: 3,
+  &quot;_source&quot;: &quot;doordash-review-scraper&quot;,
+  &quot;_scrapedAt&quot;: &quot;2026-05-24T21:05:34.717Z&quot;
+}
+</code></pre>
+<h3>Field Reference</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>record_type</code></td>
+<td>string</td>
+<td>Always <code>&quot;review&quot;</code></td>
+</tr>
+<tr>
+<td><code>store_id</code></td>
+<td>string</td>
+<td>DoorDash store identifier</td>
+</tr>
+<tr>
+<td><code>review_id</code></td>
+<td>string</td>
+<td>UUID uniquely identifying this review. Mirrors <code>consumer_review_uuid</code></td>
+</tr>
+<tr>
+<td><code>consumer_review_uuid</code></td>
+<td>string</td>
+<td>Canonical DoorDash review UUID</td>
+</tr>
+<tr>
+<td><code>reviewer_name</code></td>
+<td>string</td>
+<td>Reviewer display name</td>
+</tr>
+<tr>
+<td><code>reviewer_display_name</code></td>
+<td>string</td>
+<td>Display name as shown in the review UI</td>
+</tr>
+<tr>
+<td><code>num_stars</code></td>
+<td>integer</td>
+<td>Star rating given by the reviewer (1–5)</td>
+</tr>
+<tr>
+<td><code>review_text</code></td>
+<td>string</td>
+<td>Full plain-text review body</td>
+</tr>
+<tr>
+<td><code>reviewed_at</code></td>
+<td>string</td>
+<td>ISO 8601 UTC timestamp of review submission</td>
+</tr>
+<tr>
+<td><code>is_verified</code></td>
+<td>boolean</td>
+<td>True when the review is tied to a confirmed order</td>
+</tr>
+<tr>
+<td><code>tagged_item_ids</code></td>
+<td>array</td>
+<td>Item IDs explicitly tagged in the review. Often empty</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td>array</td>
+<td>Menu items in the associated order  name, price, image, vote rating, orderability path</td>
+</tr>
+<tr>
+<td><code>reviewer_data</code></td>
+<td>object</td>
+<td>Reviewer profile  display name, contributor badge, profile URI, internal ID</td>
+</tr>
+<tr>
+<td><code>review_photo_details</code></td>
+<td>array</td>
+<td>Photos attached to the review, with UUID, timestamp, and tagged item cross-reference. Absent when no photos were uploaded</td>
+</tr>
+<tr>
+<td><code>order_uuid</code></td>
+<td>string</td>
+<td>UUID of the order this review is linked to</td>
+</tr>
+<tr>
+<td><code>experience</code></td>
+<td>string</td>
+<td>Platform experience type e.g. <code>&quot;DOORDASH&quot;</code></td>
+</tr>
+<tr>
+<td><code>review_source</code></td>
+<td>string</td>
+<td>Platform that originated the review e.g. <code>&quot;DOORDASH&quot;</code></td>
+</tr>
+<tr>
+<td><code>consumer_review_source</code></td>
+<td>string</td>
+<td>Enum string for consumer review origin</td>
+</tr>
+<tr>
+<td><code>helpful_count</code></td>
+<td>string</td>
+<td>Number of users who marked the review helpful</td>
+</tr>
+<tr>
+<td><code>marked_helpful</code></td>
+<td>boolean</td>
+<td>Whether the current viewer marked this review helpful</td>
+</tr>
+<tr>
+<td><code>moderation_status</code></td>
+<td>string</td>
+<td>Content moderation outcome e.g. <code>&quot;MODERATION_STATUS_APPROVED&quot;</code></td>
+</tr>
+<tr>
+<td><code>quality_rating_v2</code></td>
+<td>integer</td>
+<td>DoorDash internal quality score for the review</td>
+</tr>
+<tr>
+<td><code>_source</code></td>
+<td>string</td>
+<td>Always <code>&quot;doordash-review-scraper&quot;</code></td>
+</tr>
+<tr>
+<td><code>_scrapedAt</code></td>
+<td>string</td>
+<td>ISO 8601 timestamp of when this record was scraped</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📊 Pre-Configured Dataset Views</h2>
+<h3>1. ⭐ Review Overview</h3>
+<p>All reviews in a flat table  one row per review with core fields.</p>
+<p><strong>Fields:</strong> store ID, review ID, reviewer name, star rating, review text, reviewed at, verified status, moderation status, helpful count, scraped at</p>
+<h3>2. 🍔 Ordered Items</h3>
+<p>Flattened view of the items associated with each review  useful for linking reviews to menu performance.</p>
+<p><strong>Fields:</strong> store ID, review ID, reviewer name, stars, item photo, item name, price, item vote rating, orderable status</p>
+<h3>3. 👤 Reviewer Profiles</h3>
+<p>Reviewer identity and contribution data  one row per review.</p>
+<p><strong>Fields:</strong> display name, contributor badge, reviewer ID, profile URI, star rating, reviewed at, experience, review source, order UUID</p>
+<h3>4. 📸 Review Photos</h3>
+<p>All attached review photos with tagged item cross-reference  one row per review.</p>
+<p><strong>Fields:</strong> store ID, review ID, reviewer name, photo, photo UUID, uploaded at, tagged item name, tagged item price</p>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<h3>Review Availability</h3>
+<ul>
+<li>Not all stores have public reviews. If a store has no reviews, no records are pushed for that store.</li>
+<li>DoorDash may paginate reviews  set <code>maxReviews: 0</code> to ensure all available reviews are fetched.</li>
+<li>Review counts visible on the store page may differ from the number of reviews returned by the reviews API.</li>
+</ul>
+<h3>Photo Attachments</h3>
+<ul>
+<li>The <code>review_photo_details</code> field is absent (not null) on reviews where the reviewer did not upload photos.</li>
+<li><code>rating_info</code> inside <code>items</code> may be an empty object <code>{}</code> when the reviewer did not vote on individual items.</li>
+</ul>
+<h3>Legal Considerations</h3>
+<p>This Actor extracts publicly available data from DoorDash. Users must:</p>
+<ul>
+<li>Comply with DoorDash&#39;s Terms of Service</li>
+<li>Follow applicable data protection laws (GDPR, CCPA, etc.)</li>
+<li>Use extracted data responsibly and ethically</li>
+</ul>
+<p><strong>The Actor creator is not responsible for how users utilize the extracted data.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🍽️ Food &amp; Delivery</h3>
+<p><strong><a href="https://apify.com/dz_omar/doordash-scraper?fpr=smcx63">DoorDash Scraper</a></strong>
+Scrape store listings, menus, featured items, and customer reviews from DoorDash.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63">Realtor.com Scraper</a></strong>
+Extract US property listings from Realtor.com. Pricing, agent contacts, tax history, AVM estimates, nearby schools, flood and noise data, and full listing history.</p>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista.</p>
+<p><strong><a href="https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63">Leboncoin.fr Scraper</a></strong>
+Extract French classified listings from Leboncoin  real estate, vehicles, jobs, and more.</p>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | Downloader &amp; Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | Downloader &amp; Transcript</a></strong>
+Download Loom videos and extract transcripts.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research.</p>
+<p><strong><a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63">LinkedIn Ad Library Scraper</a></strong>
+Extract comprehensive advertising data from LinkedIn&#39;s Ad Library.</p>
+<hr>
+<p><strong>Ready to extract DoorDash reviews?</strong> <a href="https://apify.com/dz_omar/doordash-review-scraper?fpr=smcx63">Start using DoorDash Review Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/doordash-review-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

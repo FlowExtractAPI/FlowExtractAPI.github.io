@@ -1,0 +1,21 @@
+{
+  "slug": "leboncoin-scraper",
+  "_drafted": true,
+  "intro": "Leboncoin.fr Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Extract listings from any leboncoin.fr search URL price, location, seller contact, photos, surface, rooms, energy rating, and all category-specific attributes. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "100 ads → ~10–15 seconds",
+    "1,000 ads → ~1–2 minutes",
+    "5,000 ads → ~3–5 minutes",
+    "exponential backoff with 10 retries on failed requests"
+  ],
+  "faq": [
+    {
+      "q": "How do I run Leboncoin.fr Scraper?",
+      "a": "Open Leboncoin.fr Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Leboncoin.fr Scraper free?",
+      "a": "Leboncoin.fr Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Transcript Extractor - Video Captions to Text | FlowExtract API</title>
+    <meta name="title" content="YouTube Transcript Extractor - Video Captions to Text | FlowExtract API">
+    <meta name="description" content="Extract complete transcripts with precise timestamps and comprehensive video metadata from any YouTube video - fast, reliable, and built for scale.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-transcript-metadata-extractor.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Transcript Extractor - Video Captions to Text | FlowExtract API">
+    <meta property="og:description" content="Extract complete transcripts with precise timestamps and comprehensive video metadata from any YouTube video - fast, reliable, and built for scale.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-transcript-metadata-extractor.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/2b1swxVReq4wrMGdaXr4Xnap65o3Mb0m_JFRYNraJQ4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3IteVBWa2U2bFBuZk1tUlpVWDYtbkNmOU9HbGg2TC1pbWFnZXMucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Transcript Extractor - Video Captions to Text | FlowExtract API">
+    <meta name="twitter:description" content="Extract complete transcripts with precise timestamps and comprehensive video metadata from any YouTube video - fast, reliable, and built for scale.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/2b1swxVReq4wrMGdaXr4Xnap65o3Mb0m_JFRYNraJQ4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3IteVBWa2U2bFBuZk1tUlpVWDYtbkNmOU9HbGg2TC1pbWFnZXMucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🎬 YouTube Transcript & Metadata Extractor","description":"Extract complete transcripts with precise timestamps and comprehensive video metadata from any YouTube video - fast, reliable, and built for scale.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-transcript-metadata-extractor.html","sameAs":"https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/2b1swxVReq4wrMGdaXr4Xnap65o3Mb0m_JFRYNraJQ4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3IteVBWa2U2bFBuZk1tUlpVWDYtbkNmOU9HbGg2TC1pbWFnZXMucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 🎬 YouTube Transcript & Metadata Extractor?","acceptedAnswer":{"@type":"Answer","text":"Open 🎬 YouTube Transcript & Metadata Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 🎬 YouTube Transcript & Metadata Extractor free?","acceptedAnswer":{"@type":"Answer","text":"🎬 YouTube Transcript & Metadata Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Comparison: Why Choose This Actor?","acceptedAnswer":{"@type":"Answer","text":"| Feature | This Actor | Manual Copy-Paste | Other Tools | |---------|------------|-------------------|-------------|"}},{"@type":"Question","name":"Need Help?","acceptedAnswer":{"@type":"Answer","text":"📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,720 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/2b1swxVReq4wrMGdaXr4Xnap65o3Mb0m_JFRYNraJQ4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3IteVBWa2U2bFBuZk1tUlpVWDYtbkNmOU9HbGg2TC1pbWFnZXMucG5n.png" alt="🎬 YouTube Transcript &amp; Metadata Extractor" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">🎬 YouTube Transcript &amp; Metadata Extractor</h1>
+                <p class="actor-hero-desc">Extract complete transcripts with precise timestamps and comprehensive video metadata from any YouTube video - fast, reliable, and built for scale.</p>
+                <a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">🎬 YouTube Transcript &amp; Metadata Extractor is a ready-to-run Apify actor from FlowExtract API for social media. Extract YouTube transcripts, subtitles, and complete video metadata in seconds - no manual work, no copy-paste, just pure automated data extraction. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>clean transcript: Remove &quot;um&quot;, &quot;uh&quot;, filler words</li><li>include timestamps: Get second-by-second text timing</li><li>extract comments: Pull top comments with replies (NEW!)</li><li>repurpose videos into blogs - Extract transcript, feed to AI, generate 5 articles</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 🎬 YouTube Transcript &amp; Metadata Extractor?</summary><p>Open 🎬 YouTube Transcript &amp; Metadata Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 🎬 YouTube Transcript &amp; Metadata Extractor free?</summary><p>🎬 YouTube Transcript &amp; Metadata Extractor runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Comparison: Why Choose This Actor?</summary><p>| Feature | This Actor | Manual Copy-Paste | Other Tools | |---------|------------|-------------------|-------------|</p></details><details class="faq-item"><summary>Need Help?</summary><p>📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎬 YouTube Transcript &amp; Metadata Extractor</h1>
+<p><strong>Extract YouTube transcripts, subtitles, and complete video metadata in seconds - no manual work, no copy-paste, just pure automated data extraction.</strong></p>
+<p><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor"><img src="https://apify.com/actor-badge?actor=dz_omar/youtube-transcript-metadata-extractor" alt="🧾 YouTube Extractor (Transcripts + Metadata)"></a></p>
+<p><a href="https://www.youtube.com/watch?v=JXLpqucII8k"> 📺Watch Demo</a></p>
+<hr>
+<h2>Extract transcripts from any YouTube video in 3 clicks</h2>
+<p>Paste URL → Click Start → Download data. <strong>That&#39;s it.</strong></p>
+<hr>
+<h2>Why 1,000+ marketers, researchers, and developers choose this tool</h2>
+<table>
+<thead>
+<tr>
+<th>What You Get</th>
+<th>Why It Matters</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>⚡ <strong>5-second extraction</strong></td>
+<td>Process 100 videos while your coffee brews</td>
+</tr>
+<tr>
+<td>🎯 <strong>100% accurate transcripts</strong></td>
+<td>Official YouTube data, not AI guesses</td>
+</tr>
+<tr>
+<td>📊 <strong>Complete metadata</strong></td>
+<td>Views, likes, channel info, thumbnails - everything</td>
+</tr>
+<tr>
+<td>💰 <strong>Free tier available</strong></td>
+<td>Test with 10 videos before paying anything</td>
+</tr>
+<tr>
+<td>🔄 <strong>Never extract twice</strong></td>
+<td>Smart caching saves time and money</td>
+</tr>
+<tr>
+<td>📥 <strong>Export anywhere</strong></td>
+<td>JSON, CSV, Excel, or direct API integration</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>How It Works</h2>
+<h3>Step 1: Paste Your URLs</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrl&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot; }
+  ]
+}
+</code></pre>
+<h3>Step 2: Configure (Optional)</h3>
+<ul>
+<li><strong>Clean transcript</strong>: Remove &quot;um&quot;, &quot;uh&quot;, filler words</li>
+<li><strong>Include timestamps</strong>: Get second-by-second text timing</li>
+<li><strong>Extract comments</strong>: Pull top comments with replies (NEW!)</li>
+</ul>
+<h3>Step 3: Get Your Data</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;dQw4w9WgXcQ&quot;,
+  &quot;Video_title&quot;: &quot;Rick Astley - Never Gonna Give You Up&quot;,
+  &quot;Views&quot;: &quot;1,234,567,890 views&quot;,
+  &quot;transcriptText&quot;: &quot;We&#39;re no strangers to love...&quot;,
+  &quot;channel&quot;: {
+    &quot;name&quot;: &quot;Rick Astley&quot;,
+    &quot;subscribers&quot;: &quot;3.2M subscribers&quot;
+  }
+}
+</code></pre>
+<h2>What You Can Do With This Data</h2>
+<h3>📝 Content Creators &amp; Marketers</h3>
+<ul>
+<li><strong>Repurpose videos into blogs</strong> - Extract transcript, feed to AI, generate 5 articles</li>
+<li><strong>Create social media posts</strong> - Pull key quotes and timestamps</li>
+<li><strong>Generate SEO-optimized content</strong> - Turn video content into searchable text</li>
+<li><strong>Subtitle generation</strong> - Export timestamps for perfect captions</li>
+</ul>
+<p><strong>Real example:</strong> Marketing agency extracts 100 competitor videos weekly, identifies trending topics, creates counter-content. <strong>Result:</strong> 40% traffic increase in 3 months.</p>
+<h3>🔬 Researchers &amp; Academics</h3>
+<ul>
+<li><strong>Analyze lecture content at scale</strong> - Process entire course catalogs</li>
+<li><strong>Study speaking patterns</strong> - Extract timestamps for linguistic analysis</li>
+<li><strong>Sentiment analysis</strong> - Feed transcripts into NLP models</li>
+<li><strong>Citation extraction</strong> - Find and verify sources mentioned in videos</li>
+</ul>
+<p><strong>Real example:</strong> PhD student analyzed 500 TED Talks in 2 days instead of 6 months, discovered key patterns in successful presentations.</p>
+<h3>🤖 Developers &amp; AI Teams</h3>
+<ul>
+<li><strong>Train chatbots</strong> - Use video transcripts as training data</li>
+<li><strong>Build recommendation engines</strong> - Analyze content similarity</li>
+<li><strong>Automated workflows</strong> - Trigger actions based on new videos</li>
+<li><strong>Knowledge base creation</strong> - Convert video libraries into searchable databases</li>
+</ul>
+<p><strong>Real example:</strong> SaaS company built AI support bot using 1,000 tutorial video transcripts. <strong>Result:</strong> 60% reduction in support tickets.</p>
+<h3>📊 Business Intelligence</h3>
+<ul>
+<li><strong>Competitor monitoring</strong> - Track what competitors are saying</li>
+<li><strong>Brand sentiment tracking</strong> - Analyze mentions across video content</li>
+<li><strong>Market research</strong> - Extract insights from industry thought leaders</li>
+<li><strong>Product feedback analysis</strong> - Process customer testimonial videos</li>
+</ul>
+<p><strong>Real example:</strong> E-commerce brand analyzes 200 review videos monthly, identifies pain points, improves product design. <strong>Result:</strong> 25% reduction in returns.</p>
+<hr>
+<h2>Complete Feature List</h2>
+<h3>Core Extraction</h3>
+<ul>
+<li>✅ Full video transcripts with cleaned text</li>
+<li>✅ Precise second-by-second timestamps</li>
+<li>✅ Video metadata (title, views, likes, date)</li>
+<li>✅ Channel information (name, subscribers, verification)</li>
+<li>✅ Thumbnail URLs (multiple resolutions)</li>
+<li>✅ Video descriptions and tags</li>
+<li>✅ Duration and word count analytics</li>
+</ul>
+<h3>Smart Processing</h3>
+<ul>
+<li>✅ <strong>3 cleaning levels</strong>: None (raw), Mild (remove &quot;um&quot;/&quot;uh&quot;), Aggressive (conversational cleanup)</li>
+<li>✅ <strong>Automatic deduplication</strong>: Never process the same video twice</li>
+<li>✅ <strong>Batch processing</strong>: Handle 1 to 1000+ videos</li>
+<li>✅ <strong>Error recovery</strong>: Auto-retry on temporary failures</li>
+<li>✅ <strong>Multiple formats</strong>: All YouTube URL types (standard, shorts, live, youtu.be)</li>
+</ul>
+<h3>NEW: Comment Extraction</h3>
+<ul>
+<li>✅ Top comments with like counts</li>
+<li>✅ Comment replies (configurable depth)</li>
+<li>✅ Sort by &quot;top&quot; or &quot;newest&quot;</li>
+<li>✅ Real-time streaming extraction</li>
+<li>✅ Automatic resumption if interrupted</li>
+</ul>
+<h3>Export &amp; Integration</h3>
+<ul>
+<li>✅ JSON, CSV, Excel download</li>
+<li>✅ Direct API access</li>
+<li>✅ Webhook integration</li>
+<li>✅ Pre-configured data views</li>
+<li>✅ Apify platform integration</li>
+</ul>
+<hr>
+<h2>Input Configuration</h2>
+<h3>Basic Example (Just Transcripts)</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrl&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; }
+  ],
+  &quot;cleaningLevel&quot;: &quot;mild&quot;,
+  &quot;includeTimestamps&quot;: true
+}
+</code></pre>
+<h3>Advanced Example (With Comments)</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrl&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; }
+  ],
+  &quot;cleaningLevel&quot;: &quot;aggressive&quot;,
+  &quot;includeTimestamps&quot;: true,
+  &quot;extractcomments&quot;: true,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;maxComments&quot;: 50,
+  &quot;maxRepliesPerComment&quot;: 5
+}
+</code></pre>
+<h3>All Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>youtubeUrl</code></td>
+<td>array</td>
+<td><strong>Required</strong></td>
+<td>List of YouTube video URLs (any format)</td>
+</tr>
+<tr>
+<td><code>cleaningLevel</code></td>
+<td>string</td>
+<td><code>&quot;mild&quot;</code></td>
+<td><code>&quot;none&quot;</code> (raw), <code>&quot;mild&quot;</code> (remove filler), <code>&quot;aggressive&quot;</code> (clean conversations)</td>
+</tr>
+<tr>
+<td><code>includeTimestamps</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Include precise timing for each text segment</td>
+</tr>
+<tr>
+<td><code>extractcomments</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Enable comment extraction (adds 10-40s per video)</td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td>string</td>
+<td><code>&quot;top&quot;</code></td>
+<td>Comment sort: <code>&quot;top&quot;</code> (most relevant) or <code>&quot;newest&quot;</code> (chronological)</td>
+</tr>
+<tr>
+<td><code>maxComments</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>Max top-level comments (10-100,000)</td>
+</tr>
+<tr>
+<td><code>maxRepliesPerComment</code></td>
+<td>integer</td>
+<td><code>0</code></td>
+<td>Max replies per comment. <code>0</code> = no replies (10x faster)</td>
+</tr>
+</tbody></table>
+<p><strong>💡 Pro tip:</strong> Start with <code>maxRepliesPerComment: 0</code> for 10x faster extraction if you don&#39;t need reply threads.</p>
+<hr>
+<h2>Output Structure</h2>
+<h3>What You Get for Every Video</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;1TThGG6guf0&quot;,
+  &quot;VideoURL&quot;: &quot;https://youtu.be/1TThGG6guf0&quot;,
+  &quot;Video_title&quot;: &quot;WordPress Custom Widget Development Tutorial&quot;,
+  &quot;published_Date&quot;: &quot;Aug 12, 2020&quot;,
+  &quot;Views&quot;: &quot;5,067 views&quot;,
+  &quot;likes&quot;: &quot;122&quot;,
+  
+  &quot;channel&quot;: {
+    &quot;name&quot;: &quot;Codeytek Academy&quot;,
+    &quot;id&quot;: &quot;UC0SDxbLAqoKLACyEPz2wXAg&quot;,
+    &quot;subscribers&quot;: &quot;33.1K subscribers&quot;,
+    &quot;verified&quot;: false
+  },
+  
+  &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/1TThGG6guf0/maxresdefault.jpg&quot;,
+  &quot;Description&quot;: &quot;Learn how to create custom WordPress widgets...&quot;,
+  
+  &quot;hasTranscript&quot;: true,
+  &quot;transcriptText&quot;: &quot;Hello and welcome everyone to another episode of advanced WordPress theme development. Today we&#39;re going to learn how to create custom widgets...&quot;,
+  
+  &quot;timestamps&quot;: [
+    { &quot;time&quot;: &quot;0:08&quot;, &quot;text&quot;: &quot;hello and welcome everyone to another&quot; },
+    { &quot;time&quot;: &quot;0:10&quot;, &quot;text&quot;: &quot;episode of advanced wordpress theme&quot; },
+    { &quot;time&quot;: &quot;0:12&quot;, &quot;text&quot;: &quot;development today we&#39;re going to learn&quot; }
+  ],
+  
+  &quot;wordCount&quot;: 2847,
+  &quot;estimatedDuration&quot;: &quot;11:23&quot;
+}
+</code></pre>
+<h3>With Comments Enabled</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;dQw4w9WgXcQ&quot;,
+  &quot;Video_title&quot;: &quot;Never Gonna Give You Up&quot;,
+  &quot;transcriptText&quot;: &quot;We&#39;re no strangers to love...&quot;,
+  
+  &quot;commentsExtracted&quot;: true,
+  &quot;commentCount&quot;: 50,
+  &quot;comments&quot;: [
+    {
+      &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+      &quot;authorName&quot;: &quot;@musiclover2024&quot;,
+      &quot;text&quot;: &quot;Still the best song after all these years!&quot;,
+      &quot;likeCount&quot;: &quot;1,543&quot;,
+      &quot;replyCount&quot;: 12,
+      &quot;publishedTime&quot;: &quot;2 days ago&quot;,
+      &quot;replies&quot;: [
+        {
+          &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg.9kF7...&quot;,
+          &quot;authorName&quot;: &quot;@throwback90s&quot;,
+          &quot;text&quot;: &quot;Facts! Never gets old.&quot;,
+          &quot;likeCount&quot;: &quot;234&quot;,
+          &quot;publishedTime&quot;: &quot;1 day ago&quot;
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h2>Pricing &amp; Performance</h2>
+<h3>Transcript Extraction</h3>
+<ul>
+<li><strong>Free mode</strong>: 5-10 seconds per video</li>
+<li><strong>Paid mode</strong>: 3-5 seconds per video (faster infrastructure)</li>
+<li><strong>Cost</strong>: ~$0.001-0.006 per video (depending on length)</li>
+</ul>
+<h3>Comment Extraction (Optional Add-on)</h3>
+<p>Uses <a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a> in Standby Mode.</p>
+<p><strong>Pricing:</strong></p>
+<ul>
+<li>Actor start: $0.001 (once per run)</li>
+<li>Parent comments: $0.003 each</li>
+<li>Replies: $0.0015 each</li>
+</ul>
+<p><strong>Example cost for 50 comments + 100 replies:</strong></p>
+<ul>
+<li>Start: $0.01</li>
+<li>Comments: 50 × $0.003 = $0.15</li>
+<li>Replies: 100 × $0.0015 = $0.15</li>
+<li><strong>Total: $0.31</strong></li>
+</ul>
+<p><strong>With Apify subscription discounts:</strong></p>
+<ul>
+<li>Bronze: 50% off → $0.17 total</li>
+<li>Silver: 67% off → $0.13 total</li>
+<li>Gold: 73% off → $0.11 total</li>
+</ul>
+<p><strong>Speed impact:</strong></p>
+<ul>
+<li>Without replies: +5-10 seconds per video</li>
+<li>With replies (10 per comment): +20-40 seconds per video</li>
+</ul>
+<p>💡 <strong>Cost optimization tip:</strong> Set <code>maxRepliesPerComment: 0</code> if you don&#39;t need reply threads - you&#39;ll get 10x faster extraction and cut costs in half.</p>
+<hr>
+<h2>Supported YouTube URL Formats</h2>
+<p>We handle ALL YouTube URL types:</p>
+<p>✅ <code>https://www.youtube.com/watch?v=VIDEO_ID</code><br>✅ <code>https://youtu.be/VIDEO_ID</code><br>✅ <code>https://www.youtube.com/shorts/VIDEO_ID</code><br>✅ <code>https://www.youtube.com/live/VIDEO_ID</code><br>✅ <code>https://youtube.com/watch?v=VIDEO_ID</code> (no www)<br>✅ <code>https://m.youtube.com/watch?v=VIDEO_ID</code> (mobile)</p>
+<p>Just paste any YouTube link - we&#39;ll figure it out.</p>
+<hr>
+<h2>Pre-Configured Data Views</h2>
+<p>Save time with our built-in export templates:</p>
+<h3>1. 📊 Full Dataset</h3>
+<p><strong>Everything</strong> - Complete metadata, transcripts, timestamps, analytics<br><strong>Use for:</strong> Comprehensive analysis, data warehousing</p>
+<h3>2. 📝 Transcripts Only</h3>
+<p><strong>Focus:</strong> Transcript text, timestamps, word count, duration<br><strong>Use for:</strong> Content repurposing, subtitle generation</p>
+<h3>3. 📺 Channel Analytics</h3>
+<p><strong>Focus:</strong> Channel info, subscribers, verification, video list<br><strong>Use for:</strong> Influencer research, competitor analysis</p>
+<hr>
+<h2>Quick Start Examples</h2>
+<h3>Use Case 1: Content Repurposing</h3>
+<p><strong>Goal:</strong> Turn video into blog post</p>
+<pre><code class="language-javascript">// 1. Extract transcript
+const input = {
+  youtubeUrl: [{ url: &quot;YOUR_VIDEO_URL&quot; }],
+  cleaningLevel: &quot;aggressive&quot;,
+  includeTimestamps: false
+};
+
+// 2. Run actor
+// 3. Get output: feed transcriptText to ChatGPT/Claude
+// 4. Generate 5 blog posts in 2 minutes
+</code></pre>
+<h3>Use Case 2: Competitor Analysis</h3>
+<p><strong>Goal:</strong> Analyze 100 competitor videos</p>
+<pre><code class="language-javascript">const input = {
+  youtubeUrl: [
+    { url: &quot;competitor_video_1&quot; },
+    { url: &quot;competitor_video_2&quot; },
+    // ... paste 100 URLs
+  ],
+  cleaningLevel: &quot;mild&quot;,
+  extractcomments: true,
+  maxComments: 20
+};
+
+// Export to Excel → Analyze trends → Find content gaps
+</code></pre>
+<h3>Use Case 3: AI Training Data</h3>
+<p><strong>Goal:</strong> Build chatbot training dataset</p>
+<pre><code class="language-javascript">const input = {
+  youtubeUrl: YOUR_PLAYLIST_URLS, // from our Playlist Extractor
+  cleaningLevel: &quot;none&quot;, // keep raw data for AI
+  includeTimestamps: true
+};
+
+// Process 1000 videos → Clean dataset → Train model
+</code></pre>
+<hr>
+<h2>Integration Examples</h2>
+<h3>JavaScript/Node.js</h3>
+<pre><code class="language-javascript">const ApifyClient = require(&#39;apify-client&#39;);
+
+const client = new ApifyClient({ token: &#39;YOUR_API_TOKEN&#39; });
+
+const input = {
+  youtubeUrl: [
+    { url: &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot; }
+  ],
+  cleaningLevel: &quot;mild&quot;
+};
+
+const run = await client.actor(&quot;dz_omar/youtube-transcript-metadata-extractor&quot;).call(input);
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+
+console.log(items[0].transcriptText);
+</code></pre>
+<h3>Python</h3>
+<pre><code class="language-python">from apify_client import ApifyClient
+
+client = ApifyClient(&#39;YOUR_API_TOKEN&#39;)
+
+run_input = {
+    &quot;youtubeUrl&quot;: [
+        { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot; }
+    ],
+    &quot;cleaningLevel&quot;: &quot;mild&quot;
+}
+
+run = client.actor(&quot;dz_omar/youtube-transcript-metadata-extractor&quot;).call(run_input=run_input)
+
+for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item[&#39;transcriptText&#39;])
+</code></pre>
+<h3>cURL (Direct API)</h3>
+<pre><code class="language-bash">curl -X POST https://api.apify.com/v2/acts/dz_omar~youtube-transcript-metadata-extractor/runs \
+  -H &quot;Content-Type: application/json&quot; \
+  -H &quot;Authorization: Bearer YOUR_API_TOKEN&quot; \
+  -d &#39;{
+    &quot;youtubeUrl&quot;: [
+      { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=dQw4w9WgXcQ&quot; }
+    ]
+  }&#39;
+</code></pre>
+<p><a href="https://docs.apify.com/api/v2"><strong>→ View full API documentation</strong></a></p>
+<hr>
+<h2>Frequently Asked Questions</h2>
+<details>
+<summary><b>❓ What if a video doesn't have a transcript?</b></summary>
+
+<p>The actor will return <code>&quot;hasTranscript&quot;: false</code> and still provide all other metadata (title, views, channel info, etc.). YouTube auto-generates transcripts for most videos, but some may not have them available.</p>
+</details>
+
+<details>
+<summary><b>❓ Can I extract from private or age-restricted videos?</b></summary>
+
+<p>No. This actor only works with publicly available videos. Private, members-only, or age-restricted content cannot be accessed.</p>
+</details>
+
+<details>
+<summary><b>❓ How accurate are the transcripts?</b></summary>
+
+<p>We extract the <strong>official transcripts</strong> provided by YouTube. Accuracy depends on whether the creator uploaded manual captions (99% accurate) or YouTube auto-generated them (85-95% accurate). We don&#39;t modify or AI-generate transcripts - you get exactly what YouTube provides.</p>
+</details>
+
+<details>
+<summary><b>❓ Can I process entire playlists or channels?</b></summary>
+
+<p>This actor processes individual videos. For bulk extraction, use our <a href="https://apify.com/dz_omar/youtube-playlist-extractor">YouTube Playlist Extractor</a> to get all video URLs, then feed them to this actor.</p>
+</details>
+
+<details>
+<summary><b>❓ What's the difference between cleaning levels?</b></summary>
+
+<ul>
+<li><strong>None</strong>: Raw transcript as YouTube provides it</li>
+<li><strong>Mild</strong>: Removes filler words (&quot;um&quot;, &quot;uh&quot;, &quot;you know&quot;)</li>
+<li><strong>Aggressive</strong>: Removes filler words + conversational redundancy (&quot;so basically&quot;, &quot;I mean&quot;, etc.)</li>
+</ul>
+<p>Most users choose &quot;mild&quot; for the best balance.</p>
+</details>
+
+<details>
+<summary><b>❓ Do I need comments? Should I enable replies?</b></summary>
+
+<p><strong>Enable comments if:</strong> You need engagement insights, sentiment analysis, or customer feedback.</p>
+<p><strong>Enable replies if:</strong> You need full conversation threads. Warning: Replies significantly increase runtime and cost.</p>
+<p><strong>Fastest option:</strong> <code>extractcomments: false</code> - just transcripts in 5-10 seconds.</p>
+</details>
+
+<details>
+<summary><b>❓ Is this legal? Will I get in trouble?</b></summary>
+
+<p>This actor extracts <strong>publicly available data</strong> that anyone can see on YouTube. It&#39;s equivalent to manually copying text. However:</p>
+<ul>
+<li>✅ Extracting public transcripts: Generally okay</li>
+<li>✅ Using for research, analysis, personal use: Generally okay</li>
+<li>⚠️ Republishing copyrighted content: Check copyright laws</li>
+<li>⚠️ Commercial use at scale: Review YouTube&#39;s Terms of Service</li>
+</ul>
+<p><strong>We are not lawyers.</strong> Consult legal counsel for your specific use case.</p>
+</details>
+
+<details>
+<summary><b>❓ Why did my run fail?</b></summary>
+
+<p>Common reasons:</p>
+<ul>
+<li>Video is private, deleted, or age-restricted</li>
+<li>Video has no transcript available</li>
+<li>Invalid URL format</li>
+<li>Temporary YouTube API issues (auto-retry handles this)</li>
+</ul>
+<p>Check the run log for specific error messages.</p>
+</details>
+
+<details>
+<summary><b>❓ How many videos can I process at once?</b></summary>
+
+<p><strong>Technical limit:</strong> 10,000 URLs per run<br><strong>Recommended:</strong> Start with 10-50 to test, then scale up<br><strong>Performance:</strong> Free mode handles 100 videos in ~10 minutes. Paid mode is 2x faster.</p>
+</details>
+
+<hr>
+<h2>Technical Details</h2>
+<details>
+<summary><b>🔧 For Developers: Architecture & Performance</b></summary>
+
+<h3>Tech Stack</h3>
+<ul>
+<li><strong>Crawler:</strong> CheerioCrawler (optimized for speed)</li>
+<li><strong>Language:</strong> Node.js 20</li>
+<li><strong>Memory:</strong> 128MB-512MB (auto-scales)</li>
+<li><strong>Storage:</strong> Persistent caching with key-value store</li>
+<li><strong>API Format:</strong> RESTful JSON endpoint</li>
+</ul>
+<h3>Performance Specs</h3>
+<ul>
+<li><strong>Throughput:</strong> 500-1000 videos/hour (paid mode)</li>
+<li><strong>Latency:</strong> 5-10s per video (free), 3-5s (paid)</li>
+<li><strong>Concurrency:</strong> 10 parallel requests</li>
+<li><strong>Retry Logic:</strong> 3 attempts with exponential backoff</li>
+<li><strong>Cache Hit Rate:</strong> ~40% (typical usage)</li>
+</ul>
+<h3>Comment Integration</h3>
+<ul>
+<li><strong>Method:</strong> Standby Mode API call to <a href="https://apify.com/dz_omar/youtube-comments-scraper">YouTube Comments Scraper</a></li>
+<li><strong>Protocol:</strong> NDJSON streaming over HTTP</li>
+<li><strong>Resumption:</strong> Automatic from last successful comment</li>
+<li><strong>Timeout:</strong> 5 minutes per video (configurable)</li>
+</ul>
+<h3>Data Processing</h3>
+<ul>
+<li><strong>Transcript cleaning:</strong> Regex + NLP tokenization</li>
+<li><strong>Timestamp parsing:</strong> ISO 8601 → human-readable</li>
+<li><strong>Deduplication:</strong> SHA-256 hash of video ID</li>
+<li><strong>Output format:</strong> Minified JSON (reduce bandwidth)</li>
+</ul>
+<h3>Rate Limiting</h3>
+<ul>
+<li><strong>YouTube API:</strong> Respects official rate limits</li>
+<li><strong>Apify Platform:</strong> Auto-throttles to prevent blocking</li>
+<li><strong>Proxy support:</strong> Automatic rotation (paid tier)</li>
+</ul>
+<h3>Error Handling</h3>
+<pre><code class="language-javascript">// Auto-retry logic
+const MAX_RETRIES = 3;
+const BACKOFF_MS = [1000, 3000, 9000];
+
+try {
+  await extractTranscript(videoId);
+} catch (error) {
+  if (retries &lt; MAX_RETRIES) {
+    await sleep(BACKOFF_MS[retries]);
+    // retry...
+  }
+}
+</code></pre>
+<h3>Security</h3>
+<ul>
+<li>✅ No authentication required (public data only)</li>
+<li>✅ HTTPS-only API calls</li>
+<li>✅ Input sanitization (XSS prevention)</li>
+<li>✅ No data retention beyond run duration</li>
+</ul>
+</details>
+
+<hr>
+<h2>Comparison: Why Choose This Actor?</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>This Actor</th>
+<th>Manual Copy-Paste</th>
+<th>Other Tools</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Speed</strong></td>
+<td>5-10 sec/video</td>
+<td>5-10 min/video</td>
+<td>30-60 sec/video</td>
+</tr>
+<tr>
+<td><strong>Accuracy</strong></td>
+<td>100% (official data)</td>
+<td>100%</td>
+<td>70-90% (AI guessing)</td>
+</tr>
+<tr>
+<td><strong>Batch processing</strong></td>
+<td>✅ 1000+ videos</td>
+<td>❌ One at a time</td>
+<td>⚠️ Limited (10-50)</td>
+</tr>
+<tr>
+<td><strong>Timestamps</strong></td>
+<td>✅ Second-precise</td>
+<td>❌ Manual work</td>
+<td>⚠️ Minute-level only</td>
+</tr>
+<tr>
+<td><strong>Metadata</strong></td>
+<td>✅ Everything</td>
+<td>❌ Manual scraping</td>
+<td>⚠️ Basic only</td>
+</tr>
+<tr>
+<td><strong>Comments</strong></td>
+<td>✅ With replies</td>
+<td>❌ Screenshot only</td>
+<td>❌ Not available</td>
+</tr>
+<tr>
+<td><strong>API access</strong></td>
+<td>✅ Full REST API</td>
+<td>❌ None</td>
+<td>⚠️ Limited</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>$0.001-0.006/video</td>
+<td>$5-10/video (labor)</td>
+<td>$0.10-0.50/video</td>
+</tr>
+<tr>
+<td><strong>Setup time</strong></td>
+<td>1 minutes</td>
+<td>N/A</td>
+<td>30-60 minutes</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Trust &amp; Reliability</h2>
+<h3>Platform Performance</h3>
+<ul>
+<li>✅ <strong>Actor running smoothly</strong> - 100% success rate</li>
+<li>✅ <strong>Regular updates</strong> - Maintained actively</li>
+</ul>
+<hr>
+<h2>Legal &amp; Compliance</h2>
+<h3>What You Should Know</h3>
+<p>✅ <strong>What&#39;s allowed:</strong></p>
+<ul>
+<li>Extracting public transcripts for personal use</li>
+<li>Research and academic analysis</li>
+<li>Business intelligence and market research</li>
+<li>Content repurposing with proper attribution</li>
+</ul>
+<p>⚠️ <strong>What requires caution:</strong></p>
+<ul>
+<li>Large-scale commercial redistribution</li>
+<li>Republishing copyrighted video content</li>
+<li>Using data in ways that violate YouTube&#39;s ToS</li>
+<li>Scraping private or restricted content</li>
+</ul>
+<p>🔒 <strong>Privacy &amp; Data:</strong></p>
+<ul>
+<li>We only extract publicly visible data</li>
+<li>No authentication or login required</li>
+<li>No data stored beyond your run duration</li>
+<li>GDPR compliant (EU users)</li>
+</ul>
+<p><strong>Disclaimer:</strong> This tool extracts publicly available data. Users are responsible for ensuring their usage complies with YouTube&#39;s Terms of Service, copyright laws, and applicable regulations. We are not lawyers - consult legal counsel for commercial use cases.</p>
+<hr>
+<h2>Related Tools from FlowExtract API</h2>
+<p>Build your complete YouTube data pipeline with our specialized actors:</p>
+<h3>🎬 Video &amp; Content Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63">YouTube Playlist Extractor</a></strong><br>Extract all videos from playlists in seconds. Get video URLs, titles, durations. Perfect for feeding into this transcript extractor.<br>→ <em>Use together: Playlist → Transcript Extractor = Full channel analysis</em></p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Channel Scraper Pro</a></strong><br>Complete channel extraction: videos, shorts, live streams, playlists. Comprehensive creator analytics.<br>→ <em>Use together: Channel Scraper → Transcript Extractor = Creator deep-dive</em></p>
+<p><strong><a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a></strong><br>Standalone comment extraction with advanced filtering. Perfect for sentiment analysis.<br>→ <em>Integrated in this actor - enable with <code>extractcomments: true</code></em></p>
+<h3>📹 Video Platform Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | Downloader &amp; Transcript</a></strong><br>Extract Zoom meeting recordings and transcripts. Perfect for meeting analysis.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | Downloader &amp; Transcript</a></strong><br>Download Loom videos and extract transcripts. Ideal for training content.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong><br>Spanish real estate listings with API access. Property data at scale.</p>
+<h3>🛠️ Developer Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> | <strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong><br>Webpage screenshots with custom options. Perfect for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong><br>Website security vulnerability scanning. Comprehensive security reports.</p>
+<p><a href="https://apify.com/dz_omar?fpr=smcx63"><strong>→ View all FlowExtract API tools</strong></a></p>
+<hr>
+<h2>Get Started Now</h2>
+<h3>Free Trial Available</h3>
+<p>No credit card required. Test with 5$ to see the quality yourself.</p>
+<p> <a href="mailto:flowextractapi@outlook.com"><strong>💬 Get Support</strong></a></p>
+<h3>Need Help?</h3>
+<p><strong>📧 Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a><br><strong>🌐 Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a><br><strong>🐦 Twitter:</strong> <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a><br><strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></p>
+<p><strong>Response time:</strong> Within 24 hours (usually much faster)</p>
+</div>
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +775,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +783,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'youtube-transcript-metadata-extractor';
-    </script>
 </body>
 </html>

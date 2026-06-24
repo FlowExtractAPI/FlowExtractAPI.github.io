@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>LinkedIn Ad Library Data Extraction Tool | FlowExtract API</title>
+    <meta name="title" content="LinkedIn Ad Library Data Extraction Tool | FlowExtract API">
+    <meta name="description" content="Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/linkedin-ads-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="LinkedIn Ad Library Data Extraction Tool | FlowExtract API">
+    <meta property="og:description" content="Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/linkedin-ads-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/CVgeuSEi9ND_Eq1F93bipOY8aLVZIdWNkqFkxc3mO7Y/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItNWRPY0xtT0dqZGVubTQ5SGctQkxER0FJQmpBTS1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LinkedIn Ad Library Data Extraction Tool | FlowExtract API">
+    <meta name="twitter:description" content="Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/CVgeuSEi9ND_Eq1F93bipOY8aLVZIdWNkqFkxc3mO7Y/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItNWRPY0xtT0dqZGVubTQ5SGctQkxER0FJQmpBTS1VbnRpdGxlZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"LinkedIn Ad Library Scraper","description":"Extract comprehensive advertising data from LinkedIn's Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/linkedin-ads-scraper.html","sameAs":"https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/CVgeuSEi9ND_Eq1F93bipOY8aLVZIdWNkqFkxc3mO7Y/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItNWRPY0xtT0dqZGVubTQ5SGctQkxER0FJQmpBTS1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run LinkedIn Ad Library Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open LinkedIn Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is LinkedIn Ad Library Scraper free?","acceptedAnswer":{"@type":"Answer","text":"LinkedIn Ad Library Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,804 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/CVgeuSEi9ND_Eq1F93bipOY8aLVZIdWNkqFkxc3mO7Y/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItNWRPY0xtT0dqZGVubTQ5SGctQkxER0FJQmpBTS1VbnRpdGxlZC5wbmc.png" alt="LinkedIn Ad Library Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Advertising Intelligence</span>
+                <h1 class="actor-hero-title">LinkedIn Ad Library Scraper</h1>
+                <p class="actor-hero-desc">Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.</p>
+                <a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">LinkedIn Ad Library Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>ad Creatives — Images, videos (all quality variants), and carousel content</li><li>ad Copy — Headlines, body text, descriptions, and full untruncated ad text</li><li>advertiser Information — Company names, logos, bio/subtitle text, profile URLs</li><li>call-to-Action — CTA button text and destination links</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run LinkedIn Ad Library Scraper?</summary><p>Open LinkedIn Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is LinkedIn Ad Library Scraper free?</summary><p>LinkedIn Ad Library Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>📢 LinkedIn Ad Library Scraper</h1>
+<p><strong>Extract comprehensive advertising data from LinkedIn&#39;s Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment.</strong></p>
+<p>This Apify actor extracts detailed ad information from LinkedIn&#39;s public Ad Library, delivering structured data about ad campaigns including creatives, headlines, advertiser details, impressions, targeting parameters, and more.</p>
+<h2>🎬 Video Tutorial</h2>
+<p><a href="https://youtube.com/@FlowExtractAPI"><img src="https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube" alt="Watch the Tutorial"></a></p>
+<p><a href="https://www.youtube.com/watch?v=q5PGi7bmdXw">https://www.youtube.com/watch?v=q5PGi7bmdXw</a></p>
+<hr>
+<h2>Key Features</h2>
+<h3>Comprehensive Ad Data Extraction</h3>
+<ul>
+<li><strong>Ad Creatives</strong> — Images, videos (all quality variants), and carousel content</li>
+<li><strong>Ad Copy</strong> — Headlines, body text, descriptions, and full untruncated ad text</li>
+<li><strong>Advertiser Information</strong> — Company names, logos, bio/subtitle text, profile URLs</li>
+<li><strong>Call-to-Action</strong> — CTA button text and destination links</li>
+<li><strong>External Links</strong> — URLs mentioned in ad text</li>
+<li><strong>Ad Detail Enrichment</strong> — Optional deep-fetch of impressions, targeting, dates, payer info, and video URLs per ad</li>
+<li><strong>Metadata</strong> — Ad IDs, creative types, run dates, status (active/inactive), and timestamps</li>
+</ul>
+<h3>Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Smart Pagination</strong> — Automatically handles multi-page results across every search</li>
+<li><strong>Automatic Retries</strong> — Transient errors and rate limits are retried for you</li>
+<li><strong>Concurrent Detail Fetching</strong> — Enriches multiple ads in parallel</li>
+<li><strong>Rate Limit Handling</strong> — Automatic detection and back-off on HTTP 429 responses</li>
+</ul>
+<h3>Two Search Modes</h3>
+<ul>
+<li><strong>URL Mode</strong> — Paste LinkedIn Ad Library URLs directly (with all filters pre-applied)</li>
+<li><strong>Search Mode</strong> — Build one or more searches, each with its own company, payer, keyword, country, date range, impressions, targeting, and sort order</li>
+</ul>
+<hr>
+<h2>🔍 How Searching Works</h2>
+<p>The actor mirrors exactly how search works on <strong>linkedin.com/ad-library</strong>: you fill in the <strong>Company or advertiser</strong>, <strong>Payer</strong>, and/or <strong>Keyword</strong> fields, pick your <strong>Country</strong>, <strong>Date</strong>, and <strong>More</strong> filters, and run the search.</p>
+<p>This actor lets you queue <strong>many of those searches at once</strong>. There are two ways to provide them, and you can use either or both in a single run:</p>
+<ol>
+<li><strong>URLs</strong> — paste any number of LinkedIn Ad Library URLs. Every filter already baked into the URL is respected.</li>
+<li><strong>Searches</strong> — build searches from scratch in the input form. <strong>Each search is fully independent and carries its own filters.</strong></li>
+</ol>
+<p>This is the key difference from a single global search: you can run <em>&quot;apify, newest first, US&quot;</em> and <em>&quot;marketing, last 30 days, Germany, min 10k impressions&quot;</em> <strong>in the same run</strong>, each with completely different settings.</p>
+<h3>Each search needs at least one identifier</h3>
+<p>LinkedIn can&#39;t run a search with no search terms, so <strong>every search must have at least one of: Company, Payer, or Keyword.</strong> You can fill in just one, any two, or all three. A search with none of these is skipped automatically (the rest of your searches still run). All the other fields — country, date, impressions, targeting, sort — are optional refinements.</p>
+<hr>
+<h2>📊 Results &amp; Cost</h2>
+<p><code>maxResults</code> sets the cap <strong>per URL and per search</strong> — not for the whole run.</p>
+<blockquote>
+<p><strong>Worst-case total = (number of URLs + number of searches) × maxResults</strong></p>
+</blockquote>
+<p><strong>Example:</strong> 2 URLs + 3 searches, with <code>maxResults = 11</code>:</p>
+<pre><code>(2 + 3) × 11 = 55 ads maximum
+</code></pre>
+<p>Set <code>maxResults</code> to <code>0</code> for unlimited results per URL/search.</p>
+<hr>
+<h2>🌐 Proxy &amp; Reliability</h2>
+<p>This Actor uses a tiered proxy strategy to deliver the best possible success rate.</p>
+<p><strong>Paying users</strong> get our <strong>premium dedicated proxy infrastructure</strong> optimized specifically for LinkedIn Ad Library, with higher success rates, faster response times, and significantly fewer rate-limit interruptions on large scrapes.</p>
+<p><strong>Free users</strong> run on the standard Apify Proxy network. It works well for small jobs and quick tests, but on larger or sustained scrapes you may see slower runs and occasional retries.</p>
+<p>If you&#39;re hitting limits on the free tier or running production workloads, <strong>upgrading to a paid plan automatically activates the premium proxy</strong> — no configuration required.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Free</th>
+<th>Paid</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Proxy network</td>
+<td>Apify Proxy</td>
+<td>Premium dedicated infrastructure</td>
+</tr>
+<tr>
+<td>Rate-limit resilience</td>
+<td>Standard</td>
+<td>Enhanced</td>
+</tr>
+<tr>
+<td>Best for</td>
+<td>Small scrapes, testing</td>
+<td>Production workloads, large scrapes</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>Automatic failover:</strong> If the premium proxy is ever unreachable, the Actor seamlessly falls back to Apify Proxy mid-run — your scrape never stops.</p>
+</blockquote>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Basic Keyword Search</h3>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    { &quot;keyword&quot;: &quot;apify&quot; }
+  ],
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<h3>Search by URL</h3>
+<pre><code class="language-json">{
+  &quot;urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.linkedin.com/ad-library/search?keyword=sony&amp;countries=DZ&quot; }
+  ],
+  &quot;maxResults&quot;: 20
+}
+</code></pre>
+<h3>Search by Company and Payer</h3>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    { &quot;accountOwner&quot;: &quot;Apify&quot;, &quot;payer&quot;: &quot;Apify Technologies s.r.o.&quot; }
+  ],
+  &quot;maxResults&quot;: 30
+}
+</code></pre>
+<hr>
+<h2>🎯 Independent Searches in One Run</h2>
+<p>Each entry in <code>searches</code> runs as its own search, with its own filters. Mix regions, dates, sort orders, and impression ranges freely:</p>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    {
+      &quot;keyword&quot;: &quot;web scraping&quot;,
+      &quot;countries&quot;: [&quot;US&quot;],
+      &quot;sortOrder&quot;: &quot;DESCENDING&quot;
+    },
+    {
+      &quot;accountOwner&quot;: &quot;HubSpot&quot;,
+      &quot;countries&quot;: [&quot;DE&quot;],
+      &quot;dateOption&quot;: &quot;last-30-days&quot;,
+      &quot;impressionsMinValue&quot;: 10,
+      &quot;impressionsMinUnit&quot;: &quot;thousand&quot;
+    },
+    {
+      &quot;keyword&quot;: &quot;black friday&quot;,
+      &quot;dateOption&quot;: &quot;custom-date-range&quot;,
+      &quot;startDate&quot;: &quot;2025-11-01&quot;,
+      &quot;endDate&quot;: &quot;2025-11-30&quot;
+    }
+  ],
+  &quot;fetchAdDetail&quot;: true,
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<p>This runs <strong>3 independent searches</strong>:</p>
+<ol>
+<li><code>web scraping</code> in the US, newest first</li>
+<li><code>HubSpot</code> ads in Germany from the last 30 days with at least 10k impressions</li>
+<li><code>black friday</code> ads during November 2025</li>
+</ol>
+<p><strong>Total: 3 searches × 50 = 150 max results.</strong></p>
+<h3>URLs + Searches Combined</h3>
+<pre><code class="language-json">{
+  &quot;urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.linkedin.com/ad-library/search?keyword=sony&amp;countries=DZ&quot; }
+  ],
+  &quot;searches&quot;: [
+    { &quot;keyword&quot;: &quot;apify&quot;, &quot;payer&quot;: &quot;Apify Technologies s.r.o.&quot; }
+  ],
+  &quot;maxResults&quot;: 10
+}
+</code></pre>
+<p>The URL runs as one job and the search runs as another, each independently paginated and capped at <code>maxResults</code>.</p>
+<p><strong>Total: (1 URL + 1 search) × 10 = 20 max results.</strong></p>
+<hr>
+<h2>📋 Input Configuration</h2>
+<h3>Top-Level Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>urls</code></td>
+<td>array</td>
+<td>❌</td>
+<td>-</td>
+<td>LinkedIn Ad Library URLs. Only <code>linkedin.com/ad-library</code> URLs are accepted — other URLs are rejected before the run starts.</td>
+</tr>
+<tr>
+<td><code>searches</code></td>
+<td>array</td>
+<td>❌</td>
+<td>-</td>
+<td>One or more independent searches (see per-search fields below)</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>10</td>
+<td>Max ads <strong>per URL / per search</strong> (0 = unlimited)</td>
+</tr>
+<tr>
+<td><code>fetchAdDetail</code></td>
+<td>boolean</td>
+<td>❌</td>
+<td>false</td>
+<td>Fetch the full ad detail page for each ad</td>
+</tr>
+</tbody></table>
+<h3>Per-Search Fields (inside each <code>searches</code> entry)</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>accountOwner</code></td>
+<td>string</td>
+<td>⚠️*</td>
+<td>-</td>
+<td>Company or advertiser name</td>
+</tr>
+<tr>
+<td><code>payer</code></td>
+<td>string</td>
+<td>⚠️*</td>
+<td>-</td>
+<td>Entity that paid for the ad</td>
+</tr>
+<tr>
+<td><code>keyword</code></td>
+<td>string</td>
+<td>⚠️*</td>
+<td>-</td>
+<td>Word or phrase to search</td>
+</tr>
+<tr>
+<td><code>countries</code></td>
+<td>array</td>
+<td>❌</td>
+<td>All</td>
+<td>Country codes (e.g., US, GB, DZ)</td>
+</tr>
+<tr>
+<td><code>sortOrder</code></td>
+<td>string</td>
+<td>❌</td>
+<td>DESCENDING</td>
+<td><code>ASCENDING</code> or <code>DESCENDING</code></td>
+</tr>
+<tr>
+<td><code>dateOption</code></td>
+<td>string</td>
+<td>❌</td>
+<td>-</td>
+<td>Predefined date filter (see below)</td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td>string</td>
+<td>❌</td>
+<td>-</td>
+<td>Custom start date (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td>string</td>
+<td>❌</td>
+<td>-</td>
+<td>Custom end date (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td><code>impressionsMinValue</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>-</td>
+<td>Minimum impressions value</td>
+</tr>
+<tr>
+<td><code>impressionsMinUnit</code></td>
+<td>string</td>
+<td>❌</td>
+<td>-</td>
+<td><code>none</code>, <code>thousand</code>, or <code>million</code></td>
+</tr>
+<tr>
+<td><code>impressionsMaxValue</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>-</td>
+<td>Maximum impressions value</td>
+</tr>
+<tr>
+<td><code>impressionsMaxUnit</code></td>
+<td>string</td>
+<td>❌</td>
+<td>-</td>
+<td><code>none</code>, <code>thousand</code>, or <code>million</code></td>
+</tr>
+<tr>
+<td><code>includedTargetingFacetCategories</code></td>
+<td>array</td>
+<td>❌</td>
+<td>-</td>
+<td>Targeting categories to include</td>
+</tr>
+<tr>
+<td><code>excludedTargetingFacetCategories</code></td>
+<td>array</td>
+<td>❌</td>
+<td>-</td>
+<td>Targeting categories to exclude</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>⚠️ *At least one</strong> of <code>accountOwner</code>, <code>payer</code>, or <code>keyword</code> is required <strong>per search</strong>. You may fill one, two, or all three.</p>
+</blockquote>
+<h3>Impressions Units</h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Meaning</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>none</code></td>
+<td>Exact number (no multiplier)</td>
+<td><code>impressionsMinValue: 5, impressionsMinUnit: none</code> → min 5 impressions</td>
+</tr>
+<tr>
+<td><code>thousand</code></td>
+<td>Multiply by 1,000</td>
+<td><code>impressionsMinValue: 5, impressionsMinUnit: thousand</code> → min 5,000 impressions</td>
+</tr>
+<tr>
+<td><code>million</code></td>
+<td>Multiply by 1,000,000</td>
+<td><code>impressionsMaxValue: 2, impressionsMaxUnit: million</code> → max 2,000,000 impressions</td>
+</tr>
+</tbody></table>
+<h3>Targeting Facet Categories</h3>
+<p>Available values for <code>includedTargetingFacetCategories</code> and <code>excludedTargetingFacetCategories</code>:</p>
+<p><code>LANGUAGE</code>, <code>LOCATION</code>, <code>AUDIENCE</code>, <code>DEMOGRAPHIC</code>, <code>COMPANY</code>, <code>EDUCATION</code>, <code>JOB</code>, <code>INTERESTS_AND_TRAITS</code></p>
+<p>A category can appear in both included and excluded arrays simultaneously — this corresponds to LinkedIn&#39;s &quot;Both&quot; filter option.</p>
+<h3>Date Filter Options</h3>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>last-30-days</code></td>
+<td>Last 30 days</td>
+</tr>
+<tr>
+<td><code>current-month</code></td>
+<td>Current month</td>
+</tr>
+<tr>
+<td><code>current-year</code></td>
+<td>Current year</td>
+</tr>
+<tr>
+<td><code>last-year</code></td>
+<td>Previous year</td>
+</tr>
+<tr>
+<td><code>custom-date-range</code></td>
+<td>Custom range (requires startDate + endDate)</td>
+</tr>
+</tbody></table>
+<p>If <code>startDate</code> and <code>endDate</code> are both provided, they take priority over <code>dateOption</code>.</p>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Standard Output (fetchAdDetail: false)</h3>
+<pre><code class="language-json">{
+  &quot;adId&quot;: &quot;894398854&quot;,
+  &quot;advertiserName&quot;: &quot;Apify&quot;,
+  &quot;advertiserBio&quot;: &quot;Promoted&quot;,
+  &quot;isPromoted&quot;: true,
+  &quot;creativeType&quot;: &quot;SPONSORED_STATUS_UPDATE&quot;,
+  &quot;headline&quot;: &quot;$1M in prizes for tools AI needs.&quot;,
+  &quot;adText&quot;: &quot;Companies deploying AI hit walls. Tools don&#39;t exist yet...&quot;,
+  &quot;detailPageUrl&quot;: &quot;https://www.linkedin.com/ad-library/detail/894398854&quot;,
+  &quot;imageUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+  &quot;logoUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+  &quot;ctaText&quot;: &quot;View details&quot;,
+  &quot;externalLinksInText&quot;: [],
+  &quot;scrapedAt&quot;: &quot;2026-03-21T00:55:56.066Z&quot;
+}
+</code></pre>
+<h3>Enriched Output (fetchAdDetail: true)</h3>
+<p>When <code>fetchAdDetail</code> is enabled, each ad includes a <code>detail</code> object with deep data from the ad&#39;s detail page:</p>
+<pre><code class="language-json">{
+  &quot;adId&quot;: &quot;1230248844&quot;,
+  &quot;advertiserName&quot;: &quot;Nivide&quot;,
+  &quot;advertiserBio&quot;: &quot;Promoted&quot;,
+  &quot;isPromoted&quot;: true,
+  &quot;creativeType&quot;: &quot;SPONSORED_STATUS_UPDATE&quot;,
+  &quot;headline&quot;: &quot;Professionellt stöd kring digital annonsering och SEO&quot;,
+  &quot;adText&quot;: &quot;Är det dags för ett omtag kring företagets digitala annonsering eller SEO?...&quot;,
+  &quot;detailPageUrl&quot;: &quot;https://www.linkedin.com/ad-library/detail/1230248844&quot;,
+  &quot;imageUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+  &quot;logoUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+  &quot;ctaText&quot;: &quot;View details&quot;,
+  &quot;externalLinksInText&quot;: [],
+  &quot;scrapedAt&quot;: &quot;2026-03-21T20:21:24.677Z&quot;,
+  &quot;detail&quot;: {
+    &quot;adType&quot;: &quot;Single Image Ad&quot;,
+    &quot;advertiserName&quot;: &quot;Nivide&quot;,
+    &quot;advertiserProfileUrl&quot;: &quot;https://www.linkedin.com/company/5275721&quot;,
+    &quot;paidForBy&quot;: &quot;Nivide AB&quot;,
+    &quot;adRunDatesRaw&quot;: &quot;Ran from Mar 15, 2026 to Mar 21, 2026&quot;,
+    &quot;adStartDate&quot;: &quot;Mar 15, 2026&quot;,
+    &quot;adEndDate&quot;: &quot;Mar 21, 2026&quot;,
+    &quot;adStatus&quot;: &quot;INACTIVE&quot;,
+    &quot;totalImpressions&quot;: &quot;&lt; 1k&quot;,
+    &quot;impressionsByCountry&quot;: [
+      {
+        &quot;country&quot;: &quot;Sweden&quot;,
+        &quot;impressionPercent&quot;: &quot;100%&quot;,
+        &quot;progressValue&quot;: 100
+      }
+    ],
+    &quot;targetingLanguage&quot;: &quot;Targeting includes svenska&quot;,
+    &quot;targetingLocation&quot;: &quot;Targeting includes Sverige&quot;,
+    &quot;targetingParameters&quot;: [
+      { &quot;category&quot;: &quot;Audience&quot;, &quot;hasInclusion&quot;: false, &quot;hasExclusion&quot;: false, &quot;targetingType&quot;: &quot;NONE&quot; },
+      { &quot;category&quot;: &quot;Demographic&quot;, &quot;hasInclusion&quot;: false, &quot;hasExclusion&quot;: false, &quot;targetingType&quot;: &quot;NONE&quot; },
+      { &quot;category&quot;: &quot;Company&quot;, &quot;hasInclusion&quot;: true, &quot;hasExclusion&quot;: true, &quot;targetingType&quot;: &quot;BOTH&quot; },
+      { &quot;category&quot;: &quot;Education&quot;, &quot;hasInclusion&quot;: false, &quot;hasExclusion&quot;: false, &quot;targetingType&quot;: &quot;NONE&quot; },
+      { &quot;category&quot;: &quot;Job&quot;, &quot;hasInclusion&quot;: true, &quot;hasExclusion&quot;: true, &quot;targetingType&quot;: &quot;BOTH&quot; },
+      { &quot;category&quot;: &quot;Member Interests and Traits&quot;, &quot;hasInclusion&quot;: false, &quot;hasExclusion&quot;: false, &quot;targetingType&quot;: &quot;NONE&quot; }
+    ],
+    &quot;creativeType&quot;: &quot;SPONSORED_STATUS_UPDATE&quot;,
+    &quot;fullAdText&quot;: &quot;Är det dags för ett omtag kring företagets digitala annonsering eller SEO?...&quot;,
+    &quot;headlineText&quot;: &quot;Professionellt stöd kring digital annonsering och SEO&quot;,
+    &quot;destinationUrl&quot;: &quot;https://nivide.se?trk=ad_library_ad_preview_headline_content&quot;,
+    &quot;ctaButtonText&quot;: &quot;Läs mer&quot;,
+    &quot;advertiserLogoUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+    &quot;imageUrl&quot;: &quot;https://media.licdn.com/dms/image/...&quot;,
+    &quot;videoUrls&quot;: [],
+    &quot;videoPosterUrl&quot;: null
+  }
+}
+</code></pre>
+<h3>Output Fields Reference</h3>
+<h4>Standard Fields (always present)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adId</code></td>
+<td>Unique LinkedIn ad identifier</td>
+</tr>
+<tr>
+<td><code>advertiserName</code></td>
+<td>Company/advertiser name</td>
+</tr>
+<tr>
+<td><code>advertiserBio</code></td>
+<td>Advertiser bio/subtitle text</td>
+</tr>
+<tr>
+<td><code>isPromoted</code></td>
+<td>Whether ad is marked as promoted</td>
+</tr>
+<tr>
+<td><code>creativeType</code></td>
+<td>Type: SPONSORED_STATUS_UPDATE, SPONSORED_VIDEO, etc.</td>
+</tr>
+<tr>
+<td><code>headline</code></td>
+<td>Ad headline text</td>
+</tr>
+<tr>
+<td><code>adText</code></td>
+<td>Main ad body text (may be truncated)</td>
+</tr>
+<tr>
+<td><code>detailPageUrl</code></td>
+<td>LinkedIn URL to ad detail page</td>
+</tr>
+<tr>
+<td><code>imageUrl</code></td>
+<td>Ad creative image URL</td>
+</tr>
+<tr>
+<td><code>logoUrl</code></td>
+<td>Advertiser logo URL</td>
+</tr>
+<tr>
+<td><code>ctaText</code></td>
+<td>Call-to-action text</td>
+</tr>
+<tr>
+<td><code>externalLinksInText</code></td>
+<td>External URLs found in ad text</td>
+</tr>
+<tr>
+<td><code>scrapedAt</code></td>
+<td>ISO 8601 timestamp</td>
+</tr>
+</tbody></table>
+<h4>Detail Fields (when fetchAdDetail: true)</h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>detail.adType</code></td>
+<td>&quot;Video Ad&quot;, &quot;Single Image Ad&quot;, etc.</td>
+</tr>
+<tr>
+<td><code>detail.advertiserName</code></td>
+<td>Advertiser name from detail page</td>
+</tr>
+<tr>
+<td><code>detail.advertiserProfileUrl</code></td>
+<td>LinkedIn company page URL</td>
+</tr>
+<tr>
+<td><code>detail.paidForBy</code></td>
+<td>Legal entity that paid for the ad</td>
+</tr>
+<tr>
+<td><code>detail.adStartDate</code></td>
+<td>When the ad started running</td>
+</tr>
+<tr>
+<td><code>detail.adEndDate</code></td>
+<td>When the ad stopped (null if still active)</td>
+</tr>
+<tr>
+<td><code>detail.adStatus</code></td>
+<td>ACTIVE, INACTIVE, or UNKNOWN</td>
+</tr>
+<tr>
+<td><code>detail.adRunDatesRaw</code></td>
+<td>Raw date string from the page</td>
+</tr>
+<tr>
+<td><code>detail.totalImpressions</code></td>
+<td>Impression range string (e.g., &quot;100k-150k&quot;)</td>
+</tr>
+<tr>
+<td><code>detail.impressionsByCountry</code></td>
+<td>Array of { country, impressionPercent, progressValue }</td>
+</tr>
+<tr>
+<td><code>detail.targetingLanguage</code></td>
+<td>Language targeting text</td>
+</tr>
+<tr>
+<td><code>detail.targetingLocation</code></td>
+<td>Location targeting text</td>
+</tr>
+<tr>
+<td><code>detail.targetingParameters</code></td>
+<td>Array of { category, hasInclusion, hasExclusion, targetingType }</td>
+</tr>
+<tr>
+<td><code>detail.fullAdText</code></td>
+<td>Full untruncated ad text</td>
+</tr>
+<tr>
+<td><code>detail.headlineText</code></td>
+<td>Headline from card</td>
+</tr>
+<tr>
+<td><code>detail.destinationUrl</code></td>
+<td>Full destination URL with UTM params</td>
+</tr>
+<tr>
+<td><code>detail.ctaButtonText</code></td>
+<td>CTA button label (e.g., &quot;Learn more&quot;)</td>
+</tr>
+<tr>
+<td><code>detail.videoUrls</code></td>
+<td>Array of { src, type, bitrate } for all quality variants</td>
+</tr>
+<tr>
+<td><code>detail.videoPosterUrl</code></td>
+<td>Video thumbnail URL</td>
+</tr>
+<tr>
+<td><code>detail.advertiserLogoUrl</code></td>
+<td>Logo image URL</td>
+</tr>
+<tr>
+<td><code>detail.imageUrl</code></td>
+<td>Ad image URL</td>
+</tr>
+<tr>
+<td><code>detail.creativeType</code></td>
+<td>Creative type from data attribute</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📊 Pre-Configured Data Views</h2>
+<h3>1. 📢 Overview</h3>
+<p>Quick summary of all ads with essential information.</p>
+<p><strong>Fields:</strong> Ad image, ID, advertiser, bio, creative type, headline, ad text, CTA, LinkedIn URL</p>
+<h3>2. 📋 Detailed View</h3>
+<p>Complete ad information including external links, timestamps, and enriched detail data.</p>
+<p><strong>Fields:</strong> All standard fields + detail fields (impressions, targeting, dates, video URLs)</p>
+<h3>3. 🏢 Advertisers</h3>
+<p>Ads grouped by advertiser/company.</p>
+<p><strong>Fields:</strong> Logo, company name, bio, ad ID, headline, creative type, URL</p>
+<h3>4. 🎨 Creative Analysis</h3>
+<p>Focus on ad creatives and content.</p>
+<p><strong>Fields:</strong> Creative image, ID, advertiser, bio, type, headline, body text, CTA</p>
+<hr>
+<h2>⚙️ More Examples</h2>
+<h3>Full Filters with Impressions and Targeting</h3>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    {
+      &quot;keyword&quot;: &quot;sony&quot;,
+      &quot;countries&quot;: [&quot;DZ&quot;],
+      &quot;impressionsMinValue&quot;: 5,
+      &quot;impressionsMinUnit&quot;: &quot;none&quot;,
+      &quot;impressionsMaxValue&quot;: 123456789,
+      &quot;impressionsMaxUnit&quot;: &quot;none&quot;,
+      &quot;includedTargetingFacetCategories&quot;: [&quot;LANGUAGE&quot;, &quot;AUDIENCE&quot;, &quot;JOB&quot;],
+      &quot;excludedTargetingFacetCategories&quot;: [&quot;LOCATION&quot;, &quot;COMPANY&quot;],
+      &quot;sortOrder&quot;: &quot;ASCENDING&quot;
+    }
+  ],
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<h3>Multiple URLs with Detail Enrichment</h3>
+<pre><code class="language-json">{
+  &quot;urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.linkedin.com/ad-library/search?keyword=apify&amp;countries=US%2CGB&quot; },
+    { &quot;url&quot;: &quot;https://www.linkedin.com/ad-library/search?accountOwner=nivide&amp;payer=nivide&quot; }
+  ],
+  &quot;fetchAdDetail&quot;: true,
+  &quot;maxResults&quot;: 20
+}
+</code></pre>
+<h3>Competitor Research Across Regions</h3>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    { &quot;keyword&quot;: &quot;web scraping&quot;, &quot;accountOwner&quot;: &quot;ParseHub&quot;, &quot;countries&quot;: [&quot;US&quot;] },
+    { &quot;keyword&quot;: &quot;data extraction&quot;, &quot;accountOwner&quot;: &quot;Octoparse&quot;, &quot;countries&quot;: [&quot;GB&quot;] },
+    { &quot;keyword&quot;: &quot;automation&quot;, &quot;accountOwner&quot;: &quot;Apify&quot;, &quot;payer&quot;: &quot;Apify Technologies s.r.o.&quot;, &quot;countries&quot;: [&quot;CA&quot;] }
+  ],
+  &quot;dateOption&quot;: &quot;last-30-days&quot;,
+  &quot;fetchAdDetail&quot;: true,
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<p>Three independent searches, each scoped to its own company and region. <strong>Total: 3 × 50 = 150 max results.</strong></p>
+<h3>Seasonal Campaign Analysis (Unlimited)</h3>
+<pre><code class="language-json">{
+  &quot;searches&quot;: [
+    {
+      &quot;keyword&quot;: &quot;black friday&quot;,
+      &quot;dateOption&quot;: &quot;custom-date-range&quot;,
+      &quot;startDate&quot;: &quot;2025-11-01&quot;,
+      &quot;endDate&quot;: &quot;2025-11-30&quot;
+    }
+  ],
+  &quot;maxResults&quot;: 0
+}
+</code></pre>
+<hr>
+<h2>📈 Performance</h2>
+<h3>Without fetchAdDetail</h3>
+<ul>
+<li><strong>Page (10 ads)</strong> — a few seconds</li>
+<li><strong>100 Ads</strong> — well under a minute</li>
+<li><strong>1000 Ads</strong> — a few minutes</li>
+</ul>
+<h3>With fetchAdDetail Enabled</h3>
+<p>Enabling detail enrichment fires one extra request per ad, so expect runs to take longer — typically a few minutes per 100 ads depending on retry rate.</p>
+<h3>Resource Usage</h3>
+<ul>
+<li><strong>Memory</strong> — 256MB minimum, 512MB recommended</li>
+<li><strong>Network</strong> — Moderate bandwidth (higher with fetchAdDetail)</li>
+</ul>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<h3>Legal Considerations</h3>
+<p>This actor extracts publicly available data from LinkedIn&#39;s Ad Library. Users must:</p>
+<ul>
+<li>Comply with LinkedIn&#39;s Terms of Service</li>
+<li>Respect robots.txt directives</li>
+<li>Follow applicable data protection laws (GDPR, CCPA, etc.)</li>
+<li>Use data responsibly and ethically</li>
+</ul>
+<p><strong>The actor creator is not responsible for how users utilize the extracted data.</strong></p>
+<h3>Data Accuracy</h3>
+<ul>
+<li>Data is extracted as-is from LinkedIn Ad Library</li>
+<li>Ad availability may change between scraping sessions</li>
+<li>Some fields may be null if not present in the ad</li>
+<li>The <code>detail</code> object depends on the detail page layout — if LinkedIn changes it, some fields may return null</li>
+<li>Video URLs include all quality variants with bitrate info</li>
+</ul>
+<h3>Searches &amp; Validation</h3>
+<ul>
+<li>Only <code>linkedin.com/ad-library</code> URLs are accepted — other URLs are rejected before the run starts</li>
+<li>Each search must include at least one of Company, Payer, or Keyword; searches missing all three are skipped automatically, and the rest of the run continues</li>
+</ul>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Download Loom videos and extract transcripts.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research.</p>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI.</p>
+<hr>
+<p><strong>Ready to extract LinkedIn ad data?</strong> <a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63">Start using LinkedIn Ad Library Scraper now!</a></p>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +859,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +867,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'linkedin-ads-scraper';
-    </script>
 </body>
 </html>

@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>N8n Workflow Server - No Hosting Needed | Apify | FlowExtract API</title>
+    <meta name="title" content="N8n Workflow Server - No Hosting Needed | Apify | FlowExtract API">
+    <meta name="description" content="eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify&#39;s platform in minutes — no Docker configuration, no server management, no hosting bills">
+    <link rel="canonical" href="https://flowextractapi.com/docs/n8n-workflow-server.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="N8n Workflow Server - No Hosting Needed | Apify | FlowExtract API">
+    <meta property="og:description" content="eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify&#39;s platform in minutes — no Docker configuration, no server management, no hosting bills">
+    <meta property="og:url" content="https://flowextractapi.com/docs/n8n-workflow-server.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/3HyAWafIZ0tXtJgjKTnXomqHdncgwnkW1ZQW3Qbysfg/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTXJFWVlUZzZnbXBaajJra0ctY05mZmlDOEhIay1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="N8n Workflow Server - No Hosting Needed | Apify | FlowExtract API">
+    <meta name="twitter:description" content="eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify&#39;s platform in minutes — no Docker configuration, no server management, no hosting bills">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/3HyAWafIZ0tXtJgjKTnXomqHdncgwnkW1ZQW3Qbysfg/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTXJFWVlUZzZnbXBaajJra0ctY05mZmlDOEhIay1VbnRpdGxlZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"n8n Workflow Server","description":"eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify's platform in minutes — no Docker configuration, no server management, no hosting bills","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/n8n-workflow-server.html","sameAs":"https://apify.com/dz_omar/n8n-workflow-server?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/3HyAWafIZ0tXtJgjKTnXomqHdncgwnkW1ZQW3Qbysfg/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTXJFWVlUZzZnbXBaajJra0ctY05mZmlDOEhIay1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run n8n Workflow Server?","acceptedAnswer":{"@type":"Answer","text":"Open n8n Workflow Server on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is n8n Workflow Server free?","acceptedAnswer":{"@type":"Answer","text":"n8n Workflow Server runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,317 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/3HyAWafIZ0tXtJgjKTnXomqHdncgwnkW1ZQW3Qbysfg/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTXJFWVlUZzZnbXBaajJra0ctY05mZmlDOEhIay1VbnRpdGxlZC5wbmc.png" alt="n8n Workflow Server" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">n8n Workflow Server</h1>
+                <p class="actor-hero-desc">eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify&#39;s platform in minutes — no Docker configuration, no server management, no hosting bills</p>
+                <a href="https://apify.com/dz_omar/n8n-workflow-server?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">n8n Workflow Server is a ready-to-run Apify actor from FlowExtract API for developer tools &amp; utilities. Traditional n8n hosting requires: This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>🖥️ Interactive Mode: Build workflows through the full n8n web interface with automatic data preservation</li><li>🔗 Webhook Mode: Trigger workflows programmatically via API calls without opening the dashboard — perfect for CI/CD pipelines</li><li>⏱️ Standby Mode: Run persistent HTTP endpoints for production workloads without timeout constraints</li><li>purchasing a VPS or cloud instance</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run n8n Workflow Server?</summary><p>Open n8n Workflow Server on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is n8n Workflow Server free?</summary><p>n8n Workflow Server runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <hr>
+<h2><strong>n8n Workflow Server</strong></h2>
+<h3><strong>Tagline</strong></h3>
+<p>⚡ <em>Run your workflows anywhere, instantly — no server setup needed.</em></p>
+<hr>
+<h3><strong>Overview</strong></h3>
+<p><strong>n8n Workflow Server</strong> eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify&#39;s platform in minutes — no Docker configuration, no server management, no hosting bills.</p>
+<p>This isn&#39;t just a hosted dashboard. <strong>n8n Workflow Server</strong> offers three distinct execution modes:</p>
+<ul>
+<li><strong>🖥️ Interactive Mode</strong>: Build workflows through the full n8n web interface with automatic data preservation</li>
+<li><strong>🔗 Webhook Mode</strong>: Trigger workflows programmatically via API calls without opening the dashboard — perfect for CI/CD pipelines</li>
+<li><strong>⏱️ Standby Mode</strong>: Run persistent HTTP endpoints for production workloads without timeout constraints</li>
+</ul>
+<p>Your workflow data (credentials, configurations, execution history) survives between runs through automatic backup and restore. Start working immediately, stop when done, resume later — exactly where you left off.</p>
+<hr>
+<h3><strong>Why Use n8n Workflow Server?</strong></h3>
+<p><strong>Traditional n8n hosting requires:</strong></p>
+<ul>
+<li>Purchasing a VPS or cloud instance</li>
+<li>Installing Docker and configuring containers</li>
+<li>Managing SSL certificates and reverse proxies</li>
+<li>Monitoring uptime and handling crashes</li>
+<li>Backing up databases manually</li>
+<li>Paying monthly hosting fees (even when idle)</li>
+</ul>
+<p><strong>n8n Workflow Server simplifies this to:</strong></p>
+<ul>
+<li>Click &quot;Start&quot; in the Apify Console</li>
+<li>Receive your credentials and public HTTPS URL</li>
+<li>Build workflows or trigger webhooks</li>
+<li>Stop when finished (automatic backup created)</li>
+<li>Resume later from the exact same state</li>
+</ul>
+<p>💰 You pay only for actual compute time. No infrastructure management. No monthly hosting commitments.</p>
+<hr>
+<h3><strong>Key Features</strong></h3>
+<h4><strong>🚀 Instant Deployment</strong></h4>
+<p>Launch a fully configured n8n server with public HTTPS access in under 2 minutes. No configuration files, no environment variables, no command-line tools.</p>
+<h4><strong>💾 Automatic Data Persistence</strong></h4>
+<p>Every shutdown creates a timestamped backup containing your workflows, credentials (encrypted), and execution history. Upload the backup file when starting a new session to restore your complete environment.</p>
+<p><strong>⚠️ Important Security Notes:</strong></p>
+<ul>
+<li><strong>Never share your backup files</strong> — they contain your encrypted credentials. Anyone who uploads your backup will have access to your n8n credentials and workflows.</li>
+<li>Backups are stored in your Actor&#39;s Key-Value Store — <strong>you don&#39;t need to download them manually</strong> unless you want an external copy.</li>
+<li><strong>Free tier users</strong>: Apify removes storage after 7 days of inactivity. Download critical backups if you&#39;re on the free plan.</li>
+</ul>
+<h4><strong>⚡ Headless Webhook Execution</strong></h4>
+<h4><strong>⚡ Headless Webhook Execution</strong></h4>
+<p>Run workflows programmatically without the web dashboard. Provide webhook URLs in the Actor input, and <strong>n8n Workflow Server</strong> executes them sequentially, collects results, and outputs downloadable response files. Ideal for automated testing, scheduled ETL jobs, and CI/CD integration.</p>
+<h4><strong>🎯 Flexible Execution Modes</strong></h4>
+<p><strong>Normal Mode</strong>: Interactive dashboard with intelligent auto-shutdown</p>
+<ul>
+<li>Full n8n web interface</li>
+<li>Configurable idle timeout (30-360 seconds)</li>
+<li>Logout triggers immediate backup and shutdown</li>
+<li>Perfect for development and workflow building</li>
+</ul>
+<p><strong>Webhook Mode</strong>: API-only execution without dashboard access</p>
+<ul>
+<li>Restore backup → activate workflows → execute webhooks → shutdown</li>
+<li>No backup created (assumes read-only usage)</li>
+<li>Returns detailed execution results with download links</li>
+<li>Optimized for automation and testing</li>
+</ul>
+<p><strong>Standby Mode</strong>: Persistent HTTP server for production</p>
+<ul>
+<li>No automatic shutdown</li>
+<li>Continuous availability for incoming requests</li>
+<li>Manual stop creates backup</li>
+<li>Suitable for long-running webhook endpoints</li>
+</ul>
+<h4><strong>🔐 Secure Credential Handling</strong></h4>
+<p>Temporary login credentials generated per container. Public URLs expire when the server stops. Backups contain encrypted credentials following n8n&#39;s security model.</p>
+<hr>
+<h3><strong>How It Works</strong></h3>
+<h4><strong>Starting Fresh</strong></h4>
+<pre><code class="language-json">{
+  &quot;runMode&quot;: &quot;normal&quot;,
+  &quot;shutdownDelaySeconds&quot;: 120
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<ul>
+<li>Public HTTPS URL (e.g., <code>https://xxxxx.runs.apify.net</code>)</li>
+<li>Temporary email and password</li>
+<li>List of active webhook endpoints</li>
+<li>Auto-shutdown after 120 seconds of inactivity</li>
+</ul>
+<h4><strong>Restoring Previous Session</strong></h4>
+<pre><code class="language-json">{
+  &quot;runMode&quot;: &quot;normal&quot;,
+  &quot;n8nDataBackup&quot;: &quot;https://api.apify.com/.../n8n-data-2025-10-05.zip&quot;,
+  &quot;shutdownDelaySeconds&quot;: 180
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<ul>
+<li>All previous workflows restored</li>
+<li>Credentials preserved</li>
+<li>Execution history intact</li>
+<li>Continue working exactly where you stopped</li>
+</ul>
+<h4><strong>Executing Webhooks Programmatically</strong></h4>
+<pre><code class="language-json">{
+  &quot;runMode&quot;: &quot;webhook&quot;,
+  &quot;n8nDataBackup&quot;: &quot;https://api.apify.com/.../n8n-data-2025-10-05.zip&quot;,
+  &quot;startWebhooks&quot;: [
+    {
+      &quot;url&quot;: &quot;https://tawgesahnu/n8n/webhook/data-processor&quot;,
+      &quot;method&quot;: &quot;POST&quot;,
+      &quot;payload&quot;: &quot;{\&quot;source\&quot;: \&quot;api\&quot;, \&quot;records\&quot;: 1000}&quot;,
+      &quot;headers&quot;: {&quot;Content-Type&quot;: &quot;application/json&quot;}
+    }
+  ]
+}
+</code></pre>
+<p><strong>Result:</strong></p>
+<ul>
+<li>Server starts without public dashboard</li>
+<li>Workflows activate automatically</li>
+<li>Webhooks execute sequentially</li>
+<li>Detailed results with download links</li>
+<li>Immediate shutdown (no backup created)</li>
+</ul>
+<hr>
+<h3><strong>Output Format</strong></h3>
+<h4><strong>Normal Mode - Server Started</strong></h4>
+<pre><code class="language-json">{
+  &quot;mode-type&quot;: &quot;production / server_started&quot;,
+  &quot;timestamp&quot;: &quot;2025-10-05T14:30:00.000Z&quot;,
+  &quot;directUrl-backupUrl&quot;: &quot;https://xxxxx.runs.apify.net&quot;,
+  &quot;email&quot;: &quot;user@example.com&quot;,
+  &quot;password&quot;: &quot;secure-password-123&quot;,
+  &quot;message&quot;: &quot;n8n server is now running.&quot;,
+  &quot;workflows&quot;: [
+    {
+      &quot;workflowName&quot;: &quot;Customer Data Processor&quot;,
+      &quot;webhookUrl&quot;: &quot;https://xxxxx.runs.apify.net/webhook/abc-123&quot;,
+      &quot;method&quot;: &quot;POST&quot;
+    }
+  ]
+}
+</code></pre>
+<h4><strong>Normal Mode - Backup Created</strong></h4>
+<pre><code class="language-json">{
+  &quot;mode-type&quot;: &quot;production / backup_created&quot;,
+  &quot;timestamp&quot;: &quot;2025-10-05T15:45:00.000Z&quot;,
+  &quot;directUrl-backupUrl&quot;: &quot;https://api.apify.com/.../n8n-data-2025-10-05-15-45-00.zip&quot;,
+  &quot;message&quot;: &quot;Backup created successfully.&quot;,
+  &quot;workflows&quot;: [
+    {
+      &quot;workflowName&quot;: &quot;Customer Data Processor&quot;,
+      &quot;webhookUrl&quot;: &quot;https://tawgesahnu/n8n/webhook/abc-123&quot;,
+      &quot;method&quot;: &quot;POST&quot;
+    }
+  ]
+}
+</code></pre>
+<h4><strong>Webhook Mode - Execution Results</strong></h4>
+<pre><code class="language-json">{
+  &quot;mode&quot;: &quot;webhook&quot;,
+  &quot;status&quot;: &quot;completed&quot;,
+  &quot;timestamp&quot;: &quot;2025-10-05T16:00:00.000Z&quot;,
+  &quot;message&quot;: &quot;Executed 2 webhooks&quot;,
+  &quot;downloaderRunUrl&quot;: &quot;https://console.apify.com/actors/.../runs/xyz&quot;,
+  &quot;results&quot;: [
+    {
+      &quot;url&quot;: &quot;https://xxxxx.runs.apify.net/webhook/abc-123&quot;,
+      &quot;status&quot;: &quot;success&quot;,
+      &quot;fileName&quot;: &quot;result-1.json&quot;,
+      &quot;fileSizeBytes&quot;: 157884,
+      &quot;downloadUrl&quot;: &quot;https://api.apify.com/.../result-1.json&quot;
+    }
+  ]
+}
+</code></pre>
+<p>curl -X POST <a href="http://localhost:3000/webhook/Test-webhook">http://localhost:3000/webhook/Test-webhook</a>   -H &quot;Content-Type: application/json&quot;   -d &#39;{&quot;test&quot;: &quot;data&quot;}&#39;</p>
+<p>curl -X POST <a href="http://localhost:5678/webhook/idealista-scraper-api">http://localhost:5678/webhook/idealista-scraper-api</a> -H &quot;Content-Type: application/json&quot; -d &#39;{
+    &quot;Url&quot;: &quot;<a href="https://www.idealista.com/en/inmueble/105296229/">https://www.idealista.com/en/inmueble/105296229/</a>&quot;,
+    &quot;proxyConfig&quot;: {
+        &quot;useApifyProxy&quot;: true,
+        &quot;apifyProxyGroups&quot;: [
+            &quot;RESIDENTIAL&quot;
+        ]
+    }
+}&#39;</p>
+<hr>
+<h3><strong>Common Use Cases</strong></h3>
+<p><strong>🔧 Workflow Development</strong>
+Build and test workflows interactively. Auto-shutdown prevents unnecessary compute charges during idle time. Automatic backups ensure your work is never lost.</p>
+<p><strong>🔄 CI/CD Integration</strong>
+Execute test workflows as part of your build pipeline. Webhook mode runs headless, returns structured results, and exits cleanly without manual intervention.</p>
+<p><strong>📊 Scheduled ETL Jobs</strong>
+Trigger data processing workflows via API calls from cron jobs, Apify Schedules, or external automation tools. Download results programmatically for further processing.</p>
+<p><strong>🌐 Long-Running Services</strong>
+Deploy persistent webhook endpoints using Standby mode. No timeout constraints, manual control over shutdown, automatic backup on stop.</p>
+<p><strong>🧪 Multi-Environment Testing</strong>
+Maintain separate backup files for development, staging, and production configurations. Switch between environments by uploading different backup files.</p>
+<hr>
+<h3><strong>Best Practices</strong></h3>
+<h4><strong>Backup Management</strong></h4>
+<ul>
+<li>Download backups after making workflow changes</li>
+<li>Keep multiple backup versions for rollback capability</li>
+<li>Test restored backups in webhook mode before production use</li>
+<li>Webhook mode doesn&#39;t create backups (design assumption: read-only execution)</li>
+</ul>
+<h4><strong>Security Considerations</strong></h4>
+<ul>
+<li>Credentials are container-specific and temporary</li>
+<li>Public URLs expire when the server stops</li>
+<li>Backups contain encrypted credentials per n8n&#39;s encryption model</li>
+<li>Enable &quot;Container web server&quot; in Actor settings for HTTPS access</li>
+</ul>
+<h4><strong>Webhook URL Conventions</strong></h4>
+<p><strong>During Runtime (immediate use):</strong></p>
+<pre><code>https://xxxxx.runs.apify.net/webhook/your-workflow-id
+</code></pre>
+<p><strong>For Storage (webhook mode input):</strong></p>
+<pre><code>https://tawgesahnu/n8n/webhook/your-workflow-id
+</code></pre>
+<p>The branded domain format prevents URL expiration issues. <strong>n8n Workflow Server</strong> converts branded URLs to live URLs automatically when executing webhooks.</p>
+<hr>
+<h3><strong>Advanced Configuration</strong></h3>
+<p>⚙️ Optional parameters for expert users who understand n8n internals:</p>
+<ul>
+<li><strong>DB_SQLITE_POOL_SIZE</strong>: SQLite concurrent connection limit (default: 2)</li>
+<li><strong>N8N_BLOCK_ENV_ACCESS_IN_NODE</strong>: Restrict workflow access to environment variables</li>
+<li><strong>HEALTHCHECK_TIMEOUT</strong>: Startup validation timeout in milliseconds (default: 5000)</li>
+<li><strong>HEALTHCHECK_MAX_ATTEMPTS</strong>: Retry count before failing startup (default: 60)</li>
+<li><strong>PROCESS_START_TIMEOUT</strong>: n8n spawn timeout in milliseconds (default: 5000)</li>
+<li><strong>SHUTDOWN_TIMEOUT</strong>: Graceful shutdown wait time before force-kill (default: 5000)</li>
+</ul>
+<p>⚠️ <strong>Warning</strong>: Incorrect advanced settings may cause crashes, data corruption, or startup failures. Leave defaults unless you have specific performance requirements.</p>
+<hr>
+<h3><strong>Requirements</strong></h3>
+<p><strong>Apify Platform Configuration</strong></p>
+<ul>
+<li>Enable &quot;Container web server&quot; in Actor settings (required for Normal and Standby modes)</li>
+<li>Provides public HTTPS URL for dashboard access</li>
+</ul>
+<p><strong>Resource Allocation</strong></p>
+<ul>
+<li>Minimum: 512MB RAM</li>
+<li>Recommended: 1GB RAM or above for complex workflows</li>
+<li>Cold start time: ~1-2 minutes (Normal mode)</li>
+<li>Total execution time: ~1-3 minutes (Webhook mode)</li>
+</ul>
+<hr>
+<h3><strong>Support &amp; Resources</strong></h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h3><strong>License &amp; Attribution</strong></h3>
+<ul>
+<li><strong>Actor License</strong>: MIT</li>
+<li><strong>n8n License</strong>: Fair-code distribution model</li>
+<li><strong>Data Storage</strong>: All workflow data stored in your Apify account</li>
+<li><strong>Privacy</strong>: Backups contain your credentials and configurations</li>
+</ul>
+<hr>
+<p><strong>Version 1.0</strong> | Built with n8n (latest stable) | Powered by Apify Platform</p>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +372,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/n8n-workflow-server?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +380,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'n8n-workflow-server';
-    </script>
 </body>
 </html>

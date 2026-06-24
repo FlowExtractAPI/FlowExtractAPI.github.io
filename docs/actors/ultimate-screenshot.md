@@ -2,7 +2,7 @@
 
 Transform any webpage into high-quality screenshots, PDFs, or engaging videos/GIFs with our powerful web capture tool. Perfect for web monitoring, content creation, documentation, and automated testing.
 
-[![Apify Actor](https://raw.githubusercontent.com/DZ-ABDLHAKIM/Ultimate-Screenshot/refs/heads/main/Ultimate%20Screenshot.png)](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)
+[![Apify Actor](https://raw.githubusercontent.com/FlowExtractAPI/Ultimate-Screenshot/refs/heads/main/Ultimate%20Screenshot.png)](https://apify.com/dz_omar/ultimate-screenshot)
 
 
 ## ✨ Key Features
@@ -224,7 +224,7 @@ Over 100 device presets including:
 
 ## 🛠️ Installation & Usage
 
-1. **Find this Actor** on [Apify Store](https://apify.com/store?fpr=smcx63)
+1. **Find this Actor** on [Apify Store](https://apify.com/store)
 2. **Configure Input** using the visual editor or JSON
 3. **Run the Actor** and wait for completion
 4. **Download Results** from the generated dataset
@@ -286,12 +286,13 @@ Results are stored in Apify Dataset with the following structure:
 - Enable `scrollToBottom` for dynamic content
 - Set appropriate `delayBeforeScreenshot` for complex pages
 
-## 🤝 Support & Resources
+## 🤝 Support & Contact
 
-### **Getting Help**
+For assistance or custom implementations:
+
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media
@@ -299,28 +300,3 @@ Results are stored in Apify Dataset with the following structure:
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
 - 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
-
-
----
-
-## 🌟 Related Actors by DZ_OMAR
-
-### 🎬 Video & Media
-- **[YouTube Transcript Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)** - Extract transcripts with timestamps
-- **[YouTube Scraper Pro](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)** - Complete channel and playlist extraction
-- **[Zoom Scraper](https://apify.com/dz_omar/zoom-scraper?fpr=smcx63)** - Download recordings and transcripts
-- **[Loom Scraper](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63)** - Loom video and transcript extraction
-
-### 🏠 Real Estate
-- **[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** - Spanish property data with API
-- **[Idealista Scraper](https://apify.com/dz_omar/idealista-scraper?fpr=smcx63)** - Real estate listings extractor
-
-### 🛠️ Developer Tools
-- **[Screenshot](https://apify.com/dz_omar/screenshot?fpr=smcx63)** - Fast webpage screenshots
-- **[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)** - Advanced screenshot tool
-- **[Network Security Scanner](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** - Security vulnerability scanner
-
-### 📱 Social Media
-- **[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63)** - Extract Facebook ads data
-
----

@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-06-24T10:37:06.501Z",
+  "actors": {
+    "value": 35,
+    "display": "35"
+  },
+  "runs": {
+    "value": 736709,
+    "display": "700K+"
+  },
+  "users": {
+    "value": 7150,
+    "display": "7,000+"
+  },
+  "categories": {
+    "value": 7
+  }
+}

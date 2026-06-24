@@ -1,0 +1,21 @@
+{
+  "slug": "linkedin-ads-scraper",
+  "_drafted": true,
+  "intro": "LinkedIn Ad Library Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Extract comprehensive advertising data from LinkedIn's Ad Library with automatic pagination, advanced filtering, URL-based search, and optional ad detail enrichment. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "ad Creatives — Images, videos (all quality variants), and carousel content",
+    "ad Copy — Headlines, body text, descriptions, and full untruncated ad text",
+    "advertiser Information — Company names, logos, bio/subtitle text, profile URLs",
+    "call-to-Action — CTA button text and destination links"
+  ],
+  "faq": [
+    {
+      "q": "How do I run LinkedIn Ad Library Scraper?",
+      "a": "Open LinkedIn Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is LinkedIn Ad Library Scraper free?",
+      "a": "LinkedIn Ad Library Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Realtor.com Property Listings Scraper | FlowExtract API</title>
+    <meta name="title" content="Realtor.com Property Listings Scraper | FlowExtract API">
+    <meta name="description" content="Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/realtor-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Realtor.com Property Listings Scraper | FlowExtract API">
+    <meta property="og:description" content="Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/realtor-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-hMRelVkzBU4tX8K07-eBw5YmEwr8-realtor-scraper-icon.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Realtor.com Property Listings Scraper | FlowExtract API">
+    <meta name="twitter:description" content="Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-hMRelVkzBU4tX8K07-eBw5YmEwr8-realtor-scraper-icon.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Realtor.com Scraper","description":"Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/realtor-scraper.html","sameAs":"https://apify.com/dz_omar/realtor-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-hMRelVkzBU4tX8K07-eBw5YmEwr8-realtor-scraper-icon.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Realtor.com Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Realtor.com Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Realtor.com Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Realtor.com Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-hMRelVkzBU4tX8K07-eBw5YmEwr8-realtor-scraper-icon.png" alt="Realtor.com Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">Realtor.com Scraper</h1>
+                <p class="actor-hero-desc">Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.</p>
+                <a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Realtor.com Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Extract real estate property listings from any Realtor.com search URL pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>~2–3 seconds per page (~40 properties per page)</li><li>100 properties ~10–15 seconds</li><li>1,000 properties ~2–4 minutes</li><li>progress is saved automatically every ~60 seconds</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Realtor.com Scraper?</summary><p>Open Realtor.com Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Realtor.com Scraper free?</summary><p>Realtor.com Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 Realtor.com Scraper</h1>
+<p><strong>Extract real estate property listings from any Realtor.com search URL  pricing, location, agent contacts, photos, tax history, AVM estimates, nearby schools, and full listing history.</strong></p>
+<p>Scrapes comprehensive property data from any Realtor.com search URL. Supports all filter combinations: property type, beds/baths, price range, new construction, 55+ communities, HOA filters, keywords, lot size, square footage, and more.</p>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Basic  Search Results</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.realtor.com/realestateandhomes-search/Las-Vegas_NV/type-single-family-home/beds-2-3/price-200000-400000&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;],
+    &quot;apifyProxyCountry&quot;: &quot;US&quot;
+  }
+}
+</code></pre>
+<h3>Advanced Filters</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.realtor.com/realestateandhomes-search/35007/show-55-plus/radius-50/keyword-pool,pond/hoa-400,known/sqft-500-10000/age-1+100/lot-sqft-2000-4356000/features-cfwfg2&quot; }
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;],
+    &quot;apifyProxyCountry&quot;: &quot;US&quot;
+  }
+}
+</code></pre>
+<h3>Multi-URL Run</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.realtor.com/realestateandhomes-search/New-York_NY/type-condo&quot; },
+    { &quot;url&quot;: &quot;https://www.realtor.com/realestateandhomes-search/Austin_TX/type-single-family-home&quot; },
+    { &quot;url&quot;: &quot;https://www.realtor.com/realestateandhomes-search/Miami_FL/price-500000-1000000&quot; }
+  ],
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<hr>
+<h2>📋 Input Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td></td>
+<td>One or more Realtor.com property search URLs. Supports all filter combinations.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td>10</td>
+<td>Max properties to scrape per URL. Set to <code>0</code> for unlimited.</td>
+</tr>
+<tr>
+<td><code>proxyConfiguration</code></td>
+<td>object</td>
+<td>Apify Residential (US)</td>
+<td>Proxy settings. US residential proxies required for reliable access.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output</h2>
+<p>Each scraped property is saved as a single JSON record with the following fields:</p>
+<pre><code class="language-json">{
+  &quot;property_id&quot;: &quot;1130129314&quot;,
+  &quot;listing_id&quot;: &quot;2992941114&quot;,
+  &quot;status&quot;: &quot;for_sale&quot;,
+  &quot;list_price&quot;: 223000,
+  &quot;price_reduced_amount&quot;: null,
+  &quot;price_per_sqft&quot;: 284,
+  &quot;photo_count&quot;: 37,
+  &quot;list_date&quot;: &quot;2026-03-26T05:28:33Z&quot;,
+  &quot;last_update_date&quot;: &quot;2026-03-26T10:07:40Z&quot;,
+  &quot;last_price_change_date&quot;: null,
+  &quot;last_price_change_amount&quot;: null,
+  &quot;location&quot;: {
+    &quot;address&quot;: {
+      &quot;line&quot;: &quot;2455 W Serene Ave Unit 714&quot;,
+      &quot;city&quot;: &quot;Las Vegas&quot;,
+      &quot;state_code&quot;: &quot;NV&quot;,
+      &quot;postal_code&quot;: &quot;89123&quot;,
+      &quot;state&quot;: &quot;Nevada&quot;,
+      &quot;coordinate&quot;: { &quot;lat&quot;: 36.019775, &quot;lon&quot;: -115.174453 }
+    },
+    &quot;street_view_url&quot;: &quot;https://maps.googleapis.com/...&quot;,
+    &quot;neighborhoods&quot;: [{ &quot;name&quot;: &quot;Boca Raton&quot; }]
+  },
+  &quot;description&quot;: {
+    &quot;baths_consolidated&quot;: &quot;2&quot;,
+    &quot;baths&quot;: 2,
+    &quot;beds&quot;: 2,
+    &quot;sqft&quot;: 784,
+    &quot;lot_sqft&quot;: null,
+    &quot;garage&quot;: null,
+    &quot;pool&quot;: null,
+    &quot;styles&quot;: null,
+    &quot;type&quot;: &quot;multi_family&quot;,
+    &quot;text&quot;: &quot;Resort-style luxury...&quot;,
+    &quot;year_built&quot;: 2007
+  },
+  &quot;flags&quot;: {
+    &quot;is_contingent&quot;: null,
+    &quot;is_new_construction&quot;: null,
+    &quot;is_pending&quot;: null,
+    &quot;is_foreclosure&quot;: null,
+    &quot;is_price_reduced&quot;: null,
+    &quot;is_new_listing&quot;: false,
+    &quot;is_coming_soon&quot;: null
+  },
+  &quot;primary_photo&quot;: {
+    &quot;href&quot;: &quot;https://ap.rdcpix.com/...jpg&quot;
+  },
+  &quot;photos&quot;: [
+    {
+      &quot;href&quot;: &quot;https://ap.rdcpix.com/...jpg&quot;,
+      &quot;type&quot;: &quot;realtordotcom_mls_listing_image&quot;,
+      &quot;tags&quot;: [{ &quot;label&quot;: &quot;living_room&quot;, &quot;probability&quot;: 0.9997 }]
+    }
+  ],
+  &quot;advertisers&quot;: [
+    {
+      &quot;fulfillment_id&quot;: &quot;2720061&quot;,
+      &quot;name&quot;: &quot;Gustavo Lopez&quot;,
+      &quot;type&quot;: &quot;seller&quot;,
+      &quot;email&quot;: &quot;gustavo@glo-homes.vegas&quot;,
+      &quot;href&quot;: &quot;http://www.glo-homes.vegas&quot;,
+      &quot;state_license&quot;: &quot;&quot;,
+      &quot;phones&quot;: [{ &quot;number&quot;: &quot;7025768960&quot;, &quot;type&quot;: &quot;Mobile&quot;, &quot;ext&quot;: &quot;&quot; }],
+      &quot;office&quot;: {
+        &quot;name&quot;: &quot;LPT Realty, LLC&quot;,
+        &quot;email&quot;: &quot;nvbrokers@lptrealty.com&quot;,
+        &quot;phones&quot;: [{ &quot;number&quot;: &quot;7025450020&quot;, &quot;type&quot;: &quot;Office&quot; }],
+        &quot;address&quot;: { &quot;city&quot;: &quot;Las Vegas&quot;, &quot;state_code&quot;: &quot;NV&quot; }
+      },
+      &quot;broker&quot;: { &quot;name&quot;: &quot;First Mutual Realty&quot; },
+      &quot;photo&quot;: { &quot;href&quot;: &quot;https://ap.rdcpix.com/...jpg&quot; }
+    }
+  ],
+  &quot;hoa&quot;: { &quot;fee&quot;: null },
+  &quot;open_houses&quot;: null,
+  &quot;coming_soon_date&quot;: null,
+  &quot;virtual_tours&quot;: [{ &quot;href&quot;: &quot;https://www.propertypanorama.com/...&quot; }],
+  &quot;matterport&quot;: null,
+  &quot;mortgage&quot;: {
+    &quot;estimate&quot;: {
+      &quot;loan_amount&quot;: 178400,
+      &quot;monthly_payment&quot;: 1279,
+      &quot;down_payment&quot;: 44600,
+      &quot;average_rate&quot;: { &quot;rate&quot;: 0.06263, &quot;loan_type&quot;: { &quot;term&quot;: 30 } },
+      &quot;monthly_payment_details&quot;: [
+        { &quot;type&quot;: &quot;principal_and_interest&quot;, &quot;amount&quot;: 1100 },
+        { &quot;type&quot;: &quot;property_tax&quot;, &quot;amount&quot;: 125 }
+      ]
+    },
+    &quot;property_tax_rate&quot;: 0.006713,
+    &quot;is_listing_price_eligible_for_fha&quot;: true
+  },
+  &quot;estimates&quot;: {
+    &quot;current_values&quot;: [
+      { &quot;source&quot;: { &quot;type&quot;: &quot;corelogic&quot;, &quot;name&quot;: &quot;Cotality™&quot; }, &quot;estimate&quot;: 220300, &quot;isbest_homevalue&quot;: true },
+      { &quot;source&quot;: { &quot;type&quot;: &quot;collateral&quot;, &quot;name&quot;: &quot;Collateral Analytics&quot; }, &quot;estimate&quot;: 224000 },
+      { &quot;source&quot;: { &quot;type&quot;: &quot;quantarium&quot;, &quot;name&quot;: &quot;Quantarium&quot; }, &quot;estimate&quot;: 220234 }
+    ],
+    &quot;historical_values&quot;: [ &quot;...&quot; ]
+  },
+  &quot;tax_history&quot;: [
+    { &quot;tax&quot;: 1496, &quot;year&quot;: 2025, &quot;assessment&quot;: { &quot;building&quot;: 54400, &quot;land&quot;: 20580, &quot;total&quot;: 74980 } }
+  ],
+  &quot;property_history&quot;: [
+    { &quot;date&quot;: &quot;2026-03-26&quot;, &quot;event_name&quot;: &quot;Listed&quot;, &quot;price&quot;: 223000, &quot;price_change&quot;: 0, &quot;source_name&quot;: &quot;LasVegas&quot; }
+  ],
+  &quot;nearby_schools&quot;: {
+    &quot;schools&quot;: [
+      { &quot;name&quot;: &quot;John R Hummel Elementary School&quot;, &quot;rating&quot;: 3, &quot;distance_in_miles&quot;: 1.1, &quot;funding_type&quot;: &quot;public&quot; }
+    ]
+  },
+  &quot;details&quot;: [
+    { &quot;category&quot;: &quot;Appliances&quot;, &quot;text&quot;: [&quot;Dishwasher&quot;, &quot;Dryer&quot;, &quot;Refrigerator&quot;] },
+    { &quot;category&quot;: &quot;Heating and Cooling&quot;, &quot;text&quot;: [&quot;Heating Features: Central Furnace&quot;] }
+  ],
+  &quot;local&quot;: {
+    &quot;noise&quot;: { &quot;score&quot;: null },
+    &quot;flood&quot;: { &quot;flood_factor_score&quot;: 1, &quot;fema_zone&quot;: [&quot;X (unshaded)&quot;] }
+  },
+  &quot;source&quot;: {
+    &quot;id&quot;: &quot;LVNV&quot;,
+    &quot;name&quot;: &quot;LasVegas&quot;,
+    &quot;type&quot;: &quot;mls&quot;,
+    &quot;agents&quot;: [{ &quot;agent_name&quot;: &quot;Gustavo Lopez&quot;, &quot;type&quot;: &quot;seller&quot; }],
+    &quot;disclaimer&quot;: { &quot;text&quot;: &quot;©2026 Greater Las Vegas Association of REALTORS®.&quot; }
+  },
+  &quot;href&quot;: &quot;https://www.realtor.com/realestateandhomes-detail/...&quot;
+}
+</code></pre>
+<hr>
+<h2>📊 Dataset Views</h2>
+<p>The scraper includes six pre-configured views in the Apify dataset UI:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Overview</strong></td>
+<td>Quick summary  ID, status, price, $/sqft, location, beds/baths/sqft, photo, dates</td>
+</tr>
+<tr>
+<td><strong>Detailed</strong></td>
+<td>Full property data with flags, HOA, open houses, virtual tours, and MLS source</td>
+</tr>
+<tr>
+<td><strong>Agents &amp; Advertisers</strong></td>
+<td>Listing agent, office, broker details with phones and emails</td>
+</tr>
+<tr>
+<td><strong>Pricing &amp; Estimates</strong></td>
+<td>List price, AVM estimates (Cotality, Collateral Analytics, Quantarium), mortgage, tax history</td>
+</tr>
+<tr>
+<td><strong>Locations</strong></td>
+<td>Address, coordinates, neighborhoods, nearby schools, flood and noise scores</td>
+</tr>
+<tr>
+<td><strong>Property History</strong></td>
+<td>Full event log  listings, price changes, sales, and removals across all sources</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>⚡ Performance &amp; Reliability</h2>
+<h3>Speed</h3>
+<ul>
+<li><strong>~2–3 seconds per page</strong> (~40 properties per page)</li>
+<li><strong>100 properties</strong>  ~10–15 seconds</li>
+<li><strong>1,000 properties</strong>  ~2–4 minutes</li>
+</ul>
+<h3>Crash Recovery</h3>
+<p>The scraper uses Apify&#39;s state persistence to survive crashes, migrations, and timeouts. If a run is interrupted:</p>
+<ul>
+<li>Progress is saved automatically every ~60 seconds</li>
+<li>On restart, scraping resumes from where it stopped</li>
+<li>Already-scraped pages and URLs are not re-processed</li>
+</ul>
+<h3>Error Handling</h3>
+<ul>
+<li>Exponential backoff with 3 retries on failed requests</li>
+<li>Continues to the next page after 3 consecutive errors on a single page</li>
+<li>Continues to the next URL if a URL fails entirely</li>
+<li>State is preserved on failure for manual resume</li>
+</ul>
+<h3>Resource Usage</h3>
+<ul>
+<li><strong>Memory</strong>: 1024 MB max</li>
+<li><strong>Proxy</strong>: US residential proxies required for consistent access</li>
+</ul>
+<hr>
+<h2>📚 URL Parameters Reference</h2>
+<p>Realtor.com search URLs support a rich set of filter segments in the path:</p>
+<table>
+<thead>
+<tr>
+<th>Segment</th>
+<th>Example</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>type-*</code></td>
+<td><code>type-single-family-home</code></td>
+<td>Property type (single-family-home, condo, townhome, multi-family, land)</td>
+</tr>
+<tr>
+<td><code>beds-*</code></td>
+<td><code>beds-2-4</code></td>
+<td>Bedroom range (min-max)</td>
+</tr>
+<tr>
+<td><code>baths-*</code></td>
+<td><code>baths-2</code></td>
+<td>Minimum bathrooms</td>
+</tr>
+<tr>
+<td><code>price-*</code></td>
+<td><code>price-200000-500000</code></td>
+<td>Price range</td>
+</tr>
+<tr>
+<td><code>sqft-*</code></td>
+<td><code>sqft-1000-3000</code></td>
+<td>Interior square footage range</td>
+</tr>
+<tr>
+<td><code>lot-sqft-*</code></td>
+<td><code>lot-sqft-5000-20000</code></td>
+<td>Lot size range</td>
+</tr>
+<tr>
+<td><code>age-*</code></td>
+<td><code>age-1+10</code></td>
+<td>Year built range (years ago)</td>
+</tr>
+<tr>
+<td><code>hoa-*</code></td>
+<td><code>hoa-300,known</code></td>
+<td>Max HOA fee and known-only filter</td>
+</tr>
+<tr>
+<td><code>show-55-plus</code></td>
+<td><code>show-55-plus</code></td>
+<td>55+ communities only</td>
+</tr>
+<tr>
+<td><code>keyword-*</code></td>
+<td><code>keyword-pool,garage</code></td>
+<td>Keyword filter (comma-separated)</td>
+</tr>
+<tr>
+<td><code>radius-*</code></td>
+<td><code>radius-25</code></td>
+<td>Search radius in miles</td>
+</tr>
+<tr>
+<td><code>builderpromotion</code></td>
+<td><code>builderpromotion</code></td>
+<td>New construction with builder promotions</td>
+</tr>
+<tr>
+<td><code>ob-*</code></td>
+<td><code>ob-pd</code> (price desc)</td>
+<td>Sort order</td>
+</tr>
+</tbody></table>
+<h3>Sample URLs</h3>
+<pre><code>Single-family, Las Vegas:  https://www.realtor.com/realestateandhomes-search/Las-Vegas_NV/type-single-family-home
+Condos, NYC:               https://www.realtor.com/realestateandhomes-search/New-York_NY/type-condo
+55+ communities:           https://www.realtor.com/realestateandhomes-search/35007/show-55-plus/radius-50
+Builder promotions:        https://www.realtor.com/realestateandhomes-search/35007/builderpromotion
+Price range filter:        https://www.realtor.com/realestateandhomes-search/Miami_FL/price-300000-700000
+Beds + baths filter:       https://www.realtor.com/realestateandhomes-search/Austin_TX/beds-3-5/baths-2
+</code></pre>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<ul>
+<li>Data is extracted as-is from Realtor.com. Prices and availability should be verified directly with listing agents.</li>
+<li>US residential proxies are required  datacenter IPs are blocked by Realtor.com.</li>
+<li>Realtor.com may update their website structure. If the scraper stops working, check for actor updates.</li>
+<li>Users must comply with Realtor.com&#39;s Terms of Service and applicable data protection laws.</li>
+</ul>
+<p><strong>The actor creator is not responsible for how users utilize the extracted data.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar. Prices, locations, agent contacts, amenities, and more.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access. Get listings, prices, and detailed property information.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.</p>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI. Free regex extraction or paid AI-powered dynamic extraction.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata. Perfect for content analysis, SEO, and subtitle generation.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist. Fast, reliable, and built for scale.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Download Loom videos and extract transcripts. Perfect for training content and video documentation.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research. Track ad campaigns and strategies.</p>
+<hr>
+<p><strong>Ready to extract Realtor.com data?</strong> <a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63">Start using Realtor.com Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Idealista Property Scraper for Real Estate Data Extraction | FlowExtract API</title>
+    <meta name="title" content="Idealista Property Scraper for Real Estate Data Extraction | FlowExtract API">
+    <meta name="description" content="Scrape Idealista properties from search URLs with pagination and resume support.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/idealista-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Idealista Property Scraper for Real Estate Data Extraction | FlowExtract API">
+    <meta property="og:description" content="Scrape Idealista properties from search URLs with pagination and resume support.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/idealista-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/q6okdMTWKNG3wcGhpeBzbG_ZJ5mhyuKbUFnSneH9FIM/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItR1doN1hkMTJNREZwOUxEbWgtV1RPRDc3b1B1TS1RT1lJdGZjY2U5bm1XWkpuRC1hY3Rvci1vSlRSRFg0aXlmUjNlck5udi1WNFQ3UXBPakpYLUlkZWFsaXN0YV9T">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Idealista Property Scraper for Real Estate Data Extraction | FlowExtract API">
+    <meta name="twitter:description" content="Scrape Idealista properties from search URLs with pagination and resume support.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/q6okdMTWKNG3wcGhpeBzbG_ZJ5mhyuKbUFnSneH9FIM/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItR1doN1hkMTJNREZwOUxEbWgtV1RPRDc3b1B1TS1RT1lJdGZjY2U5bm1XWkpuRC1hY3Rvci1vSlRSRFg0aXlmUjNlck5udi1WNFQ3UXBPakpYLUlkZWFsaXN0YV9T">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Idealista Property Scraper","description":"Scrape Idealista properties from search URLs with pagination and resume support.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/idealista-scraper.html","sameAs":"https://apify.com/dz_omar/idealista-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/q6okdMTWKNG3wcGhpeBzbG_ZJ5mhyuKbUFnSneH9FIM/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItR1doN1hkMTJNREZwOUxEbWgtV1RPRDc3b1B1TS1RT1lJdGZjY2U5bm1XWkpuRC1hY3Rvci1vSlRSRFg0aXlmUjNlck5udi1WNFQ3UXBPakpYLUlkZWFsaXN0YV9T"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Idealista Property Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Idealista Property Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Idealista Property Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Idealista Property Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,283 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/q6okdMTWKNG3wcGhpeBzbG_ZJ5mhyuKbUFnSneH9FIM/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItR1doN1hkMTJNREZwOUxEbWgtV1RPRDc3b1B1TS1RT1lJdGZjY2U5bm1XWkpuRC1hY3Rvci1vSlRSRFg0aXlmUjNlck5udi1WNFQ3UXBPakpYLUlkZWFsaXN0YV9T" alt="Idealista Property Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">Idealista Property Scraper</h1>
+                <p class="actor-hero-desc">Scrape Idealista properties from search URLs with pagination and resume support.</p>
+                <a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Idealista Property Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. 🎯 Monthly Subscription: $15/month + Idealista Property Scraper API costs per property This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>📌 Title, description, and address</li><li>💰 Price information</li><li>📏 Area, number of rooms and bathrooms</li><li>🖼️ Complete image galleries</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Idealista Property Scraper?</summary><p>Open Idealista Property Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Idealista Property Scraper free?</summary><p>Idealista Property Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏘️ Idealista Bulk Property Scraper</h1>
+<p>Extract high-quality real estate data from <strong>multiple Idealista property listings</strong> across <strong>Spain</strong>, <strong>Portugal</strong>, and <strong>Italy</strong> in a single run.</p>
+<p>This actor is designed for bulk property data extraction, processing search result pages and individual property listings efficiently. Perfect for real estate analysts, investors, agencies, and developers who need to scrape dozens or hundreds of properties at once.</p>
+<hr>
+<h2>🔎 What This Actor Does</h2>
+<p>This bulk scraper processes <strong>Idealista search result pages</strong> and extracts detailed information from each property listing, including:</p>
+<ul>
+<li>📌 Title, description, and address</li>
+<li>💰 Price information</li>
+<li>📏 Area, number of rooms and bathrooms</li>
+<li>🖼️ Complete image galleries</li>
+<li>🏢 Agency details and contact information</li>
+<li>📍 GPS coordinates and maps</li>
+<li>🔧 Property features (terrace, elevator, AC, etc.)</li>
+<li>⚡ Energy performance ratings</li>
+<li>🏗️ Building characteristics</li>
+</ul>
+<p><strong>Key Features:</strong></p>
+<ul>
+<li><strong>Bulk Processing</strong>: Handle multiple search URLs simultaneously</li>
+<li><strong>Unlimited Extraction</strong>: Bypass Idealista&#39;s 1,800-property pagination limit</li>
+<li><strong>Resume Capability</strong>: Automatically resumes from where it left off if interrupted</li>
+<li><strong>Rate Limiting</strong>: Built-in delays to respect server resources</li>
+<li><strong>Error Handling</strong>: Robust retry mechanisms for failed requests</li>
+</ul>
+<hr>
+<h2>🛠️ How It Works</h2>
+<p>This actor uses the <strong><a href="https://apify.com/dz_omar/idealista-scraper-api">Idealista Property Scraper API</a></strong> internally to extract individual property data. While the API actor processes one property at a time, this bulk scraper:</p>
+<ol>
+<li><strong>Processes search URLs</strong> containing multiple property listings</li>
+<li><strong>Navigates through properties</strong> automatically using smart navigation</li>
+<li><strong>Calls the Idealista Property Scraper API</strong> for detailed data extraction</li>
+<li><strong>Aggregates results</strong> into a comprehensive dataset</li>
+</ol>
+<blockquote>
+<p>💡 <strong>Cost Efficiency</strong>: Instead of manually running the single-property scraper hundreds of times, this actor automates the entire workflow.</p>
+</blockquote>
+<hr>
+<h2>🌐 Supported Input URLs</h2>
+<p>You can use this actor with <strong>Idealista search result URLs</strong> such as:</p>
+<ul>
+<li><code>https://www.idealista.com/en/geo/venta-obranueva/andalucia/con-2-dormitorios,3-dormitorios,4-dormitorios/pagina-4?ordenado-por=precios-asc</code></li>
+<li><code>https://www.idealista.pt/comprar-casas/porto/</code></li>
+<li><code>https://www.idealista.it/vendita-case/roma/</code></li>
+</ul>
+<p>The actor will automatically detect the first property on the page and navigate through subsequent listings.</p>
+<hr>
+<h2>⚙️ Input Configuration</h2>
+<pre><code class="language-json">{
+  &quot;Url&quot;: [
+    &quot;https://www.idealista.com/en/geo/venta-obranueva/andalucia/con-2-dormitorios,3-dormitorios,4-dormitorios/pagina-4?ordenado-por=precios-asc&quot;
+  ],
+  &quot;desiredResults&quot;: 50,
+  &quot;proxyConfig&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;]
+  }
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Url</code></td>
+<td>Array</td>
+<td>List of Idealista search URLs to scrape</td>
+<td>Required</td>
+</tr>
+<tr>
+<td><code>desiredResults</code></td>
+<td>Integer</td>
+<td>Maximum properties to scrape</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>proxyConfig</code></td>
+<td>Object</td>
+<td>Proxy configuration (required)</td>
+<td>RESIDENTIAL</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📊 Sample Output</h2>
+<p>Each property in your dataset will contain comprehensive information:</p>
+<pre><code class="language-json">{
+  &quot;propertyCode&quot;: &quot;34406643&quot;,
+  &quot;thumbnail&quot;: &quot;https://img4.idealista.pt/blur/480_360_mq/0/id.pro.pt.image.master/00/21/9e/292889917.webp&quot;,
+  &quot;externalReference&quot;: &quot;VCM14500&quot;,
+  &quot;numPhotos&quot;: 37,
+  &quot;price&quot;: 890000,
+  &quot;priceInfo&quot;: {
+    &quot;price&quot;: {
+      &quot;amount&quot;: 890000,
+      &quot;currencySuffix&quot;: &quot;€&quot;
+    }
+  },
+  &quot;propertyType&quot;: &quot;chalet&quot;,
+  &quot;operation&quot;: &quot;sale&quot;,
+  &quot;size&quot;: 970,
+  ....
+  &quot;sourceUrl&quot;: &quot;https://www.idealista.pt/en/comprar-casas/viana-do-castelo-distrito/com-apartamentos,moradias/?ordem=precos-asc&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-02-06T10:15:19.019Z&quot;
+}
+</code></pre>
+<hr>
+<h2>💰 Pricing Model - Monthly Subscription + Idealista Property Scraper API Costs</h2>
+<p><strong>🎯 Monthly Subscription: $15/month + Idealista Property Scraper API costs per property</strong></p>
+<p>This actor operates with a <strong>monthly rental subscription</strong> plus charges for the internal <strong><a href="https://apify.com/dz_omar/idealista-scraper-api">Idealista Property Scraper API</a></strong> calls.</p>
+<h3><strong>Pricing Structure:</strong></h3>
+<ul>
+<li><strong>Monthly Rental</strong>: $15/month (auto-renewing subscription)</li>
+<li><strong>Idealista Property Scraper API Costs</strong>: Variable pricing based on your Apify subscription tier</li>
+<li><strong>one-day Free Trial</strong>: Test the actor before committing to subscription</li>
+</ul>
+<h3><strong>Cost Formula:</strong></h3>
+<pre><code>Monthly Total = $15 + (Number of Properties × API Cost per Property)
+</code></pre>
+<h2>🚀 Use Cases</h2>
+<ul>
+<li><strong>🏢 Real Estate Agencies</strong>: Bulk market analysis and competitor research</li>
+<li><strong>📈 Property Investors</strong>: Track market trends across multiple regions</li>
+<li><strong>🔍 SEO &amp; Content Teams</strong>: Gather property data for content creation</li>
+<li><strong>🤖 Developers</strong>: Build automated property monitoring systems</li>
+<li><strong>📊 Market Analysts</strong>: Extract insights from large property datasets</li>
+<li><strong>🏗️ Construction Companies</strong>: Identify development opportunities</li>
+</ul>
+<hr>
+<h2>⚡ Key Features</h2>
+<h3><strong>Unlimited Extraction Capability</strong></h3>
+<ul>
+<li><strong>Breaks Through Idealista&#39;s 60-Page Limit</strong>: While Idealista typically limits users to 60 pages (≈1,800 properties) and shows the message <em>&quot;Have you seen 1,800 homes and still can&#39;t find what you&#39;re looking for?&quot;</em>, this actor can extract <strong>ALL available properties</strong></li>
+<li><strong>No Artificial Limits</strong>: Extract thousands of properties from a single search URL</li>
+<li><strong>Continuous Navigation</strong>: Uses internal property navigation to bypass page limitations</li>
+<li><strong>Only Limited by Your Subscription</strong>: Extract properties with active subscription (API costs apply per property)</li>
+</ul>
+<blockquote>
+<p>🚀 <strong>Breakthrough Feature</strong>: Most scrapers hit Idealista&#39;s 1,800-property wall, but this actor navigates property-by-property, completely bypassing pagination limits!</p>
+</blockquote>
+<h3><strong>Resume Capability</strong></h3>
+<ul>
+<li>Automatically saves progress during execution</li>
+<li>Resumes from the last processed property if interrupted</li>
+<li>Perfect for large-scale scraping operations</li>
+</ul>
+<h3><strong>Smart Error Handling</strong></h3>
+<ul>
+<li>Exponential backoff for failed requests</li>
+<li>Skips invalid properties automatically</li>
+<li>Comprehensive logging for debugging</li>
+</ul>
+<h3><strong>Rate Limiting</strong></h3>
+<ul>
+<li>Configurable delays between requests</li>
+<li>Respects server resources</li>
+<li>Reduces risk of being blocked</li>
+</ul>
+<h3><strong>Multi-Domain Support</strong></h3>
+<ul>
+<li>Spain: <code>idealista.com</code></li>
+<li>Portugal: <code>idealista.pt</code></li>
+<li>Italy: <code>idealista.it</code></li>
+</ul>
+<hr>
+<h3><strong>Input Validation</strong></h3>
+<ul>
+<li>Only Idealista domains are accepted</li>
+<li>URLs must be properly formatted search result pages</li>
+<li>Invalid URLs are automatically skipped</li>
+</ul>
+<hr>
+<h2>🎯 Getting Started</h2>
+<ol>
+<li><strong>Start Free Trial</strong>: Activate the one-day free trial</li>
+<li><strong>Consider Apify Subscription</strong>: Upgrade to Silver/Gold for 88% API cost savings</li>
+<li><strong>Test the Actor</strong>: Run small extractions to verify functionality</li>
+<li><strong>Subscribe</strong>: Convert to monthly subscription for unlimited access</li>
+<li><strong>Scale Up</strong>: Extract thousands of properties with confidence</li>
+</ol>
+<h3><strong>Subscription Management</strong></h3>
+<ul>
+<li><strong>Auto-Renewal</strong>: Monthly subscription automatically renews</li>
+<li><strong>Cancel Anytime</strong>: Cancel subscription in Apify Console</li>
+<li><strong>Immediate Access</strong>: Start extracting immediately after subscription</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h2>📞 Support</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available Facebook Ad Library data</li>
+<li><strong>Rate Limiting</strong>: Respects Facebook&#39;s service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+</ul>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +338,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +346,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'idealista-scraper';
-    </script>
 </body>
 </html>

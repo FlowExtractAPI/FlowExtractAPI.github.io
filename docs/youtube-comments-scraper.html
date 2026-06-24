@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Comment Scraper &amp; Extractor - Analyze Audience Feedback | FlowExtract API</title>
+    <meta name="title" content="YouTube Comment Scraper &amp; Extractor - Analyze Audience Feedback | FlowExtract API">
+    <meta name="description" content="Extract comments from any YouTube video with author information, likes, timestamps, and optional replies. Fast, reliable, and built for scale.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-comments-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Comment Scraper &amp; Extractor - Analyze Audience Feedback | FlowExtract API">
+    <meta property="og:description" content="Extract comments from any YouTube video with author information, likes, timestamps, and optional replies. Fast, reliable, and built for scale.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-comments-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/_B41i8q449fleeN-8O1YMWN5DB9DUUBzYaTQjIMfDN8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdHI5ckFiWlhNTHY5OGRMTXQtUElUekNDZ1JrTi0wZGI5Y2Y5YS03MWVjLTQ4MzYtOWI4MS05ODNiZmExYmZhYTEucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Comment Scraper &amp; Extractor - Analyze Audience Feedback | FlowExtract API">
+    <meta name="twitter:description" content="Extract comments from any YouTube video with author information, likes, timestamps, and optional replies. Fast, reliable, and built for scale.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/_B41i8q449fleeN-8O1YMWN5DB9DUUBzYaTQjIMfDN8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdHI5ckFiWlhNTHY5OGRMTXQtUElUekNDZ1JrTi0wZGI5Y2Y5YS03MWVjLTQ4MzYtOWI4MS05ODNiZmExYmZhYTEucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"💬 YouTube Comments Scraper","description":"Extract comments from any YouTube video with author information, likes, timestamps, and optional replies. Fast, reliable, and built for scale.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-comments-scraper.html","sameAs":"https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/_B41i8q449fleeN-8O1YMWN5DB9DUUBzYaTQjIMfDN8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdHI5ckFiWlhNTHY5OGRMTXQtUElUekNDZ1JrTi0wZGI5Y2Y5YS03MWVjLTQ4MzYtOWI4MS05ODNiZmExYmZhYTEucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 💬 YouTube Comments Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open 💬 YouTube Comments Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 💬 YouTube Comments Scraper free?","acceptedAnswer":{"@type":"Answer","text":"💬 YouTube Comments Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,830 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/_B41i8q449fleeN-8O1YMWN5DB9DUUBzYaTQjIMfDN8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdHI5ckFiWlhNTHY5OGRMTXQtUElUekNDZ1JrTi0wZGI5Y2Y5YS03MWVjLTQ4MzYtOWI4MS05ODNiZmExYmZhYTEucG5n.png" alt="💬 YouTube Comments Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">💬 YouTube Comments Scraper</h1>
+                <p class="actor-hero-desc">Extract comments from any YouTube video with author information, likes, timestamps, and optional replies. Fast, reliable, and built for scale.</p>
+                <a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">💬 YouTube Comments Scraper is a ready-to-run Apify actor from FlowExtract API for social media. Extract comments from any YouTube video with author information, likes, timestamps, and nested replies - fast, reliable, and built for scale. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>top-level Comments with full text content</li><li>author Information including name, channel ID, avatar, and verification status</li><li>engagement Metrics - like counts and reply counts</li><li>timestamps - when comments were posted</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 💬 YouTube Comments Scraper?</summary><p>Open 💬 YouTube Comments Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 💬 YouTube Comments Scraper free?</summary><p>💬 YouTube Comments Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>💬 YouTube Comments Scraper</h1>
+<p><strong>Extract comments from any YouTube video with author information, likes, timestamps, and nested replies - fast, reliable, and built for scale.</strong></p>
+<p>This powerful Apify actor provides professional-grade extraction of YouTube comments including author details, engagement metrics, timestamps, and nested replies. Perfect for sentiment analysis, market research, content analysis, and social listening.</p>
+<h2>🎬 Video Tutorial</h2>
+<p><a href="https://youtube.com/@FlowExtractAPI"><img src="https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube" alt="FlowExtractAPI"></a> <a href="https://apify.com/dz_omar/youtube-comments-scraper"><img src="https://apify.com/actor-badge?actor=dz_omar/youtube-comments-scraper" alt="🧾 YouTube Extractor (Transcripts + Metadata)"></a></p>
+<p><a href="https://www.youtube.com/watch?v=2kje8R6q4-4"> 📺Watch Demo</a></p>
+<h2>-- Key Features --</h2>
+<h3>💬 Complete Comment Extraction</h3>
+<ul>
+<li><strong>Top-level Comments</strong> with full text content</li>
+<li><strong>Author Information</strong> including name, channel ID, avatar, and verification status</li>
+<li><strong>Engagement Metrics</strong> - like counts and reply counts</li>
+<li><strong>Timestamps</strong> - when comments were posted</li>
+<li><strong>Nested Replies</strong> - optional extraction of comment replies with pagination support</li>
+</ul>
+<h3>⚡ Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Fast Extraction</strong> - Optimized for speed and efficiency with parallel processing</li>
+<li><strong>Batch Operations</strong> - Smart buffering reduces API calls by up to 3x</li>
+<li><strong>Pagination Support</strong> - Extract unlimited comments per video</li>
+<li><strong>Sort Options</strong> - Get top comments or newest first</li>
+<li><strong>Smart Token Handling</strong> - Automatic extraction of sort-specific continuation tokens</li>
+<li><strong>Session Management</strong> - Advanced proxy rotation with health tracking</li>
+<li><strong>Error Handling</strong> - Graceful handling of disabled comments or unavailable videos</li>
+</ul>
+<h3>🛠️ Developer-Friendly</h3>
+<ul>
+<li><strong>Clean JSON Output</strong> - Ready for any data pipeline or API integration</li>
+<li><strong>Flexible Configuration</strong> - Control comment count, sorting, and reply depth</li>
+<li><strong>Structured Data</strong> - Each comment includes parent/child relationships</li>
+<li><strong>Performance Metrics</strong> - Real-time statistics on request rates and success</li>
+<li><strong>Well-Documented</strong> - Clear examples and comprehensive documentation</li>
+</ul>
+<hr>
+<h2>Quick Start</h2>
+<h3>Simple Example (Top Comments, No Replies)</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrls&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;
+    }
+  ],
+  &quot;maxComments&quot;: 100,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;maxRepliesPerComment&quot;: 0
+}
+</code></pre>
+<h3>Extract Newest Comments</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrls&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;
+    }
+  ],
+  &quot;maxComments&quot;: 100,
+  &quot;sortBy&quot;: &quot;newest&quot;,
+  &quot;maxRepliesPerComment&quot;: 0
+}
+</code></pre>
+<h3>With Nested Replies</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrls&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;
+    }
+  ],
+  &quot;maxComments&quot;: 50,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;maxRepliesPerComment&quot;: 10
+}
+</code></pre>
+<h3>Multiple Videos with Maximum Replies</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrls&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID_1&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID_2&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://youtu.be/VIDEO_ID_3&quot;
+    }
+  ],
+  &quot;maxComments&quot;: 200,
+  &quot;sortBy&quot;: &quot;newest&quot;,
+  &quot;maxRepliesPerComment&quot;: 50
+}
+</code></pre>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>youtubeUrls</code></td>
+<td><code>array</code></td>
+<td><strong>Required</strong></td>
+<td>Array of YouTube video URLs to extract comments from</td>
+</tr>
+<tr>
+<td><code>maxComments</code></td>
+<td><code>integer</code></td>
+<td><code>10</code></td>
+<td>Maximum number of top-level comments to extract per video (10-100,000)</td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td><code>string</code></td>
+<td><code>top</code></td>
+<td>Sort method: <code>top</code> (most relevant) or <code>newest</code> (most recent)</td>
+</tr>
+<tr>
+<td><code>maxRepliesPerComment</code></td>
+<td><code>integer</code></td>
+<td><code>0</code></td>
+<td>Max replies per comment. Set to <code>0</code> to disable replies, or any number <code>&gt; 0</code> to enable (1-500)</td>
+</tr>
+</tbody></table>
+<h3>⚡ NEW: Simplified Reply Configuration</h3>
+<p><strong>The <code>includeReplies</code> parameter has been removed!</strong> Now it&#39;s simpler:</p>
+<ul>
+<li><strong><code>maxRepliesPerComment: 0</code></strong> → Replies are disabled (faster extraction)</li>
+<li><strong><code>maxRepliesPerComment: 10</code></strong> → Extract up to 10 replies per comment</li>
+<li><strong><code>maxRepliesPerComment: 100</code></strong> → Extract up to 100 replies per comment</li>
+</ul>
+<p>This makes configuration more intuitive - you just set how many replies you want, or <code>0</code> for none!</p>
+<h3>Supported URL Formats</h3>
+<ul>
+<li>✅ <code>https://www.youtube.com/watch?v=VIDEO_ID</code></li>
+<li>✅ <code>https://youtu.be/VIDEO_ID</code></li>
+<li>✅ <code>https://www.youtube.com/shorts/VIDEO_ID</code></li>
+<li>✅ <code>https://www.youtube.com/live/VIDEO_ID</code></li>
+<li>✅ Direct video ID: <code>VIDEO_ID</code></li>
+</ul>
+<h3>Sort Options Explained</h3>
+<p><strong>Top Comments</strong> (<code>sortBy: &quot;top&quot;</code>)</p>
+<ul>
+<li>Sorted by YouTube&#39;s relevance algorithm</li>
+<li>Includes most liked and engaging comments</li>
+<li>Best for understanding popular opinion</li>
+<li>Default YouTube sorting method</li>
+</ul>
+<p><strong>Newest First</strong> (<code>sortBy: &quot;newest&quot;</code>)</p>
+<ul>
+<li>Sorted by publication time (newest to oldest)</li>
+<li>Perfect for monitoring recent activity</li>
+<li>Track real-time engagement</li>
+<li>Requires an additional API call to extract the correct token</li>
+</ul>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Complete Output Example</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;,
+  &quot;commentsDisabled&quot;: false,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+  &quot;authorName&quot;: &quot;@petertenthije&quot;,
+  &quot;authorChannelId&quot;: &quot;UCjRXzLWPELehRVijzUiX7iQ&quot;,
+  &quot;authorThumbnail&quot;: &quot;https://yt3.ggpht.com/ytc/AIdro_mvTOxNFL9dMAEzBQAvVcn4JgDSYUQHFQTOydPLOY4=s88-c-k-c0x00ffffff-no-rj&quot;,
+  &quot;text&quot;: &quot;30 years later, and nothing has changed:\n\nThe world still uses excel;\nThere is still one guy doing the work;\nThere are still three guys being clueless;\nThere is still one guy pushing to go faster, thinking the project is doomed… and taking the credit when everything works out.&quot;,
+  &quot;publishedTime&quot;: &quot;3 years ago (edited)&quot;,
+  &quot;likeCount&quot;: &quot;28K&quot;,
+  &quot;replyCount&quot;: 229,
+  &quot;isVerified&quot;: false,
+  &quot;isCreator&quot;: false,
+  &quot;isHearted&quot;: false,
+  &quot;isPinned&quot;: false,
+  &quot;replies&quot;: [
+    {
+      &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg.9bBOqHCtsBY9bCzb1v1tt1&quot;,
+      &quot;authorName&quot;: &quot;@arnaboceanatyahoo&quot;,
+      &quot;authorChannelId&quot;: &quot;UCi7-fR2kGX18SCvKI_XV8rQ&quot;,
+      &quot;authorThumbnail&quot;: &quot;https://yt3.ggpht.com/ytc/AIdro_ln6eho2LyWvvi4mCOpvOMntSiPC6DrhVb3fZyb9eY=s88-c-k-c0x00ffffff-no-rj&quot;,
+      &quot;text&quot;: &quot;Hahaha&quot;,
+      &quot;publishedTime&quot;: &quot;3 years ago&quot;,
+      &quot;likeCount&quot;: &quot;78&quot;,
+      &quot;parentCommentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;
+    }
+  ],
+  &quot;scrapedAt&quot;: &quot;2025-10-24T18:21:50.350Z&quot;
+}
+</code></pre>
+<h3>Output Fields Explained</h3>
+<h4>Video Information</h4>
+<ul>
+<li><code>videoId</code> - YouTube video identifier (11 characters)</li>
+<li><code>videoUrl</code> - Full YouTube video URL</li>
+<li><code>commentsDisabled</code> - Whether comments are disabled (boolean)</li>
+<li><code>sortBy</code> - Sort method used: <code>top</code> or <code>newest</code></li>
+<li><code>scrapedAt</code> - ISO 8601 timestamp when data was scraped</li>
+</ul>
+<h4>Top-Level Comment Fields</h4>
+<ul>
+<li><code>commentId</code> - Unique comment identifier</li>
+<li><code>text</code> - Full comment text content (preserves line breaks)</li>
+<li><code>authorName</code> - Display name with @ prefix</li>
+<li><code>authorChannelId</code> - YouTube channel ID (starts with UC)</li>
+<li><code>authorThumbnail</code> - URL to author&#39;s profile picture (88x88px)</li>
+<li><code>publishedTime</code> - Relative time (e.g., &quot;3 years ago&quot;, &quot;2 days ago (edited)&quot;)</li>
+<li><code>likeCount</code> - Number of likes as displayed (e.g., &quot;28K&quot;, &quot;150&quot;)</li>
+<li><code>replyCount</code> - Total number of replies to this comment</li>
+<li><code>isVerified</code> - Whether author has a verified checkmark</li>
+<li><code>isCreator</code> - Whether author is the video creator</li>
+<li><code>isHearted</code> - Whether creator hearted this comment</li>
+<li><code>isPinned</code> - Whether comment is pinned by creator</li>
+<li><code>replies</code> - Array of reply objects (if <code>maxRepliesPerComment &gt; 0</code>)</li>
+</ul>
+<h4>Reply Fields</h4>
+<ul>
+<li><code>commentId</code> - Unique reply identifier</li>
+<li><code>parentCommentId</code> - ID of the parent comment</li>
+<li><code>text</code> - Reply text content</li>
+<li><code>authorName</code> - Reply author&#39;s name</li>
+<li><code>authorChannelId</code> - Reply author&#39;s channel ID</li>
+<li><code>authorThumbnail</code> - Reply author&#39;s avatar URL</li>
+<li><code>publishedTime</code> - When the reply was posted</li>
+<li><code>likeCount</code> - Number of likes on the reply</li>
+<li><code>isCreator</code> - Whether the reply is from the video creator</li>
+<li><code>isHearted</code> - Whether the reply was hearted by the creator</li>
+<li><code>isPinned</code> - Whether the reply is pinned</li>
+</ul>
+<hr>
+<h2>🌐 Actor Standby</h2>
+<p><strong>NEW in v3.0:</strong> The actor now supports Standby Mode for real-time comment extraction via HTTP API.</p>
+<h3>Overview</h3>
+<p>Standby Mode keeps the actor running as a persistent web service. Instead of starting a new actor run for each request, you make HTTP requests to a long-running instance. This provides:</p>
+<ul>
+<li>Instant responses without actor startup delays</li>
+<li>Real-time streaming of comments as they&#39;re extracted</li>
+<li>Ability to resume interrupted scrapes using continuation tokens</li>
+<li>NDJSON streaming format for progressive data delivery</li>
+</ul>
+<h3>How to Use</h3>
+<h4>1. Start the Actor in Standby Mode</h4>
+<p>Enable Standby Mode when running the actor. The actor will start and provide a web server URL.</p>
+<h4>2. Get Your API Token</h4>
+<p>Get your Apify API token from: <a href="https://console.apify.com/account/integrations?fpr=smcx63">https://console.apify.com/account/integrations?fpr=smcx63</a></p>
+<h4>3. Make API Requests</h4>
+<p>Once running, you&#39;ll receive a standby URL like:</p>
+<pre><code>https://dz-omar--youtube-comments-scraper.apify.actor/
+</code></pre>
+<p>All requests must include your API token as a query parameter: <code>?token=apify_api_xxx</code></p>
+<h4>4. Send POST Requests</h4>
+<p><strong>Basic Request (Single Video):</strong></p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;youtubeUrls&quot;: [
+      {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;}
+    ],
+    &quot;maxComments&quot;: 50,
+    &quot;sortBy&quot;: &quot;top&quot;,
+    &quot;maxRepliesPerComment&quot;: 0
+  }&#39;
+</code></pre>
+<p><strong>Multiple Videos:</strong></p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;youtubeUrls&quot;: [
+      {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_1&quot;},
+      {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_2&quot;}
+    ],
+    &quot;maxComments&quot;: 100,
+    &quot;sortBy&quot;: &quot;newest&quot;,
+    &quot;maxRepliesPerComment&quot;: 10
+  }&#39;
+</code></pre>
+<p><strong>Resume from Continuation Token:</strong></p>
+<p>If your request was interrupted, you can resume using the continuation token:</p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;youtubeUrls&quot;: [
+      {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;}
+    ],
+    &quot;maxComments&quot;: 100,
+    &quot;sortBy&quot;: &quot;top&quot;,
+    &quot;maxRepliesPerComment&quot;: 5,
+    &quot;continuationToken&quot;: &quot;Eg0SC2h6OXRTdjNDUDZr...&quot;,
+    &quot;alreadyFetched&quot;: 50
+  }&#39;
+</code></pre>
+<h4>5. GET Request (Default Behavior)</h4>
+<p>You can also make a simple GET request to test the service:</p>
+<pre><code class="language-bash">curl &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot;
+</code></pre>
+<p>This will run with default settings and stream results back.</p>
+<h3>Response Format</h3>
+<p>The API returns NDJSON (Newline Delimited JSON) format, where each line is a separate JSON object. This allows you to process data as it arrives.</p>
+<p><strong>Response Types:</strong></p>
+<p><strong>Log Messages:</strong></p>
+<pre><code class="language-json">{&quot;type&quot;: &quot;log&quot;, &quot;message&quot;: &quot;Fetching comments...&quot;, &quot;timestamp&quot;: &quot;2025-11-12T...&quot;}
+</code></pre>
+<p><strong>Comment Batches:</strong></p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;batch&quot;,
+  &quot;sessionId&quot;: &quot;vid_kOO31qFmi9A_123456&quot;,
+  &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;,
+  &quot;batchSize&quot;: 10,
+  &quot;commentsSentSoFar&quot;: 10,
+  &quot;totalSent&quot;: 10,
+  &quot;continuationToken&quot;: &quot;Eg0SC2h6OXRTdjNDUDZr...&quot;,
+  &quot;completed&quot;: false,
+  &quot;comments&quot;: [
+    {
+      &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+      &quot;commentId&quot;: &quot;UgxQe-6VK3h...&quot;,
+      &quot;authorName&quot;: &quot;@username&quot;,
+      &quot;text&quot;: &quot;Great video!&quot;,
+      &quot;likeCount&quot;: &quot;150&quot;,
+      &quot;replies&quot;: []
+    }
+  ],
+  &quot;timestamp&quot;: &quot;2025-11-12T...&quot;
+}
+</code></pre>
+<p><strong>Video Complete:</strong></p>
+<pre><code class="language-json">{&quot;type&quot;: &quot;video_complete&quot;, &quot;videoUrl&quot;: &quot;...&quot;, &quot;timestamp&quot;: &quot;2025-11-12T...&quot;}
+</code></pre>
+<p><strong>All Videos Complete:</strong></p>
+<pre><code class="language-json">{&quot;type&quot;: &quot;complete&quot;, &quot;timestamp&quot;: &quot;2025-11-12T...&quot;}
+</code></pre>
+<p><strong>Errors:</strong></p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;error&quot;,
+  &quot;videoUrl&quot;: &quot;...&quot;,
+  &quot;error&quot;: &quot;Error message&quot;,
+  &quot;errorType&quot;: &quot;RateLimitError&quot;,
+  &quot;isRetryable&quot;: true,
+  &quot;statusCode&quot;: 429,
+  &quot;timestamp&quot;: &quot;2025-11-12T...&quot;
+}
+</code></pre>
+<h3>Resuming Interrupted Requests</h3>
+<p>If your connection is interrupted or the server migrates, you&#39;ll receive:</p>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;migrating&quot;,
+  &quot;message&quot;: &quot;Server is migrating, please reconnect with last token&quot;,
+  &quot;continuationToken&quot;: &quot;Eg0SC2h6OXRTdjNDUDZr...&quot;,
+  &quot;commentsSentSoFar&quot;: 50,
+  &quot;timestamp&quot;: &quot;2025-11-12T...&quot;
+}
+</code></pre>
+<p>Use the <code>continuationToken</code> and <code>commentsSentSoFar</code> values to resume:</p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;youtubeUrls&quot;: [{&quot;url&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;}],
+    &quot;maxComments&quot;: 100,
+    &quot;continuationToken&quot;: &quot;Eg0SC2h6OXRTdjNDUDZr...&quot;,
+    &quot;alreadyFetched&quot;: 50
+  }&#39;
+</code></pre>
+<h3>Processing NDJSON Responses</h3>
+<p><strong>With jq (command line):</strong></p>
+<pre><code class="language-bash">curl -X POST &quot;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;youtubeUrls&quot;: [{&quot;url&quot;: &quot;...&quot;}], &quot;maxComments&quot;: 50}&#39; | \
+  jq -c &#39;select(.type == &quot;batch&quot;) | .comments[]&#39;
+</code></pre>
+<p><strong>With Python:</strong></p>
+<pre><code class="language-python">import requests
+import json
+
+response = requests.post(
+    &#39;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&#39;,
+    json={
+        &#39;youtubeUrls&#39;: [{&#39;url&#39;: &#39;https://www.youtube.com/watch?v=kOO31qFmi9A&#39;}],
+        &#39;maxComments&#39;: 50,
+        &#39;sortBy&#39;: &#39;top&#39;
+    },
+    stream=True
+)
+
+for line in response.iter_lines():
+    if line:
+        data = json.loads(line)
+        if data[&#39;type&#39;] == &#39;batch&#39;:
+            for comment in data[&#39;comments&#39;]:
+                print(f&quot;{comment[&#39;authorName&#39;]}: {comment[&#39;text&#39;]}&quot;)
+</code></pre>
+<p><strong>With Node.js:</strong></p>
+<pre><code class="language-javascript">const response = await fetch(&#39;https://dz-omar--youtube-comments-scraper.apify.actor/?token=apify_api_xxx&#39;, {
+  method: &#39;POST&#39;,
+  headers: { &#39;Content-Type&#39;: &#39;application/json&#39; },
+  body: JSON.stringify({
+    youtubeUrls: [{ url: &#39;https://www.youtube.com/watch?v=kOO31qFmi9A&#39; }],
+    maxComments: 50,
+    sortBy: &#39;top&#39;
+  })
+});
+
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) break;
+  
+  const lines = decoder.decode(value).split(&#39;\n&#39;);
+  for (const line of lines) {
+    if (line.trim()) {
+      const data = JSON.parse(line);
+      if (data.type === &#39;batch&#39;) {
+        data.comments.forEach(comment =&gt; {
+          console.log(`${comment.authorName}: ${comment.text}`);
+        });
+      }
+    }
+  }
+}
+</code></pre>
+<h3>Parameters</h3>
+<p>All standard input parameters work in Standby Mode:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>youtubeUrls</code></td>
+<td>array</td>
+<td>YouTube video URLs to scrape</td>
+</tr>
+<tr>
+<td><code>maxComments</code></td>
+<td>integer</td>
+<td>Maximum comments per video (10-100,000)</td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td>string</td>
+<td><code>&quot;top&quot;</code> or <code>&quot;newest&quot;</code></td>
+</tr>
+<tr>
+<td><code>maxRepliesPerComment</code></td>
+<td>integer</td>
+<td>Max replies per comment (0 to disable)</td>
+</tr>
+<tr>
+<td><code>continuationToken</code></td>
+<td>string</td>
+<td>Resume token from previous request (optional)</td>
+</tr>
+<tr>
+<td><code>alreadyFetched</code></td>
+<td>integer</td>
+<td>Number of comments already fetched (optional)</td>
+</tr>
+</tbody></table>
+<h3>Health Check</h3>
+<p>Check if the service is running:</p>
+<pre><code class="language-bash">curl &quot;https://dz-omar--youtube-comments-scraper.apify.actor//heartbeat?token=apify_api_xxx&quot;
+</code></pre>
+<p>Response:</p>
+<pre><code class="language-json">{
+  &quot;status&quot;: &quot;alive&quot;,
+  &quot;activeConnections&quot;: 0,
+  &quot;timestamp&quot;: &quot;2025-11-12T...&quot;
+}
+</code></pre>
+<h3>Pricing in Standby Mode</h3>
+<p>When running in Standby Mode, you&#39;re charged for:</p>
+<ul>
+<li>Compute time (while the actor is running)</li>
+<li>Per-result pricing (parent comments and replies) as configured</li>
+</ul>
+<p>The actor automatically charges for extracted data using the pricing model defined in your actor configuration.</p>
+<h2>🛡️ Legal &amp; Compliance</h2>
+<p>This actor extracts <strong>publicly available</strong> comment data from YouTube. All data is accessible through normal YouTube viewing.</p>
+<h3>Important Legal Considerations</h3>
+<p><strong>Compliance Requirements:</strong></p>
+<ul>
+<li>✅ YouTube&#39;s Terms of Service</li>
+<li>✅ Applicable copyright laws</li>
+<li>✅ Data protection regulations (GDPR, CCPA, etc.)</li>
+<li>✅ Your jurisdiction&#39;s specific laws</li>
+</ul>
+<p><strong>Recommended Practices:</strong></p>
+<ul>
+<li>✅ Use for research, analysis, or legitimate business purposes</li>
+<li>✅ Respect user privacy and anonymize data when sharing</li>
+<li>✅ Do not use for harassment, spam, or malicious purposes</li>
+<li>✅ Comply with data retention and deletion requirements</li>
+<li>✅ Provide opt-out mechanisms if republishing data</li>
+<li>✅ Credit sources appropriately</li>
+</ul>
+<p><strong>Prohibited Uses:</strong></p>
+<ul>
+<li>❌ Harassment or targeted attacks on users</li>
+<li>❌ Building spam or bot networks</li>
+<li>❌ Circumventing YouTube&#39;s security measures</li>
+<li>❌ Selling or redistributing raw user data</li>
+<li>❌ Creating deepfakes or manipulated content</li>
+</ul>
+<h3>Data Privacy</h3>
+<p><strong>Personal Information Handling:</strong></p>
+<ul>
+<li>Comments include publicly visible usernames and profile pictures</li>
+<li>Channel IDs are public identifiers</li>
+<li>No private or non-public data is extracted</li>
+<li>Consider anonymization before sharing datasets</li>
+</ul>
+<p><strong>GDPR Compliance:</strong></p>
+<ul>
+<li>Users have the right to request data deletion</li>
+<li>Implement data retention policies</li>
+<li>Document data processing purposes</li>
+<li>Provide transparency about data usage</li>
+</ul>
+<hr>
+<h2>🛠️ Troubleshooting</h2>
+<h3>No Comments Found</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Empty dataset</li>
+<li>Message: &quot;No comments section found or comments are disabled&quot;</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Verify comments are enabled on the video (check YouTube page)</li>
+<li>✅ Ensure the video URL is correct and complete</li>
+<li>✅ Try with a different video to confirm actor functionality</li>
+<li>✅ Check if video is age-restricted or private</li>
+</ul>
+<hr>
+<h3>Missing or Incomplete Data</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Some fields are <code>null</code> or missing</li>
+<li>Truncated comment text</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Normal behavior - not all fields exist for all comments</li>
+<li>✅ <code>authorChannelId</code> may be null for deleted accounts</li>
+<li>✅ <code>likeCount</code> may be null if likes are hidden</li>
+<li>✅ Check <code>frameworkUpdates</code> merging for enhanced data</li>
+</ul>
+<hr>
+<h3>Slow Performance</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>Actor runs longer than expected</li>
+<li>Timeouts or incomplete results</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Reduce <code>maxComments</code> for faster runs</li>
+<li>✅ Set <code>maxRepliesPerComment: 0</code> if not needed (major speedup)</li>
+<li>✅ Lower <code>maxRepliesPerComment</code> to reduce reply fetching time</li>
+<li>✅ Process multiple videos in separate runs</li>
+<li>✅ Check Apify platform limits and usage</li>
+</ul>
+<hr>
+<h3>Rate Limiting Errors</h3>
+<p><strong>Symptoms:</strong></p>
+<ul>
+<li>HTTP 429 errors</li>
+<li>&quot;Too many requests&quot; messages</li>
+<li>Sudden failures mid-scrape</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Automatic proxy rotation is enabled by default</li>
+<li>✅ Reduce request frequency (handled automatically)</li>
+<li>✅ Split large jobs into multiple smaller runs</li>
+<li>✅ Add delay between consecutive runs</li>
+<li>✅ Contact support if persistent issues</li>
+</ul>
+<hr>
+<h2>Best Practices</h2>
+<h3>For Optimal Performance</h3>
+<ol>
+<li><p><strong>Start Small, Scale Up</strong></p>
+<ul>
+<li>Test with 50-100 comments first</li>
+<li>Verify output format meets your needs</li>
+<li>Then scale to larger extractions</li>
+</ul>
+</li>
+<li><p><strong>Choose Appropriate Settings</strong></p>
+<ul>
+<li>Use <code>sortBy: &quot;top&quot;</code> for popular opinion</li>
+<li>Use <code>sortBy: &quot;newest&quot;</code> for real-time monitoring</li>
+<li>Set <code>maxRepliesPerComment: 0</code> when replies aren&#39;t needed (10x faster!)</li>
+<li>Enable replies only when needed (significant performance impact)</li>
+</ul>
+</li>
+<li><p><strong>Monitor Resource Usage</strong></p>
+<ul>
+<li>Check Apify platform usage regularly</li>
+<li>Optimize <code>maxComments</code> and <code>maxRepliesPerComment</code></li>
+<li>Balance speed vs. completeness</li>
+</ul>
+</li>
+<li><p><strong>Batch Processing</strong></p>
+<ul>
+<li>Process videos in groups of 5-10</li>
+<li>Use separate runs for very large videos</li>
+<li>Schedule regular runs for ongoing monitoring</li>
+</ul>
+</li>
+</ol>
+<h3>For Data Quality</h3>
+<ol>
+<li><p><strong>Validate Input URLs</strong></p>
+<ul>
+<li>Test URLs in browser first</li>
+<li>Ensure videos have comments enabled</li>
+<li>Check video is public and accessible</li>
+</ul>
+</li>
+<li><p><strong>Handle Missing Data</strong></p>
+<ul>
+<li>Implement null checks in your code</li>
+<li>Some fields may legitimately be empty</li>
+<li>Don&#39;t assume all fields always exist</li>
+</ul>
+</li>
+<li><p><strong>Verify Sort Order</strong></p>
+<ul>
+<li>Compare first few results with YouTube</li>
+<li>Check console logs for sort token extraction</li>
+<li>Newest sort requires extra API call</li>
+</ul>
+</li>
+<li><p><strong>Clean and Process Data</strong></p>
+<ul>
+<li>Remove duplicates (rare but possible)</li>
+<li>Parse <code>likeCount</code> strings to numbers if needed</li>
+<li>Convert relative timestamps to dates if required</li>
+</ul>
+</li>
+</ol>
+<h3>For Compliance</h3>
+<ol>
+<li><p><strong>Respect User Privacy</strong></p>
+<ul>
+<li>Anonymize data when sharing publicly</li>
+<li>Remove personally identifiable information</li>
+<li>Don&#39;t republish offensive or harmful content</li>
+</ul>
+</li>
+<li><p><strong>Document Usage</strong></p>
+<ul>
+<li>Keep records of data sources</li>
+<li>Document purpose of data collection</li>
+<li>Maintain data processing logs</li>
+</ul>
+</li>
+<li><p><strong>Implement Retention Policies</strong></p>
+<ul>
+<li>Delete old data per your policy</li>
+<li>Honor user deletion requests</li>
+<li>Don&#39;t hoard unnecessary data</li>
+</ul>
+</li>
+<li><p><strong>Stay Updated</strong></p>
+<ul>
+<li>Review YouTube&#39;s ToS regularly</li>
+<li>Monitor changes in data structure</li>
+<li>Update actor when API changes</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>📊 Output Examples</h2>
+<h3>Example 1: Single Comment (No Replies)</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;,
+  &quot;commentsDisabled&quot;: false,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+  &quot;authorName&quot;: &quot;@petertenthije&quot;,
+  &quot;authorChannelId&quot;: &quot;UCjRXzLWPELehRVijzUiX7iQ&quot;,
+  &quot;authorThumbnail&quot;: &quot;https://yt3.ggpht.com/ytc/AIdro_mvTOxNFL9dMAEzBQAvVcn4JgDSYUQHFQTOydPLOY4=s88-c-k-c0x00ffffff-no-rj&quot;,
+  &quot;text&quot;: &quot;30 years later, and nothing has changed&quot;,
+  &quot;publishedTime&quot;: &quot;3 years ago (edited)&quot;,
+  &quot;likeCount&quot;: &quot;28K&quot;,
+  &quot;replyCount&quot;: 229,
+  &quot;isVerified&quot;: false,
+  &quot;isCreator&quot;: false,
+  &quot;isHearted&quot;: false,
+  &quot;isPinned&quot;: false,
+  &quot;replies&quot;: [],
+  &quot;scrapedAt&quot;: &quot;2025-10-24T18:21:50.350Z&quot;
+}
+</code></pre>
+<h3>Example 2: Comment with Replies (maxRepliesPerComment: 2)</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=kOO31qFmi9A&quot;,
+  &quot;commentsDisabled&quot;: false,
+  &quot;sortBy&quot;: &quot;top&quot;,
+  &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+  &quot;authorName&quot;: &quot;@petertenthije&quot;,
+  &quot;text&quot;: &quot;Great video!&quot;,
+  &quot;replyCount&quot;: 3,
+  &quot;replies&quot;: [
+    {
+      &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg.9bBOqHCtsBY9bCzb1v1tt1&quot;,
+      &quot;parentCommentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+      &quot;authorName&quot;: &quot;@user1&quot;,
+      &quot;text&quot;: &quot;I agree!&quot;,
+      &quot;likeCount&quot;: &quot;78&quot;
+    },
+    {
+      &quot;commentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg.9bBOqHCtsBY9bDP_Iw25XS&quot;,
+      &quot;parentCommentId&quot;: &quot;UgxQe-6VK3h-LZaul6x4AaABAg&quot;,
+      &quot;authorName&quot;: &quot;@user2&quot;,
+      &quot;text&quot;: &quot;Thanks for sharing!&quot;,
+      &quot;likeCount&quot;: &quot;520&quot;
+    }
+  ],
+  &quot;scrapedAt&quot;: &quot;2025-10-24T18:21:50.350Z&quot;
+}
+</code></pre>
+<h3>Example 3: Comments Disabled</h3>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;ABC123&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=ABC123&quot;,
+  &quot;commentsDisabled&quot;: true,
+  &quot;totalCommentsFetched&quot;: 0,
+  &quot;scrapedAt&quot;: &quot;2025-10-24T18:21:50.350Z&quot;
+}
+</code></pre>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3><strong>Getting Help</strong></h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a></strong> - Extract YouTube comments with replies</li>
+</ul>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +885,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +893,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'youtube-comments-scraper';
-    </script>
 </body>
 </html>

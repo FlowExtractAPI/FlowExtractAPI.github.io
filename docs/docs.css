@@ -33,6 +33,7 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
+    overflow-x: hidden;   /* a docs page must never have a horizontal scrollbar */
 }
 
 .container {
@@ -88,17 +89,106 @@ body {
     color: var(--accent-dark);
 }
 
+/* Actor header band — image + name + description + Launch button */
+.actor-hero {
+    margin-top: 64px; /* clear the fixed nav */
+    background: linear-gradient(135deg, #5bb5b5 0%, #3a9494 100%);
+    color: #fff;
+    padding: 40px 0;
+}
+
+.actor-hero-inner {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.actor-hero-media {
+    flex-shrink: 0;
+}
+
+.actor-hero-img {
+    width: 110px;
+    height: 110px;
+    border-radius: 18px;
+    object-fit: cover;
+    background: #fff;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.actor-hero-text {
+    min-width: 0;
+}
+
+.actor-hero-category {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 10px;
+}
+
+.actor-hero-category:empty { display: none; }
+
+.actor-hero-title {
+    font-size: clamp(24px, 4vw, 34px);
+    font-weight: 800;
+    margin: 0 0 8px;
+    line-height: 1.2;
+}
+
+.actor-hero-desc {
+    font-size: 15px;
+    opacity: 0.95;
+    margin: 0 0 18px;
+    max-width: 720px;
+}
+
+.actor-hero-desc:empty { display: none; }
+
+/* Solid white launch button on the teal band — high contrast, never washed out */
+.actor-hero .actor-hero-launch,
+.actor-hero .actor-hero-launch.btn-primary {
+    background: #ffffff;
+    background-image: none;          /* kill the inherited teal gradient */
+    color: var(--accent-dark);
+    font-weight: 700;
+    border: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+}
+
+.actor-hero .actor-hero-launch.btn-primary:hover {
+    background: #eafafa;
+    background-image: none;
+    color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+@media (max-width: 600px) {
+    .actor-hero-inner { flex-direction: column; text-align: center; gap: 18px; }
+    .actor-hero-desc { display: none; }
+}
+
 /* Main Content */
 .docs-main {
-    padding-top: 80px;
+    padding-top: 40px;
     min-height: 80vh;
 }
 
 .docs-main .container {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 250px minmax(0, 1fr);  /* minmax(0,..) stops the cell from overflowing */
     gap: 60px;
     padding: 40px 20px;
+}
+
+.docs-main .container > * {
+    min-width: 0;
 }
 
 /* Sidebar */
@@ -147,12 +237,35 @@ body {
 
 /* Documentation Content */
 .docs-content {
-    max-width: 900px;
+    max-width: 100%;
+    min-width: 0;            /* allow the grid cell to shrink instead of overflowing */
     background: var(--card-bg);
     border-radius: 12px;
     padding: 40px 50px;
     margin-bottom: 40px;
     box-shadow: var(--shadow);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+/* Long unbroken strings (URLs, IDs) must wrap, not push the layout wide */
+.docs-content p,
+.docs-content li,
+.docs-content h1,
+.docs-content h2,
+.docs-content h3,
+.docs-content a {
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Any wide media stays within the content box */
+.docs-content img,
+.docs-content svg,
+.docs-content video,
+.docs-content iframe {
+    max-width: 100%;
+    height: auto;
 }
 
 .loading {
@@ -251,7 +364,8 @@ body {
     border: 1px solid var(--code-border);
     border-radius: 8px;
     padding: 20px;
-    overflow-x: auto;
+    max-width: 100%;
+    overflow-x: auto;       /* wide code/diagrams scroll inside the box, not the page */
     margin: 20px 0;
 }
 
@@ -270,6 +384,9 @@ body {
     border-collapse: collapse;
     margin: 25px 0;
     font-size: 14px;
+    display: block;          /* let a wide table scroll inside itself, not the page */
+    max-width: 100%;
+    overflow-x: auto;
 }
 
 .docs-content th {
@@ -422,4 +539,133 @@ body {
     .docs-content td {
         padding: 8px;
     }
+}
+
+/* Back-to-top button */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent);
+    color: #fff;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(45, 74, 74, 0.18);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease, background 0.2s ease, visibility 0.25s;
+    z-index: 1000;
+}
+/* White/outlined so it reads as secondary next to the solid Launch pill */
+#back-to-top {
+    background: #fff;
+    color: var(--accent);
+    border: 1px solid var(--border);
+}
+#back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+#back-to-top:hover {
+    background: var(--accent);
+    color: #fff;
+}
+@media (max-width: 600px) {
+    #back-to-top { bottom: 20px; right: 16px; width: 44px; height: 44px; }
+}
+
+/* ===== Differentiated SEO content (above the README) ===== */
+.actor-intro-lead {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 28px;
+}
+
+.actor-usecases {
+    margin: 0 0 30px;
+    padding-left: 0;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+}
+.actor-usecases li {
+    position: relative;
+    padding: 12px 16px 12px 44px;
+    background: var(--bg-secondary, #eef3f6);
+    border-radius: 10px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+.actor-usecases li::before {
+    content: '';
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    background: no-repeat center/contain
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 12'%3E%3Cpath d='M1 6l4.5 4.5L15 1' fill='none' stroke='%235bb5b5' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.actor-faq { margin-bottom: 14px; }
+.faq-item {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: var(--card-bg);
+}
+.faq-item summary {
+    cursor: pointer;
+    padding: 14px 18px;
+    font-weight: 600;
+    color: var(--text);
+    list-style: none;
+    position: relative;
+    padding-right: 44px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+    content: '+';
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: var(--accent);
+    transition: transform 0.2s ease;
+}
+.faq-item[open] summary::after { content: '\2212'; }
+.faq-item p {
+    padding: 0 18px 16px;
+    margin: 0;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* Separator before the README documentation block */
+.readme-body {
+    margin-top: 10px;
+    padding-top: 30px;
+    border-top: 1px solid var(--border);
+}
+
+/* Hero image letter-placeholder (when an actor has no picture) */
+.actor-hero-img--placeholder {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    background: #fff;
 }

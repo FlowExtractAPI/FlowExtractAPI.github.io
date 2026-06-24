@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Hashtag Scraper with Transcripts | FlowExtract API</title>
+    <meta name="title" content="YouTube Hashtag Scraper with Transcripts | FlowExtract API">
+    <meta name="description" content="Extracts videos from YouTube hashtags and enriches them with transcripts from a Transcript Server. Supports both Normal Mode (batch processing) and Standby Mode (continuous service). Returns complete video data including title, metadata, and transcript.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-hashtag-extractor.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Hashtag Scraper with Transcripts | FlowExtract API">
+    <meta property="og:description" content="Extracts videos from YouTube hashtags and enriches them with transcripts from a Transcript Server. Supports both Normal Mode (batch processing) and Standby Mode (continuous service). Returns complete video data including title, metadata, and transcript.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-hashtag-extractor.html">
+    <meta property="og:image" content="https://flowextractapi.com/favicon.ico">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Hashtag Scraper with Transcripts | FlowExtract API">
+    <meta name="twitter:description" content="Extracts videos from YouTube hashtags and enriches them with transcripts from a Transcript Server. Supports both Normal Mode (batch processing) and Standby Mode (continuous service). Returns complete video data including title, metadata, and transcript.">
+    <meta name="twitter:image" content="https://flowextractapi.com/favicon.ico">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Hashtag Extractor with Transcripts","description":"Extracts videos from YouTube hashtags and enriches them with transcripts from a Transcript Server. Supports both Normal Mode (batch processing) and Standby Mode (continuous service). Returns complete video data including title, metadata, and transcript.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-hashtag-extractor.html","sameAs":"https://apify.com/dz_omar/youtube-hashtag-extractor?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"}},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run YouTube Hashtag Extractor with Transcripts?","acceptedAnswer":{"@type":"Answer","text":"Open YouTube Hashtag Extractor with Transcripts on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is YouTube Hashtag Extractor with Transcripts free?","acceptedAnswer":{"@type":"Answer","text":"YouTube Hashtag Extractor with Transcripts runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why scrape YouTube hashtags?","acceptedAnswer":{"@type":"Answer","text":"YouTube hashtags group millions of videos by topic, making them one of the fastest ways to discover what's being published around a subject trends, competitors, creators, and talking points. Extracting that feed in bulk turns scattered videos into a structured dataset you can search, filter, and analyze."}},{"@type":"Question","name":"What data can YouTube Hashtag Extractor extract?","acceptedAnswer":{"@type":"Answer","text":"- videoId YouTube video ID - VideoURL canonical watch URL - Videotitle video title"}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><div class="actor-hero-img actor-hero-img--placeholder">Y</div></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">YouTube Hashtag Extractor with Transcripts</h1>
+                <p class="actor-hero-desc">Extracts videos from YouTube hashtags and enriches them with transcripts from a Transcript Server. Supports both Normal Mode (batch processing) and Standby Mode (continuous service). Returns complete video data including title, metadata, and transcript.</p>
+                <a href="https://apify.com/dz_omar/youtube-hashtag-extractor?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">YouTube Hashtag Extractor with Transcripts is a ready-to-run Apify actor from FlowExtract API for social media. Do I need a YouTube account to use this actor? This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>trend research: See which videos and creators dominate a hashtag right now.</li><li>content analysis: Pull transcripts in bulk to analyze topics, keywords, and messaging.</li><li>competitor monitoring: Track who is publishing under hashtags in your niche.</li><li>shorts discovery: Target the dedicated Shorts feed of a hashtag for short-form research.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run YouTube Hashtag Extractor with Transcripts?</summary><p>Open YouTube Hashtag Extractor with Transcripts on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is YouTube Hashtag Extractor with Transcripts free?</summary><p>YouTube Hashtag Extractor with Transcripts runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why scrape YouTube hashtags?</summary><p>YouTube hashtags group millions of videos by topic, making them one of the fastest ways to discover what&#39;s being published around a subject trends, competitors, creators, and talking points. Extracting that feed in bulk turns scattered videos into a structured dataset you can search, filter, and analyze.</p></details><details class="faq-item"><summary>What data can YouTube Hashtag Extractor extract?</summary><p>- videoId YouTube video ID - VideoURL canonical watch URL - Videotitle video title</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎬 YouTube Hashtag Extractor  Scrape Videos &amp; Shorts from Any Hashtag with Transcripts</h1>
+<p><strong>YouTube Hashtag Extractor</strong> pulls videos (or Shorts) from any YouTube hashtag and enriches each one with full metadata and a clean transcript  title, channel, views, runtime, description, thumbnail, and the spoken text with timestamps. Just give it a hashtag and a country, and get structured, ready-to-use data.</p>
+<p>Perfect for <strong>content researchers</strong>, <strong>social media marketers</strong>, and <strong>data analysts</strong> who need hashtag-level video data and transcripts without manually opening hundreds of videos.</p>
+<!-- ✅ EMBED VIDEO: replace this dummy URL with your real demo video once recorded. Paste the raw YouTube URL on its own line  Apify auto-renders it as a player. -->
+<p><a href="https://www.youtube.com/watch?v=DUMMY_VIDEO_ID">https://www.youtube.com/watch?v=DUMMY_VIDEO_ID</a></p>
+<hr>
+<h2>Why scrape YouTube hashtags?</h2>
+<p>YouTube hashtags group millions of videos by topic, making them one of the fastest ways to discover what&#39;s being published around a subject  trends, competitors, creators, and talking points. Extracting that feed in bulk turns scattered videos into a structured dataset you can search, filter, and analyze.</p>
+<p>Here are some of the most common use cases:</p>
+<ul>
+<li><strong>Trend research</strong>: See which videos and creators dominate a hashtag right now.</li>
+<li><strong>Content analysis</strong>: Pull transcripts in bulk to analyze topics, keywords, and messaging.</li>
+<li><strong>Competitor monitoring</strong>: Track who is publishing under hashtags in your niche.</li>
+<li><strong>Shorts discovery</strong>: Target the dedicated Shorts feed of a hashtag for short-form research.</li>
+<li><strong>Localized insights</strong>: Compare hashtag results across countries to see regional differences.</li>
+</ul>
+<hr>
+<h2>What data can YouTube Hashtag Extractor extract?</h2>
+<h3>🎬 Video Identity</h3>
+<ul>
+<li><code>videoId</code>  YouTube video ID</li>
+<li><code>VideoURL</code>  canonical watch URL</li>
+<li><code>Video_title</code>  video title</li>
+<li><code>category</code> / <code>hashtag</code>  the hashtag the video was found under</li>
+</ul>
+<h3>📺 Channel</h3>
+<ul>
+<li><code>Channel_Name</code>  uploading channel&#39;s display name</li>
+<li><code>Channel_Id</code>  YouTube channel ID</li>
+</ul>
+<h3>📊 Stats &amp; Metadata</h3>
+<ul>
+<li><code>Views</code>  view count</li>
+<li><code>Runtime</code>  duration (M:SS or H:MM:SS)</li>
+<li><code>published_Date</code>  publication date (ISO 8601)</li>
+<li><code>Description</code>  full video description</li>
+<li><code>thumbnail</code>  highest-resolution thumbnail URL</li>
+</ul>
+<h3>📝 Transcript</h3>
+<ul>
+<li><code>hasTranscript</code>  whether a transcript was found</li>
+<li><code>transcriptText</code>  full cleaned transcript as plain text</li>
+<li><code>transcriptLanguage</code>  transcript language code</li>
+<li><code>isAutoGenerated</code>  whether the transcript is auto-generated (ASR)</li>
+<li><code>timestamps</code>  transcript segments with start time and text</li>
+</ul>
+<hr>
+<h2>⚙️ How to use YouTube Hashtag Extractor</h2>
+<p>The actor takes four simple inputs.</p>
+<h4><code>hashtag</code> (Array of strings)  required</h4>
+<p>One or more hashtags to extract from. Include the <code>#</code> symbol or just the word.</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>#hashtags</code></td>
+<td>Videos under the <code>#hashtags</code> hashtag</td>
+</tr>
+<tr>
+<td><code>cooking</code></td>
+<td>Videos under the <code>#cooking</code> hashtag (the <code>#</code> is optional)</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+    &quot;hashtag&quot;: [&quot;#hashtags&quot;, &quot;#marketing&quot;]
+}
+</code></pre>
+<h4><code>shortsOnly</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li>When <code>true</code>, extracts from the hashtag&#39;s <strong>Shorts feed</strong> (<code>youtube.com/hashtag/&lt;tag&gt;/shorts</code>). When <code>false</code>, extracts regular videos from the hashtag page.</li>
+</ul>
+<h4><code>maxVideos</code> (Integer)</h4>
+<ul>
+<li><strong>Default</strong>: <code>5</code></li>
+<li>Maximum number of videos/shorts to extract per hashtag. Use a small value to test, then increase for a full run.</li>
+</ul>
+<h4><code>country</code> (Select)</h4>
+<ul>
+<li><strong>Default</strong>: <code>US</code></li>
+<li>Controls <strong>both</strong> the proxy exit region and YouTube&#39;s geo locale together, so results stay consistent. A hashtag returns different videos in different countries  this single setting keeps the IP and the locale aligned.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;hashtag&quot;: [&quot;#cooking&quot;],
+    &quot;shortsOnly&quot;: true,
+    &quot;maxVideos&quot;: 25,
+    &quot;country&quot;: &quot;FR&quot;
+}
+</code></pre>
+<hr>
+<h2>💰 Pricing</h2>
+<blockquote>
+<p>🎉 <strong>This Actor is currently FREE to use.</strong> You only pay Apify&#39;s standard platform usage for the run. There are no per-result charges at this time.</p>
+</blockquote>
+<p>Pricing may change in the future. Any change will be shown transparently here and in the Apify Store before you run.</p>
+<!-- 
+This actor uses **pay-per-result** pricing  you are charged once per video successfully extracted with metadata.
+
+| Event | FREE | BRONZE | SILVER | GOLD |
+|---|---|---|---|---|
+| Video result extracted | $0.0009 | $0.00055 | $0.0005 | $0.0005 |
+| Actor start (per GB memory) | $0.009 | $0.005 | $0.005 | $0.005 |
+
+**Cost estimate examples:**
+- Extracting **1,000 videos** on FREE plan: ~$0.90 + actor start
+- Extracting **1,000 videos** on GOLD plan: ~$0.50 + actor start
+
+> 💡 Tip: Set `maxVideos: 5` first to test your setup before running a full extraction.
+-->
+<hr>
+<h2>📊 Sample Output</h2>
+<pre><code class="language-json">{
+    &quot;videoId&quot;: &quot;n4Q-Y8O5_Hk&quot;,
+    &quot;VideoURL&quot;: &quot;https://www.youtube.com/watch?v=n4Q-Y8O5_Hk&quot;,
+    &quot;category&quot;: &quot;#hashtags&quot;,
+    &quot;Video_title&quot;: &quot;What is a Hashtag (#) and Why Do We Need It?&quot;,
+    &quot;Channel_Id&quot;: &quot;UCCvjioedUfclrYgLSawypfQ&quot;,
+    &quot;Channel_Name&quot;: &quot;Popupsmart&quot;,
+    &quot;Views&quot;: &quot;2559 views&quot;,
+    &quot;Runtime&quot;: &quot;0:51&quot;,
+    &quot;published_Date&quot;: &quot;2022-09-28T06:00:26-07:00&quot;,
+    &quot;Description&quot;: &quot;A hashtag is a word or phrase preceded by the \&quot;#\&quot; symbol...&quot;,
+    &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi_webp/n4Q-Y8O5_Hk/maxresdefault.webp&quot;,
+    &quot;hasTranscript&quot;: true,
+    &quot;transcriptText&quot;: &quot;Let&#39;s talk about hashtags. A hashtag is a word phrase preceded by the hash symbol...&quot;,
+    &quot;transcriptLanguage&quot;: &quot;en&quot;,
+    &quot;isAutoGenerated&quot;: false,
+    &quot;timestamps&quot;: [
+        { &quot;time&quot;: &quot;0:00&quot;, &quot;text&quot;: &quot;Let&#39;s talk about hashtags.&quot; },
+        { &quot;time&quot;: &quot;0:02&quot;, &quot;text&quot;: &quot;A hashtag is a word phrase\npreceded by the hash symbol.&quot; }
+    ],
+    &quot;hashtag&quot;: &quot;#hashtags&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a YouTube account to use this actor?</strong>
+No. The actor extracts publicly visible hashtag data  no login or account is required.</p>
+<!--
+**How many videos can I extract for free?**
+Apify's $5 free credit covers roughly 5,000 videos on the FREE tier at $0.0009 per result (before actor-start compute).
+ -->
+<p><strong>Can I scrape multiple hashtags in one run?</strong>
+Yes. Pass an array of hashtags in the <code>hashtag</code> field and the actor processes each in turn.</p>
+<p><strong>What&#39;s the difference between videos and Shorts?</strong>
+By default the actor returns regular videos from the hashtag page. Set <code>shortsOnly: true</code> to target the hashtag&#39;s dedicated Shorts feed instead.</p>
+<p><strong>Why do results change when I change the country?</strong>
+YouTube personalizes hashtag results by region. The <code>country</code> setting aligns both the proxy IP and YouTube&#39;s locale, so a run for <code>FR</code> reflects what a viewer in France would see.</p>
+<p><strong>What happens if a video has no transcript?</strong>
+The video is still extracted and returned with <code>hasTranscript: false</code>. Metadata is always attempted regardless of transcript availability.</p>
+<hr>
+<h2>⚖️ Legal &amp; Ethical Use</h2>
+<p>This actor extracts <strong>publicly visible data</strong> from YouTube  the same information any visitor can see in their browser.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only extract data you are authorized to access</li>
+<li>Comply with <a href="https://www.youtube.com/t/terms">YouTube&#39;s Terms of Service</a> and applicable data protection regulations (GDPR, CCPA, etc.)</li>
+<li>Do not use extracted data for spam, harassment, or unsolicited outreach</li>
+<li>Respect creators&#39; rights when reusing transcript content</li>
+</ul>
+<hr>
+<h2>🌐 Proxy Support</h2>
+<p>Proxy is handled automatically based on the <code>country</code> you select  the actor uses Apify Residential proxy in that region so the IP and YouTube locale always match.</p>
+<table>
+<thead>
+<tr>
+<th>User tier</th>
+<th>Proxy used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💎 Paying</td>
+<td>Premium Residential in the selected country</td>
+</tr>
+<tr>
+<td>🆓 Free</td>
+<td>Apify RESIDENTIAL  built-in, automatic</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hashtag has no videos</td>
+<td><code>No videos found for this hashtag</code></td>
+<td>Try a more popular hashtag or a different country</td>
+</tr>
+<tr>
+<td>YouTube blocks the request</td>
+<td><code>Blocked</code> warning, run stops</td>
+<td>Re-run; the actor rotates IPs automatically</td>
+</tr>
+<tr>
+<td>Video unavailable / no metadata</td>
+<td>Video skipped, not charged</td>
+<td>Normal  some videos are region-locked or removed</td>
+</tr>
+<tr>
+<td>Budget too small</td>
+<td><code>Budget too small</code></td>
+<td>Raise the run&#39;s max cost, or lower <code>maxVideos</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔌 Standby Mode (Actor-to-Actor Streaming)</h2>
+<p>This actor supports <strong>Standby mode</strong>  it runs as a persistent HTTP server that another actor can call to stream results in real-time via NDJSON.</p>
+<p>The public URL:</p>
+<pre><code>https://YOUR_USERNAME--youtube-hashtag-extractor.apify.actor?token=***
+</code></pre>
+<h3>Endpoints</h3>
+<table>
+<thead>
+<tr>
+<th>Endpoint</th>
+<th>Method</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>/heartbeat</code></td>
+<td>GET</td>
+<td>Keep-alive ping</td>
+</tr>
+<tr>
+<td><code>/health</code></td>
+<td>GET</td>
+<td>Readiness probe</td>
+</tr>
+<tr>
+<td><code>/</code></td>
+<td>POST</td>
+<td>Main endpoint  accepts a hashtag, streams results back</td>
+</tr>
+</tbody></table>
+<h3>POST Request Body</h3>
+<pre><code class="language-json">{
+    &quot;hashtag&quot;: &quot;#hashtags&quot;,
+    &quot;maxVideos&quot;: 5,
+    &quot;shortsOnly&quot;: false,
+    &quot;country&quot;: &quot;US&quot;
+}
+</code></pre>
+<h3>NDJSON Event Types</h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>When</th>
+<th>Key fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>started</code></td>
+<td>Request accepted</td>
+<td><code>hashtag</code></td>
+</tr>
+<tr>
+<td><code>hashtag_extracted</code></td>
+<td>Video IDs found</td>
+<td><code>videoCount</code></td>
+</tr>
+<tr>
+<td><code>video_processed</code></td>
+<td>A video succeeded</td>
+<td><code>videoId</code>, <code>data</code></td>
+</tr>
+<tr>
+<td><code>video_failed</code></td>
+<td>A video failed</td>
+<td><code>videoId</code>, <code>error</code></td>
+</tr>
+<tr>
+<td><code>completed</code></td>
+<td>All done</td>
+<td><code>processedCount</code>, <code>successCount</code>, <code>failureCount</code></td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td>Fatal failure</td>
+<td><code>error</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Get Started Now</h2>
+<h3>Free Trial Available</h3>
+<p>No credit card required. Test with 5$ to see the quality yourself.</p>
+<p> <a href="mailto:flowextractapi@outlook.com"><strong>💬 Get Support</strong></a></p>
+<h3>Need Help?</h3>
+<p><strong>📧 Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a><br><strong>🌐 Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a><br><strong>🐦 Twitter:</strong> <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a><br><strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></p>
+<p><strong>Response time:</strong> Within 24 hours (usually much faster)</p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/youtube-hashtag-extractor?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

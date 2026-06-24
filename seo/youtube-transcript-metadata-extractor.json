@@ -1,0 +1,29 @@
+{
+  "slug": "youtube-transcript-metadata-extractor",
+  "_drafted": true,
+  "intro": "🎬 YouTube Transcript & Metadata Extractor is a ready-to-run Apify actor from FlowExtract API for social media. Extract YouTube transcripts, subtitles, and complete video metadata in seconds - no manual work, no copy-paste, just pure automated data extraction. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "clean transcript: Remove \"um\", \"uh\", filler words",
+    "include timestamps: Get second-by-second text timing",
+    "extract comments: Pull top comments with replies (NEW!)",
+    "repurpose videos into blogs - Extract transcript, feed to AI, generate 5 articles"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 🎬 YouTube Transcript & Metadata Extractor?",
+      "a": "Open 🎬 YouTube Transcript & Metadata Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 🎬 YouTube Transcript & Metadata Extractor free?",
+      "a": "🎬 YouTube Transcript & Metadata Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Comparison: Why Choose This Actor?",
+      "a": "| Feature | This Actor | Manual Copy-Paste | Other Tools | |---------|------------|-------------------|-------------|"
+    },
+    {
+      "q": "Need Help?",
+      "a": "📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)"
+    }
+  ]
+}

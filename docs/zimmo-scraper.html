@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Zimmo Scraper API for Belgian Property Data | FlowExtract API</title>
+    <meta name="title" content="Zimmo Scraper API for Belgian Property Data | FlowExtract API">
+    <meta name="description" content="Scrape Belgian property listings from zimmo.be. Paste any zimmo.be search URL directly from your browser — filters are decoded automatically. ⚠️ Only Belgian listings are supported. International URLs (/international/...) are not yet supported and will be skipped with an explanatory notice in the ou">
+    <link rel="canonical" href="https://flowextractapi.com/docs/zimmo-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Zimmo Scraper API for Belgian Property Data | FlowExtract API">
+    <meta property="og:description" content="Scrape Belgian property listings from zimmo.be. Paste any zimmo.be search URL directly from your browser — filters are decoded automatically. ⚠️ Only Belgian listings are supported. International URLs (/international/...) are not yet supported and will be skipped with an explanatory notice in the ou">
+    <meta property="og:url" content="https://flowextractapi.com/docs/zimmo-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-shcN87cjyVnF60JLH-wxFwpg9utJ-d387956b-430c-4be6-a198-febe63a1b938.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zimmo Scraper API for Belgian Property Data | FlowExtract API">
+    <meta name="twitter:description" content="Scrape Belgian property listings from zimmo.be. Paste any zimmo.be search URL directly from your browser — filters are decoded automatically. ⚠️ Only Belgian listings are supported. International URLs (/international/...) are not yet supported and will be skipped with an explanatory notice in the ou">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-shcN87cjyVnF60JLH-wxFwpg9utJ-d387956b-430c-4be6-a198-febe63a1b938.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zimmo Scraper","description":"Scrape Belgian property listings from zimmo.be. Paste any zimmo.be search URL directly from your browser — filters are decoded automatically. ⚠️ Only Belgian listings are supported. International URLs (/international/...) are not yet supported and will be skipped with an explanatory notice in the ou","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/zimmo-scraper.html","sameAs":"https://apify.com/dz_omar/zimmo-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-shcN87cjyVnF60JLH-wxFwpg9utJ-d387956b-430c-4be6-a198-febe63a1b938.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Zimmo Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Zimmo Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Zimmo Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Zimmo Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-shcN87cjyVnF60JLH-wxFwpg9utJ-d387956b-430c-4be6-a198-febe63a1b938.png" alt="Zimmo Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">Zimmo Scraper</h1>
+                <p class="actor-hero-desc">Scrape Belgian property listings from zimmo.be. Paste any zimmo.be search URL directly from your browser — filters are decoded automatically. ⚠️ Only Belgian listings are supported. International URLs (/international/...) are not yet supported and will be skipped with an explanatory notice in the ou</p>
+                <a href="https://apify.com/dz_omar/zimmo-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Zimmo Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Extract Belgian property listings from zimmo.be. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>~200ms delay between detail fetches per listing (polite crawling)</li><li>~500ms delay between search pages</li><li>100 properties ≈ 1–2 minutes depending on network and proxy</li><li>results are pushed and charged in batches of 10</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Zimmo Scraper?</summary><p>Open Zimmo Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Zimmo Scraper free?</summary><p>Zimmo Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 Zimmo Scraper</h1>
+<p><strong>Extract Belgian property listings from zimmo.be.</strong></p>
+<p>Paste any zimmo.be search URL directly from your browser. The scraper fetches full property detail for each listing and stores the raw API response, giving you every field zimmo.be exposes: price, EPC certificates, flooding status, planning information, cadastral income, agency contacts, images, documents, and more.</p>
+<hr>
+<h2>🌍 Supported</h2>
+<table>
+<thead>
+<tr>
+<th>Platform</th>
+<th>Domain</th>
+<th>Languages</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Zimmo Belgium</td>
+<td>zimmo.be</td>
+<td>Dutch (<code>/nl/zoeken/</code>), French (<code>/fr/rechercher/</code>)</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>⚠️ <strong>International URLs</strong> (<code>/international/...</code>) are not yet supported. They will be skipped and noted in the dataset with an explanatory record.</p>
+</blockquote>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Basic run 10 results from a single search</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.zimmo.be/nl/zoeken/?search=eyJmaWx0ZXIiOnsic3RhdHVzIjp7ImluIjpbIkZPUl9TQUxFIl19LCJwbGFjZUlkIjp7ImluIjpbMTExOF19fX0=&quot; }
+  ],
+  &quot;maxResults&quot;: 10
+}
+</code></pre>
+<h3>Multiple URLs different regions or filter sets</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.zimmo.be/nl/zoeken/?search=eyJmaWhhx0....&quot; },
+    { &quot;url&quot;: &quot;https://www.zimmo.be/fr/rechercher/?search=eyJmaW2g4...&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true
+  }
+}
+</code></pre>
+<h3>Unlimited results (bounded by budget if set)</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.zimmo.be/nl/zoeken/?search=eyJmaWx0ZXIiOnsic3Rh.....&quot; }
+  ],
+  &quot;maxResults&quot;: 0
+}
+</code></pre>
+<hr>
+<h2>📋 Input Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td></td>
+<td>One or more zimmo.be search URLs. Copy directly from your browser after applying filters.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>Maximum properties to scrape <strong>per URL</strong>. Set to <code>0</code> for unlimited.</td>
+</tr>
+<tr>
+<td><code>proxyConfiguration</code></td>
+<td>object</td>
+<td>No proxy</td>
+<td>Apify proxy settings. Recommended for large runs to avoid rate limits.</td>
+</tr>
+</tbody></table>
+<h3>How to get a start URL</h3>
+<ol>
+<li>Go to <a href="https://www.zimmo.be">zimmo.be</a> and apply your filters (type, location, price, EPC, etc.)</li>
+<li>Copy the full URL from your browser</li>
+<li>Paste it into <code>startUrls</code></li>
+</ol>
+<hr>
+<h2>📤 Output</h2>
+<p>Each dataset item is the <strong>raw detail API response</strong> for one property, with two fields appended:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>sourceUrl</code></td>
+<td>The search URL this property was found in</td>
+</tr>
+<tr>
+<td><code>scrapedAt</code></td>
+<td>ISO timestamp of when it was scraped</td>
+</tr>
+</tbody></table>
+<h3>Example output record (condensed)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;e36e00c9-907d-4f3c-b666-6d9e21793a96&quot;,
+  &quot;createdAt&quot;: &quot;2026-04-11T07:29:47Z&quot;,
+  &quot;extra&quot;: {
+    &quot;zimmoCode&quot;: &quot;LN4EA&quot;,
+    &quot;code&quot;: &quot;LN4EA&quot;
+  },
+  &quot;estate&quot;: {
+    &quot;type&quot;: &quot;HOUSE&quot;,
+    &quot;subType&quot;: &quot;ONE_FAMILY_HOUSE&quot;,
+    &quot;status&quot;: &quot;FOR_SALE&quot;,
+    &quot;soldBy&quot;: &quot;BROKER&quot;,
+    &quot;condition&quot;: &quot;RENEWED&quot;,
+    &quot;constructionType&quot;: &quot;HALF_OPEN&quot;,
+    &quot;constructionYear&quot;: 1957,
+    &quot;renovationYear&quot;: 2020,
+    &quot;price&quot;: { &quot;unit&quot;: &quot;EUR&quot;, &quot;value&quot;: 375000 },
+    &quot;cadastralIncome&quot;: { &quot;unit&quot;: &quot;EUR&quot;, &quot;value&quot;: 448 },
+    &quot;floorspaceSurface&quot;: { &quot;unit&quot;: &quot;m²&quot;, &quot;value&quot;: 102 },
+    &quot;plot&quot;: {
+      &quot;plotSurface&quot;: { &quot;unit&quot;: &quot;m²&quot;, &quot;value&quot;: 168 },
+      &quot;orientation&quot;: &quot;N&quot;
+    },
+    &quot;certificate&quot;: {
+      &quot;epcCertificate&quot;: {
+        &quot;energyLabel&quot;: &quot;B&quot;,
+        &quot;epcValue&quot;: { &quot;unit&quot;: &quot;kWh/m²&quot;, &quot;value&quot;: 147 }
+      }
+    },
+    &quot;flooding&quot;: { &quot;floodingValues&quot;: [...] },
+    &quot;planning&quot;: [...],
+    &quot;location&quot;: {
+      &quot;street&quot;: &quot;Duiventorenstraat&quot;,
+      &quot;streetNumber&quot;: &quot;10&quot;,
+      &quot;postalCode&quot;: &quot;8310&quot;,
+      &quot;locality&quot;: { &quot;nl&quot;: &quot;Assebroek&quot; },
+      &quot;coordinates&quot;: { &quot;latitude&quot;: 51.187863, &quot;longitude&quot;: 3.24166 }
+    }
+  },
+  &quot;enriched&quot;: {
+    &quot;bedrooms&quot;: 2,
+    &quot;bathrooms&quot;: 1,
+    &quot;detailPageUrl&quot;: {
+      &quot;nl&quot;: &quot;https://www.zimmo.be/nl/assebroek-8310/te-koop/huis/LN4EA/&quot;,
+      &quot;fr&quot;: &quot;https://www.zimmo.be/fr/assebroek-8310/a-vendre/maison/LN4EA/&quot;
+    },
+    &quot;mainImageUrl&quot;: &quot;https://files.zimmo.be/main-image/e36e00c9-...&quot;,
+    &quot;description&quot;: { &quot;nl&quot;: &quot;...&quot; }
+  },
+  &quot;dealer&quot;: {
+    &quot;name&quot;: &quot;Waeyler&quot;,
+    &quot;email&quot;: &quot;contact-api+...@zimmo.be&quot;,
+    &quot;phoneNumber&quot;: &quot;050373137&quot;,
+    &quot;mobilePhoneNumber&quot;: &quot;0477465311&quot;,
+    &quot;website&quot;: &quot;https://www.waeyler.be&quot;,
+    &quot;category&quot;: &quot;broker&quot;
+  },
+  &quot;files&quot;: {
+    &quot;images&quot;: [...],
+    &quot;documents&quot;: [...]
+  },
+  &quot;sourceUrl&quot;: &quot;https://www.zimmo.be/nl/zoeken/?search=...&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-04-13T23:37:57.746Z&quot;
+}
+</code></pre>
+<hr>
+<h2>📊 Dataset Views</h2>
+<p>Five pre-configured views are available in the Apify dataset UI:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Overview</strong></td>
+<td>Quick summary ID, type, price, condition, beds/baths, area, location, image</td>
+</tr>
+<tr>
+<td><strong>Detailed</strong></td>
+<td>Full property data certificates, planning, flooding, layout, agency contacts</td>
+</tr>
+<tr>
+<td><strong>Contacts</strong></td>
+<td>Agency name, email, phone, mobile, website, and location per listing</td>
+</tr>
+<tr>
+<td><strong>Pricing</strong></td>
+<td>Price, cadastral income, surfaces, sold-by, availability date for market analysis</td>
+</tr>
+<tr>
+<td><strong>Energy &amp; Legal</strong></td>
+<td>EPC certificate, electricity certificate, flooding values, planning status, P/G-scores</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>💰 Pricing</h2>
+<p>Charged per property result successfully saved to the dataset.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price per result</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FREE</td>
+<td>$0.008</td>
+</tr>
+<tr>
+<td>BRONZE</td>
+<td>$0.004</td>
+</tr>
+<tr>
+<td>SILVER</td>
+<td>$0.0035</td>
+</tr>
+<tr>
+<td>GOLD</td>
+<td>$0.003</td>
+</tr>
+</tbody></table>
+<p>If you configure a <strong>budget</strong>, the scraper automatically calculates how many results it can afford before starting and caps <code>maxResults</code> accordingly no wasted API calls.</p>
+<hr>
+<h2>⚡ Performance</h2>
+<ul>
+<li><strong>~200ms delay</strong> between detail fetches per listing (polite crawling)</li>
+<li><strong>~500ms delay</strong> between search pages</li>
+<li><strong>100 properties</strong> ≈ 1–2 minutes depending on network and proxy</li>
+<li>Results are pushed and charged in batches of 10</li>
+</ul>
+<h3>Large runs</h3>
+<p>For runs exceeding a few hundred results, enabling Apify proxy is strongly recommended to avoid rate limiting:</p>
+<pre><code class="language-json">&quot;proxyConfiguration&quot;: {
+  &quot;useApifyProxy&quot;: true
+}
+</code></pre>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<ul>
+<li>Only Belgian listings are supported. International URLs (<code>/international/...</code>) are automatically detected and skipped with an explanatory notice in the dataset.</li>
+<li>Users must comply with zimmo.be&#39;s Terms of Service and applicable data protection laws (GDPR).</li>
+</ul>
+<p><strong>The actor creator is not responsible for how users utilise the extracted data.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist and channel information from YouTube.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Download Loom videos and extract transcripts.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> / <strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research.</p>
+<hr>
+<p><strong>Ready to extract zimmo.be data?</strong> <a href="https://apify.com/dz_omar/zimmo-scraper?fpr=smcx63">Start using Zimmo Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/zimmo-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

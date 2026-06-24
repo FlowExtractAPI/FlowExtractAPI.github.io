@@ -1,0 +1,25 @@
+{
+  "slug": "universal-downloader",
+  "_drafted": true,
+  "intro": "Universal File Downloader is a ready-to-run Apify actor from FlowExtract API for media & downloads. A powerful and reliable Apify Actor that downloads any type of file from the web with advanced proxy support, automatic retry mechanisms, and cloud storage integration. Perfect for downloading videos, documents, images, executables, and any other file format with enterprise-grade reliability. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "hqdefault-a3f5c2.jpg ← from first URL",
+    "hqdefault-7b92d1.jpg ← from second URL",
+    "hqdefault-e4c8f9.jpg ← from third URL",
+    "url (required): The URL to download"
+  ],
+  "faq": [
+    {
+      "q": "How do I run Universal File Downloader?",
+      "a": "Open Universal File Downloader on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Universal File Downloader free?",
+      "a": "Universal File Downloader runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why Use It?",
+      "a": "Problem: Downloading multiple files with the same name causes overwrites"
+    }
+  ]
+}

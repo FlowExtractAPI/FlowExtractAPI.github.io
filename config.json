@@ -30,22 +30,19 @@
       "url": "#actors"
     }
   },
+  "_stats_note": "Values are NEVER hardcoded. Each stat names a `source` computed at runtime from FlowExtract_API_Actors.json. See app.js computeStats().",
   "stats": [
     {
-      "value": "15+",
-      "label": "Ready-to-Use Actors"
+      "source": "actors",
+      "label": "Actors"
     },
     {
-      "value": "100+",
-      "label": "Data Sources Supported"
+      "source": "runs",
+      "label": "Total Runs"
     },
     {
-      "value": "99.9%",
-      "label": "Uptime Guaranteed"
-    },
-    {
-      "value": "24/7",
-      "label": "Automated Monitoring"
+      "source": "users",
+      "label": "Users"
     }
   ],
   "techStack": [

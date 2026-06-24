@@ -63,51 +63,31 @@ npx http-server
 
 ---
 
-## Adding New Actor
+## Adding / Updating Actors
 
-1. **Create markdown documentation:**
-   ```bash
-   docs/actors/actor-name.md
-   ```
+Actor docs are **generated from the source READMEs** in `D:\Dev\Apify` by `sync.js` — driven from
+`catalog.json` (the source of truth). Do not hand-edit `actors.json` or the files in `docs/`; they
+are generated.
 
-2. **Add entry to `actors.json`:**
-   ```json
-   {
-     "id": "actor-name",
-     "name": "Actor Name",
-     "image": "https://...",
-     "category": "social",
-     "description": "Brief description",
-     "apifyUrl": "https://apify.com/dz_omar/actor?fpr=smcx63",
-     "docsPath": "actor-name",
-     "readmeFile": "actor-name.md",
-     "metaTitle": "Actor Name - SEO Title",
-     "metaDescription": "SEO description",
-     "featured": true
-   }
-   ```
+```bash
+node sync.js            # mirror changed source READMEs → regenerate only changed pages
+node sync.js --check    # dry run: list what changed, write nothing
+node sync.js --only <slug>   # regenerate one actor
+node sync.js --all      # rebuild everything
+```
 
-3. **Generate documentation:**
-   ```bash
-   node generate-docs.js
-   ```
-
-4. **Deploy:**
-   ```bash
-   git add .
-   git commit -m "Added actor: Actor Name"
-   git push
-   ```
+The full workflow (categories, how to add a new actor, the Apify snapshot) is documented once in the
+workspace guide: **`../README.md`** (`D:\Dev\FlowExtract-API\README.md`).
 
 ---
 
 ## Documentation System
 
-- **Markdown files** in `docs/actors/` contain actor documentation
-- **Generator script** creates individual HTML pages from `_template.html`
-- **SEO-friendly URLs:** `flowextractapi.com/docs/actor-name.html`
-- **Table of contents** auto-generated from markdown headings
-- **Syntax highlighting** for code blocks
+- `catalog.json` maps each actor → category + its **source README** path under `D:\Dev\Apify`.
+- `sync.js` hashes each source README (`.sync-manifest.json`) and regenerates only changed actors.
+- **Generated:** `actors.json` (card data), `docs/actors/<slug>.md` (README mirror),
+  `docs/<slug>.html` (page shell rendered client-side by `docs.js` + marked.js).
+- **SEO-friendly URLs:** `flowextractapi.com/docs/<slug>.html`, TOC auto-generated from headings.
 
 ---
 ## Deployment

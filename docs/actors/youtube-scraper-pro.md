@@ -1,12 +1,12 @@
 # 🎬 YouTube Scraper Pro
-[YouTube Scraper Pro](https://apify.com/dz_omar/youtube-transcript-pro) extracts comprehensive data from ALL YouTube content: Videos, Shorts, Live streams, Podcasts, Courses, and full Channels. Process playlists and batch requests with ease. Perfect for researchers, marketers, and content creators. It also recognizes and processes smart keyword patterns like `#hashtag` and `@channelname`, making it even easier to target specific content from YouTube.
+[YouTube Scraper Pro](https://apify.com/dz_omar/youtube-transcript-pro?fpr=smcx63) extracts comprehensive data from ALL YouTube content: Videos, Shorts, Live streams, Podcasts, Courses, and full Channels. Process playlists and batch requests with ease. Perfect for researchers, marketers, and content creators. It also recognizes and processes smart keyword patterns like `#hashtag` and `@channelname`, making it even easier to target specific content from YouTube.
 
 ## 🚀 The Intelligent Way to Extract YouTube Content
 
 **Extract rich metadata, video information, and transcripts in seconds** - our advanced tool automatically detects and processes any YouTube URL type. Simply paste a link and get perfectly structured results.  
 It intelligently recognizes keyword patterns like `#hashtag` and `@channelname` to help you target specific content types quickly and accurately.
 
-![YouTube Scraper Pro](https://raw.githubusercontent.com/DZ-ABDLHAKIM/YouTube-Scraper-Pro-Full-Channel-Playlists-..etc./refs/heads/main/all.png)
+![YouTube Scraper Pro](https://raw.githubusercontent.com/FlowExtractAPI/YouTube-Scraper-Pro-Full-Channel-Playlists-..etc./refs/heads/main/all.png)
 
 ## ✨ What Makes This Tool Unique
 
@@ -23,6 +23,37 @@ Unlike other YouTube data extractors on the platform, our tool offers:
   - A precise resume from any failure point
   - Military-grade state preservation
 - **Proxy-Ready Architecture** ensures uninterrupted scraping
+
+## ⚠️ Important: Execution Model & Costs
+
+This Actor is a **wrapper** that combines channel/playlist scraping with transcript extraction.
+
+When you enable transcript extraction (via `storeTranscript: true` or `outputFormat`), **YouTube Scraper Pro** does **not** extract transcripts directly. Instead:
+
+* It scrapes video metadata and channel/playlist structure itself
+* It then **executes [YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63) in standby mode** to retrieve transcripts for each video
+* Results are merged and returned as a single unified output
+
+### What this means for you
+
+* You may see **two Actors running** for a single execution  this is **expected behavior**
+* This Actor does **not start automatically** and only runs when you explicitly trigger it
+* The standby transcript extraction **consumes compute units**, just like running the transcript extractor directly
+* For large channels or playlists, transcript extraction can run for an extended time and accumulate significant costs  **monitor your run actively**
+
+### Billing & Compute Usage
+
+* Running this Actor with transcripts enabled is **not free**
+* Costs come from **both** this Actor and the internally triggered transcript extractor
+* If you only need video metadata (no transcripts), leave `storeTranscript` unset to avoid the secondary Actor execution entirely
+
+> **⚠️ Automation warning:** If you use this Actor in automated workflows (n8n, Zapier, Make, etc.), ensure your workflow has proper stop conditions and cost limits. Unattended looping without safeguards can lead to runaway charges.
+
+If you prefer direct control over transcript extraction, run the extractor separately:
+
+👉 **[YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)**
+
+---
 
 ## ⚖️ Compliance & Ethics
 ### Ethical Usage Guidelines
@@ -514,7 +545,7 @@ For assistance or custom implementations:
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media

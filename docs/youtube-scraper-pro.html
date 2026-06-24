@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Scraper Pro - Extract Video Data &amp; Analytics | FlowExtract API</title>
+    <meta name="title" content="YouTube Scraper Pro - Extract Video Data &amp; Analytics | FlowExtract API">
+    <meta name="description" content="Extracts metadata and transcripts from all YouTube content, identifying smart keywords like #hashtags and @channelnames. Supports playlists, shorts, live, podcasts, courses, channels, videos, and batch requests.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-scraper-pro.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Scraper Pro - Extract Video Data &amp; Analytics | FlowExtract API">
+    <meta property="og:description" content="Extracts metadata and transcripts from all YouTube content, identifying smart keywords like #hashtags and @channelnames. Supports playlists, shorts, live, podcasts, courses, channels, videos, and batch requests.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-scraper-pro.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/w2e6Fx77TJJ8vkfg94HMjIZXp3m1QzVJR-mBYOP4Pos/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3Itdlg0T3lVZHFJb1AzallXQlUtbVVNdWJodzQ4Zi1iOTkzYTA2My1kMjVjLTQ1YjYtYWNiNC00NDNiNjMyYTg2MjUucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Scraper Pro - Extract Video Data &amp; Analytics | FlowExtract API">
+    <meta name="twitter:description" content="Extracts metadata and transcripts from all YouTube content, identifying smart keywords like #hashtags and @channelnames. Supports playlists, shorts, live, podcasts, courses, channels, videos, and batch requests.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/w2e6Fx77TJJ8vkfg94HMjIZXp3m1QzVJR-mBYOP4Pos/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3Itdlg0T3lVZHFJb1AzallXQlUtbVVNdWJodzQ4Zi1iOTkzYTA2My1kMjVjLTQ1YjYtYWNiNC00NDNiNjMyYTg2MjUucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"📺 YouTube Scraper Pro","description":"Extracts metadata and transcripts from all YouTube content, identifying smart keywords like #hashtags and @channelnames. Supports playlists, shorts, live, podcasts, courses, channels, videos, and batch requests.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-scraper-pro.html","sameAs":"https://apify.com/dz_omar/youtube-scraper-pro?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/w2e6Fx77TJJ8vkfg94HMjIZXp3m1QzVJR-mBYOP4Pos/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3Itdlg0T3lVZHFJb1AzallXQlUtbVVNdWJodzQ4Zi1iOTkzYTA2My1kMjVjLTQ1YjYtYWNiNC00NDNiNjMyYTg2MjUucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 📺 YouTube Scraper Pro?","acceptedAnswer":{"@type":"Answer","text":"Open 📺 YouTube Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 📺 YouTube Scraper Pro free?","acceptedAnswer":{"@type":"Answer","text":"📺 YouTube Scraper Pro runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,680 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/w2e6Fx77TJJ8vkfg94HMjIZXp3m1QzVJR-mBYOP4Pos/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3Itdlg0T3lVZHFJb1AzallXQlUtbVVNdWJodzQ4Zi1iOTkzYTA2My1kMjVjLTQ1YjYtYWNiNC00NDNiNjMyYTg2MjUucG5n.png" alt="📺 YouTube Scraper Pro" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">📺 YouTube Scraper Pro</h1>
+                <p class="actor-hero-desc">Extracts metadata and transcripts from all YouTube content, identifying smart keywords like #hashtags and @channelnames. Supports playlists, shorts, live, podcasts, courses, channels, videos, and batch requests.</p>
+                <a href="https://apify.com/dz_omar/youtube-scraper-pro?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">📺 YouTube Scraper Pro is a ready-to-run Apify actor from FlowExtract API for social media. Case 1: Platform Migration This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>automatic content type detection - Intelligently identifies videos, shorts, playlists, channels, courses, and live streams</li><li>uRL pattern recognition - Understands what you want based on the URL structure</li><li>configurable processing speed - Adjust parameters to optimize performance</li><li>comprehensive metadata - Get views, publication dates, descriptions, thumbnails, and more</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 📺 YouTube Scraper Pro?</summary><p>Open 📺 YouTube Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 📺 YouTube Scraper Pro free?</summary><p>📺 YouTube Scraper Pro runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎬 YouTube Scraper Pro</h1>
+<p><a href="https://apify.com/dz_omar/youtube-transcript-pro?fpr=smcx63">YouTube Scraper Pro</a> extracts comprehensive data from ALL YouTube content: Videos, Shorts, Live streams, Podcasts, Courses, and full Channels. Process playlists and batch requests with ease. Perfect for researchers, marketers, and content creators. It also recognizes and processes smart keyword patterns like <code>#hashtag</code> and <code>@channelname</code>, making it even easier to target specific content from YouTube.</p>
+<h2>🚀 The Intelligent Way to Extract YouTube Content</h2>
+<p><strong>Extract rich metadata, video information, and transcripts in seconds</strong> - our advanced tool automatically detects and processes any YouTube URL type. Simply paste a link and get perfectly structured results.<br>It intelligently recognizes keyword patterns like <code>#hashtag</code> and <code>@channelname</code> to help you target specific content types quickly and accurately.</p>
+<p><img src="https://raw.githubusercontent.com/FlowExtractAPI/YouTube-Scraper-Pro-Full-Channel-Playlists-..etc./refs/heads/main/all.png" alt="YouTube Scraper Pro"></p>
+<h2>✨ What Makes This Tool Unique</h2>
+<p>Unlike other YouTube data extractors on the platform, our tool offers:</p>
+<ul>
+<li><strong>Automatic content type detection</strong> - Intelligently identifies videos, shorts, playlists, channels, courses, and live streams</li>
+<li><strong>URL pattern recognition</strong> - Understands what you want based on the URL structure</li>
+<li><strong>Configurable processing speed</strong> - Adjust parameters to optimize performance</li>
+<li><strong>Comprehensive metadata</strong> - Get views, publication dates, descriptions, thumbnails, and more</li>
+<li><strong>Multi-language support</strong> - Works with all languages available on YouTube</li>
+<li><strong>Transcript extraction</strong> - Supports 4 formats (SRT, VTT, TXT, XML). When available, get complete transcripts with timestamps</li>
+<li><strong>🚀 Never Lose Progress</strong> -  Most YouTube scrapers lose hours of work during interruptions; our tool guarantees :<ul>
+<li>Zero progress loss during migrations</li>
+<li>A precise resume from any failure point</li>
+<li>Military-grade state preservation</li>
+</ul>
+</li>
+<li><strong>Proxy-Ready Architecture</strong> ensures uninterrupted scraping</li>
+</ul>
+<h2>⚠️ Important: Execution Model &amp; Costs</h2>
+<p>This Actor is a <strong>wrapper</strong> that combines channel/playlist scraping with transcript extraction.</p>
+<p>When you enable transcript extraction (via <code>storeTranscript: true</code> or <code>outputFormat</code>), <strong>YouTube Scraper Pro</strong> does <strong>not</strong> extract transcripts directly. Instead:</p>
+<ul>
+<li>It scrapes video metadata and channel/playlist structure itself</li>
+<li>It then <strong>executes <a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a> in standby mode</strong> to retrieve transcripts for each video</li>
+<li>Results are merged and returned as a single unified output</li>
+</ul>
+<h3>What this means for you</h3>
+<ul>
+<li>You may see <strong>two Actors running</strong> for a single execution  this is <strong>expected behavior</strong></li>
+<li>This Actor does <strong>not start automatically</strong> and only runs when you explicitly trigger it</li>
+<li>The standby transcript extraction <strong>consumes compute units</strong>, just like running the transcript extractor directly</li>
+<li>For large channels or playlists, transcript extraction can run for an extended time and accumulate significant costs  <strong>monitor your run actively</strong></li>
+</ul>
+<h3>Billing &amp; Compute Usage</h3>
+<ul>
+<li>Running this Actor with transcripts enabled is <strong>not free</strong></li>
+<li>Costs come from <strong>both</strong> this Actor and the internally triggered transcript extractor</li>
+<li>If you only need video metadata (no transcripts), leave <code>storeTranscript</code> unset to avoid the secondary Actor execution entirely</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ Automation warning:</strong> If you use this Actor in automated workflows (n8n, Zapier, Make, etc.), ensure your workflow has proper stop conditions and cost limits. Unattended looping without safeguards can lead to runaway charges.</p>
+</blockquote>
+<p>If you prefer direct control over transcript extraction, run the extractor separately:</p>
+<p>👉 <strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong></p>
+<hr>
+<h2>⚖️ Compliance &amp; Ethics</h2>
+<h3>Ethical Usage Guidelines</h3>
+<ul>
+<li>🔒 <strong>Comply</strong> with <a href="https://www.youtube.com/t/terms">YouTube&#39;s Terms of Service</a></li>
+<li>🛡️ <strong>Respect</strong> robots.txt and rate limits</li>
+<li>🚫 <strong>Avoid</strong> personal/sensitive data collection</li>
+<li>🌍 <strong>Use Proxies</strong> to minimize server impact</li>
+</ul>
+<h3>Legal Disclaimer</h3>
+<blockquote>
+<p>This tool extracts publicly available data only. Users are responsible for ensuring compliance with local regulations and copyright laws. Consult legal counsel if unsure about scraping legality in your jurisdiction.</p>
+</blockquote>
+<hr>
+<h2>🎯 Key Features</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Benefit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🧠 <strong>Smart URL Detection</strong></td>
+<td>Automatically identifies the content type from URL patterns</td>
+</tr>
+<tr>
+<td>⚙️ <strong>Adjustable Performance</strong></td>
+<td>Configure processing speed to match your needs</td>
+</tr>
+<tr>
+<td>🌐 <strong>Universal Compatibility</strong></td>
+<td>Works with videos, shorts, playlists, channels, courses, live streams, hashtags</td>
+</tr>
+<tr>
+<td>📊 <strong>Rich Metadata</strong></td>
+<td>Captures comprehensive video information</td>
+</tr>
+<tr>
+<td>🔍 <strong>Precision Extraction</strong></td>
+<td>Accurately retrieves video data and optional transcripts</td>
+</tr>
+<tr>
+<td>🛡️ <strong>Reliable Performance</strong></td>
+<td>Built-in retry mechanisms and configurable delay settings</td>
+</tr>
+</tbody></table>
+<h2>🔍 How It Works (3 Simple Steps)</h2>
+<ol>
+<li><strong>Paste</strong> any YouTube URL (channel, playlist, video, etc.)</li>
+<li><strong>Set</strong> your preferences (optional)</li>
+<li><strong>Get</strong> perfectly structured data in JSON/CSV</li>
+</ol>
+<pre><code class="language-mermaid">sequenceDiagram
+    User-&gt;&gt;Tool: Paste YouTube URL
+    Tool-&gt;&gt;YouTube: Analyze URL pattern
+    YouTube--&gt;&gt;Tool: Return content type
+    Tool-&gt;&gt;YouTube: Extract metadata &amp; content
+    Tool-&gt;&gt;User: Return structured data
+</code></pre>
+<h2>🔧 Input Configuration</h2>
+<h3>Basic Usage</h3>
+<p>Simply provide one or more YouTube URLs:</p>
+<pre><code class="language-json">{
+  &quot;rawYouTubeUrls&quot;: [
+    &quot;https://www.youtube.com/@nesoacademy/shorts&quot;,
+    &quot;https://www.youtube.com/watch?v=qUdSpbimHDQ&quot;,
+    &quot;https://www.youtube.com/playlist?list=PLBlnK6fEyqRhoF3cPp0mgOZPuXeu84nAd&quot;
+  ],
+  &quot;maxResults&quot;: 50
+}
+</code></pre>
+<h3>Advanced Configuration</h3>
+<p>Fine-tune the extraction process:</p>
+<pre><code class="language-json">{
+  &quot;rawYouTubeUrls&quot;: [
+    &quot;https://www.youtube.com/@nesoacademy/courses&quot;
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;MAX_RETRIES&quot;: 5,
+  &quot;BASE_DELAY_MS&quot;: 1000,
+  &quot;includeTimestamps&quot;: true,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;]
+  }
+}
+</code></pre>
+<h2>🧠 Smart URL Pattern Recognition</h2>
+<p>Our tool understands what you want based on URL patterns:</p>
+<table>
+<thead>
+<tr>
+<th>URL Pattern</th>
+<th>What It Extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>youtube.com/@channelname</code></td>
+<td>All videos from the channel</td>
+</tr>
+<tr>
+<td><code>youtube.com/@channelname/shorts</code></td>
+<td>Only shorts from the channel</td>
+</tr>
+<tr>
+<td><code>youtube.com/@channelname/courses</code></td>
+<td>Only course videos from the channel</td>
+</tr>
+<tr>
+<td><code>youtube.com/hashtag/hashtag</code></td>
+<td>videos from the hashtag</td>
+</tr>
+<tr>
+<td><code>youtube.com/hashtag/hashtag/shorts</code></td>
+<td>shorts from the hashtag</td>
+</tr>
+<tr>
+<td><code>youtube.com/watch?v=videoId</code></td>
+<td>Single video data</td>
+</tr>
+<tr>
+<td><code>youtube.com/watch?v=videoId&amp;list=playlistId</code></td>
+<td>All videos in the playlist</td>
+</tr>
+<tr>
+<td><code>youtube.com/playlist?list=playlistId</code></td>
+<td>All videos in the playlist</td>
+</tr>
+<tr>
+<td><code>youtube.com/shorts/videoId</code></td>
+<td>Single short video data</td>
+</tr>
+<tr>
+<td>Keyword Pattern</td>
+<td>What It Extracts</td>
+</tr>
+<tr>
+<td><code>@channelname</code></td>
+<td>All videos from the channel</td>
+</tr>
+<tr>
+<td><code>#hashtag</code></td>
+<td>Processes the hashtag</td>
+</tr>
+</tbody></table>
+<h2>🛡️ Robust Migration &amp; Fault Handling (Unique Advantage)</h2>
+<p>Unlike most YouTube scrapers that lose progress during interruptions, our tool features <strong>enterprise-grade state management</strong> that ensures:</p>
+<h3>🔄 Seamless Migration Recovery</h3>
+<ul>
+<li><strong>State Preservation</strong>: Automatically saves progress before Apify platform migrations</li>
+<li><strong>Precision Resumption</strong>: Continues exactly where it left off after reboots</li>
+<li><strong>No Duplicate Processing</strong>: Maintains checksums of processed items</li>
+</ul>
+<pre><code class="language-mermaid">graph TD
+    A[Start Processing] --&gt; B{Check State}
+    B --&gt;|New Job| C[Initialize Fresh State]
+    B --&gt;|Resuming| D[Load Saved State]
+    D --&gt; E[Continue From Last Checkpoint]
+    C --&gt; F[Process Content]
+    E --&gt; F
+    F --&gt; G{System Migration?}
+    G --&gt;|Yes| H[Save State &amp; Reboot]
+    G --&gt;|No| I[Complete Processing]
+    H --&gt; F
+</code></pre>
+<h3>🏗️ How We Handle Interruptions Differently</h3>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Our Tool</th>
+<th>Typical Scrapers</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Migration Safety</strong></td>
+<td>✅ Automatic state preservation</td>
+<td>❌ Loses progress</td>
+</tr>
+<tr>
+<td><strong>Crash Recovery</strong></td>
+<td>✅ Resumes from exact item</td>
+<td>❌ Restarts from beginning</td>
+</tr>
+<tr>
+<td><strong>Duplicate Prevention</strong></td>
+<td>✅ Checksum verification</td>
+<td>❌ Often reprocesses content</td>
+</tr>
+<tr>
+<td><strong>Partial Results</strong></td>
+<td>✅ Immediately available</td>
+<td>❌ All-or-nothing approach</td>
+</tr>
+<tr>
+<td><strong>Progress Tracking</strong></td>
+<td>✅ Item-level granularity</td>
+<td>❌ Basic URL tracking</td>
+</tr>
+</tbody></table>
+<h3>⚡ Real-World Benefits</h3>
+<ol>
+<li><p><strong>For Long-Running Jobs</strong>:</p>
+<ul>
+<li>Process 10,000+ videos safely</li>
+<li>Survive platform maintenance windows</li>
+<li>Handle network instability gracefully</li>
+</ul>
+</li>
+<li><p><strong>For Valuable Data</strong>:</p>
+<ul>
+<li>Never lose hours of processing</li>
+<li>Get partial results immediately</li>
+<li>Resume failed jobs with one click</li>
+</ul>
+</li>
+<li><p><strong>For Time-Sensitive Work</strong>:</p>
+<ul>
+<li>Meet deadlines despite interruptions</li>
+<li>Predictable completion times</li>
+<li>Reliable large-scale scraping</li>
+</ul>
+</li>
+</ol>
+<h3>🛠️ Technical Implementation</h3>
+<p>Our state management system tracks:</p>
+<ul>
+<li><strong>Per-Item Status</strong>: Each video&#39;s processing state</li>
+<li><strong>Continuation Tokens</strong>: YouTube pagination markers</li>
+<li><strong>Content Checksums</strong>: Avoid duplicate downloads</li>
+<li><strong>Temporal Markers</strong>: Last successful processing time</li>
+</ul>
+<pre><code class="language-javascript">// Example state object
+{
+  &quot;processedVideos&quot;: [&quot;abc123&quot;, &quot;def456&quot;], // SHA-256 checksums
+  &quot;continuationToken&quot;: &quot;EAEg6gEIAB...&quot;, // YouTube pagination
+  &quot;lastSuccess&quot;: &quot;2025-04-16T12:34:56Z&quot;,
+  &quot;currentBatch&quot;: {
+    &quot;playlistId&quot;: &quot;PL12345&quot;,
+    &quot;position&quot;: 27 // Item in current batch
+  }
+}
+</code></pre>
+<h3>🚨 Fault Recovery Scenarios</h3>
+<p><strong>Case 1: Platform Migration</strong></p>
+<ol>
+<li>The system detects impending migration</li>
+<li>Saves complete state (takes &lt;100ms)</li>
+<li>Automatically reboots when available</li>
+<li>Resumes from the exact video being processed</li>
+</ol>
+<p><strong>Case 2: Network Failure</strong></p>
+<ol>
+<li>Exponential backoff retry (3 attempts)</li>
+<li>Preserves all successfully processed data</li>
+<li>Logs the precise failure point</li>
+<li>Provides resume instructions</li>
+</ol>
+<h3>📈 Reliability Metrics</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Success Rate</th>
+<th>Recovery Time</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Planned Migration</td>
+<td>100%</td>
+<td>&lt;1 minute</td>
+</tr>
+<tr>
+<td>Unexpected Crash</td>
+<td>99.8%</td>
+<td>&lt;2 minutes</td>
+</tr>
+<tr>
+<td>Network Outage</td>
+<td>99.5%</td>
+<td>&lt;5 minutes</td>
+</tr>
+</tbody></table>
+<p>This sophisticated handling makes our tool ideal for:</p>
+<ul>
+<li>Mission-critical data collection</li>
+<li>Large academic research projects</li>
+<li>Enterprise content archiving</li>
+<li>Compliance-sensitive applications</li>
+</ul>
+<hr>
+<h2>📝 Transcript Formats</h2>
+<p>Extract YouTube subtitles in multiple formats to suit your needs:</p>
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>File Extension</th>
+<th>Best For</th>
+<th>Features</th>
+<th>Example Snippet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>SubRip</strong></td>
+<td><code>.srt</code></td>
+<td>Video Players</td>
+<td>Standard format with timestamps and sequence numbers (default)</td>
+<td><code>00:00:02,800 --&gt; 00:00:06,080</code></td>
+</tr>
+<tr>
+<td><strong>WebVTT</strong></td>
+<td><code>.vtt</code></td>
+<td>Web Video</td>
+<td>HTML5 compatible with CSS styling support</td>
+<td><code>00:00:02.800 --&gt; 00:00:06.080</code></td>
+</tr>
+<tr>
+<td><strong>Plain Text</strong></td>
+<td><code>.txt</code></td>
+<td>Text Analysis</td>
+<td>Raw transcript without timestamps for NLP/text mining</td>
+<td>Raw text without timestamps</td>
+</tr>
+<tr>
+<td><strong>XML</strong></td>
+<td><code>.xml</code></td>
+<td>Technical Use</td>
+<td>Original YouTube format with full metadata</td>
+<td><code>&lt;text start=&quot;2.8&quot; dur=&quot;3.28&quot;&gt;</code></td>
+</tr>
+</tbody></table>
+<h3>📥 Configure Transcript Options</h3>
+<pre><code class="language-json">{
+  &quot;rawYouTubeUrls&quot;: [&quot;https://www.youtube.com/watch?v=lZs2iuA6Tgw&quot;],
+  &quot;outputFormat&quot;: &quot;vtt&quot;,       // Choose format: &quot;srt&quot;, &quot;vtt&quot;, &quot;txt&quot;, or &quot;xml&quot;
+  &quot;storeTranscript&quot;: true,     // Generate downloadable transcript URLs
+  &quot;maxResults&quot;: 10
+}
+</code></pre>
+<h3>📊 Transcript Output Example</h3>
+<p>Each transcript format provides different structured data:</p>
+<h4>SRT Format</h4>
+<pre><code>1
+00:00:00,160 --&gt; 00:00:04,319
+but that is a horrendous user experience
+
+2
+00:00:02,800 --&gt; 00:00:06,080
+if I&#39;ve ever seen one This was the
+</code></pre>
+<h4>WebVTT Format</h4>
+<pre><code>WEBVTT
+
+00:00:00.160 --&gt; 00:00:04.319
+but that is a horrendous user experience
+
+00:00:02.800 --&gt; 00:00:06.080
+if I&#39;ve ever seen one This was the
+</code></pre>
+<h4>Plain Text Format</h4>
+<pre><code>but that is a horrendous user experience if I&#39;ve ever seen one This was the craziest one This was the last time it wrote some code and then it said &quot;I&#39;ve updated this Please test the button.&quot;
+</code></pre>
+<h4>XML Format</h4>
+<pre><code class="language-xml">&lt;transcript&gt;
+  &lt;text start=&quot;0.16&quot; dur=&quot;4.159&quot;&gt;but that is a horrendous user experience&lt;/text&gt;
+  &lt;text start=&quot;2.8&quot; dur=&quot;3.28&quot;&gt;if I&#39;ve ever seen one This was the&lt;/text&gt;
+&lt;/transcript&gt;
+</code></pre>
+<h3>💡 Format Recommendations</h3>
+<ul>
+<li><strong>SRT</strong>: Best for general video player compatibility</li>
+<li><strong>VTT</strong>: Ideal for web embedding and HTML5 videos</li>
+<li><strong>TXT</strong>: Perfect for text analysis, NLP, and content repurposing</li>
+<li><strong>XML</strong>: Recommended for technical applications requiring precise timing data</li>
+</ul>
+<p>When <code>storeTranscript</code> is enabled, you&#39;ll receive downloadable URLs for transcript files in your specified format, stored securely in Apify storage.</p>
+<h2>📊 Output Format</h2>
+<p>Get comprehensive data for each video:</p>
+<pre><code class="language-json">{
+    &quot;VideoURL&quot;: &quot;https://www.youtube.com/watch?v=lZs2iuA6Tgw&quot;,
+    &quot;Video_title&quot;: &quot;o3-mini refuses to code&quot;,
+    &quot;category&quot;: &quot;shorts&quot;,
+    &quot;Channel_Id&quot;: &quot;UC2WHjPDvbE6O328n17ZGcfg&quot;,
+    &quot;Description&quot;: &quot;If you&#39;re a developer, sign up to my free newsletter Dev Notes 👉 https://www.devnotesdaily.com/\n\nIf you&#39;re a student, checkout my Notion template Studious: https://notionstudent.com\n\nDon&#39;t know why you&#39;d want to follow me on other socials. I don&#39;t even post. But here you go.\n🐱‍🚀 GitHub: https://github.com/forrestknight\n🐦 Twitter: https://www.twitter.com/forrestpknight\n💼 LinkedIn: https://www.linkedin.com/in/forrestpknight\n📸 Instagram: https://www.instagram.com/forrestpknight&quot;,
+    &quot;Channel_Name&quot;: &quot;ForrestKnight&quot;,
+    &quot;Views&quot;: &quot;4128 views&quot;,
+    &quot;Runtime&quot;: &quot;0:46&quot;,
+    &quot;published_Date&quot;: &quot;2025-04-08T06:21:17-07:00&quot;,
+    &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/lZs2iuA6Tgw/maxres2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYTiBWKGUwDw==&amp;rs=AOn4CLBpq8srfH6R4BRzgGDYroX0Bm3G8w&quot;,
+    &quot;hasTranscript&quot;: true,
+    &quot;transcript&quot;: {
+        &quot;formattedContent&quot;: &quot;&lt;transcript&gt;&lt;text start=\&quot;0.16\&quot; dur=\&quot;4.159\&quot;&gt;but that is a horrendous user experience&lt;/text&gt;&lt;text start=\&quot;2.8\&quot; dur=\&quot;3.28\&quot;&gt;if I&#39;ve ever seen one This was the&lt;/text&gt;&lt;text start=\&quot;4.319\&quot; dur=\&quot;3.44\&quot;&gt;craziest one This was the last time it&lt;/text&gt;&lt;text start=\&quot;6.08\&quot; dur=\&quot;3.519\&quot;&gt;wrote some code and then it said \&quot;I&#39;ve&lt;/text&gt;&lt;text start=\&quot;7.759\&quot; dur=\&quot;3.441\&quot;&gt;updated this Please test the button.\&quot;&lt;/text&gt;&lt;text start=\&quot;9.599\&quot; dur=\&quot;4.321\&quot;&gt;Okay I said it worked Now let&#39;s store&lt;/text&gt;&lt;text start=\&quot;11.2\&quot; dur=\&quot;4.96\&quot;&gt;the data and says I&#39;ll update this I say&lt;/text&gt;&lt;text start=\&quot;13.92\&quot; dur=\&quot;4.4\&quot;&gt;yes to let&#39;s apply these changes I&#39;ll&lt;/text&gt;&lt;text start=\&quot;16.16\&quot; dur=\&quot;4.64\&quot;&gt;now update this Wait you didn&#39;t do the&lt;/text&gt;&lt;text start=\&quot;18.32\&quot; dur=\&quot;4.799\&quot;&gt;previous changes I&#39;ll update this I say&lt;/text&gt;&lt;text start=\&quot;20.8\&quot; dur=\&quot;4.559\&quot;&gt;okay Yes Code these changes in I&#39;ll now&lt;/text&gt;&lt;text start=\&quot;23.119\&quot; dur=\&quot;4.16\&quot;&gt;apply these Apply these changes I&#39;ll now&lt;/text&gt;&lt;text start=\&quot;25.359\&quot; dur=\&quot;3.121\&quot;&gt;apply these changes Okay so we currently&lt;/text&gt;&lt;text start=\&quot;27.279\&quot; dur=\&quot;2.961\&quot;&gt;have this and I want to do an actual&lt;/text&gt;&lt;text start=\&quot;28.48\&quot; dur=\&quot;4.079\&quot;&gt;prompt It&#39;s like I&#39;ll now apply these&lt;/text&gt;&lt;text start=\&quot;30.24\&quot; dur=\&quot;5.12\&quot;&gt;changes Okay please do And then it wrote&lt;/text&gt;&lt;text start=\&quot;32.559\&quot; dur=\&quot;4.321\&quot;&gt;the code as a diff and didn&#39;t add them&lt;/text&gt;&lt;text start=\&quot;35.36\&quot; dur=\&quot;2.96\&quot;&gt;to the codebase So I said add them to&lt;/text&gt;&lt;text start=\&quot;36.88\&quot; dur=\&quot;3.96\&quot;&gt;the codebase And then it says I&#39;ll now&lt;/text&gt;&lt;text start=\&quot;38.32\&quot; dur=\&quot;6.239\&quot;&gt;apply these changes in a single edit I&lt;/text&gt;&lt;text start=\&quot;40.84\&quot; dur=\&quot;6.76\&quot;&gt;don&#39;t that&#39;s 03 mini in windsurf I don&#39;t&lt;/text&gt;&lt;text start=\&quot;44.559\&quot; dur=\&quot;3.041\&quot;&gt;know how it is in cursor&lt;/text&gt;&lt;/transcript&gt;&quot;,
+        &quot;format&quot;: &quot;xml&quot;,
+        &quot;downloadUrl&quot;: &quot;https://api.apify.com/v2/key-value-stores/undefined/records/6bvx3fauubpev93l.xml&quot;,
+        &quot;language&quot;: &quot;en&quot;,
+        &quot;originalLanguage&quot;: null,
+        &quot;isTranslated&quot;: false,
+        &quot;isAutoGenerated&quot;: true,
+        &quot;segmentCount&quot;: 1
+    }
+}
+</code></pre>
+<h2>⚙️ Performance Optimization</h2>
+<p>Adjust these parameters for optimal performance:</p>
+<ul>
+<li><code>MAX_RETRIES</code>: Number of retry attempts for failed requests (default: 3)</li>
+<li><code>BASE_DELAY_MS</code>: Base delay duration between requests in milliseconds (default: 1000)</li>
+<li><code>maxResults</code>: Maximum number of videos to process (default: 50)</li>
+</ul>
+<h2>🛠️ Advanced Use Cases</h2>
+<h3>Channel Analysis</h3>
+<p>Extract data from all videos on a channel to:</p>
+<ul>
+<li>Perform content analysis across videos</li>
+<li>Track video performance over time</li>
+<li>Generate keyword frequency reports</li>
+<li>Analyze posting patterns and engagement</li>
+</ul>
+<h3>Educational Content</h3>
+<p>For courses and tutorials:</p>
+<ul>
+<li>Convert video lessons to searchable text via transcripts</li>
+<li>Create study guides from video content</li>
+<li>Archive educational content in a structured format</li>
+</ul>
+<h3>Content Repurposing</h3>
+<p>Transform video content into:</p>
+<ul>
+<li>Blog posts and articles</li>
+<li>Social media content</li>
+<li>Ebooks and guides</li>
+</ul>
+<h3>Competitive Research</h3>
+<ul>
+<li>Track competitor video performance</li>
+<li>Analyze topic trends across channels</li>
+<li>Identify high-performing content formats</li>
+</ul>
+<h2>🔍 Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Solution</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No transcript available</td>
+<td>Many videos don&#39;t have captions enabled on YouTube</td>
+</tr>
+<tr>
+<td>Rate limiting</td>
+<td>Increase <code>BASE_DELAY_MS</code> to reduce request frequency</td>
+</tr>
+<tr>
+<td>Processing too slow</td>
+<td>Reduce <code>MAX_RETRIES</code> and optimize proxy configuration</td>
+</tr>
+<tr>
+<td>Incomplete data</td>
+<td>Check that the video is publicly accessible</td>
+</tr>
+<tr>
+<td>Cookie management</td>
+<td>For private or restricted videos, provide authentication cookies</td>
+</tr>
+</tbody></table>
+<h2>📈 Real-World Performance</h2>
+<ul>
+<li><strong>Accuracy</strong>: 99% data extraction accuracy for public videos</li>
+<li><strong>Success Rate</strong>: 95% of videos successfully processed</li>
+<li><strong>Transcript Availability</strong>: Depends on whether video creators enabled captions</li>
+</ul>
+<h2>🌟 Use Cases</h2>
+<ul>
+<li><strong>Content Creators</strong>: Research trends and repurpose video content</li>
+<li><strong>Researchers</strong>: Analyze video content at scale</li>
+<li><strong>Educators</strong>: Make video content searchable and accessible</li>
+<li><strong>Marketers</strong>: Extract insights from competitor videos and channels</li>
+<li><strong>SEO Specialists</strong>: Enhance content strategy with video data analysis</li>
+<li><strong>Journalists</strong>: Research topics across YouTube channels</li>
+</ul>
+<h2>🔄 URL and Keyword Processing</h2>
+<p>Our tool uses an advanced URL and keyword parsing system that standardizes all YouTube content identifiers:</p>
+<h3>Processing Capabilities</h3>
+<ul>
+<li>Handles all YouTube URL formats (standard, shortened, mobile)</li>
+<li>Processes channel handles (<code>@channelname</code>)</li>
+<li>Supports hashtags (<code>#topic</code>)</li>
+<li>Recognizes content categories (Videos, Shorts, Live)</li>
+</ul>
+<h3>Standardized Output Structure</h3>
+<p>All inputs produce a consistent object with these properties:</p>
+<ul>
+<li><code>type</code>: Content type (&#39;channel&#39;, &#39;video&#39;, &#39;playlist&#39;, &#39;hashtag&#39;)</li>
+<li><code>id</code>: Unique identifier (channel ID, video ID, etc.)</li>
+<li><code>category</code>: Content category when applicable</li>
+<li><code>isKeyword</code>: Indicates if input was a keyword</li>
+<li><code>url</code>: Properly formatted YouTube URL</li>
+</ul>
+<h3>Examples</h3>
+<pre><code>input: https://www.youtube.com/channel/UCD7yEscEXN6Y4XAMghyjyuw
+output: type:channel, id:UCD7yEscEXN6Y4XAMghyjyuw, category:null, isKeyword:false, url: https://www.youtube.com/channel/UCD7yEscEXN6Y4XAMghyjyuw
+
+input: https://www.youtube.com/@HamzaSalemTV/shorts
+output: type:channel, id:@HamzaSalemTV, category:Shorts, isKeyword:false, url: https://www.youtube.com/@HamzaSalemTV/shorts
+
+input: https://www.youtube.com/watch?v=aq8Czq2WrYU
+output: type:video, id:aq8Czq2WrYU, category:video, isKeyword:false, url: https://www.youtube.com/watch?v=aq8Czq2WrYU
+
+input: @HamzaSalemTV
+output: type:channel, id:@HamzaSalemTV, category:null, isKeyword:true, url: https://www.youtube.com/@HamzaSalemTV/
+</code></pre>
+<h3>Special Cases Handled</h3>
+<ul>
+<li>Channel URLs with various subcategories</li>
+<li>Video URLs in multiple formats</li>
+<li>Playlist URLs with or without video parameters</li>
+<li>International character handling</li>
+<li>Arabic text processing</li>
+</ul>
+<p>This robust processing ensures reliable extraction across all YouTube content types.</p>
+<h2>📚 Quick Start Guide for Non-Technical Users</h2>
+<ol>
+<li><strong>Copy your YouTube URL</strong>: Find the video, playlist, or channel you want to extract</li>
+<li><strong>Paste it into the &quot;rawYouTubeUrls&quot; field</strong>: Add it as a string in the array</li>
+<li><strong>Set your maxResults</strong>: Choose how many videos to process</li>
+<li><strong>Click Start</strong>: The tool will automatically detect what you need and process it</li>
+<li><strong>Download Results</strong>: Get your data in JSON, CSV, or other formats</li>
+</ol>
+<p>No technical knowledge required - the tool automatically understands what you need!</p>
+<h2>❓ FAQ &amp; Support</h2>
+<h3>Common Questions</h3>
+<p><strong>Q: Can I scrape private videos?</strong><br>A: Currently no - our tool only processes publicly available content.  </p>
+<p><strong>Planned Future Feature:</strong><br>We&#39;re developing a cookie authentication system that will allow scraping of:</p>
+<ul>
+<li>Members-only videos (when creator provides access)</li>
+<li>Private videos (with owner permission)</li>
+<li>Subscriber-exclusive content</li>
+</ul>
+<p><em>Expected release: Q2 2025</em><br><em>Requires valid YouTube cookies with viewing permissions</em></p>
+<p><strong>Q : Can I scrape dislikes from YouTube videos?</strong><br>A : No. Both <code>dislike</code> and <code>details</code> properties have been removed altogether from new versions. Dislikes are not public info so you cannot scrape them.</p>
+<p><strong>Q : Can I scrape subtitles from YouTube videos?</strong><br>A : Yes. You can scrape all publicly available data from YouTube using a web scraper, including subtitles. Using this scraping tool, you can extract both autogenerated and added subtitles in SRT, WEBVTT, XML, or plain text format.</p>
+<p><strong>Q : How many videos can I process at once?</strong><br>A : You can set the <code>maxResults</code> parameter to control how many videos to process. The default is 50, but you can adjust this based on your needs.</p>
+<p><strong>Q : Should I use a proxy when scraping YouTube?</strong><br>A : Yes, using a proxy is essential if you want your scraper to run properly. You can either use your own proxy or stick to the default Apify Proxy servers. Datacenter proxies are recommended for use with this Actor. Configure the proxy settings using the <code>proxyConfiguration</code> parameter, with options to use Apify&#39;s residential proxies.</p>
+<p><strong>Q : What types of YouTube content can I extract data from?</strong><br>A : The tool extracts data from all YouTube content types: Videos, Shorts, Live streams, Podcasts, Courses, full Channels, and Playlists.</p>
+<p><strong>Q : How does the URL pattern recognition work?</strong><br>A : The tool automatically detects what you want based on the URL structure. For example, it recognizes channel URLs, video URLs, playlist URLs, shorts, and hashtags, then processes them accordingly.</p>
+<p>Here&#39;s a concise FAQ section focused on transcripts:</p>
+<p><strong>Q: What transcript formats are supported?</strong><br>A: We provide 4 options:</p>
+<ul>
+<li><strong>SRT</strong> (SubRip) - For video editors</li>
+<li><strong>VTT</strong> (WebVTT) - For web players  </li>
+<li><strong>TXT</strong> - Plain text for analysis</li>
+<li><strong>XML</strong> - Original YouTube format</li>
+</ul>
+<p><strong>Q: How are timestamps handled?</strong><br>A: Preserved in SRT/VTT, removed in TXT, full metadata in XML.</p>
+<p><strong>Q: Are auto-generated transcripts included?</strong><br>A: Yes, both manual and auto-generated when available.</p>
+<p><strong>Q : Can I extract transcripts from videos?</strong><br>A : Yes, when available, the tool can extract complete transcripts with timestamps. However, this depends on whether the video creator has enabled captions on their videos.</p>
+<p><strong>Q : What data fields can I expect in the output?</strong><br>A : The output includes comprehensive data such as VideoURL, Video_title, Channel_Id, Description, Channel_Name, Views, Runtime, published_Date, thumbnail, and transcript (when available).</p>
+<p><strong>Q : How can I optimize performance?</strong><br>A : You can adjust parameters like <code>MAX_RETRIES</code>, <code>BASE_DELAY_MS</code>, and <code>maxResults</code> to optimize performance based on your needs.</p>
+<p><strong>Q : Can I integrate this YouTube scraper with other apps?</strong><br>A : Last but not least, YouTube Scraper can be connected with almost any cloud service or web app thanks to integrations on the Apify platform. You can <strong>integrate with LangChain, Make, Trello, Zapier, Slack, Airbyte, GitHub, Google Sheets, Google Drive</strong>, <strong>Asana,</strong> and more.<br>You can also use webhooks to carry out an action whenever an event occurs, e.g., get a notification whenever YouTube Scraper successfully finishes a run.</p>
+<p><strong>Q : Can I use YouTube Scraper with the API?</strong><br>A : The Apify API gives you programmatic access to the Apify platform. The API is organized around RESTful HTTP endpoints that enable you to manage, schedule, and run Apify actors. The API also lets you access any datasets, monitor actor performance, fetch results, create and update versions, and more.<br>To access the API using Node.js, use the <code>apify-client</code> NPM package. To access the API using Python, use the <code>apify-client</code> PyPI package. Check out the Apify API reference docs for full details or click on the API tab for code examples.</p>
+<p><strong>Q : Is it legal to scrape data from YouTube?</strong><br>A : Scraping YouTube is legal if you adhere to copyright and personal data regulations. This scraper deals with cookies and privacy consent dialogs on your behalf, so be aware that the results from your YouTube scrape <strong>might contain personal information</strong>.<br>Personal data is protected by GDPR (EU Regulation 2016/679) and other regulations worldwide. You should not scrape personal data unless you have a legitimate reason to do so. If you&#39;re unsure whether your reason is legitimate, please consult your lawyers. You can also read the Apify blog post on the <a href="https://blog.apify.com/is-web-scraping-legal">legality of web scraping</a>.</p>
+<p><strong>Q : Does the tool handle YouTube URL shortlinks?</strong><br>A : Yes, the tool uses an advanced URL and keyword parsing system that standardizes all YouTube content identifiers, including shortened URLs.</p>
+<p><strong>Q : Can the tool process multilingual content?</strong><br>A : Yes, the tool supports multi-language content and works with all languages available on YouTube.</p>
+<h1>📝 Your feedback</h1>
+<ul>
+<li>We&#39;re always working on improving the performance of our Actors. So if you&#39;ve got any technical feedback on YouTube Scraper, or simply found a bug  </li>
+<li>please create an issue on the Actor&#39;s page in <a href="https://console.apify.com/actors/vX4OyUdqIoP3jYWBU/issues">Apify Console</a>.</li>
+</ul>
+<h2>🤝 Support &amp; Contact</h2>
+<p>For assistance or custom implementations:</p>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h1>🙅‍♂️ No technical knowledge required</h1>
+<h1>🤖 Tool automatically understands what you need!</h1>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +735,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/youtube-scraper-pro?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +743,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'youtube-scraper-pro';
-    </script>
 </body>
 </html>

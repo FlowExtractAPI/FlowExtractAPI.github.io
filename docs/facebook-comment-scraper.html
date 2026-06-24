@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Facebook Comment Scraper &amp; Extractor | FlowExtract API</title>
+    <meta name="title" content="Facebook Comment Scraper &amp; Extractor | FlowExtract API">
+    <meta name="description" content="Extract comments from Facebook reels, posts, photos, videos, and group posts using your authenticated browser session. Supports pagination, nested replies, and multiple URLs per run.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/facebook-comment-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Facebook Comment Scraper &amp; Extractor | FlowExtract API">
+    <meta property="og:description" content="Extract comments from Facebook reels, posts, photos, videos, and group posts using your authenticated browser session. Supports pagination, nested replies, and multiple URLs per run.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/facebook-comment-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-K5EXlxalV2BCYfgKM-0doiMsNdsi-screen-shot-2021-11-22-at-2-26-21-pm-png-840_458--03-13-2026_05_">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facebook Comment Scraper &amp; Extractor | FlowExtract API">
+    <meta name="twitter:description" content="Extract comments from Facebook reels, posts, photos, videos, and group posts using your authenticated browser session. Supports pagination, nested replies, and multiple URLs per run.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-K5EXlxalV2BCYfgKM-0doiMsNdsi-screen-shot-2021-11-22-at-2-26-21-pm-png-840_458--03-13-2026_05_">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Facebook Comment Scraper","description":"Extract comments from Facebook reels, posts, photos, videos, and group posts using your authenticated browser session. Supports pagination, nested replies, and multiple URLs per run.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/facebook-comment-scraper.html","sameAs":"https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-K5EXlxalV2BCYfgKM-0doiMsNdsi-screen-shot-2021-11-22-at-2-26-21-pm-png-840_458--03-13-2026_05_"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Facebook Comment Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Facebook Comment Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Facebook Comment Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Facebook Comment Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why scrape Facebook comments?","acceptedAnswer":{"@type":"Answer","text":"Facebook is one of the largest social networks in the world, with billions of posts generating millions of comments daily. Whether you're tracking brand sentiment, researching audience reactions, or building moderation tools, comment data is invaluable but Facebook provides no official API for bulk comment extraction."}},{"@type":"Question","name":"What data does it extract?","acceptedAnswer":{"@type":"Answer","text":"- Comment ID Facebook's unique identifier - Comment text full body of the comment"}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-K5EXlxalV2BCYfgKM-0doiMsNdsi-screen-shot-2021-11-22-at-2-26-21-pm-png-840_458--03-13-2026_05_" alt="Facebook Comment Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">Facebook Comment Scraper</h1>
+                <p class="actor-hero-desc">Extract comments from Facebook reels, posts, photos, videos, and group posts using your authenticated browser session. Supports pagination, nested replies, and multiple URLs per run.</p>
+                <a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Facebook Comment Scraper is a ready-to-run Apify actor from FlowExtract API for social media. Do I need a Facebook account to use this actor? This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>sentiment analysis feed comments into NLP models to measure reactions to a product, campaign, or event.</li><li>content moderation identify toxic, spammy, or policy-violating comments at scale across multiple posts.</li><li>competitive research monitor comments on competitor posts to understand audience pain points and opportunities.</li><li>community management export all comments from your brand&#39;s posts, reels, photos, or videos for reporting and response tracking.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Facebook Comment Scraper?</summary><p>Open Facebook Comment Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Facebook Comment Scraper free?</summary><p>Facebook Comment Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why scrape Facebook comments?</summary><p>Facebook is one of the largest social networks in the world, with billions of posts generating millions of comments daily. Whether you&#39;re tracking brand sentiment, researching audience reactions, or building moderation tools, comment data is invaluable but Facebook provides no official API for bulk comment extraction.</p></details><details class="faq-item"><summary>What data does it extract?</summary><p>- Comment ID Facebook&#39;s unique identifier - Comment text full body of the comment</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>💬 Facebook Comment Scraper  Extract Comments from Any Facebook Post</h1>
+<p><strong><a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63">Facebook Comment Scraper</a></strong> extracts comments and threaded replies from any public Facebook content  reels, videos, photos, text posts, group posts, and page posts. Just provide your URLs and run. No setup, no login, no browser extensions needed for public content.</p>
+<p>For private or restricted posts, you can optionally provide browser cookies to access content that requires authentication.</p>
+<p>Perfect for <strong>social media researchers</strong>, <strong>community managers</strong>, and <strong>marketers</strong> who need Facebook comment data without manually scrolling through thousands of posts.</p>
+<!-- Paste your raw YouTube demo URL here  Apify auto-renders it as an embedded player -->
+<p><a href="https://www.youtube.com/watch?v=YOUR_VIDEO_ID">https://www.youtube.com/watch?v=YOUR_VIDEO_ID</a></p>
+<hr>
+<h2>Supported Facebook content types</h2>
+<table>
+<thead>
+<tr>
+<th>Content type</th>
+<th>Example URL</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Reels</strong></td>
+<td><code>https://www.facebook.com/reel/123456789</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Videos</strong></td>
+<td><code>https://www.facebook.com/watch/?v=123456789</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Photos</strong></td>
+<td><code>https://www.facebook.com/photo?fbid=123456789</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Photo albums</strong></td>
+<td><code>https://www.facebook.com/photo/?fbid=123&amp;set=a.456</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Page posts</strong></td>
+<td><code>https://www.facebook.com/page/posts/pfbid0Bb...</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Group posts</strong></td>
+<td><code>https://www.facebook.com/groups/.../posts/123456789</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Permalink posts</strong></td>
+<td><code>https://www.facebook.com/permalink.php?story_fbid=123</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Share links</strong></td>
+<td><code>https://www.facebook.com/share/...</code></td>
+<td>✅ Supported</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Why scrape Facebook comments?</h2>
+<p>Facebook is one of the largest social networks in the world, with billions of posts generating millions of comments daily. Whether you&#39;re tracking brand sentiment, researching audience reactions, or building moderation tools, comment data is invaluable  but Facebook provides no official API for bulk comment extraction.</p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>Sentiment analysis</strong>  feed comments into NLP models to measure reactions to a product, campaign, or event.</li>
+<li><strong>Content moderation</strong>  identify toxic, spammy, or policy-violating comments at scale across multiple posts.</li>
+<li><strong>Competitive research</strong>  monitor comments on competitor posts to understand audience pain points and opportunities.</li>
+<li><strong>Community management</strong>  export all comments from your brand&#39;s posts, reels, photos, or videos for reporting and response tracking.</li>
+<li><strong>Academic research</strong>  study public discourse, language patterns, or viral content dynamics on Facebook.</li>
+<li><strong>Lead generation</strong>  identify engaged users in niche communities who comment on relevant posts.</li>
+</ul>
+<hr>
+<h2>What data does it extract?</h2>
+<h3>💬 Comment Data</h3>
+<ul>
+<li>Comment ID  Facebook&#39;s unique identifier</li>
+<li>Comment text  full body of the comment</li>
+<li>Created at  ISO 8601 timestamp</li>
+<li>Comment URL  direct link to the comment on Facebook</li>
+<li>Parent ID  ID of the parent comment (for replies; <code>null</code> for top-level comments)</li>
+<li>Total reactions  combined count across all reaction types</li>
+<li>Reactions breakdown  per-type counts (Like, Love, Haha, Wow, Sad, Angry, Care)</li>
+<li>Reply count  number of direct replies</li>
+<li>Attachments  photos, stickers, or media attached to the comment</li>
+<li>Badges  special badges on the commenter&#39;s profile (e.g. &quot;Top fan&quot;, &quot;Rising fan&quot;)</li>
+</ul>
+<h3>👤 Author Data</h3>
+<ul>
+<li>Author ID, name, profile URL, and profile picture URL</li>
+<li>Gender, verification status, and work info (when available)</li>
+</ul>
+<h3>🔗 Source Metadata</h3>
+<ul>
+<li>Source URL  the full URL of the scraped content</li>
+<li>Source ID  Facebook content identifier</li>
+<li>Source type  <code>reel</code>, <code>video</code>, <code>photo</code>, <code>post</code>, or <code>unknown</code></li>
+</ul>
+<h3>🌐 Language &amp; Run Metadata</h3>
+<ul>
+<li>Source language  detected language of the comment (e.g. <code>en_XX</code>)</li>
+<li>Translation type  whether the text is original or auto-translated</li>
+<li>Scraped at  ISO 8601 timestamp of when the record was collected</li>
+</ul>
+<hr>
+<h2>⚙️ How to use Facebook Comment Scraper</h2>
+<h3>Input Options</h3>
+<h4><code>urls</code> (Array  required)</h4>
+<p>List of Facebook URLs to scrape comments from. You can mix different content types in the same run.</p>
+<pre><code class="language-json">{
+    &quot;urls&quot;:[
+        {
+            &quot;url&quot;: &quot;https://www.facebook.com/photo?fbid=1450353236655661&quot;
+        },
+        {
+            &quot;url&quot;: &quot;https://www.facebook.com/humansofnewyork/posts/pfbid0BbKbkisExKGSKuhee9a7i86RwRuMKFC8NSkKStB7CsM3uXJuAAfZLrkcJMXxhH4Yl&quot;
+        },
+        {
+            &quot;url&quot;: &quot;https://www.facebook.com/reel/1312736054237897&quot;
+        },
+        {
+            &quot;url&quot;: &quot;https://www.facebook.com/watch?v=1673231300789929&quot;
+        }
+    ]
+}
+</code></pre>
+<h4><code>commentsIntentToken</code> (String  optional)</h4>
+<p>Controls how Facebook orders the comments returned. Mirrors the sort options in the Facebook UI.</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>RANKED_FILTERED_INTENT_V1</code></td>
+<td>⭐ Most Relevant <em>(default)</em></td>
+<td>Friends&#39; comments and most-engaged comments first</td>
+</tr>
+<tr>
+<td><code>REVERSE_CHRONOLOGICAL_UNFILTERED_INTENT_V1</code></td>
+<td>🕒 Newest</td>
+<td>All comments sorted chronologically, newest first</td>
+</tr>
+<tr>
+<td><code>RANKED_UNFILTERED_CHRONOLOGICAL_REPLIES_INTENT_V1</code></td>
+<td>💬 All Comments</td>
+<td>All comments including lower-engagement ones</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> Use <strong>Most Relevant</strong> for engagement analysis. Use <strong>Newest</strong> for real-time monitoring. Use <strong>All Comments</strong> for the most complete dataset with no filtering.</p>
+</blockquote>
+<hr>
+<h4><code>fetchReplies</code> (Boolean  optional)</h4>
+<p>Controls whether the actor fetches threaded replies for each comment.</p>
+<ul>
+<li><strong>Default</strong>: <code>false</code>  only top-level comments are collected</li>
+<li><strong><code>true</code></strong>  fetches direct replies and nested sub-replies for every comment, including full pagination through all reply pages</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/photo?fbid=1450353236655661&quot; }],
+    &quot;fetchReplies&quot;: true
+}
+</code></pre>
+<blockquote>
+<p>💡 <strong>How limits interact with replies:</strong> <code>maxCommentsPerUrl</code> controls how many <strong>top-level comments</strong> are collected. Replies are always fetched for all collected top-level comments regardless of that limit. For example, <code>maxCommentsPerUrl: 10</code> with <code>fetchReplies: true</code> gives you 10 top-level comments plus all their replies and sub-replies.</p>
+</blockquote>
+<blockquote>
+<p>⚠️ Enabling reply fetching significantly increases request count and run time, especially on posts with deep reply threads.</p>
+</blockquote>
+<hr>
+<h4><code>maxCommentsPerUrl</code> (Integer  optional)</h4>
+<ul>
+<li><strong>Default</strong>: <code>10</code></li>
+<li>Set to <code>0</code> or <code> </code> for unlimited  fetches all available top-level comments</li>
+<li>This limit applies to <strong>top-level comments only</strong>. Replies are fetched separately when <code>fetchReplies</code> is enabled and are not counted toward this limit.</li>
+<li>The actor stops paginating for new top-level comments as soon as this limit is reached.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/photo?fbid=1450353236655661&quot; }],
+    &quot;maxCommentsPerUrl&quot;: 500,
+    &quot;fetchReplies&quot;: true
+}
+</code></pre>
+<hr>
+<h4><code>customCookies</code> (Array  optional)</h4>
+<p><strong>Not required for public content.</strong> The actor handles public posts, reels, photos, and videos without any cookies.</p>
+<p>If you need to scrape comments from <strong>private groups</strong> or <strong>login-restricted content</strong>, provide a JSON array of browser cookie objects exported from your Facebook session.</p>
+<pre><code class="language-json">{
+    &quot;customCookies&quot;: [
+        { &quot;name&quot;: &quot;c_user&quot;, &quot;value&quot;: &quot;100073931291073&quot; },
+        { &quot;name&quot;: &quot;xs&quot;,     &quot;value&quot;: &quot;29%3AKUx...&quot; },
+        { &quot;name&quot;: &quot;datr&quot;,   &quot;value&quot;: &quot;abc123xyz&quot; }
+    ]
+}
+</code></pre>
+<h4>How to export cookies (only needed for private content)</h4>
+<ol>
+<li>Install the <a href="https://chromewebstore.google.com/detail/copy-cookies/jcbpglbplpblnagieiknmmkiamekcdg">Copy Cookies</a> Chrome extension</li>
+<li>Log in to <code>facebook.com</code> in your browser</li>
+<li>Click the extension icon → <strong>Copy as JSON</strong></li>
+<li>Paste the result into the <code>customCookies</code> field</li>
+</ol>
+<p>Alternatively, use <a href="https://cookie-editor.com/">Cookie-Editor</a>: open it on <code>facebook.com</code>, click <strong>Export → Export as JSON</strong>, and paste the result.</p>
+<h3>🔒 Cookie Security &amp; Encryption</h3>
+<p>If you do provide cookies, they are protected by the Apify platform:</p>
+<ul>
+<li><strong>Encrypted at rest</strong> using AES-256-GCM with a 2048-bit RSA key unique to your user and this Actor</li>
+<li><strong>Decrypted only inside the Actor</strong>  no other Actor or user can access them</li>
+<li><strong>Never logged</strong> or exposed in the Apify Console UI</li>
+<li><strong>Isolated per user and Actor</strong> for complete separation</li>
+</ul>
+<blockquote>
+<p>⚠️ <strong>Security</strong>: Cookies from a logged-in session grant access to your Facebook account. Use a dedicated account for scraping if you are concerned about account security.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample Output</h2>
+<p>Each dataset item represents a single comment or reply. Replies are distinguished by a non-null <code>parent_id</code> field.</p>
+<pre><code class="language-json">{
+    &quot;source&quot;: {
+        &quot;id&quot;: &quot;4364570517119853&quot;,
+        &quot;url&quot;: &quot;https://www.facebook.com/reel/4364570517119853&quot;,
+        &quot;type&quot;: &quot;reel&quot;
+    },
+    &quot;comment&quot;: {
+        &quot;id&quot;: &quot;892296663703975&quot;,
+        &quot;parent_id&quot;: null,
+        &quot;author&quot;: {
+            &quot;id&quot;: &quot;100004647828036&quot;,
+            &quot;name&quot;: &quot;Sadeer Ayad&quot;,
+            &quot;profile_picture&quot;: &quot;https://scontent.ftlm1-1.fna.fbcdn.net/v/...&quot;,
+            &quot;url&quot;: &quot;https://www.facebook.com/sadeer.ayad.553481&quot;,
+            &quot;gender&quot;: &quot;FEMALE&quot;,
+            &quot;is_verified&quot;: null,
+            &quot;work_info&quot;: null
+        },
+        &quot;text&quot;: &quot;Don&#39;t you dare to move when you hear the music 😂&quot;,
+        &quot;created_at&quot;: &quot;2026-03-11T00:57:18.000Z&quot;,
+        &quot;created_time_unix&quot;: 1773190638,
+        &quot;url&quot;: &quot;https://www.facebook.com/reel/4364570517119853/?comment_id=892296663703975&quot;,
+        &quot;total_reactions&quot;: 1600,
+        &quot;reactions&quot;: {
+            &quot;Like&quot;: 1105,
+            &quot;Haha&quot;: 553,
+            &quot;Love&quot;: 4,
+            &quot;Sad&quot;: 1
+        },
+        &quot;like_count&quot;: 1600,
+        &quot;reply_count&quot;: 4,
+        &quot;attachments&quot;: [],
+        &quot;badges&quot;: [],
+        &quot;source_language&quot;: &quot;en_XX&quot;,
+        &quot;translation_type&quot;: &quot;ORIGINAL&quot;
+    },
+    &quot;scraped_at&quot;: &quot;2026-03-14T10:42:52.848Z&quot;
+}
+</code></pre>
+<h3>Reply example</h3>
+<p>Replies have a non-null <code>parent_id</code> pointing to their parent comment:</p>
+<pre><code class="language-json">{
+    &quot;source&quot;: {
+        &quot;id&quot;: &quot;4364570517119853&quot;,
+        &quot;url&quot;: &quot;https://www.facebook.com/reel/4364570517119853&quot;,
+        &quot;type&quot;: &quot;reel&quot;
+    },
+    &quot;comment&quot;: {
+        &quot;id&quot;: &quot;942208778497508&quot;,
+        &quot;parent_id&quot;: &quot;892296663703975&quot;,
+        &quot;author&quot;: {
+            &quot;id&quot;: &quot;61580896441183&quot;,
+            &quot;name&quot;: &quot;James W. Mohan&quot;,
+            &quot;profile_picture&quot;: &quot;https://scontent.ftlm1-1.fna.fbcdn.net/v/...&quot;,
+            &quot;url&quot;: &quot;https://www.facebook.com/profile.php?id=61580896441183&quot;,
+            &quot;gender&quot;: &quot;MALE&quot;,
+            &quot;is_verified&quot;: null,
+            &quot;work_info&quot;: null
+        },
+        &quot;text&quot;: &quot;Sadeer Ayad or breathe&quot;,
+        &quot;created_at&quot;: &quot;2026-03-11T01:11:04.000Z&quot;,
+        &quot;created_time_unix&quot;: 1773191464,
+        &quot;url&quot;: &quot;https://www.facebook.com/reel/4364570517119853/?comment_id=892296663703975&amp;reply_comment_id=942208778497508&quot;,
+        &quot;total_reactions&quot;: 51,
+        &quot;reactions&quot;: {
+            &quot;Haha&quot;: 41,
+            &quot;Like&quot;: 10
+        },
+        &quot;like_count&quot;: 51,
+        &quot;reply_count&quot;: 3,
+        &quot;source_language&quot;: &quot;en_XX&quot;,
+        &quot;translation_type&quot;: &quot;ORIGINAL&quot;
+    },
+    &quot;scraped_at&quot;: &quot;2026-03-14T10:42:57.056Z&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a Facebook account to use this actor?</strong>
+No  not for public content. Just provide your URLs and run. For private group posts or login-restricted content, you&#39;ll need to provide browser cookies from a logged-in session.</p>
+<p><strong>What types of Facebook content can I scrape comments from?</strong>
+Got it — just the updated paragraph text, no file editing needed:</p>
+<hr>
+<p><strong>What types of Facebook content can I scrape comments from?</strong></p>
+<p>Reels, videos, photos, photo albums, page posts (including <code>pfbid</code> URLs), group posts, permalink posts, and share links (<code>/share/p/</code>, <code>/share/v/</code>, <code>/share/r/</code>) — basically any Facebook content that has a comment section.</p>
+<p>If your URL format isn&#39;t working, <a href="https://console.apify.com/actors/K5EXlxalV2BCYfgKM/issues">open an issue on the actor page</a> and we&#39;ll look into adding support for it.</p>
+<p><strong>How many comments can I extract for free?</strong>
+Apify gives new users $5 in free credit. Based on typical compute usage, you can expect to extract roughly 10,000–200,000 comments within that budget, depending on post size and number of URLs.</p>
+<p><strong>Can I scrape multiple URLs in one run?</strong>
+Yes  add as many URLs as you need to the <code>urls</code> array, and you can mix different content types (reels, photos, posts, etc.) in the same run. The actor processes them sequentially, saving state after each URL.</p>
+<p><strong>Does the actor fetch replies to comments?</strong>
+Yes, when <code>fetchReplies</code> is set to <code>true</code>. It fetches direct replies and nested sub-replies with full pagination through all reply pages. Each reply is returned as a separate dataset item with a <code>parent_id</code> referencing its parent comment.</p>
+<p><strong>How does <code>maxCommentsPerUrl</code> interact with replies?</strong>
+<code>maxCommentsPerUrl</code> limits <strong>top-level comments only</strong>. When <code>fetchReplies</code> is enabled, all replies for the collected top-level comments are fetched regardless of the limit. For example, setting <code>maxCommentsPerUrl: 10</code> with <code>fetchReplies: true</code> gives you 10 top-level comments plus all their replies.</p>
+<p><strong>What happens if the run crashes mid-way?</strong>
+The actor saves its progress after every successfully scraped URL. If it&#39;s interrupted (crash, migration, abort), it resumes from the next unprocessed URL when re-run  no duplicate data.</p>
+<p><strong>Why am I getting empty results?</strong>
+Make sure the post is public. If the content is private, provide browser cookies from an account that can access it. If the problem persists, try running again  or opening an <strong><a href="https://console.apify.com/actors/K5EXlxalV2BCYfgKM/issues">Issue</a></strong></p>
+<p><strong>What is the difference between the sort modes?</strong>
+<code>Most Relevant</code> (default) mirrors Facebook&#39;s default feed  it prioritises friends&#39; comments and highly-reacted comments. <code>Newest</code> returns all comments in reverse chronological order, ideal for monitoring fresh reactions. <code>All Comments</code> includes lower-engagement comments that Facebook normally filters out, giving the most complete dataset.</p>
+<p><strong>Can I use this for private groups?</strong>
+Yes, but you must provide cookies from an account that is a member of that group via the <code>customCookies</code> input field.</p>
+<hr>
+<h2>🔄 Resumability</h2>
+<p>The actor saves state after every successfully processed URL. If it crashes, gets migrated, or is manually aborted, it resumes exactly where it left off on the next run  no duplicate pushes, no lost progress.</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>What gets saved</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>After each URL completes</td>
+<td><code>processedIds</code> list + <code>currentIndex</code></td>
+</tr>
+<tr>
+<td>Apify <code>migrating</code> event</td>
+<td>Full state snapshot</td>
+</tr>
+<tr>
+<td>End of run</td>
+<td>State cleared (clean slate for next run)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see in logs</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No session established</td>
+<td><code>No valid session</code></td>
+<td>Try running again; if it persists, provide cookies manually</td>
+</tr>
+<tr>
+<td>Facebook returns empty response</td>
+<td><code>Could not parse comments from root query response</code></td>
+<td>Check the post is public; try again in a few minutes</td>
+</tr>
+<tr>
+<td>Post has 0 comments</td>
+<td><code>Total comments reported by Facebook: 0</code></td>
+<td>Expected  no data to collect</td>
+</tr>
+<tr>
+<td>Private content without cookies</td>
+<td><code>Could not extract feedbackId</code></td>
+<td>Provide cookies from an account that can access the content</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available Facebook data</li>
+<li><strong>Rate Limiting</strong>: Respects Facebook&#39;s service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

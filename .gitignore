@@ -31,6 +31,11 @@ npm-debug.log*
 .env
 .env.local
 
+# PRIVATE — Apify account snapshot (weekly runs, user counts, build counts, internal IDs).
+# Must NEVER be committed/published. Lives only at ../FlowExtract_API_Actors.json (workspace root).
+# sync.js reads it from one level up and writes only stripped public data into actors.json + stats.json.
+FlowExtract_API_Actors.json
+
 # Build files (not needed for this project, but good practice)
 dist/
 build/

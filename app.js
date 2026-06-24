@@ -4,68 +4,109 @@ const CONFIG = {
     formEndpoint: 'flowextractapi@outlook.com'
 };
 
-// State
-let actorsData = [];
-let currentFilter = 'all';
+// Fallback category labels if catalog.json is unavailable
+const DEFAULT_CATEGORY_LABELS = {
+    ads: 'Advertising Intelligence', 'real-estate': 'Real Estate', social: 'Social Media',
+    downloads: 'Media & Downloads', leads: 'Lead Generation & Business',
+    tools: 'Developer Tools & Utilities', education: 'Education'
+};
+
+// State (single source of truth, everything derives from the data)
+const state = {
+    actors: [],
+    categoryLabels: {},
+    categoryOrder: [],
+    stats: null,      // stats.json — public pre-computed aggregates (built by sync.js)
+    filter: 'all',
+    query: ''
+};
 
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
     loadAllData();
     initializeForm();
-    initializeScrollAnimations();
     initializeNavScroll();
+    initializeSearch();
+    initializeCategoryDropdown();
 });
 
 // Load all JSON data
 async function loadAllData() {
     try {
-        const [config, services, actors] = await Promise.all([
+        const [config, services, actors, catalog, stats] = await Promise.all([
             fetch(`${CONFIG.dataPath}config.json`).then(r => r.json()),
             fetch(`${CONFIG.dataPath}services.json`).then(r => r.json()),
-            fetch(`${CONFIG.dataPath}actors.json`).then(r => r.json())
+            fetch(`${CONFIG.dataPath}actors.json`).then(r => r.json()),
+            fetch(`${CONFIG.dataPath}catalog.json`).then(r => r.json()).catch(() => null),
+            // Public, pre-computed aggregates (built by sync.js from the private snapshot
+            // which never ships). The site only ever sees these totals.
+            fetch(`${CONFIG.dataPath}stats.json`).then(r => r.json()).catch(() => null)
         ]);
-        
-        actorsData = actors;
-        
+
+        state.actors = actors;
+        state.stats = stats;
+        state.categoryLabels = (catalog && catalog.categories) ? catalog.categories : DEFAULT_CATEGORY_LABELS;
+        // Category order = catalog order, limited to categories that actually have actors
+        const present = new Set(actors.map(a => a.category));
+        state.categoryOrder = Object.keys(state.categoryLabels).filter(k => present.has(k));
+
         renderConfig(config);
         renderServices(services);
-        renderActors(actors);
+        renderFilters();
+        renderActorGroups();
         renderTechStack(config.techStack);
         renderSocialLinks(config.social);
         setTimeout(initializeScrollAnimations, 100);
-        
+
     } catch (error) {
         console.error('Error loading data:', error);
     }
 }
 
-// Render site configuration
+// --- Dynamic stats — from the public, pre-built stats.json --------------------
+// Standing rule: numbers are never hardcoded. sync.js computes them from the private
+// FlowExtract_API_Actors.json (which never ships) and writes stats.json. Here we just read it.
+// Category count is the live count of categories that actually have actors.
+function computeStats() {
+    const s = state.stats || {};
+    const cat = state.categoryOrder.length;
+    const pick = (k, fallback) => (s[k] && s[k].value !== undefined)
+        ? { value: s[k].value, display: s[k].display !== undefined ? String(s[k].display) : String(s[k].value) }
+        : fallback;
+    return {
+        actors:     pick('actors', { value: null, display: '—' }),
+        runs:       pick('runs',    { value: null, display: '—' }),
+        users:      pick('users',   { value: null, display: '—' }),
+        categories: { value: cat, display: String(cat) }
+    };
+}
+
+// Render site configuration + dynamic stats
 function renderConfig(config) {
     document.getElementById('hero-title').textContent = config.site.title;
     document.getElementById('hero-tagline').textContent = config.site.tagline;
     document.getElementById('logo-text').textContent = config.site.title;
-    
-    // Render CTA buttons
+
     const ctaContainer = document.getElementById('hero-cta');
     ctaContainer.innerHTML = `
-        <a href="${config.cta.primary.url}" target="_blank" class="btn btn-primary">
-            ${config.cta.primary.text}
-        </a>
-        <a href="${config.cta.secondary.url}" class="btn btn-secondary">
-            ${config.cta.secondary.text}
-        </a>
+        <a href="${config.cta.primary.url}" target="_blank" class="btn btn-primary">${config.cta.primary.text}</a>
+        <a href="${config.cta.secondary.url}" class="btn btn-secondary">${config.cta.secondary.text}</a>
     `;
-    
-    // Render stats
+
+    // Stats: every value comes from the public stats.json (built by sync.js); never hardcoded.
+    // Each config stat names a `source` (actors|runs|users|categories); we render its display value.
+    const stats = computeStats();
     const statsContainer = document.getElementById('stats');
-    statsContainer.innerHTML = config.stats.map(stat => `
-        <div class="stat-card">
-            <div class="stat-value">${stat.value}</div>
-            <div class="stat-label">${stat.label}</div>
-        </div>
-    `).join('');
-    
-    // Update form endpoint
+    statsContainer.innerHTML = config.stats.map(stat => {
+        const computed = stat.source && stats[stat.source];
+        const value = computed ? computed.display : '—';
+        return `
+            <div class="stat-card">
+                <div class="stat-value">${value}</div>
+                <div class="stat-label">${escapeHTML(stat.label)}</div>
+            </div>`;
+    }).join('');
+
     if (config.contact.formEndpoint && config.contact.formEndpoint.includes('formspree')) {
         CONFIG.formEndpoint = config.contact.formEndpoint;
     }
@@ -81,64 +122,236 @@ function renderServices(services) {
             ${service.features ? `
                 <ul class="service-features">
                     ${service.features.map(feature => `<li>${feature}</li>`).join('')}
-                </ul>
-            ` : ''}
+                </ul>` : ''}
         </div>
     `).join('');
 }
 
-// Render actors
-function renderActors(actors, filter = 'all') {
-    const grid = document.getElementById('actors-grid');
-    
-    const filteredActors = actors.filter(actor => {
-        if (filter === 'all') return true;
-        if (filter === 'featured') return actor.featured;
-        return actor.category === filter;
-    });
-    
-    grid.innerHTML = filteredActors.map(actor => `
+// --- Actor rendering: grouped by category, filtered + searched ----------------
+function actorCardHTML(actor) {
+    const img = actor.image
+        ? `<img src="${actor.image}" alt="${escapeAttr(actor.name)}" class="actor-image" loading="lazy">`
+        : `<div class="actor-image actor-image--placeholder">${escapeHTML((actor.name || '?').trim().charAt(0))}</div>`;
+    return `
         <div class="actor-card fade-in" data-category="${actor.category}">
             ${actor.featured ? '<div class="actor-badge">Featured</div>' : ''}
-            <div class="actor-image-container">
-                <img src="${actor.image}" alt="${actor.name}" class="actor-image" loading="lazy">
-            </div>
-            <h3>${actor.name}</h3>
-            <p>${actor.description}</p>
+            <div class="actor-image-container">${img}</div>
+            <h3>${escapeHTML(actor.name)}</h3>
+            <p>${escapeHTML(actor.description || '')}</p>
             <div class="actor-buttons">
-                <a href="${actor.apifyUrl}" target="_blank" class="actor-btn actor-btn-primary">
-                    Launch on Apify
-                </a>
-                <a href="docs/${actor.docsPath}.html" target="_blank" class="actor-btn actor-btn-secondary">
-                    Documentation
-                </a>
+                <a href="${actor.apifyUrl}" target="_blank" rel="noopener" class="actor-btn actor-btn-primary">Launch on Apify</a>
+                <a href="docs/${actor.docsPath}.html" target="_blank" rel="noopener" class="actor-btn actor-btn-secondary">Documentation</a>
             </div>
-        </div>
-    `).join('');
-    
-    if (filteredActors.length === 0) {
-        grid.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 40px; color: var(--text-muted);">
-                <p>No actors found in this category.</p>
-            </div>
-        `;
+        </div>`;
+}
+
+// Does an actor pass the current category/featured filter?
+function passesFilter(a) {
+    return state.filter === 'all' ? true
+         : state.filter === 'featured' ? a.featured
+         : a.category === state.filter;
+}
+
+// Weighted relevance score for a query. Title 60%, description 30%, category 10%.
+// A title hit always outscores a description-only hit. Returns 0 if no field matches.
+function scoreActor(a, q) {
+    if (!q) return 0;
+    const name = (a.name || '').toLowerCase();
+    const desc = (a.description || '').toLowerCase();
+    const catLabel = (state.categoryLabels[a.category] || a.category || '').toLowerCase();
+
+    const field = (text, weight) => {
+        if (!text) return 0;
+        const idx = text.indexOf(q);
+        if (idx === -1) return 0;
+        // Base weight for any hit; bonuses for word-boundary start and exact match.
+        let s = weight;
+        if (idx === 0 || /\W/.test(text[idx - 1] || ' ')) s += weight * 0.3; // starts a word
+        if (text === q) s += weight * 0.5;                                    // exact field match
+        return s;
+    };
+
+    // Title 60 / description 30 / category 10
+    return field(name, 60) + field(desc, 30) + field(catLabel, 10);
+}
+
+// Actors to show: category filter narrows the pool; search scores + sorts within it.
+function visibleActors() {
+    const q = state.query.trim().toLowerCase();
+    const pool = state.actors.filter(passesFilter);
+    if (!q) return pool;
+    return pool
+        .map(a => ({ a, score: scoreActor(a, q) }))
+        .filter(x => x.score > 0)
+        .sort((x, y) => y.score - x.score || x.a.name.localeCompare(y.a.name))
+        .map(x => x.a);
+}
+
+function renderActorGroups() {
+    const container = document.getElementById('actors-groups');
+    const empty = document.getElementById('actors-empty');
+    const actors = visibleActors();
+
+    // Update the dynamic count line under the section title.
+    // Headline actor count comes from the snapshot (source of truth); category count from the catalog.
+    const stats = computeStats();
+    const totalActors = stats.actors.value;
+    const categoryCount = stats.categories.value;
+    const line = document.getElementById('actors-count-line');
+    if (line) {
+        const q = state.query.trim();
+        if (q) {
+            // Search is the only case where "showing N of M" is meaningful
+            line.textContent = `Showing ${actors.length} of ${totalActors} actors`;
+            line.hidden = false;
+        } else if (state.filter === 'all') {
+            line.textContent = `${totalActors} actors across ${categoryCount} categories`;
+            line.hidden = false;
+        } else {
+            // A category is selected — its heading already shows "Category — N actors"
+            line.hidden = true;
+        }
+    }
+
+    if (actors.length === 0) {
+        container.innerHTML = '';
+        if (empty) empty.hidden = false;
+        return;
+    }
+    if (empty) empty.hidden = true;
+
+    // While searching: ONE flat list, already ordered by relevance score (best match first).
+    if (state.query.trim()) {
+        container.innerHTML = `
+            <div class="actor-group actor-group--results">
+                <div class="actors-grid">
+                    ${actors.map(actorCardHTML).join('')}
+                </div>
+            </div>`;
+        return;
+    }
+
+    // Otherwise: grouped by category (catalog order), only categories with visible actors.
+    const cats = state.categoryOrder.filter(c => actors.some(a => a.category === c));
+    container.innerHTML = cats.map(cat => {
+        const items = actors.filter(a => a.category === cat);
+        return `
+            <div class="actor-group">
+                <div class="actor-group-header">
+                    <h3 class="actor-group-title">${escapeHTML(state.categoryLabels[cat] || cat)}</h3>
+                    <span class="actor-group-count">${items.length} ${items.length === 1 ? 'actor' : 'actors'}</span>
+                </div>
+                <div class="actors-grid">
+                    ${items.map(actorCardHTML).join('')}
+                </div>
+            </div>`;
+    }).join('');
+}
+
+// --- Custom themed category dropdown (button + listbox) -----------------------
+function filterOptions() {
+    return [
+        { value: 'all', label: 'All Categories' },
+        { value: 'featured', label: 'Featured' },
+        ...state.categoryOrder.map(k => ({ value: k, label: state.categoryLabels[k] || k }))
+    ];
+}
+
+function currentFilterLabel() {
+    const o = filterOptions().find(o => o.value === state.filter);
+    return o ? o.label : 'All Categories';
+}
+
+// Render the option list + the button label
+function renderFilters() {
+    const list = document.getElementById('category-filter-list');
+    const label = document.getElementById('category-filter-label');
+    if (!list || !label) return;
+    label.textContent = currentFilterLabel();
+    list.innerHTML = filterOptions().map(o => `
+        <li role="option" class="category-filter-option${o.value === state.filter ? ' is-active' : ''}"
+            data-value="${escapeAttr(o.value)}" aria-selected="${o.value === state.filter}">
+            <span>${escapeHTML(o.label)}</span>
+            <svg class="category-filter-check" viewBox="0 0 16 12" width="15" height="11" aria-hidden="true">
+                <path d="M1 6l4.5 4.5L15 1" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </li>`).join('');
+}
+
+function setFilter(value) {
+    state.filter = value;
+    renderFilters();
+    renderActorGroups();
+    setTimeout(initializeScrollAnimations, 100);
+}
+
+function openDropdown(open) {
+    const root = document.getElementById('category-filter');
+    const btn = document.getElementById('category-filter-btn');
+    const list = document.getElementById('category-filter-list');
+    if (!root || !btn || !list) return;
+    const isOpen = open === undefined ? list.hidden : open;
+    list.hidden = !isOpen;
+    root.classList.toggle('is-open', isOpen);
+    btn.setAttribute('aria-expanded', String(isOpen));
+    if (isOpen) {
+        const active = list.querySelector('.category-filter-option.is-active') || list.firstElementChild;
+        if (active) active.focus ? active.focus() : list.focus();
+        list.focus();
     }
 }
 
-// Initialize filter buttons
-const filterButtons = document.querySelectorAll('.filter-btn');
-filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        const filter = btn.dataset.filter;
-        currentFilter = filter;
-        renderActors(actorsData, filter);
-        
-        setTimeout(initializeScrollAnimations, 100);
+function initializeCategoryDropdown() {
+    const root = document.getElementById('category-filter');
+    const btn = document.getElementById('category-filter-btn');
+    const list = document.getElementById('category-filter-list');
+    if (!root || !btn || !list) return;
+
+    btn.addEventListener('click', () => openDropdown(list.hidden));
+
+    list.addEventListener('click', (e) => {
+        const opt = e.target.closest('.category-filter-option');
+        if (!opt) return;
+        setFilter(opt.dataset.value);
+        openDropdown(false);
+        btn.focus();
     });
-});
+
+    // Close on outside click
+    document.addEventListener('click', (e) => {
+        if (!root.contains(e.target)) openDropdown(false);
+    });
+
+    // Keyboard: Esc closes; Up/Down/Enter navigate the open list
+    document.addEventListener('keydown', (e) => {
+        if (list.hidden) return;
+        const opts = Array.from(list.querySelectorAll('.category-filter-option'));
+        let idx = opts.findIndex(o => o.dataset.value === state.filter);
+        if (e.key === 'Escape') { openDropdown(false); btn.focus(); }
+        else if (e.key === 'ArrowDown') { e.preventDefault(); setFilter(opts[Math.min(idx + 1, opts.length - 1)].dataset.value); }
+        else if (e.key === 'ArrowUp')   { e.preventDefault(); setFilter(opts[Math.max(idx - 1, 0)].dataset.value); }
+        else if (e.key === 'Enter')     { e.preventDefault(); openDropdown(false); btn.focus(); }
+    });
+}
+
+// Live search
+function initializeSearch() {
+    const input = document.getElementById('actors-search');
+    if (!input) return;
+    input.addEventListener('input', debounce(() => {
+        state.query = input.value;
+        renderActorGroups();
+        setTimeout(initializeScrollAnimations, 50);
+    }, 150));
+}
+
+// --- Small HTML-escaping helpers (data is trusted, but keep markup safe) -------
+function escapeHTML(s) {
+    return String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+}
+function escapeAttr(s) {
+    return String(s).replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+}
 
 // Render tech stack
 function renderTechStack(techStack) {

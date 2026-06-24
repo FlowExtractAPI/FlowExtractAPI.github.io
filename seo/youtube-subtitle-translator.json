@@ -1,0 +1,29 @@
+{
+  "slug": "youtube-subtitle-translator",
+  "_drafted": true,
+  "intro": "YouTube Subtitle Translator is a ready-to-run Apify actor from FlowExtract API for social media. Transform YouTube videos into multilingual subtitles instantly. Extract transcripts and translate them into 20+ languages with perfect timing preservation. Get professional SRT files ready for upload. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "results are merged and returned as a single unified output",
+    "you may see two Actors running for a single execution this is expected behavior",
+    "this Actor does not start automatically and only runs when you explicitly trigger it",
+    "the standby transcript extraction consumes compute units, just like running the transcript extractor directly"
+  ],
+  "faq": [
+    {
+      "q": "How do I run YouTube Subtitle Translator?",
+      "a": "Open YouTube Subtitle Translator on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is YouTube Subtitle Translator free?",
+      "a": "YouTube Subtitle Translator runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "🎯 Why Use This Actor?",
+      "a": "Most creators waste 2-3 hours per video using manual methods:"
+    },
+    {
+      "q": "🏆 Why Lingo.dev?",
+      "a": "Unlike Google Translate, ChatGPT, or manual translation:"
+    }
+  ]
+}

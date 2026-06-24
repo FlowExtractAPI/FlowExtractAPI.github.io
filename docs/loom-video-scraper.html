@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Loom Video Scraper - Download &amp; Extract Tool | FlowExtract API</title>
+    <meta name="title" content="Loom Video Scraper - Download &amp; Extract Tool | FlowExtract API">
+    <meta name="description" content="Extract comprehensive data from Loom videos including video metadata, transcripts, comments, and download links. Perfect for content analysis, backup, and data extraction from Loom presentations and tutorials.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/loom-video-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Loom Video Scraper - Download &amp; Extract Tool | FlowExtract API">
+    <meta property="og:description" content="Extract comprehensive data from Loom videos including video metadata, transcripts, comments, and download links. Perfect for content analysis, backup, and data extraction from Loom presentations and tutorials.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/loom-video-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/lI_Y5CIFgHZIJnt4gKWlpUIppcJ82JqRDWqArNUZYt4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQzhndUhWZ1N3Q09IVEk1ODctaEx4T2NzSHpFSS1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Loom Video Scraper - Download &amp; Extract Tool | FlowExtract API">
+    <meta name="twitter:description" content="Extract comprehensive data from Loom videos including video metadata, transcripts, comments, and download links. Perfect for content analysis, backup, and data extraction from Loom presentations and tutorials.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/lI_Y5CIFgHZIJnt4gKWlpUIppcJ82JqRDWqArNUZYt4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQzhndUhWZ1N3Q09IVEk1ODctaEx4T2NzSHpFSS1VbnRpdGxlZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Loom Video Scraper","description":"Extract comprehensive data from Loom videos including video metadata, transcripts, comments, and download links. Perfect for content analysis, backup, and data extraction from Loom presentations and tutorials.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/loom-video-scraper.html","sameAs":"https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/lI_Y5CIFgHZIJnt4gKWlpUIppcJ82JqRDWqArNUZYt4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQzhndUhWZ1N3Q09IVEk1ODctaEx4T2NzSHpFSS1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Loom Video Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Loom Video Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Loom Video Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Loom Video Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,564 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/lI_Y5CIFgHZIJnt4gKWlpUIppcJ82JqRDWqArNUZYt4/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItQzhndUhWZ1N3Q09IVEk1ODctaEx4T2NzSHpFSS1VbnRpdGxlZC5wbmc.png" alt="Loom Video Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Media &amp; Downloads</span>
+                <h1 class="actor-hero-title">Loom Video Scraper</h1>
+                <p class="actor-hero-desc">Extract comprehensive data from Loom videos including video metadata, transcripts, comments, and download links. Perfect for content analysis, backup, and data extraction from Loom presentations and tutorials.</p>
+                <a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Loom Video Scraper is a ready-to-run Apify actor from FlowExtract API for media &amp; downloads. How downloadVideo and returnVideoUrl interact: This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>archive online courses and tutorial libraries with searchable transcript databases</li><li>backup training materials before expiration and generate study notes automatically</li><li>create comprehensive knowledge bases from video content</li><li>archive team presentations, meeting recordings, and video communications</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Loom Video Scraper?</summary><p>Open Loom Video Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Loom Video Scraper free?</summary><p>Loom Video Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎥 Loom Scraper - Videos &amp; Folders</h1>
+<p><img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/Screenshot%20of%20Loom%20interface%20with%20scraper%20workflow%20visualization.png" alt="https://apify.com/dz_omar/loom-video-scraper"></p>
+<p>Transform your <strong>Loom videos into searchable, downloadable archives</strong> with complete metadata, transcripts, and comments across individual videos and entire folders.</p>
+<p>Perfect for <strong>content creators</strong>, <strong>educators</strong>, and <strong>businesses</strong> who need to archive, analyze, or repurpose their Loom content without coding complexity.</p>
+<hr>
+<h2>🚀 Key Benefits &amp; Use Cases</h2>
+<h3><strong>📚 For Educators &amp; Trainers</strong></h3>
+<ul>
+<li>Archive online courses and tutorial libraries with searchable transcript databases</li>
+<li>Backup training materials before expiration and generate study notes automatically</li>
+<li>Create comprehensive knowledge bases from video content</li>
+</ul>
+<h3><strong>💼 For Business Teams</strong></h3>
+<ul>
+<li>Archive team presentations, meeting recordings, and video communications</li>
+<li>Generate meeting transcripts for documentation and compliance</li>
+<li>Build searchable knowledge databases from organizational video content</li>
+</ul>
+<h3><strong>🎯 For Content Creators</strong></h3>
+<ul>
+<li>Bulk download and organize video libraries with rich metadata</li>
+<li>Create searchable video databases with full transcript capabilities</li>
+<li>Repurpose content across platforms efficiently</li>
+</ul>
+<hr>
+<h2>🔍 Complete Data Extraction</h2>
+<h3>📹 <strong>Video Intelligence</strong></h3>
+<ul>
+<li><strong>Metadata</strong>: ID, title, <strong>description</strong>, thumbnails, creation date, duration, quality</li>
+<li><strong>Engagement</strong>: Views, reactions, comments count and full comment threads</li>
+<li><strong>Technical</strong>: File format, direct download URLs, sharing links</li>
+<li><strong>Creator</strong>: Owner information, avatars, profile data</li>
+</ul>
+<h3>📄 <strong>Transcript Processing</strong></h3>
+<ul>
+<li><strong>Multiple Formats</strong>: SRT, VTT, TXT, XML exports with precise timestamps</li>
+<li><strong>Clean Text</strong>: Formatted, readable content ready for analysis</li>
+<li><strong>Search Ready</strong>: Full-text search capabilities across your library</li>
+<li><strong>Integration</strong>: Compatible with video players and analysis tools</li>
+</ul>
+<h3>📂 <strong>Folder Operations</strong></h3>
+<ul>
+<li><strong>Bulk Processing</strong>: Handle entire folders automatically with progress tracking</li>
+<li><strong>Mixed Operations</strong>: Combine individual videos and folders in one request</li>
+<li><strong>Batch Reports</strong>: Summary statistics and completion status for each folder</li>
+</ul>
+<hr>
+<h2>⚠️ Important: Account Videos vs Individual URLs</h2>
+<h3><strong>Account Videos Processing</strong> (<code>includeAccountVideos: true</code>)</h3>
+<ul>
+<li>Processes <strong>all videos from your Loom account</strong></li>
+<li>Supports date filtering (<code>startDate</code>, <code>endDate</code>)</li>
+<li>Supports custom sorting (<code>videoSortOrder</code>)</li>
+<li>Requires authentication (email/password or cookies)</li>
+</ul>
+<h3><strong>Individual URL Processing</strong> (default behavior)</h3>
+<ul>
+<li>Processes <strong>only the specific URLs you provide</strong></li>
+<li>Date filters and sort order are <strong>ignored</strong></li>
+<li>Works with or without authentication</li>
+<li>Processes videos in the order you list them</li>
+</ul>
+<hr>
+<h2>⚙️ Configuration Options</h2>
+<h3>🔗 <strong>Input URLs</strong></h3>
+<p>Process individual videos, entire folders, or mixed content:</p>
+<pre><code class="language-json">{
+  &quot;url&quot;: [
+    &quot;https://www.loom.com/share/08163614158646f7aa21e53997cd58e8&quot;,
+    &quot;https://www.loom.com/share/folder/abc123def456&quot;
+  ]
+}
+</code></pre>
+<h3>⏱️ Advanced Download Settings</h3>
+<h4><code>pollMultiplier</code> (Number)</h4>
+<ul>
+<li><strong>Default</strong>: <code>0.02</code></li>
+<li><strong>Range</strong>: <code>0.01</code> – <code>1.0</code></li>
+<li><strong>Only applies when</strong>: <code>downloadVideo: true</code></li>
+</ul>
+<p>Loom does not return a download URL instantly  it prepares the MP4 file in the background 
+first. The scraper keeps re-signaling Loom until the URL is ready. This multiplier controls 
+the <strong>maximum time it will wait</strong>, calculated as:</p>
+<pre><code>max_wait = max(30s, video_duration_seconds × pollMultiplier)  [capped at 600s]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Video Length</th>
+<th>Default wait (0.02)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Under 25 min</td>
+<td>30s (minimum)</td>
+</tr>
+<tr>
+<td>30 min</td>
+<td>~36s</td>
+</tr>
+<tr>
+<td>2.5 hours</td>
+<td>~180s</td>
+</tr>
+</tbody></table>
+<p>💡 <strong>If you see timeout errors on long videos</strong>, increase this value (e.g. <code>0.05</code> or <code>0.1</code>).<br>💡 <strong>For short video libraries</strong>, keep the default.</p>
+<h3>📥 <strong>Download Options</strong></h3>
+<h4>🎞️ <code>downloadVideo</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Format</strong>: Original MP4 quality preserved</li>
+<li><strong>Use Case</strong>: Full video archiving and offline access</li>
+<li><strong>Note</strong>: ✅ <strong>Works even when owner has disabled downloads</strong> in video settings</li>
+<li><strong>How it works</strong>: When requested, Loom prepares the MP4 asynchronously in the background<br>the scraper automatically re-signals Loom and polls until the URL is ready. 
+Small videos (~2min) may take ~10s, longer videos can take up to 3 minutes or more.</li>
+<li><strong>OOM handling</strong>: If the download actor runs out of memory, the scraper automatically retries with double memory (up to your plan limit)</li>
+</ul>
+<h4>🔗 <code>returnVideoUrl</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Use Case</strong>: Get the direct Loom CDN link without downloading via the Universal Downloader</li>
+<li><strong>Output</strong>: Adds <code>cdn_url</code> to the <code>video.download</code> object  a signed MP4 link from Loom&#39;s CDN</li>
+<li><strong>⚠️ Note</strong>: CDN URLs are <strong>signed and temporary</strong>  they expire after a few hours</li>
+</ul>
+<p><strong>How <code>downloadVideo</code> and <code>returnVideoUrl</code> interact:</strong></p>
+<table>
+<thead>
+<tr>
+<th><code>downloadVideo</code></th>
+<th><code>returnVideoUrl</code></th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>false</code></td>
+<td><code>false</code></td>
+<td>No download, no URL  skip entirely</td>
+</tr>
+<tr>
+<td><code>false</code></td>
+<td><code>true</code></td>
+<td>Return CDN URL only (<strong>no</strong> Universal Downloader cost)</td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>false</code></td>
+<td>Full download via Universal Downloader</td>
+</tr>
+<tr>
+<td><code>true</code></td>
+<td><code>true</code></td>
+<td>Full download + CDN URL in output</td>
+</tr>
+</tbody></table>
+<h4>📄 <code>downloadTranscript</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Integration</strong>: Ready for video players and analysis tools</li>
+</ul>
+<h4>📄 <code>outputFormat</code> (String)</h4>
+<ul>
+<li><strong>Default</strong>: <code>&quot;srt&quot;</code></li>
+<li><strong>Options</strong>: <ul>
+<li><code>&quot;srt&quot;</code>: Standard subtitle format (most compatible)</li>
+<li><code>&quot;vtt&quot;</code>: Web-friendly with CSS styling support</li>
+<li><code>&quot;txt&quot;</code>: Clean text without timestamps</li>
+<li><code>&quot;xml&quot;</code>: Full metadata structure</li>
+</ul>
+</li>
+</ul>
+<h3>📅 <strong>Account Videos Options</strong> (Only when <code>includeAccountVideos</code> is enabled)</h3>
+<p>These parameters only work when scraping your own Loom account videos. They have no effect when processing individual video URLs or public folders.</p>
+<h4>📅 <code>startDate</code> (String)</h4>
+<ul>
+<li><strong>Default</strong>: <code>&quot;2016-01-01&quot;</code></li>
+<li><strong>Format</strong>: <code>&quot;YYYY-MM-DD&quot;</code></li>
+<li><strong>Purpose</strong>: Filter videos by earliest upload date to include from your account</li>
+<li><strong>⚠️ Note</strong>: Only applies to your own account videos, not individual URLs</li>
+</ul>
+<h4>📅 <code>endDate</code> (String)</h4>
+<ul>
+<li><strong>Default</strong>: <code>&quot;2030-12-31&quot;</code></li>
+<li><strong>Format</strong>: <code>&quot;YYYY-MM-DD&quot;</code></li>
+<li><strong>Purpose</strong>: Filter videos by latest upload date to include from your account</li>
+<li><strong>⚠️ Note</strong>: Only applies to your own account videos, not individual URLs</li>
+</ul>
+<h4>📅 <code>videoSortOrder</code> (String)</h4>
+<ul>
+<li><strong>Default</strong>: <code>&quot;ASC&quot;</code></li>
+<li><strong>Options</strong>: <ul>
+<li><code>&quot;ASC&quot;</code>: Oldest to Newest - Shows the earliest videos first</li>
+<li><code>&quot;DESC&quot;</code>: Newest to Oldest - Shows the most recently uploaded videos first</li>
+</ul>
+</li>
+<li><strong>⚠️ Note</strong>: Only applies when processing your own account videos, not individual URLs or folders</li>
+</ul>
+<hr>
+<h2>⚠️ Smart Memory Management for Video Downloads</h2>
+<p>When <code>downloadVideo</code> is enabled, this Actor uses <strong>intelligent resource allocation</strong> powered by our specialized <a href="https://apify.com/dz_omar/universal-file-downloader">Universal File Downloader</a> to optimize memory usage and prevent failures. The Actor automatically analyzes each video&#39;s file size and dynamically allocates the optimal amount of memory needed for successful downloads.</p>
+<h3>✅ <strong>How It Works</strong></h3>
+<p><strong>Tier-Aware Allocation</strong>: The scraper auto-detects your Apify plan (Free vs Paid) at runtime and caps the download actor&#39;s memory to stay within your plan limits  no manual configuration needed.</p>
+<table>
+<thead>
+<tr>
+<th>Plan</th>
+<th>Platform Total</th>
+<th>Loom Scraper (parent)</th>
+<th>Universal Downloader (child) max</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Free</strong></td>
+<td>8 GB</td>
+<td>128 MB (minimum)</td>
+<td><strong>4 GB</strong></td>
+</tr>
+<tr>
+<td><strong>Paid</strong></td>
+<td>32 GB</td>
+<td>128 MB (minimum)</td>
+<td><strong>16 GB</strong></td>
+</tr>
+</tbody></table>
+<p><strong>Automatic OOM Retry</strong>: If the download actor runs out of memory (exit code 137), the scraper automatically retries with the next memory tier (doubled)  no user intervention needed. If the retry also fails or the plan limit is already reached, you get a clear error explaining what happened.</p>
+<table>
+<thead>
+<tr>
+<th>Attempt</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1st try</strong></td>
+<td>Auto-calculated memory based on video file size</td>
+</tr>
+<tr>
+<td><strong>OOM detected</strong></td>
+<td>Scraper doubles memory to next tier and retries</td>
+</tr>
+<tr>
+<td><strong>2nd try succeeds</strong></td>
+<td>Done  video downloaded</td>
+</tr>
+<tr>
+<td><strong>2nd try fails / at plan limit</strong></td>
+<td>Clear error message + upgrade link for Free users</td>
+</tr>
+</tbody></table>
+<p><strong>Dynamic Resource Calculation</strong>: The Actor examines each video file before downloading and calculates the exact memory requirements based on file size, ensuring efficient resource usage without waste.</p>
+<p><strong>Intelligent Timeout Management</strong>: Download timeouts are calculated based on file size and estimated connection speed, ensuring downloads complete successfully without unnecessary waiting.</p>
+<p><strong>Enterprise-Grade Download Engine</strong>: Powered by our <a href="https://apify.com/dz_omar/universal-file-downloader">Universal File Downloader</a> Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.</p>
+<h3>💡 <strong>Benefits for Users</strong></h3>
+<ul>
+<li><strong>Zero Configuration</strong>: Auto-detects your plan, picks the right memory, retries on failure</li>
+<li><strong>Prevents Silent Failures</strong>: OOM crashes now show clear error messages instead of silent N/A</li>
+<li><strong>Cost Efficient</strong>: Starts with the minimum needed, only scales up if necessary</li>
+<li><strong>Handles Any Size</strong>: From small clips to multi-gigabyte recordings, all processed reliably</li>
+<li><strong>Batch Processing</strong>: Each video in a folder gets its own optimized resource allocation</li>
+<li><strong>Skip the Downloader</strong>: Use <code>returnVideoUrl: true</code> to get the CDN link directly and handle downloads yourself  no Universal Downloader cost</li>
+</ul>
+<h3>📖 <strong><a href="https://docs.apify.com/platform/actors/running/usage-and-resources">Learn more about Apify usage and resources</a></strong></h3>
+<hr>
+<h2>🔐 Authentication &amp; Private Content Access</h2>
+<p>The Actor supports <strong>scraping your private Loom videos</strong> - perfect for backing up private workspaces or archiving internal content that isn&#39;t publicly shared.</p>
+<h3><strong>Authentication Methods</strong> (in priority order):</h3>
+<h4>✅ <strong>Method 1: Email + Password</strong> (Recommended)</h4>
+<pre><code class="language-json">{
+  &quot;email&quot;: &quot;your-email@example.com&quot;,
+  &quot;password&quot;: &quot;your-password&quot;
+}
+</code></pre>
+<ul>
+<li>Automatic login with fresh session</li>
+<li>Access to all private videos in your account</li>
+<li>Secure credential handling (encrypted and cleared after use)</li>
+</ul>
+<h4>🍪 <strong>Method 2: Browser Cookies</strong> (Fallback)</h4>
+<pre><code class="language-json">{
+  &quot;customCookies&quot;: [
+    {
+      &quot;name&quot;: &quot;connect.sid&quot;,
+      &quot;value&quot;: &quot;s%3A123abc...&quot;,
+      &quot;domain&quot;: &quot;.loom.com&quot;,
+      &quot;path&quot;: &quot;/&quot;,
+      &quot;secure&quot;: true,
+      &quot;httpOnly&quot;: true
+    }
+  ]
+}
+</code></pre>
+<h3><strong>Getting Browser Cookies</strong></h3>
+<ol>
+<li><strong>Install Extension</strong>:</li>
+</ol>
+<table>
+  <tr>
+    <td align="center">
+      <strong>
+        <a href="https://cookie-editor.com/" target="_blank" rel="noopener noreferrer">🍪 Cookie-Editor Extension</a>
+      </strong>
+    </td>
+    <td align="center">
+      <strong>
+        <a href="https://chromewebstore.google.com/detail/copy-cookies/jcbpglbplpblnagieibnemmkiamekcdg" target="_blank" rel="noopener noreferrer">📋 Copy Cookies Extension</a>
+      </strong>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/add_Cookie_Editor.gif" width="100%">
+    </td>
+    <td>
+      <img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/add_Copy_Cookies.gif" width="100%">
+    </td>
+  </tr>
+</table>
+
+
+<ol start="2">
+<li><p><strong>Export Process</strong>:</p>
+<ul>
+<li>Navigate to loom.com and log in</li>
+<li>Use extension to export cookies as JSON</li>
+<li>Paste into <code>customCookies</code> parameter</li>
+</ul>
+</li>
+<li><p><strong>Authentication Priority</strong>:</p>
+<ul>
+<li><strong>Email + Password</strong> → Fresh login (highest priority)</li>
+<li><strong>Custom Cookies</strong> → Fallback method</li>
+<li><strong>No Auth</strong> → Public content only</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2>📊 Sample Output Structure</h2>
+<p><img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/Sample_Output.png" alt="Sample Output"></p>
+<pre><code class="language-json">{
+  &quot;video&quot;: {
+    &quot;id&quot;: &quot;388fe9c5db854403bceefe52ea85dede&quot;,
+    &quot;title&quot;: &quot;How to Use YouTube Scraper Effectively 🚀&quot;,
+    &quot;description&quot;: &quot;In this tutorial, I&#39;ll walk you through the complete process of using the YouTube Scraper effectively. Learn how to extract video metadata, download content, and automate your YouTube data collection workflow.&quot;,
+    &quot;url&quot;: &quot;https://www.loom.com/share/388fe9c5db854403bceefe52ea85dede&quot;,
+    &quot;thumbnails&quot;: &quot;https://cdn.loom.com/sessions/thumbnails/...&quot;,
+    &quot;created_at&quot;: &quot;2025-07-11T09:47:40.065Z&quot;,
+    &quot;duration_seconds&quot;: &quot;38s&quot;,
+    &quot;views&quot;: 0,
+    &quot;reactions&quot;: 7,
+    &quot;comments_count&quot;: 6,
+    &quot;owner&quot;: &quot;TECH FRIDAY&quot;,
+    &quot;avatars&quot;: &quot;https://cdn.loom.com/avatars/...&quot;,
+    &quot;download&quot;: {
+      &quot;available&quot;: true,
+      &quot;url&quot;: &quot;https://api.apify.com/v2/key-value-stores/xxx/records/Video_Name?signature=abc&quot;,
+      &quot;direct_download&quot;: &quot;https://api.apify.com/v2/key-value-stores/xxx/records/Video_Name?signature=abc&amp;attachment=true&quot;,
+      &quot;cdn_url&quot;: &quot;https://cdn.loom.com/sessions/transcoded/388fe9c5db854403bceefe52ea85dede.mp4?Policy=...&amp;Signature=...&quot;,
+      &quot;format&quot;: &quot;mp4&quot;
+    }
+  },
+  &quot;transcript&quot;: {
+    &quot;text&quot;: &quot;How to use, uhm, YouTube Scraper. First, we will...&quot;,
+    &quot;download&quot;: {
+      &quot;format&quot;: &quot;SRT&quot;,
+      &quot;url&quot;: &quot;https://api.apify.com/v2/key-value-stores/.../transcript.srt&quot;,
+      &quot;available&quot;: true
+    }
+  },
+  &quot;comments&quot;: [
+    {
+      &quot;id&quot;: &quot;100664080&quot;,
+      &quot;username&quot;: &quot;Mohamad Abdlrahman&quot;,
+      &quot;content&quot;: &quot;tyfgh&quot;,
+      &quot;created_at&quot;: &quot;2025-07-11T10:58:55.610Z&quot;
+    }
+  ]
+}
+</code></pre>
+<hr>
+<h2>🎯 Configuration Examples</h2>
+<h3><strong>Basic Video Archive</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: [
+    &quot;https://www.loom.com/share/08163614158646f7aa21e53997cd58e8&quot;
+  ],
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;srt&quot;
+}
+</code></pre>
+<h3><strong>Complete Folder Backup</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: [
+    &quot;https://www.loom.com/share/folder/abc123def456&quot;
+  ],
+  &quot;downloadVideo&quot;: true,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;srt&quot;,
+  &quot;email&quot;: &quot;your-email@example.com&quot;,
+  &quot;password&quot;: &quot;your-password&quot;
+}
+</code></pre>
+<p>Set memory in your run configuration: 2 GB or more</p>
+<h3><strong>Account Videos with Date Filter &amp; Sort</strong></h3>
+<pre><code class="language-json">{
+  &quot;includeAccountVideos&quot;: true,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;srt&quot;,
+  &quot;startDate&quot;: &quot;2024-01-01&quot;,
+  &quot;endDate&quot;: &quot;2024-12-31&quot;,
+  &quot;videoSortOrder&quot;: &quot;DESC&quot;,
+  &quot;email&quot;: &quot;your-email@example.com&quot;,
+  &quot;password&quot;: &quot;your-password&quot;
+}
+</code></pre>
+<h3><strong>Mixed Content: URLs + Account Videos</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: [
+    &quot;https://www.loom.com/share/08163614158646f7aa21e53997cd58e8&quot;,
+    &quot;https://www.loom.com/share/folder/abc123def456&quot;
+  ],
+  &quot;includeAccountVideos&quot;: true,
+  &quot;downloadVideo&quot;: false,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;vtt&quot;,
+  &quot;startDate&quot;: &quot;2024-06-01&quot;,
+  &quot;videoSortOrder&quot;: &quot;DESC&quot;
+}
+</code></pre>
+<h3><strong>Get Direct CDN URLs (no Universal Downloader)</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: [
+    &quot;https://www.loom.com/share/08163614158646f7aa21e53997cd58e8&quot;
+  ],
+  &quot;returnVideoUrl&quot;: true,
+  &quot;downloadVideo&quot;: false,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;txt&quot;
+}
+</code></pre>
+<p>Returns the signed Loom CDN URL in <code>video.download.cdn_url</code>  download it yourself in your own app. No Universal Downloader cost, no OOM issues.</p>
+<hr>
+<h2>📄 Advanced Features</h2>
+<h3><strong>Reliability &amp; Performance</strong></h3>
+<ul>
+<li><strong>State Management</strong>: Auto-resume from interruption points with progress tracking</li>
+<li><strong>Error Handling</strong>: Robust recovery with automatic retry mechanisms</li>
+<li><strong>Storage Optimization</strong>: Efficient file organization with direct download URLs</li>
+<li><strong>Detailed Logging</strong>: Complete processing history and performance monitoring</li>
+</ul>
+<h3><strong>Content Processing</strong></h3>
+<ul>
+<li><strong>Platform Updates</strong>: Migration support for Loom platform changes</li>
+<li><strong>Batch Operations</strong>: Efficient bulk processing with folder progress tracking</li>
+<li><strong>Multiple Formats</strong>: Structured file naming and organized output</li>
+</ul>
+<hr>
+<h2>🛠️ Troubleshooting</h2>
+<h3><strong>Authentication Issues</strong></h3>
+<ul>
+<li><strong>Verify credentials</strong>: Check email/password accuracy</li>
+<li><strong>Update cookies</strong>: Ensure browser cookies are current</li>
+<li><strong>Try fallback</strong>: Use alternative authentication method</li>
+</ul>
+<h3><strong>Missing Content</strong></h3>
+<ul>
+<li><strong>Transcripts</strong>: Must be enabled by video owner (Settings → Audience → Transcript → Toggle ON)</li>
+<li><strong>Private videos</strong>: Requires valid authentication</li>
+<li><strong>Permissions</strong>: Verify sharing permissions with content creator</li>
+</ul>
+<h3><strong>Performance Issues</strong></h3>
+<ul>
+<li><strong>Download URL timeout</strong>: If you see timeout on long videos, increase <code>pollMultiplier</code> 
+(e.g. from <code>0.02</code> to <code>0.05</code>). Loom prepares downloads asynchronously and longer 
+videos need more preparation time.</li>
+<li><strong>OOM / N/A download URLs</strong>: The scraper now auto-retries with more memory on OOM failures. 
+If it still fails, your video may be too large for your plan. Free plan users can 
+<a href="https://console.apify.com/billing/subscription?fpr=smcx63">upgrade their plan</a> for more memory, 
+or use <code>returnVideoUrl: true</code> to get the CDN link and download it yourself.</li>
+<li><strong>Large folders</strong>: Split into smaller batches</li>
+<li><strong>Slow processing</strong>: Check network connection and Loom server status</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3><strong>Getting Help</strong></h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtractAPI</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +619,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +627,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'loom-video-scraper';
-    </script>
 </body>
 </html>

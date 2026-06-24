@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Playlist Extractor &amp; Video Data Scraper | FlowExtract API</title>
+    <meta name="title" content="YouTube Playlist Extractor &amp; Video Data Scraper | FlowExtract API">
+    <meta name="description" content="Extract complete playlist information with all video details from any YouTube playlist - fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-playlist-extractor.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Playlist Extractor &amp; Video Data Scraper | FlowExtract API">
+    <meta property="og:description" content="Extract complete playlist information with all video details from any YouTube playlist - fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-playlist-extractor.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/QEnYxwhhRGa4Pbg1HQW_v6idIc0KdgvFF8TXKuACsNE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaFBZQnBjbXNLVkE2bDNWMXYtT3hkcHY5aGFkUS1mNDliNTdlZi0zOWZmLTQ3NDYtOGEzZC0wYWNkN2EzZjBiMzQucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Playlist Extractor &amp; Video Data Scraper | FlowExtract API">
+    <meta name="twitter:description" content="Extract complete playlist information with all video details from any YouTube playlist - fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/QEnYxwhhRGa4Pbg1HQW_v6idIc0KdgvFF8TXKuACsNE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaFBZQnBjbXNLVkE2bDNWMXYtT3hkcHY5aGFkUS1mNDliNTdlZi0zOWZmLTQ3NDYtOGEzZC0wYWNkN2EzZjBiMzQucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🎬 YouTube Playlist Extractor","description":"Extract complete playlist information with all video details from any YouTube playlist - fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-playlist-extractor.html","sameAs":"https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/QEnYxwhhRGa4Pbg1HQW_v6idIc0KdgvFF8TXKuACsNE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaFBZQnBjbXNLVkE2bDNWMXYtT3hkcHY5aGFkUS1mNDliNTdlZi0zOWZmLTQ3NDYtOGEzZC0wYWNkN2EzZjBiMzQucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 🎬 YouTube Playlist Extractor?","acceptedAnswer":{"@type":"Answer","text":"Open 🎬 YouTube Playlist Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 🎬 YouTube Playlist Extractor free?","acceptedAnswer":{"@type":"Answer","text":"🎬 YouTube Playlist Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"🆚 Why Use This Instead of YouTube Data API?","acceptedAnswer":{"@type":"Answer","text":"| Feature | This Actor | YouTube Data API | |---------|------------|------------------|"}},{"@type":"Question","name":"Need Help?","acceptedAnswer":{"@type":"Answer","text":"📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,698 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/QEnYxwhhRGa4Pbg1HQW_v6idIc0KdgvFF8TXKuACsNE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaFBZQnBjbXNLVkE2bDNWMXYtT3hkcHY5aGFkUS1mNDliNTdlZi0zOWZmLTQ3NDYtOGEzZC0wYWNkN2EzZjBiMzQucG5n.png" alt="🎬 YouTube Playlist Extractor" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">🎬 YouTube Playlist Extractor</h1>
+                <p class="actor-hero-desc">Extract complete playlist information with all video details from any YouTube playlist - fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.</p>
+                <a href="https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">🎬 YouTube Playlist Extractor is a ready-to-run Apify actor from FlowExtract API for social media. Extract complete YouTube playlist data with all video details - fast, reliable, and built for scale. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>full Video Lists with position numbers, titles, and URLs</li><li>playlist Metadata including title, description, total video count, and total duration</li><li>playlist History with last updated date and view count</li><li>owner/Creator Info with channel name, ID, and URL</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 🎬 YouTube Playlist Extractor?</summary><p>Open 🎬 YouTube Playlist Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 🎬 YouTube Playlist Extractor free?</summary><p>🎬 YouTube Playlist Extractor runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>🆚 Why Use This Instead of YouTube Data API?</summary><p>| Feature | This Actor | YouTube Data API | |---------|------------|------------------|</p></details><details class="faq-item"><summary>Need Help?</summary><p>📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎬 YouTube Playlist Extractor &amp; Video Data Scraper</h1>
+<p><strong>Extract complete YouTube playlist data with all video details - fast, reliable, and built for scale.</strong></p>
+<p>Get comprehensive video lists, metadata, durations, thumbnails, channel information, playlist descriptions, and update history from any public YouTube playlist. Perfect for content creators, researchers, marketers, and developers who need structured playlist data without API limitations.</p>
+<p><a href="https://apify.com/store"><img src="https://img.shields.io/badge/Apify-Actor-blue?logo=apify" alt="Apify Actor"></a>
+<a href=""><img src="https://img.shields.io/badge/version-2.0-brightgreen" alt="Latest Version"></a></p>
+<hr>
+<h2>Quick Start</h2>
+<ol>
+<li><strong>Paste your YouTube playlist URL</strong></li>
+<li><strong>Click &quot;Start&quot;</strong>  </li>
+<li><strong>Download results</strong> in JSON, CSV, or Excel</li>
+</ol>
+<p><strong>That&#39;s it!</strong> No API keys required, no complex setup, no coding needed.</p>
+<h3>Try It Now</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/playlist?list=YOUR_PLAYLIST_ID&quot; }
+  ]
+}
+</code></pre>
+<hr>
+<h2>✨ Key Features</h2>
+<h3>🎯 Complete Data Extraction</h3>
+<ul>
+<li><strong>Full Video Lists</strong> with position numbers, titles, and URLs</li>
+<li><strong>Playlist Metadata</strong> including title, description, total video count, and total duration</li>
+<li><strong>Playlist History</strong> with last updated date and view count</li>
+<li><strong>Owner/Creator Info</strong> with channel name, ID, and URL</li>
+<li><strong>Video Details</strong> with high-quality thumbnails (multiple resolutions)</li>
+<li><strong>Channel Information</strong> with names, IDs, and URLs for each video</li>
+<li><strong>Smart URL Handling</strong> - Works with any YouTube playlist URL format</li>
+</ul>
+<h3>⚡ Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Lightning Fast</strong> - Process 100+ video playlists in seconds</li>
+<li><strong>Unlimited Videos</strong> - Automatic pagination extracts ALL videos (no 100-video limit!)</li>
+<li><strong>Smart Metadata Caching</strong> - Playlist descriptions and metadata cached (extracted once, reused forever)</li>
+<li><strong>Accurate Video Limiting</strong> - <code>maxVideosPerPlaylist</code> works correctly during data output</li>
+<li><strong>Batch Processing</strong> - Handle multiple playlists simultaneously</li>
+<li><strong>Error Recovery</strong> - Automatic retry logic for failed requests</li>
+</ul>
+<h3>🛠️ Developer-Friendly</h3>
+<ul>
+<li><strong>Clean JSON Output</strong> - Structured data ready for any pipeline</li>
+<li><strong>Multiple Export Formats</strong> - JSON, CSV, Excel, or direct API access</li>
+<li><strong>Flexible Configuration</strong> - Control detail levels and processing options</li>
+<li><strong>RESTful API Access</strong> - Integrate directly into your applications</li>
+<li><strong>Well-Documented</strong> - Comprehensive examples and clear documentation</li>
+</ul>
+<hr>
+<h2>🆚 Why Use This Instead of YouTube Data API?</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>This Actor</th>
+<th>YouTube Data API</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>API Quotas</strong></td>
+<td>✅ Unlimited</td>
+<td>❌ 10,000 units/day</td>
+</tr>
+<tr>
+<td><strong>Video Limit</strong></td>
+<td>✅ Unlimited (pagination)</td>
+<td>❌ 50 per request</td>
+</tr>
+<tr>
+<td><strong>Authentication</strong></td>
+<td>✅ Not required</td>
+<td>❌ OAuth required</td>
+</tr>
+<tr>
+<td><strong>Setup Time</strong></td>
+<td>✅ Instant</td>
+<td>❌ Complex setup</td>
+</tr>
+<tr>
+<td><strong>Batch Processing</strong></td>
+<td>✅ Multiple playlists</td>
+<td>❌ One at a time</td>
+</tr>
+<tr>
+<td><strong>Playlist Description</strong></td>
+<td>✅ Full text</td>
+<td>⚠️ Limited</td>
+</tr>
+<tr>
+<td><strong>Last Updated</strong></td>
+<td>✅ Included</td>
+<td>❌ Not available</td>
+</tr>
+<tr>
+<td><strong>Export Formats</strong></td>
+<td>✅ JSON, CSV, Excel</td>
+<td>❌ JSON only</td>
+</tr>
+<tr>
+<td><strong>Thumbnail URLs</strong></td>
+<td>✅ All resolutions</td>
+<td>⚠️ Limited</td>
+</tr>
+<tr>
+<td><strong>Total Duration</strong></td>
+<td>✅ Auto-calculated</td>
+<td>❌ Manual calculation</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>✅ $0.001 per video</td>
+<td>⚠️ Quota limits</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Simple Input Example</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/playlist?list=PLD8nQCAhR3tT3ehpyOpoYeUj3KHDEVK9h&quot; }
+  ]
+}
+</code></pre>
+<h3>Complete Input Example</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.youtube.com/playlist?list=PLAYLIST_ID_1&quot; },
+    { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID&amp;list=PLAYLIST_ID_2&amp;index=5&quot; },
+    { &quot;url&quot;: &quot;https://www.youtube.com/playlist?list=PLAYLIST_ID_3&quot; }
+  ],
+  &quot;includeVideoDetails&quot;: true,
+  &quot;maxVideosPerPlaylist&quot;: 100
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>playlistUrls</code></td>
+<td><code>array</code></td>
+<td><strong>Required</strong></td>
+<td>List of YouTube playlist URLs to extract</td>
+</tr>
+<tr>
+<td><code>includeVideoDetails</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Include detailed video info (thumbnails, channels, etc.)</td>
+</tr>
+<tr>
+<td><code>maxVideosPerPlaylist</code></td>
+<td><code>integer</code></td>
+<td><code>null</code></td>
+<td>Limit videos per playlist (useful for testing). Leave empty for unlimited</td>
+</tr>
+</tbody></table>
+<h3>Supported URL Formats</h3>
+<p>This actor works with <strong>any</strong> YouTube URL containing a playlist:</p>
+<ul>
+<li>✅ <code>https://www.youtube.com/playlist?list=PLAYLIST_ID</code></li>
+<li>✅ <code>https://www.youtube.com/watch?v=VIDEO_ID&amp;list=PLAYLIST_ID</code></li>
+<li>✅ <code>https://www.youtube.com/watch?v=VIDEO_ID&amp;list=PLAYLIST_ID&amp;index=10</code></li>
+<li>✅ <code>https://youtube.com/playlist?list=PLAYLIST_ID</code></li>
+</ul>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Flattened Data Format</h3>
+<p>Each video becomes a <strong>separate dataset item</strong> with complete playlist info attached. Perfect for CSV exports and database imports!</p>
+<pre><code class="language-json">{
+  &quot;position&quot;: 1,
+  &quot;videoId&quot;: &quot;lNtw4yxEydM&quot;,
+  &quot;videoUrl&quot;: &quot;https://www.youtube.com/watch?v=lNtw4yxEydM&quot;,
+  &quot;title&quot;: &quot;Advanced WordPress Theme Development | Introduction&quot;,
+  &quot;duration&quot;: &quot;5:25&quot;,
+  &quot;durationLabel&quot;: &quot;5 minutes, 25 seconds&quot;,
+  &quot;isPlayable&quot;: true,
+  &quot;thumbnail&quot;: {
+    &quot;url&quot;: &quot;https://i.ytimg.com/vi/lNtw4yxEydM/hqdefault.jpg&quot;,
+    &quot;width&quot;: 336,
+    &quot;height&quot;: 188,
+    &quot;allThumbnails&quot;: [...]
+  },
+  &quot;channel&quot;: {
+    &quot;name&quot;: &quot;Imran Sayed - Codeytek Academy&quot;,
+    &quot;id&quot;: &quot;UC0SDxbLAqoKLACyEPz2wXAg&quot;,
+    &quot;url&quot;: &quot;https://www.youtube.com/@Codeytek&quot;
+  },
+  &quot;videoInfo&quot;: &quot;1.2M views • 3 years ago&quot;,
+  &quot;playlistInfo&quot;: {
+    &quot;playlistId&quot;: &quot;PLD8nQCAhR3tT3ehpyOpoYeUj3KHDEVK9h&quot;,
+    &quot;playlistUrl&quot;: &quot;https://www.youtube.com/playlist?list=PLD8nQCAhR3tT3ehpyOpoYeUj3KHDEVK9h&quot;,
+    &quot;playlistTitle&quot;: &quot;Advanced WordPress Theme Development Course&quot;,
+    &quot;playlistDescription&quot;: &quot;Complete course covering advanced WordPress theme development techniques...&quot;,
+    &quot;lastUpdated&quot;: &quot;Dec 28, 2023&quot;,
+    &quot;owner&quot;: {
+      &quot;name&quot;: &quot;Codeytek Academy&quot;,
+      &quot;id&quot;: &quot;UC0SDxbLAqoKLACyEPz2wXAg&quot;,
+      &quot;url&quot;: &quot;https://www.youtube.com/@Codeytek&quot;
+    },
+    &quot;viewCount&quot;: &quot;12,310,699 views&quot;,
+    &quot;videoCount&quot;: 118,
+    &quot;totalVideosInPlaylist&quot;: 118,
+    &quot;totalDuration&quot;: &quot;20 hours 42 minutes&quot;,
+    &quot;totalDurationMinutes&quot;: 1242
+  },
+  &quot;extractedAt&quot;: &quot;2025-10-12T12:00:00.000Z&quot;
+}
+</code></pre>
+<h3>Output Fields Explained</h3>
+<h4>Video Information</h4>
+<ul>
+<li><code>position</code> - Video position in the playlist (1, 2, 3...)</li>
+<li><code>videoId</code> - Unique 11-character YouTube video identifier</li>
+<li><code>videoUrl</code> - Direct link to the video</li>
+<li><code>title</code> - Complete video title</li>
+<li><code>duration</code> - Video duration in MM:SS or HH:MM:SS format</li>
+<li><code>durationLabel</code> - Human-readable duration description</li>
+<li><code>isPlayable</code> - Whether the video is currently available</li>
+<li><code>thumbnail</code> - Thumbnail URLs in multiple resolutions (168px to 336px)</li>
+<li><code>videoInfo</code> - Views and upload date (e.g., &quot;1.4M views • 7 years ago&quot;)</li>
+</ul>
+<h4>Channel Information</h4>
+<ul>
+<li><code>channel.name</code> - Channel display name</li>
+<li><code>channel.id</code> - Unique channel identifier</li>
+<li><code>channel.url</code> - Direct link to the channel</li>
+</ul>
+<h4>Playlist Context (Attached to Each Video) 🆕</h4>
+<ul>
+<li><code>playlistInfo.playlistId</code> - Unique playlist identifier</li>
+<li><code>playlistInfo.playlistUrl</code> - Direct link to the playlist</li>
+<li><code>playlistInfo.playlistTitle</code> - Full playlist title</li>
+<li><code>playlistInfo.playlistDescription</code> - <strong>NEW</strong> Complete playlist description</li>
+<li><code>playlistInfo.lastUpdated</code> - <strong>NEW</strong> Last update date (e.g., &quot;Dec 28, 2023&quot;)</li>
+<li><code>playlistInfo.owner</code> - <strong>NEW</strong> Playlist creator/channel info</li>
+<li><code>playlistInfo.viewCount</code> - <strong>NEW</strong> Total playlist views</li>
+<li><code>playlistInfo.videoCount</code> - Number of videos extracted</li>
+<li><code>playlistInfo.totalVideosInPlaylist</code> - Actual total in playlist</li>
+<li><code>playlistInfo.totalDuration</code> - Human-readable total duration</li>
+<li><code>playlistInfo.totalDurationMinutes</code> - Total duration in minutes (for calculations)</li>
+</ul>
+<h4>Metadata</h4>
+<ul>
+<li><code>extractedAt</code> - ISO 8601 timestamp of when data was extracted</li>
+</ul>
+<hr>
+<h2>📊 Pre-Configured Data Views</h2>
+<p>The actor provides <strong>three optimized views</strong> for different use cases:</p>
+<h3>1. 🎬 All Videos with Playlist Info</h3>
+<p>Complete dataset with all fields - perfect for comprehensive analysis and archival.</p>
+<p><strong>Best for:</strong> Data analysis, archiving, complete records</p>
+<h3>2. 📋 Simple Video List</h3>
+<p>Flattened essential fields only - ideal for quick reference and spreadsheets.</p>
+<p><strong>Fields:</strong> Position, Title, Video URL, Duration, Channel Name, Playlist Title<br><strong>Best for:</strong> Content planning, quick scanning, sharing with teams</p>
+<h3>3. 🖼️ Videos with Thumbnails</h3>
+<p>Focus on visual content with thumbnail images displayed.</p>
+<p><strong>Best for:</strong> Content curation, visual browsing, presentation materials</p>
+<hr>
+<h2>💡 Use Cases &amp; Applications</h2>
+<h3>Education &amp; Research</h3>
+<ul>
+<li><strong>Course Planning</strong> - Analyze educational playlists for curriculum design</li>
+<li><strong>Content Curation</strong> - Build comprehensive learning resource libraries</li>
+<li><strong>Academic Research</strong> - Study content organization and video structures</li>
+<li><strong>Duration Estimation</strong> - Calculate total learning time for courses</li>
+<li><strong>Historical Tracking</strong> - Monitor playlist updates and changes over time</li>
+</ul>
+<h3>Content Creation &amp; Marketing</h3>
+<ul>
+<li><strong>Competitor Analysis</strong> - Study competitor playlist strategies and organization</li>
+<li><strong>Content Gap Analysis</strong> - Identify missing topics in your content library</li>
+<li><strong>Series Planning</strong> - Plan video series and optimal playlist structures</li>
+<li><strong>SEO Research</strong> - Analyze successful playlist titles and descriptions</li>
+<li><strong>Thumbnail Analysis</strong> - Study thumbnail patterns for engagement optimization</li>
+<li><strong>Update Monitoring</strong> - Track when competitors update their playlists</li>
+</ul>
+<h3>Automation &amp; Development</h3>
+<ul>
+<li><strong>Database Building</strong> - Create searchable video content databases</li>
+<li><strong>Playlist Monitoring</strong> - Track changes in playlists over time</li>
+<li><strong>API Integration</strong> - Feed structured data into applications and tools</li>
+<li><strong>Automated Reporting</strong> - Generate playlist analytics and insights reports</li>
+<li><strong>Content Aggregation</strong> - Build curated video collections from multiple sources</li>
+</ul>
+<h3>Business Intelligence</h3>
+<ul>
+<li><strong>Market Research</strong> - Analyze industry playlists and content trends</li>
+<li><strong>Channel Analysis</strong> - Understand how successful creators organize content</li>
+<li><strong>Engagement Patterns</strong> - Identify optimal playlist lengths and structures</li>
+<li><strong>Content Strategy</strong> - Make data-driven decisions about video organization</li>
+<li><strong>View Analytics</strong> - Track total views and popularity metrics</li>
+</ul>
+<hr>
+<h2>Practical Examples</h2>
+<h3>Example 1: Building a Video Course Database with Metadata</h3>
+<p>Extract educational playlists with complete metadata:</p>
+<pre><code class="language-javascript">const ApifyClient = require(&#39;apify-client&#39;);
+const client = new ApifyClient({ token: &#39;YOUR_TOKEN&#39; });
+
+const run = await client.actor(&#39;dz_omar/youtube-playlist-extractor&#39;).call({
+  playlistUrls: [
+    { url: &#39;https://www.youtube.com/playlist?list=COURSE_PLAYLIST_ID&#39; }
+  ]
+});
+
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+
+// Each item includes complete playlist metadata
+items.forEach(video =&gt; {
+  console.log(`Lesson ${video.position}: ${video.title}`);
+  console.log(`Duration: ${video.duration}`);
+  console.log(`Course: ${video.playlistInfo.playlistTitle}`);
+  console.log(`Description: ${video.playlistInfo.playlistDescription}`);
+  console.log(`Last Updated: ${video.playlistInfo.lastUpdated}`);
+  console.log(`Total course length: ${video.playlistInfo.totalDuration}`);
+  console.log(`Total views: ${video.playlistInfo.viewCount}`);
+});
+</code></pre>
+<h3>Example 2: Tracking Playlist Updates</h3>
+<p>Monitor when playlists are updated:</p>
+<pre><code class="language-javascript">// Group by playlist and check last updated dates
+const playlistUpdates = {};
+
+items.forEach(video =&gt; {
+  const playlistId = video.playlistInfo.playlistId;
+  
+  if (!playlistUpdates[playlistId]) {
+    playlistUpdates[playlistId] = {
+      title: video.playlistInfo.playlistTitle,
+      lastUpdated: video.playlistInfo.lastUpdated,
+      owner: video.playlistInfo.owner.name,
+      videoCount: video.playlistInfo.totalVideosInPlaylist,
+      views: video.playlistInfo.viewCount
+    };
+  }
+});
+
+// Display update summary
+Object.entries(playlistUpdates).forEach(([id, data]) =&gt; {
+  console.log(`\nPlaylist: ${data.title}`);
+  console.log(`Last Updated: ${data.lastUpdated}`);
+  console.log(`Owner: ${data.owner}`);
+  console.log(`Videos: ${data.videoCount}`);
+  console.log(`Total Views: ${data.views}`);
+});
+</code></pre>
+<h3>Example 3: Sampling Large Playlists</h3>
+<p>Test extraction with a limited number of videos:</p>
+<pre><code class="language-javascript">const run = await client.actor(&#39;dz_omar/youtube-playlist-extractor&#39;).call({
+  playlistUrls: [
+    { url: &#39;https://www.youtube.com/playlist?list=LARGE_PLAYLIST&#39; }
+  ],
+  maxVideosPerPlaylist: 20  // Only extract first 20 videos
+});
+
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+
+console.log(`Extracted ${items.length} sample videos`);
+console.log(`Total in playlist: ${items[0].playlistInfo.totalVideosInPlaylist}`);
+</code></pre>
+<h3>Example 4: Export with Complete Metadata to CSV</h3>
+<pre><code class="language-javascript">// The actor automatically supports CSV export
+// Just download the dataset as CSV from Apify Console
+
+// CSV will include all new fields:
+// - playlistInfo.playlistDescription
+// - playlistInfo.lastUpdated
+// - playlistInfo.owner.name
+// - playlistInfo.viewCount
+// Perfect for Excel analysis and reporting!
+</code></pre>
+<hr>
+<h2>📊 Output Format Examples</h2>
+<h3>JSON Export (Default)</h3>
+<p>Perfect for API integration and programmatic access:</p>
+<pre><code class="language-json">[
+  {
+    &quot;position&quot;: 1,
+    &quot;videoId&quot;: &quot;abc123&quot;,
+    &quot;title&quot;: &quot;Introduction&quot;,
+    &quot;playlistInfo&quot;: {
+      &quot;playlistTitle&quot;: &quot;Complete Course&quot;,
+      &quot;playlistDescription&quot;: &quot;Learn everything about...&quot;,
+      &quot;lastUpdated&quot;: &quot;Dec 28, 2023&quot;,
+      &quot;owner&quot;: {
+        &quot;name&quot;: &quot;Creator Name&quot;,
+        &quot;id&quot;: &quot;UC...&quot;,
+        &quot;url&quot;: &quot;https://youtube.com/@creator&quot;
+      },
+      &quot;viewCount&quot;: &quot;12,310,699 views&quot;,
+      &quot;videoCount&quot;: 50,
+      &quot;totalVideosInPlaylist&quot;: 50
+    }
+  }
+]
+</code></pre>
+<h3>CSV Export</h3>
+<p>Ideal for Excel, Google Sheets, and data analysis:</p>
+<pre><code class="language-csv">position,title,videoUrl,duration,channel.name,playlistInfo.playlistTitle,playlistInfo.lastUpdated,playlistInfo.viewCount
+1,&quot;Introduction&quot;,&quot;https://youtube.com/watch?v=abc123&quot;,&quot;5:25&quot;,&quot;Creator Name&quot;,&quot;Complete Course&quot;,&quot;Dec 28, 2023&quot;,&quot;12.3M views&quot;
+2,&quot;Setup&quot;,&quot;https://youtube.com/watch?v=def456&quot;,&quot;8:15&quot;,&quot;Creator Name&quot;,&quot;Complete Course&quot;,&quot;Dec 28, 2023&quot;,&quot;12.3M views&quot;
+</code></pre>
+<h3>Excel Export</h3>
+<p>Organized sheets with proper formatting and data types - perfect for business reporting.</p>
+<hr>
+<h2>📈 Performance Metrics</h2>
+<h3>Speed Benchmarks</h3>
+<table>
+<thead>
+<tr>
+<th>Playlist Size</th>
+<th>Processing Time</th>
+<th>Videos/Second</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>10-20 videos</td>
+<td>2-4 seconds</td>
+<td>~5-10</td>
+</tr>
+<tr>
+<td>50-100 videos</td>
+<td>8-15 seconds</td>
+<td>~6-7</td>
+</tr>
+<tr>
+<td>100-200 videos</td>
+<td>15-30 seconds</td>
+<td>~6-7</td>
+</tr>
+<tr>
+<td>200-500 videos</td>
+<td>30-90 seconds</td>
+<td>~5-6</td>
+</tr>
+<tr>
+<td>500+ videos</td>
+<td>2-3 minutes</td>
+<td>~4-5</td>
+</tr>
+</tbody></table>
+<p><strong>Note:</strong> Times include data extraction, pagination, and processing. Network speed may affect results.</p>
+<h3>Resource Usage</h3>
+<ul>
+<li><strong>Memory:</strong> 128-512 MB depending on playlist size</li>
+<li><strong>Compute:</strong> 0.002-0.01 compute units per run (varies by playlist size)</li>
+<li><strong>Storage:</strong> Minimal - Results stored in Apify dataset</li>
+<li><strong>Cache:</strong> Metadata cached for faster subsequent runs</li>
+</ul>
+<h3>Accuracy</h3>
+<ul>
+<li><strong>Extraction Success Rate:</strong> 99.9% for public playlists</li>
+<li><strong>Data Accuracy:</strong> 100% (direct from YouTube&#39;s official data)</li>
+<li><strong>Metadata Completeness:</strong> 100% for available fields</li>
+<li><strong>Pagination Reliability:</strong> 100% (all videos extracted)</li>
+</ul>
+<hr>
+<h2>⚙️ Processing Modes</h2>
+<h3>Free Mode</h3>
+<ul>
+<li>Standard processing speed</li>
+<li>Suitable for small to medium batches</li>
+<li>No additional costs</li>
+<li>Reliable and stable performance</li>
+</ul>
+<h3>Paid Mode (Faster Results)</h3>
+<ul>
+<li>Dedicated infrastructure for accelerated processing</li>
+<li>Optimized for high-volume batch operations</li>
+<li>Faster extraction of large video collections</li>
+<li>Automatic fallback to free mode if needed</li>
+</ul>
+<p>Both modes extract identical, high-quality data. Paid mode is ideal when you need faster throughput for large batches.</p>
+<hr>
+<h2>💰 Pricing &amp; Cost Estimation</h2>
+<h3>Pricing Model</h3>
+<p>This actor uses a <strong>pay-per-video</strong> pricing model:</p>
+<ul>
+<li><strong>Actor Start:</strong> $0.001 (one-time per run)</li>
+<li><strong>Video Extracted:</strong> $0.001 per video</li>
+</ul>
+<h3>Cost Examples</h3>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Videos</th>
+<th>Total Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Small playlist</td>
+<td>20</td>
+<td>$0.021</td>
+</tr>
+<tr>
+<td>Medium playlist</td>
+<td>100</td>
+<td>$0.101</td>
+</tr>
+<tr>
+<td>Large playlist</td>
+<td>314</td>
+<td>$0.315</td>
+</tr>
+<tr>
+<td>Large playlist (500 videos)</td>
+<td>500</td>
+<td>$0.501</td>
+</tr>
+<tr>
+<td>Educational course</td>
+<td>150</td>
+<td>$0.151</td>
+</tr>
+<tr>
+<td>Batch (5 playlists, 250 videos)</td>
+<td>250</td>
+<td>$0.251</td>
+</tr>
+<tr>
+<td>Enterprise (20 playlists, 2000 videos)</td>
+<td>2000</td>
+<td>$2.001</td>
+</tr>
+</tbody></table>
+<h3>Apify Store Discounts</h3>
+<p>Subscribers get automatic discounts:</p>
+<ul>
+<li><strong>Bronze:</strong> 10% off</li>
+<li><strong>Silver:</strong> 20% off</li>
+<li><strong>Gold:</strong> 30% off</li>
+</ul>
+<hr>
+<h2>🔍 Troubleshooting</h2>
+<h3>Common Issues &amp; Solutions</h3>
+<h4>❌ &quot;Playlist data not found&quot;</h4>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Playlist is private or deleted</li>
+<li>Invalid playlist URL format</li>
+<li>Temporary YouTube server issue</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Verify playlist is public</li>
+<li>✅ Use full YouTube URL with <code>list=</code> parameter</li>
+<li>✅ Try again after a few minutes</li>
+</ul>
+<h4>⚠️ Video Limit Not Working Correctly</h4>
+<p><strong>Fixed in Version 2.0!</strong></p>
+<ul>
+<li>✅ <code>maxVideosPerPlaylist</code> now correctly limits videos during data push</li>
+<li>✅ You get exactly the number you specify</li>
+</ul>
+<h4>⚠️ Missing Playlist Description or Metadata</h4>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>First-time extraction in progress</li>
+<li>Cache not yet populated</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Metadata is cached after first extraction</li>
+<li>✅ Subsequent runs will reuse cached metadata</li>
+</ul>
+<h4>⏱️ Slow Processing</h4>
+<p><strong>Causes:</strong></p>
+<ul>
+<li>Large playlists (200+ videos)</li>
+<li>Network latency</li>
+<li>Detailed video information extraction</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>✅ Set <code>includeVideoDetails: false</code> for 40-50% speed boost</li>
+<li>✅ Use <code>maxVideosPerPlaylist</code> for testing</li>
+<li>✅ Metadata caching speeds up subsequent runs</li>
+</ul>
+<hr>
+<h2>⚙️ Configuration Best Practices</h2>
+<h3>For Testing</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [{&quot;url&quot;: &quot;...&quot;}],
+  &quot;maxVideosPerPlaylist&quot;: 20,
+  &quot;includeVideoDetails&quot;: true
+}
+</code></pre>
+<h3>For Production</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [{&quot;url&quot;: &quot;...&quot;}],
+  &quot;includeVideoDetails&quot;: true
+}
+</code></pre>
+<h3>For Speed</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [{&quot;url&quot;: &quot;...&quot;}],
+  &quot;includeVideoDetails&quot;: false
+}
+</code></pre>
+<h3>For Complete Data</h3>
+<pre><code class="language-json">{
+  &quot;playlistUrls&quot;: [{&quot;url&quot;: &quot;...&quot;}],
+  &quot;includeVideoDetails&quot;: true
+}
+</code></pre>
+<hr>
+<h2>🛡️ Legal &amp; Compliance</h2>
+<h3>What This Actor Does</h3>
+<p>This actor extracts <strong>publicly available</strong> playlist and video metadata from YouTube. All data extracted is information that YouTube makes accessible through normal web browsing.</p>
+<h3>Important Compliance Notes</h3>
+<p><strong>You are responsible for ensuring your use complies with:</strong></p>
+<ul>
+<li>✅ YouTube&#39;s Terms of Service</li>
+<li>✅ Applicable copyright laws</li>
+<li>✅ Data protection regulations (GDPR, CCPA, etc.)</li>
+<li>✅ Your local jurisdiction&#39;s laws</li>
+</ul>
+<h3>Best Practices</h3>
+<ul>
+<li>✅ Only extract public playlists</li>
+<li>✅ Respect content creators&#39; rights</li>
+<li>✅ Don&#39;t use data for illegal purposes</li>
+<li>✅ Follow YouTube&#39;s Terms of Service</li>
+<li>✅ Respect rate limits and don&#39;t abuse the service</li>
+</ul>
+<hr>
+<h2>📞 Support &amp; Resources</h2>
+<h3>Need Help?</h3>
+<p><strong>📧 Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a><br><strong>🌐 Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a><br><strong>🐦 Twitter:</strong> <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a><br><strong>💼 LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></p>
+<hr>
+<h2>🌟 Related Actors by <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></h2>
+<p>Build your complete YouTube data pipeline with our specialized actors:</p>
+<h3>🎬 Video &amp; Content Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63">YouTube Playlist Extractor</a></strong><br>Extract all videos from playlists in seconds. Get video URLs, titles, durations. Perfect for feeding into this transcript extractor.<br>→ <em>Use together: Playlist → Transcript Extractor = Full channel analysis</em></p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Channel Scraper Pro</a></strong><br>Complete channel extraction: videos, shorts, live streams, playlists. Comprehensive creator analytics.<br>→ <em>Use together: Channel Scraper → Transcript Extractor = Creator deep-dive</em></p>
+<p><strong><a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a></strong><br>Standalone comment extraction with advanced filtering. Perfect for sentiment analysis.<br>→ <em>Integrated in this actor - enable with <code>extractcomments: true</code></em></p>
+<h3>📹 Video Platform Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | Downloader &amp; Transcript</a></strong><br>Extract Zoom meeting recordings and transcripts. Perfect for meeting analysis.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | Downloader &amp; Transcript</a></strong><br>Download Loom videos and extract transcripts. Ideal for training content.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong><br>Spanish real estate listings with API access. Property data at scale.</p>
+<h3>🛠️ Developer Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> | <strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong><br>Webpage screenshots with custom options. Perfect for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong><br>Website security vulnerability scanning. Comprehensive security reports.</p>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +753,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +761,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'youtube-playlist-extractor';
-    </script>
 </body>
 </html>
