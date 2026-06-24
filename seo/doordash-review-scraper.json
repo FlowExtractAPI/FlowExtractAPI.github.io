@@ -1,0 +1,21 @@
+{
+  "slug": "doordash-review-scraper",
+  "_drafted": true,
+  "intro": "DoorDash Review Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation & business. Scrape customer reviews from any DoorDash store with full reviewer profiles, ordered item details, vote ratings, and photo attachments. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "review Content full review text, star rating, verification status, and submission timestamp",
+    "reviewer Identity display name, contributor tier (Local Expert, Emerging Expert), contribution count, and profile URI",
+    "ordered Items every menu item from the associated order, with name, price, CDN image, and upvote/downvote rating",
+    "review Photos all photos attached to the review, with UUID, upload timestamp, and tagged item cross-reference"
+  ],
+  "faq": [
+    {
+      "q": "How do I run DoorDash Review Scraper?",
+      "a": "Open DoorDash Review Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is DoorDash Review Scraper free?",
+      "a": "DoorDash Review Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

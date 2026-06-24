@@ -1,0 +1,25 @@
+{
+  "slug": "zoom-scraper",
+  "_drafted": true,
+  "intro": "🎥 Zoom Video Downloader & Extractor is a ready-to-run Apify actor from FlowExtract API for media & downloads. Transform your Zoom recordings into searchable, downloadable archives with complete metadata, transcripts, and video files across regular meetings, events, and clips. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "archive online classes and webinar libraries with searchable transcript databases",
+    "backup lecture recordings before expiration and generate study materials automatically",
+    "create comprehensive knowledge bases from educational video content",
+    "archive team meetings, training sessions, and corporate communications"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 🎥 Zoom Video Downloader & Extractor?",
+      "a": "Open 🎥 Zoom Video Downloader & Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 🎥 Zoom Video Downloader & Extractor free?",
+      "a": "🎥 Zoom Video Downloader & Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "🌟 Why Choose This Actor?",
+      "a": "- ✅ Multi-Platform Support: Handles all Zoom recording types seamlessly"
+    }
+  ]
+}

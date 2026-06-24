@@ -1,0 +1,29 @@
+{
+  "slug": "youtube-hashtag-extractor",
+  "_drafted": true,
+  "intro": "YouTube Hashtag Extractor with Transcripts is a ready-to-run Apify actor from FlowExtract API for social media. Do I need a YouTube account to use this actor? This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "trend research: See which videos and creators dominate a hashtag right now.",
+    "content analysis: Pull transcripts in bulk to analyze topics, keywords, and messaging.",
+    "competitor monitoring: Track who is publishing under hashtags in your niche.",
+    "shorts discovery: Target the dedicated Shorts feed of a hashtag for short-form research."
+  ],
+  "faq": [
+    {
+      "q": "How do I run YouTube Hashtag Extractor with Transcripts?",
+      "a": "Open YouTube Hashtag Extractor with Transcripts on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is YouTube Hashtag Extractor with Transcripts free?",
+      "a": "YouTube Hashtag Extractor with Transcripts runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why scrape YouTube hashtags?",
+      "a": "YouTube hashtags group millions of videos by topic, making them one of the fastest ways to discover what's being published around a subject trends, competitors, creators, and talking points. Extracting that feed in bulk turns scattered videos into a structured dataset you can search, filter, and analyze."
+    },
+    {
+      "q": "What data can YouTube Hashtag Extractor extract?",
+      "a": "- videoId YouTube video ID - VideoURL canonical watch URL - Videotitle video title"
+    }
+  ]
+}

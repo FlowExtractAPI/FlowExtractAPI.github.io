@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>TikTok Ad Library Scraper Ã¢â‚¬â€ Export &amp; Download Ads | FlowExtract API</title>
+    <meta name="title" content="TikTok Ad Library Scraper Ã¢â‚¬â€ Export &amp; Download Ads | FlowExtract API">
+    <meta name="description" content="Scrape ads from the TikTok Ad Library (library.tiktok.com). Search by URL or keyword filters, with optional full advertiser and targeting detail.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/tiktok-ad-library-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="TikTok Ad Library Scraper Ã¢â‚¬â€ Export &amp; Download Ads | FlowExtract API">
+    <meta property="og:description" content="Scrape ads from the TikTok Ad Library (library.tiktok.com). Search by URL or keyword filters, with optional full advertiser and targeting detail.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/tiktok-ad-library-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-AcFKjrJTmJrr3kN0p-pa3zGA41Yj-images.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TikTok Ad Library Scraper Ã¢â‚¬â€ Export &amp; Download Ads | FlowExtract API">
+    <meta name="twitter:description" content="Scrape ads from the TikTok Ad Library (library.tiktok.com). Search by URL or keyword filters, with optional full advertiser and targeting detail.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-AcFKjrJTmJrr3kN0p-pa3zGA41Yj-images.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"TikTok Ad Library Scraper","description":"Scrape ads from the TikTok Ad Library (library.tiktok.com). Search by URL or keyword filters, with optional full advertiser and targeting detail.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/tiktok-ad-library-scraper.html","sameAs":"https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-AcFKjrJTmJrr3kN0p-pa3zGA41Yj-images.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run TikTok Ad Library Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open TikTok Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is TikTok Ad Library Scraper free?","acceptedAnswer":{"@type":"Answer","text":"TikTok Ad Library Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why scrape the TikTok Ad Library?","acceptedAnswer":{"@type":"Answer","text":"The TikTok Ad Library is TikTok's public DSA transparency portal, holding roughly one year of ads served across the EU/EEA. It exposes the actual creatives, the advertiser behind them, how long each ad ran, and per ad the age, gender, and regional impression breakdown. That is competitor intelligence you would otherwise pay a SaaS subscription for."}},{"@type":"Question","name":"What data can the TikTok Ad Library Scraper extract?","acceptedAnswer":{"@type":"Answer","text":"- id Unique TikTok ad identifier - name Advertiser display name"}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-AcFKjrJTmJrr3kN0p-pa3zGA41Yj-images.png" alt="TikTok Ad Library Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Advertising Intelligence</span>
+                <h1 class="actor-hero-title">TikTok Ad Library Scraper</h1>
+                <p class="actor-hero-desc">Scrape ads from the TikTok Ad Library (library.tiktok.com). Search by URL or keyword filters, with optional full advertiser and targeting detail.</p>
+                <a href="https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">TikTok Ad Library Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Without fetchAdDetail (details is null): This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>competitor ad monitoring: Track every ad a rival advertiser is running, with first/last shown dates.</li><li>creative research: Pull the actual video and image creatives competitors use to model your own.</li><li>targeting intelligence: See which countries, age bands, and genders an advertiser targets (with Fetch Ad Detail).</li><li>market &amp; trend analysis: Search a keyword across all regions to map who is advertising in a category.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run TikTok Ad Library Scraper?</summary><p>Open TikTok Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is TikTok Ad Library Scraper free?</summary><p>TikTok Ad Library Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why scrape the TikTok Ad Library?</summary><p>The TikTok Ad Library is TikTok&#39;s public DSA transparency portal, holding roughly one year of ads served across the EU/EEA. It exposes the actual creatives, the advertiser behind them, how long each ad ran, and per ad the age, gender, and regional impression breakdown. That is competitor intelligence you would otherwise pay a SaaS subscription for.</p></details><details class="faq-item"><summary>What data can the TikTok Ad Library Scraper extract?</summary><p>- id Unique TikTok ad identifier - name Advertiser display name</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🔍 TikTok Ad Library Scraper  Export TikTok ads by keyword, advertiser, or URL</h1>
+<blockquote>
+<p><strong>Formula:</strong> <code>Scrapes TikTok ads</code> + <code>from the TikTok Ad Library (library.tiktok.com)</code> + <code>as clean, structured JSON</code></p>
+</blockquote>
+<p><strong><a href="https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63">TikTok Ad Library Scraper</a></strong> extracts ads from the official TikTok Ad Library  search by keyword, by advertiser name, or paste a library URL directly, and get back advertiser, creative type, shown dates, estimated audience, video and image creatives, and (optionally) full targeting data. No login, no cookies, no browser automation.</p>
+<p>Perfect for <strong>competitive ad researchers</strong>, <strong>performance marketers</strong>, and <strong>agencies</strong> who need TikTok ad creative and targeting intelligence without manually clicking through the Ad Library.</p>
+<!-- ✅ EMBED VIDEO: replace this dummy URL with your real demo video once recorded. Paste the raw YouTube URL on its own line  Apify auto-renders it as a player. -->
+<p><a href="https://www.youtube.com/watch?v=DUMMY_VIDEO_ID">https://www.youtube.com/watch?v=DUMMY_VIDEO_ID</a></p>
+<hr>
+<h2>Why scrape the TikTok Ad Library?</h2>
+<p>The TikTok Ad Library is TikTok&#39;s public DSA transparency portal, holding roughly one year of ads served across the EU/EEA. It exposes the actual creatives, the advertiser behind them, how long each ad ran, and  per ad  the age, gender, and regional impression breakdown. That is competitor intelligence you would otherwise pay a SaaS subscription for.</p>
+<p>Here are some of the most common use cases:</p>
+<ul>
+<li><strong>Competitor ad monitoring</strong>: Track every ad a rival advertiser is running, with first/last shown dates.</li>
+<li><strong>Creative research</strong>: Pull the actual video and image creatives competitors use to model your own.</li>
+<li><strong>Targeting intelligence</strong>: See which countries, age bands, and genders an advertiser targets (with Fetch Ad Detail).</li>
+<li><strong>Market &amp; trend analysis</strong>: Search a keyword across all regions to map who is advertising in a category.</li>
+<li><strong>Ad compliance &amp; due diligence</strong>: Capture ad copy, audit status, and rejection reasons for a brand.</li>
+</ul>
+<hr>
+<h2>What data can the TikTok Ad Library Scraper extract?</h2>
+<h3>🏷️ Ad Identity</h3>
+<ul>
+<li><code>id</code>  Unique TikTok ad identifier</li>
+<li><code>name</code>  Advertiser display name</li>
+<li><code>type</code>  Creative format (<code>video</code> or <code>image</code>)</li>
+<li><code>audit_status</code>  TikTok moderation status</li>
+</ul>
+<h3>📅 Timeline</h3>
+<ul>
+<li><code>first_shown_date</code>  First date the ad ran (Unix ms, UTC)</li>
+<li><code>last_shown_date</code>  Most recent date the ad ran (Unix ms, UTC)</li>
+</ul>
+<h3>📊 Reach</h3>
+<ul>
+<li><code>estimated_audience</code>  Bucketed audience size (e.g. <code>0-1K</code>, <code>1K-10K</code>)</li>
+</ul>
+<h3>🎬 Creatives</h3>
+<ul>
+<li><code>videos</code>  Playable signed video URL + cover image</li>
+<li><code>image_urls</code>  Image creative URLs</li>
+<li><code>video_download_url</code> / <code>cover_download_url</code> / <code>image_download_urls</code>  permanent re-hosted links, present only when <strong>Download Media</strong> is enabled (originals are always kept alongside)</li>
+</ul>
+<h3>🎯 Full Targeting <em>(only when Fetch Ad Detail is enabled)</em></h3>
+<ul>
+<li>Creative title &amp; advertising objective</li>
+<li>Advertiser registry location &amp; business ID</li>
+<li>Target audience size and targeted countries</li>
+<li>Per-region impressions with age (13-17 … 55+) and gender breakdowns</li>
+</ul>
+<h3>🔖 Provenance</h3>
+<ul>
+<li><code>region</code>, <code>sort</code>, <code>source_url</code>, <code>_source</code>  which search produced the record</li>
+</ul>
+<hr>
+<h2>⚙️ How to use the TikTok Ad Library Scraper</h2>
+<p>You provide <strong>URLs</strong>, <strong>keyword filters</strong>, or both. Each URL and each keyword counts as one input item.</p>
+<blockquote>
+<p><strong>Total results = (number of URLs + number of keywords) × Maximum Results.</strong>
+Example: 5 URLs + 6 keywords = 11 inputs. At 16 Maximum Results → 11 × 16 = <strong>176 ads</strong> maximum.</p>
+</blockquote>
+<h3>Input Options</h3>
+<h4>Start URLs (Array)</h4>
+<p>Paste full <code>library.tiktok.com/ads</code> URLs copied from your browser. Region, dates, sort order, and advertiser filters are read directly from the URL  no extra config.</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://library.tiktok.com/ads?region=DE&amp;adv_name=nike</code></td>
+<td>Ads matching &quot;nike&quot; in Germany</td>
+</tr>
+<tr>
+<td><code>https://library.tiktok.com/ads?region=all&amp;adv_name=...&amp;query_type=2&amp;adv_biz_ids=...</code></td>
+<td>A specific advertiser&#39;s ads, all regions</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [
+        { &quot;url&quot;: &quot;https://library.tiktok.com/ads?region=DE&amp;adv_name=nike&amp;sort_type=last_shown_date,desc&quot; }
+    ]
+}
+</code></pre>
+<h4>Keyword Filters (Array of objects)</h4>
+<p>Build searches manually. Each entry runs independently with its own region, date range, and sort order.</p>
+<ul>
+<li><strong><code>query</code></strong>  The keyword or advertiser name.</li>
+<li><strong><code>searchAsAdvertiser</code></strong> <em>(boolean, default <code>false</code>)</em>  Off: match the text against ad content (TikTok&#39;s &quot;Search this exact phrase&quot;). On: treat the text as an advertiser name and return that advertiser&#39;s ads (TikTok&#39;s &quot;Advertiser name&quot;).</li>
+<li><strong><code>region</code></strong>  One target country (or <code>all</code> for EU/EEA). The API processes one region per search.</li>
+<li><strong><code>dateFrom</code> / <code>dateTo</code></strong>  Date range. See the date window note below.</li>
+<li><strong><code>sortOrder</code></strong>  <code>newest</code>, <code>oldest</code>, <code>created</code>, <code>created-asc</code>, <code>popular</code>, <code>unpopular</code>.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;keywords&quot;: [
+        { &quot;query&quot;: &quot;summer sale&quot;, &quot;region&quot;: &quot;DE&quot;, &quot;sortOrder&quot;: &quot;newest&quot; },
+        { &quot;query&quot;: &quot;Apify Technologies s.r.o.&quot;, &quot;searchAsAdvertiser&quot;: true, &quot;region&quot;: &quot;AT&quot; }
+    ],
+    &quot;maxResults&quot;: 10
+}
+</code></pre>
+<h4><code>maxResults</code> (Integer)</h4>
+<ul>
+<li><strong>Default</strong>: <code>10</code></li>
+<li>Maximum ads collected <strong>per URL and per keyword</strong>. Set to <code>0</code> to collect everything the API returns (up to TikTok&#39;s hard cap of 1,000 per query). Start with <code>10</code> to test.</li>
+</ul>
+<h4><code>fetchAdDetail</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li>When on, the scraper makes one extra request per ad to collect full advertiser, creative, and targeting detail. <strong>This is slower</strong>  one additional request per ad.</li>
+</ul>
+<h4><code>downloadMedia</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li>When on, each ad&#39;s video and images are downloaded to permanent storage and the links are added to the output (<code>video_download_url</code>, <code>cover_download_url</code>, <code>image_download_urls</code>). TikTok&#39;s own media links are signed and expire after a few hours; this re-hosts them so they stay accessible.</li>
+<li>Media is downloaded by the <strong><a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63">Universal Downloader</a></strong> actor and saved to <strong>your</strong> account&#39;s storage (free accounts: files expire in ~7 days; paid accounts: retained).</li>
+</ul>
+<blockquote>
+<p>⏱️ <strong>Performance note  both options add time.</strong>
+<code>fetchAdDetail</code> adds one request per ad. <code>downloadMedia</code> adds a separate download per ad (a few seconds each). Each one alone makes a run noticeably slower; <strong>enabling both together compounds the cost</strong>  for large result counts (e.g. 1,000 ads) expect a substantially longer run. If you only need metadata, leave both off. Turn them on when you specifically need the full detail and/or permanent media files.</p>
+</blockquote>
+<h3>📆 The date window (important)</h3>
+<p>The TikTok Ad Library only retains about <strong>one year</strong> of &quot;last shown date&quot; history, and the earliest selectable day slides forward daily. This scraper handles that automatically:</p>
+<ul>
+<li><strong>No dates given</strong> → defaults to roughly the last year (today back to ~364 days).</li>
+<li><strong>Start date too old</strong> → clamped up to the earliest available day, with a warning. The run continues.</li>
+<li><strong><code>dateFrom</code> after <code>dateTo</code></strong> → the entry is rejected with a clear message (dates are reversed).</li>
+<li><strong>Entire range older than ~1 year</strong> → the entry is rejected (nothing to scrape there).</li>
+</ul>
+<hr>
+<h2>💰 Pricing</h2>
+<blockquote>
+<p>🎉 <strong>This Actor is currently FREE to use.</strong> You only pay Apify&#39;s standard platform usage for the run. There are no per-result charges at this time.</p>
+</blockquote>
+<p>Pricing may change in the future. Any change will be shown transparently here and in the Apify Store before you run.</p>
+<!--
+═══════════════════════════════════════════════════════════════════
+  💵 MONETIZATION SNIPPET  when you switch to Pay Per Event:
+  1. In Apify Console, configure the two events with your tier prices
+     (these must match .actor/pay_per_event.json exactly).
+  2. Delete the "currently FREE" block above.
+  3. Paste the block below in its place.
+═══════════════════════════════════════════════════════════════════
+
+How much does it cost to scrape the TikTok Ad Library?
+
+This Actor uses **Pay Per Event** pricing  you are charged only for results actually delivered, nothing else. Compute, proxy, and runtime are absorbed by the Actor; if a run produces one result, you pay for one result.
+
+| Event | FREE | BRONZE | SILVER | GOLD |
+|---|---|---|---|---|
+| Ad result (no detail) | $0.0009 | $0.00055 | $0.0005 | $0.0005 |
+| Ad result (with detail) | $0.0018 | $0.0011 | $0.0010 | $0.0010 |
+
+Because pricing is per result, cost is simply **results × per-result price**. Collecting 1,000 ads without detail on the FREE tier ≈ **$0.90**; with full detail ≈ **$1.80**. `fetchAdDetail: true` bills at the "with detail" rate.
+
+> 💡 Tip: Set `maxResults: 10` first to test your setup before a full run.
+-->
+
+<hr>
+<h2>📊 Sample Output</h2>
+<p><strong>Without <code>fetchAdDetail</code> (<code>details</code> is null):</strong></p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;1866984139925698&quot;,
+    &quot;name&quot;: &quot;nexxtstyyle&quot;,
+    &quot;type&quot;: &quot;video&quot;,
+    &quot;audit_status&quot;: &quot;1&quot;,
+    &quot;first_shown_date&quot;: 1780495093000,
+    &quot;last_shown_date&quot;: 1780495093000,
+    &quot;estimated_audience&quot;: &quot;0-1K&quot;,
+    &quot;videos&quot;: [
+        { &quot;video_url&quot;: &quot;https://library.tiktok.com/api/v1/cdn/.../video.mp4&quot;, &quot;cover_img&quot;: &quot;https://p19-common-sign.tiktokcdn.com/.../cover.jpeg&quot; }
+    ],
+    &quot;image_urls&quot;: [],
+    &quot;details&quot;: null,
+    &quot;region&quot;: &quot;DE&quot;,
+    &quot;sort&quot;: &quot;last_shown_date,desc&quot;,
+    &quot;source_url&quot;: &quot;URL: https://library.tiktok.com/ads?region=DE&amp;adv_name=nike&amp;sort_type=last_shown_date,desc&quot;,
+    &quot;_source&quot;: &quot;tiktok_ad_library_scraper&quot;
+}
+</code></pre>
+<p><strong>With <code>fetchAdDetail</code> (<code>details</code> populated  truncated):</strong></p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;1866984139925698&quot;,
+    &quot;name&quot;: &quot;nexxtstyyle&quot;,
+    &quot;type&quot;: &quot;video&quot;,
+    &quot;estimated_audience&quot;: &quot;0-1K&quot;,
+    &quot;videos&quot;: [ { &quot;video_url&quot;: &quot;...&quot;, &quot;cover_img&quot;: &quot;...&quot; } ],
+    &quot;details&quot;: {
+        &quot;ad&quot;: { &quot;title&quot;: &quot;Nike☀️🔝 #nike #summer&quot;, &quot;advertising_objective&quot;: &quot;Reach&quot;, &quot;estimated_audience&quot;: &quot;1K-10K&quot; },
+        &quot;advertiser&quot;: { &quot;name&quot;: &quot;Nextstyleee&quot;, &quot;adv_biz_ids&quot;: &quot;7555084503564304385&quot;, &quot;registry_location&quot;: &quot;Emirates&quot; },
+        &quot;targeting&quot;: {
+            &quot;target_audience_size&quot;: &quot;23.6M-28.8M&quot;,
+            &quot;countries&quot;: [&quot;ES&quot;, &quot;FR&quot;, &quot;IT&quot;, &quot;DE&quot;, &quot;BE&quot;],
+            &quot;location&quot;: {
+                &quot;total_region&quot;: 5,
+                &quot;data&quot;: [
+                    { &quot;region&quot;: &quot;ES&quot;, &quot;impressions&quot;: &quot;2K&quot;, &quot;breakdowns&quot;: [ { &quot;age&quot;: &quot;18-24&quot;, &quot;gender&quot;: &quot;FEMALE&quot;, &quot;impressions&quot;: &quot;0-1K&quot; } ] }
+                ]
+            }
+        }
+    },
+    &quot;region&quot;: &quot;DE&quot;,
+    &quot;source_url&quot;: &quot;URL: https://library.tiktok.com/ads?region=DE&amp;adv_name=nike&quot;,
+    &quot;_source&quot;: &quot;tiktok_ad_library_scraper&quot;
+}
+</code></pre>
+<p><strong>With <code>downloadMedia</code> (permanent links added alongside originals):</strong></p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;1866996966152193&quot;,
+    &quot;name&quot;: &quot;nikesk87&quot;,
+    &quot;type&quot;: &quot;video&quot;,
+    &quot;videos&quot;: [
+        {
+            &quot;video_url&quot;: &quot;https://library.tiktok.com/api/v1/cdn/.../video.mp4?...&quot;,
+            &quot;cover_img&quot;: &quot;https://p16-common-sign.tiktokcdn.com/.../cover.image?...&quot;,
+            &quot;video_download_url&quot;: &quot;https://api.apify.com/v2/key-value-stores/&lt;store&gt;/records/video-...mp4?signature=...&quot;,
+            &quot;cover_download_url&quot;: &quot;https://api.apify.com/v2/key-value-stores/&lt;store&gt;/records/image-...image?signature=...&quot;
+        }
+    ],
+    &quot;image_urls&quot;: [],
+    &quot;image_download_urls&quot;: [],
+    &quot;region&quot;: &quot;DE&quot;,
+    &quot;_source&quot;: &quot;tiktok_ad_library_scraper&quot;
+}
+</code></pre>
+<p>The originals (<code>video_url</code>, <code>cover_img</code>, <code>image_urls</code>) are always kept; the <code>*_download_url</code> fields are added only when Download Media is on.</p>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a TikTok account to use this Actor?</strong>
+No. The TikTok Ad Library is a public transparency portal. This scraper requires no login, cookies, or credentials.</p>
+<p><strong>How far back can I search?</strong>
+About one year. The TikTok Ad Library retains roughly 365 days of &quot;last shown date&quot; history, and the window slides forward daily. Dates older than that are automatically clamped or skipped with a clear message.</p>
+<p><strong>Can I scrape multiple keywords and URLs in one run?</strong>
+Yes. Provide any mix of URLs and keyword filters  they are processed in the same run (URLs first, then keywords), each capped at <code>maxResults</code>.</p>
+<p><strong>What&#39;s the difference between keyword search and advertiser search?</strong>
+A keyword search matches your text against ad content. Turning on <code>searchAsAdvertiser</code> treats your text as an advertiser name and returns that advertiser&#39;s ads  the same split TikTok shows as &quot;Search this exact phrase&quot; vs &quot;Advertiser name.&quot;</p>
+<p><strong>Why is the run slow when I enable Download Media or Fetch Ad Detail?</strong>
+Both add per-ad work. <code>fetchAdDetail</code> makes one extra request per ad; <code>downloadMedia</code> downloads each ad&#39;s video and images (a few seconds per ad) via the <a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63">Universal Downloader</a>. Enabling both together compounds the time, so a large run (e.g. 1,000 ads) can take substantially longer. Leave them off if you only need metadata and the original (short-lived) media URLs.</p>
+<p><strong>Where are downloaded media files stored, and do they expire?</strong>
+They&#39;re saved to your own Apify account&#39;s key-value store by the Universal Downloader. On free accounts, unnamed storage expires in about 7 days; on paid accounts it&#39;s retained. The original TikTok URLs expire after a few hours regardless  that&#39;s why Download Media exists.</p>
+<p><strong>What happens if the run is aborted or hits a block mid-way?</strong>
+Results are written in real time, one ad at a time, as they are scraped. Anything already collected is saved. A failing source is skipped and the next one continues  one bad input never loses the whole run.</p>
+<p><strong>Why did one of my keyword/URL entries get skipped?</strong>
+Most likely its date range was reversed (<code>dateFrom</code> after <code>dateTo</code>) or fell entirely outside TikTok&#39;s ~1-year retention. The run log states exactly which entry and why.</p>
+<hr>
+<h2>⚖️ Legal &amp; Ethical Use</h2>
+<p>This Actor extracts <strong>publicly visible data</strong> from the TikTok Ad Library  the same information anyone can see in their browser on library.tiktok.com.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only use the data for lawful purposes such as research, competitive analysis, and compliance.</li>
+<li>Comply with <a href="https://www.tiktok.com/legal/terms-of-service">TikTok&#39;s Terms of Service</a> and applicable data protection regulations (GDPR, CCPA, etc.).</li>
+<li>Do not use extracted data for spam, harassment, or unsolicited outreach.</li>
+</ul>
+<p>For questions about a specific use case, contact us at <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a>.</p>
+<hr>
+<h2>🔄 How results are saved</h2>
+<p>Results stream into your dataset <strong>in real time</strong>  each ad is pushed the moment it is scraped, in order (URLs first, then keywords). There is no end-of-run batch dump:</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Each ad scraped</td>
+<td>Pushed to the dataset immediately</td>
+</tr>
+<tr>
+<td>Source fails or is blocked</td>
+<td>That source is skipped; already-pushed ads are retained</td>
+</tr>
+<tr>
+<td>Budget/charge limit reached</td>
+<td>Run stops cleanly; everything collected so far is kept</td>
+</tr>
+<tr>
+<td>Run aborted</td>
+<td>Already-pushed ads remain in the dataset</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Reversed dates</td>
+<td><code>Date From … is after Date To …</code></td>
+<td>Swap the dates so the start comes first</td>
+</tr>
+<tr>
+<td>Range too old</td>
+<td><code>range … is entirely older than TikTok&#39;s ~1-year retention</code></td>
+<td>Choose dates within the last year</td>
+</tr>
+<tr>
+<td>Date out of range at runtime</td>
+<td><code>TikTok rejected the date range as out of its ~1-year retention window</code></td>
+<td>Narrow the range to the last year</td>
+</tr>
+<tr>
+<td>Initial block</td>
+<td><code>TikTok blocked the initial request</code></td>
+<td>Try again later, or enable a proxy</td>
+</tr>
+<tr>
+<td>No valid input</td>
+<td><code>No scrapeable sources</code></td>
+<td>Check your URLs, keywords, and dates</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63">domain.com.au Scraper</a></strong>
+Extract Australian property listings from domain.com.au with full enrichment, agent contacts, schools, and market insights.</p>
+<p><strong><a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63">Realtor.com Scraper</a></strong>
+Extract US property listings from Realtor.com. Pricing, agent contacts, tax history, AVM estimates, nearby schools, flood and noise data, and full listing history.</p>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista.</p>
+<p><strong><a href="https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63">Leboncoin.fr Scraper</a></strong>
+Extract French classified listings from Leboncoin  real estate, vehicles, jobs, and more.</p>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI.</p>
+<h3>🍔 Food &amp; Delivery</h3>
+<p><strong><a href="https://apify.com/dz_omar/doordash-scraper?fpr=smcx63">DoorDash Scraper</a></strong>
+Scrape store listings, full menus, featured items, and customer reviews from DoorDash.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | Downloader &amp; Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | Downloader &amp; Transcript</a></strong>
+Download Loom videos and extract transcripts.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research.</p>
+<p><strong><a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63">LinkedIn Ad Library Scraper</a></strong>
+Extract comprehensive advertising data from LinkedIn&#39;s Ad Library.</p>
+<hr>
+<p><strong>Ready to extract TikTok ad data?</strong> <a href="https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63">Start using TikTok Ad Library Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

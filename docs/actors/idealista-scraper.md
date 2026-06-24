@@ -109,18 +109,18 @@ Each property in your dataset will contain comprehensive information:
 
 ## 💰 Pricing Model - Monthly Subscription + Idealista Property Scraper API Costs
 
-**🎯 Monthly Subscription: $4.99/month + Idealista Property Scraper API costs per property**
+**🎯 Monthly Subscription: $15/month + Idealista Property Scraper API costs per property**
 
 This actor operates with a **monthly rental subscription** plus charges for the internal **[Idealista Property Scraper API](https://apify.com/dz_omar/idealista-scraper-api)** calls.
 
 ### **Pricing Structure:**
-- **Monthly Rental**: $4.99/month (auto-renewing subscription)
+- **Monthly Rental**: $15/month (auto-renewing subscription)
 - **Idealista Property Scraper API Costs**: Variable pricing based on your Apify subscription tier
-- **3-Day Free Trial**: Test the actor before committing to subscription
+- **one-day Free Trial**: Test the actor before committing to subscription
 
 ### **Cost Formula:**
 ```
-Monthly Total = $4.99 + (Number of Properties × API Cost per Property)
+Monthly Total = $15 + (Number of Properties × API Cost per Property)
 ```
 ## 🚀 Use Cases
 
@@ -174,7 +174,7 @@ Monthly Total = $4.99 + (Number of Properties × API Cost per Property)
 
 ## 🎯 Getting Started
 
-1. **Start Free Trial**: Activate the 3-day free trial
+1. **Start Free Trial**: Activate the one-day free trial
 2. **Consider Apify Subscription**: Upgrade to Silver/Gold for 88% API cost savings
 3. **Test the Actor**: Run small extractions to verify functionality
 4. **Subscribe**: Convert to monthly subscription for unlimited access
@@ -195,7 +195,7 @@ Monthly Total = $4.99 + (Number of Properties × API Cost per Property)
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media

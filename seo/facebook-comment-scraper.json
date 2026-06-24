@@ -1,0 +1,29 @@
+{
+  "slug": "facebook-comment-scraper",
+  "_drafted": true,
+  "intro": "Facebook Comment Scraper is a ready-to-run Apify actor from FlowExtract API for social media. Do I need a Facebook account to use this actor? This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "sentiment analysis feed comments into NLP models to measure reactions to a product, campaign, or event.",
+    "content moderation identify toxic, spammy, or policy-violating comments at scale across multiple posts.",
+    "competitive research monitor comments on competitor posts to understand audience pain points and opportunities.",
+    "community management export all comments from your brand's posts, reels, photos, or videos for reporting and response tracking."
+  ],
+  "faq": [
+    {
+      "q": "How do I run Facebook Comment Scraper?",
+      "a": "Open Facebook Comment Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Facebook Comment Scraper free?",
+      "a": "Facebook Comment Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why scrape Facebook comments?",
+      "a": "Facebook is one of the largest social networks in the world, with billions of posts generating millions of comments daily. Whether you're tracking brand sentiment, researching audience reactions, or building moderation tools, comment data is invaluable but Facebook provides no official API for bulk comment extraction."
+    },
+    {
+      "q": "What data does it extract?",
+      "a": "- Comment ID Facebook's unique identifier - Comment text full body of the comment"
+    }
+  ]
+}

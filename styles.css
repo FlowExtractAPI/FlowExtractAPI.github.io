@@ -243,11 +243,21 @@ body {
 /* Stats Section */
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(3, minmax(180px, 220px));
+    justify-content: center;
     gap: 30px;
     margin-top: 80px;
     position: relative;
     z-index: 1;
+}
+
+@media (max-width: 640px) {
+    .stats-container {
+        grid-template-columns: 1fr;
+        max-width: 320px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 .stat-card {
@@ -431,6 +441,7 @@ body {
 }
 
 .actor-card {
+    position: relative;
     background: var(--card-bg);
     border: 1px solid var(--border);
     border-radius: 12px;
@@ -490,18 +501,21 @@ body {
     flex-grow: 1;
 }
 
+/* Featured: solid teal corner chip, positioned over the card top-right */
 .actor-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: rgba(91, 181, 181, 0.1);
-    border: 1px solid var(--accent);
-    border-radius: 15px;
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    z-index: 2;
+    padding: 5px 12px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 999px;
     font-size: 11px;
-    color: var(--accent);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.5px;
-    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(45, 74, 74, 0.25);
 }
 
 .actor-buttons {
@@ -511,15 +525,21 @@ body {
 }
 
 .actor-btn {
-    flex: 1;
-    display: inline-block;
-    padding: 10px 16px;
+    flex: 1 1 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 14px;
     text-decoration: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
+    line-height: 1.2;
+    border: 2px solid transparent; /* same box model on both buttons → equal height */
     transition: all 0.3s ease;
     text-align: center;
+    white-space: nowrap;
 }
 
 .actor-btn-primary {
@@ -535,7 +555,7 @@ body {
 .actor-btn-secondary {
     background: transparent;
     color: var(--accent);
-    border: 2px solid var(--accent);
+    border-color: var(--accent);
 }
 
 .actor-btn-secondary:hover {
@@ -826,4 +846,270 @@ body {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ===== Dynamic actors section: search + category groups ===== */
+.actors-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+}
+
+/* Fix 2 — search with icon, border, focus ring */
+.actors-search {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.actors-search-icon {
+    position: absolute;
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-muted);
+    pointer-events: none;
+    transition: color 0.25s ease;
+}
+
+.actors-search input {
+    width: 100%;
+    padding: 14px 20px 14px 48px;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    outline: none;
+    box-shadow: var(--shadow);
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.actors-search input::placeholder { color: var(--text-muted); }
+
+.actors-search input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(91, 181, 181, 0.15);
+}
+
+.actors-search:focus-within .actors-search-icon { color: var(--accent); }
+
+/* Category filter — custom themed dropdown (button + popup list) */
+.category-filter {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+}
+
+.category-filter-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 13px 20px;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text);
+    background: var(--card-bg);
+    border: 2px solid var(--border);
+    border-radius: 999px;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.category-filter-btn:hover { border-color: var(--accent-light); }
+
+.category-filter.is-open .category-filter-btn,
+.category-filter-btn:focus-visible {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 4px rgba(91, 181, 181, 0.15);
+}
+
+.category-filter-chevron {
+    color: var(--accent-dark);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+}
+
+.category-filter.is-open .category-filter-chevron { transform: rotate(180deg); }
+
+/* Popup list */
+.category-filter-list {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+    z-index: 50;
+    margin: 0;
+    padding: 6px;
+    list-style: none;
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow-hover);
+    max-height: 320px;
+    overflow-y: auto;
+    outline: none;
+    animation: cf-pop 0.16s ease-out;
+}
+
+@keyframes cf-pop {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.category-filter-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px 14px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category-filter-option:hover {
+    background: var(--bg-secondary);
+    color: var(--text);
+}
+
+.category-filter-option.is-active {
+    background: var(--gradient);
+    color: #fff;
+}
+
+.category-filter-check {
+    flex-shrink: 0;
+    opacity: 0;
+}
+
+.category-filter-option.is-active .category-filter-check { opacity: 1; }
+
+/* hide list scrollbar visual noise but keep scrollable */
+.category-filter-list::-webkit-scrollbar { width: 8px; }
+.category-filter-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 999px; }
+
+/* Category group */
+.actor-group {
+    margin-bottom: 64px;
+}
+
+.actor-group:last-child {
+    margin-bottom: 0;
+}
+
+.actor-group-header {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid var(--border);
+}
+
+.actor-group-title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin: 0;
+}
+
+/* Fix 3 — count reads as a labeled muted badge, e.g. "7 actors" */
+.actor-group-count {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    background: var(--bg-secondary);
+    padding: 4px 12px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
+
+/* Letter placeholder when an actor has no image */
+.actor-image--placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    font-weight: 800;
+    color: #fff;
+    background: var(--gradient);
+    text-transform: uppercase;
+}
+
+/* Empty search state */
+.actors-empty {
+    text-align: center;
+    padding: 50px 20px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+
+@media (max-width: 600px) {
+    .actor-group-title { font-size: 20px; }
+}
+
+/* ===== Fix 7 + polish: hero -> sections transition & rhythm ===== */
+.hero {
+    padding-bottom: 70px;
+}
+
+/* Breathing room + a soft separator under the stat row so the hero
+   doesn't feel cut off before the next section. */
+.stats-container {
+    margin-top: 64px;
+    padding-bottom: 8px;
+}
+
+/* Animated scroll cue centered below the stats */
+.hero-scroll-cue {
+    margin: 34px auto 0;
+    width: 26px;
+    height: 42px;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    position: relative;
+}
+.hero-scroll-cue::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 8px;
+    width: 4px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 2px;
+    transform: translateX(-50%);
+    animation: scrollCue 1.6s ease-in-out infinite;
+}
+@keyframes scrollCue {
+    0%   { opacity: 0; transform: translate(-50%, 0); }
+    40%  { opacity: 1; }
+    100% { opacity: 0; transform: translate(-50%, 12px); }
+}
+
+/* Consistent vertical rhythm across the major sections */
+.section { padding: 88px 20px; }
+.section-header { margin-bottom: 56px; }
+
+/* Slightly tighter, even card grid */
+.actors-grid { gap: 24px; }
+.actor-card { padding: 22px; }
+
+@media (max-width: 600px) {
+    .section { padding: 56px 16px; }
+    .stats-container { margin-top: 44px; }
+    .hero-scroll-cue { display: none; }
 }

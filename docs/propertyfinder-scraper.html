@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>PropertyFinder Scraper - UAE, Saudi Arabia &amp; Middle East Real Estate Data Extraction | FlowExtract API</title>
+    <meta name="title" content="PropertyFinder Scraper - UAE, Saudi Arabia &amp; Middle East Real Estate Data Extraction | FlowExtract API">
+    <meta name="description" content="Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/propertyfinder-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="PropertyFinder Scraper - UAE, Saudi Arabia &amp; Middle East Real Estate Data Extraction | FlowExtract API">
+    <meta property="og:description" content="Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/propertyfinder-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/3YYrgw69Rb7udcbCVkiOwco31sNeFESWlA0ObiyZfeA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItT3VHY2laSXo0RmRqaFZYbjgtMHNUSkZ0amZseC1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PropertyFinder Scraper - UAE, Saudi Arabia &amp; Middle East Real Estate Data Extraction | FlowExtract API">
+    <meta name="twitter:description" content="Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/3YYrgw69Rb7udcbCVkiOwco31sNeFESWlA0ObiyZfeA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItT3VHY2laSXo0RmRqaFZYbjgtMHNUSkZ0amZseC1VbnRpdGxlZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"PropertyFinder Scraper","description":"Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/propertyfinder-scraper.html","sameAs":"https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/3YYrgw69Rb7udcbCVkiOwco31sNeFESWlA0ObiyZfeA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItT3VHY2laSXo0RmRqaFZYbjgtMHNUSkZ0amZseC1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run PropertyFinder Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open PropertyFinder Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is PropertyFinder Scraper free?","acceptedAnswer":{"@type":"Answer","text":"PropertyFinder Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,375 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/3YYrgw69Rb7udcbCVkiOwco31sNeFESWlA0ObiyZfeA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItT3VHY2laSXo0RmRqaFZYbjgtMHNUSkZ0amZseC1VbnRpdGxlZC5wbmc.png" alt="PropertyFinder Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">PropertyFinder Scraper</h1>
+                <p class="actor-hero-desc">Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+                <a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">PropertyFinder Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>listingid Internal listing identifier</li><li>reference Agent reference code (e.g., &quot;AC-JFR-285-DEC26&quot;)</li><li>priceperarea Price per sqm/sqft</li><li>locationtree Full location hierarchy (region → area → sub-area)</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run PropertyFinder Scraper?</summary><p>Open PropertyFinder Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is PropertyFinder Scraper free?</summary><p>PropertyFinder Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 PropertyFinder Scraper</h1>
+<p><strong>Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</strong></p>
+<p>Scrapes comprehensive property data from any PropertyFinder search URL  prices, locations, agent contacts, amenities, images, and detailed property specifications. Supports both English and Arabic pages, multiple countries in the same run, and optional full-detail enrichment per property.</p>
+<hr>
+<h2>🌍 Supported Countries</h2>
+<table>
+<thead>
+<tr>
+<th>Country</th>
+<th>Domain</th>
+<th>Languages</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>UAE</td>
+<td>propertyfinder.ae</td>
+<td>English, Arabic</td>
+</tr>
+<tr>
+<td>Saudi Arabia</td>
+<td>propertyfinder.sa</td>
+<td>English, Arabic</td>
+</tr>
+<tr>
+<td>Bahrain</td>
+<td>propertyfinder.bh</td>
+<td>English, Arabic</td>
+</tr>
+<tr>
+<td>Egypt</td>
+<td>propertyfinder.eg</td>
+<td>English, Arabic</td>
+</tr>
+<tr>
+<td>Qatar</td>
+<td>propertyfinder.qa</td>
+<td>English, Arabic</td>
+</tr>
+</tbody></table>
+<p>Any search URL from any of these domains works. You can mix countries, languages, and search filters in a single run.</p>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Basic  Listing Data Only</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.propertyfinder.ae/en/search?c=2&amp;fu=0&amp;rp=y&amp;ob=mr&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;fetchPropertyDetails&quot;: false,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;]
+  }
+}
+</code></pre>
+<h3>Full Details + Images</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.propertyfinder.bh/en/search?c=1&amp;fu=0&amp;ob=mr&quot; }
+  ],
+  &quot;maxResults&quot;: 50,
+  &quot;fetchPropertyDetails&quot;: true,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;]
+  }
+}
+</code></pre>
+<h3>Multi-Country</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.propertyfinder.ae/en/search?c=2&amp;fu=0&amp;rp=y&amp;ob=mr&quot; },
+    { &quot;url&quot;: &quot;https://www.propertyfinder.sa/en/search?c=4&amp;fu=0&amp;rp=y&amp;ob=mr&quot; },
+    { &quot;url&quot;: &quot;https://www.propertyfinder.bh/en/search?c=1&amp;fu=0&amp;ob=mr&quot; },
+    { &quot;url&quot;: &quot;https://www.propertyfinder.eg/ar/search?c=3&amp;fu=0&amp;ob=mr&quot; },
+    { &quot;url&quot;: &quot;https://www.propertyfinder.qa/en/search?c=2&amp;fu=0&amp;rp=m&amp;ob=mr&quot; }
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;fetchPropertyDetails&quot;: true
+}
+</code></pre>
+<hr>
+<h2>📋 Input Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td></td>
+<td>Any PropertyFinder search URL(s) from any supported country. Mix countries and languages freely.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td>50</td>
+<td>Max properties per URL. Set to <code>0</code> for unlimited.</td>
+</tr>
+<tr>
+<td><code>fetchPropertyDetails</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Fetch the full detail page for each property. Richer data but slower.</td>
+</tr>
+<tr>
+<td><code>proxyConfiguration</code></td>
+<td>object</td>
+<td>No proxy</td>
+<td>Apify proxy settings. Residential proxies recommended.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output</h2>
+<p>The output shape depends on whether <code>fetchPropertyDetails</code> is enabled.</p>
+<h3>Listing Mode (<code>fetchPropertyDetails: false</code>)</h3>
+<p>Returns the core data available from the search results page:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;974450&quot;,
+  &quot;type&quot;: &quot;Apartment&quot;,
+  &quot;title&quot;: &quot;Pet Friendly | Bright | Sea View | Navy Approved |&quot;,
+  &quot;price&quot;: {
+    &quot;value&quot;: 57000,
+    &quot;currency&quot;: &quot;BHD&quot;,
+    &quot;period&quot;: &quot;sell&quot;,
+    &quot;is_hidden&quot;: false
+  },
+  &quot;location&quot;: {
+    &quot;id&quot;: &quot;26&quot;,
+    &quot;name&quot;: &quot;Al Juffair&quot;,
+    &quot;full_name&quot;: &quot;Al Juffair, Capital Governorate&quot;,
+    &quot;coordinates&quot;: { &quot;lat&quot;: 26.211, &quot;lon&quot;: 50.601 }
+  },
+  &quot;images&quot;: [
+    {
+      &quot;small&quot;: &quot;https://static.shared.propertyfinder.bh/.../416x272.jpg&quot;,
+      &quot;medium&quot;: &quot;https://static.shared.propertyfinder.bh/.../668x452.jpg&quot;
+    }
+  ],
+  &quot;agent&quot;: {
+    &quot;id&quot;: &quot;5384&quot;,
+    &quot;name&quot;: &quot;Aileen Camarillo&quot;,
+    &quot;email&quot;: &quot;aileen@newton-properties.com&quot;,
+    &quot;is_super_agent&quot;: true
+  },
+  &quot;broker&quot;: {
+    &quot;id&quot;: &quot;745&quot;,
+    &quot;name&quot;: &quot;Newton Properties&quot;,
+    &quot;email&quot;: &quot;ehab@newton-properties.com&quot;,
+    &quot;phone&quot;: &quot;+97332009944&quot;
+  },
+  &quot;bedrooms&quot;: &quot;1&quot;,
+  &quot;bathrooms&quot;: &quot;2&quot;,
+  &quot;size&quot;: { &quot;value&quot;: 67, &quot;unit&quot;: &quot;sqm&quot; },
+  &quot;furnished&quot;: &quot;YES&quot;,
+  &quot;amenities&quot;: [&quot;Barbecue Area&quot;, &quot;Central A/C&quot;, &quot;Shared Pool&quot;, &quot;...&quot;],
+  &quot;details_url&quot;: &quot;/en/plp/buy/apartment-for-sale-...-974450.html&quot;,
+  &quot;listed_date&quot;: &quot;2025-11-23T16:14:31Z&quot;,
+  &quot;contact_options&quot;: [
+    { &quot;type&quot;: &quot;email&quot;, &quot;value&quot;: &quot;aileen@newton-properties.com&quot; },
+    { &quot;type&quot;: &quot;phone&quot;, &quot;value&quot;: &quot;+97332007020&quot; },
+    { &quot;type&quot;: &quot;whatsapp&quot;, &quot;value&quot;: &quot;+97316191073&quot; }
+  ],
+  &quot;description&quot;: &quot;Fully Furnished Apartment...&quot;
+}
+</code></pre>
+<h3>Detail Mode (<code>fetchPropertyDetails: true</code>)</h3>
+<p>Returns everything above plus enriched data from the property detail page:</p>
+<p><strong>Additional fields:</strong></p>
+<ul>
+<li><code>listing_id</code>  Internal listing identifier</li>
+<li><code>reference</code>  Agent reference code (e.g., &quot;AC-JFR-285-DEC26&quot;)</li>
+<li><code>price_per_area</code>  Price per sqm/sqft</li>
+<li><code>location_tree</code>  Full location hierarchy (region → area → sub-area)</li>
+<li><code>images</code>  Full set with index and classification labels</li>
+<li><code>community_images</code>, <code>tower_images</code>  Additional image sets</li>
+<li><code>amenities</code>  With code and name (e.g., <code>{&quot;code&quot;: &quot;SP&quot;, &quot;name&quot;: &quot;Shared Pool&quot;}</code>)</li>
+<li><code>property_details</code>, <code>regulatory_details</code>  Structured property specs</li>
+<li><code>is_verified</code>, <code>is_featured</code>, <code>is_premium</code>, <code>is_exclusive</code>, <code>is_direct_from_developer</code>, <code>is_new_construction</code>  Status flags</li>
+<li><code>completion_status</code>, <code>listing_level</code>, <code>offering_type</code></li>
+<li><code>last_refreshed_at</code>  When the listing was last updated</li>
+<li><code>share_url</code>  Full public URL to the property page</li>
+<li><code>payment_method</code>  Accepted payment methods</li>
+<li><code>video_id</code>, <code>view_360</code>, <code>floor_plans</code>  Media assets</li>
+<li><code>rera</code>  Regulatory authority data</li>
+<li><strong>Agent enriched</strong>: <code>total_properties</code>, <code>languages</code>, <code>position</code>, <code>rating_breakdown</code>, <code>avg_whatsapp_response_time</code></li>
+<li><strong>Broker enriched</strong>: <code>logo</code>, <code>address</code>, <code>slug</code>, <code>total_properties</code>, <code>license_number</code>, <code>total_agents</code></li>
+</ul>
+<pre><code>
+
+## 📊 Dataset Views
+
+The scraper includes five pre-configured views in the Apify dataset UI:
+
+| View | Purpose |
+|------|---------|
+| **Overview** | Quick summary  ID, type, title, price, location, beds, baths, size |
+| **Detailed** | Full property data with description, amenities, status flags, dates |
+| **Contacts** | Agent and broker details with all contact options |
+| **Pricing** | Price data for market analysis  price, price/sqm, payment methods |
+| **Locations** | Geographic data with coordinates and location hierarchy |
+
+---
+
+## ⚡ Performance &amp; Reliability
+
+### Speed
+
+- **Listing mode**  ~2–3 seconds per page (25 properties)
+- **Detail mode**  5 concurrent detail fetches per batch
+- **100 properties (listing only)**  ~15–20 seconds
+- **100 properties (with details)**  ~1–2 minutes
+
+### Crash Recovery
+
+The scraper uses Apify&#39;s state persistence to survive crashes, migrations, and timeouts. If a run is interrupted:
+
+- Progress is saved automatically every ~60 seconds
+- On restart or resurrection, scraping resumes from where it stopped
+- Already-completed URLs are skipped
+- Already-scraped pages within a URL are not re-processed
+
+### Error Handling
+
+- Exponential backoff with 3 retries on failed requests
+- Continues to the next page after 3 consecutive errors on a single page
+- Continues to the next URL if a URL fails entirely
+- State is preserved on failure for manual resume
+
+### Resource Usage
+
+- **Memory**: 1024 MB max
+- **Proxy**: Residential proxies recommended for stability.
+
+---
+
+## 📚 URL Parameters Reference
+
+These are the common PropertyFinder search URL parameters:
+
+| Parameter | Values | Description |
+|-----------|--------|-------------|
+| `c` | 1=buy, 2=rent, 3=commercial, 4=both | Property purpose |
+| `fu` | 0=any, 1=yes, 2=no | Furnished filter |
+| `rp` | y=yearly, m=monthly, w=weekly, d=daily | Rental period |
+| `ob` | mr=most recent, pa=price asc, pd=price desc | Sort order |
+| `l` | numeric ID | Location filter |
+
+### Sample URLs
+</code></pre>
+<p>UAE:          <a href="https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr">https://www.propertyfinder.ae/en/search?c=2&amp;fu=0&amp;rp=y&amp;ob=mr</a>
+Saudi Arabia: <a href="https://www.propertyfinder.sa/en/search?c=4&fu=0&rp=y&ob=mr">https://www.propertyfinder.sa/en/search?c=4&amp;fu=0&amp;rp=y&amp;ob=mr</a>
+Bahrain:      <a href="https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr">https://www.propertyfinder.bh/en/search?c=1&amp;fu=0&amp;ob=mr</a>
+Egypt:        <a href="https://www.propertyfinder.eg/ar/search?c=3&fu=0&ob=mr">https://www.propertyfinder.eg/ar/search?c=3&amp;fu=0&amp;ob=mr</a>
+Qatar:        <a href="https://www.propertyfinder.qa/en/search?c=2&fu=0&rp=m&ob=mr">https://www.propertyfinder.qa/en/search?c=2&amp;fu=0&amp;rp=m&amp;ob=mr</a></p>
+<pre><code>
+---
+
+## ⚠️ Important Notes
+
+- Data is extracted as-is from PropertyFinder. Prices and availability should be verified with agents.
+- Built-in delays and rotating browser fingerprints minimize detection risk.
+- PropertyFinder may update their website structure. If the scraper stops working, check for updates.
+- Users must comply with PropertyFinder&#39;s Terms of Service and applicable data protection laws.
+
+**The actor creator is not responsible for how users utilize the extracted data.**
+
+---
+
+## 💬 Support &amp; Contact
+
+- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
+- 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
+- 💬 **GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+
+## 🌟 Related Actors by FlowExtract API
+
+### 🎬 Video &amp; Media Tools
+
+**[YouTube Transcript &amp; Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63)**
+Extract complete video transcripts with timestamps and comprehensive metadata. Perfect for content analysis, SEO, and subtitle generation.
+
+**[YouTube Full Channel, Playlists, Shorts, Live](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)**
+Extract complete playlist information with all video details from any YouTube playlist. Fast, reliable, and built for scale.
+
+**[Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript](https://apify.com/dz_omar/zoom-scraper?fpr=smcx63)**
+Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.
+
+**[Loom Scraper | 🎥 Downloader &amp; 📄 Transcript](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63)**
+Download Loom videos and extract transcripts. Perfect for training content and video documentation.
+
+### 🏠 Real Estate Data
+
+**[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)**
+Advanced Idealista property data extraction with API access. Get listings, prices, and detailed property information.
+
+**[Idealista Scraper](https://apify.com/dz_omar/idealista-scraper?fpr=smcx63)**
+Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.
+
+**[AI Contact Intelligence Extractor](https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63)**
+Extract emails, phones, contacts &amp; custom data using AI. Free regex extraction or paid AI-powered dynamic extraction.
+
+### 🛠️ Developer &amp; Security Tools
+
+**[Screenshot](https://apify.com/dz_omar/screenshot?fpr=smcx63)**
+Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.
+
+**[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)**
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.
+
+**[Network Security Scanner](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)**
+Scan websites for security vulnerabilities and get comprehensive security reports.
+
+### 📱 Social Media Tools
+
+**[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63)**
+Extract Facebook ads data for competitor analysis and market research. Track ad campaigns and strategies.
+
+---
+
+**Ready to extract PropertyFinder data?** [Start using PropertyFinder Scraper now!](https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63)
+</code></pre>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +430,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +438,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'propertyfinder-scraper';
-    </script>
 </body>
 </html>

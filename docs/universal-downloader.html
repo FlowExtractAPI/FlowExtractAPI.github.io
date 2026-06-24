@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Universal Downloader - Download Any File Type | FlowExtract API</title>
+    <meta name="title" content="Universal Downloader - Download Any File Type | FlowExtract API">
+    <meta name="description" content="Download any type of file (videos, executables, images, PDFs, etc.) with proxy support and retry logic. Supports both normal execution and standby mode for webhook integration. Zoom HLS streams are automatically converted to MP4.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/universal-downloader.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Universal Downloader - Download Any File Type | FlowExtract API">
+    <meta property="og:description" content="Download any type of file (videos, executables, images, PDFs, etc.) with proxy support and retry logic. Supports both normal execution and standby mode for webhook integration. Zoom HLS streams are automatically converted to MP4.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/universal-downloader.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/aczQQy6wQRwzaCaw6mYDJ1wTZZRUZXhiTVfNGyKHfSE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdmNTR3NaRkdWcEpKdkFuMG4takZCelRkVVc2SC1JY19uZV9kZV90X2xfY2hhcmdlbWVudF9udWFnZV9hdmVjX2ZpY2hpZXJzLTEucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Universal Downloader - Download Any File Type | FlowExtract API">
+    <meta name="twitter:description" content="Download any type of file (videos, executables, images, PDFs, etc.) with proxy support and retry logic. Supports both normal execution and standby mode for webhook integration. Zoom HLS streams are automatically converted to MP4.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/aczQQy6wQRwzaCaw6mYDJ1wTZZRUZXhiTVfNGyKHfSE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdmNTR3NaRkdWcEpKdkFuMG4takZCelRkVVc2SC1JY19uZV9kZV90X2xfY2hhcmdlbWVudF9udWFnZV9hdmVjX2ZpY2hpZXJzLTEucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Universal File Downloader","description":"Download any type of file (videos, executables, images, PDFs, etc.) with proxy support and retry logic. Supports both normal execution and standby mode for webhook integration. Zoom HLS streams are automatically converted to MP4.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/universal-downloader.html","sameAs":"https://apify.com/dz_omar/universal-downloader?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/aczQQy6wQRwzaCaw6mYDJ1wTZZRUZXhiTVfNGyKHfSE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdmNTR3NaRkdWcEpKdkFuMG4takZCelRkVVc2SC1JY19uZV9kZV90X2xfY2hhcmdlbWVudF9udWFnZV9hdmVjX2ZpY2hpZXJzLTEucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Universal File Downloader?","acceptedAnswer":{"@type":"Answer","text":"Open Universal File Downloader on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Universal File Downloader free?","acceptedAnswer":{"@type":"Answer","text":"Universal File Downloader runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why Use It?","acceptedAnswer":{"@type":"Answer","text":"Problem: Downloading multiple files with the same name causes overwrites"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,338 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/aczQQy6wQRwzaCaw6mYDJ1wTZZRUZXhiTVfNGyKHfSE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItdmNTR3NaRkdWcEpKdkFuMG4takZCelRkVVc2SC1JY19uZV9kZV90X2xfY2hhcmdlbWVudF9udWFnZV9hdmVjX2ZpY2hpZXJzLTEucG5n.png" alt="Universal File Downloader" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Media &amp; Downloads</span>
+                <h1 class="actor-hero-title">Universal File Downloader</h1>
+                <p class="actor-hero-desc">Download any type of file (videos, executables, images, PDFs, etc.) with proxy support and retry logic. Supports both normal execution and standby mode for webhook integration. Zoom HLS streams are automatically converted to MP4.</p>
+                <a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Universal File Downloader is a ready-to-run Apify actor from FlowExtract API for media &amp; downloads. A powerful and reliable Apify Actor that downloads any type of file from the web with advanced proxy support, automatic retry mechanisms, and cloud storage integration. Perfect for downloading videos, documents, images, executables, and any other file format with enterprise-grade reliability. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>hqdefault-a3f5c2.jpg ← from first URL</li><li>hqdefault-7b92d1.jpg ← from second URL</li><li>hqdefault-e4c8f9.jpg ← from third URL</li><li>url (required): The URL to download</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Universal File Downloader?</summary><p>Open Universal File Downloader on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Universal File Downloader free?</summary><p>Universal File Downloader runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why Use It?</summary><p>Problem: Downloading multiple files with the same name causes overwrites</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>📥 Universal Downloader</h1>
+<p>A powerful and reliable Apify Actor that downloads any type of file from the web with advanced proxy support, automatic retry mechanisms, and cloud storage integration. Perfect for downloading videos, documents, images, executables, and any other file format with enterprise-grade reliability.</p>
+<h2>⭐ Key Features</h2>
+<p><strong>Universal File Support</strong>: Download any file type including videos, PDFs, executables, images, documents, archives, and more with automatic MIME type detection.</p>
+<p><strong>Unique Filename Generation</strong>: Smart hash-based naming prevents file overwrites when downloading multiple files with identical names (e.g., <code>hqdefault.jpg</code> from different YouTube videos becomes <code>hqdefault-a3f5c2.jpg</code>).</p>
+<p><strong>HLS Stream Conversion</strong>: Automatically detects and converts Zoom HLS streams (.m3u8) to MP4 format using FFmpeg with header preservation.</p>
+<p><strong>Advanced Proxy Integration</strong>: Full Apify proxy support with residential and datacenter options, country targeting, and session management for bypassing geo-restrictions and rate limits.</p>
+<p><strong>Memory Efficient Streaming</strong>: Uses streaming technology to handle large files without memory constraints, making it suitable for downloading files of any size.</p>
+<p><strong>Dual Execution Modes</strong>: Run as a standard Actor or deploy in standby mode as an HTTP API server for webhook integration and instant response times.</p>
+<p><strong>Smart Retry Logic</strong>: Intelligent retry mechanisms with multiple fallback strategies ensure maximum download success rates even with unreliable sources.</p>
+<p><strong>Real-time Monitoring</strong>: Live progress tracking, comprehensive statistics, and detailed error reporting for complete visibility into download operations.</p>
+<h2>⚙️ How It Works</h2>
+<p>The Actor processes your input URLs and downloads each file using optimized strategies. It first attempts downloads through your configured proxy settings (if enabled), then falls back to direct connections if needed. Each file is streamed directly to Apify&#39;s Key-Value Store, providing you with secure, publicly accessible URLs for immediate use.</p>
+<p>Files are processed sequentially to ensure optimal performance and memory usage. The Actor continues processing even if individual downloads fail, providing detailed results for each URL including success status, file information, and download statistics.</p>
+<h2>🔧 Input Configuration</h2>
+<h3>Basic Setup</h3>
+<pre><code class="language-json">{
+  &quot;URLItem&quot;: [
+    {
+      &quot;url&quot;: &quot;https://example.com/document.pdf&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;headers&quot;: {},
+      &quot;fileName&quot;: &quot;my-document.pdf&quot;
+    }
+  ],
+  &quot;uniqueFileNames&quot;: true,
+  &quot;proxyConfig&quot;: {
+    &quot;useApifyProxy&quot;: false
+  }
+}
+</code></pre>
+<h3>Multiple Files with Same Name (Unique Naming)</h3>
+<pre><code class="language-json">{
+  &quot;URLItem&quot;: [
+    {
+      &quot;url&quot;: &quot;https://i.ytimg.com/vi/qDnkaAzi5gE/hqdefault.jpg&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://i.ytimg.com/vi/8mQPABefJ5k/hqdefault.jpg&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://i.ytimg.com/vi/gHp7JHJYPn4/hqdefault.jpg&quot;
+    }
+  ],
+  &quot;uniqueFileNames&quot;: true,
+  &quot;proxyConfig&quot;: {
+    &quot;useApifyProxy&quot;: false
+  }
+}
+</code></pre>
+<p><strong>Output:</strong></p>
+<ul>
+<li><code>hqdefault-a3f5c2.jpg</code> ← from first URL</li>
+<li><code>hqdefault-7b92d1.jpg</code> ← from second URL</li>
+<li><code>hqdefault-e4c8f9.jpg</code> ← from third URL</li>
+</ul>
+<h3>HLS Stream Conversion (Zoom Clips)</h3>
+<pre><code class="language-json">{
+  &quot;URLItem&quot;: [
+    {
+      &quot;url&quot;: &quot;https://file-paa.zoom.us/file/.../hls/Clip.m3u8&quot;,
+      &quot;headers&quot;: {
+        &quot;Origin&quot;: &quot;https://zoom.us&quot;
+      }
+    }
+  ],
+  &quot;uniqueFileNames&quot;: true,
+  &quot;proxyConfig&quot;: {
+    &quot;useApifyProxy&quot;: false
+  }
+}
+</code></pre>
+<h3>Advanced Configuration with Proxy</h3>
+<pre><code class="language-json">{
+  &quot;URLItem&quot;: [
+    {
+      &quot;url&quot;: &quot;https://restricted-site.com/video.mp4&quot;,
+      &quot;method&quot;: &quot;GET&quot;,
+      &quot;headers&quot;: {
+        &quot;User-Agent&quot;: &quot;Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36&quot;,
+        &quot;Authorization&quot;: &quot;Bearer your-token&quot;
+      },
+      &quot;fileName&quot;: &quot;restricted-video.mp4&quot;
+    }
+  ],
+  &quot;uniqueFileNames&quot;: true,
+  &quot;proxyConfig&quot;: {
+    &quot;useApifyProxy&quot;: true,
+    &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;],
+    &quot;apifyProxyCountry&quot;: &quot;US&quot;,
+    &quot;apifyProxySession&quot;: &quot;session123&quot;
+  }
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<p><strong>URLItem</strong> (required): Array of file download specifications</p>
+<ul>
+<li><strong>url</strong> (required): The URL to download</li>
+<li><strong>method</strong> (optional): HTTP method, defaults to GET</li>
+<li><strong>headers</strong> (optional): Custom HTTP headers for authentication or user agent spoofing</li>
+<li><strong>fileName</strong> (optional): Custom filename for the saved file</li>
+</ul>
+<p><strong>uniqueFileNames</strong> (optional, default: <code>true</code>): Prevent filename conflicts by adding URL-based hash</p>
+<ul>
+<li>When <code>true</code>: Files get unique names like <code>hqdefault-a3f5c2.jpg</code></li>
+<li>When <code>false</code>: Files with same name will overwrite each other (legacy behavior)</li>
+<li>Hash is a 6-character MD5 digest derived from the full URL</li>
+<li>Same URL always generates the same hash (deterministic)</li>
+</ul>
+<p><strong>proxyConfig</strong> (optional): Proxy configuration settings</p>
+<ul>
+<li><strong>useApifyProxy</strong>: Enable Apify proxy service</li>
+<li><strong>apifyProxyGroups</strong>: Choose between RESIDENTIAL or DATACENTER proxies</li>
+<li><strong>apifyProxyCountry</strong>: Target specific countries using ISO codes (US, UK, DE, etc.)</li>
+<li><strong>apifyProxySession</strong>: Maintain consistent IP addresses across requests</li>
+</ul>
+<h2>📤 Output Format</h2>
+<p>The Actor provides detailed results for each download attempt:</p>
+<p><strong>Successful Downloads</strong>: Includes file information, download statistics, secure storage URLs, and performance metrics.</p>
+<p><strong>Failed Downloads</strong>: Contains error details, retry information, and debugging data to help identify and resolve issues.</p>
+<p><strong>Summary Statistics</strong>: Overall success rates, total processing time, and batch performance metrics.</p>
+<p>Each result includes the original URL, final status, file size, download speed, duration, content type, and a secure download URL for accessing the file.</p>
+<h2>🎯 Use Cases</h2>
+<p><strong>Bulk Image Downloads</strong>: Download multiple images with the same filename (thumbnails, avatars, screenshots) without overwrites.</p>
+<p><strong>Content Archiving</strong>: Download and preserve web content, documents, and media files for long-term storage and offline access.</p>
+<p><strong>Zoom Recording Collection</strong>: Automatically convert Zoom HLS clips to downloadable MP4 files.</p>
+<p><strong>Media Collection</strong>: Bulk download videos, images, and audio files from various sources with proxy support for geo-restricted content.</p>
+<p><strong>Document Processing</strong>: Download PDFs, spreadsheets, and other documents for automated processing workflows.</p>
+<p><strong>Software Distribution</strong>: Download executables, installers, and software packages for deployment or analysis.</p>
+<p><strong>API Integration</strong>: Use standby mode to create download APIs for your applications with webhook support.</p>
+<p><strong>Backup Operations</strong>: Create automated backups of web-hosted files and resources.</p>
+<h2>🚀 Standby Mode (HTTP API)</h2>
+<p>Deploy the Actor in standby mode to create a persistent HTTP API server:</p>
+<p><strong>Instant Response</strong>: No cold start delays - the server stays warm and ready to process requests immediately.</p>
+<p><strong>Webhook Integration</strong>: Perfect for integrating with external systems, automation workflows, and third-party applications.</p>
+<p><strong>API Endpoints</strong>: RESTful endpoints for health checking, download processing, and status monitoring.</p>
+<p><strong>Scalable Architecture</strong>: Handle multiple concurrent requests with efficient resource management.</p>
+<h2>🌐 Using Standby Mode</h2>
+<p>The Actor can be deployed in standby mode to create a persistent HTTP API server that stays active and ready to process requests instantly.</p>
+<h3>Available API Endpoints</h3>
+<p><strong>Health Check</strong></p>
+<ul>
+<li><code>GET /health</code> - Returns server status and uptime information</li>
+<li><code>GET /api/status</code> - Detailed server configuration and statistics</li>
+</ul>
+<p><strong>File Download</strong></p>
+<ul>
+<li><code>POST /api/download</code> - Process download requests with JSON payload</li>
+</ul>
+<p><strong>Landing Page</strong></p>
+<ul>
+<li><code>GET /</code> - Serves a static HTML page with general information about the API</li>
+</ul>
+<h3>API Request Format</h3>
+<p>Send POST requests to <code>/api/download</code> with the same JSON structure as normal Actor input:</p>
+<pre><code class="language-bash">curl -X POST &quot;https://your-actor-id.apify.actor/api/download&quot; \
+  -H &quot;Authorization: Bearer YOUR_TOKEN&quot; \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;URLItem&quot;: [
+      {
+        &quot;url&quot;: &quot;https://i.ytimg.com/vi/qDnkaAzi5gE/hqdefault.jpg&quot;
+      },
+      {
+        &quot;url&quot;: &quot;https://i.ytimg.com/vi/8mQPABefJ5k/hqdefault.jpg&quot;
+      }
+    ],
+    &quot;uniqueFileNames&quot;: true,
+    &quot;proxyConfig&quot;: {
+      &quot;useApifyProxy&quot;: false
+    }
+  }&#39;
+</code></pre>
+<p><strong>Important</strong>: Always use the <code>/api/download</code> endpoint for file download requests. Sending POST requests to the root path <code>/</code> will result in a &quot;Cannot POST /&quot; error.</p>
+<h3>Authentication</h3>
+<p>All API endpoints require authentication using your Apify API token, which can be provided as:</p>
+<ul>
+<li>URL parameter: <code>?token=YOUR_TOKEN</code></li>
+<li>Authorization header: <code>Authorization: Bearer YOUR_TOKEN</code></li>
+</ul>
+<h3>Response Format</h3>
+<p>The API returns the same detailed JSON response as normal Actor execution, including download status, file information, and secure storage URLs.</p>
+<h3>Integration Benefits</h3>
+<p><strong>Webhook Integration</strong>: Perfect for processing download requests from external systems and automation workflows.</p>
+<p><strong>Real-time Processing</strong>: No cold start delays - requests are processed immediately as the server stays warm.</p>
+<p><strong>Scalable API</strong>: Handle multiple requests efficiently with proper resource management and error isolation.</p>
+<h2>🌐 Proxy Benefits</h2>
+<p><strong>Bypass Restrictions</strong>: Access geo-blocked content and overcome IP-based limitations using residential proxies.</p>
+<p><strong>Avoid Rate Limits</strong>: Distribute requests across multiple IP addresses to prevent rate limiting and blocking.</p>
+<p><strong>Enhanced Privacy</strong>: Mask your real IP address and location when downloading sensitive or restricted content.</p>
+<p><strong>Improved Reliability</strong>: Automatic proxy rotation and fallback mechanisms ensure consistent download success.</p>
+<h2>🔐 Unique Filename Feature</h2>
+<h3>How It Works</h3>
+<p>The unique filename feature prevents file overwrites by appending a short hash to each filename:</p>
+<ol>
+<li><strong>Hash Generation</strong>: Creates a 6-character MD5 hash from the full URL</li>
+<li><strong>Deterministic</strong>: Same URL always produces the same hash</li>
+<li><strong>Format</strong>: <code>{originalName}-{hash}.{extension}</code></li>
+<li><strong>Example</strong>: <code>hqdefault.jpg</code> → <code>hqdefault-a3f5c2.jpg</code></li>
+</ol>
+<h3>Why Use It?</h3>
+<p><strong>Problem</strong>: Downloading multiple files with the same name causes overwrites</p>
+<pre><code>❌ hqdefault.jpg (from URL 1)
+❌ hqdefault.jpg (from URL 2) ← overwrites the first one
+❌ hqdefault.jpg (from URL 3) ← overwrites again
+</code></pre>
+<p><strong>Solution</strong>: Each file gets a unique identifier</p>
+<pre><code>✅ hqdefault-a3f5c2.jpg (from URL 1)
+✅ hqdefault-7b92d1.jpg (from URL 2)
+✅ hqdefault-e4c8f9.jpg (from URL 3)
+</code></pre>
+<h3>When to Disable</h3>
+<p>Set <code>uniqueFileNames: false</code> if:</p>
+<ul>
+<li>You&#39;re downloading a single file</li>
+<li>You want to overwrite existing files intentionally</li>
+<li>You&#39;re using custom <code>fileName</code> for each URL</li>
+<li>You need the exact original filename</li>
+</ul>
+<h2>🎬 HLS Stream Conversion</h2>
+<p>Automatically detects and converts Zoom HLS streams to MP4:</p>
+<p><strong>Detection</strong>: Checks for <code>.m3u8</code> URLs with <code>Origin: https://zoom.us</code> header
+<strong>Conversion</strong>: Uses FFmpeg with header preservation
+<strong>Fallback</strong>: Falls back to normal download if conversion fails
+<strong>Unique Names</strong>: Also supports unique filename generation for converted videos</p>
+<h2>⚡ Performance Optimization</h2>
+<p><strong>Memory Efficient</strong>: Streaming architecture handles files of any size without memory constraints or buffer limitations.</p>
+<p><strong>Sequential Processing</strong>: Downloads are processed one at a time to optimize performance and prevent resource conflicts.</p>
+<p><strong>Smart Retry Logic</strong>: Multiple fallback strategies with exponential backoff maximize success rates for unreliable sources.</p>
+<p><strong>Automatic Cleanup</strong>: Proper resource management ensures optimal performance across long-running operations.</p>
+<h2>🔒 Security Features</h2>
+<p><strong>Input Validation</strong>: Comprehensive validation of URLs and parameters to prevent malicious inputs.</p>
+<p><strong>Secure Storage</strong>: All downloaded files are stored securely in Apify&#39;s Key-Value Store with signed URLs.</p>
+<p><strong>Error Isolation</strong>: Individual download failures don&#39;t affect other operations in the batch.</p>
+<p><strong>Safe Filename Handling</strong>: Automatic sanitization prevents directory traversal and filename injection attacks.</p>
+<p><strong>Collision Prevention</strong>: URL-based hashing ensures no accidental filename conflicts.</p>
+<h2>📁 File Type Support</h2>
+<p>The Actor supports downloading any file type with automatic detection and appropriate handling:</p>
+<p><strong>Documents</strong>: PDF, Word, Excel, PowerPoint, text files, and more
+<strong>Media Files</strong>: Videos, images, audio files in all common formats
+<strong>Archives</strong>: ZIP, RAR, 7Z, TAR, and compressed file formats
+<strong>Executables</strong>: Software installers, applications, and binary files
+<strong>Web Assets</strong>: HTML, CSS, JavaScript, JSON, and web resources
+<strong>Specialized Formats</strong>: Any file type with proper MIME type detection</p>
+<h2>🚀 Getting Started</h2>
+<ol>
+<li><strong>Configure Input</strong>: Set up your URLs and any required headers or authentication</li>
+<li><strong>Enable Unique Names</strong>: Keep <code>uniqueFileNames: true</code> to prevent overwrites (recommended)</li>
+<li><strong>Choose Proxy Settings</strong>: Enable proxy support if needed for geo-restrictions or rate limiting</li>
+<li><strong>Run the Actor</strong>: Execute normally or deploy in standby mode for API access</li>
+<li><strong>Access Results</strong>: Download files from the provided secure URLs in the Key-Value Store</li>
+</ol>
+<h2>💡 Best Practices</h2>
+<p><strong>Use Unique Filenames</strong>: Keep <code>uniqueFileNames: true</code> when downloading multiple files (default behavior).</p>
+<p><strong>Batch Processing</strong>: Group multiple URLs in a single run for better efficiency and cost optimization.</p>
+<p><strong>Header Configuration</strong>: Include appropriate User-Agent and authentication headers for better compatibility.</p>
+<p><strong>Proxy Selection</strong>: Choose residential proxies for geo-restricted content, datacenter proxies for general use.</p>
+<p><strong>Error Handling</strong>: Review failed downloads and adjust configurations based on error messages.</p>
+<p><strong>Resource Monitoring</strong>: Monitor your Key-Value Store usage and clean up old files when no longer needed.</p>
+<h2>🔧 Common Issues and Solutions</h2>
+<p><strong>Files Overwriting Each Other</strong>: Ensure <code>uniqueFileNames: true</code> is set in your input (it&#39;s the default).</p>
+<p><strong>Authentication Errors</strong>: Ensure proper headers and tokens are included for protected resources.</p>
+<p><strong>Geo-blocking</strong>: Enable proxy support with appropriate country targeting to bypass restrictions.</p>
+<p><strong>Large Files</strong>: The streaming architecture handles large files efficiently, but monitor timeout settings.</p>
+<p><strong>Rate Limiting</strong>: Use proxy rotation or reduce concurrent requests to avoid being blocked.</p>
+<p><strong>Format Issues</strong>: The Actor handles any file type, but verify URLs return actual file content.</p>
+<h2>📗 Integration Examples</h2>
+<p><strong>Workflow Automation</strong>: Integrate with Apify workflows for automated content processing pipelines.</p>
+<p><strong>External APIs</strong>: Use standby mode to create download endpoints for your applications.</p>
+<p><strong>Scheduled Downloads</strong>: Set up scheduled runs to periodically download updated content.</p>
+<p><strong>Webhook Processing</strong>: Process download requests from external systems using the HTTP API.</p>
+<h2>📚 Support and Documentation</h2>
+<p>For detailed API documentation, troubleshooting guides, and integration examples, refer to the comprehensive documentation provided with the Actor.</p>
+<p>Currently, the root endpoint (<code>GET /</code>) displays a static HTML overview. Interactive testing tools may be integrated in a future update.</p>
+<hr>
+<h3><strong>This Actor is designed for reliability, efficiency, and ease of use, making it the perfect solution for any file downloading needs on the Apify platform.</strong></h3>
+<h2>🤝 Support &amp; Resources</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<p>This Actor is provided <strong>as-is</strong> for lawful and ethical file downloading purposes. Users are solely responsible for ensuring their activities comply with all applicable laws, copyright regulations, and the terms of service of any target websites.</p>
+<p>Downloading content without proper authorization may violate intellectual property rights or service agreements. Always respect <code>robots.txt</code> directives, content licenses, and website usage policies.</p>
+<p>By using this Actor, you agree to act responsibly, ethically, and in good faith only downloading content you have the right to access.</p>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +393,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +401,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'universal-downloader';
-    </script>
 </body>
 </html>

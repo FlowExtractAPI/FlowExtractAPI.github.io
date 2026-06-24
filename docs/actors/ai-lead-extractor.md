@@ -873,7 +873,7 @@ The actor automatically handles common errors:
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media
@@ -890,7 +890,7 @@ The actor automatically handles common errors:
 
 ---
 
-## 🌟 Related Actors by DZ_OMAR
+## 🌟 Related Actors by FlowExtract API
 
 ### 🎬 Video & Media
 - **[YouTube Transcript Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)** - Extract transcripts with timestamps

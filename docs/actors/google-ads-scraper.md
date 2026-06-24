@@ -443,7 +443,7 @@ console.log(items);
 
 ---
 
-## 🌟 Related Actors by [DZ_OMAR](https://apify.com/dz_omar)
+## 🌟 Related Actors by [FlowExtractAPI](https://apify.com/dz_omar)
 
 ### 📱 Social Media Intelligence
 **[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro)**
@@ -481,7 +481,7 @@ Comprehensive website security vulnerability scanning.
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media
@@ -496,5 +496,9 @@ Open an issue or contact us directly. We're committed to continuous improvement 
 
 ### Rate This Actor
 If you find this actor valuable, please leave a review! Your feedback helps us improve and helps others discover quality tools.
+
+---
+
+**Built with ❤️ by [FlowExtractAPI](https://apify.com/dz_omar) | Powered by [Apify Platform](https://apify.com)**
 
 ---

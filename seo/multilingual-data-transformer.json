@@ -1,0 +1,25 @@
+{
+  "slug": "multilingual-data-transformer",
+  "_drafted": true,
+  "intro": "Multilingual Data Transformer is a ready-to-run Apify actor from FlowExtract API for developer tools & utilities. Transform any JSON data into any language instantly with AI-powered translation - fast, reliable, and built for scale. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "full JSON Support - Translate any JSON structure while preserving data organization",
+    "recursive Translation - Automatically handles nested objects and arrays",
+    "text-Only Processing - Intelligently extracts and translates only text values",
+    "multiple Languages - Support for 20+ languages with automatic provider fallback"
+  ],
+  "faq": [
+    {
+      "q": "How do I run Multilingual Data Transformer?",
+      "a": "Open Multilingual Data Transformer on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Multilingual Data Transformer free?",
+      "a": "Multilingual Data Transformer runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why Choose This Translator?",
+      "a": "✅ Accurate Translation - Professional-grade quality with provider redundancy"
+    }
+  ]
+}

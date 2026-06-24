@@ -1,0 +1,21 @@
+{
+  "slug": "idealista-scraper-api",
+  "_drafted": true,
+  "intro": "Idealista API Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Supports every Idealista search URL type single property, listing/search, multi-area, hand-drawn map regions, and map-pin point searches. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "a short guide on how to use [ Idealista API Scraper](https://apify.com/dzomar/idealista-scraper-api?fpr=smcx63) Actors :",
+    "🗺️ Draw an area on the map paste a hand-drawn map-region URL and get every property inside that exact shape.",
+    "📍 Drop a pin on a location paste a map-pin (/point/...) URL and get the properties around that spot, with your filters applied.",
+    "🧩 Select multiple zones paste a multi-area URL and get every property across all the zones you picked, in one run."
+  ],
+  "faq": [
+    {
+      "q": "How do I run Idealista API Scraper?",
+      "a": "Open Idealista API Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Idealista API Scraper free?",
+      "a": "Idealista API Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

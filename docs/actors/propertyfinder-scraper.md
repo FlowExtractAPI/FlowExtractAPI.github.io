@@ -2,46 +2,27 @@
 
 **Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.**
 
-This powerful Apify actor extracts comprehensive property data from PropertyFinder platforms, delivering structured information about real estate listings including prices, locations, agent contacts, amenities, and detailed property specifications.
+Scrapes comprehensive property data from any PropertyFinder search URL  prices, locations, agent contacts, amenities, images, and detailed property specifications. Supports both English and Arabic pages, multiple countries in the same run, and optional full-detail enrichment per property.
 
 ---
 
-## 🌟 Key Features
+## 🌍 Supported Countries
 
-### 🌍 Multi-Country Support
-- **UAE** - propertyfinder.ae
-- **Saudi Arabia** - propertyfinder.sa
-- **Bahrain** - propertyfinder.bh
-- **Egypt** - propertyfinder.eg
-- **Qatar** - propertyfinder.qa
+| Country | Domain | Languages |
+|---------|--------|-----------|
+| UAE | propertyfinder.ae | English, Arabic |
+| Saudi Arabia | propertyfinder.sa | English, Arabic |
+| Bahrain | propertyfinder.bh | English, Arabic |
+| Egypt | propertyfinder.eg | English, Arabic |
+| Qatar | propertyfinder.qa | English, Arabic |
 
-### 📊 Comprehensive Data Extraction
-- **Property Details** - Type, title, bedrooms, bathrooms, size, furnished status
-- **Pricing Information** - Value, currency, period (yearly/monthly/sale)
-- **Location Data** - Full location hierarchy with GPS coordinates
-- **Contact Information** - Agent and broker details with email, phone, and WhatsApp
-- **Visual Assets** - Property images in multiple sizes
-- **Amenities** - Complete list of property features
-- **Descriptions** - Full property descriptions in local languages
-
-### ⚡ Performance & Reliability
-- **Smart Pagination** - Automatically handles multi-page results
-- **Rate Limiting** - Random delays between requests (1-1.5s)
-- **Retry Logic** - Exponential backoff with 3 retry attempts
-- **Error Recovery** - Continues scraping even if individual pages fail
-- **Batch Processing** - Efficient data storage in 50-property batches
-- **Domain Detection** - Automatic domain extraction for accurate URLs
-
-### 🎯 Flexible Configuration
-- **Multiple URLs** - Process multiple search URLs in one run
-- **Result Limits** - Control maximum results per URL (or scrape all)
-- **Proxy Support** - Optional Apify Proxy configuration for stability
+Any search URL from any of these domains works. You can mix countries, languages, and search filters in a single run.
 
 ---
 
 ## 🚀 Quick Start
 
-### Basic Usage
+### Basic  Listing Data Only
 
 ```json
 {
@@ -49,400 +30,222 @@ This powerful Apify actor extracts comprehensive property data from PropertyFind
     { "url": "https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr" }
   ],
   "maxResults": 50,
+  "fetchPropertyDetails": false,
   "proxyConfiguration": {
-    "useApifyProxy": true
+    "useApifyProxy": true,
+    "apifyProxyGroups": ["RESIDENTIAL"]
   }
 }
 ```
 
-### Multi-Country Scraping
+### Full Details + Images
+
+```json
+{
+  "startUrls": [
+    { "url": "https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr" }
+  ],
+  "maxResults": 50,
+  "fetchPropertyDetails": true,
+  "proxyConfiguration": {
+    "useApifyProxy": true,
+    "apifyProxyGroups": ["RESIDENTIAL"]
+  }
+}
+```
+
+### Multi-Country
 
 ```json
 {
   "startUrls": [
     { "url": "https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr" },
     { "url": "https://www.propertyfinder.sa/en/search?c=4&fu=0&rp=y&ob=mr" },
-    { "url": "https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr" }
+    { "url": "https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr" },
+    { "url": "https://www.propertyfinder.eg/ar/search?c=3&fu=0&ob=mr" },
+    { "url": "https://www.propertyfinder.qa/en/search?c=2&fu=0&rp=m&ob=mr" }
   ],
-  "maxResults": 100
+  "maxResults": 100,
+  "fetchPropertyDetails": true
 }
 ```
 
 ---
 
-## 📋 Input Configuration
+## 📋 Input Parameters
 
-### Input Parameters
-
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `startUrls` | array | ✅ Yes | - | PropertyFinder search URLs to scrape |
-| `maxResults` | integer | ❌ No | 10 | 10 properties per URL |
-| `proxyConfiguration` | object | ❌ No |  RESIDENTIAL | Apify proxy settings for stable scraping |
-
-### Input Schema Details
-
-#### startUrls
-Array of URL objects with PropertyFinder search URLs. Each URL should be a valid PropertyFinder search page.
-
-**Example URLs:**
-```json
-{
-  "startUrls": [
-    { "url": "https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr" },
-    { "url": "https://www.propertyfinder.sa/en/search?c=4&fu=0&rp=y&ob=mr" }
-  ]
-}
-```
-
-#### maxResults
-Integer value controlling how many properties to scrape per URL:
-- `10`: Scrape only 10 properties per URL
-- `100`: Scrape 100 properties per URL
-
-#### proxyConfiguration
-Optional proxy settings for improved reliability:
-
-```json
-{
-  "proxyConfiguration": {
-    "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"]
-  }
-}
-```
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `startUrls` | array |  | Any PropertyFinder search URL(s) from any supported country. Mix countries and languages freely. |
+| `maxResults` | integer | 50 | Max properties per URL. Set to `0` for unlimited. |
+| `fetchPropertyDetails` | boolean | `true` | Fetch the full detail page for each property. Richer data but slower. |
+| `proxyConfiguration` | object | No proxy | Apify proxy settings. Residential proxies recommended. |
 
 ---
 
-## 📤 Output Structure
+## 📤 Output
 
-### Property Data Format
+The output shape depends on whether `fetchPropertyDetails` is enabled.
+
+### Listing Mode (`fetchPropertyDetails: false`)
+
+Returns the core data available from the search results page:
 
 ```json
 {
-  "id": "15740250",
+  "id": "974450",
   "type": "Apartment",
-  "title": "RAK WATERFRONT | FULLY FURNISHED| NEWLY RENOVATED",
+  "title": "Pet Friendly | Bright | Sea View | Navy Approved |",
   "price": {
-    "value": 40000,
-    "currency": "AED",
-    "period": "yearly",
+    "value": 57000,
+    "currency": "BHD",
+    "period": "sell",
     "is_hidden": false
   },
   "location": {
-    "id": "4781",
-    "name": "Marina Apartments A",
-    "full_name": "Marina Apartments A, Al Hamra Marina Residences, Al Hamra Village, Ras Al Khaimah",
-    "coordinates": {
-      "lat": 25.69594383239746,
-      "lon": 55.78130340576172
-    }
+    "id": "26",
+    "name": "Al Juffair",
+    "full_name": "Al Juffair, Capital Governorate",
+    "coordinates": { "lat": 26.211, "lon": 50.601 }
   },
   "images": [
     {
-      "small": "https://www.propertyfinder.ae/property/.../small.jpg",
-      "medium": "https://www.propertyfinder.ae/property/.../medium.jpg"
+      "small": "https://static.shared.propertyfinder.bh/.../416x272.jpg",
+      "medium": "https://static.shared.propertyfinder.bh/.../668x452.jpg"
     }
   ],
   "agent": {
-    "id": "161964",
-    "name": "Daniela Giannone",
-    "email": "daniela.probima@gmail.com",
+    "id": "5384",
+    "name": "Aileen Camarillo",
+    "email": "aileen@newton-properties.com",
     "is_super_agent": true
   },
   "broker": {
-    "id": "2964",
-    "name": "Probima Centre FZ-LLC",
-    "email": "paula.probima@gmail.com",
-    "phone": "+971566918386"
+    "id": "745",
+    "name": "Newton Properties",
+    "email": "ehab@newton-properties.com",
+    "phone": "+97332009944"
   },
-  "bedrooms": "studio",
-  "bathrooms": "1",
-  "size": {
-    "value": 550,
-    "unit": "sqft"
-  },
+  "bedrooms": "1",
+  "bathrooms": "2",
+  "size": { "value": 67, "unit": "sqm" },
   "furnished": "YES",
-  "amenities": [
-    "Central A/C",
-    "Balcony",
-    "Shared Pool",
-    "Security",
-    "Covered Parking"
-  ],
-  "details_url": "https://www.propertyfinder.ae/en/plp/rent/apartment-for-rent-...",
-  "listed_date": "2025-11-29T15:28:14Z",
+  "amenities": ["Barbecue Area", "Central A/C", "Shared Pool", "..."],
+  "details_url": "/en/plp/buy/apartment-for-sale-...-974450.html",
+  "listed_date": "2025-11-23T16:14:31Z",
   "contact_options": [
-    {
-      "type": "email",
-      "value": "daniela.probima@gmail.com",
-      "link": "mailto:daniela.probima@gmail.com",
-      "is_did": false
-    },
-    {
-      "type": "phone",
-      "value": "+971569374836",
-      "link": "tel:+971569374836",
-      "is_did": false
-    },
-    {
-      "type": "whatsapp",
-      "value": "+97145560345",
-      "link": "https://api.whatsapp.com/send?phone=...",
-      "is_did": false
-    }
+    { "type": "email", "value": "aileen@newton-properties.com" },
+    { "type": "phone", "value": "+97332007020" },
+    { "type": "whatsapp", "value": "+97316191073" }
   ],
-  "description": "Stunning brand new apartment overlooking the Yacht Club...",
-  "domain": "www.propertyfinder.ae"
+  "description": "Fully Furnished Apartment..."
 }
 ```
 
-### Output Fields Explained
+### Detail Mode (`fetchPropertyDetails: true`)
 
-#### Property Information
-- `id` - Unique property identifier
-- `type` - Property type (Apartment, Villa, Office Space, Penthouse, etc.)
-- `title` - Property listing title
-- `bedrooms` - Number of bedrooms or "studio"
-- `bathrooms` - Number of bathrooms
-- `size` - Property size with value and unit (sqft or sqm)
-- `furnished` - Furnishing status: YES, NO, or PARTLY
-- `description` - Full property description
-- `listed_date` - ISO 8601 timestamp of listing
+Returns everything above plus enriched data from the property detail page:
 
-#### Pricing
-- `price.value` - Price amount
-- `price.currency` - Currency code (AED, SAR, BHD, EGP, QAR)
-- `price.period` - Price period (yearly, monthly, or sell)
-- `price.is_hidden` - Whether price is publicly displayed
+**Additional fields:**
+- `listing_id`  Internal listing identifier
+- `reference`  Agent reference code (e.g., "AC-JFR-285-DEC26")
+- `price_per_area`  Price per sqm/sqft
+- `location_tree`  Full location hierarchy (region → area → sub-area)
+- `images`  Full set with index and classification labels
+- `community_images`, `tower_images`  Additional image sets
+- `amenities`  With code and name (e.g., `{"code": "SP", "name": "Shared Pool"}`)
+- `property_details`, `regulatory_details`  Structured property specs
+- `is_verified`, `is_featured`, `is_premium`, `is_exclusive`, `is_direct_from_developer`, `is_new_construction`  Status flags
+- `completion_status`, `listing_level`, `offering_type`
+- `last_refreshed_at`  When the listing was last updated
+- `share_url`  Full public URL to the property page
+- `payment_method`  Accepted payment methods
+- `video_id`, `view_360`, `floor_plans`  Media assets
+- `rera`  Regulatory authority data
+- **Agent enriched**: `total_properties`, `languages`, `position`, `rating_breakdown`, `avg_whatsapp_response_time`
+- **Broker enriched**: `logo`, `address`, `slug`, `total_properties`, `license_number`, `total_agents`
 
-#### Location
-- `location.id` - Location identifier
-- `location.name` - Location name
-- `location.full_name` - Complete location hierarchy
-- `location.coordinates.lat` - Latitude
-- `location.coordinates.lon` - Longitude
-
-#### Visual Assets
-- `images` - Array of property images
-- `images[].small` - Small thumbnail URL (416x272)
-- `images[].medium` - Medium image URL (668x452)
-
-#### Contact Information
-- `agent` - Listing agent details (id, name, email, super agent status)
-- `broker` - Broker company details (id, name, email, phone)
-- `contact_options` - Array of contact methods (email, phone, WhatsApp)
-
-#### Additional Data
-- `amenities` - Array of property features and amenities
-- `details_url` - Full URL to property details page
-- `domain` - PropertyFinder domain (identifies country)
-
----
-
-## 📊 Pre-Configured Data Views
-
-### 1. 🏠 Overview
-Quick summary of all properties with essential information.
-
-**Fields:** ID, type, title, price, location, bedrooms, bathrooms, size, furnished status, URL, domain
-
-**Use Case:** Initial property review and filtering
-
-### 2. 📋 Detailed View
-Complete property information including images, contacts, and amenities.
-
-**Fields:** All property data including images, agent, broker, amenities, description
-
-**Use Case:** In-depth property analysis and client presentations
-
-### 3. 📞 Contact Information
-Focused view of agent and broker contact details.
-
-**Fields:** Property ID, title, agent details, broker details, contact options, URL
-
-**Use Case:** Lead generation and contact list building
-
-### 4. 💰 Price Analysis
-Property pricing data optimized for market analysis.
-
-**Fields:** ID, type, title, price details, location, bedrooms, size, market (domain)
-
-**Use Case:** Market research, price comparison, investment analysis
-
-### 5. 📍 Location Data
-Geographic distribution with coordinates for mapping.
-
-**Fields:** ID, title, type, price, location with coordinates, URL, country
-
-**Use Case:** Geographic analysis, location-based filtering, map visualization
-
----
-
-## 💡 Use Cases
-
-### 🏢 Real Estate Professionals
-- **Property Research** - Find properties matching client requirements
-- **Market Analysis** - Compare prices across locations and property types
-- **Lead Generation** - Extract agent and broker contact information
-- **Competitive Intelligence** - Monitor competitor listings and pricing
-
-### 📊 Data Analysis & Research
-- **Market Trends** - Analyze pricing patterns across regions
-- **Geographic Distribution** - Map property availability by location
-- **Amenity Analysis** - Identify popular features and amenities
-- **Investment Opportunities** - Find undervalued properties
-
-### 🤖 Automation & Integration
-- **CRM Integration** - Import property data into sales systems
-- **Price Monitoring** - Track price changes over time
-- **Alert Systems** - Notify when new properties match criteria
-- **Database Building** - Create comprehensive property databases
-
-### 📱 App Development
-- **Property Aggregators** - Build multi-source property search platforms
-- **Comparison Tools** - Create property comparison applications
-- **Investment Calculators** - Develop ROI and rental yield calculators
-- **Market Intelligence Dashboards** - Build real estate analytics platforms
-
----
-
-## ⚙️ Advanced Configuration
-
-### Using Proxies
-
-For reliable scraping, especially at scale, use Apify Proxy:
-
-```json
-{
-  "startUrls": [
-    { "url": "https://www.propertyfinder.ae/en/search?c=2&fu=0" }
-  ],
-  "maxResults": 500,
-  "proxyConfiguration": {
-    "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"]
-  }
-}
 ```
 
-### Limiting Results
 
-Control scraping volume per URL:
+## 📊 Dataset Views
 
-```json
-{
-  "startUrls": [
-    { "url": "https://www.propertyfinder.ae/en/search?l=43&c=1" },
-    { "url": "https://www.propertyfinder.sa/en/search?l=82&c=4" }
-  ],
-  "maxResults": 25
-}
-```
+The scraper includes five pre-configured views in the Apify dataset UI:
 
-This will scrape 25 properties from each URL (50 total).
-
-### Unlimited Scraping
-
-To scrape all available properties:
-
-```json
-{
-  "startUrls": [
-    { "url": "https://www.propertyfinder.bh/en/search?c=1&fu=0" }
-  ],
-  "maxResults": 100000000
-}
-```
-
-Or simply omit the `maxResults` parameter.
+| View | Purpose |
+|------|---------|
+| **Overview** | Quick summary  ID, type, title, price, location, beds, baths, size |
+| **Detailed** | Full property data with description, amenities, status flags, dates |
+| **Contacts** | Agent and broker details with all contact options |
+| **Pricing** | Price data for market analysis  price, price/sqm, payment methods |
+| **Locations** | Geographic data with coordinates and location hierarchy |
 
 ---
 
-## 📈 Performance Metrics
+## ⚡ Performance & Reliability
 
-### Scraping Speed
-- **Single Property** - ~0.1 seconds
-- **Page (25 properties)** - ~2-3 seconds (including delay)
-- **100 Properties** - ~15-20 seconds
-- **1000 Properties** - ~2-3 minutes
+### Speed
+
+- **Listing mode**  ~2–3 seconds per page (25 properties)
+- **Detail mode**  5 concurrent detail fetches per batch
+- **100 properties (listing only)**  ~15–20 seconds
+- **100 properties (with details)**  ~1–2 minutes
+
+### Crash Recovery
+
+The scraper uses Apify's state persistence to survive crashes, migrations, and timeouts. If a run is interrupted:
+
+- Progress is saved automatically every ~60 seconds
+- On restart or resurrection, scraping resumes from where it stopped
+- Already-completed URLs are skipped
+- Already-scraped pages within a URL are not re-processed
+
+### Error Handling
+
+- Exponential backoff with 3 retries on failed requests
+- Continues to the next page after 3 consecutive errors on a single page
+- Continues to the next URL if a URL fails entirely
+- State is preserved on failure for manual resume
 
 ### Resource Usage
-- **Memory** - 512MB maximum
-- **CPU** - Low usage (HTTP-based scraping)
-- **Network** - Moderate bandwidth usage
+
+- **Memory**: 1024 MB max
+- **Proxy**: Residential proxies recommended for stability.
+
+---
+
+## 📚 URL Parameters Reference
+
+These are the common PropertyFinder search URL parameters:
+
+| Parameter | Values | Description |
+|-----------|--------|-------------|
+| `c` | 1=buy, 2=rent, 3=commercial, 4=both | Property purpose |
+| `fu` | 0=any, 1=yes, 2=no | Furnished filter |
+| `rp` | y=yearly, m=monthly, w=weekly, d=daily | Rental period |
+| `ob` | mr=most recent, pa=price asc, pd=price desc | Sort order |
+| `l` | numeric ID | Location filter |
+
+### Sample URLs
+
+```
+UAE:          https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr
+Saudi Arabia: https://www.propertyfinder.sa/en/search?c=4&fu=0&rp=y&ob=mr
+Bahrain:      https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr
+Egypt:        https://www.propertyfinder.eg/ar/search?c=3&fu=0&ob=mr
+Qatar:        https://www.propertyfinder.qa/en/search?c=2&fu=0&rp=m&ob=mr
+```
 
 ---
 
 ## ⚠️ Important Notes
 
-### Legal Considerations
-
-This actor extracts publicly available data from PropertyFinder. Users must:
-- Comply with PropertyFinder's Terms of Service
-- Respect robots.txt directives
-- Follow applicable data protection laws (GDPR, etc.)
-- Use data responsibly and ethically
+- Data is extracted as-is from PropertyFinder. Prices and availability should be verified with agents.
+- Built-in delays and rotating browser fingerprints minimize detection risk.
+- PropertyFinder may update their website structure. If the scraper stops working, check for updates.
+- Users must comply with PropertyFinder's Terms of Service and applicable data protection laws.
 
 **The actor creator is not responsible for how users utilize the extracted data.**
-
-### Data Accuracy
-
-- Data is extracted as-is from PropertyFinder
-- Property availability may change between scraping and viewing
-- Contact information is provided by listing agents/brokers
-- Prices and details should be verified with agents
-
-### Rate Limiting
-
-- Built-in delays prevent server overload
-- Proxy usage recommended for large-scale scraping
-- PropertyFinder may implement rate limiting
-
-### Updates & Maintenance
-
-PropertyFinder may update their website structure. If the actor stops working:
-1. Check for actor updates on Apify
-2. Report issues via Apify issues 
-3. Monitor actor changelog for fixes
-
----
-## 📚 Additional Resources
-
-### Sample Search URLs
-
-**UAE (propertyfinder.ae)**
-```
-https://www.propertyfinder.ae/en/search?c=2&fu=0&rp=y&ob=mr
-```
-
-**Saudi Arabia (propertyfinder.sa)**
-```
-https://www.propertyfinder.sa/en/search?c=4&fu=0&rp=y&ob=mr
-```
-
-**Bahrain (propertyfinder.bh)**
-```
-https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr
-```
-
-**Egypt (propertyfinder.eg)**
-```
-https://www.propertyfinder.eg/ar/search?c=3&fu=0&ob=mr
-```
-
-**Qatar (propertyfinder.qa)**
-```
-https://www.propertyfinder.qa/en/search?c=2&fu=0&rp=m&ob=mr
-```
-
-### URL Parameters
-
-- `c` - Property purpose (1=buy, 2=rent, 3=commercial, 4=both)
-- `fu` - Furnished (0=any, 1=yes, 2=no)
-- `rp` - Rental period (y=yearly, m=monthly, w=weekly, d=daily)
-- `ob` - Order by (mr=most recent, pa=price ascending, pd=price descending)
-- `l` - Location ID
 
 ---
 
@@ -450,18 +253,13 @@ https://www.propertyfinder.qa/en/search?c=2&fu=0&rp=m&ob=mr
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
-- 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
-
-### Social Media
-
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
+- 💬 **GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
 - 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
----
-
-## 🌟 Related Actors by [DZ_OMAR](https://apify.com/dz_omar?fpr=smcx63)
+## 🌟 Related Actors by FlowExtract API
 
 ### 🎬 Video & Media Tools
 
@@ -486,7 +284,7 @@ Advanced Idealista property data extraction with API access. Get listings, price
 Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.
 
 **[AI Contact Intelligence Extractor](https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63)**
-Extract emails, phones, contacts & custom data using AI. Free regex extraction or paid AI-powered dynamic extraction. Natural language instructions..
+Extract emails, phones, contacts & custom data using AI. Free regex extraction or paid AI-powered dynamic extraction.
 
 ### 🛠️ Developer & Security Tools
 

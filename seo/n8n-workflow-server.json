@@ -1,0 +1,21 @@
+{
+  "slug": "n8n-workflow-server",
+  "_drafted": true,
+  "intro": "n8n Workflow Server is a ready-to-run Apify actor from FlowExtract API for developer tools & utilities. Traditional n8n hosting requires: This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "🖥️ Interactive Mode: Build workflows through the full n8n web interface with automatic data preservation",
+    "🔗 Webhook Mode: Trigger workflows programmatically via API calls without opening the dashboard — perfect for CI/CD pipelines",
+    "⏱️ Standby Mode: Run persistent HTTP endpoints for production workloads without timeout constraints",
+    "purchasing a VPS or cloud instance"
+  ],
+  "faq": [
+    {
+      "q": "How do I run n8n Workflow Server?",
+      "a": "Open n8n Workflow Server on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is n8n Workflow Server free?",
+      "a": "n8n Workflow Server runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

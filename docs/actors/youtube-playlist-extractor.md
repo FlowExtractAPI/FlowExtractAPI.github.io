@@ -587,71 +587,49 @@ This actor extracts **publicly available** playlist and video metadata from YouT
 
 ### Need Help?
 
-- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
-- 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
-- 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
-
-### Social Media
-
-- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
-- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
-
-### Useful Links
-
-- 📚 [Apify Documentation](https://docs.apify.com)
-- 💬 [Apify Discord Community](https://discord.com/invite/jyEM2PRvMU)
-
-### Report Issues
-
-Found a bug or have a feature request?
-
-1. Check existing issues on GitHub
-2. Create a new issue with detailed description
-3. Include example URLs and error messages
-4. We typically respond within 24-48 hours
+**📧 Email:** [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)  
+**🌐 Website:** [flowextractapi.com](https://flowextractapi.com)  
+**🐦 Twitter:** [@FlowExtractAPI](https://x.com/@FlowExtractAPI)  
+**💼 LinkedIn:** [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
 
 ---
-## 🌟 Related Actors by [DZ_OMAR](https://apify.com/dz_omar)
+## 🌟 Related Actors by [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 
+Build your complete YouTube data pipeline with our specialized actors:
 
-### 🎬 Video & Media Tools
+### 🎬 Video & Content Tools
 
-**[YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor)**  
-Extract complete video transcripts with timestamps and comprehensive metadata. Perfect for content analysis, SEO, and subtitle generation.
+**[YouTube Playlist Extractor](https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63)**  
+Extract all videos from playlists in seconds. Get video URLs, titles, durations. Perfect for feeding into this transcript extractor.  
+→ *Use together: Playlist → Transcript Extractor = Full channel analysis*
 
-**[YouTube Full Channel, Playlists, Shorts, Live](https://apify.com/dz_omar/Youtube-Scraper-Pro)**  
-The ultimate YouTube data extraction tool. Get complete channel data, all playlists, shorts, live streams, and more in one powerful actor.
+**[YouTube Channel Scraper Pro](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)**  
+Complete channel extraction: videos, shorts, live streams, playlists. Comprehensive creator analytics.  
+→ *Use together: Channel Scraper → Transcript Extractor = Creator deep-dive*
 
-**[Zoom Scraper | 🎥 Downloader & 📄 Transcript](https://apify.com/dz_omar/zoom-scraper)**  
-Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.
+**[YouTube Comments Scraper](https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63)**  
+Standalone comment extraction with advanced filtering. Perfect for sentiment analysis.  
+→ *Integrated in this actor - enable with `extractcomments: true`*
 
-**[Loom Scraper | 🎥 Downloader & 📄 Transcript](https://apify.com/dz_omar/loom-video-scraper)**  
-Download Loom videos and extract transcripts. Perfect for training content and video documentation.
+### 📹 Video Platform Tools
+
+**[Zoom Scraper | Downloader & Transcript](https://apify.com/dz_omar/zoom-scraper?fpr=smcx63)**  
+Extract Zoom meeting recordings and transcripts. Perfect for meeting analysis.
+
+**[Loom Scraper | Downloader & Transcript](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63)**  
+Download Loom videos and extract transcripts. Ideal for training content.
 
 ### 🏠 Real Estate Data
 
-**[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api)**  
-Advanced Idealista property data extraction with API access. Get listings, prices, and detailed property information.
+**[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)**  
+Spanish real estate listings with API access. Property data at scale.
 
-**[Idealista Scraper](https://apify.com/dz_omar/idealista-scraper)**  
-Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.
+### 🛠️ Developer Tools
 
-### 🛠️ Developer & Security Tools
+**[Screenshot](https://apify.com/dz_omar/screenshot?fpr=smcx63)** | **[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)**  
+Webpage screenshots with custom options. Perfect for monitoring and documentation.
 
-**[Screenshot](https://apify.com/dz_omar/screenshot)**  
-Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.
-
-**[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot)**  
-Advanced screenshot tool with full-page capture, custom viewports, and quality controls.
-
-**[Network Security Scanner](https://apify.com/dz_omar/network-security-scanner)**  
-Scan websites for security vulnerabilities and get comprehensive security reports.
-
-### 📱 Social Media Tools
-
-**[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro)**  
-Extract Facebook ads data for competitor analysis and market research. Track ad campaigns and strategies.
+**[Network Security Scanner](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)**  
+Website security vulnerability scanning. Comprehensive security reports.
 
 ---

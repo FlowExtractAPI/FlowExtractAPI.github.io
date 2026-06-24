@@ -1,0 +1,29 @@
+{
+  "slug": "facebook-ads-scraper-pro",
+  "_drafted": true,
+  "intro": "📱 Facebook Ads Scraper Pro is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. All Free Tier features PLUS: This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "✅ Full access to Facebook Ad Library data",
+    "✅ Multi-language & multi-country filtering",
+    "✅ Real-time batch pushing (results appear as they're collected)",
+    "✅ Complete media asset extraction (images & videos)"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 📱 Facebook Ads Scraper Pro?",
+      "a": "Open 📱 Facebook Ads Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 📱 Facebook Ads Scraper Pro free?",
+      "a": "📱 Facebook Ads Scraper Pro runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "What is Standby Mode?",
+      "a": "Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays."
+    },
+    {
+      "q": "Why Choose Standby Mode?",
+      "a": "| Use Case | Batch Mode | Standby Mode | |----------|-----------|--------------|"
+    }
+  ]
+}

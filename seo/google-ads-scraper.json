@@ -1,0 +1,29 @@
+{
+  "slug": "google-ads-scraper",
+  "_drafted": true,
+  "intro": "📊 Google Ads Intelligence Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Uncover competitor advertising strategies, analyze ad creatives, and monitor campaigns across all Google platforms with comprehensive data from Google's official Ads Transparency Center. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "ad Creatives - Preview URLs for all ad formats (video, image, text)",
+    "advertiser Information - IDs, transparency URLs, and verification data",
+    "performance Metrics - Impression ranges across regions and platforms",
+    "targeting Data - Geographic regions where ads were shown"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 📊 Google Ads Intelligence Scraper?",
+      "a": "Open 📊 Google Ads Intelligence Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 📊 Google Ads Intelligence Scraper free?",
+      "a": "📊 Google Ads Intelligence Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why Choose This Scraper?",
+      "a": "- Lightning Fast - Optimized parallel processing for multiple searches"
+    },
+    {
+      "q": "Need Help?",
+      "a": "- 🌐 Website: [flowextractapi.com](https://flowextractapi.com)"
+    }
+  ]
+}

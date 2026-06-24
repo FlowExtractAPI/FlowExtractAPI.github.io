@@ -1,0 +1,21 @@
+{
+  "slug": "youtube-scraper-pro",
+  "_drafted": true,
+  "intro": "📺 YouTube Scraper Pro is a ready-to-run Apify actor from FlowExtract API for social media. Case 1: Platform Migration This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "automatic content type detection - Intelligently identifies videos, shorts, playlists, channels, courses, and live streams",
+    "uRL pattern recognition - Understands what you want based on the URL structure",
+    "configurable processing speed - Adjust parameters to optimize performance",
+    "comprehensive metadata - Get views, publication dates, descriptions, thumbnails, and more"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 📺 YouTube Scraper Pro?",
+      "a": "Open 📺 YouTube Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 📺 YouTube Scraper Pro free?",
+      "a": "📺 YouTube Scraper Pro runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

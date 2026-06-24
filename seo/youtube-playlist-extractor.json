@@ -1,0 +1,29 @@
+{
+  "slug": "youtube-playlist-extractor",
+  "_drafted": true,
+  "intro": "🎬 YouTube Playlist Extractor is a ready-to-run Apify actor from FlowExtract API for social media. Extract complete YouTube playlist data with all video details - fast, reliable, and built for scale. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "full Video Lists with position numbers, titles, and URLs",
+    "playlist Metadata including title, description, total video count, and total duration",
+    "playlist History with last updated date and view count",
+    "owner/Creator Info with channel name, ID, and URL"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 🎬 YouTube Playlist Extractor?",
+      "a": "Open 🎬 YouTube Playlist Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 🎬 YouTube Playlist Extractor free?",
+      "a": "🎬 YouTube Playlist Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "🆚 Why Use This Instead of YouTube Data API?",
+      "a": "| Feature | This Actor | YouTube Data API | |---------|------------|------------------|"
+    },
+    {
+      "q": "Need Help?",
+      "a": "📧 Email: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)"
+    }
+  ]
+}

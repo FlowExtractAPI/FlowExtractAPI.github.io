@@ -1,0 +1,21 @@
+{
+  "slug": "propertyfinder-scraper",
+  "_drafted": true,
+  "intro": "PropertyFinder Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Extract real estate property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "listingid Internal listing identifier",
+    "reference Agent reference code (e.g., \"AC-JFR-285-DEC26\")",
+    "priceperarea Price per sqm/sqft",
+    "locationtree Full location hierarchy (region → area → sub-area)"
+  ],
+  "faq": [
+    {
+      "q": "How do I run PropertyFinder Scraper?",
+      "a": "Open PropertyFinder Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is PropertyFinder Scraper free?",
+      "a": "PropertyFinder Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

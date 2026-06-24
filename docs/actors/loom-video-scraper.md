@@ -1,6 +1,6 @@
 # 🎥 Loom Scraper - Videos & Folders
 
-![https://apify.com/dz_omar/loom-video-scraper](https://raw.githubusercontent.com/DZ-ABDLHAKIM/loom-scrape-pro/refs/heads/main/Screenshot%20of%20Loom%20interface%20with%20scraper%20workflow%20visualization.png)
+![https://apify.com/dz_omar/loom-video-scraper](https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/Screenshot%20of%20Loom%20interface%20with%20scraper%20workflow%20visualization.png)
 
 Transform your **Loom videos into searchable, downloadable archives** with complete metadata, transcripts, and comments across individual videos and entire folders.
 
@@ -77,6 +77,29 @@ Process individual videos, entire folders, or mixed content:
   ]
 }
 ```
+### ⏱️ Advanced Download Settings
+
+#### `pollMultiplier` (Number)
+- **Default**: `0.02`
+- **Range**: `0.01` – `1.0`
+- **Only applies when**: `downloadVideo: true`
+
+Loom does not return a download URL instantly  it prepares the MP4 file in the background 
+first. The scraper keeps re-signaling Loom until the URL is ready. This multiplier controls 
+the **maximum time it will wait**, calculated as:
+
+```
+max_wait = max(30s, video_duration_seconds × pollMultiplier)  [capped at 600s]
+```
+
+| Video Length | Default wait (0.02) |
+|---|---|
+| Under 25 min | 30s (minimum) |
+| 30 min | ~36s |
+| 2.5 hours | ~180s |
+
+💡 **If you see timeout errors on long videos**, increase this value (e.g. `0.05` or `0.1`).  
+💡 **For short video libraries**, keep the default.
 
 ### 📥 **Download Options**
 
@@ -85,6 +108,25 @@ Process individual videos, entire folders, or mixed content:
 - **Format**: Original MP4 quality preserved
 - **Use Case**: Full video archiving and offline access
 - **Note**: ✅ **Works even when owner has disabled downloads** in video settings
+- **How it works**: When requested, Loom prepares the MP4 asynchronously in the background  
+  the scraper automatically re-signals Loom and polls until the URL is ready. 
+  Small videos (~2min) may take ~10s, longer videos can take up to 3 minutes or more.
+- **OOM handling**: If the download actor runs out of memory, the scraper automatically retries with double memory (up to your plan limit)
+
+#### 🔗 `returnVideoUrl` (Boolean)
+- **Default**: `false`
+- **Use Case**: Get the direct Loom CDN link without downloading via the Universal Downloader
+- **Output**: Adds `cdn_url` to the `video.download` object  a signed MP4 link from Loom's CDN
+- **⚠️ Note**: CDN URLs are **signed and temporary**  they expire after a few hours
+
+**How `downloadVideo` and `returnVideoUrl` interact:**
+
+| `downloadVideo` | `returnVideoUrl` | What happens |
+|---|---|---|
+| `false` | `false` | No download, no URL  skip entirely |
+| `false` | `true` | Return CDN URL only (**no** Universal Downloader cost) |
+| `true` | `false` | Full download via Universal Downloader |
+| `true` | `true` | Full download + CDN URL in output |
 
 #### 📄 `downloadTranscript` (Boolean)
 - **Default**: `false`
@@ -125,25 +167,40 @@ These parameters only work when scraping your own Loom account videos. They have
 
 ## ⚠️ Smart Memory Management for Video Downloads
 
-When `downloadVideo` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
+When `downloadVideo` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
 
 ### ✅ **How It Works**
 
-**Dynamic Resource Calculation**: The Actor examines each video file before downloading and calculates the exact memory requirements based on file size, ensuring efficient resource usage without waste.
+**Tier-Aware Allocation**: The scraper auto-detects your Apify plan (Free vs Paid) at runtime and caps the download actor's memory to stay within your plan limits  no manual configuration needed.
 
-**Automatic Memory Scaling**: Memory allocation automatically scales from 128MB for small videos up to 32GB for very large files, preventing both resource waste and Out-Of-Memory errors.
+| Plan | Platform Total | Loom Scraper (parent) | Universal Downloader (child) max |
+|------|---------------|----------------------|----------------------------------|
+| **Free** | 8 GB | 128 MB (minimum) | **4 GB** |
+| **Paid** | 32 GB | 128 MB (minimum) | **16 GB** |
+
+**Automatic OOM Retry**: If the download actor runs out of memory (exit code 137), the scraper automatically retries with the next memory tier (doubled)  no user intervention needed. If the retry also fails or the plan limit is already reached, you get a clear error explaining what happened.
+
+| Attempt | What happens |
+|---|---|
+| **1st try** | Auto-calculated memory based on video file size |
+| **OOM detected** | Scraper doubles memory to next tier and retries |
+| **2nd try succeeds** | Done  video downloaded |
+| **2nd try fails / at plan limit** | Clear error message + upgrade link for Free users |
+
+**Dynamic Resource Calculation**: The Actor examines each video file before downloading and calculates the exact memory requirements based on file size, ensuring efficient resource usage without waste.
 
 **Intelligent Timeout Management**: Download timeouts are calculated based on file size and estimated connection speed, ensuring downloads complete successfully without unnecessary waiting.
 
-**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
+**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
 
 ### 💡 **Benefits for Users**
 
-- **No Manual Configuration**: You don't need to guess or manually set memory requirements
-- **Prevents Failures**: Eliminates OOM crashes that could interrupt your downloads
-- **Cost Efficient**: Optimizes resource usage to minimize unnecessary costs
+- **Zero Configuration**: Auto-detects your plan, picks the right memory, retries on failure
+- **Prevents Silent Failures**: OOM crashes now show clear error messages instead of silent N/A
+- **Cost Efficient**: Starts with the minimum needed, only scales up if necessary
 - **Handles Any Size**: From small clips to multi-gigabyte recordings, all processed reliably
 - **Batch Processing**: Each video in a folder gets its own optimized resource allocation
+- **Skip the Downloader**: Use `returnVideoUrl: true` to get the CDN link directly and handle downloads yourself  no Universal Downloader cost
 
 ### 📖 **[Learn more about Apify usage and resources](https://docs.apify.com/platform/actors/running/usage-and-resources)**
 ---
@@ -201,10 +258,10 @@ The Actor supports **scraping your private Loom videos** - perfect for backing u
   </tr>
   <tr>
     <td>
-      <img src="https://raw.githubusercontent.com/DZ-ABDLHAKIM/loom-scrape-pro/refs/heads/main/add_Cookie_Editor.gif" width="100%">
+      <img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/add_Cookie_Editor.gif" width="100%">
     </td>
     <td>
-      <img src="https://raw.githubusercontent.com/DZ-ABDLHAKIM/loom-scrape-pro/refs/heads/main/add_Copy_Cookies.gif" width="100%">
+      <img src="https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/add_Copy_Cookies.gif" width="100%">
     </td>
   </tr>
 </table>
@@ -224,7 +281,7 @@ The Actor supports **scraping your private Loom videos** - perfect for backing u
 
 ## 📊 Sample Output Structure
 
-![Sample Output](https://raw.githubusercontent.com/DZ-ABDLHAKIM/loom-scrape-pro/refs/heads/main/Sample_Output.png)
+![Sample Output](https://raw.githubusercontent.com/FlowExtractAPI/loom-scrape-pro/refs/heads/main/Sample_Output.png)
 
 ```json
 {
@@ -243,7 +300,9 @@ The Actor supports **scraping your private Loom videos** - perfect for backing u
     "avatars": "https://cdn.loom.com/avatars/...",
     "download": {
       "available": true,
-      "url": "https://api.apify.com/v2/key-value-stores/.../video.mp4",
+      "url": "https://api.apify.com/v2/key-value-stores/xxx/records/Video_Name?signature=abc",
+      "direct_download": "https://api.apify.com/v2/key-value-stores/xxx/records/Video_Name?signature=abc&attachment=true",
+      "cdn_url": "https://cdn.loom.com/sessions/transcoded/388fe9c5db854403bceefe52ea85dede.mp4?Policy=...&Signature=...",
       "format": "mp4"
     }
   },
@@ -326,6 +385,20 @@ Set memory in your run configuration: 2 GB or more
 }
 ```
 
+### **Get Direct CDN URLs (no Universal Downloader)**
+```json
+{
+  "url": [
+    "https://www.loom.com/share/08163614158646f7aa21e53997cd58e8"
+  ],
+  "returnVideoUrl": true,
+  "downloadVideo": false,
+  "downloadTranscript": true,
+  "outputFormat": "txt"
+}
+```
+Returns the signed Loom CDN URL in `video.download.cdn_url`  download it yourself in your own app. No Universal Downloader cost, no OOM issues.
+
 ---
 
 ## 📄 Advanced Features
@@ -356,7 +429,13 @@ Set memory in your run configuration: 2 GB or more
 - **Permissions**: Verify sharing permissions with content creator
 
 ### **Performance Issues**
-- **Memory errors**: Increase memory allocation for video downloads
+- **Download URL timeout**: If you see timeout on long videos, increase `pollMultiplier` 
+  (e.g. from `0.02` to `0.05`). Loom prepares downloads asynchronously and longer 
+  videos need more preparation time.
+- **OOM / N/A download URLs**: The scraper now auto-retries with more memory on OOM failures. 
+  If it still fails, your video may be too large for your plan. Free plan users can 
+  [upgrade their plan](https://console.apify.com/billing/subscription?fpr=smcx63) for more memory, 
+  or use `returnVideoUrl: true` to get the CDN link and download it yourself.
 - **Large folders**: Split into smaller batches
 - **Slow processing**: Check network connection and Loom server status
 
@@ -367,7 +446,7 @@ Set memory in your run configuration: 2 GB or more
 ### **Getting Help**
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media
@@ -379,7 +458,7 @@ Set memory in your run configuration: 2 GB or more
 
 ---
 
-## 🌟 Related Actors by DZ_OMAR
+## 🌟 Related Actors by FlowExtractAPI
 
 ### 🎬 Video & Media
 - **[YouTube Transcript Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)** - Extract transcripts with timestamps

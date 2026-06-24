@@ -1,0 +1,21 @@
+{
+  "slug": "tiktok-video-downloader",
+  "_drafted": true,
+  "intro": "TikTok Video Downloader is a ready-to-run Apify actor from FlowExtract API for media & downloads. Download TikTok videos without watermark. Extract direct download links from TikTok URLs with full metadata including views, likes, shares, and comments. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "🎬 Extract Video URLs - Get direct playable video links from TikTok",
+    "📊 Full Metadata - Views, likes, shares, comments, duration, quality",
+    "💾 Optional Download - Store videos in Apify Key-Value Store with persistent links",
+    "🔄 Resumable Runs - State persistence for interrupted runs"
+  ],
+  "faq": [
+    {
+      "q": "How do I run TikTok Video Downloader?",
+      "a": "Open TikTok Video Downloader on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is TikTok Video Downloader free?",
+      "a": "TikTok Video Downloader runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

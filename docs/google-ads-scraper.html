@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Google Ads Intelligence Scraper Ã‚Â· Apify | FlowExtract API</title>
+    <meta name="title" content="Google Ads Intelligence Scraper Ã‚Â· Apify | FlowExtract API">
+    <meta name="description" content="Extract comprehensive data from Google&#39;s Ads Transparency Center including ad creatives, performance metrics, regional targeting, and platform distribution. Analyze competitor advertising strategies across YouTube, Search, Shopping, Maps, and Play.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/google-ads-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Google Ads Intelligence Scraper Ã‚Â· Apify | FlowExtract API">
+    <meta property="og:description" content="Extract comprehensive data from Google&#39;s Ads Transparency Center including ad creatives, performance metrics, regional targeting, and platform distribution. Analyze competitor advertising strategies across YouTube, Search, Shopping, Maps, and Play.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/google-ads-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/2shDQ4-KksSl2D9Cw1W-WQfmzdLS56HwYdJE85EIGR8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTURXSW9iQlVVeXA1ZjJlSjgtMTJxZ3NGQVRWRi1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Ads Intelligence Scraper Ã‚Â· Apify | FlowExtract API">
+    <meta name="twitter:description" content="Extract comprehensive data from Google&#39;s Ads Transparency Center including ad creatives, performance metrics, regional targeting, and platform distribution. Analyze competitor advertising strategies across YouTube, Search, Shopping, Maps, and Play.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/2shDQ4-KksSl2D9Cw1W-WQfmzdLS56HwYdJE85EIGR8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTURXSW9iQlVVeXA1ZjJlSjgtMTJxZ3NGQVRWRi1VbnRpdGxlZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"📊 Google Ads Intelligence Scraper","description":"Extract comprehensive data from Google's Ads Transparency Center including ad creatives, performance metrics, regional targeting, and platform distribution. Analyze competitor advertising strategies across YouTube, Search, Shopping, Maps, and Play.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/google-ads-scraper.html","sameAs":"https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/2shDQ4-KksSl2D9Cw1W-WQfmzdLS56HwYdJE85EIGR8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTURXSW9iQlVVeXA1ZjJlSjgtMTJxZ3NGQVRWRi1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 📊 Google Ads Intelligence Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open 📊 Google Ads Intelligence Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 📊 Google Ads Intelligence Scraper free?","acceptedAnswer":{"@type":"Answer","text":"📊 Google Ads Intelligence Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"Why Choose This Scraper?","acceptedAnswer":{"@type":"Answer","text":"- Lightning Fast - Optimized parallel processing for multiple searches"}},{"@type":"Question","name":"Need Help?","acceptedAnswer":{"@type":"Answer","text":"- 🌐 Website: [flowextractapi.com](https://flowextractapi.com)"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,552 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/2shDQ4-KksSl2D9Cw1W-WQfmzdLS56HwYdJE85EIGR8/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTURXSW9iQlVVeXA1ZjJlSjgtMTJxZ3NGQVRWRi1VbnRpdGxlZC5wbmc.png" alt="📊 Google Ads Intelligence Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Advertising Intelligence</span>
+                <h1 class="actor-hero-title">📊 Google Ads Intelligence Scraper</h1>
+                <p class="actor-hero-desc">Extract comprehensive data from Google&#39;s Ads Transparency Center including ad creatives, performance metrics, regional targeting, and platform distribution. Analyze competitor advertising strategies across YouTube, Search, Shopping, Maps, and Play.</p>
+                <a href="https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">📊 Google Ads Intelligence Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Uncover competitor advertising strategies, analyze ad creatives, and monitor campaigns across all Google platforms with comprehensive data from Google&#39;s official Ads Transparency Center. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>ad Creatives - Preview URLs for all ad formats (video, image, text)</li><li>advertiser Information - IDs, transparency URLs, and verification data</li><li>performance Metrics - Impression ranges across regions and platforms</li><li>targeting Data - Geographic regions where ads were shown</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 📊 Google Ads Intelligence Scraper?</summary><p>Open 📊 Google Ads Intelligence Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 📊 Google Ads Intelligence Scraper free?</summary><p>📊 Google Ads Intelligence Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>Why Choose This Scraper?</summary><p>- Lightning Fast - Optimized parallel processing for multiple searches</p></details><details class="faq-item"><summary>Need Help?</summary><p>- 🌐 Website: [flowextractapi.com](https://flowextractapi.com)</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🔍 Google Ads Intelligence Scraper</h1>
+<p><strong>Uncover competitor advertising strategies, analyze ad creatives, and monitor campaigns across all Google platforms with comprehensive data from Google&#39;s official Ads Transparency Center.</strong></p>
+<p>Extract complete ad data including creative previews, impression statistics, regional targeting, platform distribution, and advertiser information - all in structured, analysis-ready format.</p>
+<p><img src="https://via.placeholder.com/1200x400/4285f4/ffffff?text=Google+Ads+Intelligence+Scraper" alt="Google Ads Scraper"></p>
+<hr>
+<h2>🎯 What You Can Extract</h2>
+<h3>Complete Ad Intelligence</h3>
+<ul>
+<li><strong>Ad Creatives</strong> - Preview URLs for all ad formats (video, image, text)</li>
+<li><strong>Advertiser Information</strong> - IDs, transparency URLs, and verification data</li>
+<li><strong>Performance Metrics</strong> - Impression ranges across regions and platforms</li>
+<li><strong>Targeting Data</strong> - Geographic regions where ads were shown</li>
+<li><strong>Platform Distribution</strong> - Performance breakdown across YouTube, Search, Shopping, Maps, and Play</li>
+<li><strong>Time Analytics</strong> - First and last shown dates for each creative</li>
+</ul>
+<h3>Structured Output Data</h3>
+<p>Every ad returns a complete JSON object with:</p>
+<ul>
+<li>Advertiser ID and Creative ID</li>
+<li>Direct links to Google Ads Transparency pages</li>
+<li>Preview URLs for immediate creative viewing</li>
+<li>Regional statistics with impression counts</li>
+<li>Platform-specific performance data</li>
+<li>Format type (VIDEO, IMAGE, TEXT)</li>
+</ul>
+<hr>
+<h2>Why Choose This Scraper?</h2>
+<h3>Built for Performance</h3>
+<ul>
+<li><strong>Lightning Fast</strong> - Optimized parallel processing for multiple searches</li>
+<li><strong>Smart Filtering</strong> - Precise control over platforms, formats, regions, and dates</li>
+<li><strong>Batch Processing</strong> - Handle unlimited search targets in one run</li>
+<li><strong>Auto-Retry Logic</strong> - Reliable extraction even with temporary API issues</li>
+</ul>
+<h3>Flexible Search Options</h3>
+<ul>
+<li><strong>Keywords</strong> - &quot;nike shoes&quot;, &quot;saas software&quot;, &quot;fitness app&quot;</li>
+<li><strong>Advertiser IDs</strong> - Direct extraction with AR123... format</li>
+<li><strong>Domains</strong> - Find all ads from &quot;shopify.com&quot; or &quot;apple.com&quot;</li>
+<li><strong>Google Ads URLs</strong> - Paste full transparency URLs with embedded filters</li>
+</ul>
+<h3>Global Coverage</h3>
+<ul>
+<li><strong>200+ Regions Supported</strong> - From United States to Tuvalu</li>
+<li><strong>Multi-Platform</strong> - YouTube, Search, Shopping, Maps, Google Play</li>
+<li><strong>All Ad Formats</strong> - Video, image, and text creatives</li>
+<li><strong>Historical Data</strong> - Access ads from any time period</li>
+</ul>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Quick Start Example</h3>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [
+    &quot;fitness apps&quot;,
+    &quot;AR04619580580634296321&quot;,
+    &quot;https://adstransparency.google.com/advertiser/AR12345?region=US&amp;platform=YOUTUBE&quot;
+  ],
+  &quot;resultsPerQuery&quot;: 20,
+  &quot;targetPlatform&quot;: &quot;YOUTUBE&quot;,
+  &quot;adFormatType&quot;: &quot;VIDEO&quot;,
+  &quot;timeRangePreset&quot;: &quot;LAST_30_DAYS&quot;
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>🎯 searchTargets</strong></td>
+<td><code>array</code></td>
+<td><strong>Required.</strong> Keywords, advertiser IDs (AR...), domains, or full Google Ads Transparency URLs</td>
+</tr>
+<tr>
+<td><strong>📊 resultsPerQuery</strong></td>
+<td><code>integer</code></td>
+<td>Max ads per search target (0 = unlimited) Default: <code>10</code></td>
+</tr>
+<tr>
+<td><strong>📱 targetPlatform</strong></td>
+<td><code>string</code></td>
+<td>Filter by platform: ALL, YOUTUBE, SEARCH, SHOPPING, MAPS, PLAY</td>
+</tr>
+<tr>
+<td><strong>🎬 adFormatType</strong></td>
+<td><code>string</code></td>
+<td>Filter by format: ALL, VIDEO, IMAGE, TEXT</td>
+</tr>
+<tr>
+<td><strong>🌍 geoTargetRegion</strong></td>
+<td><code>string</code></td>
+<td>Filter by country/region where ads appeared</td>
+</tr>
+<tr>
+<td><strong>📅 timeRangePreset</strong></td>
+<td><code>string</code></td>
+<td>Quick date selection: ALL_TIME, LAST_30_DAYS, LAST_7_DAYS, YESTERDAY, TODAY</td>
+</tr>
+<tr>
+<td><strong>📅 customStartDate</strong></td>
+<td><code>string</code></td>
+<td>Custom start date (YYYY-MM-DD) - overrides preset</td>
+</tr>
+<tr>
+<td><strong>📅 customEndDate</strong></td>
+<td><code>string</code></td>
+<td>Custom end date (YYYY-MM-DD) - overrides preset</td>
+</tr>
+<tr>
+<td><strong>👥 maxAdvertiserAccounts</strong></td>
+<td><code>integer</code></td>
+<td>Max advertisers per keyword search. Default: <code>3</code></td>
+</tr>
+<tr>
+<td><strong>🌐 maxDomainMatches</strong></td>
+<td><code>integer</code></td>
+<td>Max domains when multiple match (0 = unlimited). Default: <code>1</code></td>
+</tr>
+<tr>
+<td><strong>🔗 enableUrlFiltering</strong></td>
+<td><code>boolean</code></td>
+<td>Extract filters from Google Ads URLs. Default: <code>true</code></td>
+</tr>
+<tr>
+<td><strong>🔒 proxyConfig</strong></td>
+<td><code>object</code></td>
+<td>Proxy configuration (Apify Proxy recommended)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Example Output (Single Ad)</h3>
+<pre><code class="language-json">{
+  &quot;advertiserId&quot;: &quot;AR04619580580634296321&quot;,
+  &quot;creativeId&quot;: &quot;CR14567271621866815489&quot;,
+  &quot;format&quot;: &quot;VIDEO&quot;,
+  &quot;creativeRegions&quot;: [&quot;United States&quot;, &quot;Canada&quot;, &quot;United Kingdom&quot;],
+  &quot;adTransparencyUrl&quot;: &quot;https://adstransparency.google.com/advertiser/AR04619580580634296321/creative/CR14567271621866815489?region=anywhere&quot;,
+  &quot;previewUrls&quot;: [
+    &quot;https://displayads-formats.googleusercontent.com/ads/preview/content.js?client=ads-integrity...&quot;
+  ],
+  &quot;regionStats&quot;: [
+    {
+      &quot;regionNumber&quot;: 2840,
+      &quot;regionCode&quot;: &quot;US&quot;,
+      &quot;regionName&quot;: &quot;United States&quot;,
+      &quot;firstShown&quot;: 20240115,
+      &quot;lastShown&quot;: 20241022,
+      &quot;impressions&quot;: {
+        &quot;lowerBound&quot;: 10000,
+        &quot;upperBound&quot;: 50000
+      },
+      &quot;platformStats&quot;: [
+        {
+          &quot;surfaceName&quot;: &quot;YouTube&quot;,
+          &quot;impressions&quot;: {
+            &quot;lowerBound&quot;: 8000,
+            &quot;upperBound&quot;: 40000
+          }
+        },
+        {
+          &quot;surfaceName&quot;: &quot;Google Search&quot;,
+          &quot;impressions&quot;: {
+            &quot;lowerBound&quot;: 2000,
+            &quot;upperBound&quot;: 10000
+          }
+        }
+      ]
+    }
+  ]
+}
+</code></pre>
+<h3>Output Fields Explained</h3>
+<h4>Core Ad Data</h4>
+<ul>
+<li><code>advertiserId</code> - Unique advertiser identifier (AR...)</li>
+<li><code>creativeId</code> - Unique creative/ad identifier (CR...)</li>
+<li><code>format</code> - Ad type: VIDEO, IMAGE, or TEXT</li>
+<li><code>adTransparencyUrl</code> - Direct link to Google&#39;s transparency page</li>
+<li><code>previewUrls</code> - Array of URLs to preview the actual ad creative</li>
+</ul>
+<h4>Geographic &amp; Targeting Data</h4>
+<ul>
+<li><code>creativeRegions</code> - List of all regions where ad appeared</li>
+<li><code>regionStats</code> - Detailed breakdown per region including:<ul>
+<li>Region name and code (US, GB, etc.)</li>
+<li>First and last shown dates (YYYYMMDD format)</li>
+<li>Total impression ranges (lower/upper bounds)</li>
+<li>Platform-specific performance data</li>
+</ul>
+</li>
+</ul>
+<h4>Platform Performance</h4>
+<ul>
+<li><code>platformStats</code> - For each region, shows distribution across:<ul>
+<li>YouTube</li>
+<li>Google Search</li>
+<li>Google Shopping</li>
+<li>Google Maps</li>
+<li>Google Play</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>Professional Use Cases</h2>
+<h3>Competitive Intelligence</h3>
+<ul>
+<li><strong>Monitor Competitors</strong> - Track advertising strategies of direct competitors</li>
+<li><strong>Ad Creative Analysis</strong> - Study successful ad formats and messaging</li>
+<li><strong>Budget Estimation</strong> - Gauge competitor spend based on impression data</li>
+<li><strong>Market Positioning</strong> - Understand how competitors target different regions</li>
+</ul>
+<h3>Market Research</h3>
+<ul>
+<li><strong>Industry Trends</strong> - Analyze advertising patterns in your niche</li>
+<li><strong>Seasonal Campaigns</strong> - Track when competitors increase ad spend</li>
+<li><strong>Regional Strategies</strong> - Discover which markets competitors prioritize</li>
+<li><strong>Platform Preferences</strong> - See which Google platforms work best in your industry</li>
+</ul>
+<h3>Media Planning</h3>
+<ul>
+<li><strong>Campaign Planning</strong> - Learn from successful campaigns in your space</li>
+<li><strong>Platform Selection</strong> - Data-driven decisions on YouTube vs Search vs Shopping</li>
+<li><strong>Geographic Targeting</strong> - Identify high-potential regions based on competitor activity</li>
+<li><strong>Creative Inspiration</strong> - Access preview URLs for creative reference</li>
+</ul>
+<h3>Business Intelligence</h3>
+<ul>
+<li><strong>Brand Monitoring</strong> - Track mentions and ads from specific domains</li>
+<li><strong>Partnership Discovery</strong> - Find companies advertising complementary products</li>
+<li><strong>Merger &amp; Acquisition Research</strong> - Monitor advertising activity of target companies</li>
+<li><strong>Market Entry Analysis</strong> - Understand advertising landscape before entering new markets</li>
+</ul>
+<h3>Data &amp; Automation</h3>
+<ul>
+<li><strong>API Integration</strong> - Feed data into business intelligence dashboards</li>
+<li><strong>Automated Monitoring</strong> - Schedule regular scans of competitor activity</li>
+<li><strong>Alert Systems</strong> - Trigger notifications when competitors launch new campaigns</li>
+<li><strong>Data Warehousing</strong> - Build comprehensive advertising databases</li>
+</ul>
+<hr>
+<h2>🎯 Advanced Search Techniques</h2>
+<h3>1. Keyword-Based Discovery</h3>
+<p>Perfect for finding advertisers in your industry:</p>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [&quot;saas software&quot;, &quot;project management tool&quot;],
+  &quot;maxAdvertiserAccounts&quot;: 10
+}
+</code></pre>
+<h3>2. Direct Advertiser Tracking</h3>
+<p>Monitor specific competitors:</p>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [
+    &quot;AR04619580580634296321&quot;,
+    &quot;AR12345678901234567890&quot;
+  ],
+  &quot;resultsPerQuery&quot;: 0
+}
+</code></pre>
+<h3>3. Domain-Based Analysis</h3>
+<p>All ads from a specific website:</p>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [&quot;shopify.com&quot;, &quot;wix.com&quot;],
+  &quot;maxDomainMatches&quot;: 0
+}
+</code></pre>
+<h3>4. URL Filter Extraction</h3>
+<p>Preserve filters from Google Ads Transparency URLs:</p>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [
+    &quot;https://adstransparency.google.com/advertiser/AR123?region=US&amp;platform=YOUTUBE&amp;format=VIDEO&quot;
+  ],
+  &quot;enableUrlFiltering&quot;: true
+}
+</code></pre>
+<h3>5. Multi-Platform Comparison</h3>
+<p>Compare performance across platforms:</p>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [&quot;nike&quot;],
+  &quot;targetPlatform&quot;: &quot;ALL&quot;,
+  &quot;maxAdvertiserAccounts&quot;: 5,
+  &quot;resultsPerQuery&quot;: 50
+}
+</code></pre>
+<hr>
+<h2>Technical Details</h2>
+<h3>Performance Metrics</h3>
+<ul>
+<li><strong>Speed:</strong> 2-5 seconds per advertiser</li>
+<li><strong>Throughput:</strong> Process 100+ search targets in under 10 minutes</li>
+<li><strong>Accuracy:</strong> Direct data from Google&#39;s official API</li>
+<li><strong>Reliability:</strong> Built-in retry logic with exponential backoff</li>
+</ul>
+<h3>Infrastructure</h3>
+<ul>
+<li><strong>Proxy Support</strong> - Automatic rotation with Apify Proxy integration</li>
+<li><strong>Error Handling</strong> - Graceful degradation on temporary failures</li>
+<li><strong>Rate Limiting</strong> - Smart request throttling to avoid blocks</li>
+<li><strong>Parallel Processing</strong> - Concurrent execution for maximum speed</li>
+</ul>
+<h3>Data Quality</h3>
+<ul>
+<li><strong>Official Source</strong> - All data from Google Ads Transparency Center</li>
+<li><strong>No Estimates</strong> - Real impression ranges, not extrapolated data</li>
+<li><strong>Up-to-Date</strong> - Access to the latest advertising activity</li>
+<li><strong>Comprehensive</strong> - All ad formats, platforms, and regions</li>
+</ul>
+<hr>
+<h2>Typical Use Patterns</h2>
+<h3>Small Business Owner</h3>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [&quot;local coffee shop&quot;, &quot;neighborhood cafe&quot;],
+  &quot;geoTargetRegion&quot;: &quot;United States&quot;,
+  &quot;timeRangePreset&quot;: &quot;LAST_30_DAYS&quot;,
+  &quot;resultsPerQuery&quot;: 10
+}
+</code></pre>
+<h3>Marketing Agency</h3>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [
+    &quot;AR123...&quot;,
+    &quot;AR456...&quot;,
+    &quot;AR789...&quot;
+  ],
+  &quot;resultsPerQuery&quot;: 100,
+  &quot;targetPlatform&quot;: &quot;ALL&quot;
+}
+</code></pre>
+<h3>Enterprise Research Team</h3>
+<pre><code class="language-json">{
+  &quot;searchTargets&quot;: [
+    &quot;software&quot;, &quot;technology&quot;, &quot;cloud computing&quot;,
+    &quot;artificial intelligence&quot;, &quot;machine learning&quot;
+  ],
+  &quot;maxAdvertiserAccounts&quot;: 20,
+  &quot;resultsPerQuery&quot;: 0,
+  &quot;timeRangePreset&quot;: &quot;ALL_TIME&quot;
+}
+</code></pre>
+<hr>
+<h2>🛡️ Legal &amp; Compliance</h2>
+<p>This actor extracts <strong>publicly available</strong> advertising data from Google&#39;s official Ads Transparency Center. All data is information that Google makes accessible to promote advertising transparency.</p>
+<p><strong>Important Considerations:</strong></p>
+<ul>
+<li>✅ Data is publicly accessible to all users</li>
+<li>✅ No authentication or private data accessed</li>
+<li>✅ Complies with Google&#39;s transparency initiatives</li>
+<li>⚠️ Respect rate limits and use proxies responsibly</li>
+<li>⚠️ Review Google&#39;s Terms of Service for your use case</li>
+<li>⚠️ Ensure compliance with data protection laws (GDPR, CCPA, etc.)</li>
+</ul>
+<p><strong>Recommended Use:</strong></p>
+<ul>
+<li>✅ Competitive analysis and market research</li>
+<li>✅ Academic research on advertising trends</li>
+<li>✅ Transparency and accountability journalism</li>
+<li>✅ Business intelligence and strategic planning</li>
+</ul>
+<hr>
+<h2>🚀 Getting Started</h2>
+<h3>1. <strong>Configure Your Search</strong></h3>
+<p>Add keywords, advertiser IDs, domains, or full Google Ads URLs</p>
+<h3>2. <strong>Apply Filters</strong> (Optional)</h3>
+<p>Narrow results by platform, format, region, or date range</p>
+<h3>3. <strong>Set Limits</strong></h3>
+<p>Define how many ads per target and max advertisers per keyword</p>
+<h3>4. <strong>Enable Proxy</strong> (Recommended)</h3>
+<p>Use Apify Proxy for reliable, unblocked access</p>
+<h3>5. <strong>Run &amp; Export</strong></h3>
+<p>Execute the actor and download results in JSON, CSV, or Excel</p>
+<hr>
+<h3>Optimization Tips</h3>
+<ul>
+<li>Use <code>resultsPerQuery</code> limits to control costs</li>
+<li>Set <code>maxAdvertiserAccounts</code> based on needs</li>
+<li>Enable <code>enableUrlFiltering</code> for faster URL-based searches</li>
+<li>Use proxies only when necessary (reduces costs)</li>
+</ul>
+<hr>
+<h2>📊 Export &amp; Integration</h2>
+<h3>Export Formats</h3>
+<ul>
+<li><strong>JSON</strong> - Full structured data with all nested objects</li>
+<li><strong>CSV</strong> - Flattened view for Excel and spreadsheet tools</li>
+<li><strong>Excel</strong> - Formatted tables with multiple sheets</li>
+<li><strong>API</strong> - Direct programmatic access via Apify API</li>
+</ul>
+<h3>Integration Examples</h3>
+<h4>Python</h4>
+<pre><code class="language-python">from apify_client import ApifyClient
+
+client = ApifyClient(&quot;YOUR_API_TOKEN&quot;)
+run = client.actor(&quot;dz_omar/google-ads-scraper&quot;).call(
+    run_input={
+        &quot;searchTargets&quot;: [&quot;nike&quot;],
+        &quot;resultsPerQuery&quot;: 50
+    }
+)
+
+# Fetch results
+for item in client.dataset(run[&quot;defaultDatasetId&quot;]).iterate_items():
+    print(item)
+</code></pre>
+<h4>JavaScript</h4>
+<pre><code class="language-javascript">import { ApifyClient } from &#39;apify-client&#39;;
+
+const client = new ApifyClient({ token: &#39;YOUR_API_TOKEN&#39; });
+const run = await client.actor(&quot;dz_omar/google-ads-scraper&quot;).call({
+    searchTargets: [&quot;nike&quot;],
+    resultsPerQuery: 50
+});
+
+const { items } = await client.dataset(run.defaultDatasetId).listItems();
+console.log(items);
+</code></pre>
+<hr>
+<h2>🔧 Troubleshooting</h2>
+<h3>No Results Returned</h3>
+<p><strong>Possible Causes:</strong></p>
+<ul>
+<li>Advertiser ID doesn&#39;t exist or has no public ads</li>
+<li>Region filter too restrictive</li>
+<li>Date range excludes all ad activity</li>
+<li>Domain has no verified Google Ads presence</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify advertiser ID format (AR followed by 20 digits)</li>
+<li>Try removing region/date filters first</li>
+<li>Search by keyword instead of domain</li>
+<li>Check Google Ads Transparency manually first</li>
+</ul>
+<h3>Slow Performance</h3>
+<p><strong>Possible Causes:</strong></p>
+<ul>
+<li>Many search targets with unlimited results</li>
+<li>No rate limiting enabled</li>
+<li>Network latency without proxy</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Set reasonable <code>resultsPerQuery</code> limits</li>
+<li>Enable Apify Proxy for faster processing</li>
+<li>Reduce <code>maxAdvertiserAccounts</code> per keyword</li>
+<li>Split large jobs into smaller batches</li>
+</ul>
+<h3>Proxy Errors</h3>
+<p><strong>Possible Causes:</strong></p>
+<ul>
+<li>Insufficient proxy credits</li>
+<li>Wrong proxy group selected</li>
+<li>Proxy blocked by Google</li>
+</ul>
+<p><strong>Solutions:</strong></p>
+<ul>
+<li>Verify Apify account has proxy credits</li>
+<li>Use RESIDENTIAL proxy group for best results</li>
+<li>Try without proxy for small tests</li>
+<li>Contact Apify support for persistent issues</li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by <a href="https://apify.com/dz_omar">FlowExtractAPI</a></h2>
+<h3>📱 Social Media Intelligence</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook advertising data for comprehensive cross-platform competitor analysis.</p>
+<h3>🎬 Video &amp; Content Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-extractor">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract video transcripts, metadata, and analytics from YouTube content.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro">YouTube Full Channel Scraper</a></strong>
+Complete channel, playlist, shorts, and live stream data extraction.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper">Zoom Scraper | Video &amp; Transcript</a></strong>
+Download Zoom recordings and extract meeting transcripts.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper">Loom Scraper | Video &amp; Transcript</a></strong>
+Extract Loom videos and transcripts for content analysis.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api">Idealista Scraper API</a></strong>
+Advanced Spanish property data extraction with API access.</p>
+<h3>🛠️ Developer Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot">Ultimate Screenshot</a></strong>
+Professional webpage screenshots with full customization.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner">Network Security Scanner</a></strong>
+Comprehensive website security vulnerability scanning.</p>
+<hr>
+<h2>💬 Support &amp; Feedback</h2>
+<h3>Need Help?</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h3>Found a Bug or Have a Feature Request?</h3>
+<p>Open an issue or contact us directly. We&#39;re committed to continuous improvement and responsive support.</p>
+<h3>Rate This Actor</h3>
+<p>If you find this actor valuable, please leave a review! Your feedback helps us improve and helps others discover quality tools.</p>
+<hr>
+<p><strong>Built with ❤️ by <a href="https://apify.com/dz_omar">FlowExtractAPI</a> | Powered by <a href="https://apify.com">Apify Platform</a></strong></p>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +607,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +615,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'google-ads-scraper';
-    </script>
 </body>
 </html>

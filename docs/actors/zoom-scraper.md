@@ -1,6 +1,6 @@
 # 🎥 Zoom Video Downloader & Extractor
 
-![Zoom Video Downloader](https://youtu.be/zIM589Jm5cc)
+![Zoom Video Downloader](https://raw.githubusercontent.com/apifytech/store-assets/master/actors/zoom-video-downloader/zoom-video-downloader-hero.png)
 
 Transform your **Zoom recordings into searchable, downloadable archives** with complete metadata, transcripts, and video files across regular meetings, events, and clips.
 
@@ -236,7 +236,7 @@ When `download_videos: true` and `downloadTranscript: true`:
 
 ## ⚠️ Smart Memory Management for Video Downloads
 
-When `download_videos` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
+When `download_videos` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
 
 ### ✅ **How It Works**
 
@@ -246,7 +246,7 @@ When `download_videos` is enabled, this Actor uses **intelligent resource alloca
 
 **Intelligent Timeout Management**: Download timeouts are calculated based on file size and estimated connection speed, ensuring downloads complete successfully without unnecessary waiting.
 
-**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
+**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
 
 ### 💡 **Benefits for Users**
 
@@ -305,7 +305,7 @@ https://www.zoom.us/clips/share/[CLIP_ID]
 
 ### **URL Format Errors**
 - **Invalid URLs**: Ensure URLs are complete and properly formatted
-- **Wrong platform**: Use [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63) for Loom URLs
+- **Wrong platform**: Use [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper) for Loom URLs
 - **Shortened URLs**: Use full Zoom URLs instead of shortened versions
 
 ---
@@ -333,11 +333,11 @@ The actor provides three specialized dataset views for different use cases:
 
 ## 🤝 Support & Resources
 
-### Get Help
+### **Getting Help**
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media
@@ -346,27 +346,9 @@ The actor provides three specialized dataset views for different use cases:
 - 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
-## 🌟 Related Actors by FlowExtract API
-
-### 🎬 Video & Media
-- **[YouTube Transcript Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)** - Extract transcripts with timestamps
-- **[YouTube Scraper Pro](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)** - Complete channel and playlist extraction
-- **[Zoom Scraper](https://apify.com/dz_omar/zoom-scraper?fpr=smcx63)** - Download recordings and transcripts
-- **[Loom Scraper](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63)** - Loom video and transcript extraction
-
-### 🏠 Real Estate
-- **[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** - Spanish property data with API
-- **[Idealista Scraper](https://apify.com/dz_omar/idealista-scraper?fpr=smcx63)** - Real estate listings extractor
-
-### 🛠️ Developer Tools
-- **[Screenshot](https://apify.com/dz_omar/screenshot?fpr=smcx63)** - Fast webpage screenshots
-- **[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)** - Advanced screenshot tool
-- **[Network Security Scanner](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** - Security vulnerability scanner
-
-### 📱 Social Media
-- **[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63)** - Extract Facebook ads data
-
----
+### **Related Actors**
+- **🎬 Loom Video Scraper**: [https://apify.com/dz_omar/loom-video-scraper](https://apify.com/dz_omar/loom-video-scraper)
+- **📁 Universal File Downloader**: [https://apify.com/dz_omar/universal-file-downloader](https://apify.com/dz_omar/universal-file-downloader)
 
 ### **Technical Integration**
 This actor leverages our **Universal File Downloader** for enterprise-grade video processing:

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Facebook Ads Scraper Pro - Ad Library Data &amp; Media Extractor | FlowExtract API</title>
+    <meta name="title" content="Facebook Ads Scraper Pro - Ad Library Data &amp; Media Extractor | FlowExtract API">
+    <meta name="description" content="Extract comprehensive data from Facebook&#39;s Ad Library including ad content, media URLs, targeting info, performance metrics, and page details.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/facebook-ads-scraper-pro.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Facebook Ads Scraper Pro - Ad Library Data &amp; Media Extractor | FlowExtract API">
+    <meta property="og:description" content="Extract comprehensive data from Facebook&#39;s Ad Library including ad content, media URLs, targeting info, performance metrics, and page details.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/facebook-ads-scraper-pro.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/d0CML2mmGJet05YE6EPigXFZZIyUtvpowsIHpsEWcTE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMjBuUlR4TEQzYTNqSWxaYlotdjJJdVNIV2lWSS1VbnRpdGxlZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facebook Ads Scraper Pro - Ad Library Data &amp; Media Extractor | FlowExtract API">
+    <meta name="twitter:description" content="Extract comprehensive data from Facebook&#39;s Ad Library including ad content, media URLs, targeting info, performance metrics, and page details.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/d0CML2mmGJet05YE6EPigXFZZIyUtvpowsIHpsEWcTE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMjBuUlR4TEQzYTNqSWxaYlotdjJJdVNIV2lWSS1VbnRpdGxlZC5wbmc.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"📱 Facebook Ads Scraper Pro","description":"Extract comprehensive data from Facebook's Ad Library including ad content, media URLs, targeting info, performance metrics, and page details.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/facebook-ads-scraper-pro.html","sameAs":"https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/d0CML2mmGJet05YE6EPigXFZZIyUtvpowsIHpsEWcTE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMjBuUlR4TEQzYTNqSWxaYlotdjJJdVNIV2lWSS1VbnRpdGxlZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 📱 Facebook Ads Scraper Pro?","acceptedAnswer":{"@type":"Answer","text":"Open 📱 Facebook Ads Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 📱 Facebook Ads Scraper Pro free?","acceptedAnswer":{"@type":"Answer","text":"📱 Facebook Ads Scraper Pro runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"What is Standby Mode?","acceptedAnswer":{"@type":"Answer","text":"Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays."}},{"@type":"Question","name":"Why Choose Standby Mode?","acceptedAnswer":{"@type":"Answer","text":"| Use Case | Batch Mode | Standby Mode | |----------|-----------|--------------|"}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/d0CML2mmGJet05YE6EPigXFZZIyUtvpowsIHpsEWcTE/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMjBuUlR4TEQzYTNqSWxaYlotdjJJdVNIV2lWSS1VbnRpdGxlZC5wbmc.png" alt="📱 Facebook Ads Scraper Pro" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Advertising Intelligence</span>
+                <h1 class="actor-hero-title">📱 Facebook Ads Scraper Pro</h1>
+                <p class="actor-hero-desc">Extract comprehensive data from Facebook&#39;s Ad Library including ad content, media URLs, targeting info, performance metrics, and page details.</p>
+                <a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">📱 Facebook Ads Scraper Pro is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. All Free Tier features PLUS: This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>✅ Full access to Facebook Ad Library data</li><li>✅ Multi-language &amp; multi-country filtering</li><li>✅ Real-time batch pushing (results appear as they&#39;re collected)</li><li>✅ Complete media asset extraction (images &amp; videos)</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 📱 Facebook Ads Scraper Pro?</summary><p>Open 📱 Facebook Ads Scraper Pro on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 📱 Facebook Ads Scraper Pro free?</summary><p>📱 Facebook Ads Scraper Pro runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>What is Standby Mode?</summary><p>Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays.</p></details><details class="faq-item"><summary>Why Choose Standby Mode?</summary><p>| Use Case | Batch Mode | Standby Mode | |----------|-----------|--------------|</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🔍 Facebook Ads Scraper Pro - Ad Library Intelligence</h1>
+<p><strong>Extract comprehensive data from Facebook&#39;s Ad Library</strong> with real-time streaming, advanced filtering, and standby mode support.</p>
+<blockquote>
+<p><strong>Search Keywords &amp; Advertisers &amp; URLs → Stream Real-Time Ad Data → Get Complete Analytics</strong></p>
+</blockquote>
+<hr>
+<h2>🎬 Video Tutorial</h2>
+<!-- TODO: Replace with actual YouTube video link once published -->
+<p><a href="https://youtube.com/@FlowExtractAPI"><img src="https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube" alt="Watch the Tutorial"></a></p>
+<p><a href="https://www.youtube.com/watch?v=yNSIhZcDlNY">https://www.youtube.com/watch?v=yNSIhZcDlNY</a></p>
+<hr>
+<h2>💎 Pricing Tiers - Choose Your Plan</h2>
+<h3><strong>FREE TIER</strong> ✅</h3>
+<p>Get started with no upfront cost</p>
+<p><strong>Included:</strong></p>
+<ul>
+<li>✅ Full access to Facebook Ad Library data</li>
+<li>✅ Multi-language &amp; multi-country filtering</li>
+<li>✅ Real-time batch pushing (results appear as they&#39;re collected)</li>
+<li>✅ Complete media asset extraction (images &amp; videos)</li>
+<li>✅ All filtering options (date ranges, platforms, categories)</li>
+</ul>
+<p><strong>Trade-offs:</strong></p>
+<ul>
+<li>⚠️ Shared proxy infrastructure</li>
+<li>⚠️ Occasional connection interruptions</li>
+<li>⚠️ Best for small to medium projects (&lt; 500 ads)</li>
+</ul>
+<hr>
+<h3><strong>PAID TIER</strong> ⭐ <em>RECOMMENDED FOR PRODUCTION</em></h3>
+<p>Upgrade for <strong>enterprise-grade reliability</strong></p>
+<p><strong>All Free Tier features PLUS:</strong></p>
+<ul>
+<li>🚀 <strong>Dedicated premium proxy</strong> - Your own reliable connection</li>
+<li>🚀 <strong>No rate limiting</strong> - Unlimited continuous scraping</li>
+<li>🚀 <strong>100% success rate</strong> - Stable, uninterrupted operations</li>
+<li>🚀 <strong>Extract ∞+ ads per query</strong> - No slowdowns or blocks</li>
+<li>🚀 <strong>Perfect for production use</strong> - Enterprise-ready infrastructure</li>
+<li>🚀 <strong>Consistent performance</strong> - No random connection errors</li>
+</ul>
+<p><strong>Why upgrade?</strong></p>
+<ul>
+<li><strong>Avoid interruptions</strong>: Your dedicated proxy won&#39;t hit Facebook&#39;s rate limits</li>
+<li><strong>Reliability</strong>: No HTTP errors or temporary blocks</li>
+<li><strong>Scale effortlessly</strong>: Handle large datasets with perfect stability</li>
+<li><strong>Best for agencies</strong>: Reliable results for client reports and production systems</li>
+<li><strong>Zero downtime</strong>: 24/7 stable scraping without worries</li>
+</ul>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Option 1: Run as Batch Job (One-Time Execution)</h3>
+<p>Perfect for: One-off scraping tasks, scheduled runs, offline processing</p>
+<pre><code class="language-bash">apify call dz-omar/facebook-ads-scraper-pro --input input.json
+</code></pre>
+<p><strong>Input format (input.json):</strong></p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;nike&quot;, &quot;adidas&quot;],
+  &quot;searchAdvertisers&quot;: [&quot;15087023444&quot;],
+  &quot;maxResultsPerQuery&quot;: 50,
+  &quot;countries&quot;: [&quot;US&quot;],
+  &quot;activeStatus&quot;: &quot;ACTIVE&quot;,
+  &quot;mediaType&quot;: &quot;IMAGE&quot;
+}
+</code></pre>
+<p><strong>Process Flow:</strong></p>
+<ol>
+<li>Actor starts</li>
+<li>Processes your request</li>
+<li>Returns results</li>
+<li>Actor stops</li>
+</ol>
+<hr>
+<h3>Option 2: Run with Ad Library URLs (New in v0.2) 🔗</h3>
+<p>Perfect for: Copying searches directly from Facebook&#39;s Ad Library website, or fetching a specific ad by ID</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=US&amp;q=nike&amp;media_type=video&quot;
+    },
+    {
+      &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=ALL&amp;q=adidas&quot;
+    }
+  ],
+  &quot;maxResultsPerQuery&quot;: 50
+}
+</code></pre>
+<p><strong>How URL Mode works:</strong></p>
+<ol>
+<li>Go to <a href="https://www.facebook.com/ads/library/">Facebook Ad Library</a> and set up your search</li>
+<li>Copy the URL from your browser</li>
+<li>Paste it into the <code>URLAds</code> field</li>
+<li>All filters from the URL (country, language, date range, media type, platforms, sort order) are extracted automatically</li>
+<li>The actor parses each URL and runs the search for you</li>
+</ol>
+<p><strong>📌 Single ad links supported:</strong>
+URLs with <code>?id=</code> fetch that specific ad directly  no search query needed:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?id=907653308384731&quot; }
+  ],
+  &quot;enrichWithAdDetails&quot;: true
+}
+</code></pre>
+<p><strong>Combining URL Mode with Manual Search:</strong></p>
+<p>You can provide URLs alongside keyword and advertiser searches  all run sequentially:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=ALL&amp;q=pokemon&amp;media_type=video&quot; }
+  ],
+  &quot;searchQueries&quot;: [&quot;apify&quot;],
+  &quot;searchAdvertisers&quot;: [&quot;Nike&quot;, &quot;15087023444&quot;],
+  &quot;maxResultsPerQuery&quot;: 50,
+  &quot;activeStatus&quot;: &quot;ALL&quot;,
+  &quot;adType&quot;: &quot;ALL&quot;
+}
+</code></pre>
+<p><strong>Execution order:</strong></p>
+<ol>
+<li>🔗 All <code>URLAds</code> are processed first (each URL uses its own filters from the URL)</li>
+<li>🏢 Then <code>searchAdvertisers</code> are resolved and scraped (using the input schema filters)</li>
+<li>🔍 Then <code>searchQueries</code> are run as keyword searches (using the input schema filters)</li>
+</ol>
+<p><code>maxResultsPerQuery</code> controls the maximum ads collected per URL, per advertiser page, and per keyword query.</p>
+<hr>
+<h3>Option 3: Run in Standby Mode (Recommended) ⭐</h3>
+<p>Perfect for: Real-time applications, multiple requests, APIs, instant responses</p>
+<pre><code class="language-bash"># Actor automatically runs in standby mode
+# Access via: https://dz-omar--facebook-ads-scraper-pro.apify.actor
+</code></pre>
+<p><strong>Standby Mode Advantages:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Batch Mode</th>
+<th>Standby Mode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Cold Start</strong></td>
+<td>8-15 seconds</td>
+<td>0 seconds ⚡</td>
+</tr>
+<tr>
+<td><strong>Response Time</strong></td>
+<td>Slow (start overhead)</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td><strong>Best For</strong></td>
+<td>Scheduled tasks</td>
+<td>Real-time apps</td>
+</tr>
+<tr>
+<td><strong>Concurrent Requests</strong></td>
+<td>Sequential</td>
+<td>Parallel ∞</td>
+</tr>
+<tr>
+<td><strong>Always Running</strong></td>
+<td>No</td>
+<td>Yes (pre-warmed)</td>
+</tr>
+<tr>
+<td><strong>Cost</strong></td>
+<td>Lower</td>
+<td>Higher (always on)</td>
+</tr>
+<tr>
+<td><strong>Ideal Use</strong></td>
+<td>Nightly scrapes</td>
+<td>Live dashboards</td>
+</tr>
+</tbody></table>
+<p><strong>Real-World Comparison:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Batch Mode</th>
+<th>Standby Mode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Track competitor ads daily</td>
+<td>✅ Good</td>
+<td>⭐ Excellent</td>
+</tr>
+<tr>
+<td>Build a SaaS dashboard</td>
+<td>⚠️ Too slow</td>
+<td>✅ Perfect</td>
+</tr>
+<tr>
+<td>One-time research project</td>
+<td>✅ Best</td>
+<td>Overkill</td>
+</tr>
+<tr>
+<td>API for other apps</td>
+<td>❌ Not viable</td>
+<td>✅ Ideal</td>
+</tr>
+<tr>
+<td>Monitor 50 keywords live</td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+</tbody></table>
+<p><strong>Example: Why Standby Mode is Better for Real-Time Dashboards</strong></p>
+<p>Imagine you&#39;re building a competitor monitoring dashboard that updates live:</p>
+<p><strong>Without Standby (Batch Mode):</strong></p>
+<pre><code>User clicks &quot;Refresh&quot;
+  ↓
+Wait 10 seconds for cold start
+  ↓
+Wait 30 seconds for results
+  ↓
+40 seconds total ❌ (User closes browser)
+</code></pre>
+<p><strong>With Standby Mode:</strong></p>
+<pre><code>User clicks &quot;Refresh&quot;
+  ↓
+Results instantly (pre-warmed)
+  ↓
+2 seconds total ✅ (User stays engaged)
+</code></pre>
+<hr>
+<h2>📡 API Endpoints</h2>
+<h3>POST / - Custom Scraping with Real-Time Streaming</h3>
+<p>Send search parameters and receive ad data in real-time NDJSON stream.</p>
+<p><strong>Full Example:</strong></p>
+<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{
+    &quot;searchQueries&quot;: [&quot;nike&quot;, &quot;adidas&quot;],
+    &quot;searchAdvertisers&quot;: [&quot;Nike Football&quot;, &quot;15087023444&quot;],
+    &quot;maxResultsPerQuery&quot;: 100,
+    &quot;countries&quot;: [&quot;US&quot;],
+    &quot;contentLanguages&quot;: [&quot;en&quot;],
+    &quot;activeStatus&quot;: &quot;ACTIVE&quot;,
+    &quot;adType&quot;: &quot;ALL&quot;,
+    &quot;mediaType&quot;: &quot;IMAGE&quot;,
+    &quot;publisherPlatforms&quot;: [&quot;FACEBOOK&quot;, &quot;INSTAGRAM&quot;],
+    &quot;sortBy&quot;: &quot;SORT_BY_TOTAL_IMPRESSIONS&quot;,
+    &quot;startDate&quot;: &quot;2024-01-01&quot;,
+    &quot;endDate&quot;: &quot;2025-01-31&quot;
+  }&#39;
+</code></pre>
+<p><strong>Minimal Example:</strong></p>
+<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;searchQueries&quot;: [&quot;nike&quot;]}&#39;
+</code></pre>
+<p><strong>Advertiser-Only Search:</strong></p>
+<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;searchAdvertisers&quot;: [&quot;Nike&quot;], &quot;maxResultsPerQuery&quot;: 200}&#39;
+</code></pre>
+<p><strong>Save Results to File:</strong></p>
+<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H &quot;Content-Type: application/json&quot; \
+  -d &#39;{&quot;searchQueries&quot;: [&quot;nike&quot;]}&#39; \
+  &gt; results.ndjson
+</code></pre>
+<hr>
+<h2>📋 Input Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>URLAds</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+<td>Facebook Ad Library URLs to scrape directly (new in v0.2)</td>
+</tr>
+<tr>
+<td><code>searchQueries</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+<td>Keywords to search (e.g., <code>[&quot;nike&quot;, &quot;adidas&quot;]</code>)</td>
+</tr>
+<tr>
+<td><code>searchAdvertisers</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+<td>Advertiser names or page IDs</td>
+</tr>
+<tr>
+<td><code>maxResultsPerQuery</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>Max ads per URL / per query / per advertiser page</td>
+</tr>
+<tr>
+<td><code>batchSize</code></td>
+<td>integer</td>
+<td><code>30</code></td>
+<td>Ads per batch request</td>
+</tr>
+<tr>
+<td><code>countries</code></td>
+<td>array/string</td>
+<td><code>[&quot;ALL&quot;]</code></td>
+<td>Country codes (e.g., <code>[&quot;US&quot;, &quot;GB&quot;, &quot;FR&quot;]</code>)</td>
+</tr>
+<tr>
+<td><code>contentLanguages</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+<td>Language codes (e.g., <code>[&quot;en&quot;, &quot;es&quot;, &quot;fr&quot;]</code>)</td>
+</tr>
+<tr>
+<td><code>activeStatus</code></td>
+<td>string</td>
+<td><code>&quot;ALL&quot;</code></td>
+<td><code>&quot;ALL&quot;</code>, <code>&quot;ACTIVE&quot;</code>, <code>&quot;INACTIVE&quot;</code></td>
+</tr>
+<tr>
+<td><code>adType</code></td>
+<td>string</td>
+<td><code>&quot;ALL&quot;</code></td>
+<td>Ad category filter</td>
+</tr>
+<tr>
+<td><code>mediaType</code></td>
+<td>string</td>
+<td><code>&quot;ALL&quot;</code></td>
+<td>Media type filter</td>
+</tr>
+<tr>
+<td><code>publisherPlatforms</code></td>
+<td>array</td>
+<td><code>[]</code></td>
+<td>Platforms to search</td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td>string</td>
+<td><code>&quot;SORT_BY_TOTAL_IMPRESSIONS&quot;</code></td>
+<td>Sort method</td>
+</tr>
+<tr>
+<td><code>startDate</code></td>
+<td>string</td>
+<td><code>null</code></td>
+<td>Start date (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td><code>endDate</code></td>
+<td>string</td>
+<td><code>null</code></td>
+<td>End date (YYYY-MM-DD)</td>
+</tr>
+<tr>
+<td><code>enrichWithAdDetails</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Fetch full ad details per result (advertiser info, targeting, payer/beneficiary, violations)</td>
+</tr>
+</tbody></table>
+<h3>⚠️ Important: Input Requirements</h3>
+<p><strong>At least one of these MUST be provided:</strong></p>
+<ul>
+<li><code>URLAds</code> - Contains Facebook Ad Library URLs</li>
+<li><code>searchQueries</code> - Contains search keywords</li>
+<li><code>searchAdvertisers</code> - Contains advertiser names/page IDs</li>
+</ul>
+<p>You can provide any combination  all are processed sequentially.</p>
+<p><strong>Invalid Input Examples (Will Fail):</strong></p>
+<pre><code class="language-json">{
+  &quot;maxResultsPerQuery&quot;: 50
+}
+</code></pre>
+<p>❌ Error: &quot;No input provided. Supply either URLAds, searchQueries, or searchAdvertisers&quot;</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [],
+  &quot;searchAdvertisers&quot;: []
+}
+</code></pre>
+<p>❌ Error: &quot;Both arrays are empty - no search criteria provided&quot;</p>
+<p><strong>Valid Input Examples:</strong></p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;country=US&quot; }]
+}
+</code></pre>
+<p>✅ Valid - Parses the URL and runs the search</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;nike&quot;]
+}
+</code></pre>
+<p>✅ Valid - Uses all defaults, searches for &quot;nike&quot;</p>
+<pre><code class="language-json">{
+  &quot;searchAdvertisers&quot;: [&quot;15087023444&quot;]
+}
+</code></pre>
+<p>✅ Valid - Searches all ads from page ID</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=pokemon&amp;media_type=video&quot; }],
+  &quot;searchQueries&quot;: [&quot;marketing&quot;],
+  &quot;searchAdvertisers&quot;: [&quot;Nike&quot;, &quot;Apple&quot;],
+  &quot;maxResultsPerQuery&quot;: 100,
+  &quot;countries&quot;: [&quot;US&quot;]
+}
+</code></pre>
+<p>✅ Valid - Runs URL first, then advertisers, then keywords</p>
+<h3>🔍 Enriching Results with Ad Details</h3>
+<p>By default, each result contains the core ad data. Enable <code>enrichWithAdDetails</code> to fetch a richer detail page per ad:</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;nike&quot;],
+  &quot;maxResultsPerQuery&quot;: 50,
+  &quot;enrichWithAdDetails&quot;: true
+}
+</code></pre>
+<p><strong>Extra data included when enabled:</strong></p>
+<ul>
+<li><strong>Advertiser info</strong>: page about text, category, likes, profile photo, cover photo, verification status</li>
+<li><strong>Instagram</strong>: username, followers, verification status</li>
+<li><strong>Targeting (EU)</strong>: location audience, age/gender breakdown, total EU reach</li>
+<li><strong>Payer/Beneficiary</strong>: who paid for and benefits from the ad</li>
+<li><strong>Violations</strong>: any policy violation types flagged by Facebook</li>
+</ul>
+<blockquote>
+<p><strong>⚠️ Performance note:</strong> Each ad requires one extra API request. Scraping will be slower.</p>
+</blockquote>
+<hr>
+<h3>Valid Values Reference</h3>
+<p><strong>Ad Types:</strong></p>
+<ul>
+<li><code>ALL</code> - All ad types</li>
+<li><code>POLITICAL_AND_ISSUE_ADS</code> - Political/election ads</li>
+<li><code>HOUSING_ADS</code> - Real estate &amp; housing</li>
+<li><code>EMPLOYMENT_ADS</code> - Job postings</li>
+<li><code>CREDIT_ADS</code> - Financial products</li>
+</ul>
+<p><strong>Media Types:</strong></p>
+<ul>
+<li><code>ALL</code> - All media types</li>
+<li><code>IMAGE</code> - Static images only</li>
+<li><code>VIDEO</code> - Video ads only</li>
+<li><code>MEME</code> - Text-heavy images</li>
+<li><code>IMAGE_AND_MEME</code> - Both image types</li>
+<li><code>NONE</code> - Text-only ads</li>
+</ul>
+<p><strong>Publisher Platforms:</strong></p>
+<ul>
+<li><code>FACEBOOK</code> - Main Facebook feed</li>
+<li><code>INSTAGRAM</code> - Instagram feed &amp; stories</li>
+<li><code>MESSENGER</code> - Facebook Messenger</li>
+<li><code>WHATSAPP</code> - WhatsApp Business</li>
+<li><code>THREADS</code> - Threads social platform</li>
+<li><code>AUDIENCE_NETWORK</code> - Third-party apps/sites</li>
+</ul>
+<p><strong>Sort Methods:</strong></p>
+<ul>
+<li><code>SORT_BY_TOTAL_IMPRESSIONS</code> - Most viewed first (default)</li>
+<li><code>SORT_BY_RELEVANCY_MONTHLY_GROUPED</code> - Most recent first</li>
+</ul>
+<hr>
+<h2>📤 Response Format (NDJSON Stream)</h2>
+<p>Each line is a JSON object representing real-time data. Process line-by-line as they arrive:</p>
+<h3>Log Messages</h3>
+<pre><code class="language-json">{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;🔍 Processing 2 keyword queries&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:09Z&quot;}
+{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;success&quot;,&quot;message&quot;:&quot;📤 Sent batch: 30 ads for \&quot;nike\&quot;&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:15Z&quot;}
+{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;❌ Query failed: No ads found&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:20Z&quot;}
+</code></pre>
+<h3>Ad Batches (Real-Time)</h3>
+<pre><code class="language-json">{
+  &quot;type&quot;:&quot;batch&quot;,
+  &quot;source&quot;:&quot;keyword_query&quot;,
+  &quot;query&quot;:&quot;nike&quot;,
+  &quot;batchSize&quot;:30,
+  &quot;ads&quot;:[{ad_object}, {ad_object}, ...],
+  &quot;timestamp&quot;:&quot;2026-01-25T23:14:15Z&quot;
+}
+</code></pre>
+<h3>Completion Events</h3>
+<pre><code class="language-json">{&quot;type&quot;:&quot;query_complete&quot;,&quot;query&quot;:&quot;nike&quot;,&quot;totalAds&quot;:100,&quot;timestamp&quot;:&quot;2026-01-25T23:14:30Z&quot;}
+{&quot;type&quot;:&quot;advertiser_complete&quot;,&quot;advertiser&quot;:&quot;Nike&quot;,&quot;totalAds&quot;:50,&quot;timestamp&quot;:&quot;2026-01-25T23:14:35Z&quot;}
+</code></pre>
+<h3>Error Events</h3>
+<pre><code class="language-json">{&quot;type&quot;:&quot;query_error&quot;,&quot;query&quot;:&quot;test&quot;,&quot;error&quot;:&quot;No ads found&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:25Z&quot;}
+{&quot;type&quot;:&quot;advertiser_error&quot;,&quot;advertiser&quot;:&quot;invalid&quot;,&quot;error&quot;:&quot;Could not resolve advertiser&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:40Z&quot;}
+</code></pre>
+<h3>Summary Statistics</h3>
+<pre><code class="language-json">{
+  &quot;type&quot;:&quot;summary&quot;,
+  &quot;stats&quot;:{
+    &quot;queries&quot;:{
+      &quot;total&quot;:2,
+      &quot;success&quot;:2,
+      &quot;failed&quot;:0,
+      &quot;ads&quot;:150
+    },
+    &quot;advertisers&quot;:{
+      &quot;total&quot;:1,
+      &quot;success&quot;:1,
+      &quot;failed&quot;:0,
+      &quot;ads&quot;:50
+    }
+  },
+  &quot;timestamp&quot;:&quot;2026-01-25T23:14:40Z&quot;
+}
+</code></pre>
+<h3>Completion</h3>
+<pre><code class="language-json">{&quot;type&quot;:&quot;complete&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:45Z&quot;}
+</code></pre>
+<hr>
+<h2>📊 Ad Data Structure</h2>
+<p>Each ad object contains:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;606497791453836&quot;,
+  &quot;page_id&quot;: &quot;15087023444&quot;,
+  &quot;page_name&quot;: &quot;Nike&quot;,
+  &quot;page_url&quot;: &quot;https://facebook.com/Nike&quot;,
+  &quot;page_profile_picture_url&quot;: &quot;https://...&quot;,
+  &quot;page_likes&quot;: 5000000,
+  &quot;page_category&quot;: &quot;Brand&quot;,
+  
+  &quot;text&quot;: &quot;Just Do It campaign&quot;,
+  &quot;title&quot;: &quot;Ad Title&quot;,
+  &quot;caption&quot;: &quot;Visit our store&quot;,
+  &quot;link_url&quot;: &quot;https://nike.com&quot;,
+  &quot;cta_text&quot;: &quot;Learn More&quot;,
+  
+  &quot;media&quot;: {
+    &quot;type&quot;: &quot;image|video&quot;,
+    &quot;primary_thumbnail&quot;: &quot;https://...&quot;,
+    &quot;images&quot;: [&quot;...&quot;],
+    &quot;videos&quot;: [&quot;...&quot;]
+  },
+  
+  &quot;additional_assets&quot;: {
+    &quot;images&quot;: [&quot;...&quot;],
+    &quot;links&quot;: [&quot;...&quot;],
+    &quot;texts&quot;: [&quot;...&quot;],
+    &quot;videos&quot;: [&quot;...&quot;]
+  },
+  
+  &quot;start_date&quot;: &quot;2024-01-15&quot;,
+  &quot;end_date&quot;: &quot;2024-02-15&quot;,
+  &quot;is_active&quot;: true,
+  
+  &quot;platforms&quot;: [&quot;FACEBOOK&quot;, &quot;INSTAGRAM&quot;],
+  &quot;countries&quot;: [&quot;US&quot;, &quot;GB&quot;, &quot;CA&quot;],
+  &quot;ad_category&quot;: &quot;MARKETING&quot;,
+  
+  &quot;contains_sensitive_content&quot;: false,
+  &quot;scraped_at&quot;: &quot;2026-01-25T23:14:50Z&quot;,
+
+  // Only present when enrichWithAdDetails: true
+  &quot;ad_details&quot;: {
+    &quot;advertiser&quot;: {
+      &quot;page&quot;: { &quot;id&quot;: &quot;15087023444&quot;, &quot;about&quot;: { &quot;text&quot;: &quot;https://nike.com&quot; } },
+      &quot;ad_library_page_info&quot;: {
+        &quot;page_info&quot;: {
+          &quot;ig_username&quot;: &quot;nike&quot;,
+          &quot;ig_followers&quot;: 306000000,
+          &quot;ig_verification&quot;: true,
+          &quot;page_verification&quot;: &quot;BLUE_VERIFIED&quot;,
+          &quot;page_cover_photo&quot;: &quot;https://...&quot;,
+          &quot;entity_type&quot;: &quot;BRAND&quot;
+        },
+        &quot;page_spend&quot;: { &quot;is_political_page&quot;: false }
+      }
+    },
+    &quot;aaa_info&quot;: {
+      &quot;targets_eu&quot;: true,
+      &quot;gender_audience&quot;: &quot;All&quot;,
+      &quot;age_audience&quot;: { &quot;min&quot;: 18, &quot;max&quot;: 65 },
+      &quot;eu_total_reach&quot;: 500000,
+      &quot;location_audience&quot;: [{ &quot;name&quot;: &quot;France&quot;, &quot;type&quot;: &quot;countries&quot; }, &quot;...&quot;],
+      &quot;age_country_gender_reach_breakdown&quot;: [&quot;...&quot;],
+      &quot;payer_beneficiary_data&quot;: [{ &quot;payer&quot;: &quot;Nike Inc.&quot;, &quot;beneficiary&quot;: &quot;Nike&quot; }],
+      &quot;has_violating_payer_beneficiary&quot;: false,
+      &quot;is_ad_taken_down&quot;: false
+    },
+    &quot;violation_types&quot;: [],
+    &quot;verified_voice_context&quot;: {
+      &quot;types&quot;: [&quot;UNCATEGORIZED&quot;],
+      &quot;ad_library_all_geo_fin_serv_info&quot;: { &quot;finserv_data&quot;: [] }
+    }
+  }
+}
+</code></pre>
+<hr>
+<h2>🎯 Search Modes Explained</h2>
+<h3>1. URL Mode (New in v0.2) 🔗</h3>
+<p>Paste Ad Library URLs directly  all filters are extracted automatically:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?active_status=active&amp;ad_type=all&amp;country=US&amp;q=nike&amp;media_type=video&quot; }
+  ],
+  &quot;maxResultsPerQuery&quot;: 100
+}
+</code></pre>
+<p><strong>Use Case:</strong> You&#39;ve already set up the perfect search on Facebook&#39;s Ad Library website  just copy the URL and let the actor handle it.</p>
+<p><strong>📌 Single ad links also supported:</strong></p>
+<p>URLs containing <code>?id=</code> fetch that one specific ad directly  no search, no pagination:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?id=907653308384731&quot; }
+  ]
+}
+</code></pre>
+<p>Pair it with <code>enrichWithAdDetails: true</code> to get the full advertiser, targeting, and payer/beneficiary data for that ad:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?id=907653308384731&quot; }
+  ],
+  &quot;enrichWithAdDetails&quot;: true
+}
+</code></pre>
+<h3>2. Keyword Search</h3>
+<p>Search for ads by keywords or brand names:</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;nike&quot;, &quot;adidas&quot;],
+  &quot;maxResultsPerQuery&quot;: 100
+}
+</code></pre>
+<p><strong>Use Case:</strong> Find all ads mentioning your keywords across all advertisers</p>
+<blockquote>
+<p><strong>⚠️ Important  Keyword Search is Broad by Design</strong></p>
+<p>When using <code>searchQueries</code>, Facebook Ads Scraper Pro performs a <strong>keyword search across all advertisers</strong>. This means it matches any ad whose text, title, or page name contains your keyword  not just the brand you may have in mind.</p>
+<p>For example:</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;SHEIN&quot;]
+}
+</code></pre>
+<p>This will return ads from <strong>SHEIN Brasil</strong>, <strong>SHEIN KIDS</strong>, <strong>SHEIN Mexico</strong>, and any other page or ad copy containing the word &quot;SHEIN&quot;. The impression-based ranking may also surface different ads than you&#39;d expect when targeting a specific page.</p>
+<p><strong>If you want precise, targeted results for a specific advertiser, use one of these instead:</strong></p>
+<ul>
+<li>🏢 <strong><code>searchAdvertisers</code></strong>  resolves the brand name to its exact Facebook page(s) and fetches only their ads:<pre><code class="language-json">{ &quot;searchAdvertisers&quot;: [&quot;SHEIN&quot;] }
+</code></pre>
+</li>
+<li>🔗 <strong><code>URLAds</code></strong>  copy the URL directly from Facebook&#39;s Ad Library after setting up your exact search filters:<pre><code class="language-json">{ &quot;URLAds&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=SHEIN&amp;country=ALL&quot; }] }
+</code></pre>
+</li>
+</ul>
+</blockquote>
+<h3>3. Advertiser Search</h3>
+<p>Search ads from specific Facebook pages:</p>
+<pre><code class="language-json">{
+  &quot;searchAdvertisers&quot;: [&quot;Nike&quot;, &quot;15087023444&quot;],
+  &quot;maxResultsPerQuery&quot;: 100
+}
+</code></pre>
+<p><strong>Use Case:</strong> Monitor what a specific brand/company is advertising. Names are resolved via Facebook&#39;s typeahead API  all exact-match pages are scraped.</p>
+<h3>4. Combined Search</h3>
+<p>URLs, keywords, and advertisers all in one run:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    { &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=pokemon&amp;country=ALL&amp;media_type=video&quot; }
+  ],
+  &quot;searchQueries&quot;: [&quot;marketing&quot;],
+  &quot;searchAdvertisers&quot;: [&quot;Nike&quot;, &quot;Apple&quot;],
+  &quot;maxResultsPerQuery&quot;: 50
+}
+</code></pre>
+<p><strong>Use Case:</strong> Run a comprehensive competitive analysis in a single actor run. URLs are processed first with their own filters, then advertisers and keywords run with the input schema filters.</p>
+<hr>
+<h2>🌍 Supported Countries &amp; Languages</h2>
+<h3>Countries (200+)</h3>
+<p><code>ALL</code>, <code>US</code>, <code>GB</code>, <code>CA</code>, <code>AU</code>, <code>DE</code>, <code>FR</code>, <code>ES</code>, <code>IT</code>, <code>BR</code>, <code>IN</code>, <code>JP</code>, <code>DZ</code>, and 190+ more ISO 2-letter codes</p>
+<h3>Languages (100+)</h3>
+<p><code>en</code>, <code>es</code>, <code>fr</code>, <code>de</code>, <code>it</code>, <code>pt</code>, <code>ja</code>, <code>ko</code>, <code>zh</code>, <code>ar</code>, and 90+ more ISO 2-letter codes</p>
+<hr>
+<h2>🔄 Standby Mode Deep Dive</h2>
+<h3>What is Standby Mode?</h3>
+<p>Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays.</p>
+<p><strong>Traditional Batch Mode:</strong></p>
+<pre><code>Request → Start Actor (8-15s) → Process → Stop Actor
+</code></pre>
+<p><strong>Standby Mode:</strong></p>
+<pre><code>Request → Instant Response (pre-warmed instance)
+</code></pre>
+<h3>Why Choose Standby Mode?</h3>
+<table>
+<thead>
+<tr>
+<th>Use Case</th>
+<th>Batch Mode</th>
+<th>Standby Mode</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Nightly automated scrape</strong></td>
+<td>✅ Best choice</td>
+<td>Overkill</td>
+</tr>
+<tr>
+<td><strong>Live competitor dashboard</strong></td>
+<td>❌ Too slow</td>
+<td>✅ Essential</td>
+</tr>
+<tr>
+<td><strong>API for external apps</strong></td>
+<td>❌ Not viable</td>
+<td>✅ Perfect</td>
+</tr>
+<tr>
+<td><strong>Real-time alerts</strong></td>
+<td>❌ No</td>
+<td>✅ Yes</td>
+</tr>
+<tr>
+<td><strong>Webhook integrations</strong></td>
+<td>❌ Doesn&#39;t work</td>
+<td>✅ Works great</td>
+</tr>
+<tr>
+<td><strong>Mobile app backend</strong></td>
+<td>❌ No</td>
+<td>✅ Great</td>
+</tr>
+<tr>
+<td><strong>Research project</strong></td>
+<td>✅ Good</td>
+<td>Expensive</td>
+</tr>
+</tbody></table>
+<h3>Technical Advantages</h3>
+<p><strong>Cold Start Elimination:</strong></p>
+<ul>
+<li>Batch: 10-15 seconds to start</li>
+<li>Standby: 0 seconds (instant)</li>
+<li>Difference: <strong>10-15 seconds per request</strong> saved</li>
+</ul>
+<p><strong>Scalability:</strong></p>
+<ul>
+<li>Batch: One request at a time</li>
+<li>Standby: Handle 100+ concurrent requests</li>
+<li>Difference: <strong>100x throughput</strong></li>
+</ul>
+<p><strong>User Experience:</strong></p>
+<ul>
+<li>Batch: User waits for response</li>
+<li>Standby: Instant results</li>
+<li>Difference: <strong>User stays engaged</strong></li>
+</ul>
+<h3>Example: Competitor Monitoring Dashboard</h3>
+<p><strong>Scenario:</strong> Build a live dashboard monitoring Nike, Adidas, and Puma ads</p>
+<p><strong>With Batch Mode:</strong></p>
+<pre><code>Dashboard loads
+  ↓
+User clicks &quot;Nike&quot; tab
+  ↓
+API call to scraper
+  ↓
+Wait 10 seconds (cold start) ❌
+  ↓
+Wait 20 seconds (scraping) ❌
+  ↓
+Display results
+  ↓
+Total time: 30 seconds (user frustrated)
+</code></pre>
+<p><strong>With Standby Mode:</strong></p>
+<pre><code>Dashboard loads (scraper pre-warmed)
+  ↓
+User clicks &quot;Nike&quot; tab
+  ↓
+API call to scraper
+  ↓
+Results instantly ✅
+  ↓
+Display results
+  ↓
+Total time: 2 seconds (user delighted)
+</code></pre>
+<h3>How to Access Standby Mode</h3>
+<p><strong>Automatic Access:</strong>
+Simply use the actor URL directly:</p>
+<pre><code>https://dz-omar--facebook-ads-scraper-pro.apify.actor
+</code></pre>
+<p><strong>No Configuration Needed:</strong></p>
+<ul>
+<li>Instance is always running</li>
+<li>Ready 24/7</li>
+<li>No startup delay</li>
+<li>Just send HTTP requests</li>
+</ul>
+<p><strong>Direct Integration Example:</strong></p>
+<p>Your application can make direct API calls:</p>
+<pre><code>POST https://dz-omar--facebook-ads-scraper-pro.apify.actor
+Content-Type: application/json
+
+{
+  &quot;searchQueries&quot;: [&quot;nike&quot;],
+  &quot;maxResultsPerQuery&quot;: 50
+}
+</code></pre>
+<h3>Standby Mode Pricing</h3>
+<ul>
+<li><strong>Higher Cost:</strong> Actor runs continuously</li>
+<li><strong>Break-even Point:</strong> ~3-4 requests per day</li>
+<li><strong>Best For:</strong> High-frequency usage patterns</li>
+<li><strong>Not Ideal For:</strong> Low-frequency, scheduled tasks</li>
+</ul>
+<p><strong>Cost Comparison (Example):</strong></p>
+<pre><code>100 daily requests
+- Batch mode: 100 starts × 30 sec = 50 min/day = $$
+- Standby mode: Always on = $ (often cheaper!)
+</code></pre>
+<h3>Standby Mode Limitations</h3>
+<ul>
+<li>Maximum continuous run: ~30 minutes idle timeout</li>
+<li>Reconnect is automatic if disconnected</li>
+<li>Not suitable for very low-frequency usage</li>
+<li>Higher base cost even if no requests</li>
+</ul>
+<h3>Standby Mode Best Practices</h3>
+<ol>
+<li><strong>Keep Connections Alive:</strong> Send heartbeat requests periodically</li>
+<li><strong>Handle Reconnections:</strong> Implement retry logic on client side</li>
+<li><strong>Batch Related Requests:</strong> Send multiple queries in one request when possible</li>
+<li><strong>Monitor Performance:</strong> Track response times and errors</li>
+<li><strong>Set Reasonable Limits:</strong> Don&#39;t request 10,000 ads if you need 100</li>
+</ol>
+<hr>
+<table>
+<thead>
+<tr>
+<th>Aspect</th>
+<th>Details</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Requests</strong></td>
+<td>No hard limit, respects Facebook&#39;s rate limits</td>
+</tr>
+<tr>
+<td><strong>Batch Size</strong></td>
+<td>Default 30 ads, configurable 10-100</td>
+</tr>
+<tr>
+<td><strong>Results per Query</strong></td>
+<td>1-10,000 ads per query</td>
+</tr>
+<tr>
+<td><strong>Concurrent Requests</strong></td>
+<td>Unlimited (standby mode scales automatically)</td>
+</tr>
+<tr>
+<td><strong>Response Time</strong></td>
+<td>Real-time streaming - results as they arrive</td>
+</tr>
+<tr>
+<td><strong>Memory Usage</strong></td>
+<td>No limits - stream handles 1000s of ads</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🛡️ Error Handling &amp; Migration</h2>
+<h3>Automatic Retry Logic</h3>
+<ul>
+<li>Failed queries are retried up to 3 times</li>
+<li>Exponential backoff prevents rate limiting</li>
+<li>Failed queries are logged but don&#39;t stop the job</li>
+</ul>
+<h3>Migration Handling</h3>
+<p>Server automatically handles Apify platform migrations:</p>
+<pre><code class="language-json">{&quot;type&quot;:&quot;migrating&quot;,&quot;message&quot;:&quot;Server is migrating to new instance&quot;,&quot;timestamp&quot;:&quot;...&quot;}
+</code></pre>
+<p><strong>Connection behavior:</strong></p>
+<ul>
+<li>Connection closes gracefully</li>
+<li>Reconnect to resume if interrupted</li>
+<li>No data loss - state is preserved</li>
+</ul>
+<hr>
+<h2>🛠️ Troubleshooting</h2>
+<h3><strong>URL Mode Issues</strong></h3>
+<ul>
+<li><strong>URL not recognized</strong>: Make sure you&#39;re copying from <code>https://www.facebook.com/ads/library/...</code></li>
+<li><strong>Filters not applied</strong>: Check that the URL contains the expected query parameters</li>
+<li><strong>Wrong result count</strong>: Use <code>maxResultsPerQuery</code> to control how many ads are fetched per URL</li>
+</ul>
+<h3><strong>Search Issues</strong></h3>
+<ul>
+<li><strong>No results</strong>: Try broader keywords or check spelling</li>
+<li><strong>Limited data</strong>: Increase <code>maxResultsPerQuery</code> or expand date ranges</li>
+<li><strong>Missing recent ads</strong>: Facebook may have indexing delays</li>
+</ul>
+<h3><strong>Connection Issues (Free Tier)</strong></h3>
+<ul>
+<li><strong>Intermittent failures</strong>: Consider upgrading to Paid tier for stability</li>
+<li><strong>Slow performance</strong>: Reduce batch size or split into multiple smaller runs</li>
+<li><strong>Rate limiting errors</strong>: Wait a few minutes before retrying, or upgrade to Paid</li>
+</ul>
+<h3><strong>Geographic Filtering</strong></h3>
+<ul>
+<li><strong>Empty countries String</strong>: Use <code>&quot;ALL&quot;</code> for global targeting</li>
+<li><strong>Wrong country codes</strong>: Use ISO 2-letter codes (US, not USA)</li>
+<li><strong>Missing regional ads</strong>: Some ads may not be available in all regions</li>
+</ul>
+<h3><strong>Media Access</strong></h3>
+<ul>
+<li><strong>Missing media URLs</strong>: Some ads may have expired media</li>
+<li><strong>Broken links</strong>: Media URLs may expire after extended periods</li>
+<li><strong>Empty arrays</strong>: Check if media type matches your filter</li>
+</ul>
+<h3><strong>Performance Optimization</strong></h3>
+<ul>
+<li><strong>Large datasets</strong>: Use date ranges to limit scope</li>
+<li><strong>Free tier limits</strong>: Consider Paid tier for 1000+ ads per query</li>
+<li><strong>Better results</strong>: Upgrade to Paid tier for enterprise-grade stability</li>
+</ul>
+<hr>
+<h2>📈 Business Intelligence Applications</h2>
+<h3><strong>🎯 Competitive Intelligence</strong></h3>
+<ul>
+<li><strong>Ad Strategy Analysis</strong>: Track competitor creative strategies</li>
+<li><strong>Platform Presence</strong>: Monitor competitor activity across platforms</li>
+<li><strong>Campaign Duration</strong>: Analyze campaign lengths and timing</li>
+</ul>
+<h3><strong>🚀 Campaign Optimization</strong></h3>
+<ul>
+<li><strong>Creative Inspiration</strong>: Download high-quality assets</li>
+<li><strong>CTA Analysis</strong>: Study effective call-to-action strategies</li>
+<li><strong>Performance Benchmarking</strong>: Compare page engagement metrics</li>
+</ul>
+<h3><strong>📊 Market Research</strong></h3>
+<ul>
+<li><strong>Industry Trends</strong>: Filter by category for sector analysis</li>
+<li><strong>Geographic Patterns</strong>: Analyze regional strategies</li>
+<li><strong>Content Evolution</strong>: Track messaging changes over time</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available Facebook Ad Library data</li>
+<li><strong>Rate Limiting</strong>: Respects Facebook&#39;s service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+</ul>
+<hr>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Subtitle Translator | AI-Powered SRT Generator | FlowExtract API</title>
+    <meta name="title" content="YouTube Subtitle Translator | AI-Powered SRT Generator | FlowExtract API">
+    <meta name="description" content="Extract YouTube transcripts and translate them into 20+ languages with AI. Get professional SRT subtitle files with perfect timing preservation. Perfect for content creators, educators, and global audiences.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-subtitle-translator.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Subtitle Translator | AI-Powered SRT Generator | FlowExtract API">
+    <meta property="og:description" content="Extract YouTube transcripts and translate them into 20+ languages with AI. Get professional SRT subtitle files with perfect timing preservation. Perfect for content creators, educators, and global audiences.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-subtitle-translator.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/9zpcz186LFvMUG43xcrz5UNl1ELCM1D2ONyzscIh5Jc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItVkUzMzF4VUZlVHUxS0w0RHotbXZoU1F0clR3dy1mNDNjZjdiMy0xNDc0LTRjZWEtYjM4OC03ODU3N2I5Y2RhNjUucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Subtitle Translator | AI-Powered SRT Generator | FlowExtract API">
+    <meta name="twitter:description" content="Extract YouTube transcripts and translate them into 20+ languages with AI. Get professional SRT subtitle files with perfect timing preservation. Perfect for content creators, educators, and global audiences.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/9zpcz186LFvMUG43xcrz5UNl1ELCM1D2ONyzscIh5Jc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItVkUzMzF4VUZlVHUxS0w0RHotbXZoU1F0clR3dy1mNDNjZjdiMy0xNDc0LTRjZWEtYjM4OC03ODU3N2I5Y2RhNjUucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Subtitle Translator","description":"Extract YouTube transcripts and translate them into 20+ languages with AI. Get professional SRT subtitle files with perfect timing preservation. Perfect for content creators, educators, and global audiences.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-subtitle-translator.html","sameAs":"https://apify.com/dz_omar/youtube-subtitle-translator?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/9zpcz186LFvMUG43xcrz5UNl1ELCM1D2ONyzscIh5Jc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItVkUzMzF4VUZlVHUxS0w0RHotbXZoU1F0clR3dy1mNDNjZjdiMy0xNDc0LTRjZWEtYjM4OC03ODU3N2I5Y2RhNjUucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run YouTube Subtitle Translator?","acceptedAnswer":{"@type":"Answer","text":"Open YouTube Subtitle Translator on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is YouTube Subtitle Translator free?","acceptedAnswer":{"@type":"Answer","text":"YouTube Subtitle Translator runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"🎯 Why Use This Actor?","acceptedAnswer":{"@type":"Answer","text":"Most creators waste 2-3 hours per video using manual methods:"}},{"@type":"Question","name":"🏆 Why Lingo.dev?","acceptedAnswer":{"@type":"Answer","text":"Unlike Google Translate, ChatGPT, or manual translation:"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,559 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/9zpcz186LFvMUG43xcrz5UNl1ELCM1D2ONyzscIh5Jc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItVkUzMzF4VUZlVHUxS0w0RHotbXZoU1F0clR3dy1mNDNjZjdiMy0xNDc0LTRjZWEtYjM4OC03ODU3N2I5Y2RhNjUucG5n.png" alt="YouTube Subtitle Translator" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">YouTube Subtitle Translator</h1>
+                <p class="actor-hero-desc">Extract YouTube transcripts and translate them into 20+ languages with AI. Get professional SRT subtitle files with perfect timing preservation. Perfect for content creators, educators, and global audiences.</p>
+                <a href="https://apify.com/dz_omar/youtube-subtitle-translator?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">YouTube Subtitle Translator is a ready-to-run Apify actor from FlowExtract API for social media. Transform YouTube videos into multilingual subtitles instantly. Extract transcripts and translate them into 20+ languages with perfect timing preservation. Get professional SRT files ready for upload. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>results are merged and returned as a single unified output</li><li>you may see two Actors running for a single execution this is expected behavior</li><li>this Actor does not start automatically and only runs when you explicitly trigger it</li><li>the standby transcript extraction consumes compute units, just like running the transcript extractor directly</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run YouTube Subtitle Translator?</summary><p>Open YouTube Subtitle Translator on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is YouTube Subtitle Translator free?</summary><p>YouTube Subtitle Translator runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>🎯 Why Use This Actor?</summary><p>Most creators waste 2-3 hours per video using manual methods:</p></details><details class="faq-item"><summary>🏆 Why Lingo.dev?</summary><p>Unlike Google Translate, ChatGPT, or manual translation:</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎬 YouTube Subtitle Translator</h1>
+<p><strong>Transform YouTube videos into multilingual subtitles instantly. Extract transcripts and translate them into 20+ languages with perfect timing preservation. Get professional SRT files ready for upload.</strong></p>
+<p>This powerful Apify actor is designed for YouTube content creators, educators, and businesses who want to reach global audiences. Get professional-quality SRT subtitle files and cleaned translations in minutes.</p>
+<hr>
+<h2>⚠️ Important: Execution Model &amp; Costs</h2>
+<p>This Actor is a <strong>wrapper</strong> that combines YouTube Subtitle Translator scraping with transcript extraction.</p>
+<p>When you run the acter <strong>YouTube Subtitle Translator</strong> does <strong>not</strong> extract transcripts directly. Instead:</p>
+<ul>
+<li>It  <strong>executes <a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a> in standby mode</strong> to retrieve transcripts for each video</li>
+<li>Results are merged and returned as a single unified output</li>
+</ul>
+<h3>What this means for you</h3>
+<ul>
+<li>You may see <strong>two Actors running</strong> for a single execution  this is <strong>expected behavior</strong></li>
+<li>This Actor does <strong>not start automatically</strong> and only runs when you explicitly trigger it</li>
+<li>The standby transcript extraction <strong>consumes compute units</strong>, just like running the transcript extractor directly</li>
+</ul>
+<h3>Billing &amp; Compute Usage</h3>
+<ul>
+<li>Costs come from <strong>both</strong> this Actor and the internally triggered transcript extractor</li>
+</ul>
+<p>If you prefer direct control over transcript extraction, run the extractor separately:</p>
+<p>👉 <strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong></p>
+<hr>
+<h2>🎯 Why Use This Actor?</h2>
+<h3>⚡ The Problem</h3>
+<p>Most creators waste <strong>2-3 hours per video</strong> using manual methods:</p>
+<pre><code>❌ Old Workflow (2-3 hours):
+1. Download video from YouTube
+2. Extract transcript manually
+3. Copy text to ChatGPT/Claude (token limits!)
+4. Translate in multiple chunks
+5. Copy back piece by piece
+6. Format SRT file manually (time codes break!)
+7. Fix timing issues
+8. Repeat for each language
+</code></pre>
+<h3>✅ Our Solution (5 minutes)</h3>
+<pre><code>✅ New Workflow (5 minutes):
+1. Paste YouTube URL
+2. Select target languages (1 or multiple)
+3. Click &quot;Run&quot;
+4. Download SRT files + clean translations
+✅ Upload to YouTube - Done!
+</code></pre>
+<hr>
+<h2>🚀 Key Features</h2>
+<h3>🎯 Complete Transcript Translation</h3>
+<ul>
+<li><strong>Auto-Language Detection</strong> - Automatically detects source language (English, Arabic, German, French, etc.)</li>
+<li><strong>Multiple Languages</strong> - Translate to 20+ languages in a single run</li>
+<li><strong>Title Translation</strong> - Localize video titles for better discoverability</li>
+<li><strong>Description Translation</strong> - Translate full video descriptions</li>
+<li><strong>Timestamp Preservation</strong> - Maintains exact timing from original (millisecond accuracy)</li>
+<li><strong>Batch Processing</strong> - Translate multiple videos at once</li>
+</ul>
+<h3>📁 Multiple Output Formats</h3>
+<ul>
+<li><strong>SRT Files</strong> - Industry-standard SubRip format for YouTube/Vimeo</li>
+<li><strong>Clean Translations</strong> - Downloadable JSON with formatted title + description</li>
+<li><strong>Direct Download URLs</strong> - Easy access to all generated files</li>
+</ul>
+<h3>⚡ Performance &amp; Reliability</h3>
+<ul>
+<li><strong>Lightning Fast</strong> - Process videos in 2-5 minutes</li>
+<li><strong>AI-Powered</strong> - Lingo.dev translation engine for high-quality results</li>
+<li><strong>Perfect Timing</strong> - Zero drift or synchronization issues</li>
+<li><strong>Error Handling</strong> - Graceful handling of failed videos (continues with others)</li>
+<li><strong>Real-time Logging</strong> - See exactly what&#39;s happening</li>
+</ul>
+<hr>
+<h2>📋 Supported Languages</h2>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Language</th>
+<th>Code</th>
+<th>Language</th>
+<th>Code</th>
+<th>Language</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>en</code></td>
+<td>English</td>
+<td><code>es</code></td>
+<td>Spanish</td>
+<td><code>ar</code></td>
+<td>Arabic</td>
+</tr>
+<tr>
+<td><code>fr</code></td>
+<td>French</td>
+<td><code>de</code></td>
+<td>German</td>
+<td><code>ja</code></td>
+<td>Japanese</td>
+</tr>
+<tr>
+<td><code>pt</code></td>
+<td>Portuguese</td>
+<td><code>it</code></td>
+<td>Italian</td>
+<td><code>ko</code></td>
+<td>Korean</td>
+</tr>
+<tr>
+<td><code>ru</code></td>
+<td>Russian</td>
+<td><code>pl</code></td>
+<td>Polish</td>
+<td><code>tr</code></td>
+<td>Turkish</td>
+</tr>
+<tr>
+<td><code>nl</code></td>
+<td>Dutch</td>
+<td><code>sv</code></td>
+<td>Swedish</td>
+<td><code>da</code></td>
+<td>Danish</td>
+</tr>
+<tr>
+<td><code>fi</code></td>
+<td>Finnish</td>
+<td><code>el</code></td>
+<td>Greek</td>
+<td><code>zh</code></td>
+<td>Chinese</td>
+</tr>
+<tr>
+<td><code>hi</code></td>
+<td>Hindi</td>
+<td><code>th</code></td>
+<td>Thai</td>
+<td><code>vi</code></td>
+<td>Vietnamese</td>
+</tr>
+</tbody></table>
+<p><strong>Plus more!</strong> 20+ languages supported.</p>
+<hr>
+<h2>🛠️ How It Works</h2>
+<h3>3-Step Process</h3>
+<pre><code>Step 1: Extract Transcript
+   YouTube URL → YouTube Transcript Extractor
+   → Get title, description, timestamps
+
+Step 2: Translate Content
+   Original text → Lingo.dev AI Translation
+   → Preserves timing, translates text
+
+Step 3: Generate Output
+   Translated timestamps → Professional SRT format
+   → Clean JSON with download link
+</code></pre>
+<h3>Technical Flow</h3>
+<pre><code>User Input:
+  - YouTube URLs (1 or multiple)
+  - Target Languages (1 or multiple)
+  - Lingo.dev API Key
+         ↓
+Extract Transcripts:
+  - Call YouTube Transcript Extractor
+  - Get title, description, timestamps
+  - Detect source language automatically
+         ↓
+Translate Each Language:
+  - Send entire object to Lingo.dev (ONE API call)
+  - Preserve timestamps, translate text
+  - Count words for billing
+         ↓
+Generate Files:
+  1. SRT file (ready for YouTube)
+  2. Clean translation JSON (with download URL)
+  3. Billing info + Summary
+         ↓
+Output:
+  ✅ Dataset with all results
+  ✅ Key-value store with downloadable files
+</code></pre>
+<hr>
+<h2>📥 Input Configuration</h2>
+<h3>Simple Example</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrl&quot;: [
+    {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=abc123&quot;},
+    {&quot;url&quot;: &quot;https://youtu.be/xyz789&quot;}
+  ],
+  &quot;targetLanguages&quot;: [&quot;ar&quot;, &quot;es&quot;, &quot;fr&quot;],
+  &quot;Lingo_api_key&quot;: &quot;sk-lingo-...&quot;
+}
+</code></pre>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>youtubeUrl</code></td>
+<td><code>array</code></td>
+<td>✅ Yes</td>
+<td>YouTube video URLs (watch, youtu.be, or live format)</td>
+</tr>
+<tr>
+<td><code>targetLanguages</code></td>
+<td><code>array</code></td>
+<td>✅ Yes</td>
+<td>ISO language codes for translation targets</td>
+</tr>
+<tr>
+<td><code>Lingo_api_key</code></td>
+<td><code>string</code></td>
+<td>✅ Yes</td>
+<td>Your Lingo.dev API key (get free at <a href="https://lingo.dev">https://lingo.dev</a>)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>📤 Output Structure</h2>
+<h3>Dataset Results</h3>
+<p>Each translation produces a comprehensive result:</p>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;dQw4w9WgXcQ&quot;,
+  &quot;videoUrl&quot;: &quot;https://youtu.be/dQw4w9WgXcQ&quot;,
+  &quot;original&quot;: {
+    &quot;title&quot;: &quot;Never Gonna Give You Up&quot;,
+    &quot;description&quot;: &quot;Official music video for &#39;Never Gonna Give You Up&#39;...&quot;,
+    &quot;language&quot;: &quot;en&quot;,
+    &quot;timestampCount&quot;: 145,
+    &quot;metadata&quot;: {
+      &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/...&quot;,
+      &quot;channel&quot;: {
+        &quot;name&quot;: &quot;Rick Astley&quot;,
+        &quot;id&quot;: &quot;UCID...&quot;,
+        &quot;url&quot;: &quot;https://www.youtube.com/channel/...&quot;,
+        &quot;subscribers&quot;: &quot;5M&quot;,
+        &quot;verified&quot;: true
+      },
+      &quot;views&quot;: &quot;1.2B views&quot;,
+      &quot;publishedDate&quot;: &quot;Oct 25, 2009&quot;
+    }
+  },
+  &quot;translated&quot;: {
+    &quot;title&quot;: &quot;Nunca Te Voy A Renunciar&quot;,
+    &quot;description&quot;: &quot;Video musical oficial de &#39;Nunca Te Voy A Renunciar&#39;...&quot;,
+    &quot;language&quot;: &quot;es&quot;,
+    &quot;timestampCount&quot;: 141,
+    &quot;cleanTextFile&quot;: {
+      &quot;url&quot;: &quot;https://api.apify.com/v2/key-value-stores/.../dQw4w9WgXcQ_es_CLEAN.txt&quot;,
+      &quot;format&quot;: &quot;TXT&quot;,
+      &quot;encoding&quot;: &quot;UTF-8&quot;
+    }
+  },
+  &quot;subtitleFile&quot;: {
+    &quot;downloadUrl&quot;: &quot;https://api.apify.com/v2/key-value-stores/.../records/dQw4w9WgXcQ_es.srt&quot;,
+    &quot;language&quot;: &quot;es&quot;,
+    &quot;format&quot;: &quot;SRT&quot;
+  }
+}
+</code></pre>
+<h3>Clean Translation JSON</h3>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Nunca Te Voy A Renunciar&quot;,
+  &quot;description&quot;: &quot;Video musical oficial de &#39;Nunca Te Voy A Renunciar&#39;...&quot;,
+  &quot;downloadUrl&quot;: &quot;https://api.apify.com/v2/key-value-stores/.../records/dQw4w9WgXcQ_es_CLEAN.txt&quot;,
+  &quot;language&quot;: &quot;es&quot;,
+  &quot;timestampCount&quot;: 145
+}
+</code></pre>
+<h3>Clean Translation Text File</h3>
+<pre><code>TITLE:
+Nunca Te Voy A Renunciar
+
+DESCRIPTION:
+Video musical oficial de &#39;Nunca Te Voy A Renunciar&#39;...
+Con subtítulos en español.
+</code></pre>
+<hr>
+<h2>💼 Professional Use Cases</h2>
+<h3>📚 Content Creators &amp; YouTubers</h3>
+<ul>
+<li><strong>Expand Global Reach</strong> - Reach billions of non-English speakers</li>
+<li><strong>Boost Watch Time</strong> - Viewers stay longer with native subtitles</li>
+<li><strong>Improve SEO</strong> - YouTube indexes translated titles/descriptions</li>
+<li><strong>Monetization</strong> - More languages = more ad revenue</li>
+</ul>
+<h3>🎓 Educational Institutions</h3>
+<ul>
+<li><strong>Online Courses</strong> - Make content accessible to international students</li>
+<li><strong>Research Videos</strong> - Share findings with global academic community</li>
+<li><strong>Training Materials</strong> - Translate corporate training for multinational teams</li>
+<li><strong>Student Resources</strong> - Subtitles in students&#39; native languages</li>
+</ul>
+<h3>💼 Business &amp; Marketing</h3>
+<ul>
+<li><strong>Product Demos</strong> - Localize for each target market</li>
+<li><strong>Training Videos</strong> - Translate for global workforce</li>
+<li><strong>Marketing Content</strong> - Adapt campaigns for regional audiences</li>
+<li><strong>Customer Support</strong> - Help videos in multiple languages</li>
+</ul>
+<h3>🎬 Media &amp; Publishing</h3>
+<ul>
+<li><strong>News Content</strong> - Rapid translation for breaking stories</li>
+<li><strong>Documentaries</strong> - Subtitle international documentaries</li>
+<li><strong>Podcast Videos</strong> - Add subtitles for social media clips</li>
+<li><strong>Interview Content</strong> - Translate expert interviews</li>
+</ul>
+<hr>
+<h2>🎬 Two Operation Modes</h2>
+<h3>Batch Mode (Default)</h3>
+<ul>
+<li>Submit multiple videos in one run</li>
+<li>Ideal for bulk content processing</li>
+<li>Results saved to Apify dataset</li>
+<li>Perfect for channel-wide updates</li>
+</ul>
+<p><strong>Use when:</strong></p>
+<ul>
+<li>Translating entire video libraries</li>
+<li>Scheduled batch workflows</li>
+<li>Content migration projects</li>
+<li>Cost optimization for bulk operations</li>
+</ul>
+<h3>Standby Mode (Real-time API)</h3>
+<ul>
+<li>Always-running HTTP API endpoint</li>
+<li>Instant translation responses</li>
+<li>No cold-start delays</li>
+<li>Perfect for real-time applications</li>
+</ul>
+<p><strong>Use when:</strong></p>
+<ul>
+<li>Building automated workflows</li>
+<li>Integrating into CMS/publishing systems</li>
+<li>Creating translation services for clients</li>
+<li>Need instant responses for user requests</li>
+</ul>
+<hr>
+<h2>🚀 Getting Started</h2>
+<h3>Step 1: Get Your Lingo.dev API Key</h3>
+<ol>
+<li>Visit <a href="https://lingo.dev">https://lingo.dev</a></li>
+<li>Sign up for free account (no credit card required for trial)</li>
+<li>Get your API key from dashboard</li>
+</ol>
+<h3>Step 2: Prepare Your Input</h3>
+<pre><code class="language-json">{
+  &quot;youtubeUrl&quot;: [
+    {&quot;url&quot;: &quot;https://www.youtube.com/watch?v=YOUR_VIDEO_ID&quot;}
+  ],
+  &quot;targetLanguages&quot;: [&quot;ar&quot;, &quot;es&quot;, &quot;fr&quot;],
+  &quot;Lingo_api_key&quot;: &quot;your-api-key-here&quot;
+}
+</code></pre>
+<h3>Step 3: Run the Actor</h3>
+<ol>
+<li>Open Apify Console</li>
+<li>Find &quot;YouTube Subtitle Translator&quot; actor</li>
+<li>Paste your input</li>
+<li>Click &quot;Run&quot;</li>
+<li>Wait for completion (typically 2-5 minutes per video)</li>
+</ol>
+<h3>Step 4: Download Your Files</h3>
+<ol>
+<li>Check the dataset results</li>
+<li>Download SRT files for each language</li>
+<li>Download clean translation JSON with text files</li>
+<li>Upload SRT files to YouTube (Video Manager → Subtitles)</li>
+<li>Use cleaned text for descriptions/marketing</li>
+</ol>
+<hr>
+<h2>⚙️ Technical Specifications</h2>
+<h3>System Requirements</h3>
+<ul>
+<li>Memory: 256 MB (sufficient for most videos)</li>
+<li>Timeout: 5 minutes per video (adjustable)</li>
+<li>Language: JavaScript/Node.js</li>
+</ul>
+<h3>Performance Metrics</h3>
+<ul>
+<li><strong>Speed:</strong> 2-5 minutes per video in batch mode</li>
+<li><strong>Accuracy:</strong> Professional-grade AI translation</li>
+<li><strong>Reliability:</strong> 99%+ success rate for videos with transcripts</li>
+<li><strong>Scalability:</strong> Handle 1-1000+ videos with same quality</li>
+</ul>
+<h3>Supported Video Formats</h3>
+<ul>
+<li><code>youtube.com/watch?v=...</code> - Standard videos</li>
+<li><code>youtu.be/...</code> - Shortened URLs</li>
+<li><code>youtube.com/live/...</code> - Live stream recordings</li>
+</ul>
+<hr>
+<h2>🛡️ Legal &amp; Compliance</h2>
+<p>This actor translates transcripts from <strong>publicly available YouTube videos</strong> using YouTube&#39;s official API.</p>
+<p><strong>Important:</strong> Please ensure your use complies with:</p>
+<ul>
+<li>YouTube Terms of Service</li>
+<li>Video owner&#39;s copyright and permissions</li>
+<li>Your data usage rights</li>
+<li>Applicable data protection regulations (GDPR, CCPA, etc.)</li>
+<li>Your specific jurisdiction&#39;s laws</li>
+</ul>
+<p><strong>Recommended:</strong> Only translate videos you own or have explicit permission to translate.</p>
+<hr>
+<h2>🐛 Troubleshooting</h2>
+<h3>Common Issues</h3>
+<h4>❌ &quot;No transcript found&quot;</h4>
+<ul>
+<li><strong>Solution:</strong> Video must have captions/auto-generated transcripts enabled</li>
+<li>Check if YouTube shows captions when playing the video</li>
+<li>Videos must be at least 25 seconds long</li>
+<li>Some videos may need 24 hours to generate auto-captions</li>
+</ul>
+<h4>❌ &quot;Language detection failed&quot;</h4>
+<ul>
+<li><strong>Solution:</strong> Defaulting to English (detected from first 500 words)</li>
+<li>Actor still translates correctly, just with English as source</li>
+<li>If wrong, check that video transcript is actually in detected language</li>
+</ul>
+<h4>❌ &quot;Payment limit reached&quot;</h4>
+<ul>
+<li><strong>Solution:</strong> Add more credits to your Apify account</li>
+<li>Check pricing table above for cost estimates</li>
+<li>Contact Apify support if issues persist</li>
+</ul>
+<h4>❌ &quot;Translation took too long&quot;</h4>
+<ul>
+<li><strong>Solution:</strong> Some large videos may take 5-10 minutes</li>
+<li>Actor has automatic retries and timeouts</li>
+<li>Very long videos (3+ hours) may need to be split</li>
+</ul>
+<hr>
+<h2>Contact</h2>
+<ul>
+<li>🌐 <strong>website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🔧 <strong>Apify Profile:</strong> <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>🙋 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>Linkedin:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter:</strong> <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></h2>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63">🎬 Youtube Playlist Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata. Perfect for content analysis, SEO, and subtitle generation.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete 🎬 playlist information with all video details from any YouTube playlist --&gt;⚡Fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata. Ideal for meeting analysis and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | 🎥 Downloader &amp; 📄 Transcript</a></strong>
+Download Loom videos and extract transcripts. Perfect for training content and video documentation.</p>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access. Get listings, prices, and detailed property information.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista. Perfect for market analysis and property research.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options. Essential for monitoring and documentation.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research. Track ad campaigns and strategies.</p>
+<hr>
+<h2>🏆 Why Lingo.dev?</h2>
+<p>Unlike Google Translate, ChatGPT, or manual translation:</p>
+<p>✅ <strong>Fastest</strong> - 5 minutes vs 3 hours per video
+✅ <strong>Best Quality</strong> - Context-aware AI, not word-by-word
+✅ <strong>Perfect Timing</strong> - Preserves exact millisecond accuracy
+✅ <strong>Scalable</strong> - 1 video or 1000 videos with same efficiency
+✅ <strong>No Token Limits</strong> - Handle any video length</p>
+<hr>
+<h2>📈 Success Stories</h2>
+<h3>Case Study: Education Channel</h3>
+<ul>
+<li><strong>Challenge:</strong> 500 educational videos, English only</li>
+<li><strong>Solution:</strong> Translated to Spanish, French, German in 3 days</li>
+<li><strong>Result:</strong><ul>
+<li>300% increase in international viewership</li>
+<li>150% increase in watch time</li>
+<li>New audience in 15+ countries</li>
+</ul>
+</li>
+</ul>
+<h3>Case Study: Business Training</h3>
+<ul>
+<li><strong>Challenge:</strong> Corporate training videos for global team</li>
+<li><strong>Solution:</strong> Automated translation to 8 languages</li>
+<li><strong>Result:</strong><ul>
+<li>All 200 employees access training in native language</li>
+<li>95% completion rate (up from 60%)</li>
+<li>Training time reduced by 40%</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>🙏 Acknowledgments</h2>
+<ul>
+<li><strong>Lingo.dev</strong> - AI-powered translation engine</li>
+<li><strong>YouTube API</strong> -<a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63"> Transcript extraction </a></li>
+<li><strong>Apify</strong> - Actor platform and infrastructure</li>
+</ul>
+<hr>
+<p><strong>Ready to reach a global audience?</strong> <a href="https://apify.com/dz_omar/youtube-subtitle-translator">Start using YouTube Subtitle Translator now!</a></p>
+<p><em>Transform your YouTube channel into a global brand. One subtitle file at a time.</em> 🌍🎬</p>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +614,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/youtube-subtitle-translator?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +622,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'youtube-subtitle-translator';
-    </script>
 </body>
 </html>

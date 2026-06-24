@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Zillow Scraper - FREE TO USE | FlowExtract API</title>
+    <meta name="title" content="Zillow Scraper - FREE TO USE | FlowExtract API">
+    <meta name="description" content="Scrape property listings from Zillow search pages. Extracts price, address, beds, baths, Zestimate, agent, broker, and more. Supports any US location, all listing types (for sale, for rent, recently sold), and full pagination.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/zillow-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Zillow Scraper - FREE TO USE | FlowExtract API">
+    <meta property="og:description" content="Scrape property listings from Zillow search pages. Extracts price, address, beds, baths, Zestimate, agent, broker, and more. Supports any US location, all listing types (for sale, for rent, recently sold), and full pagination.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/zillow-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-mTyGLHpAobAo7886I-eeiaQDIxjR-download.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zillow Scraper - FREE TO USE | FlowExtract API">
+    <meta name="twitter:description" content="Scrape property listings from Zillow search pages. Extracts price, address, beds, baths, Zestimate, agent, broker, and more. Supports any US location, all listing types (for sale, for rent, recently sold), and full pagination.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-mTyGLHpAobAo7886I-eeiaQDIxjR-download.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Zillow Scraper","description":"Scrape property listings from Zillow search pages. Extracts price, address, beds, baths, Zestimate, agent, broker, and more. Supports any US location, all listing types (for sale, for rent, recently sold), and full pagination.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/zillow-scraper.html","sameAs":"https://apify.com/dz_omar/zillow-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-mTyGLHpAobAo7886I-eeiaQDIxjR-download.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Zillow Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open Zillow Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Zillow Scraper free?","acceptedAnswer":{"@type":"Answer","text":"Zillow Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-mTyGLHpAobAo7886I-eeiaQDIxjR-download.png" alt="Zillow Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">Zillow Scraper</h1>
+                <p class="actor-hero-desc">Scrape property listings from Zillow search pages. Extracts price, address, beds, baths, Zestimate, agent, broker, and more. Supports any US location, all listing types (for sale, for rent, recently sold), and full pagination.</p>
+                <a href="https://apify.com/dz_omar/zillow-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Zillow Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Scrape property listings from [Zillow](https://www.zillow.com) search pages. Extracts structured data for every property on any search result — for sale, for rent, recently sold — across any US city, ZIP code, or custom map region. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below. </p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>up to 500 results per page in a single request</li><li>structured data — no brittle HTML parsing</li><li>full pagination — automatically follows all pages until maxResults is reached or the search is exhausted</li><li>filter URL — https://www.zillow.com/new-braunfels-tx/?searchQueryState=... (recommended — preserves all filters)</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Zillow Scraper?</summary><p>Open Zillow Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Zillow Scraper free?</summary><p>Zillow Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>Zillow Scraper</h1>
+<p>Scrape property listings from <a href="https://www.zillow.com">Zillow</a> search pages. Extracts structured data for every property on any search result — for sale, for rent, recently sold — across any US city, ZIP code, or custom map region.</p>
+<h2>How it works</h2>
+<p>This actor calls Zillow&#39;s internal search API (the same JSON endpoint the browser uses) rather than parsing HTML. This means:</p>
+<ul>
+<li><strong>Up to 500 results per page</strong> in a single request</li>
+<li><strong>Structured data</strong> — no brittle HTML parsing</li>
+<li><strong>Full pagination</strong> — automatically follows all pages until <code>maxResults</code> is reached or the search is exhausted</li>
+</ul>
+<h2>Input</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>array</td>
+<td>✅</td>
+<td>One or more Zillow search URLs</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>Max properties to scrape in total (0 = unlimited)</td>
+</tr>
+<tr>
+<td><code>proxyConfiguration</code></td>
+<td>object</td>
+<td>❌</td>
+<td>Apify proxy settings (strongly recommended)</td>
+</tr>
+</tbody></table>
+<h3>Getting the right start URL</h3>
+<ol>
+<li>Go to <a href="https://www.zillow.com">zillow.com</a></li>
+<li>Search for a location and apply any filters you want (price, beds, home type, etc.)</li>
+<li>Copy the full URL from your browser&#39;s address bar and paste it as a start URL</li>
+</ol>
+<p>Both URL formats work:</p>
+<ul>
+<li><strong>Filter URL</strong> — <code>https://www.zillow.com/new-braunfels-tx/?searchQueryState=...</code> (recommended — preserves all filters)</li>
+<li><strong>Path URL</strong> — <code>https://www.zillow.com/homes/for_sale/</code> (uses Zillow&#39;s defaults)</li>
+</ul>
+<p>You can provide <strong>multiple start URLs</strong> in one run (e.g. several cities, or for-sale + for-rent for the same area).</p>
+<h3>Proxy</h3>
+<p>Zillow uses PerimeterX bot detection. Without a proxy, requests from datacenter IPs will be blocked almost immediately. <strong>Apify Residential proxies</strong> are strongly recommended for reliable results.</p>
+<pre><code class="language-json">{
+  &quot;useApifyProxy&quot;: true,
+  &quot;apifyProxyGroups&quot;: [&quot;RESIDENTIAL&quot;]
+}
+</code></pre>
+<h2>Output</h2>
+<p>Each property is saved as one row in the <strong>Dataset</strong>. Fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>zpid</code></td>
+<td>string</td>
+<td>Zillow Property ID (unique per listing)</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>string</td>
+<td>Full address</td>
+</tr>
+<tr>
+<td><code>streetAddress</code></td>
+<td>string</td>
+<td>Street address only</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>City</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td>State abbreviation (e.g. <code>TX</code>)</td>
+</tr>
+<tr>
+<td><code>zipcode</code></td>
+<td>string</td>
+<td>ZIP code</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td>number</td>
+<td>Latitude</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td>number</td>
+<td>Longitude</td>
+</tr>
+<tr>
+<td><code>statusType</code></td>
+<td>string</td>
+<td><code>FOR_SALE</code>, <code>FOR_RENT</code>, <code>RECENTLY_SOLD</code></td>
+</tr>
+<tr>
+<td><code>statusText</code></td>
+<td>string</td>
+<td>Human-readable status (e.g. <code>Active</code>)</td>
+</tr>
+<tr>
+<td><code>marketingStatus</code></td>
+<td>string</td>
+<td>e.g. <code>For Sale by Agent</code></td>
+</tr>
+<tr>
+<td><code>priceRaw</code></td>
+<td>number</td>
+<td>List price as a number</td>
+</tr>
+<tr>
+<td><code>priceDisplay</code></td>
+<td>string</td>
+<td>Formatted price (e.g. <code>$245,000</code>)</td>
+</tr>
+<tr>
+<td><code>priceLabel</code></td>
+<td>string</td>
+<td>Short label (e.g. <code>$245K</code>)</td>
+</tr>
+<tr>
+<td><code>zestimate</code></td>
+<td>number</td>
+<td>Zillow&#39;s automated home value estimate</td>
+</tr>
+<tr>
+<td><code>rentZestimate</code></td>
+<td>number</td>
+<td>Zillow&#39;s estimated monthly rental value</td>
+</tr>
+<tr>
+<td><code>taxAssessedValue</code></td>
+<td>number</td>
+<td>Tax-assessed value</td>
+</tr>
+<tr>
+<td><code>homeType</code></td>
+<td>string</td>
+<td><code>SINGLE_FAMILY</code>, <code>CONDO</code>, <code>TOWNHOUSE</code>, etc.</td>
+</tr>
+<tr>
+<td><code>bedrooms</code></td>
+<td>number</td>
+<td>Number of bedrooms</td>
+</tr>
+<tr>
+<td><code>bathrooms</code></td>
+<td>number</td>
+<td>Number of bathrooms</td>
+</tr>
+<tr>
+<td><code>livingArea</code></td>
+<td>number</td>
+<td>Living area in sq ft</td>
+</tr>
+<tr>
+<td><code>lotAreaValue</code></td>
+<td>number</td>
+<td>Lot area</td>
+</tr>
+<tr>
+<td><code>lotAreaUnit</code></td>
+<td>string</td>
+<td><code>sqft</code> or <code>acres</code></td>
+</tr>
+<tr>
+<td><code>daysOnZillow</code></td>
+<td>number</td>
+<td>Days on Zillow (<code>-1</code> = unknown)</td>
+</tr>
+<tr>
+<td><code>listingSubType</code></td>
+<td>string</td>
+<td>e.g. <code>FSBA</code>, <code>FSBO</code>, <code>NEW_HOME</code></td>
+</tr>
+<tr>
+<td><code>brokerName</code></td>
+<td>string</td>
+<td>Listing brokerage</td>
+</tr>
+<tr>
+<td><code>agentName</code></td>
+<td>string</td>
+<td>Agent name + license string</td>
+</tr>
+<tr>
+<td><code>imgSrc</code></td>
+<td>string</td>
+<td>Primary photo URL</td>
+</tr>
+<tr>
+<td><code>has3DModel</code></td>
+<td>boolean</td>
+<td>3D tour available</td>
+</tr>
+<tr>
+<td><code>detailUrl</code></td>
+<td>string</td>
+<td>Full URL to the Zillow detail page</td>
+</tr>
+</tbody></table>
+<p>A summary is also saved to the <strong>Key-Value Store</strong> under the <code>OUTPUT</code> key.</p>
+<h2>Pricing</h2>
+<p>This actor uses <strong>Pay-per-result</strong> pricing — you are only charged for properties that are successfully scraped and saved to the dataset.</p>
+<table>
+<thead>
+<tr>
+<th>Tier</th>
+<th>Price per property</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Default</td>
+<td>$0.004</td>
+</tr>
+</tbody></table>
+<p>You will never be charged more than your configured budget. The budget guard runs before scraping starts and caps <code>maxResults</code> to what your budget can afford.</p>
+<h2>Resume / fault tolerance</h2>
+<p>If the actor is interrupted (crash, migration, manual abort), it saves its progress to the Key-Value Store. Re-running or resurrecting the actor will <strong>automatically resume from where it left off</strong> — already-completed URLs are skipped and in-progress URLs continue from the last saved page.</p>
+<h2>Limitations</h2>
+<ul>
+<li>Zillow&#39;s API returns a <strong>maximum of 500 results per page</strong> and <strong>up to ~20 pages</strong> for most searches (≈ 10,000 results). For larger areas, narrow your search with filters or split into multiple smaller region URLs.</li>
+<li><strong>Detail page data</strong> (full description, school info, price history) is not fetched — the actor uses the search API only. This keeps it fast and low-cost.</li>
+<li>Zillow&#39;s bot detection is aggressive. Without residential proxies, you will encounter <code>403</code> errors.</li>
+</ul>
+<h2>Debug logging</h2>
+<p>Set the <code>APIFY_LOG_LEVEL</code> environment variable to <code>DEBUG</code> to see full request/response details, proxy URLs, and pagination internals. At <code>INFO</code> (the default), only user-facing progress is logged.</p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/zillow-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

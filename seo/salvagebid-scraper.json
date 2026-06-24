@@ -1,0 +1,21 @@
+{
+  "slug": "salvagebid-scraper",
+  "_drafted": true,
+  "intro": "SalvageBid Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation & business. Extract salvage vehicle auction listings from SalvageBid.com prices, bids, VIN specs, damage info, auction dates, locations, and images. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "listing mode ~2–3 seconds per page (~24 vehicles per page)",
+    "detail mode 5 concurrent detail fetches per batch",
+    "100 vehicles (listing only) ~15–20 seconds",
+    "100 vehicles (with details) ~1–2 minutes"
+  ],
+  "faq": [
+    {
+      "q": "How do I run SalvageBid Scraper?",
+      "a": "Open SalvageBid Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is SalvageBid Scraper free?",
+      "a": "SalvageBid Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

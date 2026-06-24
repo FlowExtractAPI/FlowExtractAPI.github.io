@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Zoom Scraper - Meeting Data Extraction | FlowExtract API</title>
+    <meta name="title" content="Zoom Scraper - Meeting Data Extraction | FlowExtract API">
+    <meta name="description" content="Extract video information and download recordings from Zoom meetings and events. Supports both regular Zoom recordings and Zoom Events with comprehensive metadata extraction.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/zoom-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Zoom Scraper - Meeting Data Extraction | FlowExtract API">
+    <meta property="og:description" content="Extract video information and download recordings from Zoom meetings and events. Supports both regular Zoom recordings and Zoom Events with comprehensive metadata extraction.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/zoom-scraper.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/Z_n_gc1WDFS7tCxSb3PEXycc5N_tLNSwyYczjXuA_Y0/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMXdSNVNJU290YUtrUzBIOEEtSTc0b0lmajNYNi0xZmZlNmExZS05ZjllLTQ1OGItYWNhYS1kMmIwMTViYTE0NWUucG5n.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zoom Scraper - Meeting Data Extraction | FlowExtract API">
+    <meta name="twitter:description" content="Extract video information and download recordings from Zoom meetings and events. Supports both regular Zoom recordings and Zoom Events with comprehensive metadata extraction.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/Z_n_gc1WDFS7tCxSb3PEXycc5N_tLNSwyYczjXuA_Y0/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMXdSNVNJU290YUtrUzBIOEEtSTc0b0lmajNYNi0xZmZlNmExZS05ZjllLTQ1OGItYWNhYS1kMmIwMTViYTE0NWUucG5n.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🎥 Zoom Video Downloader & Extractor","description":"Extract video information and download recordings from Zoom meetings and events. Supports both regular Zoom recordings and Zoom Events with comprehensive metadata extraction.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/zoom-scraper.html","sameAs":"https://apify.com/dz_omar/zoom-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/Z_n_gc1WDFS7tCxSb3PEXycc5N_tLNSwyYczjXuA_Y0/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMXdSNVNJU290YUtrUzBIOEEtSTc0b0lmajNYNi0xZmZlNmExZS05ZjllLTQ1OGItYWNhYS1kMmIwMTViYTE0NWUucG5n.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 🎥 Zoom Video Downloader & Extractor?","acceptedAnswer":{"@type":"Answer","text":"Open 🎥 Zoom Video Downloader & Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 🎥 Zoom Video Downloader & Extractor free?","acceptedAnswer":{"@type":"Answer","text":"🎥 Zoom Video Downloader & Extractor runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}},{"@type":"Question","name":"🌟 Why Choose This Actor?","acceptedAnswer":{"@type":"Answer","text":"- ✅ Multi-Platform Support: Handles all Zoom recording types seamlessly"}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,386 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/Z_n_gc1WDFS7tCxSb3PEXycc5N_tLNSwyYczjXuA_Y0/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItMXdSNVNJU290YUtrUzBIOEEtSTc0b0lmajNYNi0xZmZlNmExZS05ZjllLTQ1OGItYWNhYS1kMmIwMTViYTE0NWUucG5n.png" alt="🎥 Zoom Video Downloader &amp; Extractor" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Media &amp; Downloads</span>
+                <h1 class="actor-hero-title">🎥 Zoom Video Downloader &amp; Extractor</h1>
+                <p class="actor-hero-desc">Extract video information and download recordings from Zoom meetings and events. Supports both regular Zoom recordings and Zoom Events with comprehensive metadata extraction.</p>
+                <a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">🎥 Zoom Video Downloader &amp; Extractor is a ready-to-run Apify actor from FlowExtract API for media &amp; downloads. Transform your Zoom recordings into searchable, downloadable archives with complete metadata, transcripts, and video files across regular meetings, events, and clips. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>archive online classes and webinar libraries with searchable transcript databases</li><li>backup lecture recordings before expiration and generate study materials automatically</li><li>create comprehensive knowledge bases from educational video content</li><li>archive team meetings, training sessions, and corporate communications</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 🎥 Zoom Video Downloader &amp; Extractor?</summary><p>Open 🎥 Zoom Video Downloader &amp; Extractor on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 🎥 Zoom Video Downloader &amp; Extractor free?</summary><p>🎥 Zoom Video Downloader &amp; Extractor runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details><details class="faq-item"><summary>🌟 Why Choose This Actor?</summary><p>- ✅ Multi-Platform Support: Handles all Zoom recording types seamlessly</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🎥 Zoom Video Downloader &amp; Extractor</h1>
+<p><img src="https://raw.githubusercontent.com/apifytech/store-assets/master/actors/zoom-video-downloader/zoom-video-downloader-hero.png" alt="Zoom Video Downloader"></p>
+<p>Transform your <strong>Zoom recordings into searchable, downloadable archives</strong> with complete metadata, transcripts, and video files across regular meetings, events, and clips.</p>
+<p>Perfect for <strong>educators</strong>, <strong>business teams</strong>, and <strong>content creators</strong> who need to archive, analyze, or repurpose their Zoom content without coding complexity.</p>
+<hr>
+<h2>🚀 Key Benefits &amp; Use Cases</h2>
+<h3><strong>📚 For Educators &amp; Trainers</strong></h3>
+<ul>
+<li>Archive online classes and webinar libraries with searchable transcript databases</li>
+<li>Backup lecture recordings before expiration and generate study materials automatically</li>
+<li>Create comprehensive knowledge bases from educational video content</li>
+</ul>
+<h3><strong>💼 For Business Teams</strong></h3>
+<ul>
+<li>Archive team meetings, training sessions, and corporate communications</li>
+<li>Generate meeting transcripts for documentation, compliance, and note-taking</li>
+<li>Build searchable knowledge databases from organizational video content</li>
+</ul>
+<h3><strong>🎯 For Content Creators</strong></h3>
+<ul>
+<li>Bulk download and organize webinar libraries with rich metadata</li>
+<li>Create searchable video databases with full transcript capabilities</li>
+<li>Repurpose content across platforms efficiently</li>
+</ul>
+<hr>
+<h2>🔎 Complete Data Extraction</h2>
+<h3>📹 <strong>Video Intelligence</strong></h3>
+<ul>
+<li><strong>Metadata</strong>: ID, title, duration, file size, start time, recording type</li>
+<li><strong>Technical</strong>: MP4 format, direct download URLs, quality information</li>
+<li><strong>Recording Details</strong>: Host information, meeting details, timestamps</li>
+</ul>
+<h3>📝 <strong>Transcript Processing</strong></h3>
+<ul>
+<li><strong>Multiple Formats</strong>: SRT, VTT, TXT, XML exports with precise timestamps</li>
+<li><strong>Clean Text</strong>: Formatted, readable content ready for analysis</li>
+<li><strong>Search Ready</strong>: Full-text search capabilities across your library</li>
+<li><strong>Integration</strong>: Compatible with video players and analysis tools</li>
+</ul>
+<h3>🎯 <strong>Multi-Platform Support</strong></h3>
+<ul>
+<li><strong>Regular Recordings</strong>: Standard Zoom meeting recordings (zoom.us/rec/)</li>
+<li><strong>Zoom Events</strong>: Large-scale event recordings (events.zoom.us)</li>
+<li><strong>Zoom Clips</strong>: Short video clips (zoom.us/clips/)</li>
+<li><strong>Smart Detection</strong>: Automatic platform identification and processing</li>
+</ul>
+<hr>
+<h2>⚡ Smart URL Detection &amp; Redirection</h2>
+<h3><strong>🎬 Loom URL Detection</strong></h3>
+<p>When you accidentally enter Loom URLs, the actor provides helpful guidance:</p>
+<ul>
+<li>Detects individual Loom videos (<code>loom.com/share/VIDEO_ID</code>)</li>
+<li>Identifies Loom folders (<code>loom.com/share/folder/FOLDER_ID</code>)</li>
+<li>Redirects to specialized <a href="https://apify.com/dz_omar/loom-video-scraper">Loom Video Scraper</a> for better results</li>
+</ul>
+<h3><strong>🎥 Platform Recognition</strong></h3>
+<ul>
+<li>YouTube, Vimeo, and other platform detection</li>
+<li>Clear error messages with platform-specific guidance</li>
+<li>Focus on Zoom-optimized processing</li>
+</ul>
+<hr>
+<h2>⚙️ Configuration Options</h2>
+<h3>🔗 <strong>Input URLs</strong></h3>
+<p>Process individual recordings, events, or clips:</p>
+<pre><code class="language-json">{
+  &quot;zoom_urls&quot;: [
+    { &quot;url&quot;: &quot;https://zoom.us/rec/play/example&quot; },
+    { &quot;url&quot;: &quot;https://events.zoom.us/video/example&quot; },
+    { &quot;url&quot;: &quot;https://zoom.us/clips/share/example&quot; }
+  ]
+}
+</code></pre>
+<h3>📥 <strong>Download Options</strong></h3>
+<h4>🎞️ <code>download_videos</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Format</strong>: Original MP4 quality preserved</li>
+<li><strong>Use Case</strong>: Full video archiving and offline access</li>
+<li><strong>Storage</strong>: Files stored in Apify&#39;s key-value store</li>
+</ul>
+<h4>📝 <code>downloadTranscript</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Integration</strong>: Ready for video players and analysis tools</li>
+</ul>
+<h4>📄 <code>outputFormat</code> (String)</h4>
+<ul>
+<li><strong>Default</strong>: <code>&quot;srt&quot;</code></li>
+<li><strong>Options</strong>: <ul>
+<li><code>&quot;srt&quot;</code>: Standard subtitle format (most compatible)</li>
+<li><code>&quot;vtt&quot;</code>: Web-friendly with CSS styling support</li>
+<li><code>&quot;txt&quot;</code>: Clean text without timestamps</li>
+<li><code>&quot;xml&quot;</code>: Full metadata structure</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2>📊 Sample Output Structure</h2>
+<h3><strong>Regular Zoom Recording</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://zoom.us/rec/play/9b9ZhVaccgw7DUO95__XpeBBAxB1_CjT6aLG54MqHZ_hWfTtZDKLudAu9esfQZSslb9zTknRvaHgcS51...&quot;,
+  &quot;Title&quot;: &quot;PICO Meeting&quot;,
+  &quot;startTime&quot;: &quot;2022-09-23T14:28:59.000Z&quot;,
+  &quot;transcript_info&quot;: {
+    &quot;transcript&quot;: &quot;1\n00:01:03,300 --&gt; 00:01:05,390\nWe\n\n2\n00:01:07,950 --&gt; 00:01:08,470\nMicah Tseng: Thank you.&quot;
+  },
+  &quot;recordingType&quot;: &quot;recordings&quot;
+}
+</code></pre>
+<h3><strong>Zoom Events Recording</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://events.zoom.us/ejl/Aj2xj4JZJL-4Xyrm5GMDX1OuCKVWyr5Eh4_w7wGGROLGXLIgJQRG...&quot;,
+  &quot;Title&quot;: &quot;2 Day Generative AI Mastermind | Day-1&quot;,
+  &quot;startTime&quot;: &quot;2025-07-26T04:30:00.000Z&quot;,
+  &quot;transcript_info&quot;: {
+    &quot;transcript&quot;: &quot;1\n00:00:01,610 --&gt; 00:00:02,610\nPhani Krishna - Outskill: Welcome everyone...&quot;
+  },
+  &quot;recordingType&quot;: &quot;events&quot;
+}
+</code></pre>
+<h3><strong>Zoom Clips</strong></h3>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://zoom.us/clips/share/fCRF3_4rHSwIWeTsbCC8liNDNJiBgAatqliI3jtK8g0H69WU19Hx41N4WWQ0rs0n...&quot;,
+  &quot;Title&quot;: &quot;John Hay PTSA Sep/Oct Membership Meeting&quot;,
+  &quot;startTime&quot;: &quot;2024-09-17T21:50:00.000Z&quot;,
+  &quot;transcript_info&quot;: {
+    &quot;transcript&quot;: &quot;1\n00:00:00,170 --&gt; 00:00:01,170\nThank you.\n\n2\n00:00:04,070 --&gt; 00:00:10,070\nI think we all really need to advocate for John...&quot;
+  },
+  &quot;recordingType&quot;: &quot;clips&quot;
+}
+</code></pre>
+<h3><strong>With Downloads Enabled</strong></h3>
+<p>When <code>download_videos: true</code> and <code>downloadTranscript: true</code>:</p>
+<pre><code class="language-json">{
+  &quot;url&quot;: &quot;https://zoom.us/rec/play/example...&quot;,
+  &quot;Title&quot;: &quot;PICO Meeting&quot;,
+  &quot;startTime&quot;: &quot;2022-09-23T14:28:59.000Z&quot;,
+  &quot;video_url&quot;: &quot;https://api.apify.com/v2/key-value-stores/q6VQFhKFOBks7LCTT/records/PICO_Meeting.mp4?signature=MBL7s5lCwsydbDaE707E&quot;,
+  &quot;video_size&quot;: &quot;206 MB&quot;,
+  &quot;transcript_info&quot;: {
+    &quot;transcript&quot;: &quot;1\n00:01:03,300 --&gt; 00:01:05,390\nWe\n\n2\n00:01:07,950 --&gt; 00:01:08,470\nMicah Tseng: Thank you.&quot;,
+    &quot;transcript_url&quot;: &quot;https://api.apify.com/v2/key-value-stores/ySHfyw860qMzC74Zr/records/PICO_Meeting_transcript.srt&quot;
+  },
+  &quot;recordingType&quot;: &quot;recordings&quot;
+}
+</code></pre>
+<hr>
+<h2>🎯 Configuration Examples</h2>
+<h3><strong>Basic Video Archive</strong></h3>
+<pre><code class="language-json">{
+  &quot;zoom_urls&quot;: [
+    { &quot;url&quot;: &quot;https://zoom.us/rec/play/9b9ZhVaccgw7DUO95__XpeBB...&quot; }
+  ],
+  &quot;download_videos&quot;: false,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;srt&quot;
+}
+</code></pre>
+<h3><strong>Complete Meeting Backup</strong></h3>
+<pre><code class="language-json">{
+  &quot;zoom_urls&quot;: [
+    { &quot;url&quot;: &quot;https://zoom.us/rec/play/example...&quot; },
+    { &quot;url&quot;: &quot;https://events.zoom.us/video/example...&quot; }
+  ],
+  &quot;download_videos&quot;: true,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;vtt&quot;
+}
+</code></pre>
+<h3><strong>Clips Processing</strong></h3>
+<pre><code class="language-json">{
+  &quot;zoom_urls&quot;: [
+    { &quot;url&quot;: &quot;https://zoom.us/clips/share/example...&quot; }
+  ],
+  &quot;download_videos&quot;: false,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;txt&quot;
+}
+</code></pre>
+<h3><strong>Events Archive</strong></h3>
+<pre><code class="language-json">{
+  &quot;zoom_urls&quot;: [
+    { &quot;url&quot;: &quot;https://events.zoom.us/ejl/example...&quot; }
+  ],
+  &quot;download_videos&quot;: true,
+  &quot;downloadTranscript&quot;: true,
+  &quot;outputFormat&quot;: &quot;srt&quot;
+}
+</code></pre>
+<hr>
+<h2>🔄 Advanced Features</h2>
+<h3><strong>Reliability &amp; Performance</strong></h3>
+<ul>
+<li><strong>State Management</strong>: Auto-resume from interruption points with progress tracking</li>
+<li><strong>Error Handling</strong>: Robust recovery with automatic retry mechanisms</li>
+<li><strong>Storage Optimization</strong>: Efficient file organization with direct download URLs</li>
+<li><strong>Detailed Logging</strong>: Complete processing history and performance monitoring</li>
+</ul>
+<h3><strong>Content Processing</strong></h3>
+<ul>
+<li><strong>Multi-Format Support</strong>: Handles all Zoom recording types seamlessly</li>
+<li><strong>Batch Operations</strong>: Efficient bulk processing of multiple recordings</li>
+<li><strong>Memory Optimization</strong>: Smart resource management for large video files</li>
+</ul>
+<h3><strong>Smart Detection</strong></h3>
+<ul>
+<li><strong>Automatic Type Detection</strong>: Identifies recording type (regular, events, clips)</li>
+<li><strong>URL Validation</strong>: Comprehensive URL format checking</li>
+<li><strong>Platform Recognition</strong>: Helpful redirections for non-Zoom URLs</li>
+</ul>
+<hr>
+<h2>⚠️ Smart Memory Management for Video Downloads</h2>
+<p>When <code>download_videos</code> is enabled, this Actor uses <strong>intelligent resource allocation</strong> powered by our specialized <a href="https://apify.com/dz_omar/universal-file-downloader">Universal File Downloader</a> to optimize memory usage and prevent failures. The Actor automatically analyzes each video&#39;s file size and dynamically allocates the optimal amount of memory needed for successful downloads.</p>
+<h3>✅ <strong>How It Works</strong></h3>
+<p><strong>Dynamic Resource Calculation</strong>: The Actor examines each video file before downloading and calculates the exact memory requirements based on file size, ensuring efficient resource usage without waste.</p>
+<p><strong>Automatic Memory Scaling</strong>: Memory allocation automatically scales from 128MB for small videos up to 32GB for very large files, preventing both resource waste and Out-Of-Memory errors.</p>
+<p><strong>Intelligent Timeout Management</strong>: Download timeouts are calculated based on file size and estimated connection speed, ensuring downloads complete successfully without unnecessary waiting.</p>
+<p><strong>Enterprise-Grade Download Engine</strong>: Powered by our <a href="https://apify.com/dz_omar/universal-file-downloader">Universal File Downloader</a> Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.</p>
+<h3>💡 <strong>Benefits for Users</strong></h3>
+<ul>
+<li><strong>No Manual Configuration</strong>: You don&#39;t need to guess or manually set memory requirements</li>
+<li><strong>Prevents Failures</strong>: Eliminates OOM crashes that could interrupt your downloads</li>
+<li><strong>Cost Efficient</strong>: Optimizes resource usage to minimize unnecessary costs</li>
+<li><strong>Handles Any Size</strong>: From short clips to multi-hour recordings, all processed reliably</li>
+<li><strong>Batch Processing</strong>: Each video gets its own optimized resource allocation</li>
+<li><strong>Enterprise Reliability</strong>: Advanced error handling and automatic retry mechanisms</li>
+<li><strong>Proxy Support</strong>: Built-in proxy rotation for improved download success rates</li>
+</ul>
+<h3>📖 <strong><a href="https://docs.apify.com/platform/actors/running/usage-and-resources">Learn more about Apify usage and resources</a></strong></h3>
+<hr>
+<h2>📋 Supported URL Formats</h2>
+<h3><strong>Regular Zoom Recordings</strong></h3>
+<pre><code>https://zoom.us/rec/play/[RECORDING_ID]
+https://zoom.us/rec/share/[RECORDING_ID]
+https://www.zoom.us/rec/play/[RECORDING_ID]
+</code></pre>
+<h3><strong>Zoom Events</strong></h3>
+<pre><code>https://events.zoom.us/ejl/[EVENT_ID]
+https://events.zoom.us/video/[VIDEO_ID]
+</code></pre>
+<h3><strong>Zoom Clips</strong></h3>
+<pre><code>https://zoom.us/clips/share/[CLIP_ID]
+https://zoom.us/clips/embed/[CLIP_ID]
+https://www.zoom.us/clips/share/[CLIP_ID]
+</code></pre>
+<hr>
+<h2>🛠️ Troubleshooting</h2>
+<h3><strong>Access Issues</strong></h3>
+<ul>
+<li><strong>Password Protection</strong>: Some recordings may require passwords</li>
+<li><strong>Expiration</strong>: Check if recording links have expired</li>
+<li><strong>Permissions</strong>: Verify you have access to the recording</li>
+</ul>
+<h3><strong>Missing Content</strong></h3>
+<ul>
+<li><strong>Transcripts</strong>: Must be enabled by meeting host</li>
+<li><strong>Private recordings</strong>: May require authentication</li>
+<li><strong>Expired links</strong>: Contact meeting organizer for new links</li>
+</ul>
+<h3><strong>Performance Issues</strong></h3>
+<ul>
+<li><strong>Memory errors</strong>: Increase memory allocation for video downloads</li>
+<li><strong>Large files</strong>: Consider processing individually</li>
+<li><strong>Network issues</strong>: Check internet connection stability</li>
+</ul>
+<h3><strong>URL Format Errors</strong></h3>
+<ul>
+<li><strong>Invalid URLs</strong>: Ensure URLs are complete and properly formatted</li>
+<li><strong>Wrong platform</strong>: Use <a href="https://apify.com/dz_omar/loom-video-scraper">Loom Video Scraper</a> for Loom URLs</li>
+<li><strong>Shortened URLs</strong>: Use full Zoom URLs instead of shortened versions</li>
+</ul>
+<hr>
+<h2>📊 Dataset Views</h2>
+<p>The actor provides three specialized dataset views for different use cases:</p>
+<h3><strong>🎥 Overview View</strong></h3>
+<ul>
+<li>Quick summary with essential information</li>
+<li>Download links for videos and transcripts</li>
+<li>Recording metadata and timestamps</li>
+</ul>
+<h3><strong>🔍 Detailed View</strong></h3>
+<ul>
+<li>Complete recording information</li>
+<li>Full transcript content inline</li>
+<li>Comprehensive metadata</li>
+</ul>
+<h3><strong>📥 Downloads Only</strong></h3>
+<ul>
+<li>Streamlined view focusing on download links</li>
+<li>File sizes and formats</li>
+<li>Perfect for batch downloading</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3><strong>Getting Help</strong></h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h3><strong>Related Actors</strong></h3>
+<ul>
+<li><strong>🎬 Loom Video Scraper</strong>: <a href="https://apify.com/dz_omar/loom-video-scraper">https://apify.com/dz_omar/loom-video-scraper</a></li>
+<li><strong>📁 Universal File Downloader</strong>: <a href="https://apify.com/dz_omar/universal-file-downloader">https://apify.com/dz_omar/universal-file-downloader</a></li>
+</ul>
+<h3><strong>Technical Integration</strong></h3>
+<p>This actor leverages our <strong>Universal File Downloader</strong> for enterprise-grade video processing:</p>
+<ul>
+<li><strong>Advanced Proxy Support</strong>: Automatic proxy rotation for improved success rates</li>
+<li><strong>Retry Mechanisms</strong>: Intelligent retry logic with exponential backoff</li>
+<li><strong>Streaming Technology</strong>: Memory-efficient streaming for large file downloads</li>
+<li><strong>Progress Tracking</strong>: Real-time download progress monitoring</li>
+<li><strong>Error Recovery</strong>: Automatic resume from failed download points</li>
+</ul>
+<h3><strong>Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Responsible Usage</strong>: Only processes publicly accessible recordings with proper rate limiting</li>
+<li><strong>Terms Compliance</strong>: Follows Zoom&#39;s terms of service without bypassing security measures</li>
+<li><strong>Data Protection</strong>: Secure processing with automatic cleanup</li>
+<li><strong>Privacy Respect</strong>: No unauthorized data collection with transparent usage policies</li>
+</ul>
+<hr>
+<h2>🌟 Why Choose This Actor?</h2>
+<ul>
+<li><strong>✅ Multi-Platform Support</strong>: Handles all Zoom recording types seamlessly</li>
+<li><strong>✅ Smart URL Detection</strong>: Automatically redirects non-Zoom URLs to appropriate actors</li>
+<li><strong>✅ Comprehensive Output</strong>: Rich metadata, transcripts, and video files</li>
+<li><strong>✅ Memory Optimized</strong>: Intelligent resource management for reliable downloads</li>
+<li><strong>✅ Transcript Formats</strong>: Multiple export formats for different use cases</li>
+<li><strong>✅ Batch Processing</strong>: Efficient handling of multiple recordings</li>
+<li><strong>✅ Error Recovery</strong>: Robust error handling and automatic retries</li>
+<li><strong>✅ State Management</strong>: Resume processing from interruption points</li>
+</ul>
+<p>Start archiving your Zoom content today with professional-grade extraction and organization!</p>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +441,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +449,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'zoom-scraper';
-    </script>
 </body>
 </html>

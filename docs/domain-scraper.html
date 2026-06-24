@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>domain.com.au Property Listings Scraper | FlowExtract API</title>
+    <meta name="title" content="domain.com.au Property Listings Scraper | FlowExtract API">
+    <meta name="description" content="Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/domain-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="domain.com.au Property Listings Scraper | FlowExtract API">
+    <meta property="og:description" content="Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/domain-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-lpeN4opCYKgskSzqP-i4NWJ1dTc3-40a27b2c-1d50-49fa-be36-ef6fb56721fc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="domain.com.au Property Listings Scraper | FlowExtract API">
+    <meta name="twitter:description" content="Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-lpeN4opCYKgskSzqP-i4NWJ1dTc3-40a27b2c-1d50-49fa-be36-ef6fb56721fc.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"domain.com.au Scraper","description":"Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/domain-scraper.html","sameAs":"https://apify.com/dz_omar/domain-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-lpeN4opCYKgskSzqP-i4NWJ1dTc3-40a27b2c-1d50-49fa-be36-ef6fb56721fc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run domain.com.au Scraper?","acceptedAnswer":{"@type":"Answer","text":"Open domain.com.au Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is domain.com.au Scraper free?","acceptedAnswer":{"@type":"Answer","text":"domain.com.au Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-lpeN4opCYKgskSzqP-i4NWJ1dTc3-40a27b2c-1d50-49fa-be36-ef6fb56721fc.png" alt="domain.com.au Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">domain.com.au Scraper</h1>
+                <p class="actor-hero-desc">Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website.</p>
+                <a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">domain.com.au Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation &amp; business. Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media using any search URL directly from the website. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>paste any domain.com.au search URL straight from your browser every filter you applied is honored automatically.</li><li>map-view and inspection-times URLs supported, in addition to standard list searches.</li><li>no duplicates. Every property appears once, even across very large result sets.</li><li>core Listing listing ID, canonical URL, headline, full description, price, promo level, listing type, lifecycle status</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run domain.com.au Scraper?</summary><p>Open domain.com.au Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is domain.com.au Scraper free?</summary><p>domain.com.au Scraper runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 domain.com.au Scraper</h1>
+<p><strong>Scrape property listings from domain.com.au with full details, agent contacts, nearby schools, market insights, and high-resolution media  using any search URL directly from the website.</strong></p>
+<h2>🎬 Video Tutorial</h2>
+<p><a href="https://youtube.com/@FlowExtractAPI"><img src="https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube" alt="Watch the Tutorial"></a></p>
+<hr>
+<h2>Key Features</h2>
+<h3>Two Speeds, One Actor</h3>
+<p>A single switch (<code>detailMode</code>) lets you trade speed for depth:</p>
+<ul>
+<li><strong>Fast mode (default, <code>detailMode: false</code>)</strong>  the quickest way to pull listings at scale. Returns the essentials for every property: ID, listing URL, price, full address, suburb/state/postcode, GPS coordinates, dwelling type, bedrooms, bathrooms, car spaces, and photos. Ideal for building lists, market scans, and feeding downstream pipelines.</li>
+<li><strong>Detail mode (<code>detailMode: true</code>)</strong>  the complete picture. Everything in fast mode <strong>plus</strong> full description, agent &amp; agency contacts, nearby schools, market insights, inspection &amp; auction info, and more. Slower, because each property is looked up individually  but exhaustive.</li>
+</ul>
+<h3>Works With Any Search  Including Large Areas</h3>
+<ul>
+<li><strong>Paste any domain.com.au search URL</strong> straight from your browser  every filter you applied is honored automatically.</li>
+<li><strong>Large searches are fully supported.</strong> Searches that return thousands of listings (e.g. a whole state) are handled end-to-end, so you get well beyond the small page limit a single search normally exposes.</li>
+<li><strong>Map-view and inspection-times URLs supported</strong>, in addition to standard list searches.</li>
+<li><strong>No duplicates.</strong> Every property appears once, even across very large result sets.</li>
+</ul>
+<h3>What You Get (Detail Mode)</h3>
+<ul>
+<li><strong>Core Listing</strong>  listing ID, canonical URL, headline, full description, price, promo level, listing type, lifecycle status</li>
+<li><strong>Property Attributes</strong>  dwelling type, bedroom count, bathroom count, car spaces, additional features list</li>
+<li><strong>Market Timing</strong>  days on market, active-since date, time-on-market formatted strings</li>
+<li><strong>Location</strong>  full address string, structured address components (suburb, postcode, state, area, region, suburb ID), GPS coordinates</li>
+<li><strong>Media</strong>  high-resolution images and thumbnails, including floor plans</li>
+<li><strong>Advertiser</strong>  full agency block  name, address, logo, banner, agent contacts with phone, email, and social URLs</li>
+<li><strong>Nearby Schools</strong>  name, education level, year range, gender, system (Government/Private), geo coordinates, website URL</li>
+<li><strong>Inspection &amp; Auction</strong>  appointment-only flag, booking availability, inspection planner metadata, auction availability</li>
+<li><strong>Market Insights</strong>  suburb price guide, multi-year price trend, price direction, and recent sales data (where available)</li>
+<li><strong>Tracking Metadata</strong>  sale method, ad type, days listed, core property ID, interactive floorplan flag</li>
+</ul>
+<h3>Reliable by Design</h3>
+<ul>
+<li><strong>No results dropped.</strong> If a property&#39;s full detail lookup can&#39;t be completed in detail mode, the Actor still saves what it has and flags the record with <code>enrichment_failed: true</code>  you never silently lose a listing.</li>
+</ul>
+<hr>
+<h2>Quick Start</h2>
+<h3>Fast scan (default)  essentials only, maximum speed</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/sydney-region-nsw/&quot; }
+  ],
+  &quot;maxResults&quot;: 10,
+  &quot;detailMode&quot;: false
+}
+</code></pre>
+<h3>Full detail  everything, including agents, schools &amp; market insights</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/sydney-region-nsw/&quot; }
+  ],
+  &quot;maxResults&quot;: 10,
+  &quot;detailMode&quot;: true
+}
+</code></pre>
+<h3>Filter by property type, bedrooms, and price</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/melbourne-region-vic/house/3-bedrooms/?bathrooms=2-any&amp;price=500000-1500000&quot; }
+  ],
+  &quot;maxResults&quot;: 25
+}
+</code></pre>
+<h3>Multiple search URLs in one run</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/sydney-region-nsw/house/3-bedrooms/&quot; },
+    { &quot;url&quot;: &quot;https://www.domain.com.au/rent/melbourne-region-vic/?price=300000-800000&quot; }
+  ],
+  &quot;maxResults&quot;: 20
+}
+</code></pre>
+<h3>Fetch all results for a search (no limit)</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/brisbane-region-qld/house/4-bedrooms/&quot; }
+  ],
+  &quot;maxResults&quot;: 0
+}
+</code></pre>
+<hr>
+<h2>📋 Input Configuration</h2>
+<h3>Input Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>start_urls</code></td>
+<td>array</td>
+<td>✅</td>
+<td></td>
+<td>One or more domain.com.au search result URLs to scrape</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td>❌</td>
+<td>10</td>
+<td>Max listings to scrape <strong>per URL</strong>. <code>0</code> = fetch all available results.</td>
+</tr>
+<tr>
+<td><code>detailMode</code></td>
+<td>boolean</td>
+<td>❌</td>
+<td><code>false</code></td>
+<td><code>false</code> = fast mode (essentials only, fastest). <code>true</code> = full detail per property (description, agents, schools, market insights, etc.)  slower.</td>
+</tr>
+</tbody></table>
+<h3>Fast Mode vs Detail Mode</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fast mode (<code>detailMode: false</code>)</th>
+<th>Detail mode (<code>detailMode: true</code>)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Speed</td>
+<td>⚡ Fastest</td>
+<td>🐢 Slower (one lookup per property)</td>
+</tr>
+<tr>
+<td>ID, URL, price, address, beds/baths/cars</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>GPS coordinates, photos</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Description, features list</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Agent &amp; agency contacts</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Nearby schools</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Market insights</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Inspection / auction details</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+</tbody></table>
+<p>Use <strong>fast mode</strong> when you need lots of listings quickly (lead lists, market scans). Use <strong>detail mode</strong> when you need the full record for each property.</p>
+<h3>How <code>maxResults</code> Works</h3>
+<p><code>maxResults</code> is a <strong>per-URL limit</strong>, not a global total. If you provide 5 URLs and set <code>maxResults: 20</code>, the Actor will attempt to fetch up to 20 listings from each URL independently  up to 100 results total.</p>
+<p>Setting <code>maxResults: 0</code> removes the per-URL limit and scrapes every listing the search returns, including very large searches that exceed the page limit a single search normally exposes.</p>
+<h3>Supported URL Formats</h3>
+<p>Any search URL you can construct on domain.com.au works as input. Copy it directly from your browser after applying filters.</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>URL Pattern</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>State/region sale</td>
+<td><code>https://www.domain.com.au/sale/sydney-region-nsw/</code></td>
+</tr>
+<tr>
+<td>Rent</td>
+<td><code>https://www.domain.com.au/rent/?bedrooms=2-any&amp;price=400-800</code></td>
+</tr>
+<tr>
+<td>Bedrooms + bathrooms</td>
+<td><code>/sale/melbourne-region-vic/house/3-bedrooms/?bathrooms=2-any</code></td>
+</tr>
+<tr>
+<td>Price range</td>
+<td><code>/sale/brisbane-region-qld/?price=400000-800000</code></td>
+</tr>
+<tr>
+<td>Property type</td>
+<td><code>/sale/?ptype=town-house,pent-house</code></td>
+</tr>
+<tr>
+<td>Multiple filters</td>
+<td><code>/sale/?ptype=house&amp;carspaces=2-any&amp;features=gardencourtyard,gas</code></td>
+</tr>
+<tr>
+<td>Map-area search</td>
+<td><code>/rent/?...&amp;displaymap=1</code></td>
+</tr>
+<tr>
+<td>Inspection times</td>
+<td><code>/rent/inspection-times/?...&amp;inspectiondate=2026-06-22</code></td>
+</tr>
+<tr>
+<td>Sort order</td>
+<td><code>/sale/sydney-region-nsw/?sort=price-asc</code></td>
+</tr>
+<tr>
+<td>Exclude under offer</td>
+<td><code>/sale/sydney-region-nsw/?excludeunderoffer=1</code></td>
+</tr>
+</tbody></table>
+<p>All filter combinations domain.com.au supports are honored automatically.</p>
+<hr>
+<h2>📤 Output Structure</h2>
+<p>Each listing produces one record in the dataset. The fields you get depend on the mode.</p>
+<h3>Fast Mode Sample (<code>detailMode: false</code>)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: 2020908421,
+  &quot;seo_url&quot;: &quot;https://www.domain.com.au/1880-frankston-flinders-road-hastings-vic-3915-2020908421&quot;,
+  &quot;price&quot;: &quot;$3,000,000 - $3,300,000&quot;,
+  &quot;address&quot;: &quot;1880 Frankston-Flinders Road, Hastings VIC 3915&quot;,
+  &quot;dwelling_type&quot;: &quot;House&quot;,
+  &quot;bedroom_count&quot;: 3,
+  &quot;bathroom_count&quot;: 2,
+  &quot;carspace_count&quot;: 8,
+  &quot;geo_location&quot;: {
+    &quot;latitude&quot;: -38.2898318,
+    &quot;longitude&quot;: 145.1833328
+  },
+  &quot;metadata&quot;: {
+    &quot;address_components&quot;: {
+      &quot;suburb&quot;: &quot;Hastings&quot;,
+      &quot;state&quot;: &quot;VIC&quot;,
+      &quot;postcode&quot;: &quot;3915&quot;
+    }
+  },
+  &quot;thumbnails&quot;: [
+    { &quot;url&quot;: &quot;https://rimh2.domainstatic.com.au/.../2020908421_1_1_...&quot;, &quot;type&quot;: &quot;photo&quot;, &quot;category&quot;: &quot;image&quot; }
+  ],
+  &quot;media&quot;: [
+    { &quot;media_type&quot;: &quot;image&quot;, &quot;type&quot;: &quot;photo&quot;, &quot;image_url&quot;: &quot;https://rimh2.domainstatic.com.au/.../2020908421_1_1_...&quot; }
+  ],
+  &quot;enrichment_failed&quot;: true
+}
+</code></pre>
+<blockquote>
+<p>In fast mode, <code>enrichment_failed: true</code> simply indicates the record contains search-layer essentials only (no per-property detail lookup was requested). It is <strong>not</strong> an error.</p>
+</blockquote>
+<h3>Detail Mode Sample (<code>detailMode: true</code>)</h3>
+<pre><code class="language-json">{
+  &quot;id&quot;: 2020313302,
+  &quot;seo_url&quot;: &quot;https://www.domain.com.au/67-32-manning-street-manning-point-nsw-2430-2020313302&quot;,
+  &quot;listing_type&quot;: &quot;property&quot;,
+  &quot;lifecycle_status&quot;: &quot;Live&quot;,
+  &quot;search_mode&quot;: &quot;buy&quot;,
+
+  &quot;headline&quot;: &quot;Cosy Retreat by the Beach &amp; River&quot;,
+  &quot;description&quot;: &quot;Positioned in the much-loved Big 4 Holiday Park, this bright and tidy cabin...&quot;,
+  &quot;price&quot;: &quot;$280,000&quot;,
+  &quot;promo_level&quot;: &quot;Elite&quot;,
+
+  &quot;dwelling_type&quot;: &quot;House&quot;,
+  &quot;bedroom_count&quot;: 2.0,
+  &quot;bathroom_count&quot;: 1.0,
+  &quot;carspace_count&quot;: 1,
+  &quot;additional_features&quot;: [
+    &quot;Air conditioning&quot;,
+    &quot;Built in wardrobes&quot;,
+    &quot;Balcony / Deck&quot;,
+    &quot;Outdoor Entertaining&quot;,
+    &quot;Shed&quot;,
+    &quot;Rainwater storage tank&quot;
+  ],
+
+  &quot;days_on_market&quot;: 227.0,
+  &quot;time_on_market_formats&quot;: {
+    &quot;details_section&quot;: &quot;Active since:  02/10/2025&quot;
+  },
+
+  &quot;address&quot;: &quot;67/32 Manning Street, Manning Point&quot;,
+  &quot;metadata&quot;: {
+    &quot;address_components&quot;: {
+      &quot;area&quot;: &quot;Taree - Greater Region&quot;,
+      &quot;postcode&quot;: &quot;2430&quot;,
+      &quot;region&quot;: &quot;Mid North Coast&quot;,
+      &quot;state_short&quot;: &quot;NSW&quot;,
+      &quot;street&quot;: &quot;Manning Street&quot;,
+      &quot;street_number&quot;: &quot;32&quot;,
+      &quot;unit_number&quot;: &quot;67&quot;,
+      &quot;suburb&quot;: &quot;Manning Point&quot;,
+      &quot;suburb_id&quot;: 27262
+    }
+  },
+  &quot;geo_location&quot;: {
+    &quot;latitude&quot;: -31.8974479,
+    &quot;longitude&quot;: 152.6613378
+  },
+
+  &quot;media&quot;: [
+    {
+      &quot;media_type&quot;: &quot;image&quot;,
+      &quot;type&quot;: &quot;photo&quot;,
+      &quot;image_url&quot;: &quot;https://rimh2.domain.com.au/.../2020313302_1_1_...&quot;
+    },
+    {
+      &quot;media_type&quot;: &quot;image&quot;,
+      &quot;type&quot;: &quot;floor_plan&quot;,
+      &quot;image_url&quot;: &quot;https://rimh2.domain.com.au/.../2020313302_19_3_...&quot;
+    }
+  ],
+
+  &quot;advertiser&quot;: {
+    &quot;id&quot;: 11789,
+    &quot;name&quot;: &quot;Lauders Real Estate Old Bar&quot;,
+    &quot;type&quot;: &quot;Agent&quot;,
+    &quot;address&quot;: &quot;52 Old Bar Road\nOld Bar NSW 2430&quot;,
+    &quot;images&quot;: {
+      &quot;logo_url&quot;: &quot;https://images.domain.com.au/img/Agencys/11789/logo_11789.png&quot;,
+      &quot;agency_banner_image_url&quot;: &quot;https://images.domain.com.au/img/Agencys/11789/banner_11789.png&quot;
+    },
+    &quot;agency_listing_contacts&quot;: [
+      {
+        &quot;agent_id&quot;: &quot;1903069&quot;,
+        &quot;display_full_name&quot;: &quot;Lauders Real Estate - Old Bar&quot;,
+        &quot;email_address&quot;: &quot;agent@example.com&quot;,
+        &quot;phone_numbers&quot;: [
+          { &quot;type&quot;: &quot;Mobile&quot;, &quot;number&quot;: &quot;02 6553 7700&quot; }
+        ],
+        &quot;social_urls&quot;: [
+          { &quot;type&quot;: &quot;facebook&quot;, &quot;url&quot;: &quot;https://www.facebook.com/laudersoldbar&quot; }
+        ]
+      }
+    ]
+  },
+
+  &quot;schools&quot;: [
+    {
+      &quot;name&quot;: &quot;Mitchells Island Public School&quot;,
+      &quot;education_level&quot;: &quot;Primary&quot;,
+      &quot;year_range&quot;: &quot;K-6&quot;,
+      &quot;gender&quot;: &quot;Co-ed&quot;,
+      &quot;system&quot;: &quot;Government&quot;,
+      &quot;address&quot;: &quot;Mitchells Island NSW 2430&quot;,
+      &quot;geo_location&quot;: { &quot;latitude&quot;: -31.896762, &quot;longitude&quot;: 152.614054 },
+      &quot;website_url&quot;: &quot;https://mitchellsi-p.schools.nsw.gov.au&quot;
+    }
+  ],
+
+  &quot;inspection_schedule&quot;: {
+    &quot;is_by_appointment_only&quot;: true,
+    &quot;is_bookings_enabled&quot;: false
+  },
+
+  &quot;tracking_metadata&quot;: {
+    &quot;saleMethod&quot;: &quot;privateTreaty&quot;,
+    &quot;primaryCategory&quot;: &quot;Buy&quot;,
+    &quot;adType&quot;: &quot;elite&quot;,
+    &quot;daysListed&quot;: 227,
+    &quot;corePropertyID&quot;: &quot;HU-7531-AI&quot;,
+    &quot;hasInteractiveFloorplan&quot;: false
+  },
+
+  &quot;market_insights&quot;: {
+    &quot;price_guide&quot;: 699000,
+    &quot;price_series&quot;: [680000, 640000, 627500, 670000, 699000],
+    &quot;price_series_years&quot;: [2022, 2023, 2024, 2025, 2026],
+    &quot;price_direction&quot;: &quot;positive&quot;,
+    &quot;recent_sales_count&quot;: 43,
+    &quot;recent_sales_price_low&quot;: 621500,
+    &quot;recent_sales_price_high&quot;: 881700,
+    &quot;recent_sales_duration&quot;: &quot;12 Months&quot;,
+    &quot;recent_sale_distance&quot;: &quot;Ardeer&quot;
+  },
+
+  &quot;homepass_enabled&quot;: true,
+  &quot;phone_enquiry_preference&quot;: false,
+  &quot;auction_metadata&quot;: {
+    &quot;header&quot;: { &quot;label&quot;: &quot;Online auction available&quot; }
+  },
+
+  &quot;enrichment_failed&quot;: false
+}
+</code></pre>
+<h3>Field Reference</h3>
+<p>The <strong>Mode</strong> column shows where each field appears: <strong>Both</strong> = fast and detail; <strong>Detail</strong> = detail mode only.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Mode</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code></td>
+<td>integer</td>
+<td>Both</td>
+<td>domain.com.au listing ID</td>
+</tr>
+<tr>
+<td><code>seo_url</code></td>
+<td>string</td>
+<td>Both</td>
+<td>Canonical listing URL on domain.com.au</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>string</td>
+<td>Both</td>
+<td>Display price string, e.g. <code>&quot;$280,000&quot;</code></td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>string</td>
+<td>Both</td>
+<td>Full display address</td>
+</tr>
+<tr>
+<td><code>dwelling_type</code></td>
+<td>string</td>
+<td>Both</td>
+<td>Property type  <code>&quot;House&quot;</code>, <code>&quot;Townhouse&quot;</code>, <code>&quot;Apartment&quot;</code>, etc.</td>
+</tr>
+<tr>
+<td><code>bedroom_count</code></td>
+<td>number</td>
+<td>Both</td>
+<td>Number of bedrooms</td>
+</tr>
+<tr>
+<td><code>bathroom_count</code></td>
+<td>number</td>
+<td>Both</td>
+<td>Number of bathrooms</td>
+</tr>
+<tr>
+<td><code>carspace_count</code></td>
+<td>integer</td>
+<td>Both</td>
+<td>Number of car spaces</td>
+</tr>
+<tr>
+<td><code>geo_location</code></td>
+<td>object</td>
+<td>Both</td>
+<td><code>latitude</code> and <code>longitude</code></td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td>object</td>
+<td>Both</td>
+<td>Structured address breakdown. Fast mode: suburb, state, postcode. Detail mode: full breakdown incl. area, region, suburb ID</td>
+</tr>
+<tr>
+<td><code>media</code></td>
+<td>array</td>
+<td>Both</td>
+<td>Property images. Detail mode also includes floor plans. Each item has <code>media_type</code>, <code>type</code>, <code>image_url</code></td>
+</tr>
+<tr>
+<td><code>thumbnails</code></td>
+<td>array</td>
+<td>Fast</td>
+<td>Thumbnail image references. Each item has <code>url</code>, <code>type</code>, <code>category</code></td>
+</tr>
+<tr>
+<td><code>enrichment_failed</code></td>
+<td>boolean</td>
+<td>Both</td>
+<td><code>false</code> for full detail records. <code>true</code> for fast-mode records, or when a detail lookup couldn&#39;t be completed (search data still saved)</td>
+</tr>
+<tr>
+<td><code>listing_type</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Listing type, e.g. <code>&quot;property&quot;</code></td>
+</tr>
+<tr>
+<td><code>lifecycle_status</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Listing status  <code>&quot;Live&quot;</code>, <code>&quot;New Home&quot;</code>, etc.</td>
+</tr>
+<tr>
+<td><code>search_mode</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Search context  <code>&quot;buy&quot;</code>, <code>&quot;rent&quot;</code>, <code>&quot;newdev&quot;</code></td>
+</tr>
+<tr>
+<td><code>headline</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Listing title written by the agent</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Full property description text</td>
+</tr>
+<tr>
+<td><code>promo_level</code></td>
+<td>string</td>
+<td>Detail</td>
+<td>Listing tier  <code>&quot;Elite&quot;</code>, <code>&quot;Standard&quot;</code>, etc.</td>
+</tr>
+<tr>
+<td><code>additional_features</code></td>
+<td>array</td>
+<td>Detail</td>
+<td>Feature list, e.g. <code>&quot;Air conditioning&quot;</code>, <code>&quot;Dishwasher&quot;</code></td>
+</tr>
+<tr>
+<td><code>days_on_market</code></td>
+<td>number|null</td>
+<td>Detail</td>
+<td>Days listing has been active. <code>null</code> for new developments</td>
+</tr>
+<tr>
+<td><code>time_on_market_formats</code></td>
+<td>object</td>
+<td>Detail</td>
+<td>Formatted active-since strings for display</td>
+</tr>
+<tr>
+<td><code>advertiser</code></td>
+<td>object</td>
+<td>Detail</td>
+<td>Full agency block  name, address, logo, banner, agent contacts, phone, email, social URLs</td>
+</tr>
+<tr>
+<td><code>schools</code></td>
+<td>array</td>
+<td>Detail</td>
+<td>Nearby schools with level, year range, gender, system, geo, website</td>
+</tr>
+<tr>
+<td><code>inspection_schedule</code></td>
+<td>object</td>
+<td>Detail</td>
+<td><code>is_by_appointment_only</code>, <code>is_bookings_enabled</code></td>
+</tr>
+<tr>
+<td><code>inspection_metadata</code></td>
+<td>object</td>
+<td>Detail</td>
+<td>Inspection planner flag and title</td>
+</tr>
+<tr>
+<td><code>auction_metadata</code></td>
+<td>object</td>
+<td>Detail</td>
+<td>Auction availability header</td>
+</tr>
+<tr>
+<td><code>tracking_metadata</code></td>
+<td>object</td>
+<td>Detail</td>
+<td><code>saleMethod</code>, <code>adType</code>, <code>daysListed</code>, <code>corePropertyID</code>, <code>hasInteractiveFloorplan</code></td>
+</tr>
+<tr>
+<td><code>market_insights</code></td>
+<td>object</td>
+<td>Detail</td>
+<td>Price guide, multi-year series, direction, recent sales data. Present for some listings only</td>
+</tr>
+<tr>
+<td><code>phone_enquiry_preference</code></td>
+<td>boolean</td>
+<td>Detail</td>
+<td>Whether the agent prefers phone enquiries</td>
+</tr>
+<tr>
+<td><code>homepass_enabled</code></td>
+<td>boolean</td>
+<td>Detail</td>
+<td>Whether Homepass digital key access is enabled</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>⚠️ Important Notes</h2>
+<h3>Legal Considerations</h3>
+<p>This Actor extracts publicly available property listing data from domain.com.au. Users must:</p>
+<ul>
+<li>Comply with domain.com.au&#39;s Terms of Service</li>
+<li>Follow applicable data protection laws (GDPR, CCPA, Australian Privacy Act, etc.)</li>
+<li>Use extracted data responsibly and ethically</li>
+</ul>
+<p><strong>The Actor creator is not responsible for how users utilize the extracted data.</strong></p>
+<hr>
+<h2>💬 Support &amp; Contact</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate Data</h3>
+<p><strong><a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63">domain.com.au Scraper</a></strong>
+Extract Australian property listings from domain.com.au with full enrichment, agent contacts, schools, and market insights.</p>
+<p><strong><a href="https://apify.com/dz_omar/realtor-scraper?fpr=smcx63">Realtor.com Scraper</a></strong>
+Extract US property listings from Realtor.com. Pricing, agent contacts, tax history, AVM estimates, nearby schools, flood and noise data, and full listing history.</p>
+<p><strong><a href="https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63">PropertyFinder Scraper</a></strong>
+Extract property listings from PropertyFinder across UAE, Saudi Arabia, Bahrain, Egypt, and Qatar.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>
+Advanced Idealista property data extraction with API access.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Extract Spanish real estate listings from Idealista.</p>
+<p><strong><a href="https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63">Leboncoin.fr Scraper</a></strong>
+Extract French classified listings from Leboncoin  real estate, vehicles, jobs, and more.</p>
+<p><strong><a href="https://apify.com/dz_omar/ai-contact-intelligence?fpr=smcx63">AI Contact Intelligence Extractor</a></strong>
+Extract emails, phones, contacts &amp; custom data using AI.</p>
+<h3>🍔 Food &amp; Delivery</h3>
+<p><strong><a href="https://apify.com/dz_omar/doordash-scraper?fpr=smcx63">DoorDash Scraper</a></strong>
+Scrape store listings, full menus, featured items, and customer reviews from DoorDash.</p>
+<h3>🎬 Video &amp; Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata?fpr=smcx63">YouTube Transcript &amp; Metadata Extractor</a></strong>
+Extract complete video transcripts with timestamps and comprehensive metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Full Channel, Playlists, Shorts, Live</a></strong>
+Extract complete playlist information with all video details from any YouTube playlist.</p>
+<p><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper | Downloader &amp; Transcript</a></strong>
+Extract Zoom meeting recordings, transcripts, and metadata.</p>
+<p><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper | Downloader &amp; Transcript</a></strong>
+Download Loom videos and extract transcripts.</p>
+<h3>🛠️ Developer &amp; Security Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong>
+Fast, reliable webpage screenshots with customizable options.</p>
+<p><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>
+Advanced screenshot tool with full-page capture, custom viewports, and quality controls.</p>
+<p><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong>
+Scan websites for security vulnerabilities and get comprehensive security reports.</p>
+<h3>📱 Social Media Tools</h3>
+<p><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>
+Extract Facebook ads data for competitor analysis and market research.</p>
+<p><strong><a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63">LinkedIn Ad Library Scraper</a></strong>
+Extract comprehensive advertising data from LinkedIn&#39;s Ad Library.</p>
+<hr>
+<p><strong>Ready to extract Australian property data?</strong> <a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63">Start using domain.com.au Scraper now!</a></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

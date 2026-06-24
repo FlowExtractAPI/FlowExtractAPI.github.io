@@ -2,7 +2,16 @@
 
 **Extract comprehensive data from Facebook's Ad Library** with real-time streaming, advanced filtering, and standby mode support.
 
-> **Search Keywords & Advertisers → Stream Real-Time Ad Data → Get Complete Analytics**
+> **Search Keywords & Advertisers & URLs → Stream Real-Time Ad Data → Get Complete Analytics**
+
+---
+
+## 🎬 Video Tutorial
+
+<!-- TODO: Replace with actual YouTube video link once published -->
+[![Watch the Tutorial](https://img.shields.io/badge/YouTube-Watch%20Tutorial-red?style=for-the-badge&logo=youtube)](https://youtube.com/@FlowExtractAPI)
+
+https://www.youtube.com/watch?v=yNSIhZcDlNY
 
 ---
 
@@ -31,7 +40,7 @@ Upgrade for **enterprise-grade reliability**
 **All Free Tier features PLUS:**
 - 🚀 **Dedicated premium proxy** - Your own reliable connection
 - 🚀 **No rate limiting** - Unlimited continuous scraping
-- 🚀 **90% success rate** - Stable, uninterrupted operations
+- 🚀 **100% success rate** - Stable, uninterrupted operations
 - 🚀 **Extract ∞+ ads per query** - No slowdowns or blocks
 - 🚀 **Perfect for production use** - Enterprise-ready infrastructure
 - 🚀 **Consistent performance** - No random connection errors
@@ -42,18 +51,6 @@ Upgrade for **enterprise-grade reliability**
 - **Scale effortlessly**: Handle large datasets with perfect stability
 - **Best for agencies**: Reliable results for client reports and production systems
 - **Zero downtime**: 24/7 stable scraping without worries
-
----
-
-## 📊 Feature Comparison
-
-| Feature | FREE | PAID ⭐ |
-|---------|------|--------|
-| **Ads per query** | Up to 100 | ∞+ |
-| **Rate limiting** | Yes | No |
-| **Connection stability** | Occasional issues | Always stable |
-| **Best for** | Testing & small projects | Agencies & production |
-| **Support** | Standard | Priority |
 
 ---
 
@@ -87,7 +84,69 @@ apify call dz-omar/facebook-ads-scraper-pro --input input.json
 
 ---
 
-### Option 2: Run in Standby Mode (Recommended) ⭐
+### Option 2: Run with Ad Library URLs (New in v0.2) 🔗
+
+Perfect for: Copying searches directly from Facebook's Ad Library website, or fetching a specific ad by ID
+
+```json
+{
+  "URLAds": [
+    {
+      "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=nike&media_type=video"
+    },
+    {
+      "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&q=adidas"
+    }
+  ],
+  "maxResultsPerQuery": 50
+}
+```
+
+**How URL Mode works:**
+1. Go to [Facebook Ad Library](https://www.facebook.com/ads/library/) and set up your search
+2. Copy the URL from your browser
+3. Paste it into the `URLAds` field
+4. All filters from the URL (country, language, date range, media type, platforms, sort order) are extracted automatically
+5. The actor parses each URL and runs the search for you
+
+**📌 Single ad links supported:**
+URLs with `?id=` fetch that specific ad directly  no search query needed:
+```json
+{
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?id=907653308384731" }
+  ],
+  "enrichWithAdDetails": true
+}
+```
+
+**Combining URL Mode with Manual Search:**
+
+You can provide URLs alongside keyword and advertiser searches  all run sequentially:
+
+```json
+{
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&q=pokemon&media_type=video" }
+  ],
+  "searchQueries": ["apify"],
+  "searchAdvertisers": ["Nike", "15087023444"],
+  "maxResultsPerQuery": 50,
+  "activeStatus": "ALL",
+  "adType": "ALL"
+}
+```
+
+**Execution order:**
+1. 🔗 All `URLAds` are processed first (each URL uses its own filters from the URL)
+2. 🏢 Then `searchAdvertisers` are resolved and scraped (using the input schema filters)
+3. 🔍 Then `searchQueries` are run as keyword searches (using the input schema filters)
+
+`maxResultsPerQuery` controls the maximum ads collected per URL, per advertiser page, and per keyword query.
+
+---
+
+### Option 3: Run in Standby Mode (Recommended) ⭐
 
 Perfect for: Real-time applications, multiple requests, APIs, instant responses
 
@@ -99,7 +158,7 @@ Perfect for: Real-time applications, multiple requests, APIs, instant responses
 **Standby Mode Advantages:**
 
 | Feature | Batch Mode | Standby Mode |
-|---------|-----------|--------------|
+|---------|-----------|--------------| 
 | **Cold Start** | 8-15 seconds | 0 seconds ⚡ |
 | **Response Time** | Slow (start overhead) | Instant |
 | **Best For** | Scheduled tasks | Real-time apps |
@@ -111,7 +170,7 @@ Perfect for: Real-time applications, multiple requests, APIs, instant responses
 **Real-World Comparison:**
 
 | Scenario | Batch Mode | Standby Mode |
-|----------|-----------|--------------|
+|----------|-----------|--------------| 
 | Track competitor ads daily | ✅ Good | ⭐ Excellent |
 | Build a SaaS dashboard | ⚠️ Too slow | ✅ Perfect |
 | One-time research project | ✅ Best | Overkill |
@@ -195,27 +254,32 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
 
 ## 📋 Input Parameters
 
-| Parameter | Type | Default | Min | Max | Description |
-|-----------|------|---------|-----|-----|-------------|
-| `searchQueries` | array | `[]` | 0 | ∞ | Keywords to search (e.g., `["nike", "adidas"]`) |
-| `searchAdvertisers` | array | `[]` | 0 | ∞ | Advertiser names or page IDs |
-| `maxResultsPerQuery` | integer | `10` | 10 | ∞ | Max ads per query/advertiser |
-| `batchSize` | integer | `30` | 10 | 100 | Ads per batch request |
-| `countries` | array/string | `["ALL"]` | - | - | Country codes (e.g., `["US", "GB", "FR"]`) |
-| `contentLanguages` | array | `[]` | 0 | ∞ | Language codes (e.g., `["en", "es", "fr"]`) |
-| `activeStatus` | string | `"ALL"` | - | - | `"ALL"`, `"ACTIVE"`, `"INACTIVE"` |
-| `adType` | string | `"ALL"` | - | - | Ad category filter |
-| `mediaType` | string | `"ALL"` | - | - | Media type filter |
-| `publisherPlatforms` | array | `[]` | 0 | 6 | Platforms to search |
-| `sortBy` | string | `"SORT_BY_TOTAL_IMPRESSIONS"` | - | - | Sort method |
-| `startDate` | string | `null` | - | - | Start date (YYYY-MM-DD) |
-| `endDate` | string | `null` | - | - | End date (YYYY-MM-DD) |
+| Parameter | Type | Default | Description |
+|-----------|------|---------|-------------|
+| `URLAds` | array | `[]` | Facebook Ad Library URLs to scrape directly (new in v0.2) |
+| `searchQueries` | array | `[]` | Keywords to search (e.g., `["nike", "adidas"]`) |
+| `searchAdvertisers` | array | `[]` | Advertiser names or page IDs |
+| `maxResultsPerQuery` | integer | `10` | Max ads per URL / per query / per advertiser page |
+| `batchSize` | integer | `30` | Ads per batch request |
+| `countries` | array/string | `["ALL"]` | Country codes (e.g., `["US", "GB", "FR"]`) |
+| `contentLanguages` | array | `[]` | Language codes (e.g., `["en", "es", "fr"]`) |
+| `activeStatus` | string | `"ALL"` | `"ALL"`, `"ACTIVE"`, `"INACTIVE"` |
+| `adType` | string | `"ALL"` | Ad category filter |
+| `mediaType` | string | `"ALL"` | Media type filter |
+| `publisherPlatforms` | array | `[]` | Platforms to search |
+| `sortBy` | string | `"SORT_BY_TOTAL_IMPRESSIONS"` | Sort method |
+| `startDate` | string | `null` | Start date (YYYY-MM-DD) |
+| `endDate` | string | `null` | End date (YYYY-MM-DD) |
+| `enrichWithAdDetails` | boolean | `false` | Fetch full ad details per result (advertiser info, targeting, payer/beneficiary, violations) |
 
-### ⚠️ Important: Input Does Not Exist
+### ⚠️ Important: Input Requirements
 
 **At least one of these MUST be provided:**
-- `searchQueries` - Contains search keywords (required if no advertisers)
-- `searchAdvertisers` - Contains advertiser names/page IDs (required if no queries)
+- `URLAds` - Contains Facebook Ad Library URLs
+- `searchQueries` - Contains search keywords
+- `searchAdvertisers` - Contains advertiser names/page IDs
+
+You can provide any combination  all are processed sequentially.
 
 **Invalid Input Examples (Will Fail):**
 
@@ -224,7 +288,7 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
   "maxResultsPerQuery": 50
 }
 ```
-❌ Error: "Must provide either searchQueries or searchAdvertisers"
+❌ Error: "No input provided. Supply either URLAds, searchQueries, or searchAdvertisers"
 
 ```json
 {
@@ -234,15 +298,14 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
 ```
 ❌ Error: "Both arrays are empty - no search criteria provided"
 
+**Valid Input Examples:**
+
 ```json
 {
-  "countries": ["US"],
-  "activeStatus": "ACTIVE"
+  "URLAds": [{ "url": "https://www.facebook.com/ads/library/?q=nike&country=US" }]
 }
 ```
-❌ Error: "Input does not exist - missing searchQueries or searchAdvertisers"
-
-**Valid Input Examples:**
+✅ Valid - Parses the URL and runs the search
 
 ```json
 {
@@ -260,13 +323,37 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
 
 ```json
 {
+  "URLAds": [{ "url": "https://www.facebook.com/ads/library/?q=pokemon&media_type=video" }],
   "searchQueries": ["marketing"],
   "searchAdvertisers": ["Nike", "Apple"],
   "maxResultsPerQuery": 100,
   "countries": ["US"]
 }
 ```
-✅ Valid - Searches keywords in ads from specific advertisers
+✅ Valid - Runs URL first, then advertisers, then keywords
+
+### 🔍 Enriching Results with Ad Details
+
+By default, each result contains the core ad data. Enable `enrichWithAdDetails` to fetch a richer detail page per ad:
+
+```json
+{
+  "searchQueries": ["nike"],
+  "maxResultsPerQuery": 50,
+  "enrichWithAdDetails": true
+}
+```
+
+**Extra data included when enabled:**
+-  **Advertiser info**: page about text, category, likes, profile photo, cover photo, verification status
+- **Instagram**: username, followers, verification status
+- **Targeting (EU)**: location audience, age/gender breakdown, total EU reach
+- **Payer/Beneficiary**: who paid for and benefits from the ad
+- **Violations**: any policy violation types flagged by Facebook
+
+> **⚠️ Performance note:** Each ad requires one extra API request. Scraping will be slower.
+
+---
 
 ### Valid Values Reference
 
@@ -386,15 +473,15 @@ Each ad object contains:
   "media": {
     "type": "image|video",
     "primary_thumbnail": "https://...",
-    "images": [...],
-    "videos": [...]
+    "images": ["..."],
+    "videos": ["..."]
   },
   
   "additional_assets": {
-    "images": [...],
-    "links": [...],
-    "texts": [...],
-    "videos": [...]
+    "images": ["..."],
+    "links": ["..."],
+    "texts": ["..."],
+    "videos": ["..."]
   },
   
   "start_date": "2024-01-15",
@@ -406,7 +493,41 @@ Each ad object contains:
   "ad_category": "MARKETING",
   
   "contains_sensitive_content": false,
-  "scraped_at": "2026-01-25T23:14:50Z"
+  "scraped_at": "2026-01-25T23:14:50Z",
+
+  // Only present when enrichWithAdDetails: true
+  "ad_details": {
+    "advertiser": {
+      "page": { "id": "15087023444", "about": { "text": "https://nike.com" } },
+      "ad_library_page_info": {
+        "page_info": {
+          "ig_username": "nike",
+          "ig_followers": 306000000,
+          "ig_verification": true,
+          "page_verification": "BLUE_VERIFIED",
+          "page_cover_photo": "https://...",
+          "entity_type": "BRAND"
+        },
+        "page_spend": { "is_political_page": false }
+      }
+    },
+    "aaa_info": {
+      "targets_eu": true,
+      "gender_audience": "All",
+      "age_audience": { "min": 18, "max": 65 },
+      "eu_total_reach": 500000,
+      "location_audience": [{ "name": "France", "type": "countries" }, "..."],
+      "age_country_gender_reach_breakdown": ["..."],
+      "payer_beneficiary_data": [{ "payer": "Nike Inc.", "beneficiary": "Nike" }],
+      "has_violating_payer_beneficiary": false,
+      "is_ad_taken_down": false
+    },
+    "violation_types": [],
+    "verified_voice_context": {
+      "types": ["UNCATEGORIZED"],
+      "ad_library_all_geo_fin_serv_info": { "finserv_data": [] }
+    }
+  }
 }
 ```
 
@@ -414,7 +535,41 @@ Each ad object contains:
 
 ## 🎯 Search Modes Explained
 
-### 1. Keyword Search
+### 1. URL Mode (New in v0.2) 🔗
+Paste Ad Library URLs directly  all filters are extracted automatically:
+```json
+{
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=US&q=nike&media_type=video" }
+  ],
+  "maxResultsPerQuery": 100
+}
+```
+
+**Use Case:** You've already set up the perfect search on Facebook's Ad Library website  just copy the URL and let the actor handle it.
+
+**📌 Single ad links also supported:**
+
+URLs containing `?id=` fetch that one specific ad directly  no search, no pagination:
+```json
+{
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?id=907653308384731" }
+  ]
+}
+```
+
+Pair it with `enrichWithAdDetails: true` to get the full advertiser, targeting, and payer/beneficiary data for that ad:
+```json
+{
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?id=907653308384731" }
+  ],
+  "enrichWithAdDetails": true
+}
+```
+
+### 2. Keyword Search
 Search for ads by keywords or brand names:
 ```json
 {
@@ -425,7 +580,29 @@ Search for ads by keywords or brand names:
 
 **Use Case:** Find all ads mentioning your keywords across all advertisers
 
-### 2. Advertiser Search
+> **⚠️ Important  Keyword Search is Broad by Design**
+>
+> When using `searchQueries`, Facebook Ads Scraper Pro performs a **keyword search across all advertisers**. This means it matches any ad whose text, title, or page name contains your keyword  not just the brand you may have in mind.
+>
+> For example:
+> ```json
+> {
+>   "searchQueries": ["SHEIN"]
+> }
+> ```
+> This will return ads from **SHEIN Brasil**, **SHEIN KIDS**, **SHEIN Mexico**, and any other page or ad copy containing the word "SHEIN". The impression-based ranking may also surface different ads than you'd expect when targeting a specific page.
+>
+> **If you want precise, targeted results for a specific advertiser, use one of these instead:**
+> - 🏢 **`searchAdvertisers`**  resolves the brand name to its exact Facebook page(s) and fetches only their ads:
+>   ```json
+>   { "searchAdvertisers": ["SHEIN"] }
+>   ```
+> - 🔗 **`URLAds`**  copy the URL directly from Facebook's Ad Library after setting up your exact search filters:
+>   ```json
+>   { "URLAds": [{ "url": "https://www.facebook.com/ads/library/?q=SHEIN&country=ALL" }] }
+>   ```
+
+### 3. Advertiser Search
 Search ads from specific Facebook pages:
 ```json
 {
@@ -434,19 +611,22 @@ Search ads from specific Facebook pages:
 }
 ```
 
-**Use Case:** Monitor what a specific brand/company is advertising
+**Use Case:** Monitor what a specific brand/company is advertising. Names are resolved via Facebook's typeahead API  all exact-match pages are scraped.
 
-### 3. Combined Search
-Both keywords and advertisers in one request:
+### 4. Combined Search
+URLs, keywords, and advertisers all in one run:
 ```json
 {
+  "URLAds": [
+    { "url": "https://www.facebook.com/ads/library/?q=pokemon&country=ALL&media_type=video" }
+  ],
   "searchQueries": ["marketing"],
   "searchAdvertisers": ["Nike", "Apple"],
   "maxResultsPerQuery": 50
 }
 ```
 
-**Use Case:** Find specific keywords in ads from selected companies
+**Use Case:** Run a comprehensive competitive analysis in a single actor run. URLs are processed first with their own filters, then advertisers and keywords run with the input schema filters.
 
 ---
 
@@ -479,7 +659,7 @@ Request → Instant Response (pre-warmed instance)
 ### Why Choose Standby Mode?
 
 | Use Case | Batch Mode | Standby Mode |
-|----------|-----------|--------------|
+|----------|-----------|--------------| 
 | **Nightly automated scrape** | ✅ Best choice | Overkill |
 | **Live competitor dashboard** | ❌ Too slow | ✅ Essential |
 | **API for external apps** | ❌ Not viable | ✅ Perfect |
@@ -633,6 +813,11 @@ Server automatically handles Apify platform migrations:
 ---
 ## 🛠️ Troubleshooting
 
+### **URL Mode Issues**
+- **URL not recognized**: Make sure you're copying from `https://www.facebook.com/ads/library/...`
+- **Filters not applied**: Check that the URL contains the expected query parameters
+- **Wrong result count**: Use `maxResultsPerQuery` to control how many ads are fetched per URL
+
 ### **Search Issues**
 - **No results**: Try broader keywords or check spelling
 - **Limited data**: Increase `maxResultsPerQuery` or expand date ranges
@@ -681,13 +866,11 @@ Server automatically handles Apify platform migrations:
 
 ## 🤝 Support & Resources
 
-## 📞 Support
-
 ### Get Help
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### Social Media

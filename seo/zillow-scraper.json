@@ -1,0 +1,21 @@
+﻿{
+    "slug":  "zillow-scraper",
+    "_drafted":  true,
+    "intro":  "Zillow Scraper is a ready-to-run Apify actor from FlowExtract API for real estate. Scrape property listings from [Zillow](https://www.zillow.com) search pages. Extracts structured data for every property on any search result — for sale, for rent, recently sold — across any US city, ZIP code, or custom map region. This page explains what it does, who it\u0027s for, and how to get the most out of it — then includes the full technical documentation below. ",
+    "useCases":  [
+                     "up to 500 results per page in a single request",
+                     "structured data — no brittle HTML parsing",
+                     "full pagination — automatically follows all pages until maxResults is reached or the search is exhausted",
+                     "filter URL — https://www.zillow.com/new-braunfels-tx/?searchQueryState=... (recommended — preserves all filters)"
+                 ],
+    "faq":  [
+                {
+                    "q":  "How do I run Zillow Scraper?",
+                    "a":  "Open Zillow Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+                },
+                {
+                    "q":  "Is Zillow Scraper free?",
+                    "a":  "Zillow Scraper runs on Apify\u0027s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+                }
+            ]
+}

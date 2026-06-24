@@ -5,7 +5,30 @@
 This powerful Apify actor is designed for YouTube content creators, educators, and businesses who want to reach global audiences. Get professional-quality SRT subtitle files and cleaned translations in minutes.
 
 ---
+## ⚠️ Important: Execution Model & Costs
 
+This Actor is a **wrapper** that combines YouTube Subtitle Translator scraping with transcript extraction.
+
+When you run the acter **YouTube Subtitle Translator** does **not** extract transcripts directly. Instead:
+
+* It  **executes [YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63) in standby mode** to retrieve transcripts for each video
+* Results are merged and returned as a single unified output
+
+### What this means for you
+
+* You may see **two Actors running** for a single execution  this is **expected behavior**
+* This Actor does **not start automatically** and only runs when you explicitly trigger it
+* The standby transcript extraction **consumes compute units**, just like running the transcript extractor directly
+
+### Billing & Compute Usage
+
+* Costs come from **both** this Actor and the internally triggered transcript extractor
+
+If you prefer direct control over transcript extraction, run the extractor separately:
+
+👉 **[YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)**
+
+---
 ## 🎯 Why Use This Actor?
 
 ### ⚡ The Problem

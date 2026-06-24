@@ -1,0 +1,21 @@
+{
+  "slug": "screenshot",
+  "_drafted": true,
+  "intro": "Automated Website Screenshot is a ready-to-run Apify actor from FlowExtract API for developer tools & utilities. Screenshots are blank or incomplete? This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "full-Page Screenshots: Capture entire webpage length, not just viewport",
+    "custom Viewport: Set any browser window dimensions",
+    "high-Quality PNG: Lossless image format for professional results",
+    "smart Wait Conditions: Multiple options for page load completion"
+  ],
+  "faq": [
+    {
+      "q": "How do I run Automated Website Screenshot?",
+      "a": "Open Automated Website Screenshot on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is Automated Website Screenshot free?",
+      "a": "Automated Website Screenshot runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

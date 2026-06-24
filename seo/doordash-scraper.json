@@ -1,0 +1,21 @@
+{
+  "slug": "doordash-scraper",
+  "_drafted": true,
+  "intro": "DoorDash Scraper is a ready-to-run Apify actor from FlowExtract API for lead generation & business. Scrape store listings, full menus, featured items, and customer reviews from DoorDash with location-aware search, multi-URL support, and optional review extraction. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "store Identity name, description, cuisine type, business entity, and tag taxonomy with priority scores",
+    "ratings & Reviews average rating, total count, star distribution (1★–5★ breakdown), review count",
+    "pricing & Fees price range, delivery fee, pickup fee, surge indicators, DashPass eligibility",
+    "availability delivery ETA, pickup ETA, open/closed status, and full unavailability reasons"
+  ],
+  "faq": [
+    {
+      "q": "How do I run DoorDash Scraper?",
+      "a": "Open DoorDash Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is DoorDash Scraper free?",
+      "a": "DoorDash Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

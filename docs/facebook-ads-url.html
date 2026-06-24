@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>  Facebook Ads URL Parser - Instant Ad Data Extraction | FlowExtract API</title>
+    <meta name="title" content="  Facebook Ads URL Parser - Instant Ad Data Extraction | FlowExtract API">
+    <meta name="description" content="Parse Facebook Ad Library URLs and convert them to payloads for facebook-ads-scraper-pro">
+    <link rel="canonical" href="https://flowextractapi.com/docs/facebook-ads-url.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="  Facebook Ads URL Parser - Instant Ad Data Extraction | FlowExtract API">
+    <meta property="og:description" content="Parse Facebook Ad Library URLs and convert them to payloads for facebook-ads-scraper-pro">
+    <meta property="og:url" content="https://flowextractapi.com/docs/facebook-ads-url.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/sruG1iFyjht0rO7gaMLRZkDZzTzGHxegp5e1tzWJ0CA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItS2I0d1BKdTRSZTV1N2lGTFUtSEw0SE9zWFl4cS1kb3dubG9hZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="  Facebook Ads URL Parser - Instant Ad Data Extraction | FlowExtract API">
+    <meta name="twitter:description" content="Parse Facebook Ad Library URLs and convert them to payloads for facebook-ads-scraper-pro">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/sruG1iFyjht0rO7gaMLRZkDZzTzGHxegp5e1tzWJ0CA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItS2I0d1BKdTRSZTV1N2lGTFUtSEw0SE9zWFl4cS1kb3dubG9hZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🔗 Facebook Ads URL Parser","description":"Parse Facebook Ad Library URLs and convert them to payloads for facebook-ads-scraper-pro","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/facebook-ads-url.html","sameAs":"https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/sruG1iFyjht0rO7gaMLRZkDZzTzGHxegp5e1tzWJ0CA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItS2I0d1BKdTRSZTV1N2lGTFUtSEw0SE9zWFl4cS1kb3dubG9hZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run 🔗 Facebook Ads URL Parser?","acceptedAnswer":{"@type":"Answer","text":"Open 🔗 Facebook Ads URL Parser on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is 🔗 Facebook Ads URL Parser free?","acceptedAnswer":{"@type":"Answer","text":"🔗 Facebook Ads URL Parser runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,269 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/sruG1iFyjht0rO7gaMLRZkDZzTzGHxegp5e1tzWJ0CA/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItS2I0d1BKdTRSZTV1N2lGTFUtSEw0SE9zWFl4cS1kb3dubG9hZC5wbmc.png" alt="🔗 Facebook Ads URL Parser" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Advertising Intelligence</span>
+                <h1 class="actor-hero-title">🔗 Facebook Ads URL Parser</h1>
+                <p class="actor-hero-desc">Parse Facebook Ad Library URLs and convert them to payloads for facebook-ads-scraper-pro</p>
+                <a href="https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">🔗 Facebook Ads URL Parser is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Copy any Facebook Ad Library URL and get instant ad data - No configuration needed. This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>the Actor parses the provided Facebook Ad Library URL</li><li>it then executes [Facebook Ads Scraper Pro](https://apify.com/dzomar/facebook-ads-scraper-pro?fpr=smcx63) in standby mode</li><li>the scraper performs the actual data extraction and returns results to this Actor</li><li>you may see two Actors running for a single execution</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run 🔗 Facebook Ads URL Parser?</summary><p>Open 🔗 Facebook Ads URL Parser on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is 🔗 Facebook Ads URL Parser free?</summary><p>🔗 Facebook Ads URL Parser runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🔗 Facebook Ads URL Parser</h1>
+<p><strong>Copy any Facebook Ad Library URL and get instant ad data</strong> - No configuration needed.</p>
+<blockquote>
+<p><strong>Copy URL → Get Results → Done</strong></p>
+</blockquote>
+<hr>
+<h2>🚀 Quick Start</h2>
+<h3>Step 1: Copy URL from Facebook</h3>
+<p>Open <a href="https://www.facebook.com/ads/library/">Facebook Ad Library</a>, use any filters you want, then copy the URL from your browser address bar.</p>
+<p>Example URL:</p>
+<pre><code>https://www.facebook.com/ads/library/?q=nike&amp;country=US&amp;active_status=active&amp;...
+</code></pre>
+<h3>Step 2: Create Input</h3>
+<p>Save your URL to <code>input.json</code>:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {
+      &quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;country=US&amp;...&quot;
+    }
+  ],
+  &quot;maxResultsPerURL&quot;: 200
+}
+</code></pre>
+<h3>Step 3: Run Actor</h3>
+<pre><code class="language-bash">apify call dz-omar/facebook-ads-url-parser --input input.json
+</code></pre>
+<h3>Step 4: Get Results</h3>
+<p>Results appear in your dataset - same format as - <strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">facebook-ads-scraper-pro!</a></strong></p>
+<hr>
+<hr>
+<h2>⚠️ Important: Execution Model &amp; Costs</h2>
+<p>This Actor is a <strong>URL-based wrapper</strong> around the Facebook Ad Library.</p>
+<p>When you run <strong><a href="https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63">Facebook Ads Url Parser</a></strong>, it does <strong>not scrape ads directly</strong>. Instead:</p>
+<ul>
+<li>The Actor parses the provided Facebook Ad Library URL</li>
+<li>It then <strong>executes  <strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> in standby mode</strong></li>
+<li>The scraper performs the actual data extraction and returns results to this Actor</li>
+</ul>
+<h3>What this means</h3>
+<ul>
+<li>You may see <strong>two Actors running</strong> for a single execution</li>
+<li>This is <strong>expected behavior</strong></li>
+<li>The Actor does <strong>not run automatically</strong> and is only triggered when you start it manually</li>
+<li>The standby execution <strong>consumes compute units</strong>, just like running the scraper directly</li>
+</ul>
+<h3>Billing &amp; Compute Usage</h3>
+<ul>
+<li>Running this Actor is <strong>not free</strong></li>
+<li>Costs are generated by the internally executed scraper</li>
+<li>Charges apply even though no additional configuration is required</li>
+</ul>
+<p>If you prefer full control over parameters and execution, you can run the scraper directly:</p>
+<p>👉 <strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong></p>
+<hr>
+<h2>When to Use This Actor</h2>
+<p>Use <strong>Facebook Ads URL Parser</strong> if you want to:</p>
+<ul>
+<li>Re-run saved Facebook Ad Library URLs</li>
+<li>Automate competitor monitoring using copied URLs</li>
+<li>Avoid manually configuring search parameters</li>
+</ul>
+<p>Use <strong>Facebook Ads Scraper Pro</strong> if you want:</p>
+<ul>
+<li>Direct parameter-based control</li>
+<li>Clear visibility into compute usage per run</li>
+<li>Advanced scraping options</li>
+</ul>
+<hr>
+<h3>✅ Transparency Notice</h3>
+<p>This Actor intentionally uses a <strong>standby Actor execution</strong> to ensure consistent output and feature parity with the main scraper. This behavior is by design and not an automatic or hidden trigger.</p>
+<hr>
+<h2>📋 Input Format</h2>
+<p>That&#39;s it. Just two fields:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>URLAds</code></td>
+<td>array</td>
+<td>✅ Yes</td>
+<td>Array of Facebook Ad Library URLs</td>
+</tr>
+<tr>
+<td><code>maxResultsPerURL</code></td>
+<td>integer</td>
+<td>❌ No</td>
+<td>Max ads per URL (default: 10, range: 10-∞)</td>
+</tr>
+</tbody></table>
+<h3>Example</h3>
+<p><strong>Multiple URLs:</strong></p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;...&quot;},
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=adidas&amp;...&quot;},
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?search_type=page&amp;view_all_page_id=12345&amp;...&quot;}
+  ],
+  &quot;maxResultsPerURL&quot;: 10
+}
+</code></pre>
+<p><strong>With Custom Limit:</strong></p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?...&quot;}
+  ],
+  &quot;maxResultsPerURL&quot;: 500
+}
+</code></pre>
+<hr>
+<h2>📤 Output</h2>
+<p>You get the exact same ad data as the main scraper:</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;1234567890&quot;,
+  &quot;page_name&quot;: &quot;Nike&quot;,
+  &quot;page_likes&quot;: 5000000,
+  &quot;text&quot;: &quot;Just Do It&quot;,
+  &quot;title&quot;: &quot;Campaign Title&quot;,
+  &quot;start_date&quot;: &quot;2024-01-15&quot;,
+  &quot;is_active&quot;: true,
+  &quot;media&quot;: {
+    &quot;type&quot;: &quot;image&quot;,
+    &quot;primary_thumbnail&quot;: &quot;https://...&quot;
+  },
+  ...
+}
+</code></pre>
+<p>Each ad is one item in your dataset.</p>
+<hr>
+<h2>💡 Common Scenarios</h2>
+<h3>Monitor Competitor Ads</h3>
+<p>Copy the URL after searching for your competitor:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=competitor_brand&amp;...&quot;}
+  ]
+}
+</code></pre>
+<h3>Track Specific Brand</h3>
+<p>Copy the URL after selecting a page:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?search_type=page&amp;view_all_page_id=15087023444&amp;...&quot;}
+  ]
+}
+</code></pre>
+<h3>Analyze Multiple Regions</h3>
+<p>Copy URLs from different countries:</p>
+<pre><code class="language-json">{
+  &quot;URLAds&quot;: [
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;country=US&amp;...&quot;},
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;country=GB&amp;...&quot;},
+    {&quot;url&quot;: &quot;https://www.facebook.com/ads/library/?q=nike&amp;country=DE&amp;...&quot;}
+  ],
+  &quot;maxResultsPerURL&quot;: 100
+}
+</code></pre>
+<hr>
+<h2>✅ Supported URLs</h2>
+<ul>
+<li>✅ Keyword search URLs</li>
+<li>✅ Advertiser/page search URLs</li>
+<li>✅ Date-filtered URLs</li>
+<li>✅ Country/language-filtered URLs</li>
+<li>✅ Platform-filtered URLs</li>
+<li>✅ Any Facebook Ad Library URL</li>
+</ul>
+<hr>
+<h2>🔗 Related Actors</h2>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">facebook-ads-scraper-pro</a></strong> - Direct search using parameters (advanced)</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h2>📞 Support</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">dz_omar</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> - Extract transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> - Complete channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> - Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> - Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> - Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> - Real estate listings extractor</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> - Fast webpage screenshots</li>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> - Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> - Security vulnerability scanner</li>
+</ul>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> - Extract Facebook ads data</li>
+</ul>
+<hr>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available Facebook Ad Library data</li>
+<li><strong>Rate Limiting</strong>: Respects Facebook&#39;s service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+</ul>
+<hr>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +324,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +332,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'facebook-ads-url';
-    </script>
 </body>
 </html>

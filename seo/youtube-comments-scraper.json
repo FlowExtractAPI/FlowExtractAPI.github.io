@@ -1,0 +1,21 @@
+{
+  "slug": "youtube-comments-scraper",
+  "_drafted": true,
+  "intro": "💬 YouTube Comments Scraper is a ready-to-run Apify actor from FlowExtract API for social media. Extract comments from any YouTube video with author information, likes, timestamps, and nested replies - fast, reliable, and built for scale. This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "top-level Comments with full text content",
+    "author Information including name, channel ID, avatar, and verification status",
+    "engagement Metrics - like counts and reply counts",
+    "timestamps - when comments were posted"
+  ],
+  "faq": [
+    {
+      "q": "How do I run 💬 YouTube Comments Scraper?",
+      "a": "Open 💬 YouTube Comments Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is 💬 YouTube Comments Scraper free?",
+      "a": "💬 YouTube Comments Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    }
+  ]
+}

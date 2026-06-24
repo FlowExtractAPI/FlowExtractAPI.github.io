@@ -1,0 +1,29 @@
+{
+  "slug": "tiktok-ad-library-scraper",
+  "_drafted": true,
+  "intro": "TikTok Ad Library Scraper is a ready-to-run Apify actor from FlowExtract API for advertising intelligence. Without fetchAdDetail (details is null): This page explains what it does, who it's for, and how to get the most out of it — then includes the full technical documentation below.",
+  "useCases": [
+    "competitor ad monitoring: Track every ad a rival advertiser is running, with first/last shown dates.",
+    "creative research: Pull the actual video and image creatives competitors use to model your own.",
+    "targeting intelligence: See which countries, age bands, and genders an advertiser targets (with Fetch Ad Detail).",
+    "market & trend analysis: Search a keyword across all regions to map who is advertising in a category."
+  ],
+  "faq": [
+    {
+      "q": "How do I run TikTok Ad Library Scraper?",
+      "a": "Open TikTok Ad Library Scraper on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."
+    },
+    {
+      "q": "Is TikTok Ad Library Scraper free?",
+      "a": "TikTok Ad Library Scraper runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."
+    },
+    {
+      "q": "Why scrape the TikTok Ad Library?",
+      "a": "The TikTok Ad Library is TikTok's public DSA transparency portal, holding roughly one year of ads served across the EU/EEA. It exposes the actual creatives, the advertiser behind them, how long each ad ran, and per ad the age, gender, and regional impression breakdown. That is competitor intelligence you would otherwise pay a SaaS subscription for."
+    },
+    {
+      "q": "What data can the TikTok Ad Library Scraper extract?",
+      "a": "- id Unique TikTok ad identifier - name Advertiser display name"
+    }
+  ]
+}

@@ -3,12 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta id="meta-title" name="title" content="">
-    <meta id="meta-description" name="description" content="">
-    <title id="page-title">Documentation - FlowExtract API</title>
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Website Screenshot Tool with Full Page Capture | FlowExtract API</title>
+    <meta name="title" content="Website Screenshot Tool with Full Page Capture | FlowExtract API">
+    <meta name="description" content="This actor takes screenshots of specified websites, uploads them to Apify Key-Value Store, and provides URLs for easy access. It is useful for monitoring website changes, capturing visuals for reports, or web archiving.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/screenshot.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Website Screenshot Tool with Full Page Capture | FlowExtract API">
+    <meta property="og:description" content="This actor takes screenshots of specified websites, uploads them to Apify Key-Value Store, and provides URLs for easy access. It is useful for monitoring website changes, capturing visuals for reports, or web archiving.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/screenshot.html">
+    <meta property="og:image" content="https://images.apifyusercontent.com/EX_1_YRUfT0saRlx40KEEugVWrxl0mSRm6sjs0TO-58/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTDBRUENjZGFZczVkVHdJTHQvRFc2Y3BJZksxazVlblJJV1ItdW5uYW1lZC5wbmc.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Website Screenshot Tool with Full Page Capture | FlowExtract API">
+    <meta name="twitter:description" content="This actor takes screenshots of specified websites, uploads them to Apify Key-Value Store, and provides URLs for easy access. It is useful for monitoring website changes, capturing visuals for reports, or web archiving.">
+    <meta name="twitter:image" content="https://images.apifyusercontent.com/EX_1_YRUfT0saRlx40KEEugVWrxl0mSRm6sjs0TO-58/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTDBRUENjZGFZczVkVHdJTHQvRFc2Y3BJZksxazVlblJJV1ItdW5uYW1lZC5wbmc.png">
+
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="docs.css">
-    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Automated Website Screenshot","description":"This actor takes screenshots of specified websites, uploads them to Apify Key-Value Store, and provides URLs for easy access. It is useful for monitoring website changes, capturing visuals for reports, or web archiving.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/screenshot.html","sameAs":"https://apify.com/dz_omar/screenshot?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://images.apifyusercontent.com/EX_1_YRUfT0saRlx40KEEugVWrxl0mSRm6sjs0TO-58/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTDBRUENjZGFZczVkVHdJTHQvRFc2Y3BJZksxazVlblJJV1ItdW5uYW1lZC5wbmc.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I run Automated Website Screenshot?","acceptedAnswer":{"@type":"Answer","text":"Open Automated Website Screenshot on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API."}},{"@type":"Question","name":"Is Automated Website Screenshot free?","acceptedAnswer":{"@type":"Answer","text":"Automated Website Screenshot runs on Apify's pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier."}}]}]</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -30,18 +51,549 @@
         </div>
     </nav>
 
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://images.apifyusercontent.com/EX_1_YRUfT0saRlx40KEEugVWrxl0mSRm6sjs0TO-58/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTDBRUENjZGFZczVkVHdJTHQvRFc2Y3BJZksxazVlblJJV1ItdW5uYW1lZC5wbmc.png" alt="Automated Website Screenshot" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">Automated Website Screenshot</h1>
+                <p class="actor-hero-desc">This actor takes screenshots of specified websites, uploads them to Apify Key-Value Store, and provides URLs for easy access. It is useful for monitoring website changes, capturing visuals for reports, or web archiving.</p>
+                <a href="https://apify.com/dz_omar/screenshot?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
     <!-- Main Content -->
     <main class="docs-main">
         <div class="container">
             <aside class="docs-sidebar" id="sidebar">
-                <div class="sidebar-header">Table of Contents</div>
-                <nav class="sidebar-nav" id="toc">
-                    <!-- TOC generated from markdown headers -->
-                </nav>
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
             </aside>
-            
+
             <article class="docs-content" id="content">
-                <div class="loading">Loading documentation...</div>
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Automated Website Screenshot is a ready-to-run Apify actor from FlowExtract API for developer tools &amp; utilities. Screenshots are blank or incomplete? This page explains what it does, who it&#39;s for, and how to get the most out of it — then includes the full technical documentation below.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>full-Page Screenshots: Capture entire webpage length, not just viewport</li><li>custom Viewport: Set any browser window dimensions</li><li>high-Quality PNG: Lossless image format for professional results</li><li>smart Wait Conditions: Multiple options for page load completion</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>How do I run Automated Website Screenshot?</summary><p>Open Automated Website Screenshot on the Apify Store, provide your input (URLs or search parameters), and click Start. Results are available as JSON, CSV, or Excel, and via the Apify API.</p></details><details class="faq-item"><summary>Is Automated Website Screenshot free?</summary><p>Automated Website Screenshot runs on Apify&#39;s pay-as-you-go platform; you only pay for the compute/usage a run consumes. Check the actor page for current pricing and any free tier.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>📸 Website Screenshot Crawler 🌐</h1>
+<p>Capture high-quality screenshots of any website with advanced scrolling capabilities and cookie support. Perfect for web monitoring, documentation, testing, and content archival.</p>
+<h2>✨ Key Features</h2>
+<h3>📷 Advanced Screenshot Capture</h3>
+<ul>
+<li><strong>Full-Page Screenshots</strong>: Capture entire webpage length, not just viewport</li>
+<li><strong>Custom Viewport</strong>: Set any browser window dimensions</li>
+<li><strong>High-Quality PNG</strong>: Lossless image format for professional results</li>
+<li><strong>Smart Wait Conditions</strong>: Multiple options for page load completion</li>
+</ul>
+<h3>🍪 Session Management</h3>
+<ul>
+<li><strong>Cookie Support</strong>: Import cookies for authenticated sessions</li>
+<li><strong>Persistent Sessions</strong>: Maintain login states across captures</li>
+<li><strong>Paywall Bypass</strong>: Access restricted content with proper authentication</li>
+<li><strong>Custom Headers</strong>: Support for various authentication methods</li>
+</ul>
+<h3>🌐 Network Optimization</h3>
+<ul>
+<li><strong>Network Idle Detection</strong>: Multiple wait conditions for page loading</li>
+<li><strong>Timeout Control</strong>: Configurable page load timeouts</li>
+<li><strong>Resource Management</strong>: Efficient memory usage with headless browsing</li>
+</ul>
+<h2>💰 Pricing Structure</h2>
+<p>This actor uses a <strong>30-second interval</strong> charging system for optimal cost efficiency:</p>
+<h3>🧮 Interactive Cost Calculator</h3>
+<p><strong>Plan your budget with precision!</strong> Use our interactive cost calculator to estimate your exact costs before running the actor:</p>
+<p>🔗 <strong><a href="https://script.google.com/macros/s/AKfycbw3sBQ4KOnXk91-eUDADAl1EDeooRkVubBAHBBrSpqQX_l-vbmmc2ID1M92JmB1YZyN/exec">Launch Cost Calculator</a></strong></p>
+<p>Features:</p>
+<ul>
+<li>⚡ <strong>Real-time calculations</strong> as you adjust parameters</li>
+<li>📊 <strong>Visual cost breakdown</strong> by component (initialization, memory, screenshots)</li>
+<li>🎯 <strong>Scenario planning</strong> with different configurations</li>
+<li>💡 <strong>Cost optimization suggestions</strong> for better efficiency</li>
+<li>📱 <strong>Mobile-friendly</strong> interface for on-the-go planning</li>
+</ul>
+<h3>📊 How Pricing Works</h3>
+<h4>🔧 Three Types of Charges:</h4>
+<ol>
+<li><strong>Actor Initialization</strong> - One-time startup fee</li>
+<li><strong>Memory Usage</strong> - Based on memory allocation and runtime</li>
+<li><strong>Screenshot Capture</strong> - Per successful screenshot</li>
+</ol>
+<h4>⏱️ 30-Second Interval System:</h4>
+<ul>
+<li>Every <strong>30 seconds</strong> of runtime = <strong>1 interval</strong></li>
+<li><strong>1 minute</strong> = 2 intervals | <strong>1 hour</strong> = 120 intervals</li>
+<li><strong>Total operations</strong> = Memory (GB) × Number of intervals</li>
+</ul>
+<h3>💵 Pricing Tiers</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Initialization</strong></td>
+<td>$0.05</td>
+<td>$0.03</td>
+<td>$0.02</td>
+<td>$0.01</td>
+</tr>
+<tr>
+<td><strong>Memory (per operation)</strong></td>
+<td>$0.0033</td>
+<td>$0.0020</td>
+<td>$0.0015</td>
+<td>$0.0005</td>
+</tr>
+<tr>
+<td><strong>Screenshot</strong></td>
+<td>$0.01</td>
+<td>$0.007</td>
+<td>$0.006</td>
+<td>$0.005</td>
+</tr>
+</tbody></table>
+<h3>📝 Pricing Examples</h3>
+<h4>Example 1: Quick Single Screenshot</h4>
+<ul>
+<li><strong>Scenario</strong>: 1 screenshot, 1GB memory, 30 seconds runtime</li>
+<li><strong>Calculation</strong>: <ul>
+<li>Initialization: $0.05</li>
+<li>Memory: 1GB × 1 interval × $0.0033 = $0.0033</li>
+<li>Screenshots: 1 × $0.01 = $0.01</li>
+</ul>
+</li>
+<li><strong>Total</strong>: <strong>$0.0633</strong> (FREE tier)</li>
+</ul>
+<h4>Example 2: Multiple Screenshots</h4>
+<ul>
+<li><strong>Scenario</strong>: 10 screenshots, 2GB memory, 5 minutes runtime</li>
+<li><strong>Calculation</strong>:<ul>
+<li>Initialization: $0.05</li>
+<li>Memory: 2GB × 10 intervals × $0.0033 = $0.066</li>
+<li>Screenshots: 10 × $0.01 = $0.10</li>
+</ul>
+</li>
+<li><strong>Total</strong>: <strong>$0.216</strong> (FREE tier)</li>
+</ul>
+<h4>Example 3: Long Running Task</h4>
+<ul>
+<li><strong>Scenario</strong>: 50 screenshots, 4GB memory, 30 minutes runtime</li>
+<li><strong>Calculation</strong>:<ul>
+<li>Initialization: $0.05</li>
+<li>Memory: 4GB × 60 intervals × $0.0033 = $0.792</li>
+<li>Screenshots: 50 × $0.01 = $0.50</li>
+</ul>
+</li>
+<li><strong>Total</strong>: <strong>$1.342</strong> (FREE tier)</li>
+</ul>
+<h3>💡 Cost Optimization Tips</h3>
+<ol>
+<li><strong>Choose Right Memory</strong>: Use minimum required memory allocation</li>
+<li><strong>Optimize Runtime</strong>: Reduce unnecessary wait times</li>
+<li><strong>Batch Processing</strong>: Process multiple URLs in single run</li>
+<li><strong>Upgrade Tier</strong>: Higher tiers offer significant savings for heavy usage</li>
+<li><strong>Use the Calculator</strong>: Plan your runs with our cost calculator tool</li>
+</ol>
+<h3>🔍 Understanding Your Bill</h3>
+<p>Your Apify dashboard will show:</p>
+<ul>
+<li><strong>Operations count</strong>: Memory (GB) × 30-second intervals</li>
+<li><strong>Example</strong>: 2GB memory running for 5 minutes = 2 × 10 = 20 operations</li>
+<li><strong>Cost calculation</strong>: 20 operations × $0.0033 = $0.066 for memory usage</li>
+</ul>
+<h2>🚀 Quick Start</h2>
+<h3>Basic Screenshot</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://example.com&quot; }
+  ],
+  &quot;fullPage&quot;: true
+}
+</code></pre>
+<h3>Multiple URLs</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://example.com&quot; },
+    { &quot;url&quot;: &quot;https://github.com&quot; },
+    { &quot;url&quot;: &quot;https://stackoverflow.com&quot; }
+  ],
+  &quot;fullPage&quot;: false,
+  &quot;waitUntil&quot;: &quot;domcontentloaded&quot;
+}
+</code></pre>
+<h3>Custom Viewport</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://example.com&quot; }
+  ],
+  &quot;window_Width&quot;: 1366,
+  &quot;window_Height&quot;: 768,
+  &quot;waitUntil&quot;: &quot;networkidle0&quot;
+}
+</code></pre>
+<h3>With Authentication</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://secure-site.com/dashboard&quot; }
+  ],
+  &quot;cookies&quot;: [
+    {
+      &quot;name&quot;: &quot;session_token&quot;,
+      &quot;value&quot;: &quot;abc123xyz&quot;,
+      &quot;domain&quot;: &quot;.secure-site.com&quot;
+    }
+  ],
+  &quot;fullPage&quot;: true
+}
+</code></pre>
+<h2>📋 Input Configuration</h2>
+<h3>🎯 Basic Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>link_urls</code></td>
+<td>Array</td>
+<td><code>[{&quot;url&quot;: &quot;https://apify.com/&quot;}]</code></td>
+<td>List of URL objects to capture screenshots from</td>
+</tr>
+<tr>
+<td><code>fullPage</code></td>
+<td>Boolean</td>
+<td><code>false</code></td>
+<td>Capture entire page height vs viewport only</td>
+</tr>
+<tr>
+<td><code>waitUntil</code></td>
+<td>String</td>
+<td><code>&quot;domcontentloaded&quot;</code></td>
+<td>Page load completion condition</td>
+</tr>
+</tbody></table>
+<h3>📱 Viewport Configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>window_Width</code></td>
+<td>Integer</td>
+<td><code>1920</code></td>
+<td>Browser window width in pixels</td>
+</tr>
+<tr>
+<td><code>window_Height</code></td>
+<td>Integer</td>
+<td><code>1080</code></td>
+<td>Browser window height in pixels</td>
+</tr>
+</tbody></table>
+<h3>🔄 Scrolling Options</h3>
+<p><em>Note: Scrolling features have been removed from this version. Use <code>fullPage: true</code> to capture the entire page height.</em></p>
+<h3>🍪 Authentication</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cookies</code></td>
+<td>Array</td>
+<td><code>[]</code></td>
+<td>Cookie objects for authenticated sessions</td>
+</tr>
+</tbody></table>
+<h3>🌐 Network Settings</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Options</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>waitUntil</code></td>
+<td>String</td>
+<td><code>load</code>, <code>domcontentloaded</code>, <code>networkidle0</code>, <code>networkidle2</code></td>
+<td>Navigation completion condition</td>
+</tr>
+</tbody></table>
+<h4>Wait Conditions Explained:</h4>
+<ul>
+<li><strong><code>load</code></strong>: Wait until all resources are loaded (slower but complete)</li>
+<li><strong><code>domcontentloaded</code></strong>: Wait until HTML is parsed (faster, recommended for complex sites)</li>
+<li><strong><code>networkidle0</code></strong>: Wait until no network connections (may timeout on complex sites)</li>
+<li><strong><code>networkidle2</code></strong>: Wait until minimal network connections (may timeout on complex sites)</li>
+</ul>
+<h2>📊 Output Data</h2>
+<p>Each successful capture returns:</p>
+<pre><code class="language-json">{
+  &quot;screenshot_url&quot;: &quot;https://api.apify.com/v2/key-value-stores/QNNAmIXDEDePpHEd5/records/hrp8rcmv12jgllxf.png&quot;,
+  &quot;linkUrl&quot;: &quot;https://www.medium.com&quot;
+}
+</code></pre>
+<h3>Output Details:</h3>
+<ul>
+<li><strong><code>screenshot_url</code></strong>: Direct download link to the captured PNG image</li>
+<li><strong><code>linkUrl</code></strong>: Original URL that was captured (extracted from the URL object)</li>
+<li><strong>File Format</strong>: PNG with random 16-character filename</li>
+<li><strong>Storage</strong>: Apify Key-Value Store with permanent URLs</li>
+</ul>
+<h2>🎯 Use Cases</h2>
+<h3>📈 Business &amp; Monitoring</h3>
+<ul>
+<li><strong>Website Monitoring</strong>: Track visual changes and updates</li>
+<li><strong>Competitor Analysis</strong>: Regular captures of competitor pages</li>
+<li><strong>Documentation</strong>: Create visual records of web states</li>
+<li><strong>Archival</strong>: Preserve webpage appearances over time</li>
+</ul>
+<h3>🧪 Development &amp; Testing</h3>
+<ul>
+<li><strong>Responsive Testing</strong>: Verify layouts at different viewport sizes</li>
+<li><strong>Cross-Browser Testing</strong>: Ensure consistent appearance</li>
+<li><strong>Bug Documentation</strong>: Capture error states and issues</li>
+<li><strong>CI/CD Integration</strong>: Automated screenshot testing</li>
+</ul>
+<h3>📚 Content &amp; Research</h3>
+<ul>
+<li><strong>Tutorial Creation</strong>: Generate step-by-step visual guides</li>
+<li><strong>Academic Research</strong>: Capture web-based data and layouts</li>
+<li><strong>Social Media</strong>: Create engaging visual content</li>
+<li><strong>Portfolio</strong>: Showcase web development projects</li>
+</ul>
+<h3>🔍 E-commerce &amp; Marketing</h3>
+<ul>
+<li><strong>Price Monitoring</strong>: Track product pages and pricing</li>
+<li><strong>Ad Campaign Tracking</strong>: Monitor landing pages</li>
+<li><strong>A/B Testing</strong>: Compare different page versions</li>
+<li><strong>SEO Analysis</strong>: Document search result pages</li>
+</ul>
+<h2>⚙️ Advanced Configuration Examples</h2>
+<h3>High-Resolution Capture</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://example.com&quot; }
+  ],
+  &quot;window_Width&quot;: 2560,
+  &quot;window_Height&quot;: 1440,
+  &quot;fullPage&quot;: true,
+  &quot;waitUntil&quot;: &quot;networkidle0&quot;
+}
+</code></pre>
+<h3>Fast Processing</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://fast-site.com&quot; }
+  ],
+  &quot;fullPage&quot;: false,
+  &quot;waitUntil&quot;: &quot;domcontentloaded&quot;
+}
+</code></pre>
+<h3>Mobile Viewport Simulation</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://mobile-site.com&quot; }
+  ],
+  &quot;window_Width&quot;: 375,
+  &quot;window_Height&quot;: 812,
+  &quot;fullPage&quot;: true
+}
+</code></pre>
+<h3>Authenticated Session</h3>
+<pre><code class="language-json">{
+  &quot;link_urls&quot;: [
+    { &quot;url&quot;: &quot;https://dashboard.example.com&quot; }
+  ],
+  &quot;cookies&quot;: [
+    {
+      &quot;name&quot;: &quot;auth_token&quot;,
+      &quot;value&quot;: &quot;eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...&quot;,
+      &quot;domain&quot;: &quot;.example.com&quot;,
+      &quot;path&quot;: &quot;/&quot;,
+      &quot;secure&quot;: true,
+      &quot;httpOnly&quot;: true
+    }
+  ],
+  &quot;waitUntil&quot;: &quot;networkidle0&quot;
+}
+</code></pre>
+<h2>🔧 Technical Details</h2>
+<h3>Browser Configuration</h3>
+<ul>
+<li><strong>Engine</strong>: Pyppeteer (Chrome/Chromium)</li>
+<li><strong>Mode</strong>: Headless for optimal performance</li>
+<li><strong>Security</strong>: Sandbox disabled for containerized environments</li>
+<li><strong>Memory</strong>: Optimized shared memory usage</li>
+<li><strong>Images</strong>: Optional image loading for faster processing</li>
+</ul>
+<h3>Performance Optimization</h3>
+<ul>
+<li><strong>Async Processing</strong>: Non-blocking operations for multiple URLs</li>
+<li><strong>Memory Management</strong>: Efficient resource cleanup</li>
+<li><strong>Network Optimization</strong>: Configurable network idle detection</li>
+<li><strong>Error Handling</strong>: Robust error recovery and logging</li>
+</ul>
+<h3>File Management</h3>
+<ul>
+<li><strong>Naming</strong>: Random 16-character filenames to prevent conflicts</li>
+<li><strong>Storage</strong>: Apify Key-Value Store with permanent URLs</li>
+<li><strong>Format</strong>: PNG for lossless quality</li>
+<li><strong>Cleanup</strong>: Automatic temporary file removal</li>
+</ul>
+<h2>🛠️ Installation &amp; Usage</h2>
+<h3>Running the Actor</h3>
+<ol>
+<li><strong>Cost Planning</strong>: Use our <a href="https://script.google.com/macros/s/AKfycbw3sBQ4KOnXk91-eUDADAl1EDeooRkVubBAHBBrSpqQX_l-vbmmc2ID1M92JmB1YZyN/exec">cost calculator</a> to estimate expenses</li>
+<li><strong>Input Configuration</strong>: Set your parameters using JSON or the visual editor</li>
+<li><strong>Execute</strong>: Run the actor and monitor progress</li>
+<li><strong>Results</strong>: Access screenshots via the generated dataset</li>
+<li><strong>Download</strong>: Use the provided URLs to download images</li>
+</ol>
+<h3>Integration Options</h3>
+<ul>
+<li><strong>Apify API</strong>: Programmatic access via REST API</li>
+<li><strong>Webhooks</strong>: Automated notifications on completion</li>
+<li><strong>Scheduling</strong>: Run captures at regular intervals</li>
+<li><strong>Zapier Integration</strong>: Connect with other tools and services</li>
+</ul>
+<h2>🔍 Troubleshooting</h2>
+<h3>Common Issues</h3>
+<p><strong>Screenshots are blank or incomplete?</strong></p>
+<ul>
+<li>Try <code>waitUntil: &quot;networkidle2&quot;</code> for slower sites</li>
+<li>Enable <code>fullPage: true</code> for complete page capture</li>
+<li>Check if site blocks automation tools</li>
+<li>Verify URL accessibility</li>
+</ul>
+<p><strong>Page won&#39;t load properly?</strong></p>
+<ul>
+<li>Increase timeout by using different <code>waitUntil</code> conditions</li>
+<li>Verify URL accessibility</li>
+<li>Check for required cookies/authentication</li>
+<li>Try <code>waitUntil: &quot;domcontentloaded&quot;</code> for faster loading</li>
+</ul>
+<p><strong>Cookie authentication failing?</strong></p>
+<ul>
+<li>Verify cookie format and values</li>
+<li>Check domain and path settings</li>
+<li>Ensure cookies are not expired</li>
+<li>Test with browser developer tools first</li>
+</ul>
+<h2>📄 API Reference</h2>
+<h3>Input Schema Validation</h3>
+<p>The actor validates all input parameters according to the JSON Schema specification. Invalid inputs will result in clear error messages.</p>
+<h3>Output Format</h3>
+<p>Results are stored in Apify Dataset with consistent structure:</p>
+<ul>
+<li><strong>URL</strong>: <code>screenshot_url</code> for direct image access</li>
+<li><strong>Source</strong>: <code>linkUrl</code> for reference tracking</li>
+<li><strong>Storage</strong>: Permanent Key-Value Store links</li>
+</ul>
+<h3>Error Handling</h3>
+<ul>
+<li><strong>Network Errors</strong>: Automatic retry mechanisms</li>
+<li><strong>Timeout Handling</strong>: Graceful failure with logging</li>
+<li><strong>Invalid URLs</strong>: Clear error messages</li>
+<li><strong>Memory Issues</strong>: Efficient cleanup and recovery</li>
+</ul>
+<h2>🏆 Best Practices</h2>
+<h3>Configuration Tips</h3>
+<ol>
+<li><strong>Plan Costs First</strong>: Use our cost calculator to optimize your budget</li>
+<li><strong>Test First</strong>: Start with default settings and adjust gradually</li>
+<li><strong>Monitor Performance</strong>: Balance quality vs speed based on needs</li>
+<li><strong>Handle Failures</strong>: Implement retry logic for critical captures</li>
+<li><strong>Optimize Timing</strong>: Adjust <code>Sleep</code> and <code>delay</code> for your target sites</li>
+<li><strong>Use Appropriate Viewports</strong>: Match your analysis requirements</li>
+</ol>
+<h3>Performance Optimization</h3>
+<ul>
+<li>Use <code>domcontentloaded</code> for fast, static sites (default)</li>
+<li>Use <code>networkidle0</code> for dynamic, interactive sites</li>
+<li>Use <code>fullPage: false</code> for faster viewport-only captures</li>
+<li>Monitor memory usage for large batch operations</li>
+</ul>
+<h3>Security Considerations</h3>
+<ul>
+<li>Store cookies securely when using authentication</li>
+<li>Validate URLs before processing</li>
+<li>Respect robots.txt and rate limits</li>
+<li>Use proper authentication methods</li>
+<li>Monitor for sensitive data in screenshots</li>
+</ul>
+<h2>📈 Performance Metrics</h2>
+<h3>Speed Benchmarks</h3>
+<ul>
+<li><strong>Simple Page</strong>: ~5-10 seconds per screenshot</li>
+<li><strong>Complex Page</strong>: ~15-30 seconds with scrolling</li>
+<li><strong>Full Page</strong>: Additional 2-5 seconds for scrolling</li>
+<li><strong>Authenticated</strong>: +2-3 seconds for cookie setup</li>
+</ul>
+<h3>Resource Usage</h3>
+<ul>
+<li><strong>Memory</strong>: ~50-100MB per browser instance</li>
+<li><strong>CPU</strong>: Moderate usage during capture</li>
+<li><strong>Network</strong>: Depends on page size and resources</li>
+<li><strong>Storage</strong>: PNG files typically 100KB-5MB</li>
+</ul>
+<h2>🤝 Support &amp; Resources</h2>
+<h3><strong>Getting Help</strong></h3>
+<ul>
+<li><strong>📧 Email</strong>: <a href="mailto:fridaytechnolog@gmail.com">fridaytechnolog@gmail.com</a></li>
+<li><strong>🐙 GitHub</strong>: <a href="https://github.com/DZ-ABDLHAKIM">DZ-ABDLHAKIM</a></li>
+<li><strong>🐦 Twitter</strong>: <a href="https://x.com/DZ_45Omar">@DZ_45Omar</a></li>
+<li><strong>🔧 Apify</strong>: <a href="https://apify.com/dz_omar">dz_omar</a></li>
+</ul>
+<h3>Getting Help</h3>
+<ul>
+<li>Review this documentation thoroughly</li>
+<li>Check common issues and solutions</li>
+<li>Test with simple examples first</li>
+<li>Monitor actor logs for detailed error information</li>
+</ul>
+<h3>Updates &amp; Improvements</h3>
+<ul>
+<li>Regular updates for browser compatibility</li>
+<li>Performance optimizations based on usage patterns</li>
+<li>New features based on user feedback</li>
+<li>Security updates and bug fixes</li>
+</ul>
+
+                </section>
             </article>
         </div>
     </main>
@@ -52,7 +604,7 @@
             <h2>Ready to Get Started?</h2>
             <p>Try this actor on Apify or contact us for custom integration</p>
             <div class="cta-buttons">
-                <a href="#" id="cta-apify" class="btn btn-primary" target="_blank">Launch on Apify</a>
+                <a href="https://apify.com/dz_omar/screenshot?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
                 <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
             </div>
         </div>
@@ -60,15 +612,11 @@
 
     <footer class="docs-footer">
         <div class="container">
-            <p>&copy; 2024 FlowExtract API. All rights reserved.</p>
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
             <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
         </div>
     </footer>
 
     <script src="docs.js"></script>
-    <script>
-        // This will be replaced by the generator script with actual actor ID
-        const ACTOR_ID = 'screenshot';
-    </script>
 </body>
 </html>
