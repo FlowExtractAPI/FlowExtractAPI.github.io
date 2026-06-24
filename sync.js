@@ -389,8 +389,13 @@ function main() {
     // 4b) sitemap.xml + robots.txt (full runs only, so a single --only doesn't shrink them)
     if (!ONLY_SLUG) {
       const today = new Date().toISOString().slice(0, 10);
+      // Standalone landing pages (not actor docs) — add new ones here.
+      const EXTRA_PAGES = [
+        { loc: `${BASE_URL}/zoom-downloader/`, priority: '0.9' }
+      ];
       const urls = [
         { loc: `${BASE_URL}/`, priority: '1.0' },
+        ...EXTRA_PAGES,
         ...catalog.actors.map(a => ({
           loc: `${BASE_URL}/docs/${a.docsPath || a.slug}.html`,
           lastmod: (manifest.actors[a.slug] && manifest.actors[a.slug].syncedAt
