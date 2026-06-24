@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Zoom Video & Transcript Downloader — Chrome Extension | FlowExtract API</title>
+    <meta name="title" content="Zoom Video & Transcript Downloader — Chrome Extension | FlowExtract API">
+    <meta name="description" content="Extract direct MP4 download links and transcripts from Zoom recordings, events, clips, and government (zoomgov.com) sessions — instantly, locally, no waiting. Free Chrome extension.">
+    <link rel="canonical" href="https://flowextractapi.com/zoom-downloader/">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Zoom Video & Transcript Downloader — Chrome Extension">
+    <meta property="og:description" content="Extract direct MP4 links and transcripts from Zoom recordings, events, clips, and zoomgov.com — instantly, locally, no waiting.">
+    <meta property="og:url" content="https://flowextractapi.com/zoom-downloader/">
+    <meta property="og:image" content="https://flowextractapi.com/favicon.ico">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Zoom Video & Transcript Downloader — Chrome Extension">
+    <meta name="twitter:description" content="Extract direct MP4 links and transcripts from Zoom recordings, events, clips, and zoomgov.com — instantly, locally, no waiting.">
+    <meta name="twitter:image" content="https://flowextractapi.com/favicon.ico">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Zoom Video & Transcript Downloader",
+      "operatingSystem": "Chrome",
+      "applicationCategory": "BrowserApplication",
+      "description": "Extract direct MP4 download links and transcripts from Zoom recordings, events, clips, and government (zoomgov.com) sessions. Local-only processing, no account, no waiting.",
+      "url": "https://flowextractapi.com/zoom-downloader/",
+      "downloadUrl": "https://chromewebstore.google.com/detail/mpdggjbngdhfmkojnemnfpmbbpjkknjo",
+      "softwareVersion": "1.0.3",
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "publisher": { "@type": "Organization", "name": "FlowExtract APIs, Inc.", "url": "https://flowextractapi.com" }
+    }
+    </script>
+
+    <style>
+        :root {
+            --primary: #2d4a4a;
+            --accent: #5bb5b5;
+            --accent-light: #7fd4d4;
+            --accent-dark: #3a9494;
+            --bg: #f5f7f9;
+            --bg-secondary: #e8ecf0;
+            --card-bg: #ffffff;
+            --text: #1a2b3c;
+            --text-secondary: #4a5f7f;
+            --text-muted: #6b7f99;
+            --border: #d4dce6;
+            --shadow: 0 2px 8px rgba(45, 74, 74, 0.08);
+            --shadow-hover: 0 8px 24px rgba(45, 74, 74, 0.12);
+            --gradient: linear-gradient(135deg, #5bb5b5 0%, #3a9494 100%);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Arial, sans-serif;
+            background: var(--bg); color: var(--text); line-height: 1.6; overflow-x: hidden;
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        a { color: var(--accent); text-decoration: none; }
+
+        /* Nav */
+        .nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+            background: rgba(255,255,255,0.98); backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border); box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        }
+        .nav-container { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; }
+        .logo { display: flex; align-items: center; gap: 12px; font-size: 18px; font-weight: 700; color: var(--text); }
+        .logo-icon { width: 32px; height: 32px; color: var(--primary); }
+        .nav-links a { color: var(--text-secondary); font-weight: 600; margin-left: 22px; transition: color .25s; }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 9px;
+            padding: 14px 28px; border-radius: 10px; font-weight: 700; font-size: 16px;
+            border: 2px solid transparent; cursor: pointer; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+        }
+        .btn-primary { background: var(--gradient); color: #fff; box-shadow: 0 4px 14px rgba(91,181,181,.3); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(91,181,181,.4); }
+        .btn-secondary { background: transparent; color: var(--accent); border-color: var(--accent); }
+        .btn-secondary:hover { background: var(--accent); color: #fff; transform: translateY(-2px); }
+
+        /* Hero */
+        .hero { padding: 130px 20px 70px; background: linear-gradient(180deg, #ffffff 0%, var(--bg) 100%); }
+        .hero-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: 50px; align-items: center; }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700;
+            color: var(--accent-dark); background: rgba(91,181,181,.12); padding: 6px 14px; border-radius: 999px; margin-bottom: 18px;
+        }
+        .hero h1 { font-size: clamp(32px, 5vw, 50px); font-weight: 800; line-height: 1.15; margin-bottom: 18px; }
+        .hero h1 span { background: var(--gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .hero p.lead { font-size: 19px; color: var(--text-secondary); margin-bottom: 30px; max-width: 560px; }
+        .hero-cta { display: flex; gap: 16px; flex-wrap: wrap; }
+        .hero-meta { margin-top: 22px; font-size: 14px; color: var(--text-muted); display: flex; gap: 18px; flex-wrap: wrap; }
+        .hero-meta b { color: var(--text); }
+        .hero-visual {
+            background: var(--card-bg); border: 1px solid var(--border); border-radius: 18px;
+            box-shadow: var(--shadow-hover); padding: 26px; aspect-ratio: 16/11; display: flex; flex-direction: column;
+        }
+        .mock-bar { display: flex; gap: 7px; margin-bottom: 18px; }
+        .mock-dot { width: 11px; height: 11px; border-radius: 50%; background: var(--border); }
+        .mock-row { height: 14px; border-radius: 6px; background: var(--bg-secondary); margin-bottom: 12px; }
+        .mock-row.short { width: 55%; }
+        .mock-pill { display: inline-block; padding: 9px 16px; border-radius: 8px; background: var(--gradient); color:#fff; font-weight:700; font-size:13px; margin-top: auto; align-self:flex-start; }
+
+        /* Sections */
+        .section { padding: 78px 20px; }
+        .section.alt { background: var(--card-bg); }
+        .section-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
+        .section-head h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; margin-bottom: 14px; }
+        .section-head p { font-size: 17px; color: var(--text-muted); }
+
+        /* Feature grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow); transition: transform .3s, box-shadow .3s, border-color .3s; }
+        .section.alt .card { background: var(--bg); }
+        .card:hover { transform: translateY(-4px); border-color: var(--accent); box-shadow: var(--shadow-hover); }
+        .card .ico { width: 46px; height: 46px; border-radius: 11px; background: var(--gradient); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 16px; }
+        .card h3 { font-size: 19px; margin-bottom: 9px; }
+        .card p { color: var(--text-secondary); font-size: 14.5px; }
+
+        /* Steps */
+        .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px; counter-reset: step; }
+        .step { position: relative; padding-top: 8px; }
+        .step .num { width: 42px; height: 42px; border-radius: 50%; background: var(--gradient); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+        .step h4 { font-size: 17px; margin-bottom: 7px; }
+        .step p { color: var(--text-secondary); font-size: 14.5px; }
+
+        /* Supported pages list */
+        .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+        .page-item { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; display: flex; align-items: center; gap: 12px; }
+        .page-item code { background: var(--bg-secondary); padding: 3px 8px; border-radius: 6px; font-size: 13px; color: var(--accent-dark); }
+        .check { color: var(--accent); font-weight: 800; }
+
+        /* Video */
+        .video-wrap { max-width: 820px; margin: 0 auto; border-radius: 16px; overflow: hidden; box-shadow: var(--shadow-hover); border: 1px solid var(--border); }
+        .video-wrap iframe { width: 100%; aspect-ratio: 16/9; display: block; border: 0; }
+
+        /* FAQ */
+        .faq { max-width: 760px; margin: 0 auto; }
+        .faq details { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; margin-bottom: 12px; overflow: hidden; }
+        .section.alt .faq details { background: var(--bg); }
+        .faq summary { cursor: pointer; padding: 18px 22px; font-weight: 700; list-style: none; position: relative; padding-right: 46px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; position: absolute; right: 20px; top: 50%; transform: translateY(-50%); font-size: 22px; color: var(--accent); }
+        .faq details[open] summary::after { content: '\2212'; }
+        .faq p { padding: 0 22px 18px; color: var(--text-secondary); }
+
+        /* Final CTA */
+        .final-cta { text-align: center; }
+        .final-cta .card { max-width: 720px; margin: 0 auto; padding: 50px 30px; }
+        .final-cta h2 { font-size: clamp(26px, 4vw, 38px); font-weight: 800; margin-bottom: 14px; }
+        .final-cta p { color: var(--text-secondary); margin-bottom: 28px; font-size: 17px; }
+        .final-cta .hero-cta { justify-content: center; }
+
+        /* Footer */
+        .footer { background: var(--primary); color: rgba(255,255,255,.85); padding: 36px 20px; text-align: center; font-size: 14px; }
+        .footer a { color: var(--accent-light); }
+        .footer .foot-links { margin-bottom: 12px; }
+        .footer .foot-links a { margin: 0 12px; }
+
+        @media (max-width: 860px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .hero-visual { order: -1; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Nav -->
+    <nav class="nav">
+        <div class="container nav-container">
+            <a class="logo" href="https://flowextractapi.com">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how">How it works</a>
+                <a href="#faq">FAQ</a>
+                <a href="https://chromewebstore.google.com/detail/mpdggjbngdhfmkojnemnfpmbbpjkknjo" target="_blank" rel="noopener">Add to Chrome</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero">
+        <div class="container hero-grid">
+            <div>
+                <span class="hero-badge">🎥 Chrome Extension · Free</span>
+                <h1>Download <span>Zoom recordings &amp; transcripts</span> in seconds</h1>
+                <p class="lead">
+                    Extract the direct MP4 download link and full transcript from any Zoom recording,
+                    event, or clip — including US government recordings on zoomgov.com. No waiting on
+                    Zoom's processing, no third-party service. Everything runs locally in your browser.
+                </p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/mpdggjbngdhfmkojnemnfpmbbpjkknjo" target="_blank" rel="noopener">
+                        ➕ Add to Chrome — Free
+                    </a>
+                    <a class="btn btn-secondary" href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" target="_blank" rel="noopener">
+                        Need bulk extraction? Try the Apify actor →
+                    </a>
+                </div>
+                <div class="hero-meta">
+                    <span>⚡ <b>2–5 sec</b> extraction</span>
+                    <span>🔒 <b>100% local</b> — no servers</span>
+                    <span>📄 <b>SRT</b> transcript export</span>
+                </div>
+            </div>
+            <div class="hero-visual" aria-hidden="true">
+                <div class="mock-bar"><span class="mock-dot"></span><span class="mock-dot"></span><span class="mock-dot"></span></div>
+                <div class="mock-row"></div>
+                <div class="mock-row short"></div>
+                <div class="mock-row"></div>
+                <div class="mock-row short"></div>
+                <span class="mock-pill">⬇ Extract Video &amp; Transcript</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Features -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-head">
+                <h2>Everything you need to get Zoom content out</h2>
+                <p>Direct links, transcripts, and a reliable download queue — built for speed and privacy.</p>
+            </div>
+            <div class="grid">
+                <div class="card"><div class="ico">🎥</div><h3>Direct MP4 downloads</h3><p>Extract instant download links from Zoom Recordings, Events, and Clips — no conversion, no middleman.</p></div>
+                <div class="card"><div class="ico">🏛️</div><h3>Government Zoom (zoomgov.com)</h3><p>Works with government recordings too — agencies, courts, and public-meeting recordings on *.zoomgov.com.</p></div>
+                <div class="card"><div class="ico">📄</div><h3>Automatic transcripts</h3><p>Get searchable, selectable transcripts alongside the video, exportable as clean SRT subtitle files.</p></div>
+                <div class="card"><div class="ico">📥</div><h3>Download queue</h3><p>Download multiple recordings reliably, one after another — no more silent failures on the second file.</p></div>
+                <div class="card"><div class="ico">🔒</div><h3>Local-only processing</h3><p>Everything runs in your browser. No external servers, no analytics, no account, no tracking.</p></div>
+                <div class="card"><div class="ico">🕑</div><h3>Smart history</h3><p>Save recent extractions with metadata and timestamps. Auto-delete after 7 / 30 / 90 days — your choice.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How it works -->
+    <section class="section alt" id="how">
+        <div class="container">
+            <div class="section-head">
+                <h2>How it works</h2>
+                <p>Four steps, a couple of seconds.</p>
+            </div>
+            <div class="steps">
+                <div class="step"><div class="num">1</div><h4>Open a Zoom page</h4><p>Navigate to any Zoom recording, event, or clip page.</p></div>
+                <div class="step"><div class="num">2</div><h4>Click the extension</h4><p>Open the popup and select “Extract Video &amp; Transcript”.</p></div>
+                <div class="step"><div class="num">3</div><h4>Get link + transcript</h4><p>Instantly see the direct download link and the extracted transcript.</p></div>
+                <div class="step"><div class="num">4</div><h4>Download</h4><p>Save the MP4 and transcript with one click. Export SRT subtitles.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Supported pages -->
+    <section class="section">
+        <div class="container">
+            <div class="section-head">
+                <h2>Supported Zoom pages</h2>
+                <p>Recordings, events, and clips — on both commercial and government Zoom.</p>
+            </div>
+            <div class="pages">
+                <div class="page-item"><span class="check">✓</span><div><strong>Recordings</strong><br><code>zoom.us/rec/</code> · <code>zoomgov.com/rec/</code></div></div>
+                <div class="page-item"><span class="check">✓</span><div><strong>Events</strong><br><code>events.zoom.us</code></div></div>
+                <div class="page-item"><span class="check">✓</span><div><strong>Clips</strong><br><code>zoom.us/clips/</code></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo video -->
+    <section class="section alt">
+        <div class="container">
+            <div class="section-head">
+                <h2>See it in action</h2>
+                <p>A quick look at extracting a recording and its transcript.</p>
+            </div>
+            <div class="video-wrap">
+                <iframe src="https://www.youtube.com/embed/zIM589Jm5cc" title="Zoom Video & Transcript Downloader demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-head"><h2>Frequently asked questions</h2></div>
+            <div class="faq">
+                <details><summary>Is it free?</summary><p>Yes — the extension is free on the Chrome Web Store. For bulk or automated extraction at scale, use the related <a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" target="_blank" rel="noopener">Apify zoom-scraper actor</a>.</p></details>
+                <details><summary>Does it work on government Zoom (zoomgov.com)?</summary><p>Yes. As of v1.0.3, recordings and clips on <code>*.zoomgov.com</code> — used by US federal/state/local agencies, courts, and public-meeting hosts — are detected and extracted.</p></details>
+                <details><summary>Do I need a Zoom account or login?</summary><p>No account is stored. You only need normal viewing access to the recording — the extension never bypasses passwords or accesses content you can't already view.</p></details>
+                <details><summary>Where does my data go?</summary><p>Nowhere. All processing happens locally in your browser. History and transcripts are stored only on your device; nothing is sent to external servers.</p></details>
+                <details><summary>Why did my download link stop working?</summary><p>Zoom's direct download links expire after roughly 24–48 hours — that's a Zoom limitation. Just extract again to get a fresh link.</p></details>
+                <details><summary>How do I report a bug or request a feature?</summary><p>Click the feedback (chat) icon inside the extension to open a short form — no account needed. Or email <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a>.</p></details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section alt final-cta">
+        <div class="container">
+            <div class="card">
+                <h2>Stop waiting on Zoom processing</h2>
+                <p>Extract direct MP4 links and transcripts instantly — locally, privately, with one click.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="https://chromewebstore.google.com/detail/mpdggjbngdhfmkojnemnfpmbbpjkknjo" target="_blank" rel="noopener">➕ Add to Chrome — Free</a>
+                    <a class="btn btn-secondary" href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" target="_blank" rel="noopener">Apify zoom-scraper →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-links">
+                <a href="https://flowextractapi.com">FlowExtract API</a>
+                <a href="https://chromewebstore.google.com/detail/mpdggjbngdhfmkojnemnfpmbbpjkknjo" target="_blank" rel="noopener">Chrome Web Store</a>
+                <a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63" target="_blank" rel="noopener">Apify Actor</a>
+                <a href="mailto:flowextractapi@outlook.com">Support</a>
+            </div>
+            <p>For authorized use only — access content you have permission to download. Not affiliated with Zoom Video Communications.</p>
+            <p style="margin-top:8px;">© <span id="year">2026</span> FlowExtract APIs, Inc.</p>
+        </div>
+    </footer>
+    <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
