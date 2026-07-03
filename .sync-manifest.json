@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T18:21:16.718Z",
+  "generatedAt": "2026-07-03T02:59:23.911Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "7948df977848f628c5501219c52bc8c5da4119a410e68c088d34e1b0618f4d86",
@@ -12,8 +12,8 @@
       "readme": "Ad-Scrapers/Facebook/facebook-ads-url/README.md"
     },
     "google-ads-scraper": {
-      "hash": "2355e4e213ea72957c11b32a9800b59c0be7bbeb72efbe86ab6502dfb3890dd4",
-      "syncedAt": "2026-06-24T18:21:16.103Z",
+      "hash": "85400ec24ca79eb6aca5571c37c4f312dbf849b75a32c8a621a3a21a4d0b1946",
+      "syncedAt": "2026-07-03T02:59:23.555Z",
       "readme": "Ad-Scrapers/google-ads-scraper/README.md"
     },
     "linkedin-ads-scraper": {
@@ -22,8 +22,8 @@
       "readme": "Ad-Scrapers/linkedin-ads-scraper/README.md"
     },
     "tiktok-ad-library-scraper": {
-      "hash": "11f5229f3a8c2d2fcd728170827e1115cbeed8445506fd4a062a52ecb57c5527",
-      "syncedAt": "2026-06-24T18:21:16.140Z",
+      "hash": "26f99b5118591cafd17b6add2bf61f4194a54011068ba278cad8c7b7a55cd51f",
+      "syncedAt": "2026-07-03T02:59:23.606Z",
       "readme": "Ad-Scrapers/tiktok-ad-library-scraper/README.md"
     },
     "loom-video-scraper": {
