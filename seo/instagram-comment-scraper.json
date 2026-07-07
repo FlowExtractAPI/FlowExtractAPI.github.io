@@ -1,0 +1,34 @@
+{
+  "slug": "instagram-comment-scraper",
+  "_drafted": true,
+  "intro": "Instagram Reel Comment Scraper pulls every top-level comment from a public Instagram Reel — commenter username, comment text, likes, and timestamp — without logging into Instagram or touching a single cookie. It's built for anyone who needs to read what an audience is actually saying under a Reel, not just how many likes or views it got.",
+  "useCases": [
+    "Run campaign or product-launch comments through a sentiment model to see how an audience really reacted.",
+    "Pull comments from a competitor's Reels to see what their audience complains about or asks for.",
+    "Check whether an influencer's comment section looks like genuine engagement before a partnership.",
+    "Build a labeled dataset of public comment text for NLP or research work.",
+    "Export a brand's Reel comments for community management review outside the Instagram app."
+  ],
+  "faq": [
+    {
+      "q": "Do I need an Instagram account to use this?",
+      "a": "No. It only works on public Reels and never requires a login, cookies, or an Instagram account."
+    },
+    {
+      "q": "Can it scrape private reels or posts that aren't Reels?",
+      "a": "No — only publicly visible Reels are supported. It's built and tested for /reel/, /reels/, and /p/ links, since Instagram uses all three interchangeably for Reels."
+    },
+    {
+      "q": "Does it fetch comment replies, or only top-level comments?",
+      "a": "Only top-level comments in this version. Each comment includes a child_comment_count so you know how many replies exist, but the replies themselves aren't extracted yet."
+    },
+    {
+      "q": "How much does it cost to run?",
+      "a": "The actor itself is free — every result is priced at $0. You only pay Apify's standard platform compute cost for the run."
+    },
+    {
+      "q": "Can I extract comments from multiple Reels in one run?",
+      "a": "Yes. Add multiple URLs to the input list; each is processed independently, so one failed or deleted Reel doesn't stop the others."
+    }
+  ]
+}

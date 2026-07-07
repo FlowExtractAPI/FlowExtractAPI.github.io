@@ -279,6 +279,13 @@
 <td>Array of property or listing URLs</td>
 </tr>
 <tr>
+<td><strong>detailMode</strong></td>
+<td>boolean</td>
+<td>No</td>
+<td>false</td>
+<td>🔎 <strong>Fetch full property details.</strong> When ON, every property from a listing/search URL is enriched with its full detail data (all images, complete multilingual descriptions, agent contacts, energy certification) via an extra request per property — slower and richer. When OFF (default), results use the lighter data from search results — faster and cheaper. Detailed results are billed at a higher per-property rate (see pricing). Individual property URLs always return full details regardless of this setting.</td>
+</tr>
+<tr>
 <td><strong>desiredResults</strong></td>
 <td>integer</td>
 <td>No</td>
@@ -371,10 +378,13 @@
 <hr>
 <h2>🔐 Authentication &amp; Proxy</h2>
 <h3><strong>Proxy Configuration</strong></h3>
+<p>No proxy setup is required — it&#39;s fully automatic.</p>
 <h4><strong>Free Users:</strong></h4>
-<p>Automatic Apify residential proxy (no configuration needed)</p>
+<p>Automatic Apify residential proxy (no configuration needed).</p>
 <h4><strong>Paid Users:</strong></h4>
-<p>Premium proxy</p>
+<p>A premium proxy with <strong>automatic failover</strong> to the standard proxy — if the premium
+route has a hiccup, the run switches over seamlessly and keeps going, so a proxy
+issue never interrupts your results.</p>
 <h3><strong>Stream Results to File</strong></h3>
 <pre><code class="language-bash">curl -X POST &quot;https://dz-omar--idealista-scraper-api.apify.actor?token=YOUR_APIFY_TOKEN&quot; \
   -H &quot;Content-Type: application/json&quot; \

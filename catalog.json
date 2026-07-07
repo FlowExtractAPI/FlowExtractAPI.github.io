@@ -115,7 +115,7 @@
     },
     {
       "slug": "loom-video-scraper",
-      "name": "Loom Video Scraper",
+      "name": "Loom Video Scraper TAST",
       "category": "downloads",
       "subcategory": "video",
       "status": "public",
@@ -221,7 +221,7 @@
       "status": "public",
       "apifyUrl": "https://apify.com/dz_omar/skool-scraper-pro?fpr=smcx63",
       "image": "https://images.apifyusercontent.com/ishRHBPV1ZoVnHMoWzaOSRFhs3iGafqwoPDfM6858Cc/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItaEI5SWJIRVZOYjJTZjFQckotQ2doU0l6aWN5Ui1Ta29vbC1TY3JhcGVyLVByby1Mb2dvLnBuZw.png",
-      "description": "Extracts full lesson content from Skool community classrooms — videos, resources, posts, and attachments — via the Next.js internal API.",
+      "description": "Extract lessons, videos, posts, comments, and community feeds from any Skool community, plus discover new communities by category or keyword. Downloads videos, attachments, and resources. Resumes automatically if interrupted.",
       "metaTitle": "Skool Scraper Pro - Course & Community Data Extractor",
       "metaDescription": "Extract Skool classroom lessons, Mux videos, post attachments, PDFs, polls & contributors. 4 URL modes. Optional file downloads. No coding needed.",
       "featured": true,
@@ -674,24 +674,24 @@
       "onSite": true
     },
     {
-      "slug": "n8n-workflow-server",
-      "name": "n8n Workflow Server",
-      "category": "tools",
-      "subcategory": "infra",
+      "slug": "instagram-comment-scraper",
+      "name": "Instagram Reel Comment Scraper",
+      "category": "social",
+      "subcategory": "instagram",
       "status": "public",
-      "apifyUrl": "https://apify.com/dz_omar/n8n-workflow-server?fpr=smcx63",
-      "image": "https://images.apifyusercontent.com/3HyAWafIZ0tXtJgjKTnXomqHdncgwnkW1ZQW3Qbysfg/rs:fill:128:128/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3ItTXJFWVlUZzZnbXBaajJra0ctY05mZmlDOEhIay1VbnRpdGxlZC5wbmc.png",
-      "description": "eliminates the complexity of hosting workflow automation infrastructure. Deploy a complete n8n instance on Apify's platform in minutes — no Docker configuration, no server management, no hosting bills",
-      "metaTitle": "N8n Workflow Server - No Hosting Needed | Apify",
-      "metaDescription": "Deploy n8n workflow automation without server setup. Interactive dashboard, headless webhook execution, or persistent server. Auto-backup included. Pay for compute time only.",
+      "apifyUrl": "https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-aJJgCm1SsyuqBKWxg-uoChLm5VwW-Untitled.png",
+      "description": "Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.",
+      "metaTitle": "Instagram Reel Comment Scraper",
+      "metaDescription": "Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.",
       "featured": false,
-      "docsPath": "n8n-workflow-server",
+      "docsPath": "instagram-comment-scraper",
       "source": {
-        "dir": "Infrastructure/n8n",
-        "readme": "Infrastructure/n8n/README.md",
+        "dir": "Social-Media/instagram-comment-scraper",
+        "readme": "Social-Media/instagram-comment-scraper/README.md",
         "exists": true
       },
-      "onSite": true
+      "onSite": false
     }
   ]
 }

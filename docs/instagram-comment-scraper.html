@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Instagram Reel Comment Scraper | FlowExtract API</title>
+    <meta name="title" content="Instagram Reel Comment Scraper | FlowExtract API">
+    <meta name="description" content="Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/instagram-comment-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Instagram Reel Comment Scraper | FlowExtract API">
+    <meta property="og:description" content="Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/instagram-comment-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-aJJgCm1SsyuqBKWxg-uoChLm5VwW-Untitled.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Instagram Reel Comment Scraper | FlowExtract API">
+    <meta name="twitter:description" content="Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-aJJgCm1SsyuqBKWxg-uoChLm5VwW-Untitled.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Instagram Reel Comment Scraper","description":"Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/instagram-comment-scraper.html","sameAs":"https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-aJJgCm1SsyuqBKWxg-uoChLm5VwW-Untitled.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need an Instagram account to use this?","acceptedAnswer":{"@type":"Answer","text":"No. It only works on public Reels and never requires a login, cookies, or an Instagram account."}},{"@type":"Question","name":"Can it scrape private reels or posts that aren't Reels?","acceptedAnswer":{"@type":"Answer","text":"No — only publicly visible Reels are supported. It's built and tested for /reel/, /reels/, and /p/ links, since Instagram uses all three interchangeably for Reels."}},{"@type":"Question","name":"Does it fetch comment replies, or only top-level comments?","acceptedAnswer":{"@type":"Answer","text":"Only top-level comments in this version. Each comment includes a child_comment_count so you know how many replies exist, but the replies themselves aren't extracted yet."}},{"@type":"Question","name":"How much does it cost to run?","acceptedAnswer":{"@type":"Answer","text":"The actor itself is free — every result is priced at $0. You only pay Apify's standard platform compute cost for the run."}},{"@type":"Question","name":"Can I extract comments from multiple Reels in one run?","acceptedAnswer":{"@type":"Answer","text":"Yes. Add multiple URLs to the input list; each is processed independently, so one failed or deleted Reel doesn't stop the others."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-aJJgCm1SsyuqBKWxg-uoChLm5VwW-Untitled.png" alt="Instagram Reel Comment Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">Instagram Reel Comment Scraper</h1>
+                <p class="actor-hero-desc">Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.</p>
+                <a href="https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">Instagram Reel Comment Scraper pulls every top-level comment from a public Instagram Reel — commenter username, comment text, likes, and timestamp — without logging into Instagram or touching a single cookie. It&#39;s built for anyone who needs to read what an audience is actually saying under a Reel, not just how many likes or views it got.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>Run campaign or product-launch comments through a sentiment model to see how an audience really reacted.</li><li>Pull comments from a competitor&#39;s Reels to see what their audience complains about or asks for.</li><li>Check whether an influencer&#39;s comment section looks like genuine engagement before a partnership.</li><li>Build a labeled dataset of public comment text for NLP or research work.</li><li>Export a brand&#39;s Reel comments for community management review outside the Instagram app.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>Do I need an Instagram account to use this?</summary><p>No. It only works on public Reels and never requires a login, cookies, or an Instagram account.</p></details><details class="faq-item"><summary>Can it scrape private reels or posts that aren&#39;t Reels?</summary><p>No — only publicly visible Reels are supported. It&#39;s built and tested for /reel/, /reels/, and /p/ links, since Instagram uses all three interchangeably for Reels.</p></details><details class="faq-item"><summary>Does it fetch comment replies, or only top-level comments?</summary><p>Only top-level comments in this version. Each comment includes a child_comment_count so you know how many replies exist, but the replies themselves aren&#39;t extracted yet.</p></details><details class="faq-item"><summary>How much does it cost to run?</summary><p>The actor itself is free — every result is priced at $0. You only pay Apify&#39;s standard platform compute cost for the run.</p></details><details class="faq-item"><summary>Can I extract comments from multiple Reels in one run?</summary><p>Yes. Add multiple URLs to the input list; each is processed independently, so one failed or deleted Reel doesn&#39;t stop the others.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>📷 Instagram Reel Comment Scraper — Extract Comments from Public Instagram Reels</h1>
+<p><strong>Instagram Reel Comment Scraper</strong> extracts top-level comments from any public Instagram Reel — author, text, timestamp, likes. No login, no cookies, no Instagram account required.</p>
+<p>Perfect for <strong>social media analysts</strong>, <strong>brand monitoring teams</strong>, and <strong>researchers</strong> who need Instagram Reel comment data without manually scrolling and copy-pasting.</p>
+<hr>
+<h2>Why scrape Instagram Reel comments?</h2>
+<p>Instagram Reel comments are a direct read on audience sentiment, engagement quality, and what people actually say about a video — signal that likes and view counts don&#39;t capture. Common use cases:</p>
+<ul>
+<li><strong>Sentiment analysis</strong>: pull comments on a product launch or campaign reel and run them through a sentiment model.</li>
+<li><strong>Competitor monitoring</strong>: see what audiences are saying on a competitor&#39;s reels.</li>
+<li><strong>Influencer vetting</strong>: check whether an influencer&#39;s comment section looks like real engagement.</li>
+<li><strong>Research datasets</strong>: build a labeled dataset of public comment text for NLP work.</li>
+<li><strong>Community management</strong>: export comments for review outside the Instagram app.</li>
+</ul>
+<hr>
+<h2>What data can Instagram Reel Comment Scraper extract?</h2>
+<h3>💬 Comment content</h3>
+<ul>
+<li><code>text</code> — the comment body</li>
+<li><code>created_at</code> — Unix timestamp the comment was posted</li>
+<li><code>like_count</code> — likes on the comment</li>
+</ul>
+<h3>👤 Author</h3>
+<ul>
+<li><code>user.username</code>, <code>user.id</code>, <code>user.is_verified</code>, <code>user.profile_pic_url</code></li>
+</ul>
+<h3>🆔 Identifiers</h3>
+<ul>
+<li><code>id</code> / <code>pk</code> — the comment&#39;s unique Instagram ID</li>
+<li><code>child_comment_count</code> — number of replies (replies themselves aren&#39;t fetched yet — see Limitations)</li>
+</ul>
+<h3>🔗 Source metadata</h3>
+<ul>
+<li><code>source_url</code> — the input URL this comment came from</li>
+</ul>
+<hr>
+<h2>⚙️ How to use Instagram Reel Comment Scraper</h2>
+<h3><code>urls</code> (Array, required)</h3>
+<p>One or more public Instagram Reel URLs. Instagram links to the same reel using several different URL shapes — all of them work here.</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://www.instagram.com/reels/&lt;shortcode&gt;/</code> or <code>/reel/&lt;shortcode&gt;/</code></td>
+<td>Comments on that reel</td>
+</tr>
+<tr>
+<td><code>https://www.instagram.com/p/&lt;shortcode&gt;/</code></td>
+<td>Also works — Instagram often serves reels under <code>/p/</code> links too</td>
+</tr>
+<tr>
+<td><code>https://www.instagram.com/&lt;username&gt;/reel/&lt;shortcode&gt;/</code></td>
+<td>Same, with a username prefix</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [
+        { &quot;url&quot;: &quot;https://www.instagram.com/reels/DTvy2W3ErPl/&quot; }
+    ]
+}
+</code></pre>
+<h3><code>maxCommentsPerUrl</code> (Integer)</h3>
+<ul>
+<li><strong>Default</strong>: <code>100</code></li>
+<li>Maximum comments to collect per URL. Set to <code>0</code> to collect every available comment. The actor stops fetching as soon as this limit is reached — it never over-fetches then discards.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [{ &quot;url&quot;: &quot;https://www.instagram.com/reels/DTvy2W3ErPl/&quot; }],
+    &quot;maxCommentsPerUrl&quot;: 0
+}
+</code></pre>
+<h3>🔐 Authentication</h3>
+<p>None required. Works on public reels without an Instagram login.</p>
+<hr>
+<h2>💰 Pricing</h2>
+<p>This actor is <strong>free to run</strong> — every result is priced at $0. You only pay Apify&#39;s standard platform compute cost for the run itself.</p>
+<hr>
+<h2>📊 Sample Output</h2>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;18416918653194028&quot;,
+    &quot;pk&quot;: &quot;18416918653194028&quot;,
+    &quot;text&quot;: &quot;كفو عليك يا بطل 😍&quot;,
+    &quot;created_at&quot;: 1783110883,
+    &quot;like_count&quot;: 0,
+    &quot;child_comment_count&quot;: null,
+    &quot;parent_comment_id&quot;: null,
+    &quot;user&quot;: {
+        &quot;id&quot;: &quot;1448110168&quot;,
+        &quot;username&quot;: &quot;_b97j&quot;,
+        &quot;is_verified&quot;: false,
+        &quot;profile_pic_url&quot;: &quot;https://scontent.cdninstagram.com/...&quot;
+    },
+    &quot;source_url&quot;: &quot;https://www.instagram.com/osama.azm5/reel/DaQSQ5hR7lv/&quot;,
+    &quot;_source&quot;: &quot;instagram_comment_scraper&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need an Instagram account to use this actor?</strong>
+No — only public reels are supported, and no login is required.</p>
+<p><strong>Can I scrape private reels?</strong>
+No — only publicly visible reels are supported.</p>
+<p><strong>Can I scrape Instagram posts, not just reels?</strong>
+This actor is built and tested for Reels — <code>/reel/</code>, <code>/reels/</code>, and <code>/p/</code> links all work, since Instagram uses all three interchangeably for reels. Comment extraction isn&#39;t restricted by content type, so a link to a non-reel post will often work too, but Reels are the only officially supported and tested case.</p>
+<p><strong>Can I scrape multiple reels in one run?</strong>
+Yes — add multiple entries to <code>urls</code>. Each is processed independently; if one fails (deleted, private, invalid URL) the others still run.</p>
+<p><strong>Does this fetch comment replies?</strong>
+Not yet — only top-level comments are extracted in this version.</p>
+<p><strong>What happens if a URL is invalid or the reel is gone?</strong>
+That URL is skipped with a logged error; the run continues with the remaining URLs.</p>
+<p><strong>How many comments can I extract for free?</strong>
+As many as you configure via <code>maxCommentsPerUrl</code> — every result is $0. Apify&#39;s own compute cost for the run still applies.</p>
+<hr>
+<h2>⚠️ Limitations</h2>
+<ul>
+<li><strong>Only Reels are supported.</strong> Posts, photos, and other Instagram content types are out of scope.</li>
+<li><strong>Replies are not extracted.</strong> Only top-level comments are returned; <code>child_comment_count</code> tells you how many replies exist, but they aren&#39;t fetched in this version.</li>
+<li><strong>Total comment counts</strong> are best-effort — Instagram reports a total for most reels, but it isn&#39;t guaranteed present on every run.</li>
+<li><strong>Instagram changes over time.</strong> If a run unexpectedly starts returning zero comments, it likely means Instagram changed something on their end — please report it.</li>
+</ul>
+<hr>
+<h2>⚖️ Legal &amp; Ethical Use</h2>
+<p>This actor extracts <strong>publicly visible data</strong> from Instagram — the same comments any visitor can see without logging in.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only extract data from reels you are authorized to analyze.</li>
+<li>Comply with <a href="https://help.instagram.com/581066165581870">Instagram&#39;s Terms of Use</a> and applicable data protection regulations (GDPR, CCPA, etc.).</li>
+<li>Do not use extracted data for spam, harassment, or unsolicited outreach.</li>
+</ul>
+<hr>
+<h2>🌐 Proxy Support</h2>
+<table>
+<thead>
+<tr>
+<th>User tier</th>
+<th>Proxy used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💎 Paying (dedicated proxy configured)</td>
+<td>Dedicated residential proxy, with automatic fallback to Apify Proxy</td>
+</tr>
+<tr>
+<td>🆓 Free</td>
+<td>Apify Proxy (residential)</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>URL isn&#39;t a valid instagram.com media URL</td>
+<td>Rejected before the run starts, logged as a warning</td>
+<td>Use a <code>/reel/</code>, <code>/reels/</code>, or <code>/p/</code> URL</td>
+</tr>
+<tr>
+<td>Reel is deleted, private, or geo-blocked</td>
+<td><code>URL X/Y could not be loaded — skipping</code></td>
+<td>Confirm the reel is public and still exists</td>
+</tr>
+<tr>
+<td>Instagram changed something on their end</td>
+<td><code>comments could not be retrieved</code></td>
+<td>Report the issue so the actor can be updated</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🌟 Related Actors</h2>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63">Facebook Comment Scraper</a></strong> — the same approach applied to Facebook reels, posts, photos, and videos.</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
