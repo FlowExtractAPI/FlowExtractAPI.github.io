@@ -151,7 +151,7 @@
 </ul>
 <hr>
 <h2>⚙️ How to use the TikTok Ad Library Scraper</h2>
-<p>You provide <strong>URLs</strong>, <strong>keyword filters</strong>, or both. Each URL and each keyword counts as one input item.</p>
+<p>You provide <strong>URLs</strong>, <strong>keyword filters</strong>, or both — <strong>at least one is required</strong>. Each URL and each keyword counts as one input item. (If you run with nothing filled in, the Actor finishes successfully and writes a single dataset item explaining what to add — it does not error out.)</p>
 <blockquote>
 <p><strong>Total results = (number of URLs + number of keywords) × Maximum Results.</strong>
 Example: 5 URLs + 6 keywords = 11 inputs. At 16 Maximum Results → 11 × 16 = <strong>176 ads</strong> maximum.</p>
@@ -462,9 +462,14 @@ Most likely its date range was reversed (<code>dateFrom</code> after <code>dateT
 <td>Try again later, or enable a proxy</td>
 </tr>
 <tr>
+<td>No input at all</td>
+<td>Run <strong>succeeds</strong> with a <code>no_input</code> guidance item in the dataset</td>
+<td>Add at least one Start URL or Keyword Filter</td>
+</tr>
+<tr>
 <td>No valid input</td>
-<td><code>No scrapeable sources</code></td>
-<td>Check your URLs, keywords, and dates</td>
+<td>Run <strong>succeeds</strong> with a <code>no_valid_sources</code> guidance item explaining why</td>
+<td>Fix reversed/too-old dates or invalid URLs/keywords</td>
 </tr>
 </tbody></table>
 <hr>

@@ -24,6 +24,12 @@ A single switch (`detailMode`) lets you trade speed for depth:
 - **Map-view and inspection-times URLs supported**, in addition to standard list searches.
 - **No duplicates.** Every property appears once, even across very large result sets.
 
+### Single Property URLs Also Supported
+
+- Paste a direct link to one listing (e.g. `https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730`) and the Actor returns that single property's **full detail record**  description, agent & agency contacts, schools, market insights, everything.
+- Mix search URLs and single-property URLs freely in the same `start_urls` list.
+- `detailMode` and `maxResults` are ignored for single-property URLs  there's only one listing to return, and it's always returned in full.
+
 ### What You Get (Detail Mode)
 
 - **Core Listing**  listing ID, canonical URL, headline, full description, price, promo level, listing type, lifecycle status
@@ -91,6 +97,29 @@ A single switch (`detailMode`) lets you trade speed for depth:
 }
 ```
 
+### Single property  full detail for one listing
+
+```json
+{
+  "start_urls": [
+    { "url": "https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730" }
+  ]
+}
+```
+
+You can also mix single-property URLs with search URLs in the same run:
+
+```json
+{
+  "start_urls": [
+    { "url": "https://www.domain.com.au/sale/sydney-region-nsw/house/3-bedrooms/" },
+    { "url": "https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730" },
+    { "url": "https://www.domain.com.au/4-82-dickens-street-elwood-vic-3184-18201773" }
+  ],
+  "maxResults": 20
+}
+```
+
 ### Fetch all results for a search (no limit)
 
 ```json
@@ -110,9 +139,9 @@ A single switch (`detailMode`) lets you trade speed for depth:
 
 | Parameter | Type | Required | Default | Description |
 |-----------|------|----------|---------|-------------|
-| `start_urls` | array | ✅ |  | One or more domain.com.au search result URLs to scrape |
-| `maxResults` | integer | ❌ | 10 | Max listings to scrape **per URL**. `0` = fetch all available results. |
-| `detailMode` | boolean | ❌ | `false` | `false` = fast mode (essentials only, fastest). `true` = full detail per property (description, agents, schools, market insights, etc.)  slower. |
+| `start_urls` | array | ✅ |  | One or more domain.com.au URLs to scrape  search result URLs, or single-property listing URLs. |
+| `maxResults` | integer | ❌ | 10 | Max listings to scrape **per URL**. `0` = fetch all available results. Ignored for single-property URLs (always exactly 1 result). |
+| `detailMode` | boolean | ❌ | `false` | `false` = fast mode (essentials only, fastest). `true` = full detail per property (description, agents, schools, market insights, etc.)  slower. Ignored for single-property URLs, which always return full detail. |
 
 ### Fast Mode vs Detail Mode
 
@@ -137,7 +166,7 @@ Setting `maxResults: 0` removes the per-URL limit and scrapes every listing the 
 
 ### Supported URL Formats
 
-Any search URL you can construct on domain.com.au works as input. Copy it directly from your browser after applying filters.
+Any search URL you can construct on domain.com.au works as input, and so does a direct link to a single listing. Copy it directly from your browser.
 
 | Example | URL Pattern |
 |---------|-------------|
@@ -151,8 +180,9 @@ Any search URL you can construct on domain.com.au works as input. Copy it direct
 | Inspection times | `/rent/inspection-times/?...&inspectiondate=2026-06-22` |
 | Sort order | `/sale/sydney-region-nsw/?sort=price-asc` |
 | Exclude under offer | `/sale/sydney-region-nsw/?excludeunderoffer=1` |
+| **Single property listing** | `/342-whale-beach-road-palm-beach-nsw-2108-2020501730` |
 
-All filter combinations domain.com.au supports are honored automatically.
+All filter combinations domain.com.au supports are honored automatically. A single-property URL (one path segment ending in the listing's numeric id, exactly as domain.com.au links to it) is detected automatically and returns that listing's full detail  no separate mode or setting needed.
 
 ---
 

@@ -1,0 +1,38 @@
+{
+  "slug": "realestate-com-au-scraper",
+  "_drafted": true,
+  "intro": "realestate.com.au Scraper turns any search on Australia's largest property portal — buy, rent, or sold, including map-drawn searches — into structured data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL for a full result set, or a single property URL for one fully detailed record.",
+  "useCases": [
+    "Pull every listing matching a price, size, or location filter to compare deals across suburbs for investment research.",
+    "Track newly listed or price-changed properties in a competitor's patch as an agency.",
+    "Build a dataset of sold prices and current asking prices for a region to analyze market trends over time.",
+    "Collect agent and agency contact details attached to active listings for lead generation.",
+    "Monitor rental listings and pricing in a specific area or drawn map region."
+  ],
+  "faq": [
+    {
+      "q": "Do I need a realestate.com.au account to use this?",
+      "a": "No. Both search URLs and individual property URLs work without logging in."
+    },
+    {
+      "q": "Can I scrape buy, rent, and sold listings, not just one type?",
+      "a": "Yes — buy, rent, and sold are all supported, including sold-specific sorting like sale date or sale price."
+    },
+    {
+      "q": "What's the difference between a fast run and a fully detailed one?",
+      "a": "With fetchPropertyDetails off, you get the fast, cheap data already returned by the search. Turning it on fetches the full detail page for every listing — complete feature list, inspection/auction times, and full agency contacts — at a higher per-listing rate. Individual property URLs always return full detail regardless of this setting."
+    },
+    {
+      "q": "How much does it cost?",
+      "a": "Pricing is per listing, tiered by plan: from $0.0005 per plain listing (Gold plan) plus an optional detail add-on. 1,000 listings without details costs about $0.50 on the Gold plan; with full details, about $1.30."
+    },
+    {
+      "q": "What happens if a run gets interrupted?",
+      "a": "The actor checkpoints its progress as it works through each search URL, so a crash or manual abort resumes from the last completed page on the next attempt — you don't lose progress or get re-charged for listings already delivered."
+    },
+    {
+      "q": "Does it support map-drawn area searches?",
+      "a": "Yes — paste a URL from a hand-drawn or pinned map search on the site and it's handled the same as any other search URL."
+    }
+  ]
+}

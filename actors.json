@@ -474,5 +474,19 @@
     "metaTitle": "Instagram Reel Comment Scraper",
     "metaDescription": "Extract top-level comments from public Instagram Reels for free — no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.",
     "featured": false
+  },
+  {
+    "id": "realestate-com-au-scraper",
+    "name": "realestate.com.au Scraper",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png",
+    "category": "real-estate",
+    "subcategory": "listings",
+    "description": "🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.",
+    "apifyUrl": "https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63",
+    "docsPath": "realestate-com-au-scraper",
+    "readmeFile": "realestate-com-au-scraper.md",
+    "metaTitle": "realestate.com.au Scraper",
+    "metaDescription": "🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.",
+    "featured": false
   }
 ]
