@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T11:52:01.458Z",
+  "generatedAt": "2026-07-10T12:54:09.549Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "7948df977848f628c5501219c52bc8c5da4119a410e68c088d34e1b0618f4d86",
@@ -22,8 +22,8 @@
       "readme": "Ad-Scrapers/linkedin-ads-scraper/README.md"
     },
     "tiktok-ad-library-scraper": {
-      "hash": "26f99b5118591cafd17b6add2bf61f4194a54011068ba278cad8c7b7a55cd51f",
-      "syncedAt": "2026-07-03T02:59:23.606Z",
+      "hash": "1a1ef2de0a9ebabd4def614aa6e780c31f9ecad786633dfdac61fb9856df6b9a",
+      "syncedAt": "2026-07-10T12:54:09.385Z",
       "readme": "Ad-Scrapers/tiktok-ad-library-scraper/README.md"
     },
     "loom-video-scraper": {
@@ -57,8 +57,8 @@
       "readme": "Education/skool-scraper-pro/README.md"
     },
     "domain-scraper": {
-      "hash": "382f3dfb18d94e503f02cbc0ae322238f8599f6bda6c387b09fd90ad5b2ff424",
-      "syncedAt": "2026-06-24T18:21:16.259Z",
+      "hash": "b6c37590d09189fffeee68be8e0e4907dc6b85cc2e4554fa9cd0703d59d5e3b4",
+      "syncedAt": "2026-07-10T12:54:09.424Z",
       "readme": "Real-Estate/domain-scraper/README.md"
     },
     "doordash-scraper": {
@@ -170,6 +170,11 @@
       "hash": "610a22d2dd52c09f934cf4b1b60bd36155fdfd8a776b10e1f91f1cc98e82bcb4",
       "syncedAt": "2026-07-07T11:52:01.387Z",
       "readme": "Social-Media/instagram-comment-scraper/README.md"
+    },
+    "realestate-com-au-scraper": {
+      "hash": "0630aeb1ef6f90a3a8e8382898b5274894df685b9f9ef00af0867ca8af4c5d81",
+      "syncedAt": "2026-07-10T12:54:09.502Z",
+      "readme": "Real-Estate/Realestate.com.au/README.md"
     }
   }
 }

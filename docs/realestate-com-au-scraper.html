@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>realestate.com.au Scraper | FlowExtract API</title>
+    <meta name="title" content="realestate.com.au Scraper | FlowExtract API">
+    <meta name="description" content="🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/realestate-com-au-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="realestate.com.au Scraper | FlowExtract API">
+    <meta property="og:description" content="🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/realestate-com-au-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="realestate.com.au Scraper | FlowExtract API">
+    <meta name="twitter:description" content="🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"realestate.com.au Scraper","description":"🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/realestate-com-au-scraper.html","sameAs":"https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Do I need a realestate.com.au account to use this?","acceptedAnswer":{"@type":"Answer","text":"No. Both search URLs and individual property URLs work without logging in."}},{"@type":"Question","name":"Can I scrape buy, rent, and sold listings, not just one type?","acceptedAnswer":{"@type":"Answer","text":"Yes — buy, rent, and sold are all supported, including sold-specific sorting like sale date or sale price."}},{"@type":"Question","name":"What's the difference between a fast run and a fully detailed one?","acceptedAnswer":{"@type":"Answer","text":"With fetchPropertyDetails off, you get the fast, cheap data already returned by the search. Turning it on fetches the full detail page for every listing — complete feature list, inspection/auction times, and full agency contacts — at a higher per-listing rate. Individual property URLs always return full detail regardless of this setting."}},{"@type":"Question","name":"How much does it cost?","acceptedAnswer":{"@type":"Answer","text":"Pricing is per listing, tiered by plan: from $0.0005 per plain listing (Gold plan) plus an optional detail add-on. 1,000 listings without details costs about $0.50 on the Gold plan; with full details, about $1.30."}},{"@type":"Question","name":"What happens if a run gets interrupted?","acceptedAnswer":{"@type":"Answer","text":"The actor checkpoints its progress as it works through each search URL, so a crash or manual abort resumes from the last completed page on the next attempt — you don't lose progress or get re-charged for listings already delivered."}},{"@type":"Question","name":"Does it support map-drawn area searches?","acceptedAnswer":{"@type":"Answer","text":"Yes — paste a URL from a hand-drawn or pinned map search on the site and it's handled the same as any other search URL."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png" alt="realestate.com.au Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">realestate.com.au Scraper</h1>
+                <p class="actor-hero-desc">🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.</p>
+                <a href="https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">realestate.com.au Scraper turns any search on Australia&#39;s largest property portal — buy, rent, or sold, including map-drawn searches — into structured data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL for a full result set, or a single property URL for one fully detailed record.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>Pull every listing matching a price, size, or location filter to compare deals across suburbs for investment research.</li><li>Track newly listed or price-changed properties in a competitor&#39;s patch as an agency.</li><li>Build a dataset of sold prices and current asking prices for a region to analyze market trends over time.</li><li>Collect agent and agency contact details attached to active listings for lead generation.</li><li>Monitor rental listings and pricing in a specific area or drawn map region.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>Do I need a realestate.com.au account to use this?</summary><p>No. Both search URLs and individual property URLs work without logging in.</p></details><details class="faq-item"><summary>Can I scrape buy, rent, and sold listings, not just one type?</summary><p>Yes — buy, rent, and sold are all supported, including sold-specific sorting like sale date or sale price.</p></details><details class="faq-item"><summary>What&#39;s the difference between a fast run and a fully detailed one?</summary><p>With fetchPropertyDetails off, you get the fast, cheap data already returned by the search. Turning it on fetches the full detail page for every listing — complete feature list, inspection/auction times, and full agency contacts — at a higher per-listing rate. Individual property URLs always return full detail regardless of this setting.</p></details><details class="faq-item"><summary>How much does it cost?</summary><p>Pricing is per listing, tiered by plan: from $0.0005 per plain listing (Gold plan) plus an optional detail add-on. 1,000 listings without details costs about $0.50 on the Gold plan; with full details, about $1.30.</p></details><details class="faq-item"><summary>What happens if a run gets interrupted?</summary><p>The actor checkpoints its progress as it works through each search URL, so a crash or manual abort resumes from the last completed page on the next attempt — you don&#39;t lose progress or get re-charged for listings already delivered.</p></details><details class="faq-item"><summary>Does it support map-drawn area searches?</summary><p>Yes — paste a URL from a hand-drawn or pinned map search on the site and it&#39;s handled the same as any other search URL.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 realestate.com.au Scraper  Property Listings, Fast or Fully Detailed</h1>
+<p><strong><a href="https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63">realestate.com.au Scraper</a></strong> turns any realestate.com.au search URL  buy, rent, or sold  into structured property data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL and get a whole result set, or paste a single property link and get one fully detailed record.</p>
+<p>Perfect for <strong>property investors</strong> tracking new listings, <strong>agencies</strong> monitoring competitor stock, and <strong>market researchers</strong> building price/location datasets  without manually copying data off the site.</p>
+<hr>
+<h2>Why scrape realestate.com.au?</h2>
+<p>realestate.com.au is Australia&#39;s largest property portal, covering homes for sale, for rent, and recently sold across every state. It&#39;s the primary public source for current asking prices, rental rates, and sold history at national scale.</p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>Investment research</strong>  pull every listing matching a price/size/location filter to compare deals across suburbs.</li>
+<li><strong>Competitor monitoring</strong>  agencies tracking what&#39;s newly listed or price-changed in their patch.</li>
+<li><strong>Market analysis</strong>  build a dataset of sold prices and current asking prices for a region over time.</li>
+<li><strong>Lead generation</strong>  collect agent and agency contact details attached to active listings.</li>
+<li><strong>Rental market tracking</strong>  monitor rental listings and pricing in a specific area or drawn map region.</li>
+</ul>
+<hr>
+<h2>What data can realestate.com.au Scraper extract?</h2>
+<h3>🏠 Identity</h3>
+<ul>
+<li>Listing ID, property type, title, description, listing URL</li>
+</ul>
+<h3>💰 Price &amp; Location</h3>
+<ul>
+<li>Display price, street address, suburb, state, postcode, latitude/longitude</li>
+</ul>
+<h3>🛏️ Features</h3>
+<ul>
+<li>Bedrooms, bathrooms, parking spaces, land size, construction status (established / new)</li>
+</ul>
+<h3>👤 Agent &amp; Agency</h3>
+<ul>
+<li>Agency name, and every listed agent&#39;s name, phone, email, and job title</li>
+</ul>
+<h3>🖼️ Media</h3>
+<ul>
+<li>Main image, full photo gallery</li>
+</ul>
+<h3>🔎 Full-detail fields (with &quot;Fetch Full Property Details&quot; on, or from a single-property URL)</h3>
+<ul>
+<li>Complete indoor/outdoor feature list, statement of information, inspection and auction times, full agency listing ID</li>
+</ul>
+<hr>
+<h2>⚙️ How to use realestate.com.au Scraper</h2>
+<h3>Start URLs (Array)</h3>
+<p>Paste realestate.com.au URLs straight from your browser  no editing needed. Two kinds are supported:</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A search/listing URL (<code>/buy/…</code>, <code>/rent/…</code>, <code>/sold/…</code>, including map-drawn searches)</td>
+<td>Up to <strong>Max Results</strong> listings matching that search</td>
+</tr>
+<tr>
+<td>An individual property URL</td>
+<td>That one property, always with full details</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [
+        { &quot;url&quot;: &quot;https://www.realestate.com.au/buy/property-townhouse-size-200-5000-between-50000-15000000-in-adelaide+-+greater+region,+sa;+adelaide+hills,+sa;+adelaide,+sa+5000/list-1&quot; },
+        { &quot;url&quot;: &quot;https://www.realestate.com.au/property-acreage+semi-rural-nsw-blackmans+point-149898944&quot; }
+    ]
+}
+</code></pre>
+<p>Filters already applied on the site  location, property type, price, land size, bedrooms, sort order, map-drawn areas, and inspection/auction dates  carry through automatically.</p>
+<h3><code>maxResults</code> (Integer)</h3>
+<ul>
+<li><strong>Default</strong>: <code>25</code></li>
+<li>Maximum listings to scrape per search URL. Set to <code>0</code> for unlimited (all pages, bounded only by your configured budget). Doesn&#39;t affect individual property URLs  those always return exactly one result.</li>
+</ul>
+<h3><code>fetchPropertyDetails</code> (Boolean)</h3>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li><strong>Off</strong>: fast, cheap  just the data returned by the search itself.</li>
+<li><strong>On</strong>: for every listing, also fetches the full detail-page data (complete feature list, inspection/auction times, statement of information, full agency contacts)  one extra request per listing, billed at a higher rate (see Pricing). Individual property URLs always return full detail regardless of this setting.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [{ &quot;url&quot;: &quot;https://www.realestate.com.au/buy/property-house-in-brisbane,+qld+4000/list-1&quot; }],
+    &quot;maxResults&quot;: 50,
+    &quot;fetchPropertyDetails&quot;: true
+}
+</code></pre>
+<hr>
+<h2>💰 Pricing</h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Property listing (<code>push-success-result</code>)</td>
+<td>$0.0010</td>
+<td>$0.0007</td>
+<td>$0.00065</td>
+<td>$0.0005</td>
+</tr>
+<tr>
+<td>Full detail add-on (<code>push-detailed-result</code>, on top of the listing)</td>
+<td>+$0.0025</td>
+<td>+$0.0010</td>
+<td>+$0.0009</td>
+<td>+$0.0008</td>
+</tr>
+</tbody></table>
+<p>A detailed listing costs the base price <strong>plus</strong> the add-on. A plain listing costs the base price alone.</p>
+<p><strong>Cost estimate examples:</strong></p>
+<ul>
+<li><strong>1,000 listings</strong>, details off, GOLD plan: ~$0.50</li>
+<li><strong>1,000 listings</strong>, details on, GOLD plan: ~$1.30</li>
+</ul>
+<blockquote>
+<p>💡 Tip: set <code>maxResults</code> to <code>10</code> and leave <code>fetchPropertyDetails</code> off for your first test run before scaling up.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample Output</h2>
+<pre><code class="language-json">{
+    &quot;listingId&quot;: &quot;151702616&quot;,
+    &quot;url&quot;: &quot;https://www.realestate.com.au/property-townhouse-sa-park+holme-151702616&quot;,
+    &quot;channel&quot;: &quot;buy&quot;,
+    &quot;propertyType&quot;: &quot;townhouse&quot;,
+    &quot;title&quot;: &quot;Spacious Family Living with Flexible Dual-Level Design&quot;,
+    &quot;price&quot;: &quot;Best Offers By 27/7 (USP)&quot;,
+    &quot;address&quot;: {
+        &quot;streetAddress&quot;: &quot;108 Margaret Street&quot;,
+        &quot;suburb&quot;: &quot;Park Holme&quot;,
+        &quot;state&quot;: &quot;SA&quot;,
+        &quot;postcode&quot;: &quot;5043&quot;,
+        &quot;latitude&quot;: -34.99495767,
+        &quot;longitude&quot;: 138.55091839
+    },
+    &quot;bedrooms&quot;: 4,
+    &quot;bathrooms&quot;: 2,
+    &quot;parkingSpaces&quot;: 1,
+    &quot;landSize&quot;: &quot;241 m²&quot;,
+    &quot;constructionStatus&quot;: &quot;established&quot;,
+    &quot;agencyName&quot;: &quot;Ray White City Living&quot;,
+    &quot;agents&quot;: [
+        { &quot;name&quot;: &quot;Mason Lucks&quot;, &quot;phone&quot;: &quot;0449882882&quot;, &quot;email&quot;: &quot;mason@example.com&quot;, &quot;jobTitle&quot;: &quot;Property Advisor&quot; }
+    ],
+    &quot;mainImage&quot;: &quot;https://i3.au.reastatic.net/.../main.jpg&quot;,
+    &quot;images&quot;: [&quot;https://i3.au.reastatic.net/.../image1.jpg&quot;],
+    &quot;hasDetailData&quot;: false,
+    &quot;source_url&quot;: &quot;https://www.realestate.com.au/buy/property-townhouse-...&quot;,
+    &quot;scrapedAt&quot;: &quot;2026-07-10T09:00:00.000Z&quot;
+}
+</code></pre>
+<p>With <code>fetchPropertyDetails: true</code>, each item additionally carries <code>propertyFeatures</code>, <code>statementOfInformation</code>, <code>inspectionsAndAuctions</code>, and full <code>agency</code> contact details.</p>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a realestate.com.au account to use this actor?</strong>
+No. Both search and individual property URLs work without logging in.</p>
+<p><strong>How many listings can I extract for free?</strong>
+With Apify&#39;s free monthly credit, you can extract several thousand plain listings, or a smaller number with full details enabled (see Pricing above for exact per-listing cost).</p>
+<p><strong>Can I scrape multiple search URLs or properties in one run?</strong>
+Yes  add as many URLs as you like to <code>startUrls</code>; each is processed independently, and you can freely mix search URLs and individual property URLs in the same run.</p>
+<p><strong>Does it support map-drawn area searches?</strong>
+Yes  paste a URL from a hand-drawn or pinned map search on the site and it&#39;s handled the same as any other search URL.</p>
+<p><strong>What happens if the run crashes or gets interrupted mid-way?</strong>
+The actor checkpoints progress as it goes and resumes exactly where it left off on the next attempt  already-scraped listings aren&#39;t re-charged.</p>
+<p><strong>Does it work for rent and sold listings, not just buy?</strong>
+Yes  buy, rent, and sold are all supported, including sold-specific sorting (e.g. by sale date or sale price).</p>
+<hr>
+<h2>⚖️ Legal &amp; Ethical Use</h2>
+<p>This actor extracts <strong>publicly visible listing data</strong> from realestate.com.au  the same information any visitor can see in their browser without logging in.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only extract data you are authorized to access and use.</li>
+<li>Comply with realestate.com.au&#39;s Terms of Service and applicable data protection regulations (GDPR, Australian Privacy Act, etc.).</li>
+<li>Do not use extracted contact details for spam, harassment, or unsolicited bulk outreach.</li>
+<li>Respect reasonable request volumes  this actor is built for research and analysis, not for overwhelming the source site.</li>
+</ul>
+<hr>
+<h2>🔄 Resumability</h2>
+<p>The actor checkpoints its progress as it works through each search URL. If the run is interrupted  a crash, a platform migration, or a manual abort  the next attempt resumes from the last completed page instead of starting over, so you don&#39;t lose progress or get re-charged for already-delivered listings.</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>What gets saved</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>After every completed search page</td>
+<td>Per-URL progress (page position, listings pushed so far)</td>
+</tr>
+<tr>
+<td>Platform migration event</td>
+<td>Full progress snapshot</td>
+</tr>
+<tr>
+<td>Manual abort</td>
+<td>Full progress snapshot</td>
+</tr>
+<tr>
+<td>Successful completion</td>
+<td>Progress is cleared  nothing lingers for the next run</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🌐 Proxy Support</h2>
+<table>
+<thead>
+<tr>
+<th>User tier</th>
+<th>Proxy used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💎 Paying</td>
+<td>Dedicated proxy  faster and more reliable</td>
+</tr>
+<tr>
+<td>🆓 Free</td>
+<td>Apify Residential Proxy  built-in, automatic</td>
+</tr>
+</tbody></table>
+<p>Proxy selection is automatic based on your Apify account tier  there&#39;s no proxy configuration to set up.</p>
+<hr>
+<h2>🚫 Error Handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A pasted URL isn&#39;t a recognized realestate.com.au URL</td>
+<td>An <code>_error</code> field on that item explaining why</td>
+<td>Copy the URL directly from your browser rather than typing it</td>
+</tr>
+<tr>
+<td>An individual property URL points to an expired/removed listing</td>
+<td>An <code>_error</code> item noting the property wasn&#39;t found</td>
+<td>Confirm the listing is still live on the site</td>
+</tr>
+<tr>
+<td>No start URLs provided</td>
+<td>A single guidance item in the dataset</td>
+<td>Add at least one URL to <code>startUrls</code></td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<ul>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">dz_omar</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors</h2>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista API Scraper</a></strong>  Property listings from Idealista (Spain, Portugal, Italy)</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

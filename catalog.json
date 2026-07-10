@@ -2,7 +2,7 @@
   "generatedAt": "2026-06-23T11:35:49.9697744-11:00",
   "sourceRoot": "D:/Dev/Apify",
   "owner": "dz_omar",
-  "total": 34,
+  "total": 35,
   "categories": {
     "ads": "Advertising Intelligence",
     "real-estate": "Real Estate",
@@ -689,6 +689,26 @@
       "source": {
         "dir": "Social-Media/instagram-comment-scraper",
         "readme": "Social-Media/instagram-comment-scraper/README.md",
+        "exists": true
+      },
+      "onSite": false
+    },
+    {
+      "slug": "realestate-com-au-scraper",
+      "name": "realestate.com.au Scraper",
+      "category": "real-estate",
+      "subcategory": "listings",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-EAft69I3yKr7v3fpT-ENfv2JNSCj-ChatGPT_Image_Jul_10__2026__01_20_39_PM.png",
+      "description": "🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.",
+      "metaTitle": "realestate.com.au Scraper",
+      "metaDescription": "🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.",
+      "featured": false,
+      "docsPath": "realestate-com-au-scraper",
+      "source": {
+        "dir": "Real-Estate/Realestate.com.au",
+        "readme": "Real-Estate/Realestate.com.au/README.md",
         "exists": true
       },
       "onSite": false

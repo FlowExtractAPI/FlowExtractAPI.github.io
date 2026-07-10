@@ -106,6 +106,12 @@
 <li><strong>Map-view and inspection-times URLs supported</strong>, in addition to standard list searches.</li>
 <li><strong>No duplicates.</strong> Every property appears once, even across very large result sets.</li>
 </ul>
+<h3>Single Property URLs Also Supported</h3>
+<ul>
+<li>Paste a direct link to one listing (e.g. <code>https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730</code>) and the Actor returns that single property&#39;s <strong>full detail record</strong>  description, agent &amp; agency contacts, schools, market insights, everything.</li>
+<li>Mix search URLs and single-property URLs freely in the same <code>start_urls</code> list.</li>
+<li><code>detailMode</code> and <code>maxResults</code> are ignored for single-property URLs  there&#39;s only one listing to return, and it&#39;s always returned in full.</li>
+</ul>
 <h3>What You Get (Detail Mode)</h3>
 <ul>
 <li><strong>Core Listing</strong>  listing ID, canonical URL, headline, full description, price, promo level, listing type, lifecycle status</li>
@@ -160,6 +166,23 @@
   &quot;maxResults&quot;: 20
 }
 </code></pre>
+<h3>Single property  full detail for one listing</h3>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730&quot; }
+  ]
+}
+</code></pre>
+<p>You can also mix single-property URLs with search URLs in the same run:</p>
+<pre><code class="language-json">{
+  &quot;start_urls&quot;: [
+    { &quot;url&quot;: &quot;https://www.domain.com.au/sale/sydney-region-nsw/house/3-bedrooms/&quot; },
+    { &quot;url&quot;: &quot;https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730&quot; },
+    { &quot;url&quot;: &quot;https://www.domain.com.au/4-82-dickens-street-elwood-vic-3184-18201773&quot; }
+  ],
+  &quot;maxResults&quot;: 20
+}
+</code></pre>
 <h3>Fetch all results for a search (no limit)</h3>
 <pre><code class="language-json">{
   &quot;start_urls&quot;: [
@@ -186,21 +209,21 @@
 <td>array</td>
 <td>✅</td>
 <td></td>
-<td>One or more domain.com.au search result URLs to scrape</td>
+<td>One or more domain.com.au URLs to scrape  search result URLs, or single-property listing URLs.</td>
 </tr>
 <tr>
 <td><code>maxResults</code></td>
 <td>integer</td>
 <td>❌</td>
 <td>10</td>
-<td>Max listings to scrape <strong>per URL</strong>. <code>0</code> = fetch all available results.</td>
+<td>Max listings to scrape <strong>per URL</strong>. <code>0</code> = fetch all available results. Ignored for single-property URLs (always exactly 1 result).</td>
 </tr>
 <tr>
 <td><code>detailMode</code></td>
 <td>boolean</td>
 <td>❌</td>
 <td><code>false</code></td>
-<td><code>false</code> = fast mode (essentials only, fastest). <code>true</code> = full detail per property (description, agents, schools, market insights, etc.)  slower.</td>
+<td><code>false</code> = fast mode (essentials only, fastest). <code>true</code> = full detail per property (description, agents, schools, market insights, etc.)  slower. Ignored for single-property URLs, which always return full detail.</td>
 </tr>
 </tbody></table>
 <h3>Fast Mode vs Detail Mode</h3>
@@ -258,7 +281,7 @@
 <p><code>maxResults</code> is a <strong>per-URL limit</strong>, not a global total. If you provide 5 URLs and set <code>maxResults: 20</code>, the Actor will attempt to fetch up to 20 listings from each URL independently  up to 100 results total.</p>
 <p>Setting <code>maxResults: 0</code> removes the per-URL limit and scrapes every listing the search returns, including very large searches that exceed the page limit a single search normally exposes.</p>
 <h3>Supported URL Formats</h3>
-<p>Any search URL you can construct on domain.com.au works as input. Copy it directly from your browser after applying filters.</p>
+<p>Any search URL you can construct on domain.com.au works as input, and so does a direct link to a single listing. Copy it directly from your browser.</p>
 <table>
 <thead>
 <tr>
@@ -306,8 +329,12 @@
 <td>Exclude under offer</td>
 <td><code>/sale/sydney-region-nsw/?excludeunderoffer=1</code></td>
 </tr>
+<tr>
+<td><strong>Single property listing</strong></td>
+<td><code>/342-whale-beach-road-palm-beach-nsw-2108-2020501730</code></td>
+</tr>
 </tbody></table>
-<p>All filter combinations domain.com.au supports are honored automatically.</p>
+<p>All filter combinations domain.com.au supports are honored automatically. A single-property URL (one path segment ending in the listing&#39;s numeric id, exactly as domain.com.au links to it) is detected automatically and returns that listing&#39;s full detail  no separate mode or setting needed.</p>
 <hr>
 <h2>📤 Output Structure</h2>
 <p>Each listing produces one record in the dataset. The fields you get depend on the mode.</p>
