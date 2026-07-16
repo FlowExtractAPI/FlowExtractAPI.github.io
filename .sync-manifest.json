@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T12:54:09.549Z",
+  "generatedAt": "2026-07-16T09:26:38.789Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "7948df977848f628c5501219c52bc8c5da4119a410e68c088d34e1b0618f4d86",
@@ -175,6 +175,11 @@
       "hash": "0630aeb1ef6f90a3a8e8382898b5274894df685b9f9ef00af0867ca8af4c5d81",
       "syncedAt": "2026-07-10T12:54:09.502Z",
       "readme": "Real-Estate/Realestate.com.au/README.md"
+    },
+    "immobilienscout24-scraper": {
+      "hash": "d21c44748b93a70a755b50fdf450ed33c4de2862eb63058dddda2419af426e6b",
+      "syncedAt": "2026-07-16T09:26:38.676Z",
+      "readme": "Real-Estate/immobilienscout24/README.md"
     }
   }
 }

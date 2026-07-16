@@ -1,0 +1,34 @@
+{
+  "slug": "immobilienscout24-scraper",
+  "_drafted": true,
+  "intro": "ImmoScout24 Scraper turns any search or property URL from immobilienscout24.de — Germany's largest real-estate marketplace — into structured listing data: price, address, rooms, energy class, agency contacts, and photos. It handles rent, buy, and new-development (Neubau) searches, plus individual property pages, all from the same input.",
+  "useCases": [
+    "Build and monitor a list of matching properties across a region as a real-estate agent.",
+    "Track price, size, and yield trends across a market as an investor or analyst.",
+    "Monitor a competitor's new stock and pricing changes as an agency.",
+    "Feed a CRM, valuation model, or market dashboard with structured listing data as a developer.",
+    "Collect a full regional dataset — including new-development projects — for research or analysis."
+  ],
+  "faq": [
+    {
+      "q": "What URL types does ImmoScout24 Scraper support?",
+      "a": "Search/listing URLs (rent, buy, or new developments), individual property pages, and new-development (Neubau) project pages with their individual units — you can mix any combination of these in a single run."
+    },
+    {
+      "q": "What's the difference between fast mode and full mode?",
+      "a": "Fast mode (the default) returns the fields already available from the search results — price, address, rooms, living space, energy class, agency, and main photo. Full mode also fetches each listing's complete detail page — full rent breakdown, all features, energy-certificate data, complete descriptions, full image gallery, and agent contact. Individual property URLs always return full detail regardless of this setting."
+    },
+    {
+      "q": "Do I need to configure a proxy?",
+      "a": "No — proxy handling is fully automatic. Free users get the standard Apify residential proxy; paid users get a premium proxy with automatic failover to the standard one if it has an issue, so a proxy hiccup never interrupts your run."
+    },
+    {
+      "q": "What happens if a run is interrupted?",
+      "a": "The actor automatically resumes from the last completed page after a migration, timeout, or restart, so long jobs finish without re-paying for work already done."
+    },
+    {
+      "q": "Does it capture new-development (Neubau) projects?",
+      "a": "Yes — a Neubau project URL returns the project details along with its individual units as separate listing rows."
+    }
+  ]
+}

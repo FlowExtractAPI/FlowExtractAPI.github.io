@@ -488,5 +488,19 @@
     "metaTitle": "realestate.com.au Scraper",
     "metaDescription": "🏠 Scrape property listings from realestate.com.au — paste a search URL (buy, rent, or sold) and get structured listing data back, with optional full detail-page enrichment. 💰 From $0.50 per 1,000 listings on the Gold plan.",
     "featured": false
+  },
+  {
+    "id": "immobilienscout24-scraper",
+    "name": "ImmoScout24 Scraper",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg",
+    "category": "real-estate",
+    "subcategory": "listings",
+    "description": "🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.",
+    "apifyUrl": "https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63",
+    "docsPath": "immobilienscout24-scraper",
+    "readmeFile": "immobilienscout24-scraper.md",
+    "metaTitle": "ImmoScout24 Scraper",
+    "metaDescription": "🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.",
+    "featured": false
   }
 ]
