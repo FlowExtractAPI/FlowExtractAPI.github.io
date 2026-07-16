@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Simple Docs Merge</title>
+  <meta name="description" content="How Simple Docs Merge handles your Google user data. We do not store your documents. Use of Google user data complies with the Google API Services User Data Policy, including Limited Use.">
+  <link rel="canonical" href="https://flowextractapi.com/simple-docs-merge/privacy.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='5' fill='%231a73e8'/%3E%3Cpath fill='%23fff' d='M7 6h6l4 4v8a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm5 1.5V10h2.5z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm6 1.5V9h4.5z"/></svg></span>
+      Simple Docs Merge
+    </a>
+    <nav><a href="./">Home</a><a href="terms.html">Terms</a></nav>
+  </div>
+</header>
+
+<main class="legal">
+  <div class="wrap">
+    <div class="doc">
+      <h1>Privacy Policy</h1>
+      <p class="updated">Last updated: 14 July 2026</p>
+
+      <div class="callout">
+        <p><strong>In short:</strong> Simple Docs Merge reads only the documents you choose, uses them solely to
+        produce the merged file you asked for, and <strong>does not store your document content</strong>. We never
+        sell your data, show ads, or let any person read your documents.</p>
+      </div>
+
+      <div class="toc">
+        <strong>Contents</strong>
+        <a href="#who">1. Who we are</a>
+        <a href="#what">2. What data we access</a>
+        <a href="#use">3. How we use it</a>
+        <a href="#store">4. What we store — and what we don't</a>
+        <a href="#limited-use">5. Google API Services User Data Policy (Limited Use)</a>
+        <a href="#sharing">6. Sharing and sub-processors</a>
+        <a href="#security">7. Security</a>
+        <a href="#retention">8. Retention and deletion</a>
+        <a href="#rights">9. Your rights</a>
+        <a href="#children">10. Children</a>
+        <a href="#changes">11. Changes</a>
+        <a href="#contact">12. Contact</a>
+      </div>
+
+      <h2 id="who">1. Who we are</h2>
+      <p>Simple Docs Merge (“the add-on”, “we”, “us”) is a Google Workspace Add-on that merges multiple documents
+      into a single Google Doc. This policy explains what information the add-on accesses, how it is used, and the
+      choices you have. It applies to the add-on and its supporting service, and does not cover Google's own
+      products or any third-party website.</p>
+
+      <h2 id="what">2. What data we access</h2>
+      <p>The add-on accesses the minimum needed to do its job, and only when you actively use it:</p>
+      <table>
+        <tr>
+          <th>The documents you select</th>
+          <td>Files you explicitly choose in the picker, paste as a link or ID, or the document you currently have
+          open. We read their content in order to merge them. We do <strong>not</strong> access files you have not
+          selected, and we do not have access to your entire Google Drive.</td>
+        </tr>
+        <tr>
+          <th>Files the add-on creates</th>
+          <td>The merged Google Doc (and any optional PDF or Word copy) is created in your own Google Drive under
+          your account.</td>
+        </tr>
+        <tr>
+          <th>Your Google account identifier</th>
+          <td>A stable, pseudonymous account ID (the Google <code>sub</code> identifier) and email, obtained from
+          Google when you use the add-on, used to identify your session and count your monthly usage against your
+          plan.</td>
+        </tr>
+        <tr>
+          <th>Authorization tokens</th>
+          <td>Short-lived Google tokens that authorize the add-on to act on your behalf for the duration of a single
+          request. These are used transiently and are never stored.</td>
+        </tr>
+      </table>
+      <p>The add-on requests these Google OAuth scopes, each for a specific purpose:</p>
+      <table>
+        <tr><th>See, edit, create and delete your Google Docs documents</th>
+          <td>Required to read the documents you choose, to create the merged document, and — when you choose
+          “merge into the current document” or “preserve tabs” — to assemble content with full formatting fidelity.</td></tr>
+        <tr><th>See, create and delete only the files you use with this app (drive.file)</th>
+          <td>To create the merged file and any PDF/Word copy, to save into a folder you pick, and to handle files
+          you upload or select through the picker.</td></tr>
+        <tr><th>See your Drive files (read-only, drive.readonly)</th>
+          <td>To resolve a document you add by pasting its link or ID, and to read source files for merging.</td></tr>
+        <tr><th>Sign in (openid) &amp; connect to an external service</th>
+          <td>To identify your account for usage limits, and to securely contact the add-on's own processing service.</td></tr>
+        <tr><th>Display and run within Google Docs</th>
+          <td>To show the add-on's interface inside the Google Docs editor.</td></tr>
+      </table>
+
+      <h2 id="use">3. How we use it</h2>
+      <p>We use the information above <strong>only</strong> to provide the add-on's core feature — merging the
+      documents you select — and to operate the service reliably:</p>
+      <ul>
+        <li>To read your selected documents and combine them, in your chosen order and with your chosen options
+        (page breaks, headings, PDF/Word export, and so on).</li>
+        <li>To convert non-Google files (Word, ODT, RTF, Markdown, HTML, text, PDF) into Google Docs so they can be
+        merged. Conversion is performed by Google Drive; any temporary file created during conversion is deleted
+        immediately after processing.</li>
+        <li>To create the merged document, and any PDF or Word copy, in your Drive.</li>
+        <li>To count how many merges you have run in the current month, so that plan limits can be applied fairly.</li>
+        <li>To keep short operational logs (for example, that a merge succeeded or failed, and error messages) needed
+        to run and troubleshoot the service. These logs do not contain your document content.</li>
+      </ul>
+      <p>Processing is carried out by the add-on's backend service, which runs on Google Cloud and acts on your
+      behalf using the short-lived token your session provides. Document content passes through the service only for
+      the moment it takes to complete your merge.</p>
+
+      <h2 id="store">4. What we store — and what we don't</h2>
+      <p><strong>We do not store your document content.</strong> Files are read, merged, and the result written to
+      your Drive within a single request; nothing about the contents of your documents is retained afterwards.</p>
+      <p>The only information we retain is a minimal usage record, held in Google Firestore:</p>
+      <table>
+        <tr><th>What is stored</th><td>Your Google account identifier (<code>sub</code>), the current month, and a
+          count of merges performed that month. Optionally, a plan tier and its expiry if you are on a paid plan.</td></tr>
+        <tr><th>Why</th><td>To enforce monthly usage limits and, for paid plans, to grant the correct limits.</td></tr>
+        <tr><th>What is <em>not</em> stored</th><td>Your document content, file names, the merged output, your
+          authorization tokens, or any browsing/behavioural profile.</td></tr>
+      </table>
+
+      <h2 id="limited-use">5. Google API Services User Data Policy (Limited Use)</h2>
+      <div class="callout">
+        <p>Simple Docs Merge's use and transfer of information received from Google APIs to any other app will adhere
+        to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener">Google
+        API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
+      </div>
+      <p>Specifically, information obtained through Google APIs is used <strong>only</strong> to provide and improve
+      the add-on's user-facing merging feature. We do <strong>not</strong>:</p>
+      <ul>
+        <li>transfer or sell this data to third parties, advertising platforms, data brokers, or information resellers;</li>
+        <li>use it for advertising, including personalized, retargeted, or interest-based advertising;</li>
+        <li>allow humans to read it, except with your explicit consent for a specific support request, where required
+        for security or to comply with applicable law, or in a limited form necessary to operate the service (for
+        example, an aggregated error rate that contains no document content).</li>
+      </ul>
+
+      <h2 id="sharing">6. Sharing and sub-processors</h2>
+      <p>We do not sell your data and do not share it for anyone else's marketing. Data is processed using the
+      following infrastructure providers, acting on our behalf:</p>
+      <table>
+        <tr><th>Google (Google Cloud, Drive, Docs APIs)</th>
+          <td>Hosts the processing service (Cloud Run), stores the usage counter (Firestore), and provides the Drive
+          and Docs operations you request. Google processes this data under its own terms.</td></tr>
+      </table>
+      <p>We may disclose information if required by law, or to protect the rights, safety, or security of our users
+      or the service.</p>
+
+      <h2 id="security">7. Security</h2>
+      <ul>
+        <li>All data is transmitted over encrypted connections (HTTPS/TLS).</li>
+        <li>The add-on requests least-privilege access and does not request access to your entire Drive.</li>
+        <li>The processing service is not publicly open: every request must be authenticated through Google's
+        identity infrastructure before it is accepted.</li>
+        <li>No long-lived secrets or credentials for your account are stored by the add-on.</li>
+      </ul>
+      <p>No method of transmission or storage is completely secure, but we take reasonable measures to protect your
+      information.</p>
+
+      <h2 id="retention">8. Retention and deletion</h2>
+      <p>Document content is not retained at all. The usage counter is kept only as long as needed to enforce monthly
+      limits and expires automatically after a short period (on the order of weeks after the month it covers).
+      Operational logs are retained for a limited period for troubleshooting and security, then deleted.</p>
+      <p>You can stop all data processing at any time by removing the add-on from your Google account
+      (<a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">Google Account → Data &amp; privacy →
+      Third-party apps &amp; services</a>). To request deletion of your usage record, contact us using the details
+      below.</p>
+
+      <h2 id="rights">9. Your rights</h2>
+      <p>Depending on where you live, you may have rights to access, correct, or delete the personal data we hold
+      about you, or to object to or restrict its processing. Because we hold only a minimal usage record keyed to
+      your account ID, these requests are straightforward — contact us and we will respond within a reasonable time.</p>
+
+      <h2 id="children">10. Children</h2>
+      <p>The add-on is not directed to children under 13 (or the minimum age of digital consent in your country) and
+      we do not knowingly collect their personal data.</p>
+
+      <h2 id="changes">11. Changes to this policy</h2>
+      <p>We may update this policy from time to time. Material changes will be reflected by updating the “Last
+      updated” date at the top of this page, and where appropriate we will provide additional notice.</p>
+
+      <h2 id="contact">12. Contact</h2>
+      <p>Questions about this policy or your data? Email
+      <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a>.</p>
+
+      <p style="margin-top:32px;"><a href="./">&larr; Back to Simple Docs Merge</a></p>
+    </div>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="brand" href="./">
+      <span class="mark"><svg viewBox="0 0 24 24"><path d="M7 3h7l5 5v11a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm6 1.5V9h4.5z"/></svg></span>
+      Simple Docs Merge
+    </a>
+    <nav>
+      <a href="./">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="mailto:flowextractapi@outlook.com">Support</a>
+    </nav>
+    <div class="copy">
+      &copy; 2026 Simple Docs Merge. A Google Workspace Add-on. Google Docs, Google Drive and Google Workspace
+      are trademarks of Google LLC; this add-on is not created or endorsed by Google.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
