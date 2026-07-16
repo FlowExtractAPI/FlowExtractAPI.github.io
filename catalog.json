@@ -2,7 +2,7 @@
   "generatedAt": "2026-06-23T11:35:49.9697744-11:00",
   "sourceRoot": "D:/Dev/Apify",
   "owner": "dz_omar",
-  "total": 35,
+  "total": 36,
   "categories": {
     "ads": "Advertising Intelligence",
     "real-estate": "Real Estate",
@@ -709,6 +709,26 @@
       "source": {
         "dir": "Real-Estate/Realestate.com.au",
         "readme": "Real-Estate/Realestate.com.au/README.md",
+        "exists": true
+      },
+      "onSite": false
+    },
+    {
+      "slug": "immobilienscout24-scraper",
+      "name": "ImmoScout24 Scraper",
+      "category": "real-estate",
+      "subcategory": "listings",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg",
+      "description": "🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.",
+      "metaTitle": "ImmoScout24 Scraper",
+      "metaDescription": "🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.",
+      "featured": false,
+      "docsPath": "immobilienscout24-scraper",
+      "source": {
+        "dir": "Real-Estate/immobilienscout24",
+        "readme": "Real-Estate/immobilienscout24/README.md",
         "exists": true
       },
       "onSite": false

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>ImmoScout24 Scraper | FlowExtract API</title>
+    <meta name="title" content="ImmoScout24 Scraper | FlowExtract API">
+    <meta name="description" content="🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/immobilienscout24-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="ImmoScout24 Scraper | FlowExtract API">
+    <meta property="og:description" content="🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/immobilienscout24-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ImmoScout24 Scraper | FlowExtract API">
+    <meta name="twitter:description" content="🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"ImmoScout24 Scraper","description":"🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/immobilienscout24-scraper.html","sameAs":"https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg"},{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What URL types does ImmoScout24 Scraper support?","acceptedAnswer":{"@type":"Answer","text":"Search/listing URLs (rent, buy, or new developments), individual property pages, and new-development (Neubau) project pages with their individual units — you can mix any combination of these in a single run."}},{"@type":"Question","name":"What's the difference between fast mode and full mode?","acceptedAnswer":{"@type":"Answer","text":"Fast mode (the default) returns the fields already available from the search results — price, address, rooms, living space, energy class, agency, and main photo. Full mode also fetches each listing's complete detail page — full rent breakdown, all features, energy-certificate data, complete descriptions, full image gallery, and agent contact. Individual property URLs always return full detail regardless of this setting."}},{"@type":"Question","name":"Do I need to configure a proxy?","acceptedAnswer":{"@type":"Answer","text":"No — proxy handling is fully automatic. Free users get the standard Apify residential proxy; paid users get a premium proxy with automatic failover to the standard one if it has an issue, so a proxy hiccup never interrupts your run."}},{"@type":"Question","name":"What happens if a run is interrupted?","acceptedAnswer":{"@type":"Answer","text":"The actor automatically resumes from the last completed page after a migration, timeout, or restart, so long jobs finish without re-paying for work already done."}},{"@type":"Question","name":"Does it capture new-development (Neubau) projects?","acceptedAnswer":{"@type":"Answer","text":"Yes — a Neubau project URL returns the project details along with its individual units as separate listing rows."}}]}]</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg" alt="ImmoScout24 Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">ImmoScout24 Scraper</h1>
+                <p class="actor-hero-desc">🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.</p>
+                <a href="https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                <div class="actor-intro">
+<p class="actor-intro-lead">ImmoScout24 Scraper turns any search or property URL from immobilienscout24.de — Germany&#39;s largest real-estate marketplace — into structured listing data: price, address, rooms, energy class, agency contacts, and photos. It handles rent, buy, and new-development (Neubau) searches, plus individual property pages, all from the same input.</p>
+<h2 id="use-cases">Use cases</h2><ul class="actor-usecases">
+<li>Build and monitor a list of matching properties across a region as a real-estate agent.</li><li>Track price, size, and yield trends across a market as an investor or analyst.</li><li>Monitor a competitor&#39;s new stock and pricing changes as an agency.</li><li>Feed a CRM, valuation model, or market dashboard with structured listing data as a developer.</li><li>Collect a full regional dataset — including new-development projects — for research or analysis.</li>
+</ul>
+<h2 id="faq">Frequently asked questions</h2><div class="actor-faq">
+<details class="faq-item"><summary>What URL types does ImmoScout24 Scraper support?</summary><p>Search/listing URLs (rent, buy, or new developments), individual property pages, and new-development (Neubau) project pages with their individual units — you can mix any combination of these in a single run.</p></details><details class="faq-item"><summary>What&#39;s the difference between fast mode and full mode?</summary><p>Fast mode (the default) returns the fields already available from the search results — price, address, rooms, living space, energy class, agency, and main photo. Full mode also fetches each listing&#39;s complete detail page — full rent breakdown, all features, energy-certificate data, complete descriptions, full image gallery, and agent contact. Individual property URLs always return full detail regardless of this setting.</p></details><details class="faq-item"><summary>Do I need to configure a proxy?</summary><p>No — proxy handling is fully automatic. Free users get the standard Apify residential proxy; paid users get a premium proxy with automatic failover to the standard one if it has an issue, so a proxy hiccup never interrupts your run.</p></details><details class="faq-item"><summary>What happens if a run is interrupted?</summary><p>The actor automatically resumes from the last completed page after a migration, timeout, or restart, so long jobs finish without re-paying for work already done.</p></details><details class="faq-item"><summary>Does it capture new-development (Neubau) projects?</summary><p>Yes — a Neubau project URL returns the project details along with its individual units as separate listing rows.</p></details>
+</div>
+<h2 id="documentation">Documentation</h2>
+</div>
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏠 ImmoScout24 Scraper</h1>
+<p>Fast, reliable property scraper for <strong>immobilienscout24.de</strong> — Germany&#39;s largest real-estate marketplace. Paste any search or property URL and get clean, structured listing data back.</p>
+<p><strong>Supports every ImmoScout24 URL type — apartment &amp; house search (rent / buy), property sub-types (villa, bungalow, semi-detached, farmhouse…), land, new-development (Neubau) projects, and individual property pages.</strong></p>
+<blockquote>
+<p>No setup, no login, no browser to babysit. Filter on the ImmoScout24 website, copy the URL from your address bar, paste it in, and run.</p>
+</blockquote>
+<hr>
+<h2>🎯 What This Actor Extracts</h2>
+<p>Complete property intelligence from ImmoScout24 listings:</p>
+<h3>📋 Core Property Data</h3>
+<ul>
+<li><strong>Property Details</strong>: listing ID, title, property type, and canonical web link</li>
+<li><strong>Pricing</strong>: headline price, plus (in detail mode) base rent, total rent, service charge, and price/m²</li>
+<li><strong>Specifications</strong>: rooms, living space, floor / number of floors, construction year</li>
+<li><strong>Energy</strong>: energy-efficiency class, energy &amp; heating type, thermal characteristic</li>
+<li><strong>Status</strong>: publication state, listing type, private-vs-agency, new-build flag</li>
+</ul>
+<h3>🖼️ Visual Content</h3>
+<ul>
+<li><strong>Main Image</strong>: primary listing photo on every result</li>
+<li><strong>Full Gallery</strong>: the complete high-resolution image set (detail mode)</li>
+</ul>
+<h3>🏢 Location &amp; Contact</h3>
+<ul>
+<li><strong>Address</strong>: full line, street, house number, postcode, quarter, region</li>
+<li><strong>GPS Coordinates</strong>: latitude and longitude for mapping</li>
+<li><strong>Agency &amp; Agent</strong>: company name, agent name, logo, and profile link</li>
+<li><strong>Phone</strong>: contact numbers where published</li>
+</ul>
+<h3>🏗️ Building &amp; Amenities</h3>
+<ul>
+<li><strong>Feature Flags</strong>: balcony/terrace, cellar, lift, fitted kitchen, garden, barrier-free, pets, newly built</li>
+<li><strong>Attribute Sections</strong>: itemized “Main criteria”, “Costs”, and “Building details &amp; energy certificate” exactly as shown on the listing</li>
+<li><strong>Free-Text Descriptions</strong>: full property description, furnishing, and location write-ups</li>
+</ul>
+<h3>⚡ Advanced Features</h3>
+<ul>
+<li><strong>Automatic Filter Parsing</strong>: location, property type &amp; sub-type, price, rooms, living space, plot size, construction year, and equipment features are all read straight from the URL</li>
+<li><strong>New-Development (Neubau) Support</strong>: developer projects are captured, including their individual units</li>
+<li><strong>Individual Property URLs</strong>: a single property link always returns its full detail record</li>
+<li><strong>Two Data Modes</strong>: fast search-only, or full detail-page enrichment</li>
+<li><strong>Configurable Results</strong>: control max listings per search URL (or collect everything)</li>
+<li><strong>Automatic Resume</strong>: long runs continue from where they left off after any interruption</li>
+<li><strong>Error Tracking</strong>: unreadable URLs and expired listings are reported as clear error rows</li>
+</ul>
+<hr>
+<h2>🌐 Supported URL Types</h2>
+<h3>Search / Listing URLs</h3>
+<p>Scrape many properties from a search results page — rent, buy, or new developments:</p>
+<ul>
+<li><code>https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten</code></li>
+<li><code>https://www.immobilienscout24.de/Suche/de/bayern/muenchen/haus-kaufen?price=300000.0-900000.0&amp;numberofrooms=3.0-6.0</code></li>
+<li><code>https://www.immobilienscout24.de/Suche/de/berlin/berlin/villa-kaufen</code></li>
+</ul>
+<p>Any filter you apply on the site — property type &amp; sub-type, price, rooms, living space, plot size, construction year, equipment — is carried over automatically. Just copy the address bar.</p>
+<h3>Individual Property URLs</h3>
+<p>Extract the full detail record from a single property page:</p>
+<ul>
+<li><code>https://www.immobilienscout24.de/expose/167767638</code></li>
+</ul>
+<h3>New-Development (Neubau) Project URLs</h3>
+<p>Capture a developer project and its individual units:</p>
+<ul>
+<li><code>https://www.immobilienscout24.de/neubau/&lt;developer&gt;/&lt;project&gt;/132302.html</code></li>
+</ul>
+<p>The actor detects which type of URL you provide and handles each accordingly. Mix any combination of URL types in a single run.</p>
+<hr>
+<h2>📊 Two Data Modes</h2>
+<h3>⚡ Fast Mode — <code>Fetch Full Property Details</code> OFF (default)</h3>
+<p>Returns the listing data available from the search results — price, address, rooms, living space, energy class, agency, and main photo. Fast and cost-effective, ideal for building lists and monitoring a market.</p>
+<h3>🔎 Full Mode — <code>Fetch Full Property Details</code> ON</h3>
+<p>For every listing from a search URL, also fetches the complete detail page — full rent breakdown, all features, energy-certificate data, complete descriptions, full image gallery, and agent contact — via one extra request per listing. Richer, more complete data.</p>
+<blockquote>
+<p>Individual property URLs always return full details, regardless of this setting.</p>
+</blockquote>
+<hr>
+<h2>✅ Input Schema</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Required</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>startUrls</strong></td>
+<td>array</td>
+<td>✅ Yes</td>
+<td>—</td>
+<td>One or more ImmoScout24 search or property URLs. Copy straight from the browser after applying filters.</td>
+</tr>
+<tr>
+<td><strong>maxResults</strong></td>
+<td>integer</td>
+<td>No</td>
+<td>25</td>
+<td>Max listings per search URL. Set to <code>0</code> for every available listing (bounded only by your budget). Individual property URLs always return one result.</td>
+</tr>
+<tr>
+<td><strong>fetchPropertyDetails</strong></td>
+<td>boolean</td>
+<td>No</td>
+<td>false</td>
+<td>🔎 <strong>Fetch full property details.</strong> OFF: fast search-result fields only. ON: also fetch each property&#39;s full detail page (complete description, features, energy certificate, agent contact, exact location, full gallery) — richer, more complete data. Individual property URLs always return full details.</td>
+</tr>
+</tbody></table>
+<h3>Example Input (mixed URLs)</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten&quot; },
+    { &quot;url&quot;: &quot;https://www.immobilienscout24.de/Suche/de/bayern/muenchen/haus-kaufen?price=300000.0-900000.0&amp;numberofrooms=3.0-6.0&quot; },
+    { &quot;url&quot;: &quot;https://www.immobilienscout24.de/expose/167767638&quot; }
+  ],
+  &quot;maxResults&quot;: 100,
+  &quot;fetchPropertyDetails&quot;: true
+}
+</code></pre>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Each search URL returns up to <code>maxResults</code> listings</li>
+<li>Each individual property URL returns exactly 1 full record</li>
+<li><strong>Total output</strong>: up to <code>maxResults × (number of search URLs)</code> + 1 per property URL</li>
+</ul>
+<hr>
+<h2>📤 Sample Output</h2>
+<h3>Fast Mode — <code>fetchPropertyDetails: false</code></h3>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;property&quot;,
+  &quot;listingId&quot;: &quot;164526698&quot;,
+  &quot;url&quot;: &quot;https://www.immobilienscout24.de/expose/164526698&quot;,
+  &quot;title&quot;: &quot;Neubau 4-Zimmer Wohnung&quot;,
+  &quot;realEstateType&quot;: &quot;apartmentrent&quot;,
+  &quot;price&quot;: &quot;€3,952&quot;,
+  &quot;livingSpace&quot;: &quot;152 m²&quot;,
+  &quot;numberOfRooms&quot;: &quot;4 rms&quot;,
+  &quot;energyEfficiencyClass&quot;: null,
+  &quot;address&quot;: {
+    &quot;line&quot;: &quot;Wendelsweg 66, 60599 Frankfurt, Sachsenhausen-Süd&quot;,
+    &quot;postcode&quot;: null,
+    &quot;latitude&quot;: 50.09785,
+    &quot;longitude&quot;: 8.69708
+  },
+  &quot;listingType&quot;: &quot;XL&quot;,
+  &quot;published&quot;: &quot;7 months ago&quot;,
+  &quot;isPrivate&quot;: false,
+  &quot;agencyName&quot;: &quot;Actris GmbH&quot;,
+  &quot;mainImage&quot;: &quot;https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/ORIG/resize/800x600/format/webp/quality/80&quot;,
+  &quot;images&quot;: [&quot;https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/...&quot;],
+  &quot;details&quot;: null,
+  &quot;hasDetailData&quot;: false,
+  &quot;source_url&quot;: &quot;https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten&quot;,
+  &quot;_source&quot;: &quot;immobilienscout24_scraper&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-07-16T08:36:59.316Z&quot;
+}
+</code></pre>
+<h3>Full Mode — <code>fetchPropertyDetails: true</code></h3>
+<p>Everything above, plus a populated <code>details</code> object:</p>
+<pre><code class="language-json">{
+  &quot;listingId&quot;: &quot;164526698&quot;,
+  &quot;title&quot;: &quot;Neubau 4-Zimmer Wohnung&quot;,
+  &quot;price&quot;: &quot;€3,952&quot;,
+  &quot;hasDetailData&quot;: true,
+  &quot;details&quot;: {
+    &quot;baseRent&quot;: 3952,
+    &quot;totalRent&quot;: 4431,
+    &quot;serviceCharge&quot;: 479,
+    &quot;livingSpace&quot;: 152,
+    &quot;numberOfRooms&quot;: 4,
+    &quot;floor&quot;: 3,
+    &quot;numberOfFloors&quot;: 4,
+    &quot;yearConstructed&quot;: 2026,
+    &quot;address&quot;: {
+      &quot;street&quot;: &quot;Wendelsweg&quot;,
+      &quot;houseNumber&quot;: &quot;66&quot;,
+      &quot;zipCode&quot;: &quot;60599&quot;,
+      &quot;quarter&quot;: &quot;sachsenhausen_süd&quot;,
+      &quot;region&quot;: &quot;Hessen, Frankfurt_am_Main, Süd&quot;,
+      &quot;latitude&quot;: 50.09785,
+      &quot;longitude&quot;: 8.69708
+    },
+    &quot;heatingType&quot;: &quot;floor_heating&quot;,
+    &quot;condition&quot;: &quot;first_time_use&quot;,
+    &quot;interiorQuality&quot;: &quot;luxury&quot;,
+    &quot;features&quot;: {
+      &quot;balcony&quot;: true, &quot;cellar&quot;: true, &quot;lift&quot;: true, &quot;fittedKitchen&quot;: true,
+      &quot;garden&quot;: true, &quot;petsAllowed&quot;: null, &quot;barrierFree&quot;: true, &quot;newlyBuilt&quot;: true
+    },
+    &quot;descriptions&quot;: {
+      &quot;Property Description&quot;: &quot;Wohnen mit Stil und Geschichte – Ihr neues Zuhause im Henninger Park…&quot;,
+      &quot;Furnishing&quot;: &quot;Modernes Wohnen mit Stil und Eleganz…&quot;,
+      &quot;Location&quot;: &quot;Zu Hause in den Stadtgärten am Henninger Turm…&quot;
+    },
+    &quot;attributeSections&quot;: [
+      { &quot;title&quot;: &quot;Main criteria&quot;, &quot;items&quot;: [
+        { &quot;label&quot;: &quot;Apartment type:&quot;, &quot;text&quot;: &quot;Flat&quot; },
+        { &quot;label&quot;: &quot;Floor:&quot;, &quot;text&quot;: &quot;3 of 4&quot; },
+        { &quot;label&quot;: &quot;Balcony/Terrace:&quot;, &quot;present&quot;: true },
+        { &quot;label&quot;: &quot;Elevator:&quot;, &quot;present&quot;: true }
+      ]},
+      { &quot;title&quot;: &quot;Costs&quot;, &quot;items&quot;: [
+        { &quot;label&quot;: &quot;Net rent (plus ancillary costs):&quot;, &quot;text&quot;: &quot;€3,952&quot; },
+        { &quot;label&quot;: &quot;Ancillary costs:&quot;, &quot;text&quot;: &quot;€479&quot; },
+        { &quot;label&quot;: &quot;Total rent:&quot;, &quot;text&quot;: &quot;€4,431&quot; }
+      ]},
+      { &quot;title&quot;: &quot;Building details &amp; energy certificate&quot;, &quot;items&quot;: [
+        { &quot;label&quot;: &quot;Construction year:&quot;, &quot;text&quot;: &quot;2026&quot; },
+        { &quot;label&quot;: &quot;Type of heating:&quot;, &quot;text&quot;: &quot;Floor heating&quot; }
+      ]}
+    ],
+    &quot;agent&quot;: {
+      &quot;company&quot;: &quot;Actris GmbH&quot;,
+      &quot;name&quot;: &quot;Eva Cuadrado&quot;,
+      &quot;profileUrl&quot;: &quot;https://www.immobilienscout24.de/anbieter/actris-gmbh/ac16e3a0ecb504351db0039&quot;
+    },
+    &quot;phoneNumbers&quot;: [],
+    &quot;images&quot;: [&quot;https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/...&quot;]
+  }
+}
+</code></pre>
+<h3>New-Development (Neubau) Project Row</h3>
+<pre><code class="language-json">{
+  &quot;type&quot;: &quot;project&quot;,
+  &quot;projectId&quot;: &quot;132302&quot;,
+  &quot;projectName&quot;: &quot;FOUR Frankfurt&quot;,
+  &quot;url&quot;: &quot;https://www.immobilienscout24.de/neubau/.../132302.html&quot;,
+  &quot;priceRange&quot;: &quot;€1,750 - €5,000&quot;,
+  &quot;sizeRange&quot;: &quot;39 - 100 m²&quot;,
+  &quot;address&quot;: { &quot;line&quot;: &quot;Junghofstraße 5, 60315 Frankfurt am Main&quot;, &quot;latitude&quot;: 50.1125, &quot;longitude&quot;: 8.6748 },
+  &quot;projectObjects&quot;: [
+    { &quot;listingId&quot;: &quot;167767638&quot;, &quot;title&quot;: &quot;FOUR: Stillvolle 2-Zimmer Wohnung mit Mainblick&quot;, &quot;attributes&quot;: [&quot;€2,950&quot;, &quot;57 m²&quot;, &quot;2 rms&quot;] }
+  ]
+}
+</code></pre>
+<h3>Error Row</h3>
+<pre><code class="language-json">{
+  &quot;_source&quot;: &quot;immobilienscout24_scraper&quot;,
+  &quot;source_url&quot;: &quot;https://www.immobilienscout24.de/expose/000000000&quot;,
+  &quot;_error&quot;: &quot;Could not fetch this expose: Not found (HTTP 404) — listing may be expired or the id is invalid&quot;
+}
+</code></pre>
+<hr>
+<!-- PRICING HIDDEN FOR FREE LAUNCH — uncomment this block to re-enable the pricing section.
+
+## 💰 Pricing
+
+Pay only for the listings you actually get, on a sliding scale by plan:
+
+| Event | FREE | BRONZE | SILVER | GOLD |
+|-------|------|--------|--------|------|
+| **Per listing** (search result saved) | $0.0010 | $0.0007 | $0.00065 | $0.0005 |
+| **Full-details add-on** (per enriched listing) | $0.0025 | $0.0010 | $0.0009 | $0.0008 |
+
+Search-only runs are billed at the per-listing rate. With **Fetch Full Property Details** on (or for individual property URLs), the add-on applies on top per enriched listing. Set a run budget in the Console and the actor never fetches beyond what it covers.
+
+---
+
+-->
+
+<h2>🔐 Proxy</h2>
+<p>No proxy setup is required — it&#39;s fully automatic.</p>
+<ul>
+<li><strong>Free users</strong>: automatic Apify residential proxy, no configuration needed.</li>
+<li><strong>Paid users</strong>: a premium proxy with <strong>automatic failover</strong> to the standard proxy — if the premium route has a hiccup, the run switches over seamlessly and keeps going, so a proxy issue never interrupts your results.</li>
+</ul>
+<hr>
+<h2>🔄 Reliability</h2>
+<ul>
+<li><strong>Automatic resume</strong> — after a migration, timeout, or restart, the run continues from the last completed page instead of starting over, so long jobs finish without re-paying for work already done.</li>
+<li><strong>Robust retries</strong> — transient network issues are retried transparently.</li>
+<li><strong>Clean, typed output</strong> — normalized fields, consistent across every run, with two ready-made dataset views: <strong>Search results (fast)</strong> and <strong>Full details</strong>.</li>
+</ul>
+<hr>
+<h2>🎯 Perfect For</h2>
+<ul>
+<li>🧑‍💼 <strong>Real-estate agents</strong> building and monitoring listing lists</li>
+<li>📈 <strong>Investors &amp; analysts</strong> tracking price, size, and yield across a region</li>
+<li>🏢 <strong>Agencies</strong> monitoring competitors and new stock</li>
+<li>🤖 <strong>Developers</strong> feeding a CRM, valuation model, or market dashboard</li>
+<li>🗺️ <strong>Researchers</strong> collecting full regional datasets for analysis</li>
+</ul>
+<hr>
+<h2>📞 Support</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> — Spanish/Portuguese/Italian property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong> — Real estate listings extractor</li>
+</ul>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> — Transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> — Loom video and transcript extraction</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/screenshot?fpr=smcx63">Screenshot</a></strong> — Fast webpage screenshots</li>
+</ul>
+<hr>
+<h3>⚖️ Legal &amp; Compliance</h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available data</li>
+<li><strong>Rate Limiting</strong>: Respects service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
