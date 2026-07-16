@@ -1,16 +1,25 @@
-# Simple Docs Merge — landing + legal pages
+# Simple Merge — landing + legal pages
 
-**This folder is self-contained and unrelated to the FlowExtract API site.** It was
-added to host the public pages that Google requires before it will approve the
-**Simple Docs Merge** Google Workspace Add-on (a separate product living at
-`D:\Dev\Add-ons\simple-docs-merge`). It is parked here temporarily on the existing
-`flowextractapi.com` domain until a dedicated domain is bought.
+**This folder is self-contained and unrelated to the FlowExtract API site.** It hosts
+the public pages that Google requires before it will approve the **Simple Merge**
+Google Workspace Add-on (a separate product whose code lives at
+`D:\Dev\Add-ons\simple-docs-merge` — note the add-on's *code folder* keeps its old
+name; only the product's display name and this site path became "Simple Merge"). The
+pages are parked here temporarily on the existing `flowextractapi.com` domain until a
+dedicated domain is bought.
+
+> **Naming note:** the product was renamed from "Simple Docs Merge" to **"Simple
+> Merge"** so it can grow beyond Docs (Sheets, Slides, …) and to satisfy Google's
+> branding-consistency check — the OAuth consent screen App name, the Marketplace
+> listing, the add-on manifest (`addOns.common.name`), and this landing page must all
+> read **exactly** "Simple Merge". Dropping "Docs" also avoids Google's discouragement
+> of product-name trademarks in an app name.
 
 > **To whoever maintains the FlowExtract site:** nothing outside this folder was
 > touched. No existing file was modified; the docs generator, SEO pipeline, sync
-> manifest, sitemap and `config.json` are all untouched. You can ignore this folder
-> entirely — it does not participate in any build step (`generate-docs.js` only
-> reads `./docs/`). It just needs to be committed and pushed so the pages go live.
+> manifest, sitemap and `config.json` are all untouched. This folder does not
+> participate in any build step (`generate-docs.js` only reads `./docs/`). It just
+> needs to be committed and pushed so the pages go live.
 
 ---
 
@@ -26,12 +35,12 @@ added to host the public pages that Google requires before it will approve the
 
 Once committed and pushed, these serve at (GitHub Pages, custom domain already set):
 
-- `https://flowextractapi.com/simple-docs-merge/`
-- `https://flowextractapi.com/simple-docs-merge/privacy.html`
-- `https://flowextractapi.com/simple-docs-merge/terms.html`
+- `https://flowextractapi.com/simple-merge/`
+- `https://flowextractapi.com/simple-merge/privacy.html`
+- `https://flowextractapi.com/simple-merge/terms.html`
 
-Verified locally (served exactly as GitHub Pages would): all three pages + the CSS
-return `200`, all internal links resolve, and the existing site is unchanged.
+All three pages + the CSS return `200`, all internal links resolve, and the existing
+site is unchanged.
 
 ---
 
@@ -45,65 +54,57 @@ domain the developer controls:
 2. a **privacy policy** on the same domain, and
 3. a **terms of service** page.
 
-The reviewer clicks these URLs during review — they can't be "coming soon", which is
-why they had to exist *before* submission rather than after.
-
-The privacy policy is written to match **exactly what the add-on actually does**:
-it reads only user-selected documents, processes them on a Cloud Run backend acting
-with the user's short-lived token, **stores no document content**, and keeps only a
-per-user monthly merge counter in Firestore. It carries the mandatory Google API
-Services User Data Policy **Limited Use** statement.
+The reviewer clicks these URLs during review — they can't be "coming soon". The
+privacy policy matches **exactly what the add-on actually does**: it reads only
+user-selected documents, processes them on a Cloud Run backend acting with the user's
+short-lived token, **stores no document content**, and keeps only a per-user monthly
+merge counter in Firestore. It carries the mandatory Google API Services User Data
+Policy **Limited Use** statement.
 
 ---
 
 ## Design decisions (change any of these if you prefer)
 
 - **Sub-path, not a subdomain.** A subfolder serves immediately on GitHub Pages with
-  zero DNS or config change, which is the least invasive way to add it. If you'd
-  rather use `docsmerge.flowextractapi.com`, that needs a DNS record + a separate
-  Pages target; the pages themselves would move unchanged (see "Moving to a real
-  domain" below).
+  zero DNS or config change. If you'd rather use `simplemerge.flowextractapi.com`,
+  that needs a DNS record + a separate Pages target; the pages themselves would move
+  unchanged (see "Moving to a real domain" below).
 - **Static, no backend.** A review landing page needs no server. The add-on's own
-  Cloud Run backend is wired inside the add-on, not to this page. Nothing here calls
-  it. (If a live "service status" badge or a server-backed contact form is ever
-  wanted, that's a separate, optional addition.)
-- **Contact email:** `flowextractapi@outlook.com` (the existing site contact from
-  `config.json`). Change it in all four HTML/CSS files if the add-on should use a
-  different support address. It appears in the footer, the "Get it" section, and the
-  privacy/terms contact sections.
+  Cloud Run backend is wired inside the add-on, not to this page.
+- **Contact email:** `flowextractapi@outlook.com` (the existing site contact). Change
+  it in all HTML files if the add-on should use a different support address.
 
 ---
 
 ## Before / around submission — action items
 
-1. **Fill in the Marketplace listing URL.** `index.html` has two `TODO` markers (the
-   header "Add to Google Docs" button and the `#get` section button) pointing at
-   `#`. Replace with the real Workspace Marketplace listing URL once the add-on is
-   published. (Not required for the *review* itself — the listing provides install —
-   but should be set before public launch.)
-2. **Point the add-on at these URLs.** In the add-on project
-   (`D:\Dev\Add-ons\simple-docs-merge\src\Code.gs`), `BRAND_DOMAIN` is a single
-   placeholder (`simpledocsmerge.example`). Set the add-on's homepage / privacy /
-   terms / support links and the **OAuth consent screen** + **Marketplace listing**
-   fields to the three URLs above. (Left unchanged here — that's the add-on repo, not
-   this site.)
-3. **Verify the domain** is confirmed in Google Search Console for the OAuth consent
-   screen — it already is for `flowextractapi.com` (`google476e7ab5832fa67e.html`
-   exists at the site root).
-4. **Sitemap:** deliberately **not** modified — updating it would change the existing
-   site's structure, and Google's reviewer does not need these pages in the sitemap.
-   If you want them indexed later, add the three URLs to `site/sitemap.xml` yourself.
+1. **Set the App name to "Simple Merge" everywhere it appears in Google's console** —
+   the OAuth **consent screen** App name and the **Marketplace listing** name. These
+   must match the manifest and this site *exactly*. (The mismatch — consent screen said
+   "Docs Merge" — is what Google flagged.)
+2. **Fill in the Marketplace listing URL.** `index.html` has `TODO` markers on the
+   "Add to Google Docs" buttons pointing at `#`. Replace with the real listing URL
+   once published.
+3. **The add-on already points here.** In the add-on
+   (`D:\Dev\Add-ons\simple-docs-merge\src\Code.gs`), `BRAND_SITE` is set to
+   `https://flowextractapi.com/simple-merge` and `BRAND.name` to `Simple Merge`. If
+   you change the domain, update `BRAND_SITE` (one line) and re-push with clasp.
+4. **Verify the domain** in Google Search Console for the OAuth consent screen — it is
+   already verified for `flowextractapi.com` (`google476e7ab5832fa67e.html` at root).
+5. **Sitemap:** deliberately **not** modified. Google's reviewer does not need these
+   pages in the sitemap. Add the three URLs to `site/sitemap.xml` yourself if you want
+   them indexed.
 
 ---
 
 ## Deploying
 
-It's a static GitHub Pages site (`FlowExtractAPI/FlowExtractAPI.github.io`), so:
+Static GitHub Pages site (`FlowExtractAPI/FlowExtractAPI.github.io`):
 
 ```bash
 cd D:\Dev\FlowExtract-API\site
-git add simple-docs-merge/
-git commit -m "Add Simple Docs Merge add-on landing + legal pages"
+git add simple-merge/
+git commit -m "Rename add-on pages: Simple Docs Merge -> Simple Merge"
 git push
 ```
 
@@ -119,9 +120,9 @@ The pages are built to move cleanly:
   `./`, `styles.css`), so the folder works at any base path or domain with no edits.
 - Only the **absolute** URLs need updating when the domain changes: the
   `<link rel="canonical">` and `og:url` tags in each HTML file (currently
-  `https://flowextractapi.com/simple-docs-merge/...`).
+  `https://flowextractapi.com/simple-merge/...`).
 
-When the dedicated domain is ready you can either move this folder to the new site's
-root (so the pages sit at `/`, `/privacy.html`, `/terms.html`) or keep the same
-sub-path — either works. Then update the canonical/og URLs, and repoint the add-on's
-consent screen + Marketplace listing to the new domain.
+When the dedicated domain (e.g. `simplemerge.app`) is ready you can move this folder to
+the new site's root so the pages sit at `/`, `/privacy.html`, `/terms.html`. Then
+update the canonical/og URLs, repoint the add-on's `BRAND_SITE`, and update the consent
+screen + Marketplace listing to the new domain.
