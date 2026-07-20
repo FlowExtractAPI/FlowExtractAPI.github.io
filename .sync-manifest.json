@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T09:26:38.789Z",
+  "generatedAt": "2026-07-20T23:44:53.577Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "7948df977848f628c5501219c52bc8c5da4119a410e68c088d34e1b0618f4d86",
@@ -142,8 +142,8 @@
       "readme": "Social-Media/youtube-transcript-metadata-extractor/README.md"
     },
     "ai-lead-extractor": {
-      "hash": "d6629fbf8bab1512416c91deaaa073ab55d09b40af51b2830287bd4ce9f630e1",
-      "syncedAt": "2026-06-24T18:21:16.504Z",
+      "hash": "685920e5b51efd584901505a3bbe9647d15fe3a950c1e8d71d05e3ffd918270e",
+      "syncedAt": "2026-07-20T23:44:53.409Z",
       "readme": "Tools/ai-lead-extractor/README.md"
     },
     "multilingual-data-transformer": {
