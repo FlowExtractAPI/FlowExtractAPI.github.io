@@ -15,12 +15,7 @@ Scrapes comprehensive ad data from any leboncoin.fr search URL. Supports all fil
   "startUrls": [
     { "url": "https://www.leboncoin.fr/recherche?category=9&locations=Paris_75001__48.8566_2.3522_10000_10000&real_estate_type=2" }
   ],
-  "maxResults": 50,
-  "proxyConfiguration": {
-    "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"],
-    "apifyProxyCountry": "FR"
-  }
+  "maxResults": 50
 }
 ```
 
@@ -31,12 +26,7 @@ Scrapes comprehensive ad data from any leboncoin.fr search URL. Supports all fil
   "startUrls": [
     { "url": "https://www.leboncoin.fr/recherche?category=2&text=citroen&kst=k&fuel=2&gearbox=2&price_max=10000" }
   ],
-  "maxResults": 100,
-  "proxyConfiguration": {
-    "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"],
-    "apifyProxyCountry": "FR"
-  }
+  "maxResults": 100
 }
 ```
 
@@ -47,12 +37,7 @@ Scrapes comprehensive ad data from any leboncoin.fr search URL. Supports all fil
   "startUrls": [
     { "url": "https://www.leboncoin.fr/recherche?category=9&locations=Lorraine_53300__48.34594_-0.56243_5000_5000&real_estate_type=2" }
   ],
-  "maxResults": 0,
-  "proxyConfiguration": {
-    "useApifyProxy": true,
-    "apifyProxyGroups": ["RESIDENTIAL"],
-    "apifyProxyCountry": "FR"
-  }
+  "maxResults": 0
 }
 ```
 
@@ -77,7 +62,62 @@ Scrapes comprehensive ad data from any leboncoin.fr search URL. Supports all fil
 |-----------|------|---------|-------------|
 | `startUrls` | array |  | One or more leboncoin.fr search URLs. All filters are parsed automatically from the URL. |
 | `maxResults` | integer | 10 | Max ads to scrape per URL. Set to `0` for unlimited (all pages). |
-| `proxyConfiguration` | object | Apify Residential | Proxy settings. French residential proxies required  leboncoin.fr geo-blocks non-EU IPs at the network level. |
+| `fetchAdDetails` | boolean | `false` | Also fetch each ad's full **description** text. See below. |
+
+That's the whole configuration  there is no proxy to set up (see below).
+
+---
+
+## 📄 Full Ad Descriptions (optional)
+
+Leboncoin **does not return ad descriptions in search results**  every search row comes
+back with an empty description, no matter which category you search. The only way to get
+the description is to open each ad individually.
+
+Turn on `fetchAdDetails` and the actor does exactly that, filling the `body` field:
+
+```json
+{
+  "startUrls": [{ "url": "https://www.leboncoin.fr/recherche?category=9" }],
+  "maxResults": 100,
+  "fetchAdDetails": true
+}
+```
+
+| | Off (default) | On |
+|---|---|---|
+| Description (`body`) |  empty | ✅ full text |
+| Price, location, seller, photos, all attributes | ✅ included | ✅ included |
+| Requests | 1 per 35 ads | **1 per ad** |
+| Speed | ~2.5 min / 1,000 ads | much slower  budget ~1 hour per 1,000 |
+| Price | base rate | base + add-on |
+
+Everything except the description is already included **without** this option. Leave it off
+unless you specifically need the description text.
+
+`hasDetailData` on each item tells you whether that ad's description was retrieved. Ads
+whose description could not be fetched are still returned  and are **never charged the
+add-on**.
+
+---
+
+## 💰 Pricing
+
+You pay per ad saved to the dataset. **No start fee**  runs that return nothing cost nothing.
+
+| Event | Free | Starter | Scale | Business |
+|---|---|---|---|---|
+| **Ad data extraction** | $1.00 / 1,000 | $0.80 / 1,000 | $0.70 / 1,000 | $0.60 / 1,000 |
+| **Full ad description (add-on)** | $3.00 / 1,000 | $1.50 / 1,000 | $1.00 / 1,000 | $0.90 / 1,000 |
+| Platform usage | Free | Free | Free | Free |
+
+The add-on applies **only** when `fetchAdDetails` is enabled, and only to ads whose description
+was successfully retrieved. It is charged **in addition to** ad data extraction, so on Starter
+1,000 ads with descriptions is $0.80 + $1.50 = $2.30.
+
+**Cost examples (Starter):** 100 ads  $0.08 · 1,000 ads  $0.80 · 10,000 ads  $8.00
+
+> 💡 Tip: set `maxResults` to 10 for a first run to check your search URL returns what you expect, then raise it.
 
 ---
 
@@ -139,9 +179,32 @@ Each scraped ad is saved as a single JSON record. Here is a real example output:
     "store_name": "Audrey Mainfray - IAD France",
     "immo_sell_type": "old"
   },
-  "_source": "leboncoin_nextjs"
+  "hasDetailData": false,
+  "raw": { "...": "leboncoin's complete original response for this ad" },
+  "_source": "leboncoin_scraper"
 }
 ```
+
+### 🧩 The `raw` field  nothing is thrown away
+
+The fields above are a **convenience view**: flattened and renamed for easy use in
+spreadsheets and the dataset views. They are deliberately simplified.
+
+**`raw` holds leboncoin's response exactly as the site returned it**, with nothing
+renamed or removed  so anything the convenience view simplifies is still available:
+
+| In `raw`, not in the flat view | Example |
+|---|---|
+| `raw.owner.siren` | Company registration number of a professional seller |
+| `raw.owner.activity_sector`, `pro_rates_link`, `no_salesmen` | Full seller record |
+| `raw.location.district`, `city_label`, `region_name`, `department_name` | Complete location record (17 fields, not 6) |
+| `raw.images.urls`, `urls_thumb`, `small_url` | All image size variants, not just large |
+| `raw.attributes[]` | Full objects `{key, value, values[], value_label, generic}`  the flat map keeps only the label, so `raw` is where the machine-readable `value` codes live |
+| `raw.has_phone`, `brand`, `ad_type`, `options`, `attributes_listing`, `is_boosted`, `similar`, `counters` | Fields with no flat equivalent |
+
+When `fetchAdDetails` is on, `raw` is the full ad payload (including the description);
+otherwise it is the search payload. Use the flat fields for convenience, `raw` when you
+need something specific  you never have to choose.
 
 ---
 
@@ -164,20 +227,30 @@ The scraper includes six pre-configured views in the Apify dataset UI:
 
 ### Speed
 
-- **100 ads** → ~10–15 seconds
-- **1,000 ads** → ~1–2 minutes
-- **5,000 ads** → ~3–5 minutes
+Measured on a full 1,000-ad extraction (35 ads per page):
 
-### Error Handling
+| Ads | Paying plans | Free plan |
+|---|---|---|
+| 100 | ~20 seconds | ~45 seconds |
+| 1,000 | **~2.5 minutes** | ~7 minutes |
+| 5,000 | ~13 minutes | ~34 minutes |
 
-- Exponential backoff with 10 retries on failed requests
-- Continues to the next URL if a URL fails entirely
-- Budget guard caps results before scraping starts  no over-fetching
+Paying plans run on a faster dedicated network, which is why they finish sooner.
+Real-world timing varies with how busy leboncoin.fr is.
+
+### Reliability
+
+- Every ad is charged once  duplicates that appear across pages or overlapping
+  search URLs are detected and skipped, never billed twice
+- Failed requests are retried automatically; a URL that cannot be finished is
+  reported and the run continues with the next one
+- The budget cap is applied *before* scraping starts, so a run never over-fetches
+- Interrupted runs (migration, timeout, abort) **resume from the last completed
+  page** instead of starting over and re-charging you
 
 ### Resource Usage
 
 - **Memory**: 512 MB max
-- **Proxy**: French residential proxies required  leboncoin.fr TCP-blocks non-EU connections
 
 ---
 
@@ -218,26 +291,63 @@ Cheap rentals in Nantes: https://www.leboncoin.fr/recherche?category=10&location
 
 ---
 
+## 🌐 Proxy Support
+
+| Your plan | Network used |
+|---|---|
+| 💎 Paying | Dedicated network  faster, fewer retries |
+| 🆓 Free | Apify Residential Proxy  built in, automatic |
+
+Proxy selection is automatic based on your Apify account plan. **There is nothing to
+configure and no proxy of your own to supply.** If the dedicated network is ever
+unavailable, the run switches over automatically and finishes rather than failing.
+
+---
+
+## 🚫 Error Handling
+
+| Situation | What you see | What to do |
+|---|---|---|
+| A pasted URL isn't a recognised leboncoin.fr search URL | An `_error` field on that item explaining why | Copy the URL straight from your browser address bar |
+| No start URLs provided | A single guidance item in the dataset | Add at least one URL to `startUrls` |
+| The run's max charge is below the price of one ad | A guidance item explaining the minimum | Raise the run's maximum total charge |
+| A search page can't be fetched after all retries | A log entry; the run moves to the next URL | Re-run later, or narrow the search |
+| An ad's description can't be fetched | The ad is still saved with `hasDetailData: false` and no add-on charge | Nothing  re-run if you need that specific description |
+
+---
+
 ## ⚠️ Important Notes
 
 - Data is extracted as-is from leboncoin.fr. Prices and availability should be verified directly with sellers.
-- **French residential proxies are required**  leboncoin.fr drops TCP connections from non-EU IP addresses.
-- The scraper uses the leboncoin.fr Next.js web endpoint. If the site structure changes, check for actor updates.
+- Leboncoin omits ad descriptions from search results. Enable `fetchAdDetails` to
+  retrieve them; everything else is included either way.
+- If the site changes, check for actor updates.
 - Users must comply with leboncoin.fr's Terms of Service and applicable data protection laws (GDPR).
 
 **The actor creator is not responsible for how users utilize the extracted data.**
 
 ---
 
-## 💬 Support & Contact
+## Support
 
 - 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
 - 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
 - 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 💬 **GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **X**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+- 🎵 **TikTok**: [@flowextractapi](https://www.tiktok.com/@flowextractapi)
+
+---
+
+## Legal & compliance
+
+- Extracts **public data only**  no login, no private or gated content.
+- Respects the source site's rate limits and terms.
+- **No personal information is stored** by this Actor; data goes only to your own dataset.
+- Suitable for commercial use.
+- **No affiliation with or endorsement by leboncoin.fr is implied.**
 
 ---
 
@@ -293,3 +403,7 @@ Extract Facebook ads data for competitor analysis and market research. Track ad 
 ---
 
 **Ready to extract leboncoin.fr data?** [Start using Leboncoin.fr Scraper now!](https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63)
+
+---
+
+*Leboncoin.fr Scraper — by FlowExtract API. Turn any website into structured data.*

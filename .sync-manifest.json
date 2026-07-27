@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-07-20T23:44:53.577Z",
+  "generatedAt": "2026-07-27T21:27:02.865Z",
   "actors": {
     "facebook-ads-scraper-pro": {
-      "hash": "7948df977848f628c5501219c52bc8c5da4119a410e68c088d34e1b0618f4d86",
-      "syncedAt": "2026-06-24T18:21:16.072Z",
+      "hash": "8c78654f99cda7fb7921afecb3233b20cc8ce35d4a86d0f9605ef525439004a9",
+      "syncedAt": "2026-07-27T21:27:01.759Z",
       "readme": "Ad-Scrapers/Facebook/facebook-ads-scraper-pro/README.md"
     },
     "facebook-ads-url": {
@@ -82,8 +82,8 @@
       "readme": "Real-Estate/idealista-scraper-api/README.md"
     },
     "leboncoin-scraper": {
-      "hash": "fa995da76a977ef42355ecd433d21d00357be7e7a0bcd1c1a6f29b07e46308a7",
-      "syncedAt": "2026-06-24T18:21:16.337Z",
+      "hash": "ab87abdbbd2662f60f13f7194cea0ff80a05cebcb1d8395223b52a9c5845b277",
+      "syncedAt": "2026-07-27T21:27:02.219Z",
       "readme": "Real-Estate/leboncoin-scraper/README.md"
     },
     "propertyfinder-scraper": {

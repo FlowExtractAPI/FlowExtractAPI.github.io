@@ -229,7 +229,7 @@
     "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-6nFfgbqBI9kumVTSl-8fmccCa7Cf-download.jpg",
     "category": "real-estate",
     "subcategory": "listings",
-    "description": "Extract listings from any leboncoin.fr search URL  price, location, seller contact, photos, surface, rooms, energy rating, and all category-specific attributes.",
+    "description": "🏷️ Scrape listings from any leboncoin.fr search URL — price, location, seller, photos, and every category-specific attribute (surface, rooms, energy rating, mileage, fuel type). Paste a search URL and get structured data back.",
     "apifyUrl": "https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63",
     "docsPath": "leboncoin-scraper",
     "readmeFile": "leboncoin-scraper.md",
