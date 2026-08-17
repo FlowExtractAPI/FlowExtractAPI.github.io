@@ -277,12 +277,16 @@
 <p>If you need to scrape comments from <strong>private groups</strong> or <strong>login-restricted content</strong>, provide a JSON array of browser cookie objects exported from your Facebook session.</p>
 <pre><code class="language-json">{
     &quot;customCookies&quot;: [
-        { &quot;name&quot;: &quot;c_user&quot;, &quot;value&quot;: &quot;100073931291073&quot; },
-        { &quot;name&quot;: &quot;xs&quot;,     &quot;value&quot;: &quot;29%3AKUx...&quot; },
-        { &quot;name&quot;: &quot;datr&quot;,   &quot;value&quot;: &quot;abc123xyz&quot; }
+        { &quot;name&quot;: &quot;c_user&quot;, &quot;value&quot;: &quot;&lt;your c_user value&gt;&quot; },
+        { &quot;name&quot;: &quot;xs&quot;,     &quot;value&quot;: &quot;&lt;your xs value&gt;&quot; },
+        { &quot;name&quot;: &quot;datr&quot;,   &quot;value&quot;: &quot;&lt;your datr value&gt;&quot; }
     ]
 }
 </code></pre>
+<blockquote>
+<p>Treat these values like a password — they grant access to your Facebook account.
+Never commit them to a repository or share them.</p>
+</blockquote>
 <h4>How to export cookies (only needed for private content)</h4>
 <ol>
 <li>Install the <a href="https://chromewebstore.google.com/detail/copy-cookies/jcbpglbplpblnagieiknmmkiamekcdg">Copy Cookies</a> Chrome extension</li>

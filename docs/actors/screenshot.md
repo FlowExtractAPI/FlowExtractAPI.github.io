@@ -410,9 +410,9 @@ Results are stored in Apify Dataset with consistent structure:
 ## 🤝 Support & Resources
 
 ### **Getting Help**
-- **📧 Email**: [fridaytechnolog@gmail.com](mailto:fridaytechnolog@gmail.com)
-- **🐙 GitHub**: [DZ-ABDLHAKIM](https://github.com/DZ-ABDLHAKIM)
-- **🐦 Twitter**: [@DZ_45Omar](https://x.com/DZ_45Omar)
+- **📧 Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
+- **🐙 GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+- **🐦 Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - **🔧 Apify**: [dz_omar](https://apify.com/dz_omar)
 
 ### Getting Help

@@ -158,12 +158,15 @@ If you need to scrape comments from **private groups** or **login-restricted con
 ```json
 {
     "customCookies": [
-        { "name": "c_user", "value": "100073931291073" },
-        { "name": "xs",     "value": "29%3AKUx..." },
-        { "name": "datr",   "value": "abc123xyz" }
+        { "name": "c_user", "value": "<your c_user value>" },
+        { "name": "xs",     "value": "<your xs value>" },
+        { "name": "datr",   "value": "<your datr value>" }
     ]
 }
 ```
+
+> Treat these values like a password — they grant access to your Facebook account.
+> Never commit them to a repository or share them.
 
 #### How to export cookies (only needed for private content)
 

@@ -231,8 +231,8 @@
   &quot;youtubeUrl&quot;: [
     { &quot;url&quot;: &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; }
   ],
-  &quot;cleaningLevel&quot;: &quot;mild&quot;,
-  &quot;includeTimestamps&quot;: true
+  &quot;transcriptOnly&quot;: true,
+  &quot;cleaningLevel&quot;: &quot;mild&quot;
 }
 </code></pre>
 <h3>Advanced Example (With Comments)</h3>
@@ -249,6 +249,7 @@
 }
 </code></pre>
 <h3>All Parameters</h3>
+<p><strong>Extraction</strong></p>
 <table>
 <thead>
 <tr>
@@ -265,18 +266,35 @@
 <td>List of YouTube video URLs (any format)</td>
 </tr>
 <tr>
+<td><code>transcriptOnly</code></td>
+<td>boolean</td>
+<td><code>false</code></td>
+<td>Skip metadata and return only the transcript. Faster and cheaper when you just need the words</td>
+</tr>
+<tr>
 <td><code>cleaningLevel</code></td>
 <td>string</td>
 <td><code>&quot;mild&quot;</code></td>
-<td><code>&quot;none&quot;</code> (raw), <code>&quot;mild&quot;</code> (remove filler), <code>&quot;aggressive&quot;</code> (clean conversations)</td>
+<td><code>&quot;none&quot;</code> (verbatim), <code>&quot;mild&quot;</code> (remove uh/um), <code>&quot;aggressive&quot;</code> (also remove conversational fluff)</td>
 </tr>
 <tr>
 <td><code>includeTimestamps</code></td>
 <td>boolean</td>
 <td><code>true</code></td>
-<td>Include precise timing for each text segment</td>
+<td>Include the per-segment timestamp array. Turn off for a smaller result — word count and duration are still returned</td>
 </tr>
+</tbody></table>
+<p><strong>Comments</strong> (optional)</p>
+<table>
+<thead>
 <tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody><tr>
 <td><code>extractcomments</code></td>
 <td>boolean</td>
 <td><code>false</code></td>
@@ -301,41 +319,103 @@
 <td>Max replies per comment. <code>0</code> = no replies (10x faster)</td>
 </tr>
 </tbody></table>
+<p><strong>Run control</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Default</th>
+<th>What It Does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>useCache</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Remember delivered videos so a restarted run resumes instead of re-processing — and re-charging — them</td>
+</tr>
+<tr>
+<td><code>maxConcurrency</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>How many videos to process in parallel. Lower it if you hit rate limits</td>
+</tr>
+<tr>
+<td><code>batchPushSize</code></td>
+<td>integer</td>
+<td><code>10</code></td>
+<td>How many videos are processed before results are delivered. Smaller batches surface results sooner</td>
+</tr>
+</tbody></table>
 <p><strong>💡 Pro tip:</strong> Start with <code>maxRepliesPerComment: 0</code> for 10x faster extraction if you don&#39;t need reply threads.</p>
 <hr>
 <h2>Output Structure</h2>
 <h3>What You Get for Every Video</h3>
 <pre><code class="language-json">{
-  &quot;videoId&quot;: &quot;1TThGG6guf0&quot;,
-  &quot;VideoURL&quot;: &quot;https://youtu.be/1TThGG6guf0&quot;,
-  &quot;Video_title&quot;: &quot;WordPress Custom Widget Development Tutorial&quot;,
-  &quot;published_Date&quot;: &quot;Aug 12, 2020&quot;,
-  &quot;Views&quot;: &quot;5,067 views&quot;,
-  &quot;likes&quot;: &quot;122&quot;,
-  
+  &quot;videoId&quot;: &quot;kOO31qFmi9A&quot;,
+  &quot;VideoURL&quot;: &quot;https://youtu.be/kOO31qFmi9A&quot;,
+  &quot;embedUrl&quot;: &quot;https://www.youtube.com/embed/kOO31qFmi9A&quot;,
+  &quot;Video_title&quot;: &quot;Introduction to Microsoft Excel 1990 with Jan Brehm&quot;,
+  &quot;published_Date&quot;: &quot;Mar 29, 2013&quot;,
+  &quot;Views&quot;: &quot;9,838,429 views&quot;,
+  &quot;likes&quot;: &quot;180K&quot;,
+
   &quot;channel&quot;: {
-    &quot;name&quot;: &quot;Codeytek Academy&quot;,
-    &quot;id&quot;: &quot;UC0SDxbLAqoKLACyEPz2wXAg&quot;,
-    &quot;subscribers&quot;: &quot;33.1K subscribers&quot;,
+    &quot;name&quot;: &quot;Jan Brehm&quot;,
+    &quot;id&quot;: &quot;UC_i2UaK1pico7jU0pqZR8fg&quot;,
+    &quot;url&quot;: &quot;https://www.youtube.com/channel/UC_i2UaK1pico7jU0pqZR8fg&quot;,
+    &quot;subscribers&quot;: &quot;9.12K subscribers&quot;,
     &quot;verified&quot;: false
   },
-  
-  &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/1TThGG6guf0/maxresdefault.jpg&quot;,
-  &quot;Description&quot;: &quot;Learn how to create custom WordPress widgets...&quot;,
-  
+
+  &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/kOO31qFmi9A/default.jpg&quot;,
+  &quot;Description&quot;: &quot;Microsoft Excel Video with Jan Brehm...&quot;,
+
   &quot;hasTranscript&quot;: true,
-  &quot;transcriptText&quot;: &quot;Hello and welcome everyone to another episode of advanced WordPress theme development. Today we&#39;re going to learn how to create custom widgets...&quot;,
-  
+  &quot;transcriptAvailability&quot;: { &quot;available&quot;: true, &quot;reason&quot;: &quot;Available&quot; },
+  &quot;transcriptText&quot;: &quot;Hey. Hey, Craig buddy. I just saw Wilson. You&#39;re showing her the projections for the new vacation package...&quot;,
+
   &quot;timestamps&quot;: [
-    { &quot;time&quot;: &quot;0:08&quot;, &quot;text&quot;: &quot;hello and welcome everyone to another&quot; },
-    { &quot;time&quot;: &quot;0:10&quot;, &quot;text&quot;: &quot;episode of advanced wordpress theme&quot; },
-    { &quot;time&quot;: &quot;0:12&quot;, &quot;text&quot;: &quot;development today we&#39;re going to learn&quot; }
+    { &quot;time&quot;: &quot;0:01&quot;, &quot;text&quot;: &quot;[Music]&quot; },
+    { &quot;time&quot;: &quot;0:04&quot;, &quot;text&quot;: &quot;Hey. Hey, Craig buddy. I just saw&quot; },
+    { &quot;time&quot;: &quot;0:07&quot;, &quot;text&quot;: &quot;Wilson. You&#39;re showing her the&quot; }
   ],
-  
-  &quot;wordCount&quot;: 2847,
-  &quot;estimatedDuration&quot;: &quot;11:23&quot;
+
+  &quot;transcriptWordCount&quot;: 481,
+  &quot;transcriptDuration&quot;: &quot;3:49&quot;,
+
+  &quot;charged&quot;: true,
+  &quot;_source&quot;: &quot;youtube_transcript_metadata_extractor&quot;,
+  &quot;source_url&quot;: &quot;https://youtu.be/kOO31qFmi9A&quot;
 }
 </code></pre>
+<p><strong>A few fields worth knowing:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Why it&#39;s there</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>transcriptAvailability.reason</code></td>
+<td>When a video has no transcript you get the reason — captions disabled, video unavailable, and so on — instead of an empty field with no explanation</td>
+</tr>
+<tr>
+<td><code>transcriptWordCount</code> / <code>transcriptDuration</code></td>
+<td>Always returned, even with <code>includeTimestamps: false</code></td>
+</tr>
+<tr>
+<td><code>charged</code></td>
+<td>Whether this row was billed. <strong>Videos without a transcript are delivered free</strong> — you still get the full metadata, at no cost, with <code>chargeSkipReason</code> explaining why</td>
+</tr>
+<tr>
+<td><code>_source</code> / <code>source_url</code></td>
+<td>Provenance, so rows stay traceable after you merge datasets</td>
+</tr>
+</tbody></table>
+<p>In <code>transcriptOnly</code> mode you get <code>videoId</code>, <code>VideoURL</code>, <code>hasTranscript</code>, <code>transcriptAvailability</code>, <code>transcriptText</code>, <code>timestamps</code> and the two transcript stats — the metadata fields are skipped.</p>
 <h3>With Comments Enabled</h3>
 <pre><code class="language-json">{
   &quot;videoId&quot;: &quot;dQw4w9WgXcQ&quot;,
@@ -366,39 +446,65 @@
 }
 </code></pre>
 <h2>Pricing &amp; Performance</h2>
-<h3>Transcript Extraction</h3>
-<ul>
-<li><strong>Free mode</strong>: 5-10 seconds per video</li>
-<li><strong>Paid mode</strong>: 3-5 seconds per video (faster infrastructure)</li>
-<li><strong>Cost</strong>: ~$0.001-0.006 per video (depending on length)</li>
-</ul>
+<h3>What You Pay</h3>
+<p>Two events, and <strong>you only pay for videos that come back with a transcript</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Free</th>
+<th>Bronze</th>
+<th>Silver</th>
+<th>Gold</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Video with transcript</strong> (per video)</td>
+<td>$0.015</td>
+<td>$0.010</td>
+<td>$0.009</td>
+<td>$0.008</td>
+</tr>
+<tr>
+<td><strong>Actor start</strong> (once per run)</td>
+<td>$0.009</td>
+<td>$0.0005</td>
+<td>$0.0005</td>
+<td>$0.0005</td>
+</tr>
+</tbody></table>
+<p><strong>Example — 100 videos on Bronze:</strong> $0.0005 start + 100 × $0.010 = <strong>$1.0005</strong></p>
+<p>A video whose captions are disabled still returns its full metadata, and is <strong>not charged</strong>.</p>
+<h3>Speed</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Typical</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Transcript only</td>
+<td>3-6 seconds per video</td>
+</tr>
+<tr>
+<td>Full metadata + transcript</td>
+<td>5-12 seconds per video</td>
+</tr>
+<tr>
+<td>Videos in parallel</td>
+<td>10 by default, tunable via <code>maxConcurrency</code></td>
+</tr>
+</tbody></table>
+<p>Runs are resumable: if a run is interrupted and restarted, <code>useCache</code> skips videos already delivered so you are never charged twice for the same video.</p>
 <h3>Comment Extraction (Optional Add-on)</h3>
-<p>Uses <a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a> in Standby Mode.</p>
-<p><strong>Pricing:</strong></p>
-<ul>
-<li>Actor start: $0.001 (once per run)</li>
-<li>Parent comments: $0.003 each</li>
-<li>Replies: $0.0015 each</li>
-</ul>
-<p><strong>Example cost for 50 comments + 100 replies:</strong></p>
-<ul>
-<li>Start: $0.01</li>
-<li>Comments: 50 × $0.003 = $0.15</li>
-<li>Replies: 100 × $0.0015 = $0.15</li>
-<li><strong>Total: $0.31</strong></li>
-</ul>
-<p><strong>With Apify subscription discounts:</strong></p>
-<ul>
-<li>Bronze: 50% off → $0.17 total</li>
-<li>Silver: 67% off → $0.13 total</li>
-<li>Gold: 73% off → $0.11 total</li>
-</ul>
+<p>Comments are gathered through <a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a>, which bills separately for parent comments and replies at its own published rates.</p>
 <p><strong>Speed impact:</strong></p>
 <ul>
 <li>Without replies: +5-10 seconds per video</li>
 <li>With replies (10 per comment): +20-40 seconds per video</li>
 </ul>
-<p>💡 <strong>Cost optimization tip:</strong> Set <code>maxRepliesPerComment: 0</code> if you don&#39;t need reply threads - you&#39;ll get 10x faster extraction and cut costs in half.</p>
+<p>💡 <strong>Cost optimization tip:</strong> Set <code>maxRepliesPerComment: 0</code> if you don&#39;t need reply threads - you&#39;ll get 10x faster extraction and cut comment costs sharply.</p>
 <hr>
 <h2>Supported YouTube URL Formats</h2>
 <p>We handle ALL YouTube URL types:</p>
@@ -407,12 +513,14 @@
 <hr>
 <h2>Pre-Configured Data Views</h2>
 <p>Save time with our built-in export templates:</p>
-<h3>1. 📊 Full Dataset</h3>
-<p><strong>Everything</strong> - Complete metadata, transcripts, timestamps, analytics<br><strong>Use for:</strong> Comprehensive analysis, data warehousing</p>
-<h3>2. 📝 Transcripts Only</h3>
-<p><strong>Focus:</strong> Transcript text, timestamps, word count, duration<br><strong>Use for:</strong> Content repurposing, subtitle generation</p>
-<h3>3. 📺 Channel Analytics</h3>
-<p><strong>Focus:</strong> Channel info, subscribers, verification, video list<br><strong>Use for:</strong> Influencer research, competitor analysis</p>
+<h3>1. 📊 Full Video Metadata, Transcripts &amp; Comments</h3>
+<p><strong>Everything</strong> - Complete metadata, transcripts, timestamps, comments<br><strong>Use for:</strong> Comprehensive analysis, data warehousing</p>
+<h3>2. 🎤 Pure Transcript Results</h3>
+<p><strong>Focus:</strong> Transcript text, timestamps, word count, duration, availability reason<br><strong>Use for:</strong> Content repurposing, subtitle generation</p>
+<h3>3. 💬 Comments Only</h3>
+<p><strong>Focus:</strong> Comment threads, counts, and any per-video comment error<br><strong>Use for:</strong> Audience sentiment, community research</p>
+<h3>4. 📺 Channels Overview</h3>
+<p><strong>Focus:</strong> Channel name, ID, URL, subscribers, verification<br><strong>Use for:</strong> Influencer research, competitor analysis</p>
 <hr>
 <h2>Quick Start Examples</h2>
 <h3>Use Case 1: Content Repurposing</h3>

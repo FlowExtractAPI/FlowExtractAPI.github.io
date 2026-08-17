@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T21:27:02.865Z",
+  "generatedAt": "2026-08-17T10:51:05.150Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "8c78654f99cda7fb7921afecb3233b20cc8ce35d4a86d0f9605ef525439004a9",
@@ -112,8 +112,8 @@
       "readme": "Real-Estate/zimmo-scraper/README.md"
     },
     "facebook-comment-scraper": {
-      "hash": "0a256fb4dc82e2a3229db0c0d0a56ffb55205c128c71127fde39cdca7b4da66e",
-      "syncedAt": "2026-06-24T18:21:16.406Z",
+      "hash": "35a81e1ede7c911269df53587647f171670e0e8791b30a22f9edff4f5137e218",
+      "syncedAt": "2026-08-17T10:51:04.837Z",
       "readme": "Social-Media/facebook-comment-scraper/README.md"
     },
     "youtube-comments-scraper": {
@@ -137,8 +137,8 @@
       "readme": "Social-Media/youtube-subtitle-translator/README.md"
     },
     "youtube-transcript-metadata-extractor": {
-      "hash": "3be4b03045795eef551957db7e8781e4a4dd170837a34ad6762aaf570675d68a",
-      "syncedAt": "2026-06-24T18:21:16.489Z",
+      "hash": "0c20ea1e0e3b1d9f9810fc56c659c89b84351e3cf335797a932a330cbe3bc976",
+      "syncedAt": "2026-08-17T10:51:04.914Z",
       "readme": "Social-Media/youtube-transcript-metadata-extractor/README.md"
     },
     "ai-lead-extractor": {
@@ -152,8 +152,8 @@
       "readme": "Tools/multilingual-data-transformer/README.md"
     },
     "screenshot": {
-      "hash": "6b5d8672a4f9a33aefc4c14fff29ce9a5c69701ad207d75bdb762824d8bd2d5b",
-      "syncedAt": "2026-06-24T18:21:16.539Z",
+      "hash": "3c8db647825df736b378322ef164d5bc4e42f1aece8745673a1af031eb85f67a",
+      "syncedAt": "2026-08-17T10:51:04.956Z",
       "readme": "Tools/screenshot/README.md"
     },
     "ultimate-screenshot": {

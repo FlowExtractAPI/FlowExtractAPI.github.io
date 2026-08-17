@@ -136,8 +136,8 @@ Paste URL → Click Start → Download data. **That's it.**
   "youtubeUrl": [
     { "url": "https://www.youtube.com/watch?v=VIDEO_ID" }
   ],
-  "cleaningLevel": "mild",
-  "includeTimestamps": true
+  "transcriptOnly": true,
+  "cleaningLevel": "mild"
 }
 ```
 
@@ -158,15 +158,31 @@ Paste URL → Click Start → Download data. **That's it.**
 
 ### All Parameters
 
+**Extraction**
+
 | Parameter | Type | Default | What It Does |
 |-----------|------|---------|-------------|
 | `youtubeUrl` | array | **Required** | List of YouTube video URLs (any format) |
-| `cleaningLevel` | string | `"mild"` | `"none"` (raw), `"mild"` (remove filler), `"aggressive"` (clean conversations) |
-| `includeTimestamps` | boolean | `true` | Include precise timing for each text segment |
+| `transcriptOnly` | boolean | `false` | Skip metadata and return only the transcript. Faster and cheaper when you just need the words |
+| `cleaningLevel` | string | `"mild"` | `"none"` (verbatim), `"mild"` (remove uh/um), `"aggressive"` (also remove conversational fluff) |
+| `includeTimestamps` | boolean | `true` | Include the per-segment timestamp array. Turn off for a smaller result — word count and duration are still returned |
+
+**Comments** (optional)
+
+| Parameter | Type | Default | What It Does |
+|-----------|------|---------|-------------|
 | `extractcomments` | boolean | `false` | Enable comment extraction (adds 10-40s per video) |
 | `sortBy` | string | `"top"` | Comment sort: `"top"` (most relevant) or `"newest"` (chronological) |
 | `maxComments` | integer | `10` | Max top-level comments (10-100,000) |
 | `maxRepliesPerComment` | integer | `0` | Max replies per comment. `0` = no replies (10x faster) |
+
+**Run control**
+
+| Parameter | Type | Default | What It Does |
+|-----------|------|---------|-------------|
+| `useCache` | boolean | `true` | Remember delivered videos so a restarted run resumes instead of re-processing — and re-charging — them |
+| `maxConcurrency` | integer | `10` | How many videos to process in parallel. Lower it if you hit rate limits |
+| `batchPushSize` | integer | `10` | How many videos are processed before results are delivered. Smaller batches surface results sooner |
 
 **💡 Pro tip:** Start with `maxRepliesPerComment: 0` for 10x faster extraction if you don't need reply threads.
 
@@ -178,36 +194,54 @@ Paste URL → Click Start → Download data. **That's it.**
 
 ```json
 {
-  "videoId": "1TThGG6guf0",
-  "VideoURL": "https://youtu.be/1TThGG6guf0",
-  "Video_title": "WordPress Custom Widget Development Tutorial",
-  "published_Date": "Aug 12, 2020",
-  "Views": "5,067 views",
-  "likes": "122",
-  
+  "videoId": "kOO31qFmi9A",
+  "VideoURL": "https://youtu.be/kOO31qFmi9A",
+  "embedUrl": "https://www.youtube.com/embed/kOO31qFmi9A",
+  "Video_title": "Introduction to Microsoft Excel 1990 with Jan Brehm",
+  "published_Date": "Mar 29, 2013",
+  "Views": "9,838,429 views",
+  "likes": "180K",
+
   "channel": {
-    "name": "Codeytek Academy",
-    "id": "UC0SDxbLAqoKLACyEPz2wXAg",
-    "subscribers": "33.1K subscribers",
+    "name": "Jan Brehm",
+    "id": "UC_i2UaK1pico7jU0pqZR8fg",
+    "url": "https://www.youtube.com/channel/UC_i2UaK1pico7jU0pqZR8fg",
+    "subscribers": "9.12K subscribers",
     "verified": false
   },
-  
-  "thumbnail": "https://i.ytimg.com/vi/1TThGG6guf0/maxresdefault.jpg",
-  "Description": "Learn how to create custom WordPress widgets...",
-  
+
+  "thumbnail": "https://i.ytimg.com/vi/kOO31qFmi9A/default.jpg",
+  "Description": "Microsoft Excel Video with Jan Brehm...",
+
   "hasTranscript": true,
-  "transcriptText": "Hello and welcome everyone to another episode of advanced WordPress theme development. Today we're going to learn how to create custom widgets...",
-  
+  "transcriptAvailability": { "available": true, "reason": "Available" },
+  "transcriptText": "Hey. Hey, Craig buddy. I just saw Wilson. You're showing her the projections for the new vacation package...",
+
   "timestamps": [
-    { "time": "0:08", "text": "hello and welcome everyone to another" },
-    { "time": "0:10", "text": "episode of advanced wordpress theme" },
-    { "time": "0:12", "text": "development today we're going to learn" }
+    { "time": "0:01", "text": "[Music]" },
+    { "time": "0:04", "text": "Hey. Hey, Craig buddy. I just saw" },
+    { "time": "0:07", "text": "Wilson. You're showing her the" }
   ],
-  
-  "wordCount": 2847,
-  "estimatedDuration": "11:23"
+
+  "transcriptWordCount": 481,
+  "transcriptDuration": "3:49",
+
+  "charged": true,
+  "_source": "youtube_transcript_metadata_extractor",
+  "source_url": "https://youtu.be/kOO31qFmi9A"
 }
 ```
+
+**A few fields worth knowing:**
+
+| Field | Why it's there |
+|-------|----------------|
+| `transcriptAvailability.reason` | When a video has no transcript you get the reason — captions disabled, video unavailable, and so on — instead of an empty field with no explanation |
+| `transcriptWordCount` / `transcriptDuration` | Always returned, even with `includeTimestamps: false` |
+| `charged` | Whether this row was billed. **Videos without a transcript are delivered free** — you still get the full metadata, at no cost, with `chargeSkipReason` explaining why |
+| `_source` / `source_url` | Provenance, so rows stay traceable after you merge datasets |
+
+In `transcriptOnly` mode you get `videoId`, `VideoURL`, `hasTranscript`, `transcriptAvailability`, `transcriptText`, `timestamps` and the two transcript stats — the metadata fields are skipped.
 
 ### With Comments Enabled
 
@@ -243,35 +277,37 @@ Paste URL → Click Start → Download data. **That's it.**
 
 ## Pricing & Performance
 
-### Transcript Extraction
-- **Free mode**: 5-10 seconds per video
-- **Paid mode**: 3-5 seconds per video (faster infrastructure)
-- **Cost**: ~$0.001-0.006 per video (depending on length)
+### What You Pay
+
+Two events, and **you only pay for videos that come back with a transcript**:
+
+| Event | Free | Bronze | Silver | Gold |
+|-------|------|--------|--------|------|
+| **Video with transcript** (per video) | $0.015 | $0.010 | $0.009 | $0.008 |
+| **Actor start** (once per run) | $0.009 | $0.0005 | $0.0005 | $0.0005 |
+
+**Example — 100 videos on Bronze:** $0.0005 start + 100 × $0.010 = **$1.0005**
+
+A video whose captions are disabled still returns its full metadata, and is **not charged**.
+
+### Speed
+
+| | Typical |
+|---|---------|
+| Transcript only | 3-6 seconds per video |
+| Full metadata + transcript | 5-12 seconds per video |
+| Videos in parallel | 10 by default, tunable via `maxConcurrency` |
+
+Runs are resumable: if a run is interrupted and restarted, `useCache` skips videos already delivered so you are never charged twice for the same video.
 
 ### Comment Extraction (Optional Add-on)
-Uses [YouTube Comments Scraper](https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63) in Standby Mode.
-
-**Pricing:**
-- Actor start: $0.001 (once per run)
-- Parent comments: $0.003 each
-- Replies: $0.0015 each
-
-**Example cost for 50 comments + 100 replies:**
-- Start: $0.01
-- Comments: 50 × $0.003 = $0.15
-- Replies: 100 × $0.0015 = $0.15
-- **Total: $0.31**
-
-**With Apify subscription discounts:**
-- Bronze: 50% off → $0.17 total
-- Silver: 67% off → $0.13 total
-- Gold: 73% off → $0.11 total
+Comments are gathered through [YouTube Comments Scraper](https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63), which bills separately for parent comments and replies at its own published rates.
 
 **Speed impact:**
 - Without replies: +5-10 seconds per video
 - With replies (10 per comment): +20-40 seconds per video
 
-💡 **Cost optimization tip:** Set `maxRepliesPerComment: 0` if you don't need reply threads - you'll get 10x faster extraction and cut costs in half.
+💡 **Cost optimization tip:** Set `maxRepliesPerComment: 0` if you don't need reply threads - you'll get 10x faster extraction and cut comment costs sharply.
 
 ---
 
@@ -294,16 +330,20 @@ Just paste any YouTube link - we'll figure it out.
 
 Save time with our built-in export templates:
 
-### 1. 📊 Full Dataset
-**Everything** - Complete metadata, transcripts, timestamps, analytics  
+### 1. 📊 Full Video Metadata, Transcripts & Comments
+**Everything** - Complete metadata, transcripts, timestamps, comments  
 **Use for:** Comprehensive analysis, data warehousing
 
-### 2. 📝 Transcripts Only
-**Focus:** Transcript text, timestamps, word count, duration  
+### 2. 🎤 Pure Transcript Results
+**Focus:** Transcript text, timestamps, word count, duration, availability reason  
 **Use for:** Content repurposing, subtitle generation
 
-### 3. 📺 Channel Analytics
-**Focus:** Channel info, subscribers, verification, video list  
+### 3. 💬 Comments Only
+**Focus:** Comment threads, counts, and any per-video comment error  
+**Use for:** Audience sentiment, community research
+
+### 4. 📺 Channels Overview
+**Focus:** Channel name, ID, URL, subscribers, verification  
 **Use for:** Influencer research, competitor analysis
 
 ---
