@@ -1,8 +1,9 @@
 ---
+---
 
 ### What does the [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) do?
 
-The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** is a powerful tool that allows users to scan IP ranges, including AWS and Google Cloud networks, to discover critical information such as services running behind Web Application Firewalls (WAFs), potential vulnerabilities, subdomains, and endpoints. It operates like a Shodan-style search engine but offers deeper insights into small companies' infrastructure that larger search engines might overlook. 
+The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** is a powerful tool that allows users to scan IP ranges, including AWS and Google Cloud networks, to discover exposed services and identify security issues.
 
 This actor is designed for security professionals, including hackers, bug bounty hunters, and penetration testers, to increase their attack surface and identify vulnerable endpoints across vast networks.
 
@@ -15,7 +16,7 @@ This actor is designed for security professionals, including hackers, bug bounty
 
 ### How to Run the [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)
 
-If you're new to [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) or ethical hacking, don't worry. The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** tool is easy to use and highly flexible. You can either use **Masscan** for a fast scan or provide a list of IP addresses to skip Masscan. Here's how:
+If you're new to [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) or ethical hacking, don't worry. The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** tool is designed to be easy to use.
 
 1. Create a free Apify account using your email.
 2. Open the [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) tool in the Apify console.
@@ -31,7 +32,7 @@ Quick [Video Tutorial](https://youtu.be/gxbYKRHLX_8) on YouTube:
 [Video Tutorial](https://youtu.be/gxbYKRHLX_8)
 
 ### Input
-To start scanning IP ranges or IP addresses, simply fill in the input form. The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** tool recognizes the following input parameters:
+To start scanning IP ranges or IP addresses, simply fill in the input form. The **[SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)** tool recognizes the following inputs:
 > [!NOTE]
 > If you are provided more than one IP range, the result won't show up until Masscan is complete from scanning all provided IP ranges.
 
@@ -96,7 +97,7 @@ To start scanning IP ranges or IP addresses, simply fill in the input form. The 
 ---
 
 #### Output
-You get the output from [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) Data Extractor stored in a tab. Here's an example of some of the output after the scan is complete :
+You get the output from [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) Data Extractor stored in a tab. Here's an example of some of the output after the scan:
 
 - **In this example I provided this input**:
 ```json
@@ -139,7 +140,6 @@ You get the output from [SSL and Web Analyzer](https://apify.com/dz_omar/network
 ```
 ![cf6f6720-2ebe-4ca5-9753-6425b9755a22](https://github.com/user-attachments/assets/a92a365f-a2fc-4c84-9a4d-e55780fd84d6)
 
-
 #### Who can benefit from using [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)?
 
 -   **Security Assessment:** Perform vulnerability assessments and identify exploitable endpoints.
@@ -164,7 +164,7 @@ You can also use **webhooks** to trigger alerts or actions whenever a scan compl
 SSL and Web Analyzer
 
 -   **How much does the [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63) cost?**
-    The pricing is based on the number of results obtained. For instance, scanning 2,000 IPs costs approximately $0.33, which includes computing units, dataset writes, and external data transfer. You can estimate that scanning 1,000 IPs would cost around $0.165. Apify provides $5 worth of credits for free on their basic plan, which allows you to scan up to 30,303 IPs per month.
+    The pricing is based on the number of results obtained. For instance, scanning 2,000 IPs costs approximately $0.33, which includes computing units, dataset writes, and external data transfer.
 -   **Is it legal to scan IPs with the [SSL and Web Analyzer](https://apify.com/dz_omar/network-security-scanner?fpr=smcx63)?**
     Yes, as long as you comply with relevant legal guidelines, such as obtaining permission to scan certain IP ranges, especially for companies or cloud providers.
 
