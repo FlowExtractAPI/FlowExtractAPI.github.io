@@ -30,21 +30,25 @@ Perfect for **educators**, **business teams**, and **content creators** who need
 ## 🔎 Complete Data Extraction
 
 ### 📹 **Video Intelligence**
-- **Metadata**: ID, title, duration, file size, start time, recording type
-- **Technical**: MP4 format, direct download URLs, quality information
-- **Recording Details**: Host information, meeting details, timestamps
+- **Metadata**: title, duration (formatted and in seconds), source file size, recorded-at
+  timestamp in ISO 8601, recording type
+- **Technical**: direct download URL for the stored video file, stored file name and size
+- **Status**: an explicit outcome and, when something did not work, a plain-language reason
 
 ### 📝 **Transcript Processing**
-- **Multiple Formats**: SRT, VTT, TXT, XML exports with precise timestamps
-- **Clean Text**: Formatted, readable content ready for analysis
-- **Search Ready**: Full-text search capabilities across your library
-- **Integration**: Compatible with video players and analysis tools
+- **Multiple Formats**: SRT, VTT, TXT and XML, each with correct start *and* end times on
+  every cue — subtitle files load in players without editing
+- **Speaker Labels**: kept wherever Zoom provides them, across all recording types
+- **Clean Text**: formatted, readable content ready for analysis
+- **Integration**: compatible with video players, subtitle tools, and NLP pipelines
 
 ### 🎯 **Multi-Platform Support**
-- **Regular Recordings**: Standard Zoom meeting recordings (zoom.us/rec/)
-- **Zoom Events**: Large-scale event recordings (events.zoom.us)
-- **Zoom Clips**: Short video clips (zoom.us/clips/)
-- **Smart Detection**: Automatic platform identification and processing
+- **Cloud Recordings**: standard Zoom meeting recordings, on commercial and vanity domains
+- **Government Recordings**: `zoomgov.com` tenants used by federal, state, and local
+  agencies — courts, city councils, public hearings, agency webinars
+- **Zoom Events**: large-scale event and session recordings
+- **Zoom Clips**: short video clips, including clips served from the dedicated clips host
+- **Smart Detection**: the surface is identified from the link — no mode to choose
 
 ---
 
@@ -54,7 +58,7 @@ Perfect for **educators**, **business teams**, and **content creators** who need
 When you accidentally enter Loom URLs, the actor provides helpful guidance:
 - Detects individual Loom videos (`loom.com/share/VIDEO_ID`)
 - Identifies Loom folders (`loom.com/share/folder/FOLDER_ID`)
-- Redirects to specialized [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper) for better results
+- Redirects to specialized [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63) for better results
 
 ### **🎥 Platform Recognition**
 - YouTube, Vimeo, and other platform detection
@@ -102,42 +106,55 @@ Process individual recordings, events, or clips:
 
 ## 📊 Sample Output Structure
 
-### **Regular Zoom Recording**
+Every link you submit produces exactly one row — including links that could not be
+read, so a link never disappears without an explanation.
+
+### **Cloud Recording** (`zoom.us` / `zoomgov.com`)
 ```json
 {
-  "url": "https://zoom.us/rec/play/9b9ZhVaccgw7DUO95__XpeBBAxB1_CjT6aLG54MqHZ_hWfTtZDKLudAu9esfQZSslb9zTknRvaHgcS51...",
-  "Title": "PICO Meeting",
-  "startTime": "2022-09-23T14:28:59.000Z",
+  "_source": "zoom-scraper",
+  "source_url": "https://usdot.zoomgov.com/rec/play/1BDKMjpmHZvv0u4iOzIJ...",
+  "url": "https://usdot.zoomgov.com/rec/play/1BDKMjpmHZvv0u4iOzIJ...",
+  "status": "success",
+  "title": "FHWA Lighting Handbook Webinar - 12 December 2023",
+  "recordingType": "recordings",
+  "startTime": "2023-12-13T03:32:47.000Z",
+  "duration": "1:54:21",
+  "duration_seconds": 6861,
+  "source_size_mb": 192,
+  "video_downloaded": false,
+  "video_url": null,
+  "video_size": null,
+  "has_transcript": true,
   "transcript_info": {
-    "transcript": "1\n00:01:03,300 --> 00:01:05,390\nWe\n\n2\n00:01:07,950 --> 00:01:08,470\nMicah Tseng: Thank you."
+    "transcript": "1
+00:00:27,970 --> 00:00:34,649
+Welcome, welcome. We'll take a few more minutes...",
+    "segment_count": 472
   },
-  "recordingType": "recordings"
+  "error": null
 }
 ```
 
-### **Zoom Events Recording**
+### **Zoom Clip**
 ```json
 {
-  "url": "https://events.zoom.us/ejl/Aj2xj4JZJL-4Xyrm5GMDX1OuCKVWyr5Eh4_w7wGGROLGXLIgJQRG...",
-  "Title": "2 Day Generative AI Mastermind | Day-1",
-  "startTime": "2025-07-26T04:30:00.000Z",
+  "_source": "zoom-scraper",
+  "url": "https://www.zoom.us/clips/share/JPZkgJFuQnesSFxNMYeLaw",
+  "status": "success",
+  "title": "2025 Freedom to Read Award Winner Bänoo Zan",
+  "recordingType": "clips",
+  "startTime": "2025-03-03T22:07:35.777Z",
+  "duration": "6:25",
+  "duration_seconds": 385,
+  "source_size_mb": 72,
+  "has_transcript": true,
   "transcript_info": {
-    "transcript": "1\n00:00:01,610 --> 00:00:02,610\nPhani Krishna - Outskill: Welcome everyone..."
-  },
-  "recordingType": "events"
-}
-```
-
-### **Zoom Clips**
-```json
-{
-  "url": "https://zoom.us/clips/share/fCRF3_4rHSwIWeTsbCC8liNDNJiBgAatqliI3jtK8g0H69WU19Hx41N4WWQ0rs0n...",
-  "Title": "John Hay PTSA Sep/Oct Membership Meeting",
-  "startTime": "2024-09-17T21:50:00.000Z",
-  "transcript_info": {
-    "transcript": "1\n00:00:00,170 --> 00:00:01,170\nThank you.\n\n2\n00:00:04,070 --> 00:00:10,070\nI think we all really need to advocate for John..."
-  },
-  "recordingType": "clips"
+    "transcript": "1
+00:00:00,000 --> 00:00:08,450
+So let's welcome this year's recipient...",
+    "segment_count": 42
+  }
 }
 ```
 
@@ -146,18 +163,44 @@ When `download_videos: true` and `downloadTranscript: true`:
 
 ```json
 {
-  "url": "https://zoom.us/rec/play/example...",
-  "Title": "PICO Meeting",
-  "startTime": "2022-09-23T14:28:59.000Z",
-  "video_url": "https://api.apify.com/v2/key-value-stores/q6VQFhKFOBks7LCTT/records/PICO_Meeting.mp4?signature=MBL7s5lCwsydbDaE707E",
+  "title": "PICO Meeting",
+  "recordingType": "recordings",
+  "duration": "34:12",
+  "video_downloaded": true,
+  "video_url": "https://api.apify.com/v2/key-value-stores/q6VQFhKFOBks7LCTT/records/PICO_Meeting.mp4?signature=...",
+  "video_name": "PICO_Meeting.mp4",
   "video_size": "206 MB",
+  "has_transcript": true,
   "transcript_info": {
-    "transcript": "1\n00:01:03,300 --> 00:01:05,390\nWe\n\n2\n00:01:07,950 --> 00:01:08,470\nMicah Tseng: Thank you.",
-    "transcript_url": "https://api.apify.com/v2/key-value-stores/ySHfyw860qMzC74Zr/records/PICO_Meeting_transcript.srt"
-  },
-  "recordingType": "recordings"
+    "transcript": "1
+00:01:03,300 --> 00:01:05,390
+Micah Tseng: Thank you.",
+    "transcript_url": "https://api.apify.com/v2/key-value-stores/ySHfyw860qMzC74Zr/records/PICO_Meeting.srt",
+    "segment_count": 318
+  }
 }
 ```
+
+### **A Link That Could Not Be Read**
+Reported, never silently dropped:
+
+```json
+{
+  "url": "https://zoom.us/j/1234567890",
+  "status": "skipped",
+  "error": "Not a recognised Zoom recording link. Supported: a cloud recording (/rec/play, /rec/share, /rec/component-page on zoom.us or zoomgov.com), a Zoom Clip (/clips/share, /clips/embed), or a Zoom Events session (events.zoom.us). Meeting join links (/j/, /w/, /my/) are not recordings.",
+  "error_code": "INVALID_URL"
+}
+```
+
+`status` is one of:
+
+| Value | Meaning |
+|---|---|
+| `success` | Everything requested was extracted |
+| `partial_success` | Metadata and transcript came back; the video file did not transfer |
+| `failed` | Zoom would not serve this recording (private, passcode-protected, expired, deleted) |
+| `skipped` | The link is not a Zoom recording link — nothing was requested from Zoom |
 
 ---
 
@@ -236,7 +279,7 @@ When `download_videos: true` and `downloadTranscript: true`:
 
 ## ⚠️ Smart Memory Management for Video Downloads
 
-When `download_videos` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
+When `download_videos` is enabled, this Actor uses **intelligent resource allocation** powered by our specialized [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) to optimize memory usage and prevent failures. The Actor automatically analyzes each video's file size and dynamically allocates the optimal amount of memory needed for successful downloads.
 
 ### ✅ **How It Works**
 
@@ -246,7 +289,7 @@ When `download_videos` is enabled, this Actor uses **intelligent resource alloca
 
 **Intelligent Timeout Management**: Download timeouts are calculated based on file size and estimated connection speed, ensuring downloads complete successfully without unnecessary waiting.
 
-**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-file-downloader) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
+**Enterprise-Grade Download Engine**: Powered by our [Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63) Actor, which provides advanced proxy support, retry mechanisms, and streaming technology for reliable downloads of any size.
 
 ### 💡 **Benefits for Users**
 
@@ -264,17 +307,22 @@ When `download_videos` is enabled, this Actor uses **intelligent resource alloca
 
 ## 📋 Supported URL Formats
 
-### **Regular Zoom Recordings**
+### **Cloud Recordings** — commercial and government
 ```
 https://zoom.us/rec/play/[RECORDING_ID]
 https://zoom.us/rec/share/[RECORDING_ID]
-https://www.zoom.us/rec/play/[RECORDING_ID]
+https://zoom.us/rec/component-page/[RECORDING_ID]
+https://us02web.zoom.us/rec/play/[RECORDING_ID]
+https://[company].zoom.us/rec/play/[RECORDING_ID]       ← vanity subdomain
+https://www.zoomgov.com/rec/play/[RECORDING_ID]         ← US government
+https://[agency].zoomgov.com/rec/share/[RECORDING_ID]   ← agency subdomain
 ```
 
 ### **Zoom Events**
 ```
-https://events.zoom.us/ejl/[EVENT_ID]
 https://events.zoom.us/video/[VIDEO_ID]
+https://events.zoom.us/evj/[EVENT]?videoId=[VIDEO_ID]
+https://events.zoom.us/ev/[EVENT_ID]
 ```
 
 ### **Zoom Clips**
@@ -282,16 +330,31 @@ https://events.zoom.us/video/[VIDEO_ID]
 https://zoom.us/clips/share/[CLIP_ID]
 https://zoom.us/clips/embed/[CLIP_ID]
 https://www.zoom.us/clips/share/[CLIP_ID]
+https://zoomclips.zoom.us/clips/share/[CLIP_ID]
 ```
+
+### **Not Recordings** (reported as `skipped`)
+```
+https://zoom.us/j/[MEETING_ID]        ← meeting join link
+https://zoom.us/w/[WEBINAR_ID]        ← webinar join link
+https://zoom.us/my/[USERNAME]         ← personal meeting room
+```
+
+On a replay page that holds several recordings ("Total 2 Recordings"), the link you
+paste decides which one is extracted — paste the link for the recording you actually
+want and you get that one, not the first on the page.
 
 ---
 
 ## 🛠️ Troubleshooting
 
 ### **Access Issues**
-- **Password Protection**: Some recordings may require passwords
-- **Expiration**: Check if recording links have expired
-- **Permissions**: Verify you have access to the recording
+- **Passcode-protected recordings cannot be read.** The actor has no browser session of
+  yours, so a recording that asks for a passcode (or a sign-in) when you open it in a
+  browser will come back as `failed`. This is a limit of server-side extraction, not a
+  bug — most `/rec/` links are protected this way.
+- **Expiration**: recordings and their download links expire; check the link still opens
+- **Permissions**: verify the recording is reachable without signing in
 
 ### **Missing Content**
 - **Transcripts**: Must be enabled by meeting host
@@ -305,7 +368,7 @@ https://www.zoom.us/clips/share/[CLIP_ID]
 
 ### **URL Format Errors**
 - **Invalid URLs**: Ensure URLs are complete and properly formatted
-- **Wrong platform**: Use [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper) for Loom URLs
+- **Wrong platform**: Use [Loom Video Scraper](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63) for Loom URLs
 - **Shortened URLs**: Use full Zoom URLs instead of shortened versions
 
 ---
@@ -314,10 +377,9 @@ https://www.zoom.us/clips/share/[CLIP_ID]
 
 The actor provides three specialized dataset views for different use cases:
 
-### **🎥 Overview View**
-- Quick summary with essential information
-- Download links for videos and transcripts
-- Recording metadata and timestamps
+### **🎬 Overview View**
+- One row per link: title, type, date, length, download link, status
+- Shows at a glance which links worked and which did not
 
 ### **🔍 Detailed View**
 - Complete recording information
@@ -343,12 +405,12 @@ The actor provides three specialized dataset views for different use cases:
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ### **Related Actors**
-- **🎬 Loom Video Scraper**: [https://apify.com/dz_omar/loom-video-scraper](https://apify.com/dz_omar/loom-video-scraper)
-- **📁 Universal File Downloader**: [https://apify.com/dz_omar/universal-file-downloader](https://apify.com/dz_omar/universal-file-downloader)
+- **🎬 Loom Video Scraper**: [https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63](https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63)
+- **📁 Universal File Downloader**: [https://apify.com/dz_omar/universal-downloader?fpr=smcx63](https://apify.com/dz_omar/universal-downloader?fpr=smcx63)
 
 ### **Technical Integration**
 This actor leverages our **Universal File Downloader** for enterprise-grade video processing:
@@ -368,13 +430,13 @@ This actor leverages our **Universal File Downloader** for enterprise-grade vide
 
 ## 🌟 Why Choose This Actor?
 
-- **✅ Multi-Platform Support**: Handles all Zoom recording types seamlessly
-- **✅ Smart URL Detection**: Automatically redirects non-Zoom URLs to appropriate actors
-- **✅ Comprehensive Output**: Rich metadata, transcripts, and video files
-- **✅ Memory Optimized**: Intelligent resource management for reliable downloads
-- **✅ Transcript Formats**: Multiple export formats for different use cases
-- **✅ Batch Processing**: Efficient handling of multiple recordings
-- **✅ Error Recovery**: Robust error handling and automatic retries
-- **✅ State Management**: Resume processing from interruption points
+- **✅ Every Zoom Surface**: cloud recordings, government tenants, clips, and events
+- **✅ Subtitle Files That Work**: correct start and end times on every cue, in four formats
+- **✅ The Right Recording**: on multi-recording pages, the link you paste is the one extracted
+- **✅ Nothing Disappears**: every link returns a row, with a reason when it could not be read
+- **✅ Smart URL Detection**: non-Zoom links are named and pointed at the right actor
+- **✅ Memory Optimized**: run resources sized from a measurement of the actual file
+- **✅ Batch Processing**: efficient handling of many recordings in one run
+- **✅ State Management**: resumes from where it stopped after an interruption
 
 Start archiving your Zoom content today with professional-grade extraction and organization!

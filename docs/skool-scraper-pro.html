@@ -114,7 +114,7 @@
 </tr>
 <tr>
 <td>🔐 <strong>Authentication</strong></td>
-<td>Optional email+password or browser cookies, shared by every section above that needs it</td>
+<td>Optional browser cookies, shared by every section above that needs it</td>
 </tr>
 </tbody></table>
 <p>A typical workflow spans separate runs: use <strong>🔍 Discover Communities</strong> to find a community → <strong>📚 Courses &amp; Classroom</strong> to extract its content → copy a post&#39;s URL from the results → <strong>💬 Comments</strong> to pull that post&#39;s comment thread.</p>
@@ -291,37 +291,46 @@
 <tr>
 <th>Method</th>
 <th>How to use</th>
-<th>When to use</th>
+<th>Gets you</th>
 </tr>
 </thead>
 <tbody><tr>
-<td><strong>Email + Password</strong> (recommended)</td>
-<td>Enter credentials in input</td>
-<td>Easiest and most reliable</td>
-</tr>
-<tr>
 <td><strong>Browser Cookies</strong></td>
-<td>Export from your browser session</td>
-<td>Use if login fails, or for advanced cases</td>
+<td>Paste your exported cookies</td>
+<td>Everything your account can see</td>
 </tr>
 <tr>
 <td><strong>None</strong></td>
 <td>Leave blank</td>
-<td>Public communities only</td>
+<td>Public content only</td>
 </tr>
 </tbody></table>
-<p>Tried in this order automatically: email + password, then cookies, then public access.</p>
+<blockquote>
+<p>🔄 <strong>Direct sign-in is temporarily paused.</strong> Skool changed how its sign-in endpoint
+works, so this actor authenticates with a browser cookie for now. It takes about a
+minute to set up (steps below) and one cookie lasts roughly a year. We&#39;re working on
+restoring one-step sign-in and will bring it back once it&#39;s reliable.</p>
+</blockquote>
+<h3>🔓 What you get without authentication</h3>
+<p>Public lessons still return their title, course, section, position and dates — but Skool
+serves the <strong>body</strong> of a lesson only to members. Without a cookie you will see empty
+<code>resources</code>, no <code>lessonVideo</code>, and no description images. If files and videos are why
+you&#39;re here, supply a cookie.</p>
 <h3>🔒 Credential Security</h3>
-<p><code>password</code> and <code>cookies</code> are marked as <strong>secret inputs</strong> on the Apify platform  encrypted at rest the moment you save them, decrypted only inside the actor&#39;s own execution environment, and never written to logs or shown in the Console. If accessed directly from storage, only ciphertext is visible. Nothing here is specific to this actor  it&#39;s the same protection Apify applies to every secret input field, isolated per user and per actor.</p>
-<h3>🍪 How to export your cookies (optional)</h3>
+<p><code>cookies</code> is marked as a <strong>secret input</strong> on the Apify platform  encrypted at rest the moment you save it, decrypted only inside the actor&#39;s own execution environment, and never written to logs or shown in the Console. If accessed directly from storage, only ciphertext is visible. Nothing here is specific to this actor  it&#39;s the same protection Apify applies to every secret input field, isolated per user and per actor.</p>
+<h3>🍪 How to get your cookie</h3>
 <ol>
 <li>Install the <a href="https://chrome.google.com/webstore/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm">Cookie-Editor extension</a> (Chrome) or <a href="https://addons.mozilla.org/en-US/firefox/addon/cookie-editor/">equivalent for Firefox</a></li>
 <li>Log in to <code>skool.com</code> and open your community</li>
 <li>Open the extension → click <strong>Export</strong></li>
 <li>Copy the JSON and paste it into the <code>cookies</code> field</li>
 </ol>
+<p>Only the <code>auth_token</code> cookie actually matters — exporting everything is simply easier
+than hunting for it.</p>
 <blockquote>
-<p>⚠️ Cookies expire over time. If extraction starts failing on content that used to work, export fresh cookies and re-run.</p>
+<p>🔁 Skool issues that cookie with about a <strong>one-year</strong> lifetime, so in practice you paste
+it once and forget about it. If extraction starts failing on content that used to work,
+export a fresh one and re-run.</p>
 </blockquote>
 <h3>🔒 What happens with locked/private content</h3>
 <p>If a post or community genuinely requires membership you don&#39;t have, the actor returns a clear, immediate error explaining that authentication or membership is required  rather than hanging, retrying forever, or silently returning nothing.</p>
@@ -331,6 +340,108 @@
 <li><strong>Resumable runs</strong>: if a run is interrupted  a platform restart, a timeout, or you stopping it yourself  starting it again picks up close to where it left off instead of starting over from scratch. This applies across every section: classroom/lesson progress, feed pagination, and comment-thread pagination are all checkpointed as the run goes.</li>
 <li><strong>Automatic handling of temporary blocks</strong>: occasional anonymous-request blocks are retried automatically before any error is surfaced to you.</li>
 </ul>
+<hr>
+<h2>💵 Pricing</h2>
+<p>You pay per result, not per minute — nothing is charged for the actor thinking, waiting,
+or retrying. Every charge is tied to something delivered, and <strong>anything that fails or
+returns nothing is not charged at all</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>You get</th>
+<th>You pay (Free plan)</th>
+<th>Per 1,000</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A lesson</td>
+<td>$0.0100</td>
+<td>$10.00</td>
+</tr>
+<tr>
+<td>A community feed post</td>
+<td>$0.0050</td>
+<td>$5.00</td>
+</tr>
+<tr>
+<td>A comment</td>
+<td>$0.0012</td>
+<td>$1.20</td>
+</tr>
+<tr>
+<td>A discovered community</td>
+<td>$0.0060</td>
+<td>$6.00</td>
+</tr>
+<tr>
+<td>A downloaded file (PDF, template, image)</td>
+<td>$0.0025</td>
+<td>$2.50</td>
+</tr>
+<tr>
+<td>A Skool-hosted video passed to the downloader</td>
+<td>$0.0080</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Starting the actor</td>
+<td>$0.0080</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p>Prices drop by roughly <strong>3.5×</strong> on paid Apify plans — a lesson costs $0.0028 and a comment
+$0.00034 at the top tier.</p>
+<h3>What a real run costs</h3>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Free plan</th>
+<th>Top tier</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One lesson with 8 attached templates</td>
+<td>$0.038</td>
+<td>$0.011</td>
+</tr>
+<tr>
+<td>A 25-lesson course with files and videos</td>
+<td>$0.53</td>
+<td>$0.15</td>
+</tr>
+<tr>
+<td>1,000 comments from one post</td>
+<td>$1.21</td>
+<td>$0.34</td>
+</tr>
+<tr>
+<td>500 community feed posts</td>
+<td>$2.51</td>
+<td>$0.70</td>
+</tr>
+<tr>
+<td>100 discovered communities</td>
+<td>$0.61</td>
+<td>$0.17</td>
+</tr>
+</tbody></table>
+<h3>Nothing is charged as a bundle</h3>
+<p>A lesson with no attachments costs one lesson charge. A lesson with fourteen PDFs costs
+one lesson charge plus fourteen file charges — you pay for what actually arrives. Files
+that fail to download, external links that aren&#39;t files, and videos embedded from YouTube
+or Loom are never charged.</p>
+<h3>Videos</h3>
+<p>Skool-hosted videos are fetched by a separate download service, which bills you for the
+download itself. The charge above covers only stream resolution and quality selection on
+this side. All in, an 85 MB 1080p lesson video works out to roughly <strong>1.7¢</strong> on the Free
+plan. Videos embedded from YouTube, Loom or Vimeo are returned as metadata and cost
+nothing extra.</p>
+<h3>Setting a limit</h3>
+<p>Use <strong>Maximum cost per run</strong> to cap any run. The limit is applied <em>before</em> extraction
+starts: the actor works out how much your budget covers and scales the run down to fit,
+rather than starting work it cannot finish. If the cap is too small for even one result,
+the run ends cleanly and tells you — it doesn&#39;t fail or charge you.</p>
 <hr>
 <h2>📊 Sample Output</h2>
 <p>All rows share one dataset, distinguished by a <code>type</code> field. Use the Output tab&#39;s view switcher to see each kind on its own.</p>
@@ -454,13 +565,13 @@
 <ul>
 <li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
 <li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
-<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">dz_omar</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
 <li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
 </ul>
 <h3>Social Media</h3>
 <ul>
 <li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
-<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
 <li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
 </ul>
 <hr>
@@ -481,7 +592,6 @@
 <ul>
 <li><strong><a href="https://apify.com/dz_omar/universal-downloader?fpr=smcx63">Universal Downloader</a></strong>  Download any file type with proxy support</li>
 <li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong>  Advanced website screenshot tool</li>
-<li><strong><a href="https://apify.com/dz_omar/n8n-workflow-server?fpr=smcx63">n8n Workflow Server</a></strong>  Run n8n automation on Apify</li>
 </ul>
 <h3>📱 Social &amp; Ads</h3>
 <ul>

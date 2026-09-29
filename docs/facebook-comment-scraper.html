@@ -252,17 +252,36 @@
 }
 </code></pre>
 <blockquote>
-<p>💡 <strong>How limits interact with replies:</strong> <code>maxCommentsPerUrl</code> controls how many <strong>top-level comments</strong> are collected. Replies are always fetched for all collected top-level comments regardless of that limit. For example, <code>maxCommentsPerUrl: 10</code> with <code>fetchReplies: true</code> gives you 10 top-level comments plus all their replies and sub-replies.</p>
+<p>💡 <strong>How limits interact with replies:</strong> <code>maxCommentsPerUrl</code> controls how many <strong>top-level comments</strong> are collected. It does not limit replies. Use <code>maxRepliesPerComment</code> for that.</p>
 </blockquote>
 <blockquote>
-<p>⚠️ Enabling reply fetching significantly increases request count and run time, especially on posts with deep reply threads.</p>
+<p>⚠️ Reply counts on Facebook are very uneven. Most comments have no replies at all, while a single popular one can carry 80 or more — and those few threads dominate run time and cost. If you enable replies, consider setting <code>maxRepliesPerComment</code> to keep runs predictable.</p>
+</blockquote>
+<hr>
+<h4><code>maxRepliesPerComment</code> (Integer  optional)</h4>
+<p>Caps how many replies are collected from each top-level comment.</p>
+<ul>
+<li><strong>Default</strong>: <code>0</code>  unlimited (every reply in every thread)</li>
+<li>The cap covers the <strong>whole thread</strong> under a comment: direct replies and any nested sub-replies count toward the same number.</li>
+<li>Only applies when <code>fetchReplies</code> is <code>true</code>.</li>
+<li>The actor stops requesting further reply pages as soon as the cap is met, so a low value also makes runs noticeably faster on posts with large threads.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;urls&quot;: [{ &quot;url&quot;: &quot;https://www.facebook.com/photo?fbid=1450353236655661&quot; }],
+    &quot;maxCommentsPerUrl&quot;: 100,
+    &quot;fetchReplies&quot;: true,
+    &quot;maxRepliesPerComment&quot;: 5
+}
+</code></pre>
+<blockquote>
+<p>💡 This is a <strong>maximum</strong>, not a target. A comment with 2 replies still returns 2 when the cap is 5  the cap only truncates threads that exceed it.</p>
 </blockquote>
 <hr>
 <h4><code>maxCommentsPerUrl</code> (Integer  optional)</h4>
 <ul>
 <li><strong>Default</strong>: <code>10</code></li>
 <li>Set to <code>0</code> or <code> </code> for unlimited  fetches all available top-level comments</li>
-<li>This limit applies to <strong>top-level comments only</strong>. Replies are fetched separately when <code>fetchReplies</code> is enabled and are not counted toward this limit.</li>
+<li>This limit applies to <strong>top-level comments only</strong>. Replies are fetched separately when <code>fetchReplies</code> is enabled and are not counted toward this limit  cap those with <code>maxRepliesPerComment</code>.</li>
 <li>The actor stops paginating for new top-level comments as soon as this limit is reached.</li>
 </ul>
 <pre><code class="language-json">{
@@ -477,7 +496,7 @@ Yes, but you must provide cookies from an account that is a member of that group
 <h3>Social Media</h3>
 <ul>
 <li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
-<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
 <li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
 </ul>
 <hr>

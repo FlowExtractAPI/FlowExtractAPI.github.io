@@ -589,7 +589,7 @@ This actor extracts **publicly available** playlist and video metadata from YouT
 
 **📧 Email:** [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)  
 **🌐 Website:** [flowextractapi.com](https://flowextractapi.com)  
-**🐦 Twitter:** [@FlowExtractAPI](https://x.com/@FlowExtractAPI)  
+**🐦 Twitter:** [@FlowExtractAPI](https://x.com/FlowExtractAPI)  
 **💼 LinkedIn:** [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
 
 ---

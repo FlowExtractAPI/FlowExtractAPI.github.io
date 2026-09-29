@@ -1,6 +1,6 @@
 # 🔍 Facebook Ads Scraper Pro - Ad Library Intelligence
 
-**Extract comprehensive data from Facebook's Ad Library** with real-time streaming, advanced filtering, and standby mode support.
+**Extract comprehensive data from Facebook's Ad Library** with real-time batch pushing, advanced filtering, and full ad-detail enrichment.
 
 > **Search Keywords & Advertisers & URLs → Stream Real-Time Ad Data → Get Complete Analytics**
 
@@ -17,28 +17,50 @@ https://www.youtube.com/watch?v=yNSIhZcDlNY
 
 ## 💎 Pricing Tiers - Choose Your Plan
 
-### **FREE TIER** ✅ 
-Get started with no upfront cost
+The Actor automatically detects whether your Apify account is on a **free** or a **paid** plan — you don't configure anything. The plan decides two things: how many results a single run returns, and which proxy network the run uses.
+
+| | **Free plan** | **Paid plan** |
+|---|---|---|
+| **Results per run** | **200 maximum** (a sample) | ♾️ Unlimited |
+| **Proxy network** | Apify Proxy (shared residential pool) | Dedicated premium proxy |
+| **Ad Library data & fields** | Full — nothing is stripped out | Full |
+| **All filters & search modes** | ✅ Included | ✅ Included |
+| **Media assets (images & video)** | ✅ Included | ✅ Included |
+| **Best for** | Evaluating the output before you commit | Production, agencies, large datasets |
+
+---
+
+### **FREE PLAN** ✅ — try before you subscribe
+Get started with no upfront cost. You get the **complete data shape**, just not the complete dataset.
 
 **Included:**
-- ✅ Full access to Facebook Ad Library data
+- ✅ Full access to Facebook Ad Library data — every field, nothing redacted
 - ✅ Multi-language & multi-country filtering
 - ✅ Real-time batch pushing (results appear as they're collected)
 - ✅ Complete media asset extraction (images & videos)
 - ✅ All filtering options (date ranges, platforms, categories)
 
-**Trade-offs:**
-- ⚠️ Shared proxy infrastructure
-- ⚠️ Occasional connection interruptions
-- ⚠️ Best for small to medium projects (< 500 ads)
+**Limits:**
+- 🔒 **200 results per run — a hard cap**, counted across the *whole run*, not per query.
+  A free run asking for 5 keywords × 100 results still stops at 200 results in total.
+  The run then finishes normally (`SUCCEEDED`) — a short result set is the cap, not a failure.
+- ⚠️ Apify Proxy (shared residential pool) only — the dedicated premium proxy is a paid-plan benefit
+- ⚠️ Occasional connection interruptions on the shared pool
+
+**Think of a free run as a free sample.** Run your real query, inspect the fields, check the ad
+creatives and the EU reach data, confirm it fits your pipeline — then subscribe and re-run the
+exact same input to get everything.
+
+👉 **[Subscribe to a paid Apify plan](https://console.apify.com/billing/subscription)** to remove the 200-result cap.
 
 ---
 
-### **PAID TIER** ⭐ *RECOMMENDED FOR PRODUCTION*
-Upgrade for **enterprise-grade reliability**
+### **PAID PLAN** ⭐ *RECOMMENDED FOR PRODUCTION*
+Upgrade for **unlimited results and enterprise-grade reliability**
 
-**All Free Tier features PLUS:**
-- 🚀 **Dedicated premium proxy** - Your own reliable connection
+**All Free Plan features PLUS:**
+- 🚀 **No 200-result cap** - Every run returns the full result set
+- 🚀 **Dedicated premium proxy** - Your own reliable connection, not the shared pool
 - 🚀 **No rate limiting** - Unlimited continuous scraping
 - 🚀 **100% success rate** - Stable, uninterrupted operations
 - 🚀 **Extract ∞+ ads per query** - No slowdowns or blocks
@@ -46,11 +68,55 @@ Upgrade for **enterprise-grade reliability**
 - 🚀 **Consistent performance** - No random connection errors
 
 **Why upgrade?**
+- **Get all your data**: The 200-result sample cap is lifted entirely
 - **Avoid interruptions**: Your dedicated proxy won't hit Facebook's rate limits
 - **Reliability**: No HTTP errors or temporary blocks
 - **Scale effortlessly**: Handle large datasets with perfect stability
 - **Best for agencies**: Reliable results for client reports and production systems
 - **Zero downtime**: 24/7 stable scraping without worries
+
+---
+
+## 🔒 The Free-Plan 200-Result Cap, in Detail
+
+**What it is:** a free-plan run pushes at most **200 results in total**, then stops cleanly.
+
+**How it behaves:**
+
+- The cap is **run-wide**, not per keyword, per URL or per advertiser. Five queries at
+  `maxResultsPerQuery: 100` will not return 500 results on a free plan — they return 200.
+- The run **still succeeds**. It is not an error, a crash, or a block.
+- You are **never charged for results you don't receive** — the cap is applied before billing,
+  so a capped run bills for exactly the results in your dataset.
+- Once the cap is reached the Actor **stops fetching immediately** — it doesn't keep making
+  requests for ads it can't give you.
+- Every free run states the cap **twice**: once at the start of the log, and once in the
+  finish summary and the run's status message.
+
+**What you'll see in the log when a free run hits the cap:**
+
+```
+════════════════════════════════════════════════════════════════════════════════
+🔒 FREE PLAN SAMPLE — 200 of a possible unlimited results returned
+════════════════════════════════════════════════════════════════════════════════
+   This run stopped at the free-plan limit of 200 results.
+   What you are looking at is a SAMPLE — the full result set is larger.
+
+   👉 Subscribe to any paid Apify plan to unlock ALL results:
+      https://console.apify.com/billing/subscription
+════════════════════════════════════════════════════════════════════════════════
+```
+
+**And on the finished run header:**
+
+```
+✅ Sample complete: 200 results (free-plan limit of 200 per run reached).
+   Subscribe to a paid Apify plan to unlock all results.
+```
+
+**To remove the cap:** [subscribe to any paid Apify plan](https://console.apify.com/billing/subscription)
+and re-run the same input. Nothing in your Actor input changes — the Actor detects the upgrade
+automatically on the next run.
 
 ---
 
@@ -144,7 +210,23 @@ You can provide URLs alongside keyword and advertiser searches  all run sequenti
 
 `maxResultsPerQuery` controls the maximum ads collected per URL, per advertiser page, and per keyword query.
 
+> 🔒 **On a free Apify plan, every run stops at 200 results in total** — across all URLs,
+> advertisers and queries combined — no matter what `maxResultsPerQuery` is set to.
+> That's your free sample. [Subscribe to a paid plan](https://console.apify.com/billing/subscription)
+> to unlock the full result set with the same input.
+
 ---
+
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     Standby mode (the always-on HTTP API server and its NDJSON streaming
+     endpoints) is switched off for this Actor right now, so the sections below
+     are commented out rather than deleted. The code is untouched — only this
+     documentation is hidden. Uncomment this block (and the two other
+     "STANDBY MODE — CURRENTLY DISABLED" blocks further down) if standby is
+     ever re-enabled.
+     ============================================================================
 
 ### Option 3: Run in Standby Mode (Recommended) ⭐
 
@@ -250,6 +332,8 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
   > results.ndjson
 ```
 
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
+
 ---
 
 ## 📋 Input Parameters
@@ -259,7 +343,7 @@ curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
 | `URLAds` | array | `[]` | Facebook Ad Library URLs to scrape directly (new in v0.2) |
 | `searchQueries` | array | `[]` | Keywords to search (e.g., `["nike", "adidas"]`) |
 | `searchAdvertisers` | array | `[]` | Advertiser names or page IDs |
-| `maxResultsPerQuery` | integer | `10` | Max ads per URL / per query / per advertiser page |
+| `maxResultsPerQuery` | integer | `10` | Max ads per URL / per query / per advertiser page. **Free plan:** the run still stops at 200 results in total regardless of this value |
 | `batchSize` | integer | `30` | Ads per batch request |
 | `countries` | array/string | `["ALL"]` | Country codes (e.g., `["US", "GB", "FR"]`) |
 | `contentLanguages` | array | `[]` | Language codes (e.g., `["en", "es", "fr"]`) |
@@ -386,6 +470,14 @@ By default, each result contains the core ad data. Enable `enrichWithAdDetails` 
 
 ---
 
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     The NDJSON stream below is the standby HTTP server's response format.
+     With standby off, results are delivered to the run's dataset instead —
+     see "Ad Data Structure" immediately after this block.
+     ============================================================================
+
 ## 📤 Response Format (NDJSON Stream)
 
 Each line is a JSON object representing real-time data. Process line-by-line as they arrive:
@@ -447,6 +539,8 @@ Each line is a JSON object representing real-time data. Process line-by-line as 
 ```json
 {"type":"complete","timestamp":"2026-01-25T23:14:45Z"}
 ```
+
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
 
 ---
 
@@ -640,6 +734,14 @@ URLs, keywords, and advertisers all in one run:
 
 ---
 
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     Everything below until the END marker documents standby mode, which is
+     switched off for this Actor. Kept here (commented, not deleted) so it can
+     be restored verbatim if standby is re-enabled.
+     ============================================================================
+
 ## 🔄 Standby Mode Deep Dive
 
 ### What is Standby Mode?
@@ -779,16 +881,21 @@ Content-Type: application/json
 4. **Monitor Performance:** Track response times and errors
 5. **Set Reasonable Limits:** Don't request 10,000 ads if you need 100
 
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
+
 ---
+
+## ⚙️ Limits & Capacity
 
 | Aspect | Details |
 |--------|---------|
 | **Requests** | No hard limit, respects Facebook's rate limits |
-| **Batch Size** | Default 30 ads, configurable 10-100 |
+| **Page size** | ~10 ads per request — a Facebook-side cap, not a setting |
 | **Results per Query** | 1-10,000 ads per query |
-| **Concurrent Requests** | Unlimited (standby mode scales automatically) |
-| **Response Time** | Real-time streaming - results as they arrive |
-| **Memory Usage** | No limits - stream handles 1000s of ads |
+| **Results per Run (free plan)** | **200 total** — a sample; subscribe to unlock all results |
+| **Results per Run (paid plan)** | Unlimited — bounded only by your own `maxResultsPerQuery` and budget |
+| **Delivery** | Real-time batch pushing — results appear in the dataset as they arrive |
+| **Memory Usage** | No limits - handles 1000s of ads |
 
 ---
 
@@ -823,10 +930,16 @@ Server automatically handles Apify platform migrations:
 - **Limited data**: Increase `maxResultsPerQuery` or expand date ranges
 - **Missing recent ads**: Facebook may have indexing delays
 
-### **Connection Issues (Free Tier)**
-- **Intermittent failures**: Consider upgrading to Paid tier for stability
+### **Free Plan Issues**
+- **"I only got 200 results"**: That's the free-plan cap, not a bug — it applies to the whole
+  run, not per query. [Subscribe to a paid plan](https://console.apify.com/billing/subscription)
+  and re-run the same input to get everything. See *The Free-Plan 200-Result Cap, in Detail* above.
+- **"The run finished early"**: Check the end of the log for the `🔒 FREE PLAN SAMPLE` banner —
+  if it's there, the run stopped at the cap and completed successfully.
+- **Intermittent failures**: Free runs use the shared Apify Proxy pool. Upgrading to a paid plan
+  switches you to the dedicated premium proxy for stability.
 - **Slow performance**: Reduce batch size or split into multiple smaller runs
-- **Rate limiting errors**: Wait a few minutes before retrying, or upgrade to Paid
+- **Rate limiting errors**: Wait a few minutes before retrying, or upgrade to a paid plan
 
 ### **Geographic Filtering**
 - **Empty countries String**: Use `"ALL"` for global targeting
@@ -840,8 +953,8 @@ Server automatically handles Apify platform migrations:
 
 ### **Performance Optimization**
 - **Large datasets**: Use date ranges to limit scope
-- **Free tier limits**: Consider Paid tier for 1000+ ads per query
-- **Better results**: Upgrade to Paid tier for enterprise-grade stability
+- **Free plan limits**: Free runs stop at 200 results in total — subscribe to a paid plan for 1000+ ads per query
+- **Better results**: Upgrade to a paid plan for the dedicated proxy and enterprise-grade stability
 
 ---
 
@@ -876,7 +989,7 @@ Server automatically handles Apify platform migrations:
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ## 🌟 Related Actors by FlowExtract API

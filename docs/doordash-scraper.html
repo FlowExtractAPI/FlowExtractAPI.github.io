@@ -178,13 +178,6 @@
 </tr>
 </thead>
 <tbody><tr>
-<td><code>address</code></td>
-<td>string</td>
-<td>✅</td>
-<td>Chicago, IL</td>
-<td>Delivery address for location-aware results. <strong>Important:</strong> DoorDash results depend on location  always set this.</td>
-</tr>
-<tr>
 <td><code>startUrls</code></td>
 <td>array</td>
 <td>✅</td>
@@ -192,11 +185,25 @@
 <td>One or more DoorDash search or store URLs</td>
 </tr>
 <tr>
+<td><code>address</code></td>
+<td>string</td>
+<td>❌</td>
+<td><code>233 S Wacker Dr, Chicago, IL 60606</code></td>
+<td>Full street address the results are scoped to. See below  this decides which stores you get.</td>
+</tr>
+<tr>
 <td><code>maxResults</code></td>
 <td>integer</td>
 <td>❌</td>
 <td>10</td>
-<td>Max stores to scrape per search URL. <code>0</code> = no limit. Ignored in store mode.</td>
+<td>Max stores per URL. <code>0</code> = no limit. Ignored in store mode. Run total = this × number of URLs.</td>
+</tr>
+<tr>
+<td><code>includeMenu</code></td>
+<td>boolean</td>
+<td>❌</td>
+<td>true</td>
+<td>Keep every menu category and item. Turn off for a much smaller dataset  featured items are kept either way.</td>
 </tr>
 <tr>
 <td><code>fetchReviews</code></td>
@@ -214,8 +221,31 @@
 </tr>
 </tbody></table>
 <h3>Address Field  Why It Matters</h3>
-<p>DoorDash results are entirely location-dependent. A search for &quot;pizza&quot; in New York returns completely different stores from the same search in Los Angeles. If you leave this field blank, the Actor defaults to <strong>Chicago, IL</strong> and you may get results from the wrong area.</p>
-<p>Always set <code>address</code> to match the city or neighborhood you want to scrape.</p>
+<p>DoorDash results are entirely location-dependent. A search for &quot;pizza&quot; in New York returns completely different stores from the same search in Los Angeles  along with different fees, delivery ETAs and open/closed status.</p>
+<p><strong>Use a full street address.</strong> DoorDash resolves this field through a street-address lookup, not a city lookup. A city name on its own is matched against nearby <em>business names</em> and can silently place your run in another state  <code>Chicago, IL</code> resolves to a business called &quot;Chicago Illinois&quot; in Bloomfield Hills, Michigan.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>What DoorDash actually uses</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Chicago, IL</code></td>
+<td>❌ Bloomfield Hills, MI</td>
+</tr>
+<tr>
+<td><code>Paris, France</code></td>
+<td>❌ Santa Ana, CA</td>
+</tr>
+<tr>
+<td><code>233 S Wacker Dr, Chicago, IL 60606</code></td>
+<td>✅ Chicago, IL</td>
+</tr>
+</tbody></table>
+<p>Every run logs the location it actually used, and warns when the resolved area doesn&#39;t match what you typed  so you can always tell which city your data describes.</p>
+<p>DoorDash operates in the <strong>US, Canada, Australia and New Zealand</strong>. An address outside those falls back to the closest match DoorDash recognises.</p>
+<p>Leave the field blank to use the default Chicago street address.</p>
 <h3>Supported URL Formats</h3>
 <table>
 <thead>
@@ -243,6 +273,18 @@
 <tr>
 <td>Store (full URL)</td>
 <td><code>https://www.doordash.com/store/145565?cursor=...</code></td>
+</tr>
+<tr>
+<td>Locale-prefixed</td>
+<td><code>https://www.doordash.com/en-US/store/145565</code>  <code>https://www.doordash.com/en-CA/search/store/pizza</code></td>
+</tr>
+<tr>
+<td>Without <code>https://</code></td>
+<td><code>www.doordash.com/store/145565</code>  <code>/store/145565</code></td>
+</tr>
+<tr>
+<td>Link to a file of URLs</td>
+<td>Any public <code>.txt</code> with one DoorDash URL per line (the <em>Link to a file with URLs</em> option)</td>
 </tr>
 </tbody></table>
 <p>DoorDash filter parameters in the URL (star rating, price range, DashPass, ETA, etc.) are honored automatically.</p>
@@ -744,6 +786,86 @@
 <p>All review records in a flat table  one row per customer review.</p>
 <p><strong>Fields:</strong> record type, store ID, review ID, star rating, reviewer name, review text, reviewed at, verified status, tagged item IDs, marked-up text, reviewer info, experience, source</p>
 <hr>
+<h2>💰 Pricing</h2>
+<p>This Actor uses <strong>pay-per-event</strong> pricing: you pay for the records you actually receive, not for runtime. There is no platform-usage charge on top  compute is included in the prices below.</p>
+<h3>What you pay for</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>When it is charged</th>
+<th>Free</th>
+<th>Bronze</th>
+<th>Silver</th>
+<th>Gold+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Store Result</strong></td>
+<td>One per store saved to the dataset</td>
+<td>$0.006</td>
+<td>$0.004</td>
+<td>$0.003</td>
+<td>$0.002</td>
+</tr>
+<tr>
+<td><strong>Customer Review</strong></td>
+<td>One per review saved to the dataset</td>
+<td>$0.001</td>
+<td>$0.0008</td>
+<td>$0.0006</td>
+<td>$0.0005</td>
+</tr>
+</tbody></table>
+<p>Reviews are only charged when <strong>Fetch reviews</strong> is enabled.</p>
+<h3>What it costs in practice</h3>
+<table>
+<thead>
+<tr>
+<th>What you want</th>
+<th>Events</th>
+<th>Free tier</th>
+<th>Gold tier</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>100 stores, no reviews</td>
+<td>100 stores</td>
+<td><strong>$0.60</strong></td>
+<td><strong>$0.20</strong></td>
+</tr>
+<tr>
+<td>1,000 stores, no reviews</td>
+<td>1,000 stores</td>
+<td><strong>$6.00</strong></td>
+<td><strong>$2.00</strong></td>
+</tr>
+<tr>
+<td>100 stores + 10 reviews each</td>
+<td>100 stores + 1,000 reviews</td>
+<td><strong>$1.60</strong></td>
+<td><strong>$0.70</strong></td>
+</tr>
+<tr>
+<td>1 store with all its reviews (~250)</td>
+<td>1 store + 250 reviews</td>
+<td><strong>$0.256</strong></td>
+<td><strong>$0.127</strong></td>
+</tr>
+</tbody></table>
+<h3>You are only charged for delivered records</h3>
+<ul>
+<li>A store is charged <strong>once</strong>, when its record is written to the dataset. Stores that turn out to be unavailable, blocked, or missing are skipped and <strong>never charged</strong>.</li>
+<li>Duplicate stores across overlapping search URLs are removed before charging, so the same store is never billed twice in a run.</li>
+<li>If a URL can&#39;t be used, the run ends with a short explanation record  and no charge.</li>
+<li><code>includeMenu</code> does not change the price. A store costs the same with or without its menu, so switch the menu off when you don&#39;t need it: the record drops from roughly 100 KB to 22 KB with no change to your bill.</li>
+</ul>
+<h3>Capping your spend</h3>
+<p>Set <strong>Max total charge</strong> on the run and the Actor reads that limit <em>before</em> it starts fetching, then scrapes only what the budget covers rather than stopping part-way through.</p>
+<pre><code>Max total charge: $0.02  →  Budget guard: $0.02 covers 3 store(s) — lowering the target from 10 to 3
+</code></pre>
+<p>Every store you are charged for is delivered  the run stops at the limit, it never bills for a record it doesn&#39;t write.</p>
+<hr>
 <h2>⚠️ Important Notes</h2>
 <h3>Data Accuracy</h3>
 <ul>
@@ -754,7 +876,7 @@
 <ul>
 <li>When <code>fetchReviews</code> is disabled, no review records are pushed  not even preview reviews</li>
 <li>When <code>fetchReviews</code> is enabled, up to <code>maxReviews</code> reviews are pushed per store (set to <code>0</code> for all)</li>
-<li>Review fetching is billed separately from store detail extraction</li>
+<li>Reviews are billed as their own event, separately from stores  see <a href="#-pricing">Pricing</a></li>
 </ul>
 <h3>Legal Considerations</h3>
 <p>This Actor extracts publicly available data from DoorDash. Users must:</p>
@@ -776,7 +898,7 @@
 <h3>Social Media</h3>
 <ul>
 <li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
-<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
 <li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
 </ul>
 <hr>

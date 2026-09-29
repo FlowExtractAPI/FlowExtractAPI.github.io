@@ -1,25 +1,29 @@
-# TikTok Video Downloader
+# TikTok Transcript & Video Scraper
 
-Download TikTok videos without watermark. Extract direct download links from TikTok URLs with full metadata including views, likes, shares, and comments.
+Turn any TikTok URL into structured data. Get the spoken transcript, 58 metadata fields, creator profile stats, and an optional watermark-free MP4 download. No login, no API key.
 
 ## Features
 
-- 🎬 **Extract Video URLs** - Get direct playable video links from TikTok
-- 📊 **Full Metadata** - Views, likes, shares, comments, duration, quality
-- 💾 **Optional Download** - Store videos in Apify Key-Value Store with persistent links
-- 🔄 **Resumable Runs** - State persistence for interrupted runs
-- 🎯 **FPS Selection** - Choose between 30 or 60 FPS quality
-- 🔁 **Auto Retry** - Automatic retry with exponential backoff for failed requests
-- 🌐 **Proxy Support** - Built-in proxy configuration for better success rates
+- 📝 **Transcripts** - Spoken content as plain text, timestamped segments, SRT or WebVTT
+- 🌍 **Language Choice** - Pick which caption track you get when a video offers more than one
+- 📊 **58 Fields Per Video** - Upload date, engagement stats, hashtags, mentions, sound details, AI-content flags
+- 👥 **Creator Data** - Handle, bio, follower count, total likes, video count, verified status
+- 🎬 **Watermark-Free Links** - Direct MP4 URLs at your chosen frame rate
+- 💾 **Optional Download** - Store MP4s on Apify with permanent links
+- 🔄 **Resumable Runs** - State persistence survives migration, timeout and abort
+- 🛡️ **Block Handling** - Detects TikTok's firewall challenge and rotates proxy sessions automatically
 
 ## Input
 
 | Field | Type | Required | Default | Description |
 |-------|------|----------|---------|-------------|
-| `videoUrls` | array | ✅ | - | TikTok video URLs to process |
-| `preferredFps` | string | ❌ | `"60"` | Video quality: `"30"` or `"60"` FPS |
-| `downloadVideo` | boolean | ❌ | `false` | Store videos on Apify servers |
-| `proxyConfig` | object | ❌ | - | Proxy configuration |
+| `videoUrls` | array | ✅ | - | TikTok video URLs. Standard, short (`vm.tiktok.com`) and mobile formats all work. |
+| `includeTranscript` | boolean | ❌ | `true` | Extract the spoken transcript |
+| `transcriptFormats` | array | ❌ | `["text","segments"]` | Any of `text`, `segments`, `srt`, `vtt` |
+| `preferredLanguage` | string | ❌ | `"auto"` | Caption language to prefer, e.g. `eng-US`. `auto` uses the video's original language. |
+| `preferredFps` | string | ❌ | `"60"` | Video frame rate: `"30"` or `"60"` |
+| `downloadVideo` | boolean | ❌ | `false` | Store MP4 files on Apify |
+| `proxyConfig` | object | ❌ | - | Proxy configuration. Residential is strongly recommended. |
 
 ### Example Input
 
@@ -29,90 +33,152 @@ Download TikTok videos without watermark. Extract direct download links from Tik
         { "url": "https://www.tiktok.com/@username/video/1234567890" },
         { "url": "https://vm.tiktok.com/ABC123" }
     ],
-    "preferredFps": "60",
-    "downloadVideo": true
+    "includeTranscript": true,
+    "transcriptFormats": ["text", "segments", "srt"],
+    "preferredLanguage": "auto",
+    "proxyConfig": { "useApifyProxy": true, "apifyProxyGroups": ["RESIDENTIAL"] }
 }
 ```
 
-## 📊 Sample Output Structure
+## How Transcripts Work
 
-![Sample Output](https://raw.githubusercontent.com/FlowExtractAPI/tiktok-video-downloader/refs/heads/main/tiktok-scraper-sample-output.png)
+TikTok runs speech recognition on videos that contain speech and publishes the result as a caption track. This Actor reads that track directly. Nothing is re-transcribed, so the text matches what TikTok itself shows viewers, and extraction is fast and cheap.
 
+**Transcripts are only returned when the video has one.** A video with no speech, such as music or sound effects, returns `available: false` along with TikTok's own reason. That is a normal result, not an error, and it is never charged.
 
-Each video produces a dataset item with the following structure:
+In a sample of 31 public videos, 13 carried a transcript. Coverage is much higher on talking-head, news and tutorial content than on music or dance videos.
+
+### Choosing a language
+
+Some videos carry more than one caption track: the original spoken language plus machine translations TikTok has already generated. Set `preferredLanguage` to pick one.
+
+```json
+{ "preferredLanguage": "eng-US" }
+```
+
+If the language you ask for is not available on a given video, you get that video's original track instead, and `transcript.language` tells you what you actually received. `transcript.availableLanguages` lists every track the video offers, and `transcript.source` is `ASR` for speech recognition or `MT` for a translation of it.
+
+The Actor never invents a translation. It only returns tracks TikTok has already published.
+
+## Sample Output
+
+Each video produces one dataset record. Abbreviated below.
 
 ```json
 {
-    "videoUrl": "https://www.tiktok.com/@user/video/123",
     "videoId": "1234567890",
-    "directUrl": "https://v16-webapp.tiktok.com/...",
-    "title": "Video description text",
+    "webVideoUrl": "https://www.tiktok.com/@username/video/1234567890",
+    "directUrl": "https://v16-webapp-prime.tiktok.com/...",
+    "title": "Video caption text",
+    "createTime": "2026-04-02T15:22:04.000Z",
+    "hashtags": ["cooking", "recipe"],
+    "mentions": ["someoneelse"],
+
+    "authorUsername": "username",
     "author": "Creator Name",
-    "authorId": "123456789",
-    "Cover": "https://p16-sign.tiktok.com/...",
-    "duration": 15,
-    "viewCount": 100000,
-    "likeCount": 5000,
-    "shareCount": 200,
-    "commentCount": 150,
-    "width": 576,
-    "height": 1024,
+    "authorVerified": true,
+    "authorFollowers": 4800000,
+    "authorLikes": 120400000,
+    "authorBio": "Profile bio text",
+
+    "viewCount": 734500,
+    "likeCount": 24600,
+    "commentCount": 181,
+    "shareCount": 411,
+    "collectCount": 1573,
+    "repostCount": 0,
+
+    "duration": 8,
     "quality": "540p",
-    "fileSize": "1234567",
-    "extractedAt": "2024-01-15T10:30:00.000Z",
+    "musicTitle": "original sound",
+    "musicIsOriginal": true,
+
+    "transcript": {
+        "available": true,
+        "language": "eng-US",
+        "source": "ASR",
+        "isAutoGenerated": true,
+        "wordCount": 42,
+        "segmentCount": 9,
+        "availableLanguages": ["eng-US", "spa-ES"],
+        "text": "Full spoken transcript as a single string",
+        "segments": [
+            { "start": "00:00:00.380", "end": "00:00:03.600", "startSeconds": 0.38, "endSeconds": 3.6, "text": "First line of speech" }
+        ],
+        "srt": "1\n00:00:00,380 --> 00:00:03,600\nFirst line of speech\n",
+        "error": null
+    },
+
     "download": {
         "available": true,
         "url": "https://api.apify.com/v2/key-value-stores/.../records/...",
-        "format": "mp4",
         "status": "completed",
         "fileSizeHuman": "1.5 MB"
     },
-    "processingTime": 2500,
+
     "success": true
 }
 ```
 
 ## Dataset Views
 
-The Actor provides four pre-configured dataset views:
+Seven pre-configured views, switchable from the dataset tab:
 
-1. **Overview** - Quick summary with video ID, title, author, and status
-2. **Statistics** - Engagement metrics (views, likes, shares, comments)
-3. **Downloads** - Download links and file information
-4. **Errors** - Failed extractions with error details
+| View | Shows |
+|------|-------|
+| Overview | Thumbnail, caption, creator, date, engagement, transcript availability |
+| Transcripts | Transcript text, language, source and word count per video |
+| Engagement | Views, likes, comments, shares, saves and reposts |
+| Creator Data | Handle, follower count, total likes, bio, profile link |
+| Sounds | Sound title, author, duration and audio link |
+| Download Links | Stored file links and direct MP4 URLs |
+| Failed Extractions | Error code and message for anything that did not work |
 
-## State Persistence & Resumability
+## Pricing
 
-This Actor supports **resumable runs**. If a run is interrupted (migration, timeout, abort), it will automatically resume from where it left off on the next run with the same input.
+Pay per event. You are billed for results, not for runtime.
 
-State is automatically saved:
-- Every 3 processed videos
-- On Actor migration events
-- On Actor abort events
-- Before Actor exit
+| Event | Charged when |
+|-------|--------------|
+| Run start | Once per run start, including a restart after a platform migration |
+| Video scraped | A video is successfully scraped, for the full record |
+| Transcript extracted | A transcript is actually returned |
+| Video downloaded | An MP4 is stored, and only if you switch downloads on |
 
-To disable state persistence, set `enableStatePersistence: false` in input.
+Failed videos are never charged. Videos with no speech are charged as a scrape but not as a transcript.
+
+### Downloads start a second Actor
+
+If you switch `downloadVideo` on, this Actor hands the file transfer to [Universal Downloader](https://apify.com/dz_omar/universal-downloader). You will see **two Actor runs** in your account for the same job, and that second Actor bills you separately on top of the download event here.
+
+This is why the download event is priced low. It is meant to sit alongside the other Actor's charge rather than duplicate it.
+
+Downloads are **off by default**. If you only need transcripts and metadata, leave them off and no second Actor is ever started.
 
 ## Proxy Configuration
 
-For better success rates, especially with high-volume extractions:
+TikTok blocks datacenter traffic aggressively. Residential proxies are strongly recommended:
 
 ```json
 {
     "proxyConfig": {
         "useApifyProxy": true,
-        "apifyProxyGroups": ["RESIDENTIAL"],
-        "apifyProxyCountry": "US"
+        "apifyProxyGroups": ["RESIDENTIAL"]
     }
 }
 ```
 
-## Error Handling
+The Actor detects TikTok's firewall challenge, which arrives as a normal-looking HTTP 200 rather than an error, and retries on a fresh session automatically.
 
-The Actor implements intelligent retry logic:
+## State Persistence & Resumability
+
+Runs are resumable. If a run is interrupted by migration, timeout or abort, the next run with the same input picks up where it stopped. State is saved every 3 videos, on migration, on abort and before exit.
+
+## Error Handling
 
 | Error Type | Retryable | Behavior |
 |------------|-----------|----------|
+| Firewall challenge | ✅ | New proxy session, then retry |
 | Network timeout | ✅ | Exponential backoff |
 | Rate limiting (429) | ✅ | Extended backoff |
 | Server errors (5xx) | ✅ | Standard backoff |
@@ -122,7 +188,7 @@ The Actor implements intelligent retry logic:
 
 ## Run Summary
 
-After completion, a summary is saved to the Key-Value Store under the key `RUN_SUMMARY`:
+A summary is written to the Key-Value Store under `RUN_SUMMARY`:
 
 ```json
 {
@@ -130,23 +196,25 @@ After completion, a summary is saved to the Key-Value Store under the key `RUN_S
     "processed": 10,
     "successful": 9,
     "failed": 1,
-    "skipped": 0,
-    "retried": 2,
-    "downloads": {
+    "transcripts": {
         "enabled": true,
-        "successful": 9,
-        "failed": 0
+        "extracted": 6,
+        "unavailable": 3,
+        "coverageRate": 67
     },
+    "downloads": { "enabled": true, "successful": 9, "failed": 0 },
     "resumed": false,
-    "completedAt": "2024-01-15T10:35:00.000Z"
+    "completedAt": "2026-09-11T10:35:00.000Z"
 }
 ```
 
 ## Limitations
 
-- TikTok direct URLs may expire (use `downloadVideo: true` for persistent links)
-- Some region-restricted videos may not be accessible
-- Private videos cannot be extracted
+- Memory is capped at 512 MB. Runs use around 110 MB in practice, and the work is network-bound rather than memory-bound, so more allocation would cost you without running faster.
+- Transcripts exist only where TikTok generated captions. Videos without speech return none.
+- Translated tracks are returned only where TikTok already published them. The Actor does not translate.
+- Direct MP4 URLs expire after a few hours. Use `downloadVideo: true` for permanent links.
+- Private videos cannot be extracted, and some region-restricted videos may be unavailable.
 
 ---
 
@@ -160,12 +228,18 @@ After completion, a summary is saved to the Key-Value Store under the key `RUN_S
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ### Related Actors
 - **[Universal File Downloader](https://apify.com/dz_omar/universal-downloader?fpr=smcx63)**: Powers the intelligent download system
-- **TikTok Profile Scraper**: Extract user profiles and video lists
-- **Social Media Analytics**: Comprehensive social media data extraction
 
 ---
+
+## ⚖️ Legal & Compliance
+
+This Actor extracts publicly available data from TikTok. It does not log in, bypass authentication, or access private content. You are responsible for using the output in line with TikTok's Terms of Service, applicable copyright law, and data protection regulations such as GDPR and CCPA. Transcripts and video files remain the property of their creators.
+
+---
+
+*Built and maintained by FlowExtract API.*

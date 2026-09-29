@@ -126,9 +126,31 @@ Controls whether the actor fetches threaded replies for each comment.
 }
 ```
 
-> 💡 **How limits interact with replies:** `maxCommentsPerUrl` controls how many **top-level comments** are collected. Replies are always fetched for all collected top-level comments regardless of that limit. For example, `maxCommentsPerUrl: 10` with `fetchReplies: true` gives you 10 top-level comments plus all their replies and sub-replies.
+> 💡 **How limits interact with replies:** `maxCommentsPerUrl` controls how many **top-level comments** are collected. It does not limit replies. Use `maxRepliesPerComment` for that.
 
-> ⚠️ Enabling reply fetching significantly increases request count and run time, especially on posts with deep reply threads.
+> ⚠️ Reply counts on Facebook are very uneven. Most comments have no replies at all, while a single popular one can carry 80 or more — and those few threads dominate run time and cost. If you enable replies, consider setting `maxRepliesPerComment` to keep runs predictable.
+
+---
+
+#### `maxRepliesPerComment` (Integer  optional)
+
+Caps how many replies are collected from each top-level comment.
+
+- **Default**: `0`  unlimited (every reply in every thread)
+- The cap covers the **whole thread** under a comment: direct replies and any nested sub-replies count toward the same number.
+- Only applies when `fetchReplies` is `true`.
+- The actor stops requesting further reply pages as soon as the cap is met, so a low value also makes runs noticeably faster on posts with large threads.
+
+```json
+{
+    "urls": [{ "url": "https://www.facebook.com/photo?fbid=1450353236655661" }],
+    "maxCommentsPerUrl": 100,
+    "fetchReplies": true,
+    "maxRepliesPerComment": 5
+}
+```
+
+> 💡 This is a **maximum**, not a target. A comment with 2 replies still returns 2 when the cap is 5  the cap only truncates threads that exceed it.
 
 ---
 
@@ -136,7 +158,7 @@ Controls whether the actor fetches threaded replies for each comment.
 
 - **Default**: `10`
 - Set to `0` or ` ` for unlimited  fetches all available top-level comments
-- This limit applies to **top-level comments only**. Replies are fetched separately when `fetchReplies` is enabled and are not counted toward this limit.
+- This limit applies to **top-level comments only**. Replies are fetched separately when `fetchReplies` is enabled and are not counted toward this limit  cap those with `maxRepliesPerComment`.
 - The actor stops paginating for new top-level comments as soon as this limit is reached.
 
 ```json
@@ -355,7 +377,7 @@ The actor saves state after every successfully processed URL. If it crashes, get
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ---

@@ -382,7 +382,7 @@ Need help or have questions? We're here for you:
 - 👤 **Apify Profile:** [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 🐙 **GitHub:** [FlowExtractAPI](https://github.com/FlowExtractAPI)
 - 💼 **LinkedIn:** [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 𝕏 **Twitter:** [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 𝕏 **Twitter:** [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 👍 **Facebook:** [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ---

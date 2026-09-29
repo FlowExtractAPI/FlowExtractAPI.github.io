@@ -22,7 +22,8 @@ Instagram Reel comments are a direct read on audience sentiment, engagement qual
 
 ### 💬 Comment content
 - `text` — the comment body
-- `created_at` — Unix timestamp the comment was posted
+- `created_at` — when the comment was posted, as an ISO 8601 date
+- `created_at_unix` — the same timestamp as a raw Unix seconds value
 - `like_count` — likes on the comment
 
 ### 👤 Author
@@ -76,7 +77,18 @@ None required. Works on public reels without an Instagram login.
 
 ## 💰 Pricing
 
-This actor is **free to run** — every result is priced at $0. You only pay Apify's standard platform compute cost for the run itself.
+This actor uses **Pay-Per-Event** pricing: you're charged only for comments that are actually delivered to your dataset. Nothing is charged for a URL that fails, a duplicate, or any comment that doesn't make it into your results.
+
+| Plan | Price per comment | Price per 1,000 comments |
+|---|---:|---:|
+| FREE | $0.0020 | $2.00 |
+| BRONZE | $0.0005 | $0.50 |
+| SILVER | $0.00035 | $0.35 |
+| GOLD | $0.0003 | $0.30 |
+
+Set a **Max cost per run** in the run configuration to cap total spend — the actor stops accepting new work as soon as that limit is reached, and you're never charged past it.
+
+> 💡 Tip: Start with `maxCommentsPerUrl` set to a small number (e.g. 20) to confirm a URL works before running a full extraction.
 
 ---
 
@@ -84,20 +96,21 @@ This actor is **free to run** — every result is priced at $0. You only pay Api
 
 ```json
 {
-    "id": "18416918653194028",
-    "pk": "18416918653194028",
-    "text": "كفو عليك يا بطل 😍",
-    "created_at": 1783110883,
+    "id": "17907139029464872",
+    "pk": "17907139029464872",
+    "text": "Congratulations 🎉!",
+    "created_at": "2026-08-16T22:33:53.000Z",
+    "created_at_unix": 1786919633,
     "like_count": 0,
     "child_comment_count": null,
     "parent_comment_id": null,
     "user": {
-        "id": "1448110168",
-        "username": "_b97j",
+        "id": "2209446988",
+        "username": "huhsfu",
         "is_verified": false,
         "profile_pic_url": "https://scontent.cdninstagram.com/..."
     },
-    "source_url": "https://www.instagram.com/osama.azm5/reel/DaQSQ5hR7lv/",
+    "source_url": "https://www.instagram.com/p/Dbf3rwSGW-r/",
     "_source": "instagram_comment_scraper"
 }
 ```
@@ -124,8 +137,8 @@ Not yet — only top-level comments are extracted in this version.
 **What happens if a URL is invalid or the reel is gone?**
 That URL is skipped with a logged error; the run continues with the remaining URLs.
 
-**How many comments can I extract for free?**
-As many as you configure via `maxCommentsPerUrl` — every result is $0. Apify's own compute cost for the run still applies.
+**How much does it cost to scrape Instagram Reel comments?**
+This actor uses Pay-Per-Event pricing — see the Pricing section above for exact tier prices. You're only charged for comments actually delivered to your dataset.
 
 ---
 

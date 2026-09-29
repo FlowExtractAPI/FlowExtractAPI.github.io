@@ -254,7 +254,7 @@ No credit card required. Test with 5$ to see the quality yourself.
 
 **📧 Email:** [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)  
 **🌐 Website:** [flowextractapi.com](https://flowextractapi.com)  
-**🐦 Twitter:** [@FlowExtractAPI](https://x.com/@FlowExtractAPI)  
+**🐦 Twitter:** [@FlowExtractAPI](https://x.com/FlowExtractAPI)  
 **💼 LinkedIn:** [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
 
 **Response time:** Within 24 hours (usually much faster)

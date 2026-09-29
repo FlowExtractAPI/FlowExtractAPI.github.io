@@ -404,6 +404,36 @@ The **Mode** column shows where each field appears: **Both** = fast and detail; 
 ---
 
 
+## 💵 Pricing
+
+This Actor uses **pay per event** pricing — you pay for what the run actually returns, not for
+compute time.
+
+| Event | Price (Free plan) | When it is charged |
+|---|---|---|
+| **Property listing** | $0.00095 | Each listing returned from a search: listing ID and URL, price, address with suburb, state and postcode, coordinates, property type, bedrooms, bathrooms, parking spaces and photos. |
+| **Property listing with full detail** | $0.0015 | Each listing returned with its full detail record — everything above plus the full description, property features, agent and agency contacts, inspection and auction times, listing status and days on market, nearby schools, market insights and high-resolution photos. Charged for single property URLs, and for runs with **Fetch full property details** enabled. |
+
+There is **no run-start fee** — you are charged only for listings you actually receive.
+Prices drop on every paid plan, down to **$0.0007** per listing and **$0.0008** per detailed
+listing.
+
+**What a typical run costs (Free plan):** 100 listings = **$0.10** · 100 listings with full
+detail = **$0.15** · 1,000 listings = **$0.95** · 1,000 with full detail = **$1.50**.
+
+A few notes so there are no surprises:
+
+- If a listing's full detail cannot be retrieved, you still get the listing — charged at the
+  standard **Property listing** price, never the detail price.
+- Set a **maximum cost per run** in the run options and the Actor checks it before it starts
+  working: if the budget cannot pay for a single result, it stops immediately and tells you,
+  rather than running up a bill.
+- Search runs return **at least 10 listings** — search results arrive in blocks, so smaller
+  requests are rounded up to 10. Single property URLs are unaffected: they always return
+  exactly that one listing.
+
+---
+
 ## ⚠️ Important Notes
 
 ### Legal Considerations
@@ -428,8 +458,9 @@ This Actor extracts publicly available property listing data from domain.com.au.
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **X**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+- 🎵 **TikTok**: [@flowextractapi](https://www.tiktok.com/@flowextractapi)
 
 ---
 
@@ -499,3 +530,17 @@ Extract comprehensive advertising data from LinkedIn's Ad Library.
 ---
 
 **Ready to extract Australian property data?** [Start using domain.com.au Scraper now!](https://apify.com/dz_omar/domain-scraper?fpr=smcx63)
+
+---
+
+## Legal & compliance
+
+- Collects **publicly available** listing data only — no login, no private or account-gated content.
+- Respects the source site's rate limits and terms.
+- **Stores no personal information**; agent contact details come from the public listing page itself.
+- Suitable for commercial use.
+- **No affiliation with or endorsement by domain.com.au is implied.**
+
+---
+
+*domain.com.au Scraper — by FlowExtract API. Turn any website into structured data.*

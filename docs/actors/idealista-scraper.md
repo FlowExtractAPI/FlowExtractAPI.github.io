@@ -31,7 +31,7 @@ This bulk scraper processes **Idealista search result pages** and extracts detai
 
 ## 🛠️ How It Works
 
-This actor uses the **[Idealista Property Scraper API](https://apify.com/dz_omar/idealista-scraper-api)** internally to extract individual property data. While the API actor processes one property at a time, this bulk scraper:
+This actor uses the **[Idealista Property Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** internally to extract individual property data. While the API actor processes one property at a time, this bulk scraper:
 
 1. **Processes search URLs** containing multiple property listings
 2. **Navigates through properties** automatically using smart navigation
@@ -111,7 +111,7 @@ Each property in your dataset will contain comprehensive information:
 
 **🎯 Monthly Subscription: $15/month + Idealista Property Scraper API costs per property**
 
-This actor operates with a **monthly rental subscription** plus charges for the internal **[Idealista Property Scraper API](https://apify.com/dz_omar/idealista-scraper-api)** calls.
+This actor operates with a **monthly rental subscription** plus charges for the internal **[Idealista Property Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** calls.
 
 ### **Pricing Structure:**
 - **Monthly Rental**: $15/month (auto-renewing subscription)
@@ -201,7 +201,7 @@ Monthly Total = $15 + (Number of Properties × API Cost per Property)
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ## 🌟 Related Actors by FlowExtract API

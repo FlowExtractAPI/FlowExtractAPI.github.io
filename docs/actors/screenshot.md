@@ -413,7 +413,7 @@ Results are stored in Apify Dataset with consistent structure:
 - **📧 Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
 - **🐙 GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 - **🐦 Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
-- **🔧 Apify**: [dz_omar](https://apify.com/dz_omar)
+- **🔧 Apify**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 
 ### Getting Help
 - Review this documentation thoroughly

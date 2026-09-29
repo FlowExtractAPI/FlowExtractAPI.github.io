@@ -403,7 +403,7 @@ This actor translates transcripts from **publicly available YouTube videos** usi
 - 🔧 **Apify Profile:** [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
 - 🙋 **GitHub:** [FlowExtractAPI](https://github.com/FlowExtractAPI)
 - 💼 **Linkedin:** [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter:** [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter:** [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook:** [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ---

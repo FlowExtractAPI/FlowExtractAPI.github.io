@@ -1,302 +1,388 @@
-# 📸 Ultimate Web Screenshot & Video Capture Tool 🎥
+# 📸 Ultimate Screenshot — capture any web page as an image, PDF, video or GIF
 
-Transform any webpage into high-quality screenshots, PDFs, or engaging videos/GIFs with our powerful web capture tool. Perfect for web monitoring, content creation, documentation, and automated testing.
+**[Ultimate Screenshot](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)** turns a list of web addresses into finished files: JPEG and PNG screenshots, printable PDFs, and short MP4 or GIF recordings of the page. It drives a real browser, so pages that need JavaScript, web fonts, lazy-loaded images or a signed-in session come out looking the way a person would see them — on a desktop window, or on any of **131 phone and tablet presets**.
 
-[![Apify Actor](https://raw.githubusercontent.com/FlowExtractAPI/Ultimate-Screenshot/refs/heads/main/Ultimate%20Screenshot.png)](https://apify.com/dz_omar/ultimate-screenshot)
+[![Ultimate Screenshot](https://raw.githubusercontent.com/FlowExtractAPI/Ultimate-Screenshot/refs/heads/main/Ultimate%20Screenshot.png)](https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63)
 
+Perfect for **agencies** archiving client sites, **QA and product teams** building visual checks, and **marketers** who need a scroll-through clip of a landing page without opening a screen recorder.
 
-## ✨ Key Features
+---
 
-### 📷 Multiple Output Formats
-- **Static Images**: High-quality PNG/JPEG screenshots
-- **PDF Documents**: Professional document generation with custom margins
-- **Video Content**: MP4 recordings and animated GIFs
-- **Full-Page Capture**: Capture entire webpage length, not just viewport
+## What it produces
 
-### 🎬 Advanced Video & Animation
-- **Screen Recording**: Create MP4 videos of webpage interactions
-- **Animated GIFs**: Generate engaging animated captures
-- **Scrolling Effects**: Smooth scroll-through animations for long pages
-- **Custom Frame Rates**: Control video quality and file size
+| Format | What you get | Typical use |
+|---|---|---|
+| **JPEG** | Compressed image, quality you choose | Bulk archiving, thumbnails, previews |
+| **PNG** | Lossless image | Design review, pixel comparisons |
+| **PDF** | Printable document — paper size, margins, orientation | Reports, invoices, compliance records |
+| **MP4** | Up to a 30-second recording | Landing-page walkthroughs, demos |
+| **GIF** | Up to a 10-second looping animation | Social posts, docs, changelog entries |
 
-### 📱 Device Emulation
-- **100+ Device Presets**: iPhone, iPad, Android, tablets, and more
-- **Responsive Testing**: See how your site looks on different devices
-- **Custom Dimensions**: Set any viewport size for testing
-- **Orientation Support**: Portrait and landscape modes
+Every format can be captured **as the visible window** or **as the whole page**, top to bottom.
 
-### 🌐 Advanced Web Features
-- **Proxy Support**: Bypass geo-restrictions and rate limits
-- **Cookie Management**: Maintain sessions and bypass paywalls
-- **SSL Flexibility**: Handle sites with certificate issues
-- **Custom User Agents**: Simulate different browsers and devices
+---
 
-## 🚀 Quick Start
+## ⚙️ How to use it
 
-### Basic Screenshot
-```json
-{
-  "linkUrls": ["https://example.com"],
-  "outputFormat": "png",
-  "fullPage": true
-}
-```
-
-### Mobile Device Emulation
-```json
-{
-  "linkUrls": ["https://example.com"],
-  "device": "iPhone 14 Pro",
-  "outputFormat": "jpeg"
-}
-```
-
-### Video Capture
-```json
-{
-  "linkUrls": ["https://example.com"],
-  "outputFormat": "mp4",
-  "fullPage": true,
-  "frameCounT": 20,
-  "frameIntervaL": 500
-}
-```
-
-### PDF Generation
-```json
-{
-  "linkUrls": ["https://example.com"],
-  "outputFormat": "pdf",
-  "formaT": "A4",
-  "printBackground": true
-}
-```
-
-## 📋 Input Configuration
-
-### 🎯 Basic Settings
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `linkUrls` | Array | `["https://apify.com"]` | URLs to capture |
-| `outputFormat` | String | `"jpeg"` | Output format: `jpeg`, `png`, `pdf`, `gif`, `mp4` |
-| `fullPage` | Boolean | `false` | Capture entire page length |
-| `waitUntil` | String | `"networkidle0"` | Page load condition |
-| `timeouT` | Integer | `15` | Page load timeout (seconds) |
-| `delayBeforeScreenshot` | Integer | `1500` | Pre-capture delay (ms) |
-
-### 📱 Device & Viewport
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `device` | String | - | Device preset (iPhone 14, iPad Pro, etc.) |
-| `window_Width` | Integer | `1920` | Custom viewport width |
-| `window_Height` | Integer | `1080` | Custom viewport height |
-
-### 🎬 Video/GIF Options
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `frameCounT` | Integer | `15` | Number of frames to capture |
-| `frameIntervaL` | Integer | `10` | Milliseconds between frames |
-| `frame` | Integer | `10` | Frames per second (FPS) |
-| `scrollSteP` | Integer | `300` | Scroll distance per frame |
-
-### 📄 PDF Options
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `formaT` | String | `"A4"` | Paper size (A4, Letter, Legal, etc.) |
-| `printBackground` | Boolean | `true` | Include background colors/images |
-| `toP`, `righT`, `bottoM`, `lefT` | Integer | `0` | Margins in millimeters |
-
-### 🌐 Advanced Options
-
-| Parameter | Type | Default | Description |
-|-----------|------|---------|-------------|
-| `scrollToBottom` | Boolean | `false` | Auto-scroll before capture |
-| `cookies` | Array | `[]` | Custom cookies for authentication |
-| `proxyConfig` | Object | `{}` | Proxy configuration |
-| `enableSSL` | Boolean | `false` | Strict SSL validation |
-
-## 📊 Output Data
-
-Each successful capture returns:
+### The one setting you need
 
 ```json
 {
-  "screenshot_image": "https://api.apify.com/v2/...",
-  "content_Type": "image/png",
-  "linkUrl": "https://example.com",
-  "screenshot_url": "https://api.apify.com/v2/..."
+    "linkUrls": ["https://example.com", "https://apify.com"]
 }
 ```
 
-## 🎯 Use Cases
+That captures each page as a JPEG at 1920 × 1080. Everything below is optional.
 
-### 📈 Business & Marketing
-- **Website Monitoring**: Track visual changes and performance
-- **Competitor Analysis**: Capture competitor pages regularly
-- **Social Media Content**: Create engaging visuals for posts
-- **Portfolio Documentation**: Showcase web projects
+Addresses go in one per line. A bare domain is fine — `example.com` becomes `https://example.com`. The field checks that each line looks like a web address, so a stray number or word is caught in the form rather than producing an empty result.
 
-### 🧪 Development & Testing
-- **Responsive Testing**: Verify mobile compatibility
-- **Cross-Browser Testing**: Ensure consistent appearance
-- **Automated Screenshots**: Integrate with CI/CD pipelines
-- **Bug Documentation**: Capture error states visually
+### Full-page screenshot
 
-### 📚 Content Creation
-- **Tutorial Videos**: Create step-by-step guides
-- **Documentation**: Generate visual documentation
-- **Presentations**: Professional webpage captures
-- **Archive Pages**: Preserve webpage states
-
-### 🔍 Research & Monitoring
-- **Price Monitoring**: Track e-commerce changes
-- **News Archival**: Preserve article layouts
-- **Social Media Tracking**: Monitor profiles and posts
-- **Academic Research**: Capture web-based data
-
-## ⚙️ Advanced Configuration Examples
-
-### Authenticated Capture with Cookies
 ```json
 {
-  "linkUrls": ["https://secure-site.com/dashboard"],
-  "cookies": [
-    {
-      "name": "session_token",
-      "value": "abc123xyz",
-      "domain": ".secure-site.com"
-    }
-  ],
-  "outputFormat": "png"
+    "linkUrls": ["https://example.com"],
+    "outputFormat": "png",
+    "fullPage": true,
+    "scrollToBottom": true,
+    "maxScrollSeconds": 15
 }
 ```
 
-### Proxy-Enabled Capture
+`scrollToBottom` walks down the page first so lazy-loaded images actually load. `maxScrollSeconds` is the limit that ends the scroll — on an endless feed it is the *only* thing that ends it, and it decides how much of the feed you capture.
+
+### Phone or tablet
+
 ```json
 {
-  "linkUrls": ["https://geo-restricted-site.com"],
-  "proxyConfig": {
-    "useApifyProxy": true,
-    "proxyUrls": ["http://proxy.example.com:8080"]
-  },
-  "outputFormat": "jpeg"
+    "linkUrls": ["https://example.com"],
+    "device": "iPhone 15 Pro",
+    "outputFormat": "jpeg",
+    "fullPage": true
 }
 ```
 
-### High-Quality Video Recording
+131 presets, each with the right screen size, pixel density and browser identity. A preset replaces the window width and height below it.
+
+### A scroll-through video
+
 ```json
 {
-  "linkUrls": ["https://interactive-demo.com"],
-  "outputFormat": "mp4",
-  "fullPage": true,
-  "frameCounT": 30,
-  "frameIntervaL": 100,
-  "frame": 24,
-  "scrollSteP": 200
+    "linkUrls": ["https://example.com"],
+    "outputFormat": "mp4",
+    "recordingMode": "scroll",
+    "recordSeconds": 10,
+    "fps": 15
 }
 ```
 
-## 🔧 Technical Details
+The clip is exactly `recordSeconds × fps` frames and plays for exactly `recordSeconds`. In **scroll** mode the step between frames is worked out from the real page height, so the last frame lands at the bottom of the page. In **static** mode the window stays put, which suits carousels, animations and players.
 
-### Supported Devices
-Over 100 device presets including:
-- **iPhones**: 4, 5, 6, 7, 8, X, 11, 12, 13, 14, 15 series
-- **iPads**: Mini, Pro, Air, all generations
-- **Android**: Galaxy, Pixel, Nexus series
-- **Tablets**: Various Android and Windows tablets
+### A signed-in page
 
-### Output Formats
-- **JPEG**: Smaller file size, good for web use
-- **PNG**: Lossless quality, supports transparency
-- **PDF**: Document format with custom page sizes
-- **GIF**: Animated format, perfect for demos
-- **MP4**: High-quality video format
+```json
+{
+    "linkUrls": ["https://example.com/account"],
+    "cookies": [
+        { "name": "session_id", "value": "abc123", "domain": "example.com" }
+    ]
+}
+```
 
-### Performance
-- **Speed**: Optimized for fast capture and processing
-- **Reliability**: Built-in retry mechanisms and error handling
-- **Scalability**: Handle multiple URLs efficiently
-- **Memory**: Efficient frame management for video capture
+Export cookies with a browser extension such as [Cookie Editor](https://cookie-editor.com/). Each cookie needs at least a name and a value; the address being captured supplies the domain when it is missing.
 
-## 🛠️ Installation & Usage
+### Cleaning up the page first
 
-1. **Find this Actor** on [Apify Store](https://apify.com/store)
-2. **Configure Input** using the visual editor or JSON
-3. **Run the Actor** and wait for completion
-4. **Download Results** from the generated dataset
+```json
+{
+    "linkUrls": ["https://example.com"],
+    "waitForSelector": "#main-content",
+    "hideSelectors": ["#cookie-banner", ".chat-widget", ".sticky-header"],
+    "delayBeforeScreenshot": 2000
+}
+```
 
-### Integration Options
-- **Apify API**: Programmatic access via REST API
-- **Webhooks**: Automated notifications on completion
-- **Scheduling**: Run captures at regular intervals
-- **Zapier/Make**: Connect with other tools and services
+### Finding the right selector
 
-## 🔍 Troubleshooting
+![Right-click the banner, choose Inspect, then read the id or class off the highlighted element](https://raw.githubusercontent.com/FlowExtractAPI/Ultimate-Screenshot/refs/heads/main/find-the-selector-chrome.png)
 
-### Common Issues
+1. **Right-click the banner** you want gone and choose **Inspect** (bottom of the menu).
+2. The developer tools open with that element highlighted. Click **upwards** through the boxes until the highlight covers the **whole banner**, not just its text — you can see the size readout, `340 × 122`, confirming the right box is selected.
+3. Read the `id` or `class` off that line and type it with the right prefix:
 
-**Page won't load?**
-- Increase `timeouT` value
-- Check `enableSSL` setting for HTTPS sites
-- Verify URL accessibility
+   | In the HTML | You type | Because |
+   |---|---|---|
+   | `<div id="onetrust-consent-sdk">` | `#onetrust-consent-sdk` | an **id** takes a **`#`** |
+   | `<div class="cookie-bar">` | `.cookie-bar` | a **class** takes a **`.`** |
 
-**Screenshots are blank?**
-- Increase `delayBeforeScreenshot`
-- Try different `waitUntil` conditions
-- Check if site blocks automation
+   Prefer the id when the element has one — it is shorter and changes less often.
 
-**Video too short/long?**
-- Adjust `frameCounT` and `frameIntervaL`
-- Modify `scrollSteP` for better pacing
-- Use `timefullPagE` to control duration
+> The screenshot is Chrome, but this works the same in **Edge, Firefox and Safari**: you are reading an attribute out of the page's own HTML, not using a browser feature.
+>
+> Chrome and Edge also offer **Copy → Copy selector** (Firefox: *Copy → CSS Selector*), visible on the right of the screenshot. It works, but it usually produces a long path like `#onetrust-consent-sdk > div:nth-child(2) > div` that breaks the next time the site changes its layout — the plain id above keeps working.
 
-**Device emulation not working?**
-- Ensure device name matches exactly
-- Check if site has responsive design
-- Try custom dimensions instead
+Hide the wrapper, not the text inside it, or you will be left with an empty bar.
 
-## 📄 API Reference
+Most consent banners come from a handful of platforms, so these cover a lot of the web:
 
-### Input Schema
-The actor accepts a comprehensive input schema with validation for all parameters. See the complete schema in the actor's input configuration.
+| Platform | Selector |
+|---|---|
+| OneTrust (used by apify.com and many large sites) | `#onetrust-consent-sdk` |
+| Cookiebot | `#CybotCookiebotDialog` |
+| Osano | `.osano-cm-window` |
+| Quantcast / TCF | `.qc-cmp2-container` |
+| Usercentrics | `#usercentrics-root` |
+| CookieYes | `.cky-consent-container` |
+| Generic catch-all | `[id*="cookie"]`, `[class*="cookie-banner"]` |
 
-### Output Schema
-Results are stored in Apify Dataset with the following structure:
-- `screenshot_image`: Preview URL
-- `content_Type`: MIME type
-- `linkUrl`: Source URL
-- `screenshot_url`: Download URL
+Hiding is applied as a style rule as soon as the page opens, so a banner that appears **after** the page has loaded is caught too — many consent scripts take several seconds to inject theirs.
 
-## 🏆 Best Practices
+If a selector matches nothing, the result row's `notes` says so rather than leaving you guessing.
 
-1. **Optimize for Purpose**: Choose the right format for your use case
-2. **Test Settings**: Start with default values and adjust as needed
-3. **Handle Failures**: Use retry mechanisms for critical captures
-4. **Monitor Usage**: Track actor runs and optimize for efficiency
-5. **Respect Limits**: Be mindful of target site rate limits
+---
 
-## 📈 Performance Tips
+## 🎛️ All settings
 
-- Use `jpeg` for smaller file sizes
-- Reduce `frameCounT` for faster video processing
-- Enable `scrollToBottom` for dynamic content
-- Set appropriate `delayBeforeScreenshot` for complex pages
+### Page loading
 
-## 🤝 Support & Contact
+| Setting | Default | What it does |
+|---|---|---|
+| `waitUntil` | `load` | When the page counts as ready. `load` suits most sites and is much the fastest complete option. Move to a Network Idle mode only for pages that keep drawing after everything has loaded — it can add many seconds per page. |
+| `timeouT` | `30` s | How long to wait for a page before giving up on that attempt. |
+| `maxRetries` | `2` | Extra attempts when a page fails to load. `0` means a single attempt. |
+| `delayBeforeScreenshot` | `1000` ms | Extra pause after the page is ready, for animations and fonts. |
+| `waitForSelector` | — | CSS selector to wait for. If it never appears the page is captured anyway and the row says so. |
 
-For assistance or custom implementations:
+### Scrolling & clean-up
 
-- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
-- 📧 **Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
-- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
-- 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+| Setting | Default | What it does |
+|---|---|---|
+| `scrollToBottom` | `false` | Scroll through the page before capturing so lazy content loads. |
+| `maxScrollSeconds` | `15` s | The longest scrolling may take. Scrolling also stops as soon as the page stops growing. |
+| `delayAfterScrolling` | `500` ms | Pause after scrolling, so content loaded on the way down can render. |
+| `hideSelectors` | — | CSS selectors to hide — cookie banners, chat bubbles, sticky headers. Applied as a style rule the moment the page opens, so it also catches banners that appear seconds later. Selectors matching nothing are reported in `notes`. |
 
-### Social Media
+### Video & GIF
 
-- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
-- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+| Setting | Default | What it does |
+|---|---|---|
+| `recordingMode` | `scroll` | `scroll` pans down the page; `static` holds the window still. |
+| `recordSeconds` | `5` s | How long the finished clip plays. GIF max 10, MP4 max 30. |
+| `fps` | `10` | Playback frame rate. GIF max 15, MP4 max 30. |
+
+### Image, PDF, device and network
+
+| Setting | Default | What it does |
+|---|---|---|
+| `jpegQuality` | `85` | JPEG only. PNG is always lossless. |
+| `printBackground` | `true` | PDF: keep background colours and images. |
+| `formaT` | `A4` | PDF paper size. Ignored when any margin below is above 0. |
+| `landscape` | `false` | PDF orientation. |
+| `toP` / `righT` / `bottoM` / `lefT` | `0` mm | PDF margins in **millimetres**. |
+| `device` | — | One of 131 phone/tablet presets. Replaces the window size. |
+| `window_Width` / `window_Height` | `1920` × `1080` | Browser window when no device preset is chosen. |
+| `userAgent` | — | Send a specific browser identity. |
+| `cookies` | `[]` | Cookies applied before the page loads. |
+| `proxyConfig` | Apify datacenter | Route the capture through a proxy. |
+| `enableSSL` | `true` | Turn off only for a self-signed or expired certificate you trust. |
+
+---
+
+## 📊 What you get back
+
+One row per address, plus the file itself in the run's storage.
+
+**Files are grouped by what they are.** Open the run's Storage tab and you get three named collections rather than one flat list:
+
+| Collection | Holds | Key prefix |
+|---|---|---|
+| **Screenshots** | PNG and JPEG images | `screenshot-` |
+| **Videos & GIFs** | MP4 and GIF recordings | `video-` |
+| **PDF documents** | PDF renderings | `document-` |
+
+A GIF is filed with video, not with the images — it is a *recording* of the page, made by the same frame capture and described by the same length and frame-rate settings as an MP4. Its file type happens to be `image/gif`, which is why the video collection accepts that type too.
+
+```json
+{
+    "status": "success",
+    "format": "jpeg",
+    "linkUrl": "https://example.com",
+    "finalUrl": "https://example.com/",
+    "screenshot_url": "https://api.apify.com/v2/key-value-stores/.../records/capture-001-....jpg",
+    "screenshot_image": "https://api.apify.com/v2/key-value-stores/.../records/capture-001-....jpg",
+    "content_Type": "image/jpeg",
+    "fileName": "capture-001-20260904211602-nyyjjkaa.jpg",
+    "fileSizeBytes": 24576,
+    "pageTitle": "Example Domain",
+    "httpStatus": 200,
+    "width": 1920,
+    "height": 1080,
+    "durationSeconds": null,
+    "frames": null,
+    "captureMs": 2388,
+    "error": null,
+    "notes": null,
+    "capturedAt": "2026-09-04T21:16:02.463Z"
+}
+```
+
+| Field | What it tells you |
+|---|---|
+| `status` | `success` when a file was produced, `failed` when the page returned nothing |
+| `screenshot_url` / `screenshot_image` | Direct download link for the file |
+| `content_Type`, `fileName`, `fileSizeBytes` | What the file is and how big |
+| `linkUrl` / `finalUrl` | What you asked for, and where the page ended up after redirects |
+| `pageTitle`, `httpStatus` | The page's own title, and the status code it answered with |
+| `frames`, `durationSeconds` | Recordings only — how many frames and how long the clip plays |
+| `captureMs` | How long this page took, from opening it to saving the file |
+| `error` | On a failed page, one sentence saying what happened |
+| `notes` | Where the actor tells you it did something you did not ask for |
+
+`screenshot_image`, `content_Type`, `linkUrl` and `screenshot_url` keep the exact names and meanings they had in version 1 — existing integrations need no change.
+
+**`notes` is worth reading.** It is how the actor reports a clipped tall page, a scroll that stopped at the limit, a recording shortened to stay inside the frame limit, or `hideSelectors` that matched nothing.
+
+---
+
+## 💰 Pricing
+
+**$13 / month**, with a **1-day free trial**. Unlimited runs and unlimited captures for the subscription; you pay the Apify platform usage your runs consume, as with any rented Actor.
+
+The settings that move platform usage most:
+
+- **`waitUntil`** is the big one. `load` returned a heavy marketing page in about **5 seconds** where `networkidle0` took **28** — for a screenshot that differed by a few kilobytes.
+- **Capture in batches.** Starting a run costs a fixed amount of browser time before the first page opens. Ten addresses in one run use roughly half the platform usage of the same ten as ten separate runs.
+- **Recordings cost far more than stills**, in proportion to `recordSeconds × fps`. A 5-second GIF at 10 fps is 50 captures of the page; a 10-second MP4 at 30 fps is 300.
+
+<!-- ══════════════════════════════════════════════════════════════════════════
+▼▼▼ PAY-PER-EVENT PRICING — PARKED UNTIL THE LISTING IS SWITCHED TO PPE ▼▼▼
+
+This actor is currently on the monthly rental plan above. The table below is the
+prepared per-event pricing; it is hidden so that nobody reads prices they are not
+being charged.
+
+TO PUBLISH IT, once the listing has been switched to pay-per-event:
+  1. delete this comment opener and the closer marked ▲▲▲ below
+  2. delete the "$13 / month" paragraph above
+  3. un-comment the billing block in src/delivery.js (same ▼▼▼ / ▲▲▲ banner)
+  4. rename "_payPerEvent_DISABLED_UNTIL_PPE" back to "payPerEvent" in
+     .actor/actor.json
+The numbers below match .actor/pay_per_event.json exactly — change both together.
+
+### Pricing
+
+| Event | FREE | BRONZE | SILVER | GOLD |
+|---|---|---|---|---|
+| **Page capture** (per saved file) | $0.007 | $0.006 | $0.0055 | $0.005 |
+| **Video frame** (per frame of an MP4 or GIF) | $0.00035 | $0.0003 | $0.00028 | $0.00025 |
+
+No start fee, and no charge for browser time — a screenshot costs the same
+whether the page is quick or slow.
+
+**What a run actually costs** — measured on this actor at 2 GB:
+
+| Run | Frames | Total on BRONZE |
+|---|---|---|
+| One screenshot or PDF | — | **$0.006** |
+| Ten screenshots in one run | — | **$0.060** |
+| A 5-second GIF at 10 fps | 50 | ~$0.021 |
+| A 10-second MP4 at 15 fps | 150 | ~$0.051 |
+| A 10-second MP4 at 30 fps | 300 | ~$0.096 |
+
+Still images and PDFs never pay the frame charge. Pages that produce no file are
+never charged at all — they still appear in your results with a sentence saying
+what happened.
+
+▲▲▲ END OF THE PARKED PAY-PER-EVENT SECTION ▲▲▲
+══════════════════════════════════════════════════════════════════════════ -->
+
+---
+
+## 🛟 Limits, and why they exist
+
+A browser can be asked to do something that never finishes. These limits mean it does not.
+
+| Limit | Value | What happens when it is reached |
+|---|---|---|
+| Scrolling | your `maxScrollSeconds`, at most 60 s | Scrolling stops, the page is captured as it stands, and a note says so |
+| Full-page image height | 16 000 px | The image is clipped to the top 16 000 px — the tallest a browser can render in one pass |
+| Recording frames | 300 per page | The clip is shortened, keeping your frame rate, and a note says so |
+| Recording time | 2.5 minutes per page | Recording stops and whatever was captured is encoded into a valid clip |
+| Whole page | 4 minutes | The page is abandoned and reported; the run carries on with the next address |
+| Output file | 100 MB | The page is reported with a suggestion to record less or use a smaller window |
+
+---
+
+## 🔄 If a run is interrupted
+
+Progress is saved after every page. If the run is migrated, restarted or aborted, it resumes from the next uncaptured address instead of starting over — so an interruption never re-captures a page you already received.
+
+---
+
+## 🚫 When something goes wrong
+
+| Situation | What you see | What to do |
+|---|---|---|
+| An address is not a web address | The run is refused when you submit it, naming the position of the bad line | Fix or remove that line |
+| A page will not load | `status: "failed"` and an `error` sentence for that address only | Raise `timeouT`, or check the address in a browser |
+| The site answers with an error code | A capture of the error page, and a note giving the status code | Expected — the page really did answer that way |
+| A page is taller than 16 000 px | A clipped image, and a note with the page's real height | Capture the window instead of the whole page, or a narrower window |
+| A recording came out short | Fewer `frames` than asked, and a note saying why | Lower `fps` or `recordSeconds`, or record a lighter page |
+| Nothing was captured at all | A single row with `status: "no_input"` | Check the addresses in the input |
+
+---
+
+## ❓ Frequently asked questions
+
+**Can it capture pages behind a login?**
+Yes, with the `cookies` setting. Export the cookies from a signed-in browser session and paste them in.
+
+**Why is my full-page screenshot cut off at the bottom?**
+The page is taller than 16 000 pixels. That is a browser limit, not a setting — a browser cannot rasterise an arbitrarily tall page in one image. The row's `notes` gives the page's real height.
+
+**My GIF looks shorter than I asked for.**
+Check `frames` and `notes` on the row. A clip is shortened when `recordSeconds × fps` would pass 300 frames, or when the page was too slow to record the full series in time.
+
+**Why is the video not the page's real motion?**
+Frames are captured one at a time, so a recording is a time-lapse rather than a real-time screen capture. In `scroll` mode that is exactly what you want — a smooth pass down the page. In `static` mode, fast animations look sped up.
+
+**Can I capture an infinite-scroll feed completely?**
+No, and neither can anything else — the feed has no end. Set `maxScrollSeconds` to how much of it you want; that is the amount you get.
+
+**How many pages can I capture per run?**
+As many addresses as you like. Batching is more efficient than separate runs.
+
+**What happens if one address fails?**
+Only that address. It appears with `status: "failed"` and a sentence saying why, and the run continues.
+
+**I upgraded from version 1 — do I need to change anything?**
+No. Every setting from version 1 still works, and the four output fields integrations read keep their exact names. The retired video settings (`frameCounT`, `frame`, `timefullPagE`, `infiniteScroll`) are converted automatically and the run log says what they became. See the changelog for the full list.
+
+**Can I use my own proxy?**
+Yes — set your own proxy URLs in the proxy setting. Apify's datacenter proxy is used by default.
+
+---
+
+## ⚖️ Legal & compliance
+
+This actor captures **pages as they are served to a browser** — the same content any visitor can see, plus anything your own cookies give you access to.
+
+Please use it responsibly:
+
+- Only capture pages you are authorised to access, and only use cookies from accounts you own.
+- Respect each site's Terms of Service and applicable data-protection law (GDPR, CCPA and equivalents).
+- Screenshots of pages containing personal data are personal data — store and share them accordingly.
+- Do not use captures to impersonate a site, a person or an organisation.
+
+---
+
+## 🤝 Support
+
+- **📧 Email**: [flowextractapi@outlook.com](mailto:flowextractapi@outlook.com)
+- **🐙 GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+- **🐦 Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
+- **🔧 Apify**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
+
+
+---
+
+*Built by [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63) — reliable data extraction actors for the Apify platform.*

@@ -1,44 +1,51 @@
-# 🏠 realestate.com.au Scraper  Property Listings, Fast or Fully Detailed
+# 🏠 realestate.com.au Scraper — Buy, Rent & Sold Listings with Full Details
 
-**[realestate.com.au Scraper](https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63)** turns any realestate.com.au search URL  buy, rent, or sold  into structured property data: price, address, beds/baths/parking, land size, agent contacts, and photos. Paste a search URL and get a whole result set, or paste a single property link and get one fully detailed record.
+**[realestate.com.au Scraper](https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63)** turns any realestate.com.au search URL — buy, rent, or sold — into clean, structured property data. Every listing comes back **fully detailed**: price (as text *and* as numbers), status, address with coordinates, beds/baths/parking, land size, full feature list, inspection and auction times, statement of information, agent and agency contacts, and full-size photos. Paste a search URL and get the whole result set, or paste a single property link and get that one property.
 
-Perfect for **property investors** tracking new listings, **agencies** monitoring competitor stock, and **market researchers** building price/location datasets  without manually copying data off the site.
+Perfect for **property investors** tracking new listings, **agencies** monitoring competitor stock, and **market researchers** building price and rent datasets — without copying anything off the site by hand.
 
 ---
 
 ## Why scrape realestate.com.au?
 
-realestate.com.au is Australia's largest property portal, covering homes for sale, for rent, and recently sold across every state. It's the primary public source for current asking prices, rental rates, and sold history at national scale.
+realestate.com.au is Australia's largest property portal, covering homes for sale, for rent, and recently sold across every state. It's the primary public source for current asking prices, rental rates, and sold results at national scale.
 
 Common use cases:
 
-- **Investment research**  pull every listing matching a price/size/location filter to compare deals across suburbs.
-- **Competitor monitoring**  agencies tracking what's newly listed or price-changed in their patch.
-- **Market analysis**  build a dataset of sold prices and current asking prices for a region over time.
-- **Lead generation**  collect agent and agency contact details attached to active listings.
-- **Rental market tracking**  monitor rental listings and pricing in a specific area or drawn map region.
+- **Investment research** — pull every listing matching a price/size/location filter and compare deals across suburbs using numeric prices.
+- **Sold-price analysis** — collect recent sales with their sold date and sold price for a suburb or region.
+- **Rental market tracking** — weekly rents, bond amounts, and availability dates for any area or hand-drawn map region.
+- **Competitor monitoring** — agencies tracking what's new, under offer, or sold in their patch.
+- **Lead generation** — agent and agency contact details, profile links, and photos attached to active listings.
 
 ---
 
 ## What data can realestate.com.au Scraper extract?
 
-### 🏠 Identity
-- Listing ID, property type, title, description, listing URL
+Every listing includes all of the following — there is no separate "detail mode" to switch on.
 
-### 💰 Price & Location
-- Display price, street address, suburb, state, postcode, latitude/longitude
+### 🏠 Identity & status
+- Listing ID, listing URL, channel (buy / rent / sold), property type, title, plain-text description
+- Status (e.g. *New*, *Under Offer*, *Sold*), construction status (established / new)
 
-### 🛏️ Features
-- Bedrooms, bathrooms, parking spaces, land size, construction status (established / new)
+### 💰 Price
+- Display price exactly as shown on the site (e.g. `$645,000 - $675,000`, `Contact Agent`)
+- Numeric `priceFrom` / `priceTo` in AUD whenever the price is an unambiguous amount or range (`$1.4m-$1.48m` → 1,400,000 – 1,480,000); weekly rents are marked `pricePeriod: "week"`
+- **Sold listings:** sold date · **Rentals:** bond and date available
 
-### 👤 Agent & Agency
-- Agency name, and every listed agent's name, phone, email, and job title
+### 📍 Location
+- Street address, suburb, state, postcode, latitude/longitude
+
+### 🛏️ Property features
+- Bedrooms, bathrooms, parking spaces, land size (text and numeric value + unit)
+- Full indoor/outdoor feature list, statement of information (Victoria), inspection and auction times
+
+### 👤 Agents & agency
+- Every listed agent: name, job title, phone, email, profile URL, photo
+- Agency: name, phone, email, website, office address, profile URL, logo, agency listing ID
 
 ### 🖼️ Media
-- Main image, full photo gallery
-
-### 🔎 Full-detail fields (with "Fetch Full Property Details" on, or from a single-property URL)
-- Complete indoor/outdoor feature list, statement of information, inspection and auction times, full agency listing ID
+- Main image and the full photo gallery, as full-size image URLs
 
 ---
 
@@ -46,12 +53,12 @@ Common use cases:
 
 ### Start URLs (Array)
 
-Paste realestate.com.au URLs straight from your browser  no editing needed. Two kinds are supported:
+Paste realestate.com.au URLs straight from your browser — no editing needed. Two kinds are supported:
 
 | Input value | What it extracts |
 |---|---|
-| A search/listing URL (`/buy/…`, `/rent/…`, `/sold/…`, including map-drawn searches) | Up to **Max Results** listings matching that search |
-| An individual property URL | That one property, always with full details |
+| A search/listing URL (`/buy/…`, `/rent/…`, `/sold/…`, including map-drawn and inspection-day searches) | Up to **Max Results** listings matching that search |
+| An individual property URL | That one property |
 
 ```json
 {
@@ -62,22 +69,20 @@ Paste realestate.com.au URLs straight from your browser  no editing needed. Two 
 }
 ```
 
-Filters already applied on the site  location, property type, price, land size, bedrooms, sort order, map-drawn areas, and inspection/auction dates  carry through automatically.
+Filters already applied on the site — location, property type, price, land size, bedrooms, sort order, map-drawn areas, and inspection dates — carry through automatically.
+
+A listing that shows up in more than one of your searches is returned (and charged) **only once**.
 
 ### `maxResults` (Integer)
 - **Default**: `25`
-- Maximum listings to scrape per search URL. Set to `0` for unlimited (all pages, bounded only by your configured budget). Doesn't affect individual property URLs  those always return exactly one result.
+- Maximum listings to scrape per search URL. Set to `0` for all available results. Doesn't affect individual property URLs — those always return exactly one result.
 
-### `fetchPropertyDetails` (Boolean)
-- **Default**: `false`
-- **Off**: fast, cheap  just the data returned by the search itself.
-- **On**: for every listing, also fetches the full detail-page data (complete feature list, inspection/auction times, statement of information, full agency contacts)  one extra request per listing, billed at a higher rate (see Pricing). Individual property URLs always return full detail regardless of this setting.
+> ℹ️ realestate.com.au serves at most **2,000 results for any single search**. If your search matches more, the run log tells you so — split it into narrower searches (by suburb, price range, or property type) and add each URL to collect everything.
 
 ```json
 {
-    "startUrls": [{ "url": "https://www.realestate.com.au/buy/property-house-in-brisbane,+qld+4000/list-1" }],
-    "maxResults": 50,
-    "fetchPropertyDetails": true
+    "startUrls": [{ "url": "https://www.realestate.com.au/sold/in-richmond,+vic+3121/list-1?activeSort=solddate" }],
+    "maxResults": 500
 }
 ```
 
@@ -85,18 +90,19 @@ Filters already applied on the site  location, property type, price, land size, 
 
 ## 💰 Pricing
 
-| Event | FREE | BRONZE | SILVER | GOLD |
+| Event | FREE | BRONZE | SILVER | GOLD+ |
 |---|---|---|---|---|
-| Property listing (`push-success-result`) | $0.0010 | $0.0007 | $0.00065 | $0.0005 |
-| Full detail add-on (`push-detailed-result`, on top of the listing) | +$0.0025 | +$0.0010 | +$0.0009 | +$0.0008 |
+| Property listing (`push-success-result`) — any listing from a search URL, **full details included** | $0.0010 | $0.0007 | $0.00065 | $0.0005 |
+| Individual property URL add-on (`push-detailed-result`, on top of the listing) | +$0.0025 | +$0.0010 | +$0.0009 | +$0.0008 |
 
-A detailed listing costs the base price **plus** the add-on. A plain listing costs the base price alone.
+Listings from search URLs cost the base price only — with every field included. The add-on applies only to individual property URLs, which each need their own lookup.
 
 **Cost estimate examples:**
-- **1,000 listings**, details off, GOLD plan: ~$0.50
-- **1,000 listings**, details on, GOLD plan: ~$1.30
+- **1,000 listings** from search URLs, GOLD plan: ~$0.50
+- **1,000 listings** from search URLs, FREE plan: ~$1.00
+- **100 individual property URLs**, GOLD plan: ~$0.13
 
-> 💡 Tip: set `maxResults` to `10` and leave `fetchPropertyDetails` off for your first test run before scaling up.
+> 💡 Tip: set `maxResults` to `10` for your first test run before scaling up.
 
 ---
 
@@ -108,8 +114,16 @@ A detailed listing costs the base price **plus** the add-on. A plain listing cos
     "url": "https://www.realestate.com.au/property-townhouse-sa-park+holme-151702616",
     "channel": "buy",
     "propertyType": "townhouse",
+    "status": "New",
     "title": "Spacious Family Living with Flexible Dual-Level Design",
-    "price": "Best Offers By 27/7 (USP)",
+    "description": "Built in 2020, this dual-level townhouse offers ...\n\nFeatures include ...",
+    "price": "$780,000 - $850,000",
+    "priceFrom": 780000,
+    "priceTo": 850000,
+    "pricePeriod": null,
+    "dateSold": null,
+    "dateAvailable": null,
+    "bond": null,
     "address": {
         "streetAddress": "108 Margaret Street",
         "suburb": "Park Holme",
@@ -122,20 +136,44 @@ A detailed listing costs the base price **plus** the add-on. A plain listing cos
     "bathrooms": 2,
     "parkingSpaces": 1,
     "landSize": "241 m²",
+    "landSizeValue": 241,
+    "landSizeUnit": "m2",
     "constructionStatus": "established",
-    "agencyName": "Ray White City Living",
+    "agencyName": "Example Realty",
+    "agencyListingId": "1P14362",
+    "agency": {
+        "id": "ASKDFU",
+        "name": "Example Realty",
+        "phone": "08 8100 0000",
+        "email": "info@example.com.au",
+        "website": "http://example.com.au",
+        "address": "Level 1, 67 Anzac Highway, Ashford, SA 5035",
+        "profileUrl": "https://www.realestate.com.au/agency/example-realty-ASKDFU",
+        "logo": "https://i3.au.reastatic.net/170x32/.../logo.jpg"
+    },
     "agents": [
-        { "name": "Mason Lucks", "phone": "0449882882", "email": "mason@example.com", "jobTitle": "Property Advisor" }
+        {
+            "id": "3178288",
+            "name": "Alex Example",
+            "jobTitle": "Property Advisor",
+            "phone": "0400000000",
+            "email": "alex@example.com.au",
+            "emails": ["alex@example.com.au"],
+            "profileUrl": "https://www.realestate.com.au/agent/3178288",
+            "photo": "https://i3.au.reastatic.net/original/.../main"
+        }
     ],
-    "mainImage": "https://i3.au.reastatic.net/.../main.jpg",
-    "images": ["https://i3.au.reastatic.net/.../image1.jpg"],
-    "hasDetailData": false,
+    "mainImage": "https://i3.au.reastatic.net/original/.../image.jpg",
+    "images": ["https://i3.au.reastatic.net/original/.../image.jpg"],
+    "propertyFeatures": [{ "section": "outdoor", "label": "Outdoor Features", "features": ["Garage spaces: 1"] }],
+    "statementOfInformation": null,
+    "inspectionsAndAuctions": [{ "dateDisplay": "Inspection Sat 3 Oct", "startTime": "2026-10-03T11:45:00", "endTime": "2026-10-03T12:10:00", "auction": false }],
+    "inspectionSlot": null,
+    "hasDetailData": true,
     "source_url": "https://www.realestate.com.au/buy/property-townhouse-...",
-    "scrapedAt": "2026-07-10T09:00:00.000Z"
+    "scrapedAt": "2026-09-29T09:00:00.000Z"
 }
 ```
-
-With `fetchPropertyDetails: true`, each item additionally carries `propertyFeatures`, `statementOfInformation`, `inspectionsAndAuctions`, and full `agency` contact details.
 
 ---
 
@@ -144,45 +182,36 @@ With `fetchPropertyDetails: true`, each item additionally carries `propertyFeatu
 **Do I need a realestate.com.au account to use this actor?**
 No. Both search and individual property URLs work without logging in.
 
-**How many listings can I extract for free?**
-With Apify's free monthly credit, you can extract several thousand plain listings, or a smaller number with full details enabled (see Pricing above for exact per-listing cost).
+**Do I need to turn on a "details" option to get features, inspections, and agency contacts?**
+No. Every listing already includes the complete record. (The old "Fetch Full Property Details" option is no longer needed and has no effect.)
+
+**How many listings can I get from one search?**
+Up to 2,000 — that's the most realestate.com.au serves for any single search. For bigger areas, add several narrower search URLs; duplicates between them are removed automatically.
 
 **Can I scrape multiple search URLs or properties in one run?**
-Yes  add as many URLs as you like to `startUrls`; each is processed independently, and you can freely mix search URLs and individual property URLs in the same run.
+Yes — add as many URLs as you like to `startUrls`, and freely mix search URLs and individual property URLs in the same run.
 
-**Does it support map-drawn area searches?**
-Yes  paste a URL from a hand-drawn or pinned map search on the site and it's handled the same as any other search URL.
-
-**What happens if the run crashes or gets interrupted mid-way?**
-The actor checkpoints progress as it goes and resumes exactly where it left off on the next attempt  already-scraped listings aren't re-charged.
+**Does it support map-drawn area searches and inspection-day searches?**
+Yes — paste the URL from a hand-drawn map search or an "inspection times" search and it's handled like any other search URL. Inspection-day results also carry the matching inspection slot.
 
 **Does it work for rent and sold listings, not just buy?**
-Yes  buy, rent, and sold are all supported, including sold-specific sorting (e.g. by sale date or sale price).
+Yes — buy, rent, and sold are all supported, including sold-specific sorting (by sale date or sale price), sold dates, and rental bond/availability.
 
----
-
-## ⚖️ Legal & Ethical Use
-
-This actor extracts **publicly visible listing data** from realestate.com.au  the same information any visitor can see in their browser without logging in.
-
-**Please use this tool responsibly:**
-- Only extract data you are authorized to access and use.
-- Comply with realestate.com.au's Terms of Service and applicable data protection regulations (GDPR, Australian Privacy Act, etc.).
-- Do not use extracted contact details for spam, harassment, or unsolicited bulk outreach.
-- Respect reasonable request volumes  this actor is built for research and analysis, not for overwhelming the source site.
+**What happens if the run is interrupted mid-way?**
+The actor checkpoints progress as it goes and resumes from the last completed page on the next attempt, skipping listings it already delivered.
 
 ---
 
 ## 🔄 Resumability
 
-The actor checkpoints its progress as it works through each search URL. If the run is interrupted  a crash, a platform migration, or a manual abort  the next attempt resumes from the last completed page instead of starting over, so you don't lose progress or get re-charged for already-delivered listings.
+The actor checkpoints its progress as it works through each search URL. If the run is interrupted — a crash, a platform migration, or a manual abort — the next attempt resumes from the last completed page instead of starting over.
 
 | Trigger | What gets saved |
 |---|---|
-| After every completed search page | Per-URL progress (page position, listings pushed so far) |
-| Platform migration event | Full progress snapshot |
-| Manual abort | Full progress snapshot |
-| Successful completion | Progress is cleared  nothing lingers for the next run |
+| After every completed search page | Per-URL progress (page position, listings delivered so far) |
+| Platform migration event | Full progress snapshot, including which listings were already delivered |
+| Manual abort | Full progress snapshot, including which listings were already delivered |
+| Successful completion | Progress is cleared — nothing lingers for the next run |
 
 ---
 
@@ -190,10 +219,10 @@ The actor checkpoints its progress as it works through each search URL. If the r
 
 | User tier | Proxy used |
 |---|---|
-| 💎 Paying | Dedicated proxy  faster and more reliable |
-| 🆓 Free | Apify Residential Proxy  built-in, automatic |
+| 💎 Paying | Dedicated proxy — faster and more reliable |
+| 🆓 Free | Apify Residential Proxy — built-in, automatic |
 
-Proxy selection is automatic based on your Apify account tier  there's no proxy configuration to set up.
+Proxy selection is automatic based on your Apify account tier — there's no proxy configuration to set up.
 
 ---
 
@@ -203,16 +232,38 @@ Proxy selection is automatic based on your Apify account tier  there's no proxy 
 |---|---|---|
 | A pasted URL isn't a recognized realestate.com.au URL | An `_error` field on that item explaining why | Copy the URL directly from your browser rather than typing it |
 | An individual property URL points to an expired/removed listing | An `_error` item noting the property wasn't found | Confirm the listing is still live on the site |
+| A search matches more than 2,000 listings | A warning in the run log; the first 2,000 are delivered | Split the search into narrower URLs |
 | No start URLs provided | A single guidance item in the dataset | Add at least one URL to `startUrls` |
-
----
-
-## 🤝 Support & Resources
-
-- 🙋 **Apify Profile**: [dz_omar](https://apify.com/dz_omar?fpr=smcx63)
 
 ---
 
 ## 🌟 Related Actors
 
-- **[Idealista API Scraper](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)**  Property listings from Idealista (Spain, Portugal, Italy)
+- **[Idealista API Scraper](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** — Property listings from Idealista (Spain, Portugal, Italy)
+
+---
+
+## Support
+
+- 🙋 **Apify Profile**: [FlowExtract API](https://apify.com/dz_omar?fpr=smcx63)
+- 🌐 **Website**: [flowextractapi.com](https://flowextractapi.com)
+- 📧 **Email**: flowextractapi@outlook.com
+- 💬 **GitHub**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
+- 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
+- 🐦 **X**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
+- 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
+- 🎵 **TikTok**: [@flowextractapi](https://www.tiktok.com/@flowextractapi)
+
+---
+
+## Legal & compliance
+
+- Extracts **publicly available listing data only** — the same information any visitor sees without logging in.
+- Respects the source site's rate limits and terms; built for research and analysis, not for overwhelming the site.
+- No storage of personal information by the actor beyond your own run's dataset.
+- Suitable for commercial use. You are responsible for using extracted contact details lawfully (e.g. the Australian Privacy Act and Spam Act) — no spam or unsolicited bulk outreach.
+- No affiliation with or endorsement by realestate.com.au or REA Group is implied.
+
+---
+
+*realestate.com.au Scraper — by FlowExtract API. Turn any website into structured data.*

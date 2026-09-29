@@ -2,24 +2,27 @@
 
 **Uncover competitor advertising strategies and monitor campaigns across every Google surface  pulled straight from Google's own Ads Transparency Center.**
 
-Search by direct URL, or run keyword / advertiser / domain searches across general commercial ads and political & election ads. Get creative previews, delivery regions, and  with one toggle  spend ranges, impression estimates, first/last-shown dates, and (for political ads) demographic targeting.
+Search by direct URL, or run keyword / advertiser / domain searches across general commercial ads and political & election ads. Every ad comes with creative previews and its run dates (first shown, last shown, days ran). Optional switches add the ad's actual copy - headline, description, call-to-action - and, for political ads, spend ranges, impression estimates and demographic targeting.
 
 ---
 
 ## 🎯 What You Can Extract
 
 ### Complete Ad Intelligence
-- **Ad Creatives**  preview URLs for video, image, and text ad formats
+- **Ad Creatives** - preview URLs for video, image, and text ad formats
+- **Ad Copy** - headline, description, call-to-action, click URL and thumbnail (with Extract Ad Copy on)
 - **Advertiser Information**  advertiser ID, advertiser name, domain, direct transparency URLs
 - **Delivery Data**  regions and countries where each ad ran
-- **Performance Ranges**  impression and spend estimates (when Fetch Full Ad Details is on)
-- **Timing**  first/last shown dates and total days active
+- **Performance Ranges** - impression and spend estimates (political & election ads, with Fetch Full Ad Details on)
+- **Timing** - first/last shown dates and total days active, on every ad
 - **Political Ad Targeting**  included/excluded age, gender, and location targeting for election ads
 
-### Two Levels of Detail, Your Choice
-Every search  URL, General, or Political  respects one shared switch, **Fetch Full Ad Details**:
-- **Off** (default): the fast path  advertiser, creative, format, and preview URLs, one request per ad.
-- **On**: the complete picture  everything above, plus spend range, impression range, first/last shown dates, delivery countries, regional breakdowns, and (political ads only) demographic targeting.
+### Choose how much you pull back
+Every ad always comes with the advertiser, creative, format, preview URL, and its **run dates** - first shown, last shown, and days ran - at no extra cost.
+
+Two optional switches add more:
+- **Fetch Full Ad Details** - adds the per-region delivery breakdown, and for **political & election ads** the spend range, impression range and demographic targeting. Worth knowing: Google publishes spend, impressions and demographics for political ads only, so on ordinary commercial ads this mainly adds the regions.
+- **Extract Ad Copy** - adds the ad's actual wording: headline, long headline, description, call-to-action label, click and display URL, thumbnail image, channel name and video length.
 
 ---
 
@@ -81,7 +84,8 @@ All three sections can be combined in a single run  they're processed independen
 | Field | Type | Applies to | Description |
 |---|---|---|---|
 | **📊 maxResults** | `integer` | All searches | Max ads per search  per URL, and per entry in General/Political search. `0` = unlimited. Default: `10`. |
-| **🔍 fetchAdDetail** | `boolean` | All searches | Off = fast summary results. On = full detail (spend, impressions, dates, demographics). Default: `false`. |
+| **🔍 fetchAdDetail** | `boolean` | All searches | Off = fast summary. On = adds regional breakdown, plus spend/impressions/demographics for political ads. Default: `false`. |
+| **✍️ fetchAdCopy** | `boolean` | All searches | On = also extract the ad's text (headline, description, CTA, click URL, thumbnail). One extra request per ad. Default: `false`. |
 | **🔗 adUrls** | `array` | Search by URL | One or more full Ads Transparency Center URLs. |
 | **🔎 generalAdSearch** | `array` | General search | `searchTargets` (name/ID/domain), plus `maxAdvertiserAccounts`, `maxDomainMatches`, `targetPlatform`, `adFormatType`, `geoTargetRegion`, `timeRangePreset` / `customStartDate` / `customEndDate`. |
 | **🗳️ politicalAdSearch** | `array` | Political search | `searchTargets` and `geoTargetRegion` (both required), plus `maxAdvertiserAccounts`, `impressionsRange`, `amountSpentRange`, `targetPlatform`, `adFormatType`, `sortOrder`, date filters. |
@@ -118,6 +122,9 @@ Results land in the default dataset with two views in the Output tab  **Ads Over
   "previewUrls": [
     "https://displayads-formats.googleusercontent.com/ads/preview/content.js?client=ads-integrity..."
   ],
+  "firstShown": "2026-07-14T02:16:45-07:00",
+  "lastShown": "2026-09-08T04:48:38-07:00",
+  "daysRan": 57,
   "source_url": "https://adstransparency.google.com/advertiser/AR04619580580634296321",
   "_source": "google_ads_scraper"
 }
@@ -156,6 +163,25 @@ Results land in the default dataset with two views in the Output tab  **Ads Over
 }
 ```
 
+With **Extract Ad Copy** enabled, each ad also carries the creative's own wording:
+```json
+"adCopy": [
+  {
+    "headline": "Pokémon Kids TV",
+    "longHeadline": "Pi-Pi-Pi-Pi Pikachu!",
+    "description": "Fun Pokémon Content for Kids!",
+    "cta": "Subscribe",
+    "clickUrl": "https://www.youtube.com/@pokemonkidstv",
+    "displayUrl": "youtube.com",
+    "thumbnail": "https://i.ytimg.com/vi/h4-ftQE3zEQ/hqdefault.jpg",
+    "highResThumbnail": "https://i3.ytimg.com/vi/h4-ftQE3zEQ/hqdefault.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=h4-ftQE3zEQ",
+    "channelName": "Pokémon Kids TV",
+    "videoDuration": "4:25"
+  }
+]
+```
+
 `demographics` is populated for political/election ads with targeting configured, and looks like:
 ```json
 "demographics": {
@@ -173,7 +199,7 @@ Results land in the default dataset with two views in the Output tab  **Ads Over
 No. It works anonymously out of the box. A Google account (via the optional `cookie` field) is only needed if you want to lift the ~100–200 result cap Google applies to anonymous requests.
 
 **How many ads can I extract for free?**
-Apify's $5/month free usage credit covers roughly 500 ad creatives on the FREE pricing tier (at $0.01 each)  see Pricing below.
+Apify's $5/month free usage credit covers roughly 2,700 ad creatives on the FREE pricing tier (at $0.0018 each) - see Pricing below.
 
 **Can I search multiple advertisers or URLs in one run?**
 Yes  `adUrls`, `generalAdSearch`, and `politicalAdSearch` all accept arrays, and all three can be combined in a single run.
@@ -220,11 +246,14 @@ This actor charges per **successfully extracted ad creative**  you're only bille
 
 | Event | FREE | BRONZE | SILVER | GOLD |
 |---|---|---|---|---|
-| Successful ad creative | $0.01 | $0.006 | $0.004 | $0.002 |
+| Successful ad creative | $0.0018 | $0.0014 | $0.0011 | $0.0008 |
+
+One event, nothing else to add up: you're billed once per ad delivered, whatever options you enable.
 
 **Cost estimate examples:**
-- Extracting **1,000 ads** on the FREE plan: ~$10.00
-- Extracting **1,000 ads** on the GOLD plan: ~$2.00
+- Extracting **1,000 ads** on the FREE plan: ~$1.80
+- Extracting **1,000 ads** on the GOLD plan: ~$0.80
+- Extracting **10,000 ads** on the SILVER plan: ~$11.00
 
 > 💡 Tip: Set `maxResults` to a small number like `10` first to confirm your search returns what you expect before running a full extraction.
 
@@ -309,7 +338,7 @@ If the dedicated network is ever unavailable, paying runs fall back to Apify Pro
 Extract Facebook advertising data for comprehensive cross-platform competitor analysis.
 
 ### 🎬 Video & Content Tools
-**[YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-extractor?fpr=smcx63)**
+**[YouTube Transcript & Metadata Extractor](https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63)**
 Extract video transcripts, metadata, and analytics from YouTube content.
 
 **[YouTube Full Channel Scraper](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)**
@@ -346,7 +375,7 @@ Comprehensive website security vulnerability scanning.
 ### Social Media
 
 - 💼 **LinkedIn**: [flowextract-api](https://www.linkedin.com/in/flowextract-api/)
-- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/@FlowExtractAPI)
+- 🐦 **Twitter**: [@FlowExtractAPI](https://x.com/FlowExtractAPI)
 - 📱 **Facebook**: [flowextractapi](https://www.facebook.com/flowextractapi)
 
 ### Found a Bug or Have a Feature Request?

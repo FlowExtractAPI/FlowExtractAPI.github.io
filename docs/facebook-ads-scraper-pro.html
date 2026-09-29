@@ -88,7 +88,7 @@
                 <!-- Full actor documentation (pre-rendered from the README) -->
                 <section class="readme-body" id="readme-body">
                     <h1>🔍 Facebook Ads Scraper Pro - Ad Library Intelligence</h1>
-<p><strong>Extract comprehensive data from Facebook&#39;s Ad Library</strong> with real-time streaming, advanced filtering, and standby mode support.</p>
+<p><strong>Extract comprehensive data from Facebook&#39;s Ad Library</strong> with real-time batch pushing, advanced filtering, and full ad-detail enrichment.</p>
 <blockquote>
 <p><strong>Search Keywords &amp; Advertisers &amp; URLs → Stream Real-Time Ad Data → Get Complete Analytics</strong></p>
 </blockquote>
@@ -99,28 +99,76 @@
 <p><a href="https://www.youtube.com/watch?v=yNSIhZcDlNY">https://www.youtube.com/watch?v=yNSIhZcDlNY</a></p>
 <hr>
 <h2>💎 Pricing Tiers - Choose Your Plan</h2>
-<h3><strong>FREE TIER</strong> ✅</h3>
-<p>Get started with no upfront cost</p>
+<p>The Actor automatically detects whether your Apify account is on a <strong>free</strong> or a <strong>paid</strong> plan — you don&#39;t configure anything. The plan decides two things: how many results a single run returns, and which proxy network the run uses.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Free plan</strong></th>
+<th><strong>Paid plan</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Results per run</strong></td>
+<td><strong>200 maximum</strong> (a sample)</td>
+<td>♾️ Unlimited</td>
+</tr>
+<tr>
+<td><strong>Proxy network</strong></td>
+<td>Apify Proxy (shared residential pool)</td>
+<td>Dedicated premium proxy</td>
+</tr>
+<tr>
+<td><strong>Ad Library data &amp; fields</strong></td>
+<td>Full — nothing is stripped out</td>
+<td>Full</td>
+</tr>
+<tr>
+<td><strong>All filters &amp; search modes</strong></td>
+<td>✅ Included</td>
+<td>✅ Included</td>
+</tr>
+<tr>
+<td><strong>Media assets (images &amp; video)</strong></td>
+<td>✅ Included</td>
+<td>✅ Included</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Evaluating the output before you commit</td>
+<td>Production, agencies, large datasets</td>
+</tr>
+</tbody></table>
+<hr>
+<h3><strong>FREE PLAN</strong> ✅ — try before you subscribe</h3>
+<p>Get started with no upfront cost. You get the <strong>complete data shape</strong>, just not the complete dataset.</p>
 <p><strong>Included:</strong></p>
 <ul>
-<li>✅ Full access to Facebook Ad Library data</li>
+<li>✅ Full access to Facebook Ad Library data — every field, nothing redacted</li>
 <li>✅ Multi-language &amp; multi-country filtering</li>
 <li>✅ Real-time batch pushing (results appear as they&#39;re collected)</li>
 <li>✅ Complete media asset extraction (images &amp; videos)</li>
 <li>✅ All filtering options (date ranges, platforms, categories)</li>
 </ul>
-<p><strong>Trade-offs:</strong></p>
+<p><strong>Limits:</strong></p>
 <ul>
-<li>⚠️ Shared proxy infrastructure</li>
-<li>⚠️ Occasional connection interruptions</li>
-<li>⚠️ Best for small to medium projects (&lt; 500 ads)</li>
+<li>🔒 <strong>200 results per run — a hard cap</strong>, counted across the <em>whole run</em>, not per query.
+A free run asking for 5 keywords × 100 results still stops at 200 results in total.
+The run then finishes normally (<code>SUCCEEDED</code>) — a short result set is the cap, not a failure.</li>
+<li>⚠️ Apify Proxy (shared residential pool) only — the dedicated premium proxy is a paid-plan benefit</li>
+<li>⚠️ Occasional connection interruptions on the shared pool</li>
 </ul>
+<p><strong>Think of a free run as a free sample.</strong> Run your real query, inspect the fields, check the ad
+creatives and the EU reach data, confirm it fits your pipeline — then subscribe and re-run the
+exact same input to get everything.</p>
+<p>👉 <strong><a href="https://console.apify.com/billing/subscription">Subscribe to a paid Apify plan</a></strong> to remove the 200-result cap.</p>
 <hr>
-<h3><strong>PAID TIER</strong> ⭐ <em>RECOMMENDED FOR PRODUCTION</em></h3>
-<p>Upgrade for <strong>enterprise-grade reliability</strong></p>
-<p><strong>All Free Tier features PLUS:</strong></p>
+<h3><strong>PAID PLAN</strong> ⭐ <em>RECOMMENDED FOR PRODUCTION</em></h3>
+<p>Upgrade for <strong>unlimited results and enterprise-grade reliability</strong></p>
+<p><strong>All Free Plan features PLUS:</strong></p>
 <ul>
-<li>🚀 <strong>Dedicated premium proxy</strong> - Your own reliable connection</li>
+<li>🚀 <strong>No 200-result cap</strong> - Every run returns the full result set</li>
+<li>🚀 <strong>Dedicated premium proxy</strong> - Your own reliable connection, not the shared pool</li>
 <li>🚀 <strong>No rate limiting</strong> - Unlimited continuous scraping</li>
 <li>🚀 <strong>100% success rate</strong> - Stable, uninterrupted operations</li>
 <li>🚀 <strong>Extract ∞+ ads per query</strong> - No slowdowns or blocks</li>
@@ -129,12 +177,46 @@
 </ul>
 <p><strong>Why upgrade?</strong></p>
 <ul>
+<li><strong>Get all your data</strong>: The 200-result sample cap is lifted entirely</li>
 <li><strong>Avoid interruptions</strong>: Your dedicated proxy won&#39;t hit Facebook&#39;s rate limits</li>
 <li><strong>Reliability</strong>: No HTTP errors or temporary blocks</li>
 <li><strong>Scale effortlessly</strong>: Handle large datasets with perfect stability</li>
 <li><strong>Best for agencies</strong>: Reliable results for client reports and production systems</li>
 <li><strong>Zero downtime</strong>: 24/7 stable scraping without worries</li>
 </ul>
+<hr>
+<h2>🔒 The Free-Plan 200-Result Cap, in Detail</h2>
+<p><strong>What it is:</strong> a free-plan run pushes at most <strong>200 results in total</strong>, then stops cleanly.</p>
+<p><strong>How it behaves:</strong></p>
+<ul>
+<li>The cap is <strong>run-wide</strong>, not per keyword, per URL or per advertiser. Five queries at
+<code>maxResultsPerQuery: 100</code> will not return 500 results on a free plan — they return 200.</li>
+<li>The run <strong>still succeeds</strong>. It is not an error, a crash, or a block.</li>
+<li>You are <strong>never charged for results you don&#39;t receive</strong> — the cap is applied before billing,
+so a capped run bills for exactly the results in your dataset.</li>
+<li>Once the cap is reached the Actor <strong>stops fetching immediately</strong> — it doesn&#39;t keep making
+requests for ads it can&#39;t give you.</li>
+<li>Every free run states the cap <strong>twice</strong>: once at the start of the log, and once in the
+finish summary and the run&#39;s status message.</li>
+</ul>
+<p><strong>What you&#39;ll see in the log when a free run hits the cap:</strong></p>
+<pre><code>════════════════════════════════════════════════════════════════════════════════
+🔒 FREE PLAN SAMPLE — 200 of a possible unlimited results returned
+════════════════════════════════════════════════════════════════════════════════
+   This run stopped at the free-plan limit of 200 results.
+   What you are looking at is a SAMPLE — the full result set is larger.
+
+   👉 Subscribe to any paid Apify plan to unlock ALL results:
+      https://console.apify.com/billing/subscription
+════════════════════════════════════════════════════════════════════════════════
+</code></pre>
+<p><strong>And on the finished run header:</strong></p>
+<pre><code>✅ Sample complete: 200 results (free-plan limit of 200 per run reached).
+   Subscribe to a paid Apify plan to unlock all results.
+</code></pre>
+<p><strong>To remove the cap:</strong> <a href="https://console.apify.com/billing/subscription">subscribe to any paid Apify plan</a>
+and re-run the same input. Nothing in your Actor input changes — the Actor detects the upgrade
+automatically on the next run.</p>
 <hr>
 <h2>🚀 Quick Start</h2>
 <h3>Option 1: Run as Batch Job (One-Time Execution)</h3>
@@ -210,148 +292,130 @@ URLs with <code>?id=</code> fetch that specific ad directly  no search query nee
 <li>🔍 Then <code>searchQueries</code> are run as keyword searches (using the input schema filters)</li>
 </ol>
 <p><code>maxResultsPerQuery</code> controls the maximum ads collected per URL, per advertiser page, and per keyword query.</p>
+<blockquote>
+<p>🔒 <strong>On a free Apify plan, every run stops at 200 results in total</strong> — across all URLs,
+advertisers and queries combined — no matter what <code>maxResultsPerQuery</code> is set to.
+That&#39;s your free sample. <a href="https://console.apify.com/billing/subscription">Subscribe to a paid plan</a>
+to unlock the full result set with the same input.</p>
+</blockquote>
 <hr>
-<h3>Option 3: Run in Standby Mode (Recommended) ⭐</h3>
-<p>Perfect for: Real-time applications, multiple requests, APIs, instant responses</p>
-<pre><code class="language-bash"># Actor automatically runs in standby mode
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     Standby mode (the always-on HTTP API server and its NDJSON streaming
+     endpoints) is switched off for this Actor right now, so the sections below
+     are commented out rather than deleted. The code is untouched — only this
+     documentation is hidden. Uncomment this block (and the two other
+     "STANDBY MODE — CURRENTLY DISABLED" blocks further down) if standby is
+     ever re-enabled.
+     ============================================================================
+
+### Option 3: Run in Standby Mode (Recommended) ⭐
+
+Perfect for: Real-time applications, multiple requests, APIs, instant responses
+
+```bash
+# Actor automatically runs in standby mode
 # Access via: https://dz-omar--facebook-ads-scraper-pro.apify.actor
-</code></pre>
-<p><strong>Standby Mode Advantages:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Feature</th>
-<th>Batch Mode</th>
-<th>Standby Mode</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Cold Start</strong></td>
-<td>8-15 seconds</td>
-<td>0 seconds ⚡</td>
-</tr>
-<tr>
-<td><strong>Response Time</strong></td>
-<td>Slow (start overhead)</td>
-<td>Instant</td>
-</tr>
-<tr>
-<td><strong>Best For</strong></td>
-<td>Scheduled tasks</td>
-<td>Real-time apps</td>
-</tr>
-<tr>
-<td><strong>Concurrent Requests</strong></td>
-<td>Sequential</td>
-<td>Parallel ∞</td>
-</tr>
-<tr>
-<td><strong>Always Running</strong></td>
-<td>No</td>
-<td>Yes (pre-warmed)</td>
-</tr>
-<tr>
-<td><strong>Cost</strong></td>
-<td>Lower</td>
-<td>Higher (always on)</td>
-</tr>
-<tr>
-<td><strong>Ideal Use</strong></td>
-<td>Nightly scrapes</td>
-<td>Live dashboards</td>
-</tr>
-</tbody></table>
-<p><strong>Real-World Comparison:</strong></p>
-<table>
-<thead>
-<tr>
-<th>Scenario</th>
-<th>Batch Mode</th>
-<th>Standby Mode</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Track competitor ads daily</td>
-<td>✅ Good</td>
-<td>⭐ Excellent</td>
-</tr>
-<tr>
-<td>Build a SaaS dashboard</td>
-<td>⚠️ Too slow</td>
-<td>✅ Perfect</td>
-</tr>
-<tr>
-<td>One-time research project</td>
-<td>✅ Best</td>
-<td>Overkill</td>
-</tr>
-<tr>
-<td>API for other apps</td>
-<td>❌ Not viable</td>
-<td>✅ Ideal</td>
-</tr>
-<tr>
-<td>Monitor 50 keywords live</td>
-<td>❌ No</td>
-<td>✅ Yes</td>
-</tr>
-</tbody></table>
-<p><strong>Example: Why Standby Mode is Better for Real-Time Dashboards</strong></p>
-<p>Imagine you&#39;re building a competitor monitoring dashboard that updates live:</p>
-<p><strong>Without Standby (Batch Mode):</strong></p>
-<pre><code>User clicks &quot;Refresh&quot;
+```
+
+**Standby Mode Advantages:**
+
+| Feature | Batch Mode | Standby Mode |
+|---------|-----------|--------------| 
+| **Cold Start** | 8-15 seconds | 0 seconds ⚡ |
+| **Response Time** | Slow (start overhead) | Instant |
+| **Best For** | Scheduled tasks | Real-time apps |
+| **Concurrent Requests** | Sequential | Parallel ∞ |
+| **Always Running** | No | Yes (pre-warmed) |
+| **Cost** | Lower | Higher (always on) |
+| **Ideal Use** | Nightly scrapes | Live dashboards |
+
+**Real-World Comparison:**
+
+| Scenario | Batch Mode | Standby Mode |
+|----------|-----------|--------------| 
+| Track competitor ads daily | ✅ Good | ⭐ Excellent |
+| Build a SaaS dashboard | ⚠️ Too slow | ✅ Perfect |
+| One-time research project | ✅ Best | Overkill |
+| API for other apps | ❌ Not viable | ✅ Ideal |
+| Monitor 50 keywords live | ❌ No | ✅ Yes |
+
+**Example: Why Standby Mode is Better for Real-Time Dashboards**
+
+Imagine you're building a competitor monitoring dashboard that updates live:
+
+**Without Standby (Batch Mode):**
+```
+User clicks "Refresh"
   ↓
 Wait 10 seconds for cold start
   ↓
 Wait 30 seconds for results
   ↓
 40 seconds total ❌ (User closes browser)
-</code></pre>
-<p><strong>With Standby Mode:</strong></p>
-<pre><code>User clicks &quot;Refresh&quot;
+```
+
+**With Standby Mode:**
+```
+User clicks "Refresh"
   ↓
 Results instantly (pre-warmed)
   ↓
 2 seconds total ✅ (User stays engaged)
-</code></pre>
-<hr>
-<h2>📡 API Endpoints</h2>
-<h3>POST / - Custom Scraping with Real-Time Streaming</h3>
-<p>Send search parameters and receive ad data in real-time NDJSON stream.</p>
-<p><strong>Full Example:</strong></p>
-<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{
-    &quot;searchQueries&quot;: [&quot;nike&quot;, &quot;adidas&quot;],
-    &quot;searchAdvertisers&quot;: [&quot;Nike Football&quot;, &quot;15087023444&quot;],
-    &quot;maxResultsPerQuery&quot;: 100,
-    &quot;countries&quot;: [&quot;US&quot;],
-    &quot;contentLanguages&quot;: [&quot;en&quot;],
-    &quot;activeStatus&quot;: &quot;ACTIVE&quot;,
-    &quot;adType&quot;: &quot;ALL&quot;,
-    &quot;mediaType&quot;: &quot;IMAGE&quot;,
-    &quot;publisherPlatforms&quot;: [&quot;FACEBOOK&quot;, &quot;INSTAGRAM&quot;],
-    &quot;sortBy&quot;: &quot;SORT_BY_TOTAL_IMPRESSIONS&quot;,
-    &quot;startDate&quot;: &quot;2024-01-01&quot;,
-    &quot;endDate&quot;: &quot;2025-01-31&quot;
-  }&#39;
-</code></pre>
-<p><strong>Minimal Example:</strong></p>
-<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;searchQueries&quot;: [&quot;nike&quot;]}&#39;
-</code></pre>
-<p><strong>Advertiser-Only Search:</strong></p>
-<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;searchAdvertisers&quot;: [&quot;Nike&quot;], &quot;maxResultsPerQuery&quot;: 200}&#39;
-</code></pre>
-<p><strong>Save Results to File:</strong></p>
-<pre><code class="language-bash">curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
-  -H &quot;Content-Type: application/json&quot; \
-  -d &#39;{&quot;searchQueries&quot;: [&quot;nike&quot;]}&#39; \
-  &gt; results.ndjson
-</code></pre>
+```
+---
+
+## 📡 API Endpoints
+
+### POST / - Custom Scraping with Real-Time Streaming
+
+Send search parameters and receive ad data in real-time NDJSON stream.
+
+**Full Example:**
+```bash
+curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H "Content-Type: application/json" \
+  -d '{
+    "searchQueries": ["nike", "adidas"],
+    "searchAdvertisers": ["Nike Football", "15087023444"],
+    "maxResultsPerQuery": 100,
+    "countries": ["US"],
+    "contentLanguages": ["en"],
+    "activeStatus": "ACTIVE",
+    "adType": "ALL",
+    "mediaType": "IMAGE",
+    "publisherPlatforms": ["FACEBOOK", "INSTAGRAM"],
+    "sortBy": "SORT_BY_TOTAL_IMPRESSIONS",
+    "startDate": "2024-01-01",
+    "endDate": "2025-01-31"
+  }'
+```
+
+**Minimal Example:**
+```bash
+curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H "Content-Type: application/json" \
+  -d '{"searchQueries": ["nike"]}'
+```
+
+**Advertiser-Only Search:**
+```bash
+curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H "Content-Type: application/json" \
+  -d '{"searchAdvertisers": ["Nike"], "maxResultsPerQuery": 200}'
+```
+
+**Save Results to File:**
+```bash
+curl -X POST https://dz-omar--facebook-ads-scraper-pro.apify.actor \
+  -H "Content-Type: application/json" \
+  -d '{"searchQueries": ["nike"]}' \
+  > results.ndjson
+```
+
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
+
 <hr>
 <h2>📋 Input Parameters</h2>
 <table>
@@ -385,7 +449,7 @@ Results instantly (pre-warmed)
 <td><code>maxResultsPerQuery</code></td>
 <td>integer</td>
 <td><code>10</code></td>
-<td>Max ads per URL / per query / per advertiser page</td>
+<td>Max ads per URL / per query / per advertiser page. <strong>Free plan:</strong> the run still stops at 200 results in total regardless of this value</td>
 </tr>
 <tr>
 <td><code>batchSize</code></td>
@@ -552,54 +616,78 @@ Results instantly (pre-warmed)
 <li><code>SORT_BY_RELEVANCY_MONTHLY_GROUPED</code> - Most recent first</li>
 </ul>
 <hr>
-<h2>📤 Response Format (NDJSON Stream)</h2>
-<p>Each line is a JSON object representing real-time data. Process line-by-line as they arrive:</p>
-<h3>Log Messages</h3>
-<pre><code class="language-json">{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;info&quot;,&quot;message&quot;:&quot;🔍 Processing 2 keyword queries&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:09Z&quot;}
-{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;success&quot;,&quot;message&quot;:&quot;📤 Sent batch: 30 ads for \&quot;nike\&quot;&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:15Z&quot;}
-{&quot;type&quot;:&quot;log&quot;,&quot;level&quot;:&quot;error&quot;,&quot;message&quot;:&quot;❌ Query failed: No ads found&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:20Z&quot;}
-</code></pre>
-<h3>Ad Batches (Real-Time)</h3>
-<pre><code class="language-json">{
-  &quot;type&quot;:&quot;batch&quot;,
-  &quot;source&quot;:&quot;keyword_query&quot;,
-  &quot;query&quot;:&quot;nike&quot;,
-  &quot;batchSize&quot;:30,
-  &quot;ads&quot;:[{ad_object}, {ad_object}, ...],
-  &quot;timestamp&quot;:&quot;2026-01-25T23:14:15Z&quot;
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     The NDJSON stream below is the standby HTTP server's response format.
+     With standby off, results are delivered to the run's dataset instead —
+     see "Ad Data Structure" immediately after this block.
+     ============================================================================
+
+## 📤 Response Format (NDJSON Stream)
+
+Each line is a JSON object representing real-time data. Process line-by-line as they arrive:
+
+### Log Messages
+```json
+{"type":"log","level":"info","message":"🔍 Processing 2 keyword queries","timestamp":"2026-01-25T23:14:09Z"}
+{"type":"log","level":"success","message":"📤 Sent batch: 30 ads for \"nike\"","timestamp":"2026-01-25T23:14:15Z"}
+{"type":"log","level":"error","message":"❌ Query failed: No ads found","timestamp":"2026-01-25T23:14:20Z"}
+```
+
+### Ad Batches (Real-Time)
+```json
+{
+  "type":"batch",
+  "source":"keyword_query",
+  "query":"nike",
+  "batchSize":30,
+  "ads":[{ad_object}, {ad_object}, ...],
+  "timestamp":"2026-01-25T23:14:15Z"
 }
-</code></pre>
-<h3>Completion Events</h3>
-<pre><code class="language-json">{&quot;type&quot;:&quot;query_complete&quot;,&quot;query&quot;:&quot;nike&quot;,&quot;totalAds&quot;:100,&quot;timestamp&quot;:&quot;2026-01-25T23:14:30Z&quot;}
-{&quot;type&quot;:&quot;advertiser_complete&quot;,&quot;advertiser&quot;:&quot;Nike&quot;,&quot;totalAds&quot;:50,&quot;timestamp&quot;:&quot;2026-01-25T23:14:35Z&quot;}
-</code></pre>
-<h3>Error Events</h3>
-<pre><code class="language-json">{&quot;type&quot;:&quot;query_error&quot;,&quot;query&quot;:&quot;test&quot;,&quot;error&quot;:&quot;No ads found&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:25Z&quot;}
-{&quot;type&quot;:&quot;advertiser_error&quot;,&quot;advertiser&quot;:&quot;invalid&quot;,&quot;error&quot;:&quot;Could not resolve advertiser&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:40Z&quot;}
-</code></pre>
-<h3>Summary Statistics</h3>
-<pre><code class="language-json">{
-  &quot;type&quot;:&quot;summary&quot;,
-  &quot;stats&quot;:{
-    &quot;queries&quot;:{
-      &quot;total&quot;:2,
-      &quot;success&quot;:2,
-      &quot;failed&quot;:0,
-      &quot;ads&quot;:150
+```
+
+### Completion Events
+```json
+{"type":"query_complete","query":"nike","totalAds":100,"timestamp":"2026-01-25T23:14:30Z"}
+{"type":"advertiser_complete","advertiser":"Nike","totalAds":50,"timestamp":"2026-01-25T23:14:35Z"}
+```
+
+### Error Events
+```json
+{"type":"query_error","query":"test","error":"No ads found","timestamp":"2026-01-25T23:14:25Z"}
+{"type":"advertiser_error","advertiser":"invalid","error":"Could not resolve advertiser","timestamp":"2026-01-25T23:14:40Z"}
+```
+
+### Summary Statistics
+```json
+{
+  "type":"summary",
+  "stats":{
+    "queries":{
+      "total":2,
+      "success":2,
+      "failed":0,
+      "ads":150
     },
-    &quot;advertisers&quot;:{
-      &quot;total&quot;:1,
-      &quot;success&quot;:1,
-      &quot;failed&quot;:0,
-      &quot;ads&quot;:50
+    "advertisers":{
+      "total":1,
+      "success":1,
+      "failed":0,
+      "ads":50
     }
   },
-  &quot;timestamp&quot;:&quot;2026-01-25T23:14:40Z&quot;
+  "timestamp":"2026-01-25T23:14:40Z"
 }
-</code></pre>
-<h3>Completion</h3>
-<pre><code class="language-json">{&quot;type&quot;:&quot;complete&quot;,&quot;timestamp&quot;:&quot;2026-01-25T23:14:45Z&quot;}
-</code></pre>
+```
+
+### Completion
+```json
+{"type":"complete","timestamp":"2026-01-25T23:14:45Z"}
+```
+
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
+
 <hr>
 <h2>📊 Ad Data Structure</h2>
 <p>Each ad object contains:</p>
@@ -760,85 +848,69 @@ Results instantly (pre-warmed)
 <h3>Languages (100+)</h3>
 <p><code>en</code>, <code>es</code>, <code>fr</code>, <code>de</code>, <code>it</code>, <code>pt</code>, <code>ja</code>, <code>ko</code>, <code>zh</code>, <code>ar</code>, and 90+ more ISO 2-letter codes</p>
 <hr>
-<h2>🔄 Standby Mode Deep Dive</h2>
-<h3>What is Standby Mode?</h3>
-<p>Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays.</p>
-<p><strong>Traditional Batch Mode:</strong></p>
-<pre><code>Request → Start Actor (8-15s) → Process → Stop Actor
-</code></pre>
-<p><strong>Standby Mode:</strong></p>
-<pre><code>Request → Instant Response (pre-warmed instance)
-</code></pre>
-<h3>Why Choose Standby Mode?</h3>
-<table>
-<thead>
-<tr>
-<th>Use Case</th>
-<th>Batch Mode</th>
-<th>Standby Mode</th>
-</tr>
-</thead>
-<tbody><tr>
-<td><strong>Nightly automated scrape</strong></td>
-<td>✅ Best choice</td>
-<td>Overkill</td>
-</tr>
-<tr>
-<td><strong>Live competitor dashboard</strong></td>
-<td>❌ Too slow</td>
-<td>✅ Essential</td>
-</tr>
-<tr>
-<td><strong>API for external apps</strong></td>
-<td>❌ Not viable</td>
-<td>✅ Perfect</td>
-</tr>
-<tr>
-<td><strong>Real-time alerts</strong></td>
-<td>❌ No</td>
-<td>✅ Yes</td>
-</tr>
-<tr>
-<td><strong>Webhook integrations</strong></td>
-<td>❌ Doesn&#39;t work</td>
-<td>✅ Works great</td>
-</tr>
-<tr>
-<td><strong>Mobile app backend</strong></td>
-<td>❌ No</td>
-<td>✅ Great</td>
-</tr>
-<tr>
-<td><strong>Research project</strong></td>
-<td>✅ Good</td>
-<td>Expensive</td>
-</tr>
-</tbody></table>
-<h3>Technical Advantages</h3>
-<p><strong>Cold Start Elimination:</strong></p>
-<ul>
-<li>Batch: 10-15 seconds to start</li>
-<li>Standby: 0 seconds (instant)</li>
-<li>Difference: <strong>10-15 seconds per request</strong> saved</li>
-</ul>
-<p><strong>Scalability:</strong></p>
-<ul>
-<li>Batch: One request at a time</li>
-<li>Standby: Handle 100+ concurrent requests</li>
-<li>Difference: <strong>100x throughput</strong></li>
-</ul>
-<p><strong>User Experience:</strong></p>
-<ul>
-<li>Batch: User waits for response</li>
-<li>Standby: Instant results</li>
-<li>Difference: <strong>User stays engaged</strong></li>
-</ul>
-<h3>Example: Competitor Monitoring Dashboard</h3>
-<p><strong>Scenario:</strong> Build a live dashboard monitoring Nike, Adidas, and Puma ads</p>
-<p><strong>With Batch Mode:</strong></p>
-<pre><code>Dashboard loads
+<!-- ============================================================================
+     STANDBY MODE — CURRENTLY DISABLED
+     ============================================================================
+     Everything below until the END marker documents standby mode, which is
+     switched off for this Actor. Kept here (commented, not deleted) so it can
+     be restored verbatim if standby is re-enabled.
+     ============================================================================
+
+## 🔄 Standby Mode Deep Dive
+
+### What is Standby Mode?
+
+Standby Mode keeps the actor running 24/7 as an HTTP API server, ready to handle requests instantly without startup delays.
+
+**Traditional Batch Mode:**
+```
+Request → Start Actor (8-15s) → Process → Stop Actor
+```
+
+**Standby Mode:**
+```
+Request → Instant Response (pre-warmed instance)
+```
+
+### Why Choose Standby Mode?
+
+| Use Case | Batch Mode | Standby Mode |
+|----------|-----------|--------------| 
+| **Nightly automated scrape** | ✅ Best choice | Overkill |
+| **Live competitor dashboard** | ❌ Too slow | ✅ Essential |
+| **API for external apps** | ❌ Not viable | ✅ Perfect |
+| **Real-time alerts** | ❌ No | ✅ Yes |
+| **Webhook integrations** | ❌ Doesn't work | ✅ Works great |
+| **Mobile app backend** | ❌ No | ✅ Great |
+| **Research project** | ✅ Good | Expensive |
+
+### Technical Advantages
+
+**Cold Start Elimination:**
+- Batch: 10-15 seconds to start
+- Standby: 0 seconds (instant)
+- Difference: **10-15 seconds per request** saved
+
+**Scalability:**
+- Batch: One request at a time
+- Standby: Handle 100+ concurrent requests
+- Difference: **100x throughput**
+
+**User Experience:**
+- Batch: User waits for response
+- Standby: Instant results
+- Difference: **User stays engaged**
+
+### Example: Competitor Monitoring Dashboard
+
+**Scenario:** Build a live dashboard monitoring Nike, Adidas, and Puma ads
+
+**With Batch Mode:**
+
+```
+Dashboard loads
   ↓
-User clicks &quot;Nike&quot; tab
+User clicks "Nike" tab
   ↓
 API call to scraper
   ↓
@@ -849,11 +921,14 @@ Wait 20 seconds (scraping) ❌
 Display results
   ↓
 Total time: 30 seconds (user frustrated)
-</code></pre>
-<p><strong>With Standby Mode:</strong></p>
-<pre><code>Dashboard loads (scraper pre-warmed)
+```
+
+**With Standby Mode:**
+
+```
+Dashboard loads (scraper pre-warmed)
   ↓
-User clicks &quot;Nike&quot; tab
+User clicks "Nike" tab
   ↓
 API call to scraper
   ↓
@@ -862,57 +937,68 @@ Results instantly ✅
 Display results
   ↓
 Total time: 2 seconds (user delighted)
-</code></pre>
-<h3>How to Access Standby Mode</h3>
-<p><strong>Automatic Access:</strong>
-Simply use the actor URL directly:</p>
-<pre><code>https://dz-omar--facebook-ads-scraper-pro.apify.actor
-</code></pre>
-<p><strong>No Configuration Needed:</strong></p>
-<ul>
-<li>Instance is always running</li>
-<li>Ready 24/7</li>
-<li>No startup delay</li>
-<li>Just send HTTP requests</li>
-</ul>
-<p><strong>Direct Integration Example:</strong></p>
-<p>Your application can make direct API calls:</p>
-<pre><code>POST https://dz-omar--facebook-ads-scraper-pro.apify.actor
+```
+
+### How to Access Standby Mode
+
+**Automatic Access:**
+Simply use the actor URL directly:
+```
+https://dz-omar--facebook-ads-scraper-pro.apify.actor
+```
+
+**No Configuration Needed:**
+- Instance is always running
+- Ready 24/7
+- No startup delay
+- Just send HTTP requests
+
+**Direct Integration Example:**
+
+Your application can make direct API calls:
+```
+POST https://dz-omar--facebook-ads-scraper-pro.apify.actor
 Content-Type: application/json
 
 {
-  &quot;searchQueries&quot;: [&quot;nike&quot;],
-  &quot;maxResultsPerQuery&quot;: 50
+  "searchQueries": ["nike"],
+  "maxResultsPerQuery": 50
 }
-</code></pre>
-<h3>Standby Mode Pricing</h3>
-<ul>
-<li><strong>Higher Cost:</strong> Actor runs continuously</li>
-<li><strong>Break-even Point:</strong> ~3-4 requests per day</li>
-<li><strong>Best For:</strong> High-frequency usage patterns</li>
-<li><strong>Not Ideal For:</strong> Low-frequency, scheduled tasks</li>
-</ul>
-<p><strong>Cost Comparison (Example):</strong></p>
-<pre><code>100 daily requests
+```
+
+### Standby Mode Pricing
+
+- **Higher Cost:** Actor runs continuously
+- **Break-even Point:** ~3-4 requests per day
+- **Best For:** High-frequency usage patterns
+- **Not Ideal For:** Low-frequency, scheduled tasks
+
+**Cost Comparison (Example):**
+```
+100 daily requests
 - Batch mode: 100 starts × 30 sec = 50 min/day = $$
 - Standby mode: Always on = $ (often cheaper!)
-</code></pre>
-<h3>Standby Mode Limitations</h3>
-<ul>
-<li>Maximum continuous run: ~30 minutes idle timeout</li>
-<li>Reconnect is automatic if disconnected</li>
-<li>Not suitable for very low-frequency usage</li>
-<li>Higher base cost even if no requests</li>
-</ul>
-<h3>Standby Mode Best Practices</h3>
-<ol>
-<li><strong>Keep Connections Alive:</strong> Send heartbeat requests periodically</li>
-<li><strong>Handle Reconnections:</strong> Implement retry logic on client side</li>
-<li><strong>Batch Related Requests:</strong> Send multiple queries in one request when possible</li>
-<li><strong>Monitor Performance:</strong> Track response times and errors</li>
-<li><strong>Set Reasonable Limits:</strong> Don&#39;t request 10,000 ads if you need 100</li>
-</ol>
+```
+
+### Standby Mode Limitations
+
+- Maximum continuous run: ~30 minutes idle timeout
+- Reconnect is automatic if disconnected
+- Not suitable for very low-frequency usage
+- Higher base cost even if no requests
+
+### Standby Mode Best Practices
+
+1. **Keep Connections Alive:** Send heartbeat requests periodically
+2. **Handle Reconnections:** Implement retry logic on client side
+3. **Batch Related Requests:** Send multiple queries in one request when possible
+4. **Monitor Performance:** Track response times and errors
+5. **Set Reasonable Limits:** Don't request 10,000 ads if you need 100
+
+     ==================== END STANDBY MODE (DISABLED) ==================== -->
+
 <hr>
+<h2>⚙️ Limits &amp; Capacity</h2>
 <table>
 <thead>
 <tr>
@@ -925,24 +1011,28 @@ Content-Type: application/json
 <td>No hard limit, respects Facebook&#39;s rate limits</td>
 </tr>
 <tr>
-<td><strong>Batch Size</strong></td>
-<td>Default 30 ads, configurable 10-100</td>
+<td><strong>Page size</strong></td>
+<td>~10 ads per request — a Facebook-side cap, not a setting</td>
 </tr>
 <tr>
 <td><strong>Results per Query</strong></td>
 <td>1-10,000 ads per query</td>
 </tr>
 <tr>
-<td><strong>Concurrent Requests</strong></td>
-<td>Unlimited (standby mode scales automatically)</td>
+<td><strong>Results per Run (free plan)</strong></td>
+<td><strong>200 total</strong> — a sample; subscribe to unlock all results</td>
 </tr>
 <tr>
-<td><strong>Response Time</strong></td>
-<td>Real-time streaming - results as they arrive</td>
+<td><strong>Results per Run (paid plan)</strong></td>
+<td>Unlimited — bounded only by your own <code>maxResultsPerQuery</code> and budget</td>
+</tr>
+<tr>
+<td><strong>Delivery</strong></td>
+<td>Real-time batch pushing — results appear in the dataset as they arrive</td>
 </tr>
 <tr>
 <td><strong>Memory Usage</strong></td>
-<td>No limits - stream handles 1000s of ads</td>
+<td>No limits - handles 1000s of ads</td>
 </tr>
 </tbody></table>
 <hr>
@@ -977,11 +1067,17 @@ Content-Type: application/json
 <li><strong>Limited data</strong>: Increase <code>maxResultsPerQuery</code> or expand date ranges</li>
 <li><strong>Missing recent ads</strong>: Facebook may have indexing delays</li>
 </ul>
-<h3><strong>Connection Issues (Free Tier)</strong></h3>
+<h3><strong>Free Plan Issues</strong></h3>
 <ul>
-<li><strong>Intermittent failures</strong>: Consider upgrading to Paid tier for stability</li>
+<li><strong>&quot;I only got 200 results&quot;</strong>: That&#39;s the free-plan cap, not a bug — it applies to the whole
+run, not per query. <a href="https://console.apify.com/billing/subscription">Subscribe to a paid plan</a>
+and re-run the same input to get everything. See <em>The Free-Plan 200-Result Cap, in Detail</em> above.</li>
+<li><strong>&quot;The run finished early&quot;</strong>: Check the end of the log for the <code>🔒 FREE PLAN SAMPLE</code> banner —
+if it&#39;s there, the run stopped at the cap and completed successfully.</li>
+<li><strong>Intermittent failures</strong>: Free runs use the shared Apify Proxy pool. Upgrading to a paid plan
+switches you to the dedicated premium proxy for stability.</li>
 <li><strong>Slow performance</strong>: Reduce batch size or split into multiple smaller runs</li>
-<li><strong>Rate limiting errors</strong>: Wait a few minutes before retrying, or upgrade to Paid</li>
+<li><strong>Rate limiting errors</strong>: Wait a few minutes before retrying, or upgrade to a paid plan</li>
 </ul>
 <h3><strong>Geographic Filtering</strong></h3>
 <ul>
@@ -998,8 +1094,8 @@ Content-Type: application/json
 <h3><strong>Performance Optimization</strong></h3>
 <ul>
 <li><strong>Large datasets</strong>: Use date ranges to limit scope</li>
-<li><strong>Free tier limits</strong>: Consider Paid tier for 1000+ ads per query</li>
-<li><strong>Better results</strong>: Upgrade to Paid tier for enterprise-grade stability</li>
+<li><strong>Free plan limits</strong>: Free runs stop at 200 results in total — subscribe to a paid plan for 1000+ ads per query</li>
+<li><strong>Better results</strong>: Upgrade to a paid plan for the dedicated proxy and enterprise-grade stability</li>
 </ul>
 <hr>
 <h2>📈 Business Intelligence Applications</h2>
@@ -1033,7 +1129,7 @@ Content-Type: application/json
 <h3>Social Media</h3>
 <ul>
 <li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
-<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/@FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>🐦 <strong>Twitter</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
 <li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
 </ul>
 <h2>🌟 Related Actors by FlowExtract API</h2>
