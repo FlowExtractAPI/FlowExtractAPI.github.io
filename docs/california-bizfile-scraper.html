@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>California Business &amp; UCC Search - CA SoS bizfileOnline | FlowExtract API</title>
+    <meta name="title" content="California Business &amp; UCC Search - CA SoS bizfileOnline | FlowExtract API">
+    <meta name="description" content="Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/california-bizfile-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="California Business &amp; UCC Search - CA SoS bizfileOnline | FlowExtract API">
+    <meta property="og:description" content="Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/california-bizfile-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-qz9WOoaWOue53UXXL-7rvcujqVek-e1f896a3-72a1-4f6a-8677-9ea2f1172e7d.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="California Business &amp; UCC Search - CA SoS bizfileOnline | FlowExtract API">
+    <meta name="twitter:description" content="Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-qz9WOoaWOue53UXXL-7rvcujqVek-e1f896a3-72a1-4f6a-8677-9ea2f1172e7d.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"California Business & UCC Lien Search - bizfileOnline","description":"Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/california-bizfile-scraper.html","sameAs":"https://apify.com/dz_omar/california-bizfile-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-qz9WOoaWOue53UXXL-7rvcujqVek-e1f896a3-72a1-4f6a-8677-9ea2f1172e7d.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-qz9WOoaWOue53UXXL-7rvcujqVek-e1f896a3-72a1-4f6a-8677-9ea2f1172e7d.png" alt="California Business &amp; UCC Lien Search - bizfileOnline" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">California Business &amp; UCC Lien Search - bizfileOnline</h1>
+                <p class="actor-hero-desc">Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.</p>
+                <a href="https://apify.com/dz_omar/california-bizfile-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>California Business &amp; UCC Lien Search — bizfileOnline Scraper</h1>
+<p>Search the <strong>official California Secretary of State</strong> registers at <a href="https://bizfileonline.sos.ca.gov">bizfileOnline</a> and get structured JSON back.</p>
+<p><strong>Choose your registers — both are selected by default, so one search term returns both sides:</strong></p>
+<ul>
+<li><strong>Business entities</strong> — every corporation, LLC and LP in California, with status, standing, entity type, formation date and the <strong>registered agent for service of process</strong>.</li>
+<li><strong>UCC liens</strong> — filings recorded against businesses: <strong>financing statements</strong> (who lent against a company&#39;s assets), plus <strong>judgment liens</strong>, <strong>state and federal tax liens</strong> and <strong>attachments</strong>, each with debtor, secured party, file date and lapse date.</li>
+</ul>
+<p>So one search for a company tells you both <em>what it is</em> and <em>who has a claim on it</em>. Untick either register to search only the other.</p>
+<p>The business side has a second mode of its own, exactly as the registry&#39;s own Business tab does: <strong>publicly traded disclosure</strong> filings, searchable by director or officer, board composition, compensation range and auditor.</p>
+<p><strong>Free to run. No login, no California state API key, nothing to configure.</strong></p>
+<h2>Why this Actor</h2>
+<p>Most business-registry tools only let you <em>look up a company you already know</em>. This one also lets you <strong>discover</strong>, because it exposes the registry&#39;s own advanced filters:</p>
+<ul>
+<li>Every <strong>LLC formed in California last month</strong> → entity type + formation-date range</li>
+<li>Every <strong>federal tax lien filed in a date range</strong> → lien type + date range</li>
+<li>Every <strong>suspended entity</strong> whose name contains a keyword → status filter</li>
+</ul>
+<h2>What data can this California business search scraper extract?</h2>
+<h3>Business entity record</h3>
+<pre><code class="language-json">{
+  &quot;register&quot;: &quot;business&quot;,
+  &quot;name&quot;: &quot;TESLA MOTORS CLUB LLC&quot;,
+  &quot;entityNumber&quot;: &quot;201313510058&quot;,
+  &quot;status&quot;: &quot;Terminated&quot;,
+  &quot;standing&quot;: &quot;Good Standing&quot;,
+  &quot;entityType&quot;: &quot;Limited Liability Company - CA&quot;,
+  &quot;formedIn&quot;: &quot;CALIFORNIA&quot;,
+  &quot;initialFilingDate&quot;: &quot;05/13/2013&quot;,
+  &quot;registeredAgent&quot;: &quot;CALIFORNIA CORPORATE AGENTS, INC.&quot;,
+  &quot;jurisdiction&quot;: &quot;California, USA&quot;,
+  &quot;searchQuery&quot;: &quot;Tesla Motors&quot;
+}
+</code></pre>
+<h3>UCC lien record</h3>
+<pre><code class="language-json">{
+  &quot;register&quot;: &quot;ucc&quot;,
+  &quot;fileNumber&quot;: &quot;187651573053&quot;,
+  &quot;uccType&quot;: &quot;Notice of Federal Tax Lien&quot;,
+  &quot;status&quot;: &quot;Active&quot;,
+  &quot;filingDate&quot;: &quot;06/01/2018&quot;,
+  &quot;lapseDate&quot;: &quot;07/01/2028&quot;,
+  &quot;debtorName&quot;: &quot;TESLA ENERGY OPERATIONS INC A CORPORATION&quot;,
+  &quot;debtorLocation&quot;: &quot;SAN MATEO, CA&quot;,
+  &quot;securedPartyName&quot;: &quot;IRS/OHIO&quot;,
+  &quot;securedPartyLocation&quot;: &quot;CINCINNATI, OH&quot;
+}
+</code></pre>
+<h3>With <strong>Full profile</strong>, every record also carries its addresses</h3>
+<pre><code class="language-json">{
+  &quot;principalAddress&quot;: &quot;25 ISABELLA AVE, ATHERTON, CA 94027&quot;,
+  &quot;mailingAddress&quot;: &quot;25 ISABELLA AVE, ATHERTON, CA 94027&quot;,
+  &quot;agentType&quot;: &quot;Individual&quot;,
+  &quot;agentName&quot;: &quot;Weina Yu&quot;,
+  &quot;agentAddress&quot;: &quot;25 ISABELLA AVE, ATHERTON, CA 94027&quot;,
+  &quot;standingSos&quot;: &quot;Good&quot;, &quot;standingFtb&quot;: &quot;Good&quot;,
+  &quot;standingAgent&quot;: &quot;Good&quot;, &quot;standingVcfcf&quot;: &quot;Good&quot;,
+  &quot;statementOfInfoDueDate&quot;: &quot;07/31/2028&quot;
+}
+</code></pre>
+<p>and every UCC party gets a street address — often naming an <strong>individual</strong> behind a trading name that the search rows never show:</p>
+<pre><code class="language-json">{
+  &quot;debtorsDetailed&quot;: [
+    { &quot;name&quot;: &quot;ARAUJO, FAUSTO&quot;,   &quot;address&quot;: &quot;625 S RIVERSIDE AVE STE P, RIALTO, CA 923767072&quot; },
+    { &quot;name&quot;: &quot;LA CASA DEL TACO&quot;, &quot;address&quot;: &quot;625 S RIVERSIDE AVE STE P, RIALTO, CA 923767072&quot; }
+  ],
+  &quot;securedPartiesDetailed&quot;: [
+    { &quot;name&quot;: &quot;EMPLOYMENT DEVELOPMENT DEPARTMENT&quot;, &quot;address&quot;: &quot;722 CAPITOL MALL, SACRAMENTO, CA 95814&quot; }
+  ]
+}
+</code></pre>
+<h3>With <strong>Download documents</strong>, the filings themselves come back as PDFs</h3>
+<pre><code class="language-json">{
+  &quot;documentCount&quot;: 3,
+  &quot;documents&quot;: [
+    {
+      &quot;type&quot;: &quot;Statement of Information&quot;,
+      &quot;number&quot;: &quot;BA20261385813&quot;,
+      &quot;date&quot;: &quot;7/4/2026&quot;,
+      &quot;key&quot;: &quot;document-business-BA20261385813&quot;,
+      &quot;contentType&quot;: &quot;application/pdf&quot;,
+      &quot;bytes&quot;: 129548
+    }
+  ]
+}
+</code></pre>
+<p>Each <code>key</code> is a record in the run&#39;s <strong>key-value store</strong>, under the <em>Filing documents</em> collection.</p>
+<p>Records are written to the dataset <strong>as they are extracted</strong>, so a large search starts filling in immediately instead of arriving in one batch at the end.</p>
+<h2>How to use it</h2>
+<p>Search a company in both registers — this is the default:</p>
+<pre><code class="language-json">{ &quot;searchQueries&quot;: [&quot;DEL TACO&quot;] }
+</code></pre>
+<p>Only the lien side:</p>
+<pre><code class="language-json">{ &quot;registers&quot;: [&quot;ucc&quot;], &quot;searchQueries&quot;: [&quot;DEL TACO&quot;] }
+</code></pre>
+<p>One exact entity, by its California entity/file number:</p>
+<pre><code class="language-json">{ &quot;searchQueries&quot;: [&quot;3814816&quot;] }
+</code></pre>
+<p>Every LLC formed in January 2024 — a new-business lead list:</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;California&quot;],
+  &quot;entityType&quot;: &quot;3&quot;,
+  &quot;filedFrom&quot;: &quot;2024-01-01&quot;,
+  &quot;filedTo&quot;: &quot;2024-01-31&quot;
+}
+</code></pre>
+<p>Only federal tax liens on the UCC side:</p>
+<pre><code class="language-json">{ &quot;searchQueries&quot;: [&quot;Tesla&quot;], &quot;uccType&quot;: &quot;2174&quot; }
+</code></pre>
+<p>Full profiles with addresses, ready for outreach:</p>
+<pre><code class="language-json">{ &quot;searchQueries&quot;: [&quot;DEL TACO&quot;], &quot;detailLevel&quot;: &quot;full&quot;, &quot;maxResultsPerQuery&quot;: 25 }
+</code></pre>
+<h2>What the UCC lien types mean</h2>
+<table>
+<thead>
+<tr>
+<th>Lien type</th>
+<th>What it tells you</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Financing Statement</strong></td>
+<td>A lender claims a security interest in the business&#39;s assets. Normal borrowing — and it names the lender. Lapses 5 years after filing unless renewed.</td>
+</tr>
+<tr>
+<td><strong>Judgment Lien</strong></td>
+<td>Someone sued the business and won, then recorded the judgment against its property.</td>
+</tr>
+<tr>
+<td><strong>State Tax Lien</strong></td>
+<td>California claims unpaid state taxes.</td>
+</tr>
+<tr>
+<td><strong>Federal Tax Lien</strong></td>
+<td>The IRS claims unpaid federal taxes.</td>
+</tr>
+<tr>
+<td><strong>Attachment</strong></td>
+<td>A court froze assets while a lawsuit is still pending.</td>
+</tr>
+</tbody></table>
+<p>Only the first is routine. The other four are distress signals.</p>
+<h2>Input options</h2>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Top</strong></td>
+<td><code>registers</code> — Business entities, UCC liens, or both (default). <code>searchQueries</code> — company names, entity numbers, or debtor / secured-party names</td>
+</tr>
+<tr>
+<td><strong>Business entity filters</strong></td>
+<td>Mirrors the registry&#39;s own Business tab in the same order: <code>matchType</code> (Contains / Starts with), <code>searchType</code> (Entity Information / Publicly Traded Disclosure), <code>entityType</code> (35 types), <code>entityStatus</code> (24 statuses), <code>filedFrom</code>, <code>filedTo</code> — then the disclosure-only fields: corporation bankruptcy and legal proceedings, director / officer first, middle and last name, board composition, compensation range, the five Disclosures checkboxes (Shares, Options, Bankruptcy, Fraud, Loans to Directors) and independent auditor</td>
+</tr>
+<tr>
+<td><strong>UCC lien filters</strong></td>
+<td><code>uccStatus</code>, <code>uccType</code> (All, Financing Statement, Judgment Lien, State Tax Lien, Federal Tax Lien, Attachment), <code>uccFiledFrom</code>, <code>uccFiledTo</code>, <code>uccLapseFrom</code>, <code>uccLapseTo</code></td>
+</tr>
+<tr>
+<td><strong>Limits &amp; connection</strong></td>
+<td><code>detailLevel</code>, <code>maxResultsPerQuery</code>, <code>proxyConfiguration</code></td>
+</tr>
+</tbody></table>
+<p>Every dropdown lists its options in the registry&#39;s own order and wording, so a filter you know from the site is where you expect it. Search terms are limited to <strong>49 characters</strong> — the registry&#39;s own search box truncates anything longer, so a longer term would quietly run a different search than the one you typed.</p>
+<h3>Detail level — the main speed lever</h3>
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What you get</th>
+<th>Cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Search results only</strong></td>
+<td>The registers&#39; own columns</td>
+<td>Fastest — one request per search</td>
+</tr>
+<tr>
+<td><strong>+ Full profile</strong></td>
+<td>Addresses, agent record, all four standings, SOI due date</td>
+<td>One extra request per record</td>
+</tr>
+<tr>
+<td><strong>+ Filing history</strong></td>
+<td>Every filing, its document link, and field-level change history</td>
+<td>Two extra requests per record</td>
+</tr>
+<tr>
+<td><strong>+ Download documents</strong></td>
+<td>Each filing fetched as a PDF into the key-value store</td>
+<td>Slowest — a single company can have ten or more filings</td>
+</tr>
+</tbody></table>
+<p>Keep <code>maxResultsPerQuery</code> low when downloading documents.</p>
+<p><code>maxResultsPerQuery</code> applies <strong>per register</strong>, so <code>10</code> returns up to 10 business records <em>and</em> up to 10 UCC records for each search term.</p>
+<h2>Why does this Actor need a residential proxy?</h2>
+<p>The registry refuses datacenter addresses — verified against both plain datacenter egress and Apify&#39;s datacenter proxy. So runs go out through a <strong>US residential proxy</strong> by default, and you should leave that setting alone. The Actor is free; you pay only your own Apify platform and proxy usage.</p>
+<h2>What can you do with California registry data?</h2>
+<ul>
+<li><strong>KYB / KYC onboarding</strong> — verify an entity exists, is active and is in good standing before you onboard it.</li>
+<li><strong>Registered-agent intelligence</strong> — get the agent for service of process, for legal, compliance or sales work.</li>
+<li><strong>Lending and credit risk</strong> — check existing liens before lending, and see who already has a claim on the collateral.</li>
+<li><strong>Distress and collections</strong> — tax liens, judgment liens and attachments identify businesses in trouble, and full profiles name the individuals behind them.</li>
+<li><strong>Competitive intelligence for lenders</strong> — a fresh financing statement shows a company just borrowed, and names its current lender.</li>
+<li><strong>Lead generation</strong> — pull newly formed companies by type and formation month, with mailing addresses.</li>
+</ul>
+<h2>Frequently asked questions</h2>
+<p><strong>Is it legal to scrape California business records?</strong>
+California business-entity and UCC records are <strong>public records</strong>. This Actor reads the open public searches at <a href="https://bizfileonline.sos.ca.gov">bizfileonline.sos.ca.gov</a> — it does not log in and does not pass any paywall. Use the data lawfully for KYB/AML, due-diligence and B2B purposes.</p>
+<p><strong>Do I need a California state API key?</strong>
+No. The state&#39;s own bulk API is key-gated and capped. This Actor reads the open public search, so there is nothing to obtain or configure.</p>
+<p><strong>Why did my business search return exactly 500 records?</strong>
+That is the register&#39;s own hard per-term ceiling. The run warns you when a search hits it. Narrow the term, or add an entity type, status or formation-date filter.</p>
+<p><strong>Why did I get a message about more than 1,000 UCC filings?</strong>
+The UCC register refuses to answer a term matching more than 1,000 filings rather than returning a partial list — common words like &quot;Tesla&quot; or &quot;California&quot; hit this easily. Your business-entity results are unaffected. Search a fuller name, or narrow the UCC side with a lien type, status or date range.</p>
+<p><strong>Why did the UCC side get skipped entirely?</strong>
+Either you unticked it under <em>Which registers to search</em>, or the term is shorter than 3 characters — the UCC register&#39;s own minimum. Shorter terms search the business register only.</p>
+<p><strong>Why is my search term limited to 49 characters?</strong>
+Because the registry&#39;s own search box truncates anything past 49 characters. Accepting a longer term would run a silently different search than the one you typed.</p>
+<p><strong>How do I search publicly traded disclosures?</strong>
+Set <em>Search type</em> to <em>Publicly traded disclosure search</em> in the business filters. That switches the business side to the disclosure register and enables the director/officer, board-composition, compensation and auditor fields.</p>
+<p><strong>How do I get only active LLCs?</strong>
+Set <code>entityType</code> to <em>Limited Liability Company - CA</em> and <code>entityStatus</code> to <em>Active</em>.</p>
+<p><strong>Where do downloaded documents go?</strong>
+Into the run&#39;s key-value store, under the <em>Filing documents</em> collection. Each dataset record lists its documents with the key to look up.</p>
+<p><strong>How much does it cost?</strong>
+The Actor is free. You pay only your own Apify platform usage and residential proxy traffic.</p>
+<hr>
+<h2>Support</h2>
+<p>Found a bug, or need a field this Actor does not return yet? Open an issue on the Actor&#39;s <strong>Issues</strong> tab and it will be looked at.</p>
+<h2>Legal &amp; compliance</h2>
+<p>This Actor collects publicly available business-registry information only. You are responsible for using the extracted data in compliance with applicable laws, including data-protection rules in your jurisdiction, and with the source&#39;s terms.</p>
+<hr>
+<p><em>Built and maintained by <strong>FlowExtractAPI</strong>.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/california-bizfile-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

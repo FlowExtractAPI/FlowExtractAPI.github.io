@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:46:20.740Z",
+  "generatedAt": "2026-09-29T21:49:45.076Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -180,6 +180,51 @@
       "hash": "d21c44748b93a70a755b50fdf450ed33c4de2862eb63058dddda2419af426e6b",
       "syncedAt": "2026-07-16T09:26:38.676Z",
       "readme": "Real-Estate/immobilienscout24/README.md"
+    },
+    "california-bizfile-scraper": {
+      "hash": "66f0afd4608ab6446cc171faab4520c23c8bc33913cfa036932a6f181959cff9",
+      "syncedAt": "2026-09-29T21:49:44.634Z",
+      "readme": "Tools/california-bizfile-scraper/README.md"
+    },
+    "network-security-scanner": {
+      "hash": "97a22af66c87266775feb7fa4fe08b47d5ea059278f26546713b07b769db20db",
+      "syncedAt": "2026-09-29T21:49:44.677Z",
+      "readme": "Tools/network-security-scanner/README.md"
+    },
+    "linkedin-company-scraper": {
+      "hash": "92071d55e0fb442fd3aacdca1a86605f127988fe56243286fc0163b03e831649",
+      "syncedAt": "2026-09-29T21:49:44.705Z",
+      "readme": "Social-Media/linkedin-company-scraper/README.md"
+    },
+    "product-hunt-pro": {
+      "hash": "7212514d6fce068b46aa99117d2b6c7de9423b67df2a2cd7ad89dec604cee9cd",
+      "syncedAt": "2026-09-29T21:49:44.724Z",
+      "readme": "Social-Media/product-hunt-pro/README.md"
+    },
+    "etsy-product-reviews-scraper": {
+      "hash": "d52cc88c4820ae294c6c403dd486357717a3a5e77a768b780bc64300beac051e",
+      "syncedAt": "2026-09-29T21:49:44.741Z",
+      "readme": "Tools/etsy-product-reviews-scraper/README.md"
+    },
+    "linkedin-jobs-scraper": {
+      "hash": "908d0e8cb405eb59d2db359d193515391745ce1976cc6cc126c951e5032cbbc6",
+      "syncedAt": "2026-09-29T21:49:44.773Z",
+      "readme": "Social-Media/linkedin-jobs-scraper/README.md"
+    },
+    "yandex-reverse-image-search": {
+      "hash": "06d42cf3751a99848a5f26b79517e6f1c0f8ba99802a8f938bed683f53384f2b",
+      "syncedAt": "2026-09-29T21:49:44.790Z",
+      "readme": "Tools/yandex-reverse-image-search/README.md"
+    },
+    "youtube-shorts-trend-finder": {
+      "hash": "214c92b567f9c5e8d029d9a6d8c065d43095e6dec11f81600e236b8573ededfe",
+      "syncedAt": "2026-09-29T21:49:44.807Z",
+      "readme": "Social-Media/youtube-shorts-trend-finder/README.md"
+    },
+    "google-flights-scraper": {
+      "hash": "97f752f34f5947dc6d35228a774093e49858d3caa1a0efb447d776ad30dbf388",
+      "syncedAt": "2026-09-29T21:49:44.867Z",
+      "readme": "Travel/google-flights-scraper/README.md"
     }
   }
 }

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>YouTube Shorts Scraper by Keyword, Views &amp; Date | FlowExtract API</title>
+    <meta name="title" content="YouTube Shorts Scraper by Keyword, Views &amp; Date | FlowExtract API">
+    <meta name="description" content="Find popular YouTube Shorts by keyword, creator, or hashtag - ranked by exact view counts and filtered to a real date range. Returns exact views, publish date, views/day and a viral score per Short.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/youtube-shorts-trend-finder.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="YouTube Shorts Scraper by Keyword, Views &amp; Date | FlowExtract API">
+    <meta property="og:description" content="Find popular YouTube Shorts by keyword, creator, or hashtag - ranked by exact view counts and filtered to a real date range. Returns exact views, publish date, views/day and a viral score per Short.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/youtube-shorts-trend-finder.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-k7CXfvitKomWGI5qa-bz5AVgCOOB-60a09bee-3b02-4f87-9393-6224c4bec664.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="YouTube Shorts Scraper by Keyword, Views &amp; Date | FlowExtract API">
+    <meta name="twitter:description" content="Find popular YouTube Shorts by keyword, creator, or hashtag - ranked by exact view counts and filtered to a real date range. Returns exact views, publish date, views/day and a viral score per Short.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-k7CXfvitKomWGI5qa-bz5AVgCOOB-60a09bee-3b02-4f87-9393-6224c4bec664.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"YouTube Shorts Scraper - Keyword Search, Views & Date Filter","description":"Find popular YouTube Shorts by keyword, creator, or hashtag - ranked by exact view counts and filtered to a real date range. Returns exact views, publish date, views/day and a viral score per Short.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/youtube-shorts-trend-finder.html","sameAs":"https://apify.com/dz_omar/youtube-shorts-trend-finder?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-k7CXfvitKomWGI5qa-bz5AVgCOOB-60a09bee-3b02-4f87-9393-6224c4bec664.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-k7CXfvitKomWGI5qa-bz5AVgCOOB-60a09bee-3b02-4f87-9393-6224c4bec664.png" alt="YouTube Shorts Scraper - Keyword Search, Views &amp; Date Filter" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">YouTube Shorts Scraper - Keyword Search, Views &amp; Date Filter</h1>
+                <p class="actor-hero-desc">Find popular YouTube Shorts by keyword, creator, or hashtag - ranked by exact view counts and filtered to a real date range. Returns exact views, publish date, views/day and a viral score per Short.</p>
+                <a href="https://apify.com/dz_omar/youtube-shorts-trend-finder?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>YouTube Shorts Scraper — Keyword Search, Views &amp; Date Filter</h1>
+<p>Find the YouTube Shorts that are actually <strong>popular</strong>, for any keyword, creator, or hashtag — and only the ones published inside the window you care about.</p>
+<p>Most Shorts scrapers take a channel URL and hand back everything that channel ever posted. This one starts from <strong>what you are searching for</strong>, checks every Short it finds, and returns them ranked by real numbers.</p>
+<hr>
+<h2>What makes it different</h2>
+<p><strong>Search by keyword, not just by channel.</strong> Type <code>IShowSpeed</code>, <code>Kai Cenat</code>, <code>mrbeast challenge</code>, or any topic. You do not need to know the channel first.</p>
+<p><strong>&quot;Popular&quot; means exact view counts.</strong> Every Short is enriched to its precise view count — <code>25,939,392</code>, not <code>26M</code>. Ranking on rounded numbers puts thousands of Shorts in the same bucket; this returns a true order.</p>
+<p><strong>Likes and comments on every row.</strong> Not just views — you also get exact like and comment counts, plus an engagement rate per 1,000 views that stays comparable across Shorts of wildly different reach.</p>
+<p><strong>The date filter is real.</strong> Every Short carries its exact publish timestamp, and the timeframe is applied against that. When you ask for the last 7 days, you get the last 7 days.</p>
+<p><strong>Four ways to rank:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Rank by</th>
+<th>Finds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Views</strong></td>
+<td>The biggest all-time hits</td>
+</tr>
+<tr>
+<td><strong>Views per day</strong></td>
+<td>What is popping <em>right now</em></td>
+</tr>
+<tr>
+<td><strong>Viral score</strong></td>
+<td>Fast climbers, weighted toward recent uploads</td>
+</tr>
+<tr>
+<td><strong>Newest</strong></td>
+<td>Most recently published</td>
+</tr>
+</tbody></table>
+<p>Every row also carries <code>engagementRate</code> (likes + comments per 1,000 views), so you can separate a Short that got reach from one that got a reaction.</p>
+<p>Views per day is usually what people mean by &quot;trending&quot;: a 3-day-old Short on 2M views beats a 2-year-old Short on 5M.</p>
+<p><strong>Results arrive while the run is still going.</strong> Rows are written to the dataset as each Short is checked, best candidates first — you are not waiting for the whole run to finish before you see anything. Ask for 1,000 Shorts and the first ones show up in seconds.</p>
+<p><strong>Depth on creators.</strong> When your keyword matches a creator, the Actor also reads that creator&#39;s full Shorts catalogue — so a search for a big name returns hundreds of candidates to rank, not the handful that fit on one page of results.</p>
+<hr>
+<h2>Input</h2>
+<p>Everything is auto-detected. You never pick a mode.</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Keyword</td>
+<td><code>IShowSpeed</code>, <code>kai cenat rage</code></td>
+</tr>
+<tr>
+<td>Channel handle or URL</td>
+<td><code>@MrBeast</code>, <code>youtube.com/@MrBeast</code></td>
+</tr>
+<tr>
+<td>Hashtag</td>
+<td><code>#gaming</code></td>
+</tr>
+<tr>
+<td>Direct Shorts URL</td>
+<td><code>youtube.com/shorts/...</code></td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+  &quot;queries&quot;: [&quot;IShowSpeed&quot;, &quot;Kai Cenat&quot;],
+  &quot;timeframe&quot;: &quot;last30d&quot;,
+  &quot;sortBy&quot;: &quot;views&quot;,
+  &quot;maxResults&quot;: 50,
+  &quot;minViews&quot;: 0
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>queries</code></td>
+<td>Keywords, channels, hashtags, or Shorts URLs</td>
+</tr>
+<tr>
+<td><code>timeframe</code></td>
+<td><code>last24h</code>, <code>last7d</code>, <code>last30d</code>, <code>last90d</code>, <code>lastYear</code>, <code>allTime</code></td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td><code>views</code>, <code>velocity</code>, <code>viralScore</code>, <code>newest</code></td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>How many Shorts to return after ranking</td>
+</tr>
+<tr>
+<td><code>minViews</code></td>
+<td>Drop anything below this exact view count</td>
+</tr>
+<tr>
+<td><code>includeChannelShorts</code></td>
+<td>Also read a matched creator&#39;s Shorts tab (default on)</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>Region used for results and locale</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Output</h2>
+<p>One row per Short:</p>
+<pre><code class="language-json">{
+  &quot;videoId&quot;: &quot;-KUPXrRQ93w&quot;,
+  &quot;title&quot;: &quot;LIFTING THE HEAVIEST BLOCK IN THE WORLD&quot;,
+  &quot;url&quot;: &quot;https://www.youtube.com/shorts/-KUPXrRQ93w&quot;,
+  &quot;views&quot;: 25939392,
+  &quot;likes&quot;: 916278,
+  &quot;comments&quot;: 15583,
+  &quot;engagementRate&quot;: 35.92,
+  &quot;viewsPerDay&quot;: 1329147,
+  &quot;viralScore&quot;: 1756955,
+  &quot;publishedAt&quot;: &quot;2026-08-15T04:00:26-07:00&quot;,
+  &quot;ageDays&quot;: 19.6,
+  &quot;durationSeconds&quot;: 40,
+  &quot;channelName&quot;: &quot;IShowSpeed&quot;,
+  &quot;channelId&quot;: &quot;UCWsDFcIhY2DBi3GB5uykGXA&quot;,
+  &quot;channelUrl&quot;: &quot;https://www.youtube.com/channel/UCWsDFcIhY2DBi3GB5uykGXA&quot;,
+  &quot;description&quot;: &quot;...&quot;,
+  &quot;keywords&quot;: [&quot;ishowspeed&quot;],
+  &quot;category&quot;: &quot;Gaming&quot;,
+  &quot;thumbnail&quot;: &quot;https://i.ytimg.com/vi/-KUPXrRQ93w/sardefault.jpg&quot;
+}
+</code></pre>
+<p>Export as JSON, CSV, Excel, or XML, or pull it straight from the API.</p>
+<hr>
+<h2>Use it for</h2>
+<ul>
+<li><strong>Content research</strong> — see which formats and hooks are working in your niche this week</li>
+<li><strong>Engagement benchmarking</strong> — compare like/comment rates, not just raw view counts</li>
+<li><strong>Trend spotting</strong> — catch Shorts climbing fast before they peak</li>
+<li><strong>Competitor tracking</strong> — monitor any creator&#39;s Shorts performance over time</li>
+<li><strong>Sponsorship and talent scouting</strong> — find creators whose Shorts consistently land</li>
+<li><strong>Datasets</strong> — feed short-form video performance data into your own models</li>
+</ul>
+<hr>
+<h2>Good to know</h2>
+<ul>
+<li>Returns <strong>public data only</strong> — no login, no cookies, no account required.</li>
+<li>Rows stream out as they are found, ordered best-first by whatever you chose in <code>sortBy</code>. Because rows cannot be reordered once written, treat that order as best-effort: every row carries its exact <code>views</code>, <code>viewsPerDay</code>, <code>viralScore</code> and <code>engagementRate</code>, so sort the finished dataset on those if you need a guaranteed order.</li>
+<li>The run stops as soon as <code>maxResults</code> is reached, so you are never charged for Shorts beyond what you asked for.</li>
+<li>Every returned Short is confirmed to be a Short by its actual duration, so long-form videos never leak into your results.</li>
+<li>A Short whose publish date cannot be established is excluded from a filtered run rather than guessed at.</li>
+<li>Widen <code>timeframe</code> or lower <code>minViews</code> if a narrow search returns fewer rows than you expected — very recent windows genuinely contain fewer Shorts.</li>
+</ul>
+<hr>
+<h2>Support</h2>
+<p>🌐 Website <a href="https://flowextractapi.com">flowextractapi.com</a> · 📧 <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a> · 💬 GitHub <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a> · 💼 LinkedIn <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a> · 🐦 X <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a> · 📱 Facebook <a href="https://www.facebook.com/flowextractapi">flowextractapi</a> · 🎵 TikTok <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></p>
+<h2>Legal &amp; compliance</h2>
+<p>Public data only · respects source rate limits and terms · no storage of personal information · suitable for commercial use · No affiliation with or endorsement by YouTube is implied.</p>
+<p><em>YouTube Shorts Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/youtube-shorts-trend-finder?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

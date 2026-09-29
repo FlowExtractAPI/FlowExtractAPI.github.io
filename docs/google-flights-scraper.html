@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Google Flights Scraper - Fares, Booking Links &amp; Explore | FlowExtract API</title>
+    <meta name="title" content="Google Flights Scraper - Fares, Booking Links &amp; Explore | FlowExtract API">
+    <meta name="description" content="Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/google-flights-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Google Flights Scraper - Fares, Booking Links &amp; Explore | FlowExtract API">
+    <meta property="og:description" content="Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/google-flights-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Google Flights Scraper - Fares, Booking Links &amp; Explore | FlowExtract API">
+    <meta name="twitter:description" content="Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Flights Scraper - Free Live Fares & Price Insights","description":"Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/google-flights-scraper.html","sameAs":"https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png" alt="Google Flights Scraper - Free Live Fares &amp; Price Insights" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">Google Flights Scraper - Free Live Fares &amp; Price Insights</h1>
+                <p class="actor-hero-desc">Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.</p>
+                <a href="https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>Google Flights Scraper — Live Fares, Prices &amp; Schedules</h1>
+<p>Scrape live flight prices, schedules, airlines and aircraft from <strong>Google Flights</strong> — one way, round trip or multi-city, any route, any currency, any market. No API key and no Google account.</p>
+<p>You get <strong>one row per flight option</strong>, with the <strong>true total price</strong>, every segment, CO2, the exact filters Google applied, and a link that opens that flight in Google Flights. On request, each flight also gets what Google shows when you click it: <strong>booking options</strong> (every airline fare and travel agency, with fare names, bag fees and seller links) and, for round trips, its <strong>return flights</strong>. You can also get Google&#39;s <strong>price graph</strong> (the cheapest fare per day) and <strong>Google Explore</strong> (the cheapest places to go from an airport).</p>
+<p>There are two ways to search, and you can use both in one run:</p>
+<ul>
+<li><strong>Option A — paste Google Flights links.</strong> Set up a search on Google Flights, copy the link, paste it. The Actor replays it exactly, filters and all.</li>
+<li><strong>Option B — build the search in the form.</strong> Type places by name (<code>Paris</code>, <code>United Kingdom</code>) or code (<code>JFK</code>), pick dates and travellers, and use the same filters as Google&#39;s filter bar.</li>
+</ul>
+<hr>
+<h2>Quick start</h2>
+<p><strong>Paste a link</strong> — the simplest and most exact way (use your own link from Google Flights&#39; results page):</p>
+<pre><code class="language-json">{
+  &quot;searchUrls&quot;: [&quot;https://www.google.com/travel/flights/search?tfs=…your link…&quot;]
+}
+</code></pre>
+<p><strong>Build a round trip by city name:</strong></p>
+<pre><code class="language-json">{
+  &quot;tripType&quot;: &quot;round_trip&quot;,
+  &quot;origin&quot;: [&quot;New York&quot;],
+  &quot;destination&quot;: [&quot;Paris&quot;],
+  &quot;departureDate&quot;: &quot;2027-06-10&quot;,
+  &quot;returnDate&quot;: &quot;2027-06-17&quot;,
+  &quot;adults&quot;: 2
+}
+</code></pre>
+<p><strong>Add filters</strong> — nonstop only, SkyTeam airlines, leaving in the morning, the cheapest list sorted by price:</p>
+<pre><code class="language-json">{
+  &quot;tripType&quot;: &quot;round_trip&quot;,
+  &quot;origin&quot;: [&quot;JFK&quot;],
+  &quot;destination&quot;: [&quot;CDG&quot;],
+  &quot;departureDate&quot;: &quot;2027-06-10&quot;,
+  &quot;returnDate&quot;: &quot;2027-06-17&quot;,
+  &quot;maxStops&quot;: &quot;nonstop&quot;,
+  &quot;alliances&quot;: [&quot;SKYTEAM&quot;],
+  &quot;outboundDepartureTime&quot;: &quot;6-12&quot;,
+  &quot;resultsView&quot;: &quot;cheapest&quot;,
+  &quot;sortBy&quot;: &quot;price&quot;
+}
+</code></pre>
+<p><strong>Booking options, return flights and the price graph</strong> for the same search:</p>
+<pre><code class="language-json">{
+  &quot;tripType&quot;: &quot;round_trip&quot;,
+  &quot;origin&quot;: [&quot;JFK&quot;],
+  &quot;destination&quot;: [&quot;LAX&quot;],
+  &quot;departureDate&quot;: &quot;2027-06-10&quot;,
+  &quot;returnDate&quot;: &quot;2027-06-17&quot;,
+  &quot;bookingOptionsTop&quot;: 3,
+  &quot;returnFlightsTop&quot;: 3,
+  &quot;priceGraphDays&quot;: 60
+}
+</code></pre>
+<p><strong>Explore</strong> — the cheapest weekend trips from New York in November:</p>
+<pre><code class="language-json">{
+  &quot;tripType&quot;: &quot;explore&quot;,
+  &quot;origin&quot;: [&quot;New York&quot;],
+  &quot;exploreTripLength&quot;: &quot;weekend&quot;,
+  &quot;exploreMonth&quot;: &quot;november&quot;
+}
+</code></pre>
+<p>Every field is optional except what a search needs: a link, <strong>or</strong> a route (origin, destination and a departure date — plus a return date for round trips, or the flights list for multi-city; for Explore, just the origin).</p>
+<hr>
+<h2>How it works</h2>
+<h3>Option A — links</h3>
+<p>Build the search on Google Flights, press <strong>Search</strong>, and copy the link from the address bar of the <strong>results</strong> page.</p>
+<ul>
+<li><strong>A link decides everything about its own search</strong>: route, dates, travellers, cabin, every filter in it, the tab it was copied from (Best or Cheapest), its sort order, and its currency, market and language. It is sent to Google <strong>byte for byte</strong>, so even filters this form does not have (checked bags, for example) apply.</li>
+<li>The form&#39;s settings <strong>never change a link</strong>. They only fill in what a link does not carry — for example a link copied before choosing a tab uses the form&#39;s Best/Cheapest setting.</li>
+<li><strong>Many links, one run:</strong> each link is a separate search, capped at <code>maxResults</code> on its own.</li>
+<li><strong>Also accepted:</strong> a <strong>Google Explore</strong> link (<code>google.com/travel/explore?tfs=…</code>) gives one row per destination, and a round-trip page where you <strong>already chose the outbound</strong> gives that outbound&#39;s return flights, exactly as Google lists them (<code>segmentsForLeg</code> is 2 on those rows).</li>
+<li><strong>Refused links:</strong> the Google Flights home page (no destination yet), a link whose dates are in the past, and a booking page (every flight already chosen — there is no list left to return; use booking options instead). Each is refused with the reason.</li>
+</ul>
+<h3>Option B — the form</h3>
+<p>Pick the trip type first; it decides which fields are used.</p>
+<table>
+<thead>
+<tr>
+<th>Trip type</th>
+<th>Fill in</th>
+<th>Times</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>round_trip</code></td>
+<td><code>origin</code>, <code>destination</code>, <code>departureDate</code>, <code>returnDate</code></td>
+<td>outbound and return time boxes</td>
+</tr>
+<tr>
+<td><code>one_way</code></td>
+<td><code>origin</code>, <code>destination</code>, <code>departureDate</code></td>
+<td>outbound time boxes</td>
+</tr>
+<tr>
+<td><code>multi_city</code></td>
+<td><code>multiCityFlights</code> — 2 to 5 flights, each with origin, destination, date</td>
+<td>time boxes inside each flight</td>
+</tr>
+<tr>
+<td><code>explore</code></td>
+<td><code>origin</code>; optionally <code>destination</code> as a region (<code>Europe</code>); flexible dates (<code>exploreTripLength</code>, <code>exploreMonth</code>) or both dates</td>
+<td>—</td>
+</tr>
+</tbody></table>
+<p>Fields that don&#39;t belong to the chosen trip type are ignored, and the run log says so.</p>
+<h3>Links and form together</h3>
+<p>If you give both, <strong>every link and the form run as separate searches</strong> in the same run. Every row says which one it came from (<code>searchSource</code>: <code>url</code> or <code>route</code>; <code>searchLabel</code>: <code>link 2</code>, <code>route form</code>). One faulty link never stops the others.</p>
+<h3>Best or Cheapest</h3>
+<p>Google shows two tabs, and they are <strong>different lists</strong>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Best (default)</th>
+<th>Cheapest</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>What</td>
+<td>Google&#39;s recommended flights</td>
+<td>Google&#39;s full cheapest list, including separate-ticket and mixed-airline combinations</td>
+</tr>
+<tr>
+<td>Typical size</td>
+<td>50–300 flights</td>
+<td>about 200 flights (Google stops at 300)</td>
+</tr>
+<tr>
+<td>Speed</td>
+<td>1–2 seconds</td>
+<td>10–40 seconds (needs a real browser)</td>
+</tr>
+<tr>
+<td>Cost</td>
+<td>tiny</td>
+<td>about $0.01–0.02 of platform usage per search</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Input reference</h2>
+<p>In the same order as the form.</p>
+<h3>🔗 Links</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>searchUrls</code></td>
+<td>list of strings</td>
+<td>Google Flights <strong>results-page</strong> links, or Google Explore links. Each one is its own search. Only <code>google.com/travel/flights…?tfs=…</code> and <code>google.com/travel/explore?tfs=…</code> links are accepted.</td>
+</tr>
+</tbody></table>
+<h3>🧭 Trip type, 📍 route and dates</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Example</th>
+<th>Rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>tripType</code></td>
+<td>string</td>
+<td><code>round_trip</code></td>
+<td><code>round_trip</code>, <code>one_way</code>, <code>multi_city</code> or <code>explore</code>.</td>
+</tr>
+<tr>
+<td><code>origin</code></td>
+<td>list</td>
+<td><code>[&quot;New York&quot;]</code></td>
+<td>Airport code (<code>JFK</code>), city (<code>Paris</code>) or country (<code>Algeria</code>), one per entry. <strong>Up to 10</strong>, all searched together.</td>
+</tr>
+<tr>
+<td><code>destination</code></td>
+<td>list</td>
+<td><code>[&quot;Paris&quot;, &quot;LHR&quot;]</code></td>
+<td>Same as <code>origin</code>. For <code>explore</code>: empty for anywhere, or a region, country or city to explore within (<code>Europe</code>).</td>
+</tr>
+<tr>
+<td><code>departureDate</code></td>
+<td>string</td>
+<td><code>2027-06-10</code></td>
+<td><code>YYYY-MM-DD</code>, today or later. For <code>explore</code>: optional, together with <code>returnDate</code> for one exact trip.</td>
+</tr>
+<tr>
+<td><code>returnDate</code></td>
+<td>string</td>
+<td><code>2027-06-17</code></td>
+<td>Round trip (and <code>explore</code> with exact dates); on or after the departure date.</td>
+</tr>
+</tbody></table>
+<p>Every row records what each name matched (<code>originSearched</code>, <code>destinationSearched</code>), so a typed name can always be checked.</p>
+<h3>🕐 Times — round trip and one way</h3>
+<p>Google&#39;s <strong>Times</strong> filter: when each flight may leave and land. Each box takes <strong>two whole hours as a range</strong>: <code>6-12</code> means leaving from 06:00 until 12:00 (11:59 is in, 12:00 is out). <code>0-24</code> or empty means any time. A range can&#39;t cross midnight — Google&#39;s can&#39;t either.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>outboundDepartureTime</code></td>
+<td>the first flight (one way and round trip) — when it may leave</td>
+</tr>
+<tr>
+<td><code>outboundArrivalTime</code></td>
+<td>the first flight — when it may land</td>
+</tr>
+<tr>
+<td><code>returnDepartureTime</code></td>
+<td>the flight home (round trip only) — when it may leave</td>
+</tr>
+<tr>
+<td><code>returnArrivalTime</code></td>
+<td>the flight home — when it may land</td>
+</tr>
+</tbody></table>
+<h3>🗺️ Multi-city flights</h3>
+<p><code>multiCityFlights</code> is a list of <strong>2 to 5 flights</strong>, in the order you take them:</p>
+<table>
+<thead>
+<tr>
+<th>Key in each flight</th>
+<th>Example</th>
+<th>Rules</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>origin</code>, <code>destination</code></td>
+<td><code>[&quot;London&quot;]</code></td>
+<td>Codes, cities or countries; up to 10 each.</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td><code>2027-06-14</code></td>
+<td>On or after the previous flight&#39;s date.</td>
+</tr>
+<tr>
+<td><code>departureTime</code>, <code>arrivalTime</code></td>
+<td><code>&quot;18-24&quot;</code></td>
+<td>Optional time windows for this flight, same format as above.</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+  &quot;tripType&quot;: &quot;multi_city&quot;,
+  &quot;multiCityFlights&quot;: [
+    { &quot;origin&quot;: [&quot;London&quot;], &quot;destination&quot;: [&quot;Paris&quot;], &quot;date&quot;: &quot;2027-06-10&quot;, &quot;departureTime&quot;: &quot;6-12&quot; },
+    { &quot;origin&quot;: [&quot;Paris&quot;], &quot;destination&quot;: [&quot;Tokyo&quot;], &quot;date&quot;: &quot;2027-06-14&quot; },
+    { &quot;origin&quot;: [&quot;Tokyo&quot;], &quot;destination&quot;: [&quot;London&quot;], &quot;date&quot;: &quot;2027-06-24&quot;, &quot;arrivalTime&quot;: &quot;12-24&quot; }
+  ]
+}
+</code></pre>
+<h3>🌍 Explore — flexible dates</h3>
+<p>Google Explore&#39;s &quot;Flexible dates&quot; menu, used when <code>tripType</code> is <code>explore</code> and both dates are empty.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>exploreTripLength</code></td>
+<td><code>weekend</code>, <code>one_week</code>, <code>two_weeks</code></td>
+<td><code>one_week</code></td>
+<td>Trip length: a weekend is 1–4 days, a week 6–9, two weeks 13–16 (measured on Google&#39;s answers).</td>
+</tr>
+<tr>
+<td><code>exploreMonth</code></td>
+<td><code>next_6_months</code>, <code>january</code> … <code>december</code></td>
+<td><code>next_6_months</code></td>
+<td>When to travel.</td>
+</tr>
+</tbody></table>
+<p>Each destination comes with the dates Google found cheapest. Explore uses Google Explore&#39;s own filters: stops, airlines, bags, price and duration.</p>
+<h3>👥 Travellers and cabin</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Range</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>adults</code></td>
+<td>1–9</td>
+<td>At least one adult.</td>
+</tr>
+<tr>
+<td><code>children</code></td>
+<td>0–8</td>
+<td>Aged 2–11.</td>
+</tr>
+<tr>
+<td><code>infantsInSeat</code></td>
+<td>0–8</td>
+<td>Under 2, own seat.</td>
+</tr>
+<tr>
+<td><code>infantsOnLap</code></td>
+<td>0–8</td>
+<td>Under 2, on an adult&#39;s lap.</td>
+</tr>
+<tr>
+<td><code>cabinClass</code></td>
+<td>—</td>
+<td><code>economy</code>, <code>premium_economy</code>, <code>business</code>, <code>first</code>.</td>
+</tr>
+</tbody></table>
+<p>At most <strong>9 travellers</strong> in total, at least as many adults as lap infants, and at most 2 infants per adult.</p>
+<h3>🎛️ Filters — in the order of Google&#39;s filter bar</h3>
+<p>They apply to the form search and to <strong>every flight of the trip</strong>. Leave a box empty for Google&#39;s default. Links keep their own filters.</p>
+<table>
+<thead>
+<tr>
+<th>Google&#39;s filter</th>
+<th>Key</th>
+<th>Format</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Stops</strong></td>
+<td><code>maxStops</code></td>
+<td><code>any</code>, <code>nonstop</code>, <code>1-stop</code>, <code>2-stops</code></td>
+<td>Most stops allowed.</td>
+</tr>
+<tr>
+<td><strong>Airlines</strong></td>
+<td><code>alliances</code></td>
+<td>list: <code>ONEWORLD</code>, <code>SKYTEAM</code>, <code>STAR_ALLIANCE</code></td>
+<td>Only flights sold by members of these alliances.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>airlinesOnly</code></td>
+<td>list of airline names as Google lists them — <code>Air France</code>, <code>British Airways</code> — or codes (<code>AF</code>, <code>BA</code>)</td>
+<td>Only flights sold by these airlines. Combines with <code>alliances</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>airlinesExclude</code></td>
+<td>airline names or codes, as above</td>
+<td>Every airline except these. Use this <strong>or</strong> the two above, not both.</td>
+</tr>
+<tr>
+<td><strong>Bags</strong></td>
+<td><code>carryOnBags</code></td>
+<td>whole number</td>
+<td>Carry-on bags for the whole party; at most one per traveller with a seat. <strong>Adds the bag fees to prices.</strong></td>
+</tr>
+<tr>
+<td><strong>Price</strong></td>
+<td><code>maxPrice</code></td>
+<td>whole number</td>
+<td>Highest total price, in the run&#39;s currency.</td>
+</tr>
+<tr>
+<td><strong>Emissions</strong></td>
+<td><code>lessEmissionsOnly</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Only flights with CO2 below the route&#39;s typical figure.</td>
+</tr>
+<tr>
+<td><strong>Connecting airports</strong></td>
+<td><code>minLayoverHours</code></td>
+<td>hours, half-hour steps: <code>1.5</code></td>
+<td>Shortest layover allowed (0.5–48).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>maxLayoverHours</code></td>
+<td>hours, half-hour steps</td>
+<td>Longest layover allowed (0.5–48).</td>
+</tr>
+<tr>
+<td></td>
+<td><code>connectOnlyVia</code></td>
+<td>list of 3-letter airport codes — the letters Google shows in brackets, e.g. Amsterdam (<code>AMS</code>): <code>DUB</code>, <code>AMS</code>, <code>IST</code></td>
+<td>Connections only through these airports.</td>
+</tr>
+<tr>
+<td></td>
+<td><code>neverConnectVia</code></td>
+<td>list of 3-letter airport codes</td>
+<td>Connections anywhere except these. Use this <strong>or</strong> <code>connectOnlyVia</code>, not both.</td>
+</tr>
+<tr>
+<td><strong>Duration</strong></td>
+<td><code>maxDurationHours</code></td>
+<td>whole hours, 1–72</td>
+<td>Longest total journey per flight, layovers included.</td>
+</tr>
+<tr>
+<td><em>(not in the bar)</em></td>
+<td><code>excludeBasicEconomy</code></td>
+<td><code>true</code> / <code>false</code></td>
+<td>Prices every flight at its cheapest fare that is <strong>not</strong> basic economy. Flights stay; the price moves up (New York → Los Angeles: Delta $239 → $304, Alaska $204 → $259). Google supports it in the search but doesn&#39;t show it in its filter bar.</td>
+</tr>
+</tbody></table>
+<p>Nonstop flights are always kept by the layover and connecting-airport filters — they have no connection.</p>
+<p><strong>Airline names:</strong> Google&#39;s Airlines menu shows names, not codes, so type them the way it lists them. The Actor matches each one against the airlines Google lists <strong>for your route</strong> (<code>&quot;Air France&quot;</code> → <code>AF</code>, shown in <code>appliedFilters.airlines.matchedNames</code>). A name that isn&#39;t on the route, or matches several airlines (<code>&quot;Air&quot;</code>), is reported in <code>filterWarnings</code>. If none of the airlines you asked for is on the route, the search isn&#39;t sent: the row says no flight can match, rather than quietly searching every airline.</p>
+<h3>📋 Which flights to return</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>resultsView</code></td>
+<td><code>best</code>, <code>cheapest</code></td>
+<td><code>best</code></td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td><code>top_flights</code>, <code>price</code>, <code>departure_time</code>, <code>arrival_time</code>, <code>duration</code>, <code>emissions</code></td>
+<td><code>top_flights</code></td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>1–500, per search</td>
+<td>200</td>
+</tr>
+</tbody></table>
+<p>Sorting is done by Google, so <code>sortBy: &quot;price&quot;</code> with <code>maxResults: 10</code> gives the 10 cheapest.</p>
+<h3>🧾 Extra details — optional</h3>
+<p>What Google Flights shows when you click a flight or open its price graph. All are off at 0, and counted per search from the top of the list.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>Default</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bookingOptionsTop</code></td>
+<td>0–50 flights</td>
+<td>0</td>
+<td>Google&#39;s <strong>booking options</strong> for the first N flights: every airline fare tier and travel agency, with fare name, basic-economy flag, price, checked-bag fees, legroom and the seller link.</td>
+</tr>
+<tr>
+<td><code>returnFlightsTop</code></td>
+<td>0–50 outbound flights</td>
+<td>0</td>
+<td>Round trips: Google&#39;s <strong>return flights</strong> for the first N outbounds, each priced as the whole round trip.</td>
+</tr>
+<tr>
+<td><code>returnFlightsPerOutbound</code></td>
+<td>1–100</td>
+<td>10</td>
+<td>How many return flights to keep per outbound.</td>
+</tr>
+<tr>
+<td><code>priceGraphDays</code></td>
+<td>0–330 days</td>
+<td>0</td>
+<td>Google&#39;s <strong>price graph</strong>: the lowest fare for each departure date from your departure date on, one row per day. Round trips keep their trip length. One way and round trip.</td>
+</tr>
+</tbody></table>
+<p>Measured on the platform: booking options for 3 flights in 6–23 seconds, return flights for 3 outbounds in 4 seconds, a 90-day price graph in 7 seconds, an Explore search in 8–12 seconds. Each adds well under a cent of platform usage.</p>
+<p>How they work, and one limit to know: booking options, the price graph and Explore are requests Google answers on some connections and rejects on others. The Actor retries each one on up to 10 fresh residential IPs. If none answers, the flights are still delivered and the row says so (<code>bookingOptionsError</code>, or a <code>price_graph_failed</code> row).</p>
+<h3>🌍 Currency, market and language</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Values</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>currency</code></td>
+<td>143 currency codes (<code>USD</code>, <code>EUR</code>, <code>DZD</code>, <code>TND</code>…)</td>
+<td><code>USD</code></td>
+</tr>
+<tr>
+<td><code>market</code></td>
+<td>186 country codes — fares differ by market</td>
+<td><code>US</code></td>
+</tr>
+<tr>
+<td><code>language</code></td>
+<td>72 languages — airport and airline names come back in it</td>
+<td><code>en-US</code></td>
+</tr>
+</tbody></table>
+<p>Every value in these lists was tested against Google Flights: Google silently swaps an unknown currency for the market&#39;s own, so an unverified code could label prices wrongly.</p>
+<hr>
+<h2>Output reference</h2>
+<p>One row per flight option (<code>rowType: &quot;flight&quot;</code>). The price graph adds <code>calendar_day</code> rows and Explore gives <code>destination</code> rows, in the same dataset; the Console has a view for each. A search that finds nothing, or input that can&#39;t be used, produces <strong>one status row</strong> instead (see below).</p>
+<h3>Flight rows</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>price</code></td>
+<td>Total price for the whole itinerary and all travellers, in <code>currency</code>. Round trips are Google&#39;s coupled round-trip total. <code>null</code> when Google shows &quot;price unavailable&quot;.</td>
+</tr>
+<tr>
+<td><code>priceAvailable</code></td>
+<td><code>false</code> when <code>price</code> is null.</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>Currency of <code>price</code>.</td>
+</tr>
+<tr>
+<td><code>tripType</code></td>
+<td><code>round-trip</code>, <code>one-way</code> or <code>multi-city</code>.</td>
+</tr>
+<tr>
+<td><code>cabinClass</code>, <code>passengers</code></td>
+<td>What was searched.</td>
+</tr>
+<tr>
+<td><code>origin</code>, <code>destination</code></td>
+<td>First and last airport of the first flight.</td>
+</tr>
+<tr>
+<td><code>departureTime</code>, <code>arrivalTime</code></td>
+<td>Local times, <code>YYYY-MM-DDTHH:MM</code>.</td>
+</tr>
+<tr>
+<td><code>airlines</code>, <code>carrierCode</code></td>
+<td>Airlines operating the first flight.</td>
+</tr>
+<tr>
+<td><code>stops</code>, <code>stopsLabel</code></td>
+<td>Number of stops and a label (<code>Nonstop</code>, <code>1 stop</code>).</td>
+</tr>
+<tr>
+<td><code>durationMinutes</code>, <code>duration</code></td>
+<td>Whole journey of the first flight, layovers included.</td>
+</tr>
+<tr>
+<td><code>segments</code></td>
+<td>Every plane of the first flight: airports (code and name), times, duration, airline, flight number, aircraft.</td>
+</tr>
+<tr>
+<td><code>tripLegs</code></td>
+<td>Every flight of the trip, with what each typed place matched.</td>
+</tr>
+<tr>
+<td><code>carbonEmissionsGrams</code>, <code>typicalCarbonEmissionsGrams</code></td>
+<td>CO2 of this option and Google&#39;s typical figure for the route.</td>
+</tr>
+<tr>
+<td><code>priceInsights</code></td>
+<td><code>priceLevel</code>, <code>currentPrice</code>, <code>typicalPrice</code>, <code>lowestSeenPrice</code>, <code>highestSeenPrice</code>, <code>priceHistory</code> — when Google provides them, otherwise <code>null</code>.</td>
+</tr>
+<tr>
+<td><code>appliedFilters</code></td>
+<td>The filters Google was asked to apply, read back from the search itself: <code>maxStops</code>, <code>maxPrice</code>, <code>lessEmissionsOnly</code>, <code>maxDurationHours</code>, <code>carryOnBags</code>, <code>checkedBags</code> (links only), <code>layoverHours</code>, <code>connectingAirports</code>, <code>airlines</code> (with <code>matchedNames</code> for airline names), <code>times</code> (one entry per flight).</td>
+</tr>
+<tr>
+<td><code>filterWarnings</code></td>
+<td>Messages about the filters, for example an airport or airline code that doesn&#39;t exist on this route. Empty when all is well.</td>
+</tr>
+<tr>
+<td><code>searchSource</code>, <code>searchLabel</code></td>
+<td>Which search the row came from (<code>url</code> / <code>route</code>; <code>link 1</code>, <code>route form</code>).</td>
+</tr>
+<tr>
+<td><code>resultsView</code>, <code>sortedBy</code>, <code>index</code></td>
+<td>Which Google list, its order, and the row&#39;s position in it.</td>
+</tr>
+<tr>
+<td><code>source_url</code></td>
+<td>The Google Flights search the row came from.</td>
+</tr>
+<tr>
+<td><code>googleFlightsUrl</code></td>
+<td>This flight opened in Google Flights: its <strong>booking page</strong> when it completes the trip (one way, or the last flight), otherwise Google&#39;s page for choosing the next flight with this one chosen — for a round trip, its return flights.</td>
+</tr>
+<tr>
+<td><code>segmentsForLeg</code></td>
+<td>Which flight of the trip <code>segments</code> describe: 1 normally, 2 for a pasted link whose outbound was already chosen.</td>
+</tr>
+<tr>
+<td><code>bookingOptions</code></td>
+<td>With <code>bookingOptionsTop</code>: list of <code>{seller, sellerCode, isAirline, fareName, fareCode, cabin, isBasicEconomy, price, flightNumbers, bookingSite, bookingUrl, checkedBags, legroom}</code>. Google&#39;s panel can mix cabins (a business search also lists the premium-economy fare), so each option says its <code>cabin</code>. <code>price</code> is <code>null</code> for sellers Google lists without one. <code>bookingUrl</code> is Google&#39;s own link (<code>google.com/travel/clk/f?u=…</code>); opening it lands on the seller&#39;s site with the fare filled in. <code>checkedBags</code> is <code>{first, second}</code>, each <code>{included, fee}</code> as Google lists it for that fare.</td>
+</tr>
+<tr>
+<td><code>cheapestBookingOption</code></td>
+<td>The lowest-priced entry of <code>bookingOptions</code> in the cabin you searched.</td>
+</tr>
+<tr>
+<td><code>bookingOptionsFor</code></td>
+<td>Round trips: the return flight the options were fetched for (Google&#39;s cheapest return for this outbound) and its round-trip price.</td>
+</tr>
+<tr>
+<td><code>bookingOptionsError</code></td>
+<td>Why this flight has no booking options, when it doesn&#39;t.</td>
+</tr>
+<tr>
+<td><code>returnFlights</code></td>
+<td>With <code>returnFlightsTop</code>: Google&#39;s return flights for this outbound — <code>{price, departureTime, arrivalTime, airlines, stops, durationMinutes, flightNumbers, segments, googleFlightsUrl}</code>. <code>price</code> is the whole round trip.</td>
+</tr>
+<tr>
+<td><code>returnFlightsFound</code>, <code>returnFlightsError</code></td>
+<td>How many returns Google listed; why there are none, when there are none.</td>
+</tr>
+</tbody></table>
+<p>Round trips and multi-city trips are listed the way Google lists them: one row per option for the <strong>first</strong> flight, priced for the <strong>whole trip</strong>. <code>segments</code> describe the first flight; <code>tripLegs</code> lists them all.</p>
+<h3>Price-graph rows (<code>rowType: &quot;calendar_day&quot;</code>)</h3>
+<p><code>origin</code>, <code>destination</code>, <code>tripType</code>, <code>departureDate</code>, <code>returnDate</code> (round trips), <code>tripLengthDays</code>, <code>price</code> (lowest fare that day), <code>currency</code>, <code>isCheapest</code> (lowest in the graph), <code>appliedFilters</code>, and <code>googleFlightsUrl</code> — the same search on that date.</p>
+<h3>Explore rows (<code>rowType: &quot;destination&quot;</code>)</h3>
+<p><code>index</code>, <code>origin</code>, <code>city</code>, <code>country</code>, <code>airport</code> (the airport the priced trip flies to: Google prices Miami through Fort Lauderdale when that is cheaper), <code>latitude</code>, <code>longitude</code>, <code>departureDate</code>, <code>returnDate</code>, <code>tripLengthDays</code>, <code>price</code> (round trip), <code>airlines</code>, <code>airlineCode</code>, <code>stops</code>, <code>durationMinutes</code>, <code>hotelPricePerNight</code> (the hotel price Google shows on the same card), and <code>googleFlightsUrl</code> — a Google Flights search for that trip, which you can paste back into <code>searchUrls</code> to get every flight.</p>
+<h3>Status rows</h3>
+<table>
+<thead>
+<tr>
+<th><code>status</code></th>
+<th>Meaning</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>input_error</code></td>
+<td>The input can&#39;t be searched as given — the <code>message</code> says why and the <code>hint</code> says how to fix it. Nothing was sent to Google for that search.</td>
+<td>Fix the named field.</td>
+</tr>
+<tr>
+<td><code>no_results</code></td>
+<td>Google has no fares for this search. With filters on, the message names them: usually the filters removed everything.</td>
+<td>Relax a filter, change the date or cabin.</td>
+</tr>
+<tr>
+<td><code>search_failed</code></td>
+<td>Google&#39;s service failed repeatedly for this search.</td>
+<td>Run again in a few minutes.</td>
+</tr>
+<tr>
+<td><code>price_graph_failed</code></td>
+<td>The flights are complete, but no connection got the price graph answered.</td>
+<td>Run again.</td>
+</tr>
+</tbody></table>
+<p>A run never fails because of one bad search: other links and the form still run.</p>
+<h3>Sample flight row (shortened)</h3>
+<pre><code class="language-json">{
+  &quot;price&quot;: 1016,
+  &quot;currency&quot;: &quot;USD&quot;,
+  &quot;priceIsTotal&quot;: true,
+  &quot;tripType&quot;: &quot;round-trip&quot;,
+  &quot;cabinClass&quot;: &quot;economy&quot;,
+  &quot;origin&quot;: &quot;EWR&quot;,
+  &quot;destination&quot;: &quot;CDG&quot;,
+  &quot;departureTime&quot;: &quot;2027-06-10T17:00&quot;,
+  &quot;arrivalTime&quot;: &quot;2027-06-11T06:10&quot;,
+  &quot;airlines&quot;: [&quot;Air France&quot;],
+  &quot;stops&quot;: 0,
+  &quot;stopsLabel&quot;: &quot;Nonstop&quot;,
+  &quot;duration&quot;: &quot;7h 10m&quot;,
+  &quot;segments&quot;: [
+    {
+      &quot;departureAirport&quot;: &quot;EWR&quot;,
+      &quot;arrivalAirport&quot;: &quot;CDG&quot;,
+      &quot;airline&quot;: &quot;Air France&quot;,
+      &quot;flightNumber&quot;: &quot;AF71&quot;,
+      &quot;aircraft&quot;: &quot;Airbus A350&quot;,
+      &quot;duration&quot;: &quot;7h 10m&quot;
+    }
+  ],
+  &quot;carbonEmissionsGrams&quot;: 333000,
+  &quot;typicalCarbonEmissionsGrams&quot;: 428000,
+  &quot;appliedFilters&quot;: {
+    &quot;maxStops&quot;: &quot;1-stop&quot;,
+    &quot;airlines&quot;: { &quot;alliances&quot;: [&quot;SKYTEAM&quot;], &quot;onlyAirlines&quot;: null, &quot;neverAirlines&quot;: null },
+    &quot;times&quot;: null
+  },
+  &quot;filterWarnings&quot;: [],
+  &quot;searchSource&quot;: &quot;route&quot;,
+  &quot;searchLabel&quot;: &quot;route form&quot;
+}
+</code></pre>
+<h3>Sample booking option (one entry of <code>bookingOptions</code>)</h3>
+<pre><code class="language-json">{
+  &quot;seller&quot;: &quot;Delta&quot;,
+  &quot;sellerCode&quot;: &quot;DL&quot;,
+  &quot;isAirline&quot;: true,
+  &quot;fareName&quot;: &quot;Delta Main Basic&quot;,
+  &quot;fareCode&quot;: &quot;DELTA MAIN BASIC&quot;,
+  &quot;cabin&quot;: &quot;economy&quot;,
+  &quot;isBasicEconomy&quot;: true,
+  &quot;price&quot;: 239,
+  &quot;flightNumbers&quot;: [&quot;DL713&quot;],
+  &quot;bookingSite&quot;: &quot;www.delta.com/...&quot;,
+  &quot;bookingUrl&quot;: &quot;https://www.google.com/travel/clk/f?u=…&quot;,
+  &quot;checkedBags&quot;: { &quot;first&quot;: { &quot;included&quot;: false, &quot;fee&quot;: 45 }, &quot;second&quot;: { &quot;included&quot;: false, &quot;fee&quot;: 55 } },
+  &quot;legroom&quot;: [&quot;31 in&quot;]
+}
+</code></pre>
+<hr>
+<h2>Google&#39;s rules worth knowing</h2>
+<p>These are how Google Flights itself behaves. The Actor follows them and tells you when they bite.</p>
+<ul>
+<li><strong>Airline filters work on who <em>sells</em> a flight, not who flies it.</strong> Allowing BA also returns American Airlines flights that BA sells. Excluding an airline only removes flights no other airline sells, so excluding Virgin Atlantic may change nothing, because Delta and Air France sell the same flights.</li>
+<li><strong>The bag filter changes prices, not the list.</strong> It adds each airline&#39;s bag fee into the price (a £27 Ryanair fare becomes £75 with a carry-on), and only where Google knows the fee.</li>
+<li><strong>Which airports and airlines make sense depends on the route.</strong> Google&#39;s menus only offer the ones on that route. A code that isn&#39;t there is accepted silently and matches nothing, so the Actor warns in the log and in <code>filterWarnings</code>. An airline code Google doesn&#39;t know at all makes it reject the whole search; the Actor reports that as an <code>input_error</code> naming the code.</li>
+<li><strong>Duration and layover ranges depend on the route.</strong> New York → Boston can be filtered to 2 hours; Chicago → London has nothing under 8. A limit below the shortest flight returns a <code>no_results</code> row naming the filter.</li>
+<li><strong>Lowercase codes are ignored by Google</strong>, so the Actor upper-cases every code for you, and matches airline names regardless of case.</li>
+<li><strong>Impossible searches aren&#39;t refused by Google</strong> — it quietly answers a different one (10 travellers are priced as one adult; a 6th multi-city flight is dropped). The Actor checks these limits first and refuses with a reason instead of returning a wrong price.</li>
+<li><strong>Searches with infants, some searches with children, and multi-city trips</strong> are priced by Google inside a browser, so they take 15–40 seconds.</li>
+<li><strong>Prices move through the day.</strong> Two runs minutes apart can differ; that is the market.</li>
+<li><strong>Google&#39;s Cheapest tab can price a flight a few dollars below its own booking panel.</strong> Measured: JetBlue 1023 at $238 on the Cheapest tab, $249 on the Best tab, in the booking panel and in the price graph. Each row reports the list it came from; <code>bookingOptions</code> report the booking panel.</li>
+<li><strong>Booking options, the price graph and Explore are answered only on some connections.</strong> The Actor retries on fresh residential IPs (measured: German IPs are answered about 3 times as often as US ones, with identical prices — the market comes from <code>market</code>, not the IP).</li>
+<li><strong>Explore prices the cheapest airport of a city.</strong> Miami&#39;s cheapest trip may land at Fort Lauderdale; <code>airport</code> says which.</li>
+</ul>
+<hr>
+<h2>What this version does not do</h2>
+<ul>
+<li><strong>Booking options for multi-city trips</strong> need every flight chosen: paste Google&#39;s page for the last flight, and set <code>bookingOptionsTop</code>.</li>
+<li><strong>The price graph</strong> covers one way and round trip, not multi-city. Google&#39;s two-dimensional date grid is not included.</li>
+<li><strong>Checked bags</strong> are not in the form, because Google&#39;s Bags filter only has carry-on. A pasted link that carries checked bags is still replayed as-is.</li>
+</ul>
+<hr>
+<h2>Use cases</h2>
+<ul>
+<li><strong>Flight price monitoring</strong> — schedule a run daily and catch price drops on your routes</li>
+<li><strong>Travel agencies and OTAs</strong> — live comparison fares for your own tools</li>
+<li><strong>Airfare research</strong> — compare carriers, alliances, cabins, markets and currencies</li>
+<li><strong>Revenue management</strong> — watch competitor pricing on the routes you operate</li>
+<li><strong>Deal sites and newsletters</strong> — the cheapest fares on a route, including self-transfer combinations, and Explore&#39;s cheapest destinations from any airport</li>
+<li><strong>Fare comparison</strong> — every airline fare tier and travel agency for a flight, with bag fees and the link to book</li>
+<li><strong>Data and AI</strong> — clean, filter-labelled flight data for dashboards, models and agents</li>
+</ul>
+<hr>
+<h2>FAQ</h2>
+<p><strong>How many flights does one search return?</strong>
+Best: roughly 50–300. Cheapest: about 200. Google stops at 300 per list; <code>maxResults</code> (default 200, up to 500) caps what is stored.</p>
+<p><strong>Is the round-trip price the real total?</strong>
+Yes. Google prices a round trip as one total, and that is what each row carries. Adding an outbound fare to a return fare — a common mistake — roughly doubles the real price.</p>
+<p><strong>Do I need a Google account or an API key?</strong>
+No.</p>
+<p><strong>Can I search by city or country?</strong>
+Yes. <code>Paris</code>, <code>Algiers</code> or <code>United Kingdom</code> work anywhere an airport code does, up to 10 places per side.</p>
+<p><strong>Can I use every Google Flights filter?</strong>
+Yes: in the form (stops, airlines and alliances, carry-on bags, price, times, emissions, layovers, connecting airports, duration), or by pasting a link that carries any filter at all.</p>
+<p><strong>Can I get booking links?</strong>
+Yes. Set <code>bookingOptionsTop</code>: each of the first N flights gets Google&#39;s booking options, with a <code>bookingUrl</code> per seller that opens the airline&#39;s or agency&#39;s site with the fare filled in. Every flight row also has <code>googleFlightsUrl</code>, which opens that flight on Google Flights.</p>
+<p><strong>Can I find the cheapest day to fly, or the cheapest place to go?</strong>
+Yes. <code>priceGraphDays</code> gives the lowest fare for each day; <code>tripType: &quot;explore&quot;</code> gives Google Explore&#39;s cheapest destinations from your airport.</p>
+<p><strong>How do I know a filter was applied?</strong>
+Every row has <code>appliedFilters</code>, read back from the search that produced it, and <code>filterWarnings</code> if something about a filter didn&#39;t fit the route.</p>
+<p><strong>How fast is it?</strong>
+About 1–2 seconds per plain search; 10–40 seconds for the Cheapest list and for searches Google prices in a browser. Extra details add a few seconds each (see the Extra details section).</p>
+<p><strong>Is scraping Google Flights legal?</strong>
+This Actor collects publicly available flight information and stores no personal data. You are responsible for how you use the data.</p>
+<hr>
+<h2>Support</h2>
+<p>🌐 Website <a href="https://flowextractapi.com">flowextractapi.com</a> · 📧 <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a> · 💬 GitHub <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a> · 💼 LinkedIn <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a> · 🐦 X <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a> · 📱 Facebook <a href="https://www.facebook.com/flowextractapi">flowextractapi</a> · 🎵 TikTok <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></p>
+<h2>Legal &amp; compliance</h2>
+<p>Collects <strong>publicly available data only</strong> · respects the source&#39;s rate limits and terms · <strong>stores no personal information</strong> · suitable for commercial use. No affiliation with or endorsement by Google Flights is implied.</p>
+<p><em>Google Flights Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

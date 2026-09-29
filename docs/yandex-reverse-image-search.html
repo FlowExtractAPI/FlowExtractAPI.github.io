@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Yandex Reverse Image Search API - Search by Image | FlowExtract API</title>
+    <meta name="title" content="Yandex Reverse Image Search API - Search by Image | FlowExtract API">
+    <meta name="description" content="Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/yandex-reverse-image-search.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Yandex Reverse Image Search API - Search by Image | FlowExtract API">
+    <meta property="og:description" content="Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/yandex-reverse-image-search.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-OApEcfLfUVvnqyIid-SDclrTHWCz-d058b8d6-ad95-465b-a66a-16092d3ef6ee.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yandex Reverse Image Search API - Search by Image | FlowExtract API">
+    <meta name="twitter:description" content="Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-OApEcfLfUVvnqyIid-SDclrTHWCz-d058b8d6-ad95-465b-a66a-16092d3ef6ee.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Yandex Reverse Image Search","description":"Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/yandex-reverse-image-search.html","sameAs":"https://apify.com/dz_omar/yandex-reverse-image-search?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-OApEcfLfUVvnqyIid-SDclrTHWCz-d058b8d6-ad95-465b-a66a-16092d3ef6ee.jpg"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-OApEcfLfUVvnqyIid-SDclrTHWCz-d058b8d6-ad95-465b-a66a-16092d3ef6ee.jpg" alt="Yandex Reverse Image Search" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">Yandex Reverse Image Search</h1>
+                <p class="actor-hero-desc">Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.</p>
+                <a href="https://apify.com/dz_omar/yandex-reverse-image-search?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>Yandex Reverse Image Search</h1>
+<p>Search the web <strong>by picture instead of by keywords</strong>. Give it an image  paste a link or
+upload a file  and get back every page where that image appears online, visually similar
+pictures, other resolutions of the same image, any text written inside it, and descriptive
+tags.</p>
+<p>Yandex is widely regarded as one of the strongest reverse-image engines available,
+especially for faces, places, artwork, and content that Western engines miss.</p>
+<hr>
+<h2>Why this one</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>📁 <strong>Upload a picture, not just a link</strong></td>
+<td>Most reverse-image tools require a publicly reachable URL. This one takes a file straight from your computer  screenshots, private photos, anything not already published online.</td>
+</tr>
+<tr>
+<td>🌍 <strong>Several regional indexes at once</strong></td>
+<td>The Turkish index is largely separate from the international one. Searching both returns roughly <strong>75% more unique matches</strong>, merged into one clean result set.</td>
+</tr>
+<tr>
+<td>🧹 <strong>No duplicate spam</strong></td>
+<td>The same picture usually sits on many pages. You get one row per image listing every page carrying it  about <strong>40% fewer rows, nothing lost</strong>.</td>
+</tr>
+<tr>
+<td>🔤 <strong>Reads text inside the picture</strong></td>
+<td>Optional. Returns the text and where each word sits.</td>
+</tr>
+<tr>
+<td>⚖️ <strong>A fair results limit</strong></td>
+<td>Your limit is shared across the result types you picked, so a small cap still returns a mix of everything instead of filling up with page matches.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>Input</h2>
+<p>Paste an image link and press <strong>Start</strong>. Everything else has a working default.</p>
+<pre><code class="language-json">{
+  &quot;imageUrl&quot;: &quot;https://example.com/photo.jpg&quot;
+}
+</code></pre>
+<p>A fuller run:</p>
+<pre><code class="language-json">{
+  &quot;imageUrl&quot;: &quot;https://example.com/photo.jpg&quot;,
+  &quot;searchRegions&quot;: [&quot;yandex.com&quot;, &quot;yandex.com.tr&quot;],
+  &quot;resultTypes&quot;: [&quot;matchingPages&quot;, &quot;similarImages&quot;, &quot;ocrText&quot;],
+  &quot;maxResults&quot;: 50,
+  &quot;deduplicate&quot;: true
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>imageUrl</code></td>
+<td>string</td>
+<td></td>
+<td>Link to the picture. Right-click any image in your browser → <em>Copy image address</em>.</td>
+</tr>
+<tr>
+<td><code>imageFile</code></td>
+<td>file</td>
+<td></td>
+<td>Upload a picture instead. JPG, PNG, WebP, GIF, BMP, up to 10 MB. If you fill both, the upload wins.</td>
+</tr>
+<tr>
+<td><code>crop</code></td>
+<td>string</td>
+<td>—</td>
+<td>Search only part of the picture: <code>left;top;right;bottom</code> as fractions, e.g. <code>0.25;0.25;0.75;0.75</code> for the middle. Leave empty for the whole image.</td>
+</tr>
+<tr>
+<td><code>searchRegions</code></td>
+<td>array</td>
+<td><code>[&quot;yandex.com&quot;]</code></td>
+<td>Which regional indexes to search. Adding <strong>Turkey</strong> gives the biggest gain. <em>All regions</em> searches every one.</td>
+</tr>
+<tr>
+<td><code>resultTypes</code></td>
+<td>array</td>
+<td>pages + similar</td>
+<td>Which kinds of results to return.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>integer</td>
+<td><code>50</code></td>
+<td>Largest number of rows to take <strong>from each region</strong>. With 3 regions and a limit of 11 you get up to 33, before duplicate removal. <code>0</code> returns everything found. Within each region&#39;s share, rows are split fairly across the selected result types.</td>
+</tr>
+<tr>
+<td><code>deduplicate</code></td>
+<td>boolean</td>
+<td><code>true</code></td>
+<td>Collapse repeats of the same image into one row listing every page carrying it.</td>
+</tr>
+</tbody></table>
+<p>To search a picture from your own computer, use <strong>Or upload an image file</strong> and leave the
+link empty.</p>
+<hr>
+<h2>Output</h2>
+<p>One row per result, tagged with <code>resultType</code> so you can filter.</p>
+<table>
+<thead>
+<tr>
+<th><code>resultType</code></th>
+<th>What it is</th>
+<th align="center">On by default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>matching_page</code></td>
+<td>A page where this image appears  title, snippet, site, full-size image link</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td><code>similar_image</code></td>
+<td>A visually similar picture from elsewhere on the web</td>
+<td align="center">✅</td>
+</tr>
+<tr>
+<td><code>image_size</code></td>
+<td>The same image at another resolution, grouped small / medium / large</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>image_tag</code></td>
+<td>A short phrase describing what is in the picture</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>ocr_text</code></td>
+<td>Text read out of the image, with per-word positions</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>classification</code></td>
+<td>What kind of picture the engine judges this to be</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>barcode</code></td>
+<td>Barcode or QR content, when the picture contains one</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td><code>detected_object</code></td>
+<td>A region the engine spotted in the picture, with its category and a ready-to-use crop string</td>
+<td align="center"></td>
+</tr>
+</tbody></table>
+<h3>Example row</h3>
+<pre><code class="language-json">{
+  &quot;resultType&quot;: &quot;matching_page&quot;,
+  &quot;position&quot;: 1,
+  &quot;title&quot;: &quot;Product page  Example Store&quot;,
+  &quot;snippet&quot;: &quot;Available in three colours.&quot;,
+  &quot;link&quot;: &quot;https://example-store.com/product/123&quot;,
+  &quot;source&quot;: &quot;example-store.com&quot;,
+  &quot;thumbnail&quot;: &quot;https://…/thumb.jpg&quot;,
+  &quot;original&quot;: &quot;https://example-store.com/img/product-full.jpg&quot;,
+  &quot;originalWidth&quot;: 850,
+  &quot;originalHeight&quot;: 565,
+  &quot;searchRegions&quot;: [&quot;yandex.com&quot;, &quot;yandex.com.tr&quot;],
+  &quot;pages&quot;: [&quot;https://example-store.com/product/123&quot;, &quot;https://blog.example.com/review&quot;],
+  &quot;duplicateCount&quot;: 2,
+  &quot;scrapedAt&quot;: &quot;2026-09-01T20:14:03Z&quot;
+}
+</code></pre>
+<p><code>pages</code> and <code>duplicateCount</code> are what make duplicate removal additive: you see <em>more</em> per
+row, not less.</p>
+<h3>Views</h3>
+<p>Four ready-made dataset views: <strong>All results</strong>, <strong>Pages containing this image</strong>,
+<strong>Visually similar images</strong>, and <strong>Text found in the image</strong>  the last two omit columns
+those result types never fill.</p>
+<hr>
+<h2>What people use it for</h2>
+<ul>
+<li><strong>Find where your images are used</strong>  track unauthorised use of product photos, artwork, or brand assets.</li>
+<li><strong>Brand protection</strong>  surface sites and marketplaces using your imagery.</li>
+<li><strong>Image provenance and fact-checking</strong>  trace earlier and higher-resolution versions of a picture.</li>
+<li><strong>Find the original</strong> uncompressed version of a cropped or low-quality image.</li>
+<li><strong>Build datasets</strong> of visually similar images.</li>
+<li><strong>Read text out of screenshots</strong> in bulk.</li>
+</ul>
+<hr>
+<h2>Pricing</h2>
+<p><strong>This Actor is currently free to run.</strong> You pay only Apify&#39;s normal platform usage for the
+run itself  there is no per-result charge.</p>
+<!-- MONETIZATION SWITCH: when billing is turned on, replace the paragraph above with the
+     tier table below. Prices come from .actor/pay_per_event.json - keep them identical.
+
+| Your Apify plan | Price per result | Per 1,000 results |
+|---|---|---|
+| Free            | $0.0150 | $15.00 |
+| Bronze          | $0.0050 |  $5.00 |
+| Silver          | $0.0045 |  $4.50 |
+| Gold and above  | $0.0040 |  $4.00 |
+
+You are charged once per result row delivered. Duplicate copies of the same picture are
+merged into a single row before billing, so you are never charged twice for the same image,
+and a run that returns nothing costs nothing.
+-->
+
+<h2>Known issues</h2>
+<p>Being worked on. None of these stop the Actor returning results.</p>
+<table>
+<thead>
+<tr>
+<th>Issue</th>
+<th>Effect on you</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>No shopping matches</strong></td>
+<td>Matching a picture to purchasable products is not offered. The upstream section exists but has never returned data to us across ~50 attempts, so the option is deliberately absent rather than present-but-empty.</td>
+</tr>
+</tbody></table>
+<h2>Limitations</h2>
+<ul>
+<li>Set <strong>Maximum results</strong> to <code>0</code> to fetch everything: one image can return <strong>3,000+ matches</strong>
+from a single region. The default of 50 costs one request; larger limits fetch more pages,
+so a very large run takes proportionally longer.</li>
+<li><strong>Shopping matches, barcodes, and detected objects are empty for most pictures.</strong> They are
+off by default for that reason  turn them on only if your images are likely to contain
+products or codes.</li>
+<li>Russia, Belarus, Kazakhstan, and Uzbekistan overlap almost entirely with the international
+index and add only a handful of extra results. <strong>Turkey is the one that genuinely differs.</strong></li>
+<li>Very small images (under 1 KB  spacers and tracking pixels) cannot be searched.</li>
+<li>Maximum image size is 10 MB.</li>
+<li>Selecting more regions makes a run take longer. All six still finish in well under a minute.</li>
+<li>Results reflect what the engine has indexed; a brand-new image may not be found anywhere yet.</li>
+<li>If you supply something unusable, the run still finishes successfully and returns a single
+row explaining what to fix  it does not fail.</li>
+</ul>
+<hr>
+<h2>Support</h2>
+<p>🌐 Website <a href="https://flowextractapi.com">flowextractapi.com</a> · 📧 <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a> · 💬 GitHub <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a> · 💼 LinkedIn <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a> · 🐦 X <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a> · 📱 Facebook <a href="https://www.facebook.com/flowextractapi">flowextractapi</a> · 🎵 TikTok <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></p>
+<h2>Legal &amp; compliance</h2>
+<p>Public data only · respects source rate limits and terms · no storage of personal
+information · suitable for commercial use · No affiliation with or endorsement by Yandex is
+implied.</p>
+<p><em>Yandex Reverse Image Search  by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/yandex-reverse-image-search?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Etsy Product &amp; Reviews Scraper - Full Listing Data | FlowExtract API</title>
+    <meta name="title" content="Etsy Product &amp; Reviews Scraper - Full Listing Data | FlowExtract API">
+    <meta name="description" content="🛍️ Scrape full Etsy product &amp; listing data from any URL — pricing, shop, variations, shipping, policies, ratings &amp; media — plus optional ⭐ buyer reviews with rating, media &amp; sort filters. Public data, no login.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/etsy-product-reviews-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Etsy Product &amp; Reviews Scraper - Full Listing Data | FlowExtract API">
+    <meta property="og:description" content="🛍️ Scrape full Etsy product &amp; listing data from any URL — pricing, shop, variations, shipping, policies, ratings &amp; media — plus optional ⭐ buyer reviews with rating, media &amp; sort filters. Public data, no login.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/etsy-product-reviews-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-0MxDII43AO9efVmmD-iCjT4OLbAu-etsy-product-reviews-scraper-Icon.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Etsy Product &amp; Reviews Scraper - Full Listing Data | FlowExtract API">
+    <meta name="twitter:description" content="🛍️ Scrape full Etsy product &amp; listing data from any URL — pricing, shop, variations, shipping, policies, ratings &amp; media — plus optional ⭐ buyer reviews with rating, media &amp; sort filters. Public data, no login.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-0MxDII43AO9efVmmD-iCjT4OLbAu-etsy-product-reviews-scraper-Icon.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🛍️ Etsy Product & Reviews Scraper","description":"🛍️ Scrape full Etsy product & listing data from any URL — pricing, shop, variations, shipping, policies, ratings & media — plus optional ⭐ buyer reviews with rating, media & sort filters. Public data, no login.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/etsy-product-reviews-scraper.html","sameAs":"https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-0MxDII43AO9efVmmD-iCjT4OLbAu-etsy-product-reviews-scraper-Icon.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-0MxDII43AO9efVmmD-iCjT4OLbAu-etsy-product-reviews-scraper-Icon.png" alt="🛍️ Etsy Product &amp; Reviews Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">🛍️ Etsy Product &amp; Reviews Scraper</h1>
+                <p class="actor-hero-desc">🛍️ Scrape full Etsy product &amp; listing data from any URL — pricing, shop, variations, shipping, policies, ratings &amp; media — plus optional ⭐ buyer reviews with rating, media &amp; sort filters. Public data, no login.</p>
+                <a href="https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🛍️ Etsy Product &amp; Reviews Scraper  Full Listing Data + Buyer Reviews</h1>
+<p><strong><a href="https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63">Etsy Product &amp; Reviews Scraper</a></strong> extracts complete <strong>Etsy listing/product data</strong> from any listing URL  product info, shop, pricing, variations, shipping, policies, ratings and media  and, optionally, the listing&#39;s <strong>buyer reviews</strong> with the same filters you have in the Etsy app. Paste a URL, run, and get clean, structured JSON.</p>
+<p>Perfect for <strong>e-commerce sellers</strong>, <strong>market researchers</strong>, and <strong>developers</strong> who need full Etsy product and review data without maintaining a scraper or reverse-engineering Etsy&#39;s app API.</p>
+<hr>
+<h2>Why scrape Etsy?</h2>
+<p>Etsy hosts millions of handmade, vintage, and custom listings, and every listing page carries a rich, structured payload  pricing, variations, shipping, shop reputation, and buyer reviews. That data powers competitor analysis, pricing strategy, product research, and review-sentiment work.</p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>Competitor &amp; pricing research</strong>  track prices, variations, quantities, and shop ratings across listings.</li>
+<li><strong>Product sourcing &amp; trends</strong>  analyze what&#39;s selling, how it&#39;s made, and how it&#39;s priced.</li>
+<li><strong>Review analysis</strong>  pull buyer reviews (with sub-ratings and seller responses) for sentiment and quality insights.</li>
+<li><strong>Catalog enrichment</strong>  hydrate your own product database with full Etsy listing details.</li>
+<li><strong>Shop monitoring</strong>  watch a competitor&#39;s listings, ratings, and review trends over time.</li>
+</ul>
+<hr>
+<h2>What data can the Etsy Product &amp; Reviews Scraper extract?</h2>
+<p>Every input URL always returns one <strong>listing-details</strong> record (the full product payload). When <strong>Include reviews</strong> is on, you also get one <strong>review</strong> record per review.</p>
+<h3>🏷️ Product / Listing</h3>
+<ul>
+<li>Listing ID, title, full description, listing URL</li>
+<li>Price and currency, quantity available, when-made / made-to-order</li>
+<li>Category, tags, personalization options, &quot;how it&#39;s made&quot;</li>
+</ul>
+<h3>🎨 Variations &amp; Offerings</h3>
+<ul>
+<li>Variation options (size, color, style, …) and per-variation pricing</li>
+<li>Offerings, inventory, and images by variation</li>
+</ul>
+<h3>🏪 Shop &amp; Seller</h3>
+<ul>
+<li>Shop name, shop rating and review counts, shop policies</li>
+<li>Seller details, production partners, manufacturers, FAQs</li>
+</ul>
+<h3>🚚 Shipping &amp; Policies</h3>
+<ul>
+<li>Shipping options and costs, free-shipping info</li>
+<li>Structured return and shop policies</li>
+</ul>
+<h3>⭐ Ratings &amp; Reviews (optional)</h3>
+<ul>
+<li>Overall listing rating, star breakdown, photo/video review counts</li>
+<li>Per review: <code>rating</code>, <code>review</code> text, <code>date</code>, buyer name/login, <code>language</code></li>
+<li><code>subratings</code> (item quality, shipping, customer service), seller <code>response</code>, <code>is_recommended</code>, <code>upvotes_count</code></li>
+<li>Order references: <code>transaction_id</code>, <code>receipt_id</code></li>
+</ul>
+<h3>🖼️ Media</h3>
+<ul>
+<li>Listing images and video, review images/videos, buyer avatars</li>
+</ul>
+<blockquote>
+<p><strong>Data preservation:</strong> the full Etsy response is preserved on each <code>listing_details</code> record  nothing is stripped  so even fields not listed above are available.</p>
+</blockquote>
+<hr>
+<h2>⚙️ How to use the Etsy Product &amp; Reviews Scraper</h2>
+<h3>Input options</h3>
+<h4>🔗 Etsy listing URLs (<code>startUrls</code>, array  required)</h4>
+<p>One or more Etsy listing URLs. Any locale prefix or query string is fine.</p>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://www.etsy.com/listing/1667678858/...</code></td>
+<td>Fetches that listing&#39;s full details (+ reviews if enabled)</td>
+</tr>
+<tr>
+<td><code>https://www.etsy.com/ca/listing/1861242992/...</code></td>
+<td>Locale prefixes work too</td>
+</tr>
+</tbody></table>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.etsy.com/listing/1667678858/personalised-engraved-groomsmen-groom&quot; },
+    { &quot;url&quot;: &quot;https://www.etsy.com/listing/1861242992/embroidered-crown-for-kids-and-childrens&quot; }
+  ],
+  &quot;includeReviews&quot;: true,
+  &quot;maxReviews&quot;: 100
+}
+</code></pre>
+<h4>💬 <code>includeReviews</code> (boolean)  default <code>true</code></h4>
+<p>Listing details are <strong>always</strong> fetched. When <code>true</code>, reviews are fetched too. When <code>false</code>, only the listing-details record is returned and <strong>no</strong> review requests are made.</p>
+<h4>🔢 <code>maxReviews</code> (integer)  default <code>10</code></h4>
+<p>Maximum reviews to collect <strong>per listing</strong> (each URL independently  not a global total). <code>0</code> = all matching reviews. Ignored when <code>includeReviews</code> is off. It never limits listing-details records  there is always exactly one per URL.</p>
+<h4>↕️ <code>sort</code>  <code>Suggested</code> · <code>Most recent</code> · <code>Highest rated</code> · <code>Lowest rated</code></h4>
+<h4>⭐ <code>rating</code>  only reviews with a chosen star rating (1–5), or all</h4>
+<h4>📷 <code>reviewMedia</code>  <code>Any review</code> · <code>With photos</code> · <code>With videos</code> (mutually exclusive, as in the Etsy app)</h4>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [{ &quot;url&quot;: &quot;https://www.etsy.com/listing/1667678858/x&quot; }],
+  &quot;includeReviews&quot;: true,
+  &quot;maxReviews&quot;: 500,
+  &quot;sort&quot;: &quot;Most recent&quot;,
+  &quot;rating&quot;: &quot;5&quot;,
+  &quot;reviewMedia&quot;: &quot;With photos&quot;
+}
+</code></pre>
+<p><strong>How the limit works:</strong> with two URLs and <code>maxReviews: 1000</code>, you get <strong>2 listing-details records + up to 1,000 reviews for each listing</strong> (2,002 records total). With <code>includeReviews: false</code> and one URL, you get exactly <strong>1</strong> record regardless of <code>maxReviews</code>.</p>
+<h3>🔐 Authentication</h3>
+<p>None. No Etsy account or login is required  the actor reads public listing and review data.</p>
+<hr>
+<h2>💰 Pricing</h2>
+<p>How much does it cost to scrape Etsy? This actor uses <strong>pay-per-event</strong> pricing, so you pay only for the data you receive  no actor-start fee, no hidden costs, just results.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Listing details (per record)</td>
+<td>$0.005</td>
+<td>$0.004</td>
+<td>$0.0035</td>
+<td>$0.003</td>
+</tr>
+<tr>
+<td>Reviews (per 1,000)</td>
+<td>$2.00</td>
+<td>$0.80</td>
+<td>$0.60</td>
+<td>$0.40</td>
+</tr>
+</tbody></table>
+<p><strong>Cost estimate examples</strong> (1 listing + 1,000 reviews):</p>
+<ul>
+<li><strong>GOLD plan</strong>: ~$0.003 details + $0.40 reviews ≈ <strong>$0.40</strong></li>
+<li><strong>FREE plan</strong>: ~$0.005 details + $2.00 reviews ≈ <strong>$2.01</strong></li>
+</ul>
+<blockquote>
+<p>💡 Tip: set <code>maxReviews: 10</code> first to test your setup before running a full extraction. Turn <code>includeReviews</code> off when you only need product data  it&#39;s cheaper and faster.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample output</h2>
+<h3>Listing details (<code>_type: &quot;listing_details&quot;</code>, one per URL  abridged; full payload is preserved)</h3>
+<pre><code class="language-json">{
+  &quot;_type&quot;: &quot;listing_details&quot;,
+  &quot;scraped_listing_id&quot;: 1667678858,
+  &quot;includeReviews&quot;: true,
+  &quot;listing&quot;: {
+    &quot;listing_id&quot;: 1667678858,
+    &quot;title&quot;: &quot;Personalised Engraved Groomsmen Groom Best man Cufflinks&quot;,
+    &quot;price&quot;: &quot;31.10&quot;,
+    &quot;currency_code&quot;: &quot;USD&quot;,
+    &quot;quantity&quot;: 556,
+    &quot;when_made&quot;: &quot;made_to_order&quot;,
+    &quot;url&quot;: &quot;https://www.etsy.com/listing/1667678858/personalised-engraved-groomsmen-groom&quot;
+  },
+  &quot;shop&quot;: { &quot;shop_name&quot;: &quot;MarHappiness&quot; },
+  &quot;variations&quot;: [ &quot;…&quot; ],
+  &quot;shipping&quot;: { &quot;…&quot;: &quot;…&quot; },
+  &quot;listing_rating&quot;: { &quot;…&quot;: &quot;…&quot; },
+  &quot;source_url&quot;: &quot;https://www.etsy.com/listing/1667678858&quot;,
+  &quot;_source&quot;: &quot;etsy-product-reviews-scraper&quot;
+}
+</code></pre>
+<h3>Review (<code>_type: &quot;review&quot;</code>, one per review)</h3>
+<pre><code class="language-json">{
+  &quot;_type&quot;: &quot;review&quot;,
+  &quot;scraped_listing_id&quot;: 1667678858,
+  &quot;rating&quot;: 5,
+  &quot;review&quot;: &quot;Great cufflinks. Looked just as described&quot;,
+  &quot;date&quot;: 1786608327,
+  &quot;buyer_real_name&quot;: &quot;Beth Belger&quot;,
+  &quot;buyer_login_name&quot;: &quot;bethbelger&quot;,
+  &quot;language&quot;: &quot;en&quot;,
+  &quot;is_recommended&quot;: true,
+  &quot;upvotes_count&quot;: 0,
+  &quot;subratings&quot;: { &quot;item_quality&quot;: 5, &quot;shipping&quot;: 5, &quot;seller_customer_service&quot;: 5 },
+  &quot;response&quot;: null,
+  &quot;transaction_id&quot;: 5099392452,
+  &quot;receipt_id&quot;: 4087440613,
+  &quot;source_url&quot;: &quot;https://www.etsy.com/listing/1667678858&quot;,
+  &quot;_source&quot;: &quot;etsy-product-reviews-scraper&quot;
+}
+</code></pre>
+<p>Use the <strong>Listing details</strong> and <strong>Reviews</strong> dataset views, or filter on <code>_type</code>, to separate the two.</p>
+<h3>Listings that no longer exist</h3>
+<p>If a URL points to a listing that has been removed or never existed, you get a clear, self-describing record instead of a failure — and the rest of your URLs keep processing:</p>
+<pre><code class="language-json">{
+  &quot;_type&quot;: &quot;listing_details&quot;,
+  &quot;_status&quot;: &quot;not_found&quot;,
+  &quot;scraped_listing_id&quot;: 18336688391,
+  &quot;includeReviews&quot;: true,
+  &quot;error&quot;: &quot;Etsy listing 18336688391 does not exist or is no longer available.&quot;,
+  &quot;etsy_error&quot;: &quot;ListingMap with PK listing_id = 18336688391 does not exist&quot;,
+  &quot;source_url&quot;: &quot;https://www.etsy.com/listing/18336688391&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need an Etsy account to use this actor?</strong>
+No. It only reads publicly available listing and review data.</p>
+<p><strong>How many reviews can I extract for free?</strong>
+On the FREE plan reviews are $2.00 / 1,000, so Apify&#39;s $5 free monthly credit covers roughly 2,500 reviews (plus a few cents per listing). Higher plans go much further.</p>
+<p><strong>Can I get product details without reviews?</strong>
+Yes  set <code>includeReviews: false</code>. You get one listing-details record per URL and no review charges.</p>
+<p><strong>Can I scrape multiple listings in one run?</strong>
+Yes. Add multiple URLs to <code>startUrls</code>; <code>maxReviews</code> applies to each listing independently.</p>
+<p><strong>Does <code>maxReviews</code> limit the product data?</strong>
+No. There is always exactly one listing-details record per URL. <code>maxReviews</code> only caps reviews per listing.</p>
+<p><strong>What happens if the run crashes or is aborted mid-way?</strong>
+It resumes exactly where it left off  see Resumability below  without re-delivering completed work.</p>
+<hr>
+<h2>🔄 Resumability</h2>
+<p>The actor delivers results progressively and checkpoints its progress continuously. If it crashes, is migrated, or is aborted, a resurrected run resumes from the last safe point  details and reviews are tracked as independent phases per listing, so completed work is never repeated.</p>
+<table>
+<thead>
+<tr>
+<th>Trigger</th>
+<th>What gets saved</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>After each delivered review page</td>
+<td>Listing offset + delivered count (encrypted)</td>
+</tr>
+<tr>
+<td>After listing details delivered</td>
+<td>Details-done marker per listing</td>
+</tr>
+<tr>
+<td>Apify <code>aborting</code> event</td>
+<td>Full state snapshot</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🌐 Proxy support</h2>
+<p>Proxy is automatic  no setup required.</p>
+<table>
+<thead>
+<tr>
+<th>User tier</th>
+<th>Proxy used</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💎 Paying</td>
+<td>Premium dedicated proxy with automatic failover to Apify Proxy</td>
+</tr>
+<tr>
+<td>🆓 Free</td>
+<td>Apify datacenter proxy  built-in, automatic</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🚫 Error handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>URL isn&#39;t an Etsy listing</td>
+<td>Skipped with a warning</td>
+<td>Provide a valid <code>/listing/&lt;id&gt;/…</code> URL</td>
+</tr>
+<tr>
+<td>Listing not found / removed</td>
+<td><code>listing not found  skipping</code></td>
+<td>Verify the listing still exists</td>
+</tr>
+<tr>
+<td>No reviews on a listing</td>
+<td><code>no public reviews for this listing</code></td>
+<td>Expected for new/low-volume listings</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>⚖️ Legal &amp; ethical use</h2>
+<p>This actor extracts <strong>publicly visible data</strong> from Etsy  the same product and review information any visitor sees in their browser.</p>
+<p><strong>Please use this tool responsibly:</strong></p>
+<ul>
+<li>Only extract data you are authorized to access.</li>
+<li>Comply with <a href="https://www.etsy.com/legal/terms-of-use">Etsy&#39;s Terms of Use</a> and applicable data-protection regulations (GDPR, CCPA, etc.).</li>
+<li>Do not use extracted data for spam, harassment, or unsolicited outreach.</li>
+<li>Respect rate limits and do not overload the source.</li>
+</ul>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub Issues</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>🌟 Related Actors by FlowExtract API</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong>  Property data across Spain, Portugal, and Italy</li>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong>  Channel and playlist extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong>  Facebook ad-library data</li>
+</ul>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

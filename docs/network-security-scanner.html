@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>SSL &amp; Masscan IP Scanner with Proxy Support | FlowExtract API</title>
+    <meta name="title" content="SSL &amp; Masscan IP Scanner with Proxy Support | FlowExtract API">
+    <meta name="description" content="The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/network-security-scanner.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="SSL &amp; Masscan IP Scanner with Proxy Support | FlowExtract API">
+    <meta property="og:description" content="The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/network-security-scanner.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/EDWoUbnHnQHbPuOrP/twg9feArUAQ8znmax-cloudflare-ip-tracing.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SSL &amp; Masscan IP Scanner with Proxy Support | FlowExtract API">
+    <meta name="twitter:description" content="The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/EDWoUbnHnQHbPuOrP/twg9feArUAQ8znmax-cloudflare-ip-tracing.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"SSL Checker","description":"The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/network-security-scanner.html","sameAs":"https://apify.com/dz_omar/network-security-scanner?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/EDWoUbnHnQHbPuOrP/twg9feArUAQ8znmax-cloudflare-ip-tracing.jpg"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/EDWoUbnHnQHbPuOrP/twg9feArUAQ8znmax-cloudflare-ip-tracing.jpg" alt="SSL Checker" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">SSL Checker</h1>
+                <p class="actor-hero-desc">The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning.</p>
+                <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <hr>
+<h3>What does the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> do?</h3>
+<p>The <strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a></strong> is a powerful tool that allows users to scan IP ranges, including AWS and Google Cloud networks, to discover critical information such as services running behind Web Application Firewalls (WAFs), potential vulnerabilities, subdomains, and endpoints. It operates like a Shodan-style search engine but offers deeper insights into small companies&#39; infrastructure that larger search engines might overlook. </p>
+<p>This actor is designed for security professionals, including hackers, bug bounty hunters, and penetration testers, to increase their attack surface and identify vulnerable endpoints across vast networks.</p>
+<h4>Key features:</h4>
+<ul>
+<li><strong>WAF Bypass:</strong> Identify IPs hidden behind WAFs.</li>
+<li><strong>Fast IP Scanning:</strong> Efficiently scan millions of IP addresses in a short time.</li>
+<li><strong>Subdomain Discovery:</strong> Reveal new subdomains to extend your attack surface.</li>
+<li><strong>Vulnerability Detection:</strong> Identify weaknesses in web servers, services, and applications.</li>
+<li><strong>Endpoint Discovery:</strong> Locate and assess potentially vulnerable endpoints.</li>
+</ul>
+<h3>How to Run the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a></h3>
+<p>If you&#39;re new to <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> or ethical hacking, don&#39;t worry. The <strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a></strong> tool is easy to use and highly flexible. You can either use <strong>Masscan</strong> for a fast scan or provide a list of IP addresses to skip Masscan. Here&#39;s how:</p>
+<ol>
+<li>Create a free Apify account using your email.</li>
+<li>Open the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> tool in the Apify console.</li>
+<li>Choose whether to use <strong>Masscan</strong> for scanning by checking or unchecking the <strong>Masscan</strong> option:<ul>
+<li><strong>If you check the box:</strong> You must provide at least one IP range (in CIDR format).</li>
+<li><strong>If you uncheck the box:</strong> You can directly provide a list of individual IP addresses, and the tool will skip the <strong>Masscan</strong> scan.</li>
+</ul>
+</li>
+<li>Optionally, you can configure a proxy for the scan, Ensure that you won&#39;t be blocked by WAF and access to specific geographical regions.</li>
+<li>Click the “Start” button to initiate the scan.</li>
+<li>Analyze the results and download them in structured formats like JSON, XML, CSV, Excel, or HTML for further analysis.</li>
+</ol>
+<p>Quick <a href="https://youtu.be/gxbYKRHLX_8">Video Tutorial</a> on YouTube:</p>
+<p><a href="https://youtu.be/gxbYKRHLX_8">Video Tutorial</a></p>
+<h3>Input</h3>
+<p>To start scanning IP ranges or IP addresses, simply fill in the input form. The <strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a></strong> tool recognizes the following input parameters:</p>
+<blockquote>
+<p>[!NOTE]
+If you are provided more than one IP range, the result won&#39;t show up until Masscan is complete from scanning all provided IP ranges.</p>
+</blockquote>
+<ul>
+<li><p><strong>Use Masscan for Scanning (Checkbox)...</strong>: A boolean flag indicating whether or not to use <strong>Masscan</strong> for scanning.
+<img src="https://github.com/user-attachments/assets/1cb2306d-3fca-4c66-8d53-12d07bf18749" alt="download"></p>
+</li>
+<li><p><strong>CIDR or IP Addresses</strong>: A list of IP ranges in CIDR format or individual IP addresses for scanning.</p>
+<ul>
+<li><strong>Using IP ranges (CIDR)</strong>:
+<img src="https://github.com/user-attachments/assets/df0c6412-c011-4225-bbaf-9a4e15cc5c5c" alt="download"></li>
+<li><strong>Using IP Addresses</strong>:
+<img src="https://github.com/user-attachments/assets/b8b1a101-b0c3-44dc-b143-433dee2037f5" alt="download"></li>
+</ul>
+</li>
+<li><p><strong>Masscan Ports</strong>: (Optional) The port(s) you wish to scan with Masscan The default Port of Masscan is 443 you can add more Port if needed like (e.g., 80, 443 or 0-65535). Required only when Masscan is used.</p>
+</li>
+<li><p><strong>Masscan Rate</strong>: (Optional) The rate limit for <strong>Masscan</strong> (number of packets per second). Required only when Masscan is used.</p>
+</li>
+<li><p><strong>Maximum Results Limit</strong>: (Optional) Set the maximum number of results you want to receive.</p>
+</li>
+<li><p><strong>Proxy Configuration</strong>: (Optional) Use Apify&#39;s proxy services to anonymize your scan or access results from a specific geographical location.</p>
+</li>
+</ul>
+<h3>Example Input (Using Masscan):</h3>
+<pre><code class="language-json">{
+    &quot;Ips_or_CIDR&quot;: [
+        &quot;3.80.0.0/12&quot;,
+        &quot;3.208.0.0/12&quot;
+    ],
+    &quot;Used_Or_Not_Used_Masscan&quot;: true,
+    &quot;masscan_port&quot;: &quot;443&quot;,
+    &quot;masscan_rate&quot;: 10000,
+    &quot;max_results&quot;: 100,
+    &quot;proxyConfiguration&quot;: {
+        &quot;useApifyProxy&quot;: true,
+        &quot;apifyProxyGroups&quot;: [
+            &quot;RESIDENTIAL&quot;
+        ],
+        &quot;apifyProxyCountry&quot;: &quot;BW&quot;
+    }
+}
+</code></pre>
+<h3>Example Input (Skipping Masscan):</h3>
+<pre><code class="language-json">{
+    &quot;Ips_or_CIDR&quot;: [
+        &quot;3.91.85.6&quot;,
+        &quot;3.84.160.117&quot;,
+        &quot;3.92.19.235&quot;
+    ],
+    &quot;Used_Or_Not_Used_Masscan&quot;: false,
+    &quot;max_results&quot;: 33,
+    &quot;proxyConfiguration&quot;: {
+        &quot;useApifyProxy&quot;: true,
+        &quot;apifyProxyGroups&quot;: [
+            &quot;RESIDENTIAL&quot;
+        ],
+        &quot;apifyProxyCountry&quot;: &quot;BW&quot;
+    }
+}
+</code></pre>
+<h3>Additional Notes:</h3>
+<ul>
+<li>You can choose how many results you want by adjusting the <code>max_results</code> parameter.</li>
+<li>The <strong>proxyConfiguration</strong> feature allows you to run the scan using Apify&#39;s proxy services, ensuring anonymity or access to specific regions.</li>
+</ul>
+<hr>
+<h4>Output</h4>
+<p>You get the output from <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> Data Extractor stored in a tab. Here&#39;s an example of some of the output after the scan is complete :</p>
+<ul>
+<li><strong>In this example I provided this input</strong>:</li>
+</ul>
+<pre><code class="language-json">{
+  &quot;Ips_or_CIDR&quot;: [
+    &quot;3.80.0.0/12&quot;
+  ],
+  &quot;Used_Or_Not_Used_Masscan&quot;: true,
+  &quot;masscan_port&quot;: &quot;443&quot;,
+  &quot;masscan_rate&quot;: 10000,
+  &quot;max_results&quot;: 2000,
+  &quot;proxyConfiguration&quot;: {
+    &quot;useApifyProxy&quot;: false
+  }
+}
+</code></pre>
+<ul>
+<li><strong>The output of this input</strong>:</li>
+</ul>
+<pre><code class="language-json">[
+  {
+    &quot;title&quot;: &quot;&quot;,
+    &quot;redirected_url&quot;: &quot;&quot;,
+    &quot;request&quot;: &quot;https://3.94.15.209:443&quot;,
+    &quot;port&quot;: &quot;443&quot;,
+    &quot;ip&quot;: &quot;3.94.15.209&quot;,
+    &quot;domain&quot;: &quot;*.execute-api.us-east-1.amazonaws.com&quot;,
+    &quot;response_text&quot;: &quot;{\&quot;message\&quot;:\&quot;Forbidden\&quot;}&quot;,
+    &quot;response_headers&quot;: {
+      &quot;Date&quot;: &quot;Mon, 07 Oct 2024 23:21:14 GMT&quot;,
+      &quot;Content-Type&quot;: &quot;application/json&quot;,
+      &quot;Content-Length&quot;: &quot;23&quot;,
+      &quot;Connection&quot;: &quot;keep-alive&quot;,
+      &quot;x-amzn-RequestId&quot;: &quot;c1f2ff47-007d-481e-9a76-02f2bd2c21bc&quot;,
+      &quot;x-amzn-ErrorType&quot;: &quot;ForbiddenException&quot;,
+      &quot;x-amz-apigw-id&quot;: &quot;fTX0oGxcoAMEawg=&quot;
+    }
+  },
+...
+]
+</code></pre>
+<p><img src="https://github.com/user-attachments/assets/a92a365f-a2fc-4c84-9a4d-e55780fd84d6" alt="cf6f6720-2ebe-4ca5-9753-6425b9755a22"></p>
+<h4>Who can benefit from using <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a>?</h4>
+<ul>
+<li><strong>Security Assessment:</strong> Perform vulnerability assessments and identify exploitable endpoints.</li>
+<li><strong>Bug Bounties:</strong> Increase your chances of finding vulnerabilities in bug bounty programs.</li>
+<li><strong>Red/Blue Teaming:</strong> Simulate attacks or fortify network defenses by identifying potential entry points.</li>
+<li><strong>Penetration Testing:</strong> Discover hidden servers and services for penetration testing.</li>
+</ul>
+<h4>Integrations with the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a></h4>
+<p>The <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> integrates seamlessly with Apify’s platform and other tools such as:</p>
+<ul>
+<li><strong>Slack</strong></li>
+<li><strong>Zapier</strong></li>
+<li><strong>Google Drive</strong></li>
+<li><strong>GitHub</strong></li>
+</ul>
+<p>You can also use <strong>webhooks</strong> to trigger alerts or actions whenever a scan completes.</p>
+<hr>
+<h3>FAQ</h3>
+<p>SSL and Web Analyzer</p>
+<ul>
+<li><strong>How much does the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a> cost?</strong>
+The pricing is based on the number of results obtained. For instance, scanning 2,000 IPs costs approximately $0.33, which includes computing units, dataset writes, and external data transfer. You can estimate that scanning 1,000 IPs would cost around $0.165. Apify provides $5 worth of credits for free on their basic plan, which allows you to scan up to 30,303 IPs per month.</li>
+<li><strong>Is it legal to scan IPs with the <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">SSL and Web Analyzer</a>?</strong>
+Yes, as long as you comply with relevant legal guidelines, such as obtaining permission to scan certain IP ranges, especially for companies or cloud providers.</li>
+</ul>
+<h2>Support</h2>
+<p>For issues and support, please create a ticket or contact <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a>.</p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

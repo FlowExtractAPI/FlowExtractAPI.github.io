@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>LinkedIn Jobs Scraper - Salary &amp; Recruiter Data | FlowExtract API</title>
+    <meta name="title" content="LinkedIn Jobs Scraper - Salary &amp; Recruiter Data | FlowExtract API">
+    <meta name="description" content="Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/linkedin-jobs-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="LinkedIn Jobs Scraper - Salary &amp; Recruiter Data | FlowExtract API">
+    <meta property="og:description" content="Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/linkedin-jobs-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-Kb4wPJu4Re5u7iFLU-jOmqQmSKZj-QOYItfcce9nmWZJnD-actor-Zy0a3CoKLoqIEgY73-crsJ4HEGH7-f5af4d2e-5c">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="LinkedIn Jobs Scraper - Salary &amp; Recruiter Data | FlowExtract API">
+    <meta name="twitter:description" content="Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-Kb4wPJu4Re5u7iFLU-jOmqQmSKZj-QOYItfcce9nmWZJnD-actor-Zy0a3CoKLoqIEgY73-crsJ4HEGH7-f5af4d2e-5c">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"💼 LinkedIn Jobs Scraper - Salary & Recruiter Data","description":"Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/linkedin-jobs-scraper.html","sameAs":"https://apify.com/dz_omar/linkedin-jobs-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-Kb4wPJu4Re5u7iFLU-jOmqQmSKZj-QOYItfcce9nmWZJnD-actor-Zy0a3CoKLoqIEgY73-crsJ4HEGH7-f5af4d2e-5c"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-Kb4wPJu4Re5u7iFLU-jOmqQmSKZj-QOYItfcce9nmWZJnD-actor-Zy0a3CoKLoqIEgY73-crsJ4HEGH7-f5af4d2e-5c" alt="💼 LinkedIn Jobs Scraper - Salary &amp; Recruiter Data" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">💼 LinkedIn Jobs Scraper - Salary &amp; Recruiter Data</h1>
+                <p class="actor-hero-desc">Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.</p>
+                <a href="https://apify.com/dz_omar/linkedin-jobs-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>💼 LinkedIn Jobs Scraper — Salary &amp; Recruiter Data</h1>
+<p>Scrape LinkedIn job postings in bulk and get back a clean, spreadsheet-ready dataset: job title, company, the <strong>exact</strong> posting date, location, published salary range, seniority, employment type, industry, applicant count, the full description, and — when the posting names one — <strong>the recruiter who posted it, with their profile link</strong>.</p>
+<p>No login. No cookies. No session tokens. <strong>No per-run startup fee</strong> — you pay for jobs returned, and a run that finds nothing costs nothing.</p>
+<hr>
+<h2>✨ Why this one</h2>
+<p>Most LinkedIn job scrapers charge per result <strong>and</strong> a fee every time you press run — and still hand back columns that are empty or wrong. This one bills only for jobs delivered, and fills the columns the others leave blank.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>This Actor</th>
+<th>Typical paid Actor</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Price</strong></td>
+<td><strong>$0.70 per 1,000 jobs</strong>, falling to $0.45 on higher plans</td>
+<td>$0.40 – $5.00 per 1,000 jobs</td>
+</tr>
+<tr>
+<td><strong>Salary</strong></td>
+<td>Parsed into <code>salary_min</code>, <code>salary_max</code>, currency and pay period</td>
+<td>Usually empty</td>
+</tr>
+<tr>
+<td><strong>Recruiter contact</strong></td>
+<td>Name, job title and profile URL, included</td>
+<td>Empty, or sold as a paid add-on</td>
+</tr>
+<tr>
+<td><strong>Posting date</strong></td>
+<td>The posting&#39;s <strong>exact</strong> date — <code>2026-09-03</code></td>
+<td>Often reconstructed from &quot;5 months ago&quot; and rounded</td>
+</tr>
+<tr>
+<td><strong>Apply link</strong></td>
+<td>Reported as <code>null</code>, honestly — LinkedIn shows it only to signed-in users</td>
+<td>Sometimes filled with the LinkedIn URL, which is not an apply link</td>
+</tr>
+<tr>
+<td><strong>Applicant count</strong></td>
+<td>Exact number, with a flag when LinkedIn only gave a range</td>
+<td>Missing, or a bucket reported as exact</td>
+</tr>
+<tr>
+<td><strong>Input</strong></td>
+<td>Paste a URL <strong>or</strong> describe the search in plain words</td>
+<td>Usually one or the other</td>
+</tr>
+<tr>
+<td><strong>Filters LinkedIn ignores</strong></td>
+<td>Applied to the real data, so they actually work</td>
+<td>Passed upstream and silently dropped</td>
+</tr>
+<tr>
+<td><strong>Startup fee</strong></td>
+<td><strong>None</strong></td>
+<td>$0.00005 – $0.01 charged on every run, results or not</td>
+</tr>
+<tr>
+<td><strong>Minimum run size</strong></td>
+<td>1 job</td>
+<td>One competitor forces a 150-job minimum</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔗 Three ways to tell it what you want</h2>
+<p><strong>1 — Paste a URL.</strong> Copy any LinkedIn jobs URL straight out of your browser. Every filter already in it is kept.</p>
+<pre><code>https://www.linkedin.com/jobs/search/?keywords=Software%20Engineer&amp;location=London&amp;geoId=100495523&amp;f_TPR=r2592000
+</code></pre>
+<p><strong>2 — Paste a single job link.</strong> Get one posting in full.</p>
+<pre><code>https://www.linkedin.com/jobs/view/4466429011
+</code></pre>
+<p><strong>3 — Just describe it.</strong> No URLs, no ID lookups:</p>
+<pre><code class="language-json">{
+  &quot;keywords&quot;: [&quot;Software Engineer&quot;, &quot;Backend Engineer&quot;],
+  &quot;locations&quot;: [&quot;London&quot;, &quot;Berlin&quot;],
+  &quot;datePosted&quot;: &quot;pastWeek&quot;
+}
+</code></pre>
+<p>Type a location in plain words and the Actor resolves it to the right place on LinkedIn for you. Same for companies — <code>&quot;companyNames&quot;: [&quot;Stripe&quot;]</code> works; you never have to hunt down a numeric ID.</p>
+<p>You can mix all three in one run. Everything is merged and de-duplicated, and each row records the search that delivered it. When several of your searches match the same job, the full overlap is recorded in the run summary.</p>
+<hr>
+<h2>🎯 Why scrape LinkedIn jobs?</h2>
+<ul>
+<li><strong>Recruiting &amp; sourcing</strong> — track which companies are hiring, for what, and how fast their roles fill.</li>
+<li><strong>Sales prospecting</strong> — a company hiring five Salesforce admins is a company buying Salesforce tooling. Hiring is the earliest public buying signal there is.</li>
+<li><strong>Market &amp; salary research</strong> — build real pay benchmarks from published ranges, by role, level and city.</li>
+<li><strong>Job boards &amp; aggregators</strong> — keep a niche board stocked without maintaining scrapers.</li>
+<li><strong>Job seekers</strong> — monitor new postings in your niche and reach the named recruiter before the queue builds.</li>
+<li><strong>Competitive intelligence</strong> — watch a competitor&#39;s headcount plans before they announce anything.</li>
+</ul>
+<hr>
+<h2>📦 What data does it extract?</h2>
+<h3>💼 The Job</h3>
+<ul>
+<li><code>job_id</code> — LinkedIn&#39;s permanent ID for the posting; the key to join on across runs</li>
+<li><code>title</code> — the role as the employer titled it</li>
+<li><code>job_url</code> — the public posting, with per-visit tracking stripped so it is stable run to run</li>
+<li><code>location</code> — where the role is based</li>
+<li><code>posted_date</code> — the <strong>exact</strong> calendar date, not a rounded &quot;3 weeks ago&quot;</li>
+<li><code>posted_relative</code> — how LinkedIn phrased its age</li>
+<li><code>is_recently_posted</code> — whether LinkedIn still flags it as new</li>
+</ul>
+<h3>🏢 The Company</h3>
+<ul>
+<li><code>company_name</code>, <code>company_id</code>, <code>company_url</code>, <code>company_logo</code></li>
+</ul>
+<h3>🏷️ Classification</h3>
+<ul>
+<li><code>employment_type</code> — Full-time, Contract, Internship…</li>
+<li><code>seniority_level</code> — Entry level, Associate, Mid-Senior, Director, Executive</li>
+<li><code>job_function</code>, <code>industries</code></li>
+<li><code>workplace_type</code> — Remote / Hybrid / On-site, read from what the employer wrote</li>
+</ul>
+<h3>💰 Pay</h3>
+<ul>
+<li><code>salary</code> — the range exactly as published</li>
+<li><code>salary_min</code>, <code>salary_max</code> — as numbers, ready to sort and average</li>
+<li><code>salary_currency</code>, <code>salary_period</code> — so an hourly rate is never averaged against an annual salary</li>
+<li><code>salary_source</code>, <code>salary_note</code> — who provided the range, and their caveat</li>
+</ul>
+<h3>🧑 The Recruiter</h3>
+<ul>
+<li><code>poster_name</code>, <code>poster_title</code>, <code>poster_profile_url</code>, <code>poster_photo</code></li>
+</ul>
+<h3>📊 Competition</h3>
+<ul>
+<li><code>applicants_count</code> — how many have applied</li>
+<li><code>applicants_is_estimate</code> — <code>true</code> when LinkedIn gave a bucket rather than a number</li>
+<li><code>benefits</code> — badges such as &quot;Actively Hiring&quot; and &quot;Be an early applicant&quot;</li>
+<li><code>apply_type</code> — <code>EASY_APPLY</code> or <code>EXTERNAL</code></li>
+<li><code>is_easy_apply</code></li>
+</ul>
+<h3>📝 The Description</h3>
+<ul>
+<li><code>description_text</code> — full text, readable, with list bullets and paragraphs intact</li>
+<li><code>description_html</code> — the same with the employer&#39;s original formatting</li>
+</ul>
+<h3>🧾 Run Metadata</h3>
+<ul>
+<li><code>search</code>, <code>found_by</code> — which of your searches delivered it</li>
+<li><code>detail_scraped</code>, <code>detail_error</code>, <code>scraped_at</code>, <code>success</code>, <code>error_type</code>, <code>source_url</code></li>
+</ul>
+<hr>
+<h2>⚙️ How to use it</h2>
+<h3>Where to search</h3>
+<h4><code>searchUrls</code> (Array)</h4>
+<p>LinkedIn job search URLs or single job links, pasted from the browser. Filters already in the URL are kept.</p>
+<h4><code>keywords</code> (Array)</h4>
+<p>Search terms, one per line. Each keyword is searched in each location, so 3 keywords × 2 locations runs 6 searches.</p>
+<h4><code>locations</code> (Array)</h4>
+<p>Plain words — <code>&quot;London&quot;</code>, <code>&quot;New York&quot;</code>, <code>&quot;Germany&quot;</code>. Looked up on LinkedIn automatically; no <code>geoId</code> needed.</p>
+<h4><code>distanceMiles</code> (Integer) — default <code>25</code></h4>
+<p><code>0</code> (exact location), <code>5</code>, <code>10</code>, <code>25</code> or <code>50</code>. Any other number rounds up to the next one LinkedIn accepts.</p>
+<h4><code>datePosted</code> (String) — default <code>pastMonth</code></h4>
+<p><code>anyTime</code>, <code>past24Hours</code>, <code>pastWeek</code> or <code>pastMonth</code>.</p>
+<h4><code>postedWithinHours</code> (Integer)</h4>
+<p>A custom freshness window in hours, overriding the dropdown. LinkedIn&#39;s own filter offers only 24 hours / 1 week / 1 month — this takes any window, so you can poll hourly for brand-new postings (<code>1</code>) or scan the last three days (<code>72</code>).</p>
+<h4><code>companyNames</code> / <code>companyIds</code> (Arrays)</h4>
+<p>Restrict to specific employers, by name or by numeric ID.</p>
+<h4><code>easyApply</code> / <code>under10Applicants</code> (Booleans)</h4>
+<p>Only jobs you can apply to on LinkedIn, and only jobs with fewer than ten applicants so far.</p>
+<h3>Refine the results</h3>
+<p>LinkedIn&#39;s public job search accepts several filters and then ignores them — a request that asks for internships comes back with everything. Rather than pass them along and hope, this Actor applies them to the data it actually collected:</p>
+<ul>
+<li><code>jobTypes</code> — Full-time, Part-time, Contract, Temporary, Internship, Volunteer, Other</li>
+<li><code>experienceLevels</code> — Internship … Executive</li>
+<li><code>workplaceTypes</code> — Remote, Hybrid, On-site</li>
+<li><code>titleIncludes</code> / <code>titleExcludes</code> — e.g. exclude <code>Senior</code>, <code>Principal</code></li>
+<li><code>companyExcludes</code> — drop staffing agencies</li>
+<li><code>locationExcludes</code></li>
+<li><code>descriptionIncludes</code> / <code>descriptionExcludes</code> — e.g. require <code>visa sponsorship</code>, exclude <code>security clearance</code></li>
+<li><code>requireSalary</code> — only jobs with a published pay range</li>
+<li><code>requirePoster</code> — only jobs with a named recruiter to contact</li>
+<li><code>postedAfter</code> — a hard date cutoff, using each job&#39;s exact date</li>
+</ul>
+<p>If every job is filtered out, the run tells you <strong>which filter</strong> removed them, so you can loosen it.</p>
+<h3>Output and limits</h3>
+<h4><code>maxItems</code> (Integer) — default <code>100</code></h4>
+<p>Total jobs across every search.</p>
+<h4><code>maxItemsPerSearch</code> (Integer)</h4>
+<p>Cap each search so one broad keyword cannot consume the whole run.</p>
+<h4><code>scrapeJobDetails</code> (Boolean) — default <code>true</code></h4>
+<p>On: full description, salary, seniority, employment type, industry, applicant count and recruiter. Off: only the search-card fields — roughly 10× faster and cheaper, ideal for monitoring which jobs exist.</p>
+<h4><code>includeDescriptionHtml</code> (Boolean) — default <code>true</code></h4>
+<h4><code>deduplicateJobs</code> (Boolean) — default <code>true</code></h4>
+<h4><code>maxConcurrency</code> (Integer) — default <code>5</code></h4>
+<hr>
+<h2>📊 Sample output</h2>
+<pre><code class="language-json">{
+  &quot;job_id&quot;: &quot;4458752240&quot;,
+  &quot;title&quot;: &quot;Senior Software Engineer&quot;,
+  &quot;company_name&quot;: &quot;Novatus&quot;,
+  &quot;company_id&quot;: &quot;20337423&quot;,
+  &quot;company_url&quot;: &quot;https://uk.linkedin.com/company/novatus-global&quot;,
+  &quot;location&quot;: &quot;London Area, United Kingdom&quot;,
+  &quot;posted_date&quot;: &quot;2026-08-25&quot;,
+  &quot;posted_relative&quot;: &quot;2 weeks ago&quot;,
+  &quot;employment_type&quot;: &quot;Full-time&quot;,
+  &quot;seniority_level&quot;: &quot;Mid-Senior level&quot;,
+  &quot;job_function&quot;: &quot;Engineering&quot;,
+  &quot;industries&quot;: &quot;Software Development and Financial Services&quot;,
+  &quot;workplace_type&quot;: &quot;Hybrid&quot;,
+  &quot;applicants_count&quot;: 90,
+  &quot;applicants_is_estimate&quot;: false,
+  &quot;benefits&quot;: [&quot;Actively Hiring&quot;],
+  &quot;apply_type&quot;: &quot;EXTERNAL&quot;,
+  &quot;is_easy_apply&quot;: false,
+  &quot;apply_url&quot;: null,
+  &quot;poster_name&quot;: &quot;Sam Cainer&quot;,
+  &quot;poster_title&quot;: &quot;People &amp; Talent Partner | Novatus&quot;,
+  &quot;poster_profile_url&quot;: &quot;https://uk.linkedin.com/in/samcainer&quot;,
+  &quot;description_text&quot;: &quot;Novatus is a Series B scale-up RegTech SaaS provider…&quot;,
+  &quot;job_url&quot;: &quot;https://uk.linkedin.com/jobs/view/senior-software-engineer-at-novatus-4458752240&quot;,
+  &quot;found_by&quot;: [&quot;\&quot;Software Engineer\&quot; in London last 30d&quot;],
+  &quot;success&quot;: true
+}
+</code></pre>
+<p>With a published pay range:</p>
+<pre><code class="language-json">{
+  &quot;title&quot;: &quot;Registered Nurse&quot;,
+  &quot;company_name&quot;: &quot;Encompass Health&quot;,
+  &quot;location&quot;: &quot;Colorado Springs, CO&quot;,
+  &quot;salary&quot;: &quot;$39.00/hr - $54.00/hr&quot;,
+  &quot;salary_min&quot;: 39,
+  &quot;salary_max&quot;: 54,
+  &quot;salary_currency&quot;: &quot;$&quot;,
+  &quot;salary_period&quot;: &quot;HOURLY&quot;,
+  &quot;salary_source&quot;: &quot;Encompass Health provided pay range&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently asked questions</h2>
+<p><strong>Do I need a LinkedIn account, cookies or a session token?</strong>
+No. The Actor reads only what LinkedIn publishes publicly. Nothing to log into, nothing to expire, nothing to get your account restricted.</p>
+<p><strong>What does it cost?</strong>
+$0.0007 per job on the free plan, dropping to $0.0006 (Bronze), $0.0005 (Silver) and $0.00045 (Gold and above). So 1,000 jobs is $0.70, or $0.45 on a Gold plan.</p>
+<p><strong>Is there a fee just for running it?</strong>
+No. Every comparable Actor charges a startup fee on each run — between $0.00005 and $0.01 — whether or not it finds anything. This one charges only for jobs actually delivered to your dataset, so an over-filtered search that returns nothing costs you nothing. You are also never billed for rows the Actor could not complete: anything delivered without a charge is marked with <code>charged: false</code> and the reason.</p>
+<p><strong>Why is <code>apply_url</code> always empty?</strong>
+LinkedIn reveals the employer&#39;s application link only to signed-in users. Rather than fill the column with the LinkedIn job URL — which would look like an apply link while pointing back to LinkedIn — it is reported as <code>null</code>. Use <code>apply_type</code> to tell an on-LinkedIn application from one that hands off to the employer, and <code>job_url</code> to open the posting.</p>
+<p><strong>Why do some jobs have no salary?</strong>
+Most employers do not publish one. Where a range exists it is captured and parsed; where none exists the field is <code>null</code> rather than guessed. Set <code>requireSalary</code> to keep only jobs that published one.</p>
+<p><strong>How many jobs can one search return?</strong>
+LinkedIn&#39;s public job search will not page past <strong>1,000 results</strong> for any single query, however broad it is — a search matching 11,000 jobs still yields at most 1,000. The Actor warns you when a search exceeds this. To collect more, split the run into narrower searches: a shorter <code>postedWithinHours</code> window, a tighter location, or one search per company.</p>
+<p><strong>Can I run it on a schedule?</strong>
+Yes. Combine a Schedule with <code>postedWithinHours</code> to poll for genuinely new postings, and <code>job_id</code> to tell new from already-seen.</p>
+<p><strong>Why did I get fewer jobs than <code>maxItems</code>?</strong>
+Either the search ran out of matches, or your filters removed them. The run log and <code>RUN_SUMMARY</code> report exactly which filter rejected how many.</p>
+<hr>
+<h2>📋 Dataset views</h2>
+<p>The dataset ships with five ready-made views, so you rarely need to wrangle columns:</p>
+<ul>
+<li><strong>Overview</strong> — title, company, location, date, salary, level, applicants, link</li>
+<li><strong>Recruiter contacts</strong> — every job that names the person who posted it</li>
+<li><strong>Salary data</strong> — jobs with a published range, parsed into comparable numbers</li>
+<li><strong>Full descriptions</strong> — the complete job text</li>
+<li><strong>Problems</strong> — anything that could not be scraped, and why</li>
+</ul>
+<hr>
+<h2>⚖️ Legal &amp; compliance</h2>
+<p>This Actor collects only publicly available job postings — the same pages any visitor can view without signing in. It does not log in, does not use anyone&#39;s account credentials, and does not access private or member-only data.</p>
+<p>You are responsible for how you use the data, including compliance with GDPR, CCPA and any other law that applies to you. Job postings routinely name a recruiter; where they do, that name is personal data and you should have a lawful basis before storing or contacting them.</p>
+<hr>
+<h2>🤝 Support</h2>
+<h3>Get help</h3>
+<ul>
+<li><strong>Issues &amp; feature requests</strong> — open an issue on the Actor&#39;s page</li>
+<li><strong>Questions</strong> — use the Apify Actor chat</li>
+</ul>
+<h3>Social</h3>
+<ul>
+<li>GitHub: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<hr>
+<p><em>Built and maintained by FlowExtract API.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/linkedin-jobs-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

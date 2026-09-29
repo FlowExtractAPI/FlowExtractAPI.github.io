@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>🏢 LinkedIn Company Scraper - FREE &amp; Bulk 🚀 | FlowExtract API</title>
+    <meta name="title" content="🏢 LinkedIn Company Scraper - FREE &amp; Bulk 🚀 | FlowExtract API">
+    <meta name="description" content="Scrape LinkedIn company pages in bulk — name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/linkedin-company-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="🏢 LinkedIn Company Scraper - FREE &amp; Bulk 🚀 | FlowExtract API">
+    <meta property="og:description" content="Scrape LinkedIn company pages in bulk — name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/linkedin-company-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-WM6rI1bIwJd2yBG8Q-bOB8Ds8RN4-10bbbeaf-baf3-4e96-85a7-efeb65fac409.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="🏢 LinkedIn Company Scraper - FREE &amp; Bulk 🚀 | FlowExtract API">
+    <meta name="twitter:description" content="Scrape LinkedIn company pages in bulk — name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-WM6rI1bIwJd2yBG8Q-bOB8Ds8RN4-10bbbeaf-baf3-4e96-85a7-efeb65fac409.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"🏢 LinkedIn Company Scraper - FREE TO USE","description":"Scrape LinkedIn company pages in bulk — name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/linkedin-company-scraper.html","sameAs":"https://apify.com/dz_omar/linkedin-company-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-WM6rI1bIwJd2yBG8Q-bOB8Ds8RN4-10bbbeaf-baf3-4e96-85a7-efeb65fac409.jpg"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-WM6rI1bIwJd2yBG8Q-bOB8Ds8RN4-10bbbeaf-baf3-4e96-85a7-efeb65fac409.jpg" alt="🏢 LinkedIn Company Scraper - FREE TO USE" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">🏢 LinkedIn Company Scraper - FREE TO USE</h1>
+                <p class="actor-hero-desc">Scrape LinkedIn company pages in bulk — name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.</p>
+                <a href="https://apify.com/dz_omar/linkedin-company-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏢 LinkedIn Company Scraper — Bulk Company Data, FREE TO USE</h1>
+<p><strong><a href="https://apify.com/dz_omar/linkedin-company-scraper?fpr=smcx63">LinkedIn Company Scraper</a></strong> extracts full company profiles from LinkedIn — in bulk, in a single run. Paste a list of company URLs (or just their slugs) and get one clean row per company.</p>
+<p><strong>No login. No cookies. No browser extension. No per-result fee.</strong> This actor is free — you pay only your own Apify platform usage, which works out to a fraction of a cent per company.</p>
+<p>Perfect for <strong>sales teams</strong>, <strong>recruiters</strong>, <strong>market researchers</strong>, and <strong>data engineers</strong> who need company data at scale without paying per row.</p>
+<hr>
+<h2>✨ Why this one</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>🏢 This actor</th>
+<th>💸 Typical paid alternatives</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Companies per run</strong></td>
+<td>✅ <strong>Unlimited</strong> — pass an array</td>
+<td>❌ One URL per run</td>
+</tr>
+<tr>
+<td><strong>Cost per 1,000 companies</strong></td>
+<td>✅ <strong>~$0.01</strong> in platform usage</td>
+<td>❌ ~$5–7 in result + start fees</td>
+</tr>
+<tr>
+<td><strong>Numbers</strong></td>
+<td>✅ Real integers — <code>217966</code></td>
+<td>❌ Strings — <code>&quot;217,966&quot;</code></td>
+</tr>
+<tr>
+<td><strong>Addresses</strong></td>
+<td>✅ Split into street / city / region / postal / country</td>
+<td>❌ One concatenated string</td>
+</tr>
+<tr>
+<td><strong>Specialties</strong></td>
+<td>✅ Clean list</td>
+<td>❌ Last item mangled to <code>&quot;and Telephone Support&quot;</code></td>
+</tr>
+<tr>
+<td><strong>Company posts</strong></td>
+<td>✅ With post ID + permalink, counts as integers</td>
+<td>❌ Counts as strings, no post ID</td>
+</tr>
+<tr>
+<td><strong>Failed companies</strong></td>
+<td>✅ Delivered as a row with the reason</td>
+<td>❌ Silently missing</td>
+</tr>
+<tr>
+<td><strong>Duplicate inputs</strong></td>
+<td>✅ Collapsed automatically</td>
+<td>❌ Charged twice</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🔗 Supported LinkedIn URL types</h2>
+<table>
+<thead>
+<tr>
+<th>Input type</th>
+<th>Example</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Bare slug</strong></td>
+<td><code>apple</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Company page</strong></td>
+<td><code>https://www.linkedin.com/company/apple</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Showcase page</strong></td>
+<td><code>https://www.linkedin.com/showcase/appledeveloper/</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>School page</strong></td>
+<td><code>https://www.linkedin.com/school/mit/</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Country subdomain</strong></td>
+<td><code>https://de.linkedin.com/company/sap</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>With tracking params</strong></td>
+<td><code>https://www.linkedin.com/company/apple?trk=abc</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Sub-tab URL</strong></td>
+<td><code>https://www.linkedin.com/company/apple/about/</code></td>
+<td>✅ Supported</td>
+</tr>
+<tr>
+<td><strong>Personal profile</strong></td>
+<td><code>https://www.linkedin.com/in/someone</code></td>
+<td>❌ Not a company page</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>💡 <strong>Tip:</strong> A spreadsheet column of plain slugs (<code>apple</code>, <code>microsoft</code>, <code>nvidia</code>) is the fastest input — no need to build URLs.</p>
+</blockquote>
+<hr>
+<h2>🎯 Why scrape LinkedIn company pages?</h2>
+<p>LinkedIn is the largest professional dataset in the world, and company pages are the public, structured part of it. But there is no official API for bulk company lookups, and the pages are built for humans, not spreadsheets.</p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>🎯 Lead generation &amp; CRM enrichment</strong> — turn a list of company names into industry, size, HQ, website and headcount.</li>
+<li><strong>📊 Market &amp; competitor research</strong> — pull a whole industry cohort in one run, then follow <code>similar_pages</code> to discover competitors you did not know to ask for.</li>
+<li><strong>🧑‍💼 Recruiting &amp; talent mapping</strong> — headcount, growth signals, office locations and affiliated brands.</li>
+<li><strong>💰 Investment &amp; vendor screening</strong> — company type, founding year, footprint and specialties side by side.</li>
+<li><strong>📣 Social listening</strong> — recent company posts with reaction and comment counts, without touching the feed.</li>
+<li><strong>🔗 Data pipelines</strong> — a stable <code>company_id</code> per company makes it a reliable join key across runs.</li>
+</ul>
+<hr>
+<h2>📦 What data does it extract?</h2>
+<h3>🏢 Company Profile</h3>
+<ul>
+<li>Company name, LinkedIn company ID, and URL slug</li>
+<li>Full &quot;About us&quot; description</li>
+<li>Website (LinkedIn&#39;s redirect wrapper already unwrapped)</li>
+<li>Industry and company type (Public Company, Privately Held, Nonprofit…)</li>
+<li>Founding year — as a <strong>number</strong></li>
+<li>Self-declared specialties, as a clean list</li>
+</ul>
+<h3>📈 Size &amp; Reach</h3>
+<ul>
+<li>Employee count — as a <strong>number</strong>, ready to sort and aggregate</li>
+<li>Company size band (e.g. <code>10,001+ employees</code>)</li>
+<li>Follower count — as a <strong>number</strong></li>
+</ul>
+<h3>📍 Locations</h3>
+<ul>
+<li>Headquarters line (city, region)</li>
+<li>Structured HQ address — street, city, region, postal code, country code</li>
+<li><strong>Every</strong> office location LinkedIn lists, with the HQ flagged and a map link</li>
+</ul>
+<h3>🖼️ Media</h3>
+<ul>
+<li>Company logo URL</li>
+<li>Cover / banner image URL</li>
+</ul>
+<h3>👥 People &amp; Related Pages</h3>
+<ul>
+<li>Employee listing — name, profile URL, photo</li>
+<li>Similar companies — name, LinkedIn URL, industry, location, logo</li>
+<li>Affiliated &amp; showcase pages belonging to the same organization</li>
+</ul>
+<h3>📣 Company Posts</h3>
+<ul>
+<li>Post ID and permalink</li>
+<li>Full post text, with paragraph breaks preserved</li>
+<li>Reaction count, reaction types, comment count</li>
+<li>Attached images and a video flag</li>
+</ul>
+<h3>🧾 Run Metadata</h3>
+<ul>
+<li><code>input_url</code> — exactly what you supplied, so rows match back to your source list</li>
+<li><code>scraped_at</code> — ISO 8601 timestamp</li>
+<li><code>success</code> / <code>error_type</code> / <code>error_message</code></li>
+</ul>
+<hr>
+<h2>⚙️ How to use LinkedIn Company Scraper</h2>
+<h3>Input Options</h3>
+<h4><code>companyUrls</code> (Array — <strong>required</strong>)</h4>
+<p>The companies to scrape. Mix URL formats and bare slugs freely — duplicates are collapsed automatically, so the same company is never fetched twice.</p>
+<pre><code class="language-json">{
+    &quot;companyUrls&quot;: [
+        &quot;https://www.linkedin.com/company/apple&quot;,
+        &quot;https://www.linkedin.com/company/microsoft&quot;,
+        &quot;https://de.linkedin.com/company/sap&quot;,
+        &quot;nvidia&quot;
+    ]
+}
+</code></pre>
+<hr>
+<h4><code>concurrency</code> (Integer — optional)</h4>
+<p>How many companies to fetch in parallel.</p>
+<ul>
+<li><strong>Default</strong>: <code>5</code></li>
+<li><strong>Range</strong>: <code>1</code>–<code>10</code></li>
+<li>Higher is faster on long lists; lower is gentler on your proxy budget.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;companyUrls&quot;: [&quot;apple&quot;, &quot;microsoft&quot;, &quot;google&quot;],
+    &quot;concurrency&quot;: 8
+}
+</code></pre>
+<hr>
+<h4><code>includeEmployees</code> (Boolean — optional)</h4>
+<p>Include the employee listing shown on the company page.</p>
+<ul>
+<li><strong>Default</strong>: <code>true</code></li>
+</ul>
+<blockquote>
+<p>ℹ️ LinkedIn anonymizes some employees on public company pages. Those rows come back with <code>is_anonymized: true</code> and a <code>null</code> name — the placeholder text is never passed off as a real person&#39;s name.</p>
+</blockquote>
+<hr>
+<h4><code>includeSimilarPages</code> (Boolean — optional)</h4>
+<p>Include the &quot;similar companies&quot; LinkedIn recommends. Useful for competitor discovery.</p>
+<ul>
+<li><strong>Default</strong>: <code>true</code></li>
+</ul>
+<hr>
+<h4><code>includeAffiliatedPages</code> (Boolean — optional)</h4>
+<p>Include affiliated / showcase pages belonging to the same organization.</p>
+<ul>
+<li><strong>Default</strong>: <code>true</code></li>
+</ul>
+<pre><code class="language-json">{
+    &quot;companyUrls&quot;: [&quot;apple&quot;, &quot;microsoft&quot;],
+    &quot;includeEmployees&quot;: false,
+    &quot;includeSimilarPages&quot;: false,
+    &quot;includeAffiliatedPages&quot;: false
+}
+</code></pre>
+<blockquote>
+<p>💡 Turning these three off gives you a lean, flat, spreadsheet-friendly row per company.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample Output</h2>
+<p>Each dataset item is one company.</p>
+<pre><code class="language-json">{
+    &quot;company_id&quot;: &quot;162479&quot;,
+    &quot;universal_name_id&quot;: &quot;apple&quot;,
+    &quot;company_name&quot;: &quot;Apple&quot;,
+    &quot;description&quot;: &quot;We&#39;re a diverse collective of thinkers and doers, continually reimagining what&#39;s possible…&quot;,
+    &quot;website&quot;: &quot;http://www.apple.com/careers&quot;,
+    &quot;industry&quot;: &quot;Computers and Electronics Manufacturing&quot;,
+    &quot;company_type&quot;: &quot;Public Company&quot;,
+    &quot;founded_year&quot;: 1976,
+    &quot;specialties&quot;: [
+        &quot;Innovative Product Development&quot;,
+        &quot;World-Class Operations&quot;,
+        &quot;Retail&quot;,
+        &quot;Telephone Support&quot;
+    ],
+    &quot;employee_count&quot;: 217966,
+    &quot;employee_count_range&quot;: &quot;10,001+ employees&quot;,
+    &quot;followers&quot;: 18407827,
+    &quot;headquarters&quot;: &quot;Cupertino, California&quot;,
+    &quot;hq_address&quot;: {
+        &quot;street&quot;: &quot;1 Apple Park Way&quot;,
+        &quot;city&quot;: &quot;Cupertino&quot;,
+        &quot;region&quot;: &quot;California&quot;,
+        &quot;postal_code&quot;: &quot;95014&quot;,
+        &quot;country_code&quot;: &quot;US&quot;
+    },
+    &quot;locations&quot;: [
+        {
+            &quot;address&quot;: &quot;1 Apple Park Way Cupertino, California 95014, US&quot;,
+            &quot;is_primary&quot;: true,
+            &quot;map_url&quot;: &quot;https://www.bing.com/maps?where=1+Apple+Park+Way+Cupertino+95014+California+US&quot;
+        }
+    ],
+    &quot;logo_url&quot;: &quot;https://media.licdn.com/dms/image/v2/.../apple_logo&quot;,
+    &quot;cover_image_url&quot;: &quot;https://media.licdn.com/dms/image/v2/.../apple_cover&quot;,
+    &quot;employees&quot;: [
+        {
+            &quot;name&quot;: &quot;Paul King&quot;,
+            &quot;profile_url&quot;: &quot;https://www.linkedin.com/in/pdking&quot;,
+            &quot;image_url&quot;: &quot;https://media.licdn.com/dms/image/v2/...&quot;,
+            &quot;is_anonymized&quot;: false
+        }
+    ],
+    &quot;updates&quot;: [],
+    &quot;similar_pages&quot;: [
+        {
+            &quot;name&quot;: &quot;Google&quot;,
+            &quot;url&quot;: &quot;https://www.linkedin.com/company/google&quot;,
+            &quot;industry&quot;: &quot;Software Development&quot;,
+            &quot;location&quot;: &quot;Mountain View, CA&quot;,
+            &quot;logo_url&quot;: &quot;https://media.licdn.com/dms/image/v2/.../google_logo&quot;
+        }
+    ],
+    &quot;affiliated_pages&quot;: [
+        {
+            &quot;name&quot;: &quot;Apple Developer&quot;,
+            &quot;url&quot;: &quot;https://www.linkedin.com/showcase/appledeveloper/&quot;,
+            &quot;industry&quot;: &quot;Software Development&quot;,
+            &quot;location&quot;: null,
+            &quot;logo_url&quot;: &quot;https://media.licdn.com/dms/image/v2/.../appledeveloper_logo&quot;
+        }
+    ],
+    &quot;url&quot;: &quot;https://www.linkedin.com/company/apple&quot;,
+    &quot;input_url&quot;: &quot;apple&quot;,
+    &quot;scraped_at&quot;: &quot;2026-09-07T19:05:24.436Z&quot;,
+    &quot;success&quot;: true,
+    &quot;error_type&quot;: null,
+    &quot;_source&quot;: &quot;linkedin-company-scraper&quot;,
+    &quot;source_url&quot;: &quot;https://www.linkedin.com/company/apple&quot;
+}
+</code></pre>
+<h3>📣 Company post example</h3>
+<p>Companies that post publicly return their recent updates in <code>updates</code>:</p>
+<pre><code class="language-json">{
+    &quot;post_id&quot;: &quot;7502733677454512128&quot;,
+    &quot;activity_urn&quot;: &quot;urn:li:activity:7502733677454512128&quot;,
+    &quot;url&quot;: &quot;https://www.linkedin.com/feed/update/urn:li:activity:7502733677454512128/&quot;,
+    &quot;content&quot;: &quot;Tired of choice overload?\n\nSmart Routing takes the guesswork out by automatically matching your tasks to the right model.&quot;,
+    &quot;posted_ago&quot;: &quot;4h&quot;,
+    &quot;reactions&quot;: 188,
+    &quot;reaction_types&quot;: [&quot;LIKE&quot;, &quot;INTEREST&quot;, &quot;EMPATHY&quot;],
+    &quot;comments&quot;: 13,
+    &quot;images&quot;: [&quot;https://media.licdn.com/dms/image/v2/...&quot;],
+    &quot;has_video&quot;: false
+}
+</code></pre>
+<h3>⚠️ Failed company example</h3>
+<p>A company that cannot be scraped is still delivered, so nothing disappears silently:</p>
+<pre><code class="language-json">{
+    &quot;universal_name_id&quot;: &quot;example-that-404s&quot;,
+    &quot;url&quot;: &quot;https://www.linkedin.com/company/example-that-404s&quot;,
+    &quot;input_url&quot;: &quot;example-that-404s&quot;,
+    &quot;success&quot;: false,
+    &quot;error_type&quot;: &quot;NOT_FOUND&quot;,
+    &quot;error_message&quot;: &quot;Company page not found: example-that-404s&quot;,
+    &quot;scraped_at&quot;: &quot;2026-09-07T19:05:24.436Z&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a LinkedIn account or cookies?</strong>
+No. This actor only reads public company pages — no login, no cookies, no session of yours is ever involved, and your LinkedIn account is never put at risk.</p>
+<p><strong>Is it really free?</strong>
+Yes. There is no per-result charge and no subscription. You pay only your own Apify platform usage. In our measured runs that came to roughly <strong>$0.01–$0.06 per 1,000 companies</strong>, so Apify&#39;s $5 free starting credit goes a very long way.</p>
+<p><strong>How many companies can I scrape in one run?</strong>
+As many as you like — pass them all in <code>companyUrls</code>. A 40-company run finished in about 20 seconds. Very large lists are capped at 10,000 companies per run; split bigger jobs across runs.</p>
+<p><strong>Why did a well-known company come back as <code>NOT_FOUND</code>?</strong>
+Its slug is probably different from what you guessed. <code>intel</code> is a 404 — the real page is <code>intel-corporation</code>; the same is true of <code>mongodb</code>, <code>redis</code>, <code>plaid</code> and others. Copy the URL from LinkedIn rather than guessing, and watch the ⚠️ Failed Companies view for these.</p>
+<p><strong>Why are some employees unnamed?</strong>
+LinkedIn itself withholds some identities on public company pages. Those rows carry <code>is_anonymized: true</code> with a <code>null</code> name and profile URL, so you can tell &quot;LinkedIn hid this&quot; apart from &quot;the scraper missed it&quot;. The actor already retries to land on the variant that names them.</p>
+<p><strong>Why is <code>founded_year</code> / <code>specialties</code> / <code>cover_image_url</code> empty for some companies?</strong>
+Because the company did not publish it. These are genuinely optional on LinkedIn — roughly a third of company pages omit a founding year, and most have no cover image. Empty means absent at the source, not a scraping failure.</p>
+<p><strong>Can I get employee job titles?</strong>
+Not from the public company page — LinkedIn no longer renders them there. You get name, profile URL and photo.</p>
+<p><strong>Can I scrape showcase and school pages?</strong>
+Yes. <code>linkedin.com/showcase/...</code> and <code>linkedin.com/school/...</code> both work and return the same record shape.</p>
+<p><strong>Will duplicates in my list cost me twice?</strong>
+No. <code>apple</code>, <code>https://www.linkedin.com/company/apple</code> and <code>https://fr.linkedin.com/company/APPLE?trk=x</code> are recognised as the same company and fetched once.</p>
+<p><strong>What if I paste a personal profile by mistake?</strong>
+It is skipped with a clear warning naming the reason, and the rest of the run continues normally.</p>
+<hr>
+<h2>📋 Dataset Views</h2>
+<p>The output ships with five ready-made views, so you can jump straight to the columns you need:</p>
+<table>
+<thead>
+<tr>
+<th>View</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🏢 <strong>Company Overview</strong></td>
+<td>Name, industry, type, size, followers, HQ, website</td>
+</tr>
+<tr>
+<td>📝 <strong>Full Profile</strong></td>
+<td>Description, specialties, split address, all locations, imagery</td>
+</tr>
+<tr>
+<td>📣 <strong>Company Posts</strong></td>
+<td>Recent posts with reactions and comments</td>
+</tr>
+<tr>
+<td>🌐 <strong>People &amp; Related Pages</strong></td>
+<td>Employees, similar companies, affiliated pages</td>
+</tr>
+<tr>
+<td>⚠️ <strong>Failed Companies</strong></td>
+<td>Anything that could not be scraped, and why</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🤝 Support &amp; Resources</h2>
+<h3>Get Help</h3>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+</ul>
+<h3>Social Media</h3>
+<ul>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok</strong>: <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<h3>📱 Social Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63">LinkedIn Ads Scraper</a></strong> — LinkedIn ad library extraction</li>
+<li><strong><a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63">Facebook Comment Scraper</a></strong> — Comments and replies from any public post</li>
+<li><strong><a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></strong> — Extract Facebook ads data</li>
+<li><strong><a href="https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63">Instagram Comment Scraper</a></strong> — Instagram comments, free to use</li>
+<li><strong><a href="https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63">YouTube Comments Scraper</a></strong> — Full comment threads</li>
+</ul>
+<h3>🎬 Video &amp; Media</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63">YouTube Scraper Pro</a></strong> — Channels, playlists, Shorts and live</li>
+<li><strong><a href="https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63">YouTube Transcript Extractor</a></strong> — Transcripts with timestamps</li>
+<li><strong><a href="https://apify.com/dz_omar/zoom-scraper?fpr=smcx63">Zoom Scraper</a></strong> — Download recordings and transcripts</li>
+<li><strong><a href="https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63">Loom Scraper</a></strong> — Loom video and transcript extraction</li>
+</ul>
+<h3>🏠 Real Estate</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/zillow-scraper?fpr=smcx63">Zillow Scraper</a></strong> — US listings, free to use</li>
+<li><strong><a href="https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63">Idealista Scraper API</a></strong> — Spanish property data with API</li>
+<li><strong><a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63">domain.com.au Scraper</a></strong> — Australian property listings</li>
+<li><strong><a href="https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63">ImmoScout24 Scraper</a></strong> — German property listings</li>
+</ul>
+<h3>🛠️ Developer Tools</h3>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63">Ultimate Screenshot</a></strong> — Advanced screenshot tool</li>
+<li><strong><a href="https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63">AI Scraper</a></strong> — AI-powered extraction from any page</li>
+<li><strong><a href="https://apify.com/dz_omar/network-security-scanner?fpr=smcx63">Network Security Scanner</a></strong> — Security vulnerability scanner</li>
+</ul>
+<hr>
+<h3><strong>⚖️ Legal &amp; Compliance</strong></h3>
+<ul>
+<li><strong>Public Data Access</strong>: Only processes publicly available LinkedIn company pages — no login, no cookies, no account access</li>
+<li><strong>Rate Limiting</strong>: Respects LinkedIn&#39;s service limits and terms of use</li>
+<li><strong>Data Protection</strong>: No storage of personal information or unauthorized data collection</li>
+<li><strong>Commercial Use</strong>: Suitable for business intelligence and research applications</li>
+<li><strong>No affiliation</strong> with or endorsement by LinkedIn is implied</li>
+</ul>
+<p><em>LinkedIn Company Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/linkedin-company-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
