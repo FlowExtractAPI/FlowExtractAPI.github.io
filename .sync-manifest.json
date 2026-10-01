@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T21:49:45.076Z",
+  "generatedAt": "2026-10-01T11:04:48.537Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -157,8 +157,8 @@
       "readme": "Tools/screenshot/README.md"
     },
     "ultimate-screenshot": {
-      "hash": "cf0c3a50629c1f80dcbae024a6f86ca440c11f7a142350aa3fc11bde374d2b0a",
-      "syncedAt": "2026-09-29T20:16:43.259Z",
+      "hash": "8d4aa6feb4594126f8b8a125e733d91753de98bf6fe2938591fd00fbae44f762",
+      "syncedAt": "2026-10-01T11:04:48.298Z",
       "readme": "Tools/ultimate-screenshot/README.md"
     },
     "youtube-scraper-pro": {
@@ -217,14 +217,19 @@
       "readme": "Tools/yandex-reverse-image-search/README.md"
     },
     "youtube-shorts-trend-finder": {
-      "hash": "214c92b567f9c5e8d029d9a6d8c065d43095e6dec11f81600e236b8573ededfe",
-      "syncedAt": "2026-09-29T21:49:44.807Z",
+      "hash": "95e38a4d579a2b3c2872ae415f9096e0f50243d78c5019a38a218ef706c4fdfb",
+      "syncedAt": "2026-10-01T11:04:48.365Z",
       "readme": "Social-Media/youtube-shorts-trend-finder/README.md"
     },
     "google-flights-scraper": {
       "hash": "97f752f34f5947dc6d35228a774093e49858d3caa1a0efb447d776ad30dbf388",
       "syncedAt": "2026-09-29T21:49:44.867Z",
       "readme": "Travel/google-flights-scraper/README.md"
+    },
+    "kleinanzeigen-scraper": {
+      "hash": "4dec8a3f0390a0b473f5edc3f0855473aba33e89a06b5f62d9ae66f7b889aae4",
+      "syncedAt": "2026-10-01T11:04:48.387Z",
+      "readme": "Real-Estate/kleinanzeigen-scraper/README.md"
     }
   }
 }

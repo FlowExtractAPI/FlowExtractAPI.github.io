@@ -29,7 +29,7 @@ Every row also carries `engagementRate` (likes + comments per 1,000 views), so y
 
 Views per day is usually what people mean by "trending": a 3-day-old Short on 2M views beats a 2-year-old Short on 5M.
 
-**Results arrive while the run is still going.** Rows are written to the dataset as each Short is checked, best candidates first — you are not waiting for the whole run to finish before you see anything. Ask for 1,000 Shorts and the first ones show up in seconds.
+**Results arrive while the run is still going.** Searching and checking happen at the same time, so rows start landing in the dataset within seconds rather than after the whole search finishes. You are never waiting on a full run to see whether it found what you wanted.
 
 **Depth on creators.** When your keyword matches a creator, the Actor also reads that creator's full Shorts catalogue — so a search for a big name returns hundreds of candidates to rank, not the handful that fit on one page of results.
 

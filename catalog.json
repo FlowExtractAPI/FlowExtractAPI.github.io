@@ -912,6 +912,26 @@
         "exists": true
       },
       "onSite": true
+    },
+    {
+      "slug": "kleinanzeigen-scraper",
+      "name": "Kleinanzeigen.de Scraper",
+      "category": "real-estate",
+      "subcategory": "listings",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png",
+      "description": "🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.",
+      "metaTitle": "Kleinanzeigen Scraper — Free Ads, Cars & Seller Data",
+      "metaDescription": "Free Kleinanzeigen.de scraper for any search link or keyword with all filters. Get price, location, photos, car & property details and seller phone numbers.",
+      "featured": false,
+      "docsPath": "kleinanzeigen-scraper",
+      "source": {
+        "dir": "Real-Estate/kleinanzeigen-scraper",
+        "readme": "Real-Estate/kleinanzeigen-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
     }
   ]
 }

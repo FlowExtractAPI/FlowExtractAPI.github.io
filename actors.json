@@ -628,5 +628,19 @@
     "metaTitle": "Google Flights Scraper - Fares, Booking Links & Explore",
     "metaDescription": "Scrape Google Flights prices with every filter. Booking options with seller links, return flights, the cheapest day to fly and Explore destinations.",
     "featured": false
+  },
+  {
+    "id": "kleinanzeigen-scraper",
+    "name": "Kleinanzeigen.de Scraper",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png",
+    "category": "real-estate",
+    "subcategory": "listings",
+    "description": "🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.",
+    "apifyUrl": "https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63",
+    "docsPath": "kleinanzeigen-scraper",
+    "readmeFile": "kleinanzeigen-scraper.md",
+    "metaTitle": "Kleinanzeigen Scraper — Free Ads, Cars & Seller Data",
+    "metaDescription": "Free Kleinanzeigen.de scraper for any search link or keyword with all filters. Get price, location, photos, car & property details and seller phone numbers.",
+    "featured": false
   }
 ]

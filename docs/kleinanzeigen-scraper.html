@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Kleinanzeigen Scraper — Free Ads, Cars &amp; Seller Data | FlowExtract API</title>
+    <meta name="title" content="Kleinanzeigen Scraper — Free Ads, Cars &amp; Seller Data | FlowExtract API">
+    <meta name="description" content="🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/kleinanzeigen-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Kleinanzeigen Scraper — Free Ads, Cars &amp; Seller Data | FlowExtract API">
+    <meta property="og:description" content="🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/kleinanzeigen-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kleinanzeigen Scraper — Free Ads, Cars &amp; Seller Data | FlowExtract API">
+    <meta name="twitter:description" content="🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Kleinanzeigen.de Scraper","description":"🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/kleinanzeigen-scraper.html","sameAs":"https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png" alt="Kleinanzeigen.de Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">Kleinanzeigen.de Scraper</h1>
+                <p class="actor-hero-desc">🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.</p>
+                <a href="https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🏷️ Kleinanzeigen.de Scraper</h1>
+<p><strong>Free Kleinanzeigen scraper.</strong> Paste any kleinanzeigen.de search link — with every filter you set on the site — or just type keywords and a city. Get clean, structured listings: price, location with coordinates, photos, category details (make, mileage, rooms, size, condition…) and, optionally, the seller&#39;s name, rating, member-since date, view count and — for businesses — phone number and imprint.</p>
+<ul>
+<li>✅ <strong>Every category and every filter</strong>: cars, real estate, electronics, furniture, jobs, pets… Whatever you filter on the website is applied exactly.</li>
+<li>✅ <strong>Two ways to start</strong>: paste links, or search by keyword + category + location + radius + price and more.</li>
+<li>✅ <strong>No 10,000 limit</strong>: large searches (all iPhones, all used cars…) are collected completely — exact totals, no duplicates.</li>
+<li>✅ <strong>Fast</strong>: 100 listings per page, hundreds of listings in seconds.</li>
+<li>✅ <strong>Seller &amp; contact data</strong> on request, including business phone numbers.</li>
+<li>✅ <strong>Free</strong> — you only pay Apify platform usage (typically a few cents per thousand listings).</li>
+</ul>
+<hr>
+<h2>🚀 Quick start</h2>
+<h3>1. Paste a search link (Option A)</h3>
+<p>Open <a href="https://www.kleinanzeigen.de">kleinanzeigen.de</a>, search, set any filters, and copy the link from the address bar.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [&quot;https://www.kleinanzeigen.de/s-berlin/iphone/k0l3331&quot;],
+  &quot;maxResultsPerSearch&quot;: 200
+}
+</code></pre>
+<h3>2. Cars with all filters</h3>
+<p>Make, model, mileage, first registration, fuel, gearbox, equipment — all taken from the link.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    &quot;https://www.kleinanzeigen.de/s-autos/bmw/c216+autos.ez_i:2015,2022+autos.km_i:10000,150000+autos.marke_s:bmw+autos.shift_s:automatik&quot;
+  ],
+  &quot;includeDetails&quot;: true,
+  &quot;maxResultsPerSearch&quot;: 100
+}
+</code></pre>
+<h3>3. Keyword search without building a link (Option B)</h3>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;ebike&quot;, &quot;rennrad&quot;],
+  &quot;location&quot;: &quot;Hamburg&quot;,
+  &quot;radiusKm&quot;: &quot;20&quot;,
+  &quot;maxPrice&quot;: 1500,
+  &quot;sellerType&quot;: &quot;private&quot;,
+  &quot;maxResultsPerSearch&quot;: 100
+}
+</code></pre>
+<p>More keyword filters — category, offers only, shipping, &quot;Direkt kaufen&quot;, photos only:</p>
+<pre><code class="language-json">{
+  &quot;searchQueries&quot;: [&quot;iphone&quot;],
+  &quot;category&quot;: &quot;173&quot;,
+  &quot;offerType&quot;: &quot;offered&quot;,
+  &quot;shipping&quot;: &quot;shippable&quot;,
+  &quot;buyNowOnly&quot;: true,
+  &quot;photosOnly&quot;: true,
+  &quot;maxResultsPerSearch&quot;: 200
+}
+</code></pre>
+<h3>4. A complete large search (more than 10,000 listings)</h3>
+<p>Kleinanzeigen itself shows at most 10,000 listings per search. Set a higher limit and the Actor collects the full result set automatically — in our test, all 13,856 listings for &quot;iphone 15 pro&quot; (the website shows 13,856), with no duplicates.</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [&quot;https://www.kleinanzeigen.de/s-iphone-15-pro/k0&quot;],
+  &quot;maxResultsPerSearch&quot;: 1000000
+}
+</code></pre>
+<h3>5. One listing, or everything a seller offers</h3>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    &quot;https://www.kleinanzeigen.de/s-anzeige/nachlaesse-haushaltsaufloesung-ankauf-entruempelung-idar-oberstein/1779907820-239-22090&quot;,
+    &quot;https://www.kleinanzeigen.de/s-bestandsliste.html?userId=41664409&quot;
+  ]
+}
+</code></pre>
+<hr>
+<h2>📋 Input</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Section</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>🔗 Option A</td>
+<td>Search result links (any category, any filters), single listing links, or a seller&#39;s &quot;all listings&quot; link.</td>
+</tr>
+<tr>
+<td><code>searchQueries</code></td>
+<td>🔎 Option B</td>
+<td>Keywords — each one runs as its own search.</td>
+</tr>
+<tr>
+<td><code>location</code></td>
+<td>🔎 Option B</td>
+<td>City, district or zip code. Not found → Germany-wide (the log says so).</td>
+</tr>
+<tr>
+<td><code>radiusKm</code></td>
+<td>🔎 Option B</td>
+<td>+5 … +500 km around the location.</td>
+</tr>
+<tr>
+<td><code>minPrice</code> / <code>maxPrice</code></td>
+<td>🔎 Option B</td>
+<td>Price range in €.</td>
+</tr>
+<tr>
+<td><code>sortBy</code></td>
+<td>🔎 Option B</td>
+<td>Newest, lowest price, highest price, nearest, recommended.</td>
+</tr>
+<tr>
+<td><code>sellerType</code></td>
+<td>🔎 Option B</td>
+<td>Private, commercial, or both.</td>
+</tr>
+<tr>
+<td><code>category</code></td>
+<td>🔎 Option B</td>
+<td>Any of the 161 categories (main categories include their subcategories).</td>
+</tr>
+<tr>
+<td><code>offerType</code></td>
+<td>🔎 Option B</td>
+<td>Offers, requests (&quot;Gesuche&quot;), or both.</td>
+</tr>
+<tr>
+<td><code>shipping</code></td>
+<td>🔎 Option B</td>
+<td>Any, shipping possible, or pickup only.</td>
+</tr>
+<tr>
+<td><code>buyNowOnly</code></td>
+<td>🔎 Option B</td>
+<td>Only listings with &quot;Direkt kaufen&quot;.</td>
+</tr>
+<tr>
+<td><code>photosOnly</code></td>
+<td>🔎 Option B</td>
+<td>Only listings with pictures.</td>
+</tr>
+<tr>
+<td><code>includeDetails</code></td>
+<td>⚙️ Both</td>
+<td>Full description + seller info + seller&#39;s active listings + view count + business phone/imprint.</td>
+</tr>
+<tr>
+<td><code>maxResultsPerSearch</code></td>
+<td>⚙️ Both</td>
+<td>Listings per link/keyword (default 100). Above 10,000 the full search is collected automatically.</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>⚙️ Both</td>
+<td>Cap for the whole run (0 = no limit).</td>
+</tr>
+</tbody></table>
+<p>Option A and Option B can be combined in one run. Option B&#39;s filters apply to keywords only — links always keep their own filters.</p>
+<hr>
+<h2>📤 Output</h2>
+<p>One record per listing. Example with <code>includeDetails: true</code> (values anonymized and shortened):</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;3512345678&quot;,
+  &quot;url&quot;: &quot;https://www.kleinanzeigen.de/s-anzeige/bmw-116d-automatik/3512345678-216-2091&quot;,
+  &quot;title&quot;: &quot;BMW 116d Automatik | Navi | PDC Sitzheizung | TÜV 11/2027 | Euro 6&quot;,
+  &quot;description&quot;: &quot;UNFALLFREI – BMW 116d Automatik – gepflegt\nZum Verkauf steht mein …&quot;,
+  &quot;price&quot;: 8650,
+  &quot;priceType&quot;: &quot;PLEASE_CONTACT&quot;,
+  &quot;originalPrice&quot;: 10500,
+  &quot;currency&quot;: &quot;EUR&quot;,
+  &quot;adType&quot;: &quot;OFFERED&quot;,
+  &quot;sellerType&quot;: &quot;PRIVATE&quot;,
+  &quot;categoryId&quot;: &quot;216&quot;,
+  &quot;categoryName&quot;: &quot;Autos&quot;,
+  &quot;zipCode&quot;: &quot;40227&quot;,
+  &quot;city&quot;: &quot;Oberbilk&quot;,
+  &quot;region&quot;: &quot;Nordrhein-Westfalen&quot;,
+  &quot;latitude&quot;: 51.2105,
+  &quot;longitude&quot;: 6.8054,
+  &quot;locationRadiusKm&quot;: 1.7,
+  &quot;postedAt&quot;: &quot;2026-09-12T16:00:22.000+0200&quot;,
+  &quot;editedAt&quot;: &quot;2026-09-12T16:00:21.000+0200&quot;,
+  &quot;status&quot;: &quot;ACTIVE&quot;,
+  &quot;buyNow&quot;: false,
+  &quot;isTopAd&quot;: false,
+  &quot;attributes&quot;: {
+    &quot;Marke&quot;: &quot;BMW&quot;, &quot;Modell&quot;: &quot;116&quot;, &quot;Kilometerstand&quot;: &quot;148.300&quot;, &quot;Erstzulassungsjahr&quot;: &quot;2015&quot;,
+    &quot;Kraftstoffart&quot;: &quot;Diesel&quot;, &quot;Getriebe&quot;: &quot;Automatik&quot;
+  },
+  &quot;imageUrl&quot;: &quot;https://img.kleinanzeigen.de/api/v1/prod-ads/images/58/5855ab87-….?rule=$_59.JPG&quot;,
+  &quot;images&quot;: [&quot;https://img.kleinanzeigen.de/api/v1/prod-ads/images/58/5855ab87-….?rule=$_59.JPG&quot;],
+  &quot;imageCount&quot;: 12,
+  &quot;sellerId&quot;: &quot;123456789&quot;,
+  &quot;sellerName&quot;: &quot;Max&quot;,
+  &quot;sellerAccountType&quot;: &quot;PRIVATE&quot;,
+  &quot;sellerSince&quot;: &quot;2019-03-02T10:11:00.000+0100&quot;,
+  &quot;sellerRating&quot;: 1,
+  &quot;sellerBadges&quot;: [{ &quot;name&quot;: &quot;rating&quot;, &quot;level&quot;: 2 }, { &quot;name&quot;: &quot;friendliness&quot;, &quot;level&quot;: 1 }],
+  &quot;sellerActiveAds&quot;: 4,
+  &quot;phone&quot;: null,
+  &quot;imprint&quot;: null,
+  &quot;viewCount&quot;: 681,
+  &quot;scrapedAt&quot;: &quot;2026-09-30T21:59:00.740Z&quot;,
+  &quot;_source&quot;: &quot;kleinanzeigen_scraper&quot;,
+  &quot;source_url&quot;: &quot;https://www.kleinanzeigen.de/s-autos/bmw/c216+autos.marke_s:bmw&quot;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Field group</th>
+<th>Always</th>
+<th>With <code>includeDetails</code></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ID, link, title, price, price type, reduction, category</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Zip, city, coordinates, distance from your search location</td>
+<td>✅</td>
+<td>✅ + street (when published), federal state</td>
+</tr>
+<tr>
+<td>Category details (<code>attributes</code>), photos, posted/edited date</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Description</td>
+<td>short excerpt</td>
+<td><strong>full text</strong></td>
+</tr>
+<tr>
+<td>Seller name, ID, rating, badges, member since</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Seller&#39;s listings online now (<code>sellerActiveAds</code>)</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>View count</td>
+<td>—</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Phone number &amp; imprint</td>
+<td>—</td>
+<td>✅ commercial sellers who publish them</td>
+</tr>
+</tbody></table>
+<p><strong>Price types:</strong> <code>SPECIFIED_AMOUNT</code> = fixed price, <code>PLEASE_CONTACT</code> = negotiable (&quot;VB&quot;), <code>FREE</code> = to give away.
+<strong>Locations of private sellers</strong> are approximate by design — <code>locationRadiusKm</code> tells you how approximate.</p>
+<h3>📊 Dataset views</h3>
+<ul>
+<li><strong>Overview</strong> — photo, title, price, city, category, seller type, posted date, link.</li>
+<li><strong>Sellers &amp; contact</strong> — seller name, type, phone, rating, member since, active listings, street, views (use with <code>includeDetails</code>).</li>
+</ul>
+<p>Export as JSON, CSV, Excel, XML or HTML, or pull it through the Apify API, webhooks, Make, Zapier or n8n.</p>
+<hr>
+<h2>💡 Use cases</h2>
+<ul>
+<li><strong>Car dealers &amp; traders</strong> — monitor prices by make, model, mileage and year across all of Germany.</li>
+<li><strong>Real estate</strong> — collect rental and sale offers with rooms, size and price per m².</li>
+<li><strong>Resellers &amp; price research</strong> — track used-market prices for phones, bikes, furniture, electronics.</li>
+<li><strong>Lead generation</strong> — find commercial sellers in a category with phone number and imprint.</li>
+<li><strong>Market research</strong> — supply, pricing and regional distribution for any product.</li>
+</ul>
+<hr>
+<h2>💰 Cost</h2>
+<p>The Actor itself is <strong>free</strong>. You pay only Apify platform usage, measured in our test runs:</p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Listings</th>
+<th>Time</th>
+<th>Platform cost</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>2 searches, no details</td>
+<td>170</td>
+<td>4 s</td>
+<td>≈ $0.001</td>
+</tr>
+<tr>
+<td>3 links + 1 keyword, with details</td>
+<td>91</td>
+<td>9 s</td>
+<td>≈ $0.001</td>
+</tr>
+<tr>
+<td>1 search, with details (busy period)</td>
+<td>120</td>
+<td>17 s</td>
+<td>≈ $0.016</td>
+</tr>
+<tr>
+<td>1 large search, complete</td>
+<td>13,856</td>
+<td>4 min</td>
+<td>≈ $0.06</td>
+</tr>
+</tbody></table>
+<p>The Apify free plan&#39;s monthly credit covers tens of thousands of listings.</p>
+<hr>
+<h2>⚡ Limits &amp; good to know</h2>
+<ul>
+<li><strong>Large searches are collected completely.</strong> Kleinanzeigen shows at most 10,000 listings per search; when you ask for more, the Actor collects the full result set in parts and reports the exact total in the log (e.g. &quot;13,856 listing(s) found&quot;). Very large searches (hundreds of thousands of listings) take a while — use <code>maxResultsPerSearch</code> to cap them.</li>
+<li><strong>Exact totals</strong>: the log shows the real number of matching listings, not just &quot;10,000+&quot;.</li>
+<li><strong>Page numbers in links are ignored</strong> — collection always starts from the first result, so you get the whole search.</li>
+<li><strong>Duplicates are removed</strong> within a run, even across overlapping searches.</li>
+<li><strong>Filters are checked</strong>: if a pasted link contains something that could not be applied, the log names it.</li>
+</ul>
+<hr>
+<h2>🚫 Error handling</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What happens</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>No input</td>
+<td>Run <strong>succeeds</strong> with one dataset item explaining what to enter.</td>
+</tr>
+<tr>
+<td>Link that isn&#39;t a search, listing or seller page</td>
+<td>Skipped with a clear reason; if nothing usable is left, a guidance item explains it.</td>
+</tr>
+<tr>
+<td>Location not found</td>
+<td>Warning, then the keyword search runs across all of Germany.</td>
+</tr>
+<tr>
+<td>A listing was deleted</td>
+<td>Skipped with a note.</td>
+</tr>
+<tr>
+<td>Temporary network problems</td>
+<td>Retried automatically.</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>❓ FAQ</h2>
+<p><strong>Do I need a Kleinanzeigen account or cookies?</strong> No. Only public listings are collected.</p>
+<p><strong>Can I get phone numbers?</strong> Yes, for commercial sellers who publish them — enable <code>includeDetails</code>. Private sellers&#39; numbers are not public.</p>
+<p><strong>Which categories work?</strong> All of them. Any filter the website offers for a category is supported through the link — including colour, condition and material.</p>
+<p><strong>Can I get more than 10,000 results?</strong> Yes — set <code>maxResultsPerSearch</code> above 10,000 and the whole search is collected.</p>
+<p><strong>Can I monitor new listings?</strong> Sort by newest (the default) and schedule the Actor on Apify — each run returns the latest listings first.</p>
+<hr>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok</strong>: <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<hr>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li>Extracts <strong>public data only</strong> — no login, no private or gated content.</li>
+<li>Respects the source site&#39;s rate limits and terms.</li>
+<li><strong>No personal information is stored</strong> by this Actor; data goes only to your own dataset. You are responsible for handling any personal data (such as seller names or business phone numbers) in line with GDPR/DSGVO.</li>
+<li>Suitable for commercial use.</li>
+<li><strong>No affiliation with or endorsement by kleinanzeigen.de is implied.</strong></li>
+</ul>
+<hr>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<p><strong><a href="https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63">Leboncoin.fr Scraper</a></strong>
+The French counterpart: listings from any leboncoin.fr search — price, location, seller, photos and category details.</p>
+<p><strong><a href="https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63">ImmoScout24 Scraper</a></strong>
+German real estate listings from ImmoScout24.</p>
+<p><strong><a href="https://apify.com/dz_omar/idealista-scraper?fpr=smcx63">Idealista Scraper</a></strong>
+Spanish, Italian and Portuguese property listings from Idealista.</p>
+<p><strong><a href="https://apify.com/dz_omar/zillow-scraper?fpr=smcx63">Zillow Scraper</a></strong>
+US property listings, prices and agent details from Zillow.</p>
+<hr>
+<p><strong>Ready to extract kleinanzeigen.de data?</strong> <a href="https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63">Start using Kleinanzeigen.de Scraper now!</a></p>
+<hr>
+<p><em>Kleinanzeigen.de Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
