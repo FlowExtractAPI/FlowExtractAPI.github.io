@@ -642,5 +642,19 @@
     "metaTitle": "Kleinanzeigen Scraper — Free Ads, Cars & Seller Data",
     "metaDescription": "Free Kleinanzeigen.de scraper for any search link or keyword with all filters. Get price, location, photos, car & property details and seller phone numbers.",
     "featured": false
+  },
+  {
+    "id": "facebook-posts-scraper",
+    "name": "📝 Facebook Posts Scraper",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png",
+    "category": "social",
+    "subcategory": "facebook",
+    "description": "📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.",
+    "apifyUrl": "https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63",
+    "docsPath": "facebook-posts-scraper",
+    "readmeFile": "facebook-posts-scraper.md",
+    "metaTitle": "Facebook Posts Scraper — Pages & Profiles, No Login",
+    "metaDescription": "Scrape posts from public Facebook pages and profiles without login: text, date, reactions, comments, shares, video views and media. Go back years.",
+    "featured": false
   }
 ]

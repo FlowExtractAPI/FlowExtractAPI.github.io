@@ -932,6 +932,26 @@
         "exists": true
       },
       "onSite": true
+    },
+    {
+      "slug": "facebook-posts-scraper",
+      "name": "📝 Facebook Posts Scraper",
+      "category": "social",
+      "subcategory": "facebook",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png",
+      "description": "📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.",
+      "metaTitle": "Facebook Posts Scraper — Pages & Profiles, No Login",
+      "metaDescription": "Scrape posts from public Facebook pages and profiles without login: text, date, reactions, comments, shares, video views and media. Go back years.",
+      "featured": false,
+      "docsPath": "facebook-posts-scraper",
+      "source": {
+        "dir": "Social-Media/facebook-posts-scraper",
+        "readme": "Social-Media/facebook-posts-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
     }
   ]
 }

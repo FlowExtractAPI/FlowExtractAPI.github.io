@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T11:04:48.537Z",
+  "generatedAt": "2026-10-01T16:52:44.823Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -230,6 +230,11 @@
       "hash": "4dec8a3f0390a0b473f5edc3f0855473aba33e89a06b5f62d9ae66f7b889aae4",
       "syncedAt": "2026-10-01T11:04:48.387Z",
       "readme": "Real-Estate/kleinanzeigen-scraper/README.md"
+    },
+    "facebook-posts-scraper": {
+      "hash": "b756fd682a933031ce42b838560fac2106a719cf661501d1b9c7e6fbab6f3a12",
+      "syncedAt": "2026-10-01T16:52:44.665Z",
+      "readme": "Social-Media/facebook-posts-scraper/README.md"
     }
   }
 }

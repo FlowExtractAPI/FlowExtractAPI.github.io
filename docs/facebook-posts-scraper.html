@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Facebook Posts Scraper — Pages &amp; Profiles, No Login | FlowExtract API</title>
+    <meta name="title" content="Facebook Posts Scraper — Pages &amp; Profiles, No Login | FlowExtract API">
+    <meta name="description" content="📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/facebook-posts-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Facebook Posts Scraper — Pages &amp; Profiles, No Login | FlowExtract API">
+    <meta property="og:description" content="📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/facebook-posts-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facebook Posts Scraper — Pages &amp; Profiles, No Login | FlowExtract API">
+    <meta name="twitter:description" content="📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"📝 Facebook Posts Scraper","description":"📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/facebook-posts-scraper.html","sameAs":"https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png" alt="📝 Facebook Posts Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">📝 Facebook Posts Scraper</h1>
+                <p class="actor-hero-desc">📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.</p>
+                <a href="https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>📝 Facebook Posts Scraper</h1>
+<p>Scrape posts from <strong>public Facebook pages and profiles</strong> without an account, cookies or an API key. Paste page links, choose how many posts you want, and get every post&#39;s text, date, reactions by type, comments, shares, video views and plays, photos, videos, shared links and events.</p>
+<h2>📝 What is Facebook Posts Scraper?</h2>
+<p>Facebook Posts Scraper collects the posts of any public Facebook page or profile and turns them into structured data you can export or analyse:</p>
+<ul>
+<li>👥 <strong>Pages and profiles</strong> — brands, media, public figures and public personal profiles. Normal page links, <code>profile.php?id=</code> links and <code>/people/</code> links all work.</li>
+<li>❤️ <strong>Full engagement</strong> — total reactions plus the breakdown (like, love, care, haha, wow, sad, angry), comment count and share count.</li>
+<li>🎬 <strong>Video numbers</strong> — both <strong>views</strong> and <strong>plays</strong> (plays include replays), plus duration, thumbnail and captions file.</li>
+<li>🖼️ <strong>Media</strong> — every photo in a post or album (image URL, size, alt text) and videos (link, thumbnail, duration, live flag).</li>
+<li>🔁 <strong>Shares done right</strong> — when a post shares another post (live videos, reshares), you get the shared post&#39;s text, author and media.</li>
+<li>🔗 <strong>Links and events</strong> — shared links (URL, title, description, source) and events (name, link, summary).</li>
+<li>⏪ <strong>Go back in time</strong> — &quot;Only posts older than&quot; jumps straight to a date, even years back. &quot;Only posts newer than&quot; stops at a date.</li>
+<li>⚡ <strong>Fast on big jobs</strong> — a page with thousands of posts is read in parallel date ranges; 1,000 posts take about 2–3 minutes.</li>
+<li>📚 <strong>Many pages per run</strong> — add as many pages as you like; several are scraped at the same time.</li>
+</ul>
+<h2>📊 What Facebook posts data can I extract?</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>postId</code>, <code>url</code></td>
+<td>Post ID and link</td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td>The post&#39;s own text</td>
+</tr>
+<tr>
+<td><code>textOrSharedText</code></td>
+<td>The post&#39;s text, or the shared post&#39;s text when the post has none</td>
+</tr>
+<tr>
+<td><code>time</code>, <code>timestamp</code></td>
+<td>Publication time (ISO 8601 UTC and Unix seconds)</td>
+</tr>
+<tr>
+<td><code>pageName</code>, <code>pageId</code>, <code>pageUrl</code>, <code>author</code></td>
+<td>Who published it</td>
+</tr>
+<tr>
+<td><code>reactionsCount</code>, <code>reactions</code></td>
+<td>Total reactions and the breakdown by type</td>
+</tr>
+<tr>
+<td><code>commentsCount</code>, <code>sharesCount</code></td>
+<td>Comment and share counts</td>
+</tr>
+<tr>
+<td><code>videoViewCount</code>, <code>videoPlayCount</code></td>
+<td>Video views and plays (video posts)</td>
+</tr>
+<tr>
+<td><code>media</code></td>
+<td>Photos and videos with image/thumbnail URLs, sizes, duration, alt text</td>
+</tr>
+<tr>
+<td><code>link</code>, <code>event</code>, <code>sharedPost</code></td>
+<td>Shared link, event or post, when there is one</td>
+</tr>
+<tr>
+<td><code>feedbackId</code></td>
+<td>Facebook&#39;s ID for the post&#39;s comments — use it with a comment scraper</td>
+</tr>
+<tr>
+<td><code>inputUrl</code>, <code>scrapedAt</code></td>
+<td>The link you entered and when the row was collected</td>
+</tr>
+</tbody></table>
+<h2>🎯 Use cases</h2>
+<ul>
+<li>📣 <strong>Social listening &amp; brand monitoring</strong> — track what brands, competitors or public figures post and how audiences react.</li>
+<li>🔍 <strong>Content research</strong> — find which formats (video, photo, link) get the most reactions and shares on a page.</li>
+<li>📈 <strong>Marketing analytics</strong> — export a page&#39;s post history to a spreadsheet or BI tool for reporting.</li>
+<li>🎓 <strong>Academic &amp; media research</strong> — collect a page&#39;s posts for a date range, years back.</li>
+<li>🤖 <strong>Dataset building</strong> — feed post text and engagement into AI, NLP or sentiment pipelines.</li>
+</ul>
+<h2>🚀 How do I use Facebook Posts Scraper?</h2>
+<ol>
+<li>Open the Actor and paste one or more <strong>Facebook page or profile links</strong> (one per line).</li>
+<li>Set <strong>Max posts per page</strong> (newest first).</li>
+<li>Optional: pick a <strong>date range</strong> — a calendar date or a relative period like <code>3 months</code>.</li>
+<li>Click <strong>Start</strong> ▷.</li>
+<li>Download the results as JSON, CSV, Excel or HTML, or read them through the API.</li>
+</ol>
+<h2>➡️ Input</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔗 <strong>Facebook page or profile URLs</strong></td>
+<td>Public pages or profiles, e.g. <code>https://www.facebook.com/nasa</code>. Links to posts, groups, events, reels or other websites are rejected in the form.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🔢 <strong>Max posts per page</strong></td>
+<td>Posts to collect from each page, newest first.</td>
+<td>50</td>
+</tr>
+<tr>
+<td>📅 <strong>Only posts newer than</strong></td>
+<td>Stop at this date. A date (<code>2024-01-31</code>) or a relative period (<code>3 months</code>). UTC.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>⏪ <strong>Only posts older than</strong></td>
+<td>Start from this date and go back in time. A date (<code>2022-12-31</code>) or relative (<code>1 year</code>). UTC.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🛡️ <strong>Proxy</strong></td>
+<td>Residential proxy is required for Facebook and is the default.</td>
+<td>Residential</td>
+</tr>
+</tbody></table>
+<p>Example — the 500 newest posts of two pages, published in 2025:</p>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [
+        &quot;https://www.facebook.com/nasa&quot;,
+        &quot;https://www.facebook.com/natgeo&quot;
+    ],
+    &quot;resultsLimit&quot;: 500,
+    &quot;onlyPostsNewerThan&quot;: &quot;2025-01-01&quot;,
+    &quot;onlyPostsOlderThan&quot;: &quot;2026-01-01&quot;
+}
+</code></pre>
+<h2>⬅️ Output</h2>
+<p>Results are stored in a dataset, one row per post. Download them as JSON, CSV, Excel, XML or HTML, or read them through the API.</p>
+<h3>📘 Example of extracted Facebook post data</h3>
+<p>Long URLs shortened:</p>
+<pre><code class="language-json">{
+  &quot;postId&quot;: &quot;1643634053798631&quot;,
+  &quot;url&quot;: &quot;https://www.facebook.com/reel/1134423309335584/&quot;,
+  &quot;text&quot;: &quot;New crew soon!\n\nCrew-13 is scheduled to launch to the International Space Station tomorrow, Oct. 1. …&quot;,
+  &quot;textOrSharedText&quot;: &quot;New crew soon!\n\nCrew-13 is scheduled to launch to the International Space Station tomorrow, Oct. 1. …&quot;,
+  &quot;time&quot;: &quot;2026-09-30T15:17:34.000Z&quot;,
+  &quot;timestamp&quot;: 1790781454,
+  &quot;pageName&quot;: &quot;NASA - National Aeronautics and Space Administration&quot;,
+  &quot;pageId&quot;: &quot;100044561550831&quot;,
+  &quot;pageUrl&quot;: &quot;https://www.facebook.com/NASA/&quot;,
+  &quot;author&quot;: { &quot;id&quot;: &quot;100044561550831&quot;, &quot;name&quot;: &quot;NASA - National Aeronautics and Space Administration&quot;, &quot;url&quot;: &quot;https://www.facebook.com/NASA&quot; },
+  &quot;reactionsCount&quot;: 1582,
+  &quot;reactions&quot;: { &quot;like&quot;: 1332, &quot;love&quot;: 208, &quot;care&quot;: 25, &quot;haha&quot;: 8, &quot;wow&quot;: 7, &quot;angry&quot;: 2 },
+  &quot;commentsCount&quot;: 60,
+  &quot;sharesCount&quot;: 166,
+  &quot;videoViewCount&quot;: 20174,
+  &quot;videoPlayCount&quot;: 101097,
+  &quot;media&quot;: [
+    {
+      &quot;type&quot;: &quot;video&quot;,
+      &quot;id&quot;: &quot;1134423309335584&quot;,
+      &quot;url&quot;: &quot;https://www.facebook.com/reel/1134423309335584/&quot;,
+      &quot;thumbnail&quot;: &quot;https://scontent.xx.fbcdn.net/v/…&quot;,
+      &quot;durationMs&quot;: 61504,
+      &quot;isLive&quot;: false,
+      &quot;captionsUrl&quot;: &quot;https://scontent.xx.fbcdn.net/v/…&quot;,
+      &quot;width&quot;: 3840,
+      &quot;height&quot;: 2160
+    }
+  ],
+  &quot;link&quot;: null,
+  &quot;event&quot;: null,
+  &quot;sharedPost&quot;: null,
+  &quot;feedbackId&quot;: &quot;ZmVlZGJhY2s6MTY0MzYzNDA1Mzc5ODYzMQ==&quot;,
+  &quot;inputUrl&quot;: &quot;https://www.facebook.com/nasa&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-10-01T12:35:54.987Z&quot;
+}
+</code></pre>
+<p>When a page can&#39;t be scraped (private, removed, login-only), the dataset gets one row with an <code>error</code> message for it instead of posts, and the other pages continue.</p>
+<h2>🧰 More Facebook tools</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>💬 <a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63">Facebook Comment Scraper</a></td>
+<td>Comments and replies from posts, reels, photos and videos — pairs with this Actor&#39;s <code>feedbackId</code> and post links</td>
+</tr>
+<tr>
+<td>📢 <a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></td>
+<td>Ads from the Meta Ad Library: creatives, copy, dates and advertisers</td>
+</tr>
+<tr>
+<td>🔗 <a href="https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63">Facebook Ads URL Parser</a></td>
+<td>Ad Library search links turned into structured ad data</td>
+</tr>
+</tbody></table>
+<h2>❓ FAQ</h2>
+<p><strong>Do I need a Facebook account or cookies?</strong>
+No. The Actor reads public posts exactly as a logged-out visitor sees them.</p>
+<p><strong>How far back can it go?</strong>
+Years. Use <strong>Only posts older than</strong> to start at any date. On a few old pages Facebook itself stops serving posts before a certain date for logged-out visitors; the run then ends with what is available.</p>
+<p><strong>Can I scrape groups, single posts, comments or Marketplace?</strong>
+Not with this Actor — it collects a page&#39;s or profile&#39;s posts. Single post links and group links are rejected in the input form. Each post includes <code>feedbackId</code>, which comment scrapers can use.</p>
+<p><strong>Why is a residential proxy required?</strong>
+Facebook refuses post requests from datacenter IPs. Residential proxy is the default; you don&#39;t need to change anything.</p>
+<p><strong>Why did a page return fewer posts than I asked for?</strong>
+The page has fewer public posts in that date range, or some posts are visible only to logged-in users or specific countries.</p>
+<p><strong>How do relative dates work?</strong>
+They count back from the moment the run starts, in UTC. Months and years are calendar months and years; days, weeks and hours are exact. <code>3 months</code> in <strong>Only posts newer than</strong> means &quot;posts from the last 3 months&quot;. <code>1 year</code> in <strong>Only posts older than</strong> means &quot;posts published more than a year ago&quot;. Use both to get a window — e.g. newer than <code>2 years</code> and older than <code>1 year</code> returns the posts of the year before last. The newer-than period must be the longer one; a reversed range stops the run with a message explaining the fix.</p>
+<h2>🔗 Integrations</h2>
+<p>Export to Google Sheets, Airtable or a database, trigger runs on a schedule, and connect the output to Make, Zapier, n8n or your own code through the <a href="https://docs.apify.com/api/v2">Apify API</a>.</p>
+<h2>Support</h2>
+<ul>
+<li>🌐 Website: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 Email: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 GitHub: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 LinkedIn: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 X: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 Facebook: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 TikTok: <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li>Collects <strong>public data only</strong> — what any logged-out visitor can see.</li>
+<li>Respects the source&#39;s rate limits; you are responsible for using the data in line with Facebook&#39;s terms and the laws that apply to you (e.g. GDPR).</li>
+<li>The Actor stores no personal information beyond the run&#39;s own dataset, which you control.</li>
+<li>Suitable for commercial use.</li>
+<li>No affiliation with or endorsement by Facebook or Meta Platforms, Inc. is implied.</li>
+</ul>
+<p><em>Facebook Posts Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
