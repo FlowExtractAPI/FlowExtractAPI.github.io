@@ -98,7 +98,7 @@ List of Facebook URLs to scrape comments from. You can mix different content typ
 }
 ```
 
-#### `commentsIntentToken` (String  optional)
+#### `commentsSortOrder` (String  optional)
 
 Controls how Facebook orders the comments returned. Mirrors the sort options in the Facebook UI.
 
@@ -109,6 +109,8 @@ Controls how Facebook orders the comments returned. Mirrors the sort options in 
 | `RANKED_UNFILTERED_CHRONOLOGICAL_REPLIES_INTENT_V1` | 💬 All Comments | All comments including lower-engagement ones |
 
 > 💡 **Tip:** Use **Most Relevant** for engagement analysis. Use **Newest** for real-time monitoring. Use **All Comments** for the most complete dataset with no filtering.
+
+> ℹ️ This field was previously called `commentsIntentToken`. That name is still accepted, so existing tasks and API integrations keep working unchanged.
 
 ---
 

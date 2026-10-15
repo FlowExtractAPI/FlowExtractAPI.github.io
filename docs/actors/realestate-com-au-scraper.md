@@ -16,7 +16,7 @@ Common use cases:
 - **Sold-price analysis** — collect recent sales with their sold date and sold price for a suburb or region.
 - **Rental market tracking** — weekly rents, bond amounts, and availability dates for any area or hand-drawn map region.
 - **Competitor monitoring** — agencies tracking what's new, under offer, or sold in their patch.
-- **Lead generation** — agent and agency contact details, profile links, and photos attached to active listings.
+- **Lead generation** — agent and agency contact details, profile links, and photos attached to active listings. Need a full agent directory instead? Use the **[realestate.com.au Agents & Agencies Scraper](https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63)**.
 
 ---
 
@@ -239,6 +239,7 @@ Proxy selection is automatic based on your Apify account tier — there's no pro
 
 ## 🌟 Related Actors
 
+- **[realestate.com.au Agents & Agencies Scraper](https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63)** — the agents and agencies behind these listings: names, emails, phones, listing counts, median sold price and active suburbs, by suburb, postcode or search URL
 - **[Idealista API Scraper](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)** — Property listings from Idealista (Spain, Portugal, Italy)
 
 ---

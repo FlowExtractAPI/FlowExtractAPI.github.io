@@ -895,7 +895,7 @@
     },
     {
       "slug": "google-flights-scraper",
-      "name": "Google Flights Scraper - Free Live Fares & Price Insights",
+      "name": "Google Flights Scraper ✈️ Booking Links, Price Graph & Explore",
       "category": "tools",
       "subcategory": "travel",
       "status": "public",
@@ -915,13 +915,13 @@
     },
     {
       "slug": "kleinanzeigen-scraper",
-      "name": "Kleinanzeigen.de Scraper",
+      "name": "Kleinanzeigen Scraper 🏷️ Business Phones, Views & No 10k Limit",
       "category": "real-estate",
       "subcategory": "listings",
       "status": "public",
       "apifyUrl": "https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63",
       "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-kEtLjnlKyGceiYef0-7V1th2hNbj-6912ea28-26c7-4ad3-84c0-282752ac6971.png",
-      "description": "🏷️ Free Kleinanzeigen.de scraper. Paste any search link with all its filters (cars, real estate, electronics…) or type keywords + city. Get price, location, photos, category details and optional seller info: name, rating, views and business phone numbers.",
+      "description": "🏷️ Scrape Kleinanzeigen.de from any search link with all its filters (cars, real estate, electronics…) or by keyword + city. Get price, location, photos, category details and optional seller info: rating, active listings, views and business phone numbers.",
       "metaTitle": "Kleinanzeigen Scraper — Free Ads, Cars & Seller Data",
       "metaDescription": "Free Kleinanzeigen.de scraper for any search link or keyword with all filters. Get price, location, photos, car & property details and seller phone numbers.",
       "featured": false,
@@ -935,13 +935,13 @@
     },
     {
       "slug": "facebook-posts-scraper",
-      "name": "📝 Facebook Posts Scraper",
+      "name": "📝 Facebook Posts Pages, Groups & Profiles & NO COOKIES",
       "category": "social",
       "subcategory": "facebook",
       "status": "public",
       "apifyUrl": "https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63",
       "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-xHzwPhUZLnsdDbq1o-zN9Rm2eTPY-Untitled.png",
-      "description": "📝 Facebook posts scraper for public pages and profiles — no login or cookies. Get text, date, reactions by type, comments, shares, video views, photos, videos and links. Go back years with date filters; large jobs run in parallel for speed.",
+      "description": "📝 Scrape posts from public Facebook pages, profiles and public groups — no login or cookies. Get text, date, author, reactions by type, comments, shares, video views, photos, videos and links. Go back years on pages; large jobs run in parallel.",
       "metaTitle": "Facebook Posts Scraper — Pages & Profiles, No Login",
       "metaDescription": "Scrape posts from public Facebook pages and profiles without login: text, date, reactions, comments, shares, video views and media. Go back years.",
       "featured": false,
@@ -949,6 +949,86 @@
       "source": {
         "dir": "Social-Media/facebook-posts-scraper",
         "readme": "Social-Media/facebook-posts-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
+    },
+    {
+      "slug": "instagram-story-downloader",
+      "name": "Instagram Story Downloader 📥 Highlights to MP4 & JPG, No Login",
+      "category": "downloads",
+      "subcategory": "instagram",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/instagram-story-downloader?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YZzbOOwcfIOlUCer2-dWpGN9NRaj-2b167bd1-7797-4b3c-9849-eada0d17fd52.png",
+      "description": "Download Instagram Story Highlights from public profiles — every video and photo saved as a permanent MP4/JPG file, plus titles, timestamps, links and whether a 24-hour story is live. No login, no cookies.",
+      "metaTitle": "Instagram Story Downloader - Highlights to MP4, No Login",
+      "metaDescription": "Download Instagram Story Highlights from any public profile as MP4 and JPG files, with titles, dates and links. No login or cookies required.",
+      "featured": false,
+      "docsPath": "instagram-story-downloader",
+      "source": {
+        "dir": "Download/instagram-story-downloader",
+        "readme": "Download/instagram-story-downloader/README.md",
+        "exists": true
+      },
+      "onSite": true
+    },
+    {
+      "slug": "realestate-com-au-agents-scraper",
+      "name": "realestate.com.au Agents & Agencies Scraper",
+      "category": "real-estate",
+      "subcategory": "listings",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YM3c11SKnSWkdd8qH-sgyCrwsyhb-download.png",
+      "description": "🧑‍💼 Scrape realestate.com.au real estate agents & agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price & active suburbs. Built for lead lists & market research.",
+      "metaTitle": "realestate.com.au Agents & Agencies Scraper",
+      "metaDescription": "Scrape realestate.com.au agents and agencies by suburb, postcode or URL: names, emails, phones, agency, listing counts, median sold price and suburbs.",
+      "featured": false,
+      "docsPath": "realestate-com-au-agents-scraper",
+      "source": {
+        "dir": "Real-Estate/realestate-com-au-agents-scraper",
+        "readme": "Real-Estate/realestate-com-au-agents-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
+    },
+    {
+      "slug": "realcommercial-com-au-scraper",
+      "name": "realcommercial.com.au Scraper 🏢 Sold, Leased & Agent Phones",
+      "category": "real-estate",
+      "subcategory": "listings",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/realcommercial-com-au-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-uXGhGaBBmxehCgs1f-oM9V8J5DWZ-download.png",
+      "description": "🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor & land area, zoning, photos, brochure PDFs, agent & agency phones. Newest first.",
+      "metaTitle": "realcommercial.com.au Scraper — Commercial Property Data",
+      "metaDescription": "Scrape realcommercial.com.au listings for sale, lease, sold & leased: price, address, floor & land area, photos, PDFs and agent phones. Newest first.",
+      "featured": false,
+      "docsPath": "realcommercial-com-au-scraper",
+      "source": {
+        "dir": "Real-Estate/realcommercial-com-au-scraper",
+        "readme": "Real-Estate/realcommercial-com-au-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
+    },
+    {
+      "slug": "facebook-marketplace-scraper",
+      "name": "Facebook Marketplace Scraper 🛒 Sellers, Vehicles & Rentals",
+      "category": "social",
+      "subcategory": "facebook",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/facebook-marketplace-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-UaYG3w44Y1WN4jAuI-eaTCgwdVkk-images.png",
+      "description": "Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.",
+      "metaTitle": "Facebook Marketplace Scraper — Listings & Sellers, No Login",
+      "metaDescription": "Scrape Facebook Marketplace by keyword, category or city without login: prices, sellers, photos, descriptions, vehicle and rental data. Export CSV or JSON.",
+      "featured": false,
+      "docsPath": "facebook-marketplace-scraper",
+      "source": {
+        "dir": "Social-Media/facebook-marketplace-scraper",
+        "readme": "Social-Media/facebook-marketplace-scraper/README.md",
         "exists": true
       },
       "onSite": true

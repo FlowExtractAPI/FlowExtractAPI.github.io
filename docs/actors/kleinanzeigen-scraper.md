@@ -1,13 +1,13 @@
-# 🏷️ Kleinanzeigen.de Scraper
+# Kleinanzeigen Scraper 🏷️ Business Phones, Views & No 10k Limit
 
-**Free Kleinanzeigen scraper.** Paste any kleinanzeigen.de search link — with every filter you set on the site — or just type keywords and a city. Get clean, structured listings: price, location with coordinates, photos, category details (make, mileage, rooms, size, condition…) and, optionally, the seller's name, rating, member-since date, view count and — for businesses — phone number and imprint.
+Paste any kleinanzeigen.de search link — with every filter you set on the site — or just type keywords and a city. Get clean, structured listings: price, location with coordinates, photos, category details (make, mileage, rooms, size, condition…) and, optionally, the seller's name, rating, member-since date, view count and — for businesses — phone number and imprint.
 
 - ✅ **Every category and every filter**: cars, real estate, electronics, furniture, jobs, pets… Whatever you filter on the website is applied exactly.
 - ✅ **Two ways to start**: paste links, or search by keyword + category + location + radius + price and more.
 - ✅ **No 10,000 limit**: large searches (all iPhones, all used cars…) are collected completely — exact totals, no duplicates.
 - ✅ **Fast**: 100 listings per page, hundreds of listings in seconds.
 - ✅ **Seller & contact data** on request, including business phone numbers.
-- ✅ **Free** — you only pay Apify platform usage (typically a few cents per thousand listings).
+- ✅ **Simple pricing** — pay per listing saved; no compute or proxy costs on your side.
 
 ---
 
@@ -198,18 +198,19 @@ Export as JSON, CSV, Excel, XML or HTML, or pull it through the Apify API, webho
 
 ---
 
-## 💰 Cost
+## 💰 Pricing
 
-The Actor itself is **free**. You pay only Apify platform usage, measured in our test runs:
+Pay per result — Apify platform usage (compute, proxy) is included, so the price below is all you pay.
 
-| Run | Listings | Time | Platform cost |
-|---|---|---|---|
-| 2 searches, no details | 170 | 4 s | ≈ $0.001 |
-| 3 links + 1 keyword, with details | 91 | 9 s | ≈ $0.001 |
-| 1 search, with details (busy period) | 120 | 17 s | ≈ $0.016 |
-| 1 large search, complete | 13,856 | 4 min | ≈ $0.06 |
+| Event | Price | Charged when |
+|---|---|---|
+| Listing saved | **$1.00 per 1,000** listings | each listing added to your dataset |
+| Full details (add-on) | **+$1.00 per 1,000** listings | only with `includeDetails`, only for listings whose details were retrieved |
 
-The Apify free plan's monthly credit covers tens of thousands of listings.
+- **Example:** 1,000 listings = $1.00 · with full details = $2.00.
+- **Duplicates are never charged** — a listing found twice in one run is saved and billed once.
+- **You stay in control:** set *Maximum cost per run* in the run options; the Actor stops cleanly when it is reached and keeps everything already saved.
+- Empty input or unsupported links never cost anything — the run ends with a short guidance item.
 
 ---
 

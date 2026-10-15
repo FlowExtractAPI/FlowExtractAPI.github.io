@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T16:52:44.823Z",
+  "generatedAt": "2026-10-15T17:37:25.021Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -112,8 +112,8 @@
       "readme": "Real-Estate/zimmo-scraper/README.md"
     },
     "facebook-comment-scraper": {
-      "hash": "3762b3905eb80409f272171412948ae69fa5618d16018c1c3bdf3f483dc80278",
-      "syncedAt": "2026-09-29T20:16:43.126Z",
+      "hash": "97d446120f053f02fa80a8a75dc92a6bc6ef6346f5bb5b244a2a9bc49e34c697",
+      "syncedAt": "2026-10-15T17:37:24.642Z",
       "readme": "Social-Media/facebook-comment-scraper/README.md"
     },
     "youtube-comments-scraper": {
@@ -172,8 +172,8 @@
       "readme": "Social-Media/instagram-comment-scraper/README.md"
     },
     "realestate-com-au-scraper": {
-      "hash": "6c22da8015f59e10e4cb77fcac9e9334999c7115f4a25835df7c689da2c6cc31",
-      "syncedAt": "2026-09-29T20:16:43.275Z",
+      "hash": "64dfef3a381b2b6565b0944495bb98f4909b19c361f740caa2bb3e515d19073c",
+      "syncedAt": "2026-10-15T17:37:24.731Z",
       "readme": "Real-Estate/Realestate.com.au/README.md"
     },
     "immobilienscout24-scraper": {
@@ -222,19 +222,39 @@
       "readme": "Social-Media/youtube-shorts-trend-finder/README.md"
     },
     "google-flights-scraper": {
-      "hash": "97f752f34f5947dc6d35228a774093e49858d3caa1a0efb447d776ad30dbf388",
-      "syncedAt": "2026-09-29T21:49:44.867Z",
+      "hash": "2ba0dcac06bb22da2143cd86ba7ed0db49cfe54097506bf081c4dbbc99c32ec5",
+      "syncedAt": "2026-10-15T17:37:24.811Z",
       "readme": "Travel/google-flights-scraper/README.md"
     },
     "kleinanzeigen-scraper": {
-      "hash": "4dec8a3f0390a0b473f5edc3f0855473aba33e89a06b5f62d9ae66f7b889aae4",
-      "syncedAt": "2026-10-01T11:04:48.387Z",
+      "hash": "1f88ab2b9691d73913f015c04ab6c829f347aff7dafd3c2ae8b07c88ac4baa1a",
+      "syncedAt": "2026-10-15T17:37:24.825Z",
       "readme": "Real-Estate/kleinanzeigen-scraper/README.md"
     },
     "facebook-posts-scraper": {
-      "hash": "b756fd682a933031ce42b838560fac2106a719cf661501d1b9c7e6fbab6f3a12",
-      "syncedAt": "2026-10-01T16:52:44.665Z",
+      "hash": "8853d5f71ac16ad4a7cd9675168ccc82f1146fb7e614ce5104182c4c700a003a",
+      "syncedAt": "2026-10-15T17:37:24.838Z",
       "readme": "Social-Media/facebook-posts-scraper/README.md"
+    },
+    "instagram-story-downloader": {
+      "hash": "2b1fa9b561c24e6b7cdbd1c6deca525c66bb617b422497c39fafbe5f55476e17",
+      "syncedAt": "2026-10-15T17:37:24.849Z",
+      "readme": "Download/instagram-story-downloader/README.md"
+    },
+    "realestate-com-au-agents-scraper": {
+      "hash": "3bd171e39bc25681f075a7ab40ae56ca7e8462082d66db5b7502b246781a69b9",
+      "syncedAt": "2026-10-15T17:37:24.863Z",
+      "readme": "Real-Estate/realestate-com-au-agents-scraper/README.md"
+    },
+    "realcommercial-com-au-scraper": {
+      "hash": "0c46d977678008f1de8e68cdb492829b259c4999be60ab2f8b103d1a3f0d1460",
+      "syncedAt": "2026-10-15T17:37:24.876Z",
+      "readme": "Real-Estate/realcommercial-com-au-scraper/README.md"
+    },
+    "facebook-marketplace-scraper": {
+      "hash": "6216826c7ea9c231e1b943e78b0d004ec89fa6af2560af03ba442249bdb9b6aa",
+      "syncedAt": "2026-10-15T17:37:24.890Z",
+      "readme": "Social-Media/facebook-marketplace-scraper/README.md"
     }
   }
 }

@@ -119,7 +119,6 @@ Google shows two tabs, and they are **different lists**:
 | What | Google's recommended flights | Google's full cheapest list, including separate-ticket and mixed-airline combinations |
 | Typical size | 50–300 flights | about 200 flights (Google stops at 300) |
 | Speed | 1–2 seconds | 10–40 seconds (needs a real browser) |
-| Cost | tiny | about $0.01–0.02 of platform usage per search |
 
 ---
 
@@ -245,7 +244,7 @@ What Google Flights shows when you click a flight or open its price graph. All a
 | `returnFlightsPerOutbound` | 1–100 | 10 | How many return flights to keep per outbound. |
 | `priceGraphDays` | 0–330 days | 0 | Google's **price graph**: the lowest fare for each departure date from your departure date on, one row per day. Round trips keep their trip length. One way and round trip. |
 
-Measured on the platform: booking options for 3 flights in 6–23 seconds, return flights for 3 outbounds in 4 seconds, a 90-day price graph in 7 seconds, an Explore search in 8–12 seconds. Each adds well under a cent of platform usage.
+Measured on the platform: booking options for 3 flights in 6–23 seconds, return flights for 3 outbounds in 4 seconds, a 90-day price graph in 7 seconds, an Explore search in 8–12 seconds.
 
 How they work, and one limit to know: booking options, the price graph and Explore are requests Google answers on some connections and rejects on others. The Actor retries each one on up to 10 fresh residential IPs. If none answers, the flights are still delivered and the row says so (`bookingOptionsError`, or a `price_graph_failed` row).
 

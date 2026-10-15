@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="docs.css">
 
     <!-- Structured data: public fields only, no private stats -->
-    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Flights Scraper - Free Live Fares & Price Insights","description":"Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/google-flights-scraper.html","sameAs":"https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png"}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Google Flights Scraper ✈️ Booking Links, Price Graph & Explore","description":"Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/google-flights-scraper.html","sameAs":"https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png"}</script>
 </head>
 <body>
     <!-- Navigation -->
@@ -54,10 +54,10 @@
     <!-- Actor header band — baked at build time -->
     <header class="actor-hero">
         <div class="container actor-hero-inner">
-            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png" alt="Google Flights Scraper - Free Live Fares &amp; Price Insights" width="110" height="110"></div>
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png" alt="Google Flights Scraper ✈️ Booking Links, Price Graph &amp; Explore" width="110" height="110"></div>
             <div class="actor-hero-text">
                 <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
-                <h1 class="actor-hero-title">Google Flights Scraper - Free Live Fares &amp; Price Insights</h1>
+                <h1 class="actor-hero-title">Google Flights Scraper ✈️ Booking Links, Price Graph &amp; Explore</h1>
                 <p class="actor-hero-desc">Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.</p>
                 <a href="https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
             </div>
@@ -207,11 +207,6 @@
 <td>Speed</td>
 <td>1–2 seconds</td>
 <td>10–40 seconds (needs a real browser)</td>
-</tr>
-<tr>
-<td>Cost</td>
-<td>tiny</td>
-<td>about $0.01–0.02 of platform usage per search</td>
 </tr>
 </tbody></table>
 <hr>
@@ -550,7 +545,7 @@
 <td>Google&#39;s <strong>price graph</strong>: the lowest fare for each departure date from your departure date on, one row per day. Round trips keep their trip length. One way and round trip.</td>
 </tr>
 </tbody></table>
-<p>Measured on the platform: booking options for 3 flights in 6–23 seconds, return flights for 3 outbounds in 4 seconds, a 90-day price graph in 7 seconds, an Explore search in 8–12 seconds. Each adds well under a cent of platform usage.</p>
+<p>Measured on the platform: booking options for 3 flights in 6–23 seconds, return flights for 3 outbounds in 4 seconds, a 90-day price graph in 7 seconds, an Explore search in 8–12 seconds.</p>
 <p>How they work, and one limit to know: booking options, the price graph and Explore are requests Google answers on some connections and rejects on others. The Actor retries each one on up to 10 fresh residential IPs. If none answers, the flights are still delivered and the row says so (<code>bookingOptionsError</code>, or a <code>price_graph_failed</code> row).</p>
 <h3>🌍 Currency, market and language</h3>
 <table>

@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Facebook Marketplace Scraper — Listings &amp; Sellers, No Login | FlowExtract API</title>
+    <meta name="title" content="Facebook Marketplace Scraper — Listings &amp; Sellers, No Login | FlowExtract API">
+    <meta name="description" content="Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/facebook-marketplace-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Facebook Marketplace Scraper — Listings &amp; Sellers, No Login | FlowExtract API">
+    <meta property="og:description" content="Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/facebook-marketplace-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-UaYG3w44Y1WN4jAuI-eaTCgwdVkk-images.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facebook Marketplace Scraper — Listings &amp; Sellers, No Login | FlowExtract API">
+    <meta name="twitter:description" content="Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-UaYG3w44Y1WN4jAuI-eaTCgwdVkk-images.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Facebook Marketplace Scraper 🛒 Sellers, Vehicles & Rentals","description":"Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/facebook-marketplace-scraper.html","sameAs":"https://apify.com/dz_omar/facebook-marketplace-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-UaYG3w44Y1WN4jAuI-eaTCgwdVkk-images.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-UaYG3w44Y1WN4jAuI-eaTCgwdVkk-images.png" alt="Facebook Marketplace Scraper 🛒 Sellers, Vehicles &amp; Rentals" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Social Media</span>
+                <h1 class="actor-hero-title">Facebook Marketplace Scraper 🛒 Sellers, Vehicles &amp; Rentals</h1>
+                <p class="actor-hero-desc">Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.</p>
+                <a href="https://apify.com/dz_omar/facebook-marketplace-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🛒 Facebook Marketplace Scraper — Listings, Sellers, Vehicles &amp; Rentals</h1>
+<p>Scrape <strong>Facebook Marketplace</strong> listings by keyword, category, location or link — <strong>no login, no cookies, no Facebook account</strong>. Every listing comes with its title, price, seller, city, photo and link; switch on <strong>full details</strong> to also get the description, condition, every photo, exact coordinates, the listing date, the seller&#39;s profile, and clean vehicle and rental fields.</p>
+<h2>🛒 What is Facebook Marketplace Scraper?</h2>
+<p>Facebook Marketplace Scraper turns Marketplace searches into a clean, flat dataset you can download as JSON, CSV or Excel, or send to Google Sheets, a database or your own app.</p>
+<ul>
+<li>🔍 <strong>Search by keyword</strong> — <code>iphone 13</code>, <code>sofa</code>, <code>honda civic</code> — exactly as you would on Facebook.</li>
+<li>📍 <strong>Any city in the world</strong> — type <code>Austin, TX</code>, <code>Toronto</code>, <code>Lyon, France</code> or coordinates. No Facebook location IDs to look up.</li>
+<li>🗂️ <strong>Browse categories</strong> — vehicles, property rentals, electronics, furniture, free stuff and more.</li>
+<li>🔗 <strong>Paste Marketplace links</strong> — a search you set up on Facebook keeps all its filters; listing links return the full listing.</li>
+<li>🎛️ <strong>Every Marketplace filter</strong> — price range, condition, date listed, delivery method, sold listings, exact match, radius, sort order.</li>
+<li>📏 <strong>Stay inside the radius</strong> — Facebook keeps adding listings from far away when local ones run out; one switch keeps only what is really near you.</li>
+<li>👤 <strong>Seller on every listing</strong> — name and ID even without details; join date, rating and picture with details.</li>
+<li>🚗 <strong>Vehicle fields</strong> — year, make, model, trim, mileage, transmission, fuel, colours, owners, title status.</li>
+<li>🏠 <strong>Rental fields</strong> — bedrooms, bathrooms, unit and building features, availability, postal code, walk/transit/bike scores.</li>
+<li>📚 <strong>Deep results</strong> — hundreds or thousands of listings per search, not just the first page.</li>
+</ul>
+<h2>📊 What Facebook Marketplace data can I extract?</h2>
+<p><strong>Every listing:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>id</code>, <code>url</code></td>
+<td>Listing ID and link</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td>The listing title</td>
+</tr>
+<tr>
+<td><code>price</code>, <code>price_formatted</code>, <code>currency</code></td>
+<td>Price as a number and as shown on Facebook (currency with details)</td>
+</tr>
+<tr>
+<td><code>original_price</code>, <code>original_price_formatted</code></td>
+<td>The struck-through price when the seller lowered it</td>
+</tr>
+<tr>
+<td><code>is_sold</code>, <code>is_pending</code></td>
+<td>Availability</td>
+</tr>
+<tr>
+<td><code>city</code>, <code>state</code>, <code>location_name</code></td>
+<td>Where the item is</td>
+</tr>
+<tr>
+<td><code>photo_url</code>, <code>has_video</code></td>
+<td>Main photo; whether the listing has a video</td>
+</tr>
+<tr>
+<td><code>delivery_types</code></td>
+<td><code>IN_PERSON</code>, <code>DOOR_PICKUP</code>, <code>SHIPPING</code>, <code>PUBLIC_MEETUP</code></td>
+</tr>
+<tr>
+<td><code>seller_id</code>, <code>seller_name</code></td>
+<td>Who is selling</td>
+</tr>
+<tr>
+<td><code>category_id</code></td>
+<td>Marketplace category</td>
+</tr>
+<tr>
+<td><code>search</code>, <code>search_query</code>, <code>search_category</code>, <code>search_location</code>, <code>position</code></td>
+<td>Which search found it and at what rank</td>
+</tr>
+<tr>
+<td><code>distance_km</code></td>
+<td>Approximate distance from your location (with <strong>Stay inside the radius</strong>)</td>
+</tr>
+<tr>
+<td><code>scraped_at</code>, <code>source_url</code></td>
+<td>When the row was collected and the search it came from</td>
+</tr>
+</tbody></table>
+<p><strong>With &quot;Include full listing details&quot;:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>description</code></td>
+<td>The seller&#39;s full description</td>
+</tr>
+<tr>
+<td><code>condition</code>, <code>condition_code</code>, <code>attributes</code></td>
+<td>Condition and every other attribute Facebook shows (size, brand, …)</td>
+</tr>
+<tr>
+<td><code>photos</code>, <code>photo_count</code></td>
+<td>Every photo of the listing in full size</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>When the listing was posted</td>
+</tr>
+<tr>
+<td><code>latitude</code>, <code>longitude</code>, <code>location_text</code></td>
+<td>Exact map position of the listing</td>
+</tr>
+<tr>
+<td><code>category_name</code>, <code>category_slug</code></td>
+<td>Category in words</td>
+</tr>
+<tr>
+<td><code>is_shipping_offered</code>, <code>shipping_price_formatted</code>, <code>listing_inventory_type</code></td>
+<td>Shipping and stock</td>
+</tr>
+<tr>
+<td><code>seller_joined_at</code>, <code>seller_rating</code>, <code>seller_rating_count</code>, <code>seller_profile_picture</code>, <code>is_business_seller</code></td>
+<td>Seller profile</td>
+</tr>
+<tr>
+<td><code>vehicle_year</code> … <code>vehicle_seller_type</code></td>
+<td>Vehicle facts (vehicle listings)</td>
+</tr>
+<tr>
+<td><code>property_bedrooms</code> … <code>property_bike_score</code></td>
+<td>Rental facts (rental listings)</td>
+</tr>
+</tbody></table>
+<h2>🎯 Use cases</h2>
+<ul>
+<li><strong>Resellers and flippers</strong> — track underpriced items in your area the moment they&#39;re listed (sort by newest, last 24 hours).</li>
+<li><strong>Car dealers and buyers</strong> — collect private-seller vehicles with year, make, model, mileage and price for a whole metro area.</li>
+<li><strong>Price research</strong> — build a price history for any product in any city, with condition and date listed.</li>
+<li><strong>Rental market analysis</strong> — rents with bedrooms, bathrooms, amenities and postal codes, city by city.</li>
+<li><strong>Lead generation</strong> — find active local sellers in a niche (furniture, appliances, equipment).</li>
+<li><strong>Market coverage</strong> — compare supply and prices across cities and countries with one dataset.</li>
+</ul>
+<h2>🚀 How do I use Facebook Marketplace Scraper?</h2>
+<ol>
+<li>Type one or more <strong>keywords</strong> and a <strong>location</strong> (or pick <strong>categories</strong>, or paste <strong>Marketplace links</strong>).</li>
+<li>Set any <strong>filters</strong> and the <strong>max listings per search</strong>.</li>
+<li>Turn on <strong>Include full listing details</strong> if you need descriptions, all photos and seller profiles.</li>
+<li>Click <strong>Start</strong> and download your data as JSON, CSV, Excel or HTML.</li>
+</ol>
+<h2>➡️ Input</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>What it does</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🔍 <strong>Keywords</strong></td>
+<td>One search per keyword.</td>
+<td><code>iphone 13</code> (example)</td>
+</tr>
+<tr>
+<td>📍 <strong>Location</strong></td>
+<td>Any city, written like on a map (<code>Austin, TX</code>, <code>Manchester, UK</code>) or <code>lat,lng</code>. Used for keywords and categories.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>📏 <strong>Search radius (km)</strong></td>
+<td>How far from the location to look.</td>
+<td>Facebook&#39;s default (65 km)</td>
+</tr>
+<tr>
+<td><strong>Stay inside the radius</strong></td>
+<td>Drop listings from cities beyond the radius and stop when only far-away results are left.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>🗂️ <strong>Categories</strong></td>
+<td>With keywords: search inside each category. Without: browse the category near the location.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🔗 <strong>Marketplace links</strong></td>
+<td>Search, category or listing links from Facebook. Links keep their own filters and location.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>↕️ <strong>Sort by</strong></td>
+<td>Best match, newest, price low→high / high→low, distance.</td>
+<td>Best match</td>
+</tr>
+<tr>
+<td>💲 <strong>Min / max price</strong></td>
+<td>In the location&#39;s currency.</td>
+<td>—</td>
+</tr>
+<tr>
+<td>🕒 <strong>Date listed</strong></td>
+<td>Last 24 hours, 7 days or 30 days.</td>
+<td>Any time</td>
+</tr>
+<tr>
+<td>🏷️ <strong>Condition</strong></td>
+<td>New, used – like new, good, fair.</td>
+<td>Any</td>
+</tr>
+<tr>
+<td>🚚 <strong>Delivery method</strong></td>
+<td>Local pickup or shipping.</td>
+<td>All</td>
+</tr>
+<tr>
+<td><strong>Include sold listings</strong></td>
+<td>Also return listings marked as sold.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td><strong>Exact keyword match only</strong></td>
+<td>Titles containing the keyword exactly.</td>
+<td>Off</td>
+</tr>
+<tr>
+<td>🔢 <strong>Max listings per search</strong></td>
+<td>Per keyword, category or link. <code>0</code> = everything.</td>
+<td>100</td>
+</tr>
+<tr>
+<td>🔢 <strong>Max listings in total</strong></td>
+<td>Across the whole run.</td>
+<td>No limit</td>
+</tr>
+<tr>
+<td>📄 <strong>Include full listing details</strong></td>
+<td>Description, condition, all photos, exact location, date, seller profile, vehicle and rental fields.</td>
+<td>Off</td>
+</tr>
+</tbody></table>
+<p>Example input:</p>
+<pre><code class="language-json">{
+    &quot;searchQueries&quot;: [&quot;iphone 13&quot;, &quot;macbook&quot;],
+    &quot;location&quot;: &quot;Chicago, IL&quot;,
+    &quot;radiusKm&quot;: 40,
+    &quot;maxPrice&quot;: 800,
+    &quot;sortBy&quot;: &quot;creation_time_descend&quot;,
+    &quot;daysSinceListed&quot;: &quot;7&quot;,
+    &quot;maxResultsPerSearch&quot;: 200,
+    &quot;includeDetails&quot;: true
+}
+</code></pre>
+<blockquote>
+<p>Facebook does not combine a <strong>price</strong> sort with a <strong>Date listed</strong> filter (it returns nothing). When you set both, the date filter is kept and results come newest first — the run log says so.</p>
+</blockquote>
+<h2>⬅️ Output</h2>
+<p>Results appear in the <strong>Listings</strong> and <strong>Listings with details</strong> tables and can be exported in any format.</p>
+<h3>📘 Example of extracted Facebook Marketplace data</h3>
+<p>A vehicle listing with full details (seller anonymised):</p>
+<pre><code class="language-json">{
+    &quot;id&quot;: &quot;1634836218426989&quot;,
+    &quot;url&quot;: &quot;https://www.facebook.com/marketplace/item/1634836218426989/&quot;,
+    &quot;title&quot;: &quot;2012 Infiniti G37 · X&quot;,
+    &quot;price&quot;: 3500,
+    &quot;price_formatted&quot;: &quot;$3,500&quot;,
+    &quot;currency&quot;: &quot;USD&quot;,
+    &quot;is_sold&quot;: false,
+    &quot;city&quot;: &quot;Miami&quot;,
+    &quot;state&quot;: &quot;FL&quot;,
+    &quot;location_name&quot;: &quot;Miami, Florida&quot;,
+    &quot;photo_url&quot;: &quot;https://scontent.xx.fbcdn.net/…&quot;,
+    &quot;has_video&quot;: true,
+    &quot;delivery_types&quot;: [&quot;IN_PERSON&quot;],
+    &quot;seller_id&quot;: &quot;pfbid02AbCdEf…&quot;,
+    &quot;seller_name&quot;: &quot;Alex M.&quot;,
+    &quot;search&quot;: &quot;Vehicles&quot;,
+    &quot;search_location&quot;: &quot;Miami, Florida, United States&quot;,
+    &quot;description&quot;: &quot;El vehículo no tiene ningún problema mecánico funciona al 100…&quot;,
+    &quot;created_at&quot;: &quot;2026-10-13T15:20:48.000Z&quot;,
+    &quot;latitude&quot;: 25.776672,
+    &quot;longitude&quot;: -80.194702,
+    &quot;photos&quot;: [&quot;https://scontent.xx.fbcdn.net/…&quot;, &quot;https://scontent.xx.fbcdn.net/…&quot;, &quot;…&quot;],
+    &quot;photo_count&quot;: 9,
+    &quot;seller_joined_at&quot;: &quot;2025-03-15T20:18:43.000Z&quot;,
+    &quot;seller_rating&quot;: 5,
+    &quot;seller_rating_count&quot;: 1,
+    &quot;vehicle_year&quot;: 2012,
+    &quot;vehicle_make&quot;: &quot;Infiniti&quot;,
+    &quot;vehicle_model&quot;: &quot;g37&quot;,
+    &quot;vehicle_trim&quot;: &quot;X&quot;,
+    &quot;vehicle_mileage&quot;: 129000,
+    &quot;vehicle_mileage_unit&quot;: &quot;MILES&quot;,
+    &quot;vehicle_transmission&quot;: &quot;AUTOMATIC&quot;,
+    &quot;vehicle_fuel_type&quot;: &quot;GASOLINE&quot;,
+    &quot;vehicle_exterior_color&quot;: &quot;black&quot;,
+    &quot;vehicle_owners&quot;: &quot;TWO&quot;,
+    &quot;vehicle_is_paid_off&quot;: &quot;IS_PAID_OFF&quot;,
+    &quot;vehicle_seller_type&quot;: &quot;PRIVATE_SELLER&quot;,
+    &quot;details_fetched&quot;: true
+}
+</code></pre>
+<p>A rental listing adds fields like these:</p>
+<pre><code class="language-json">{
+    &quot;title&quot;: &quot;5 Beds 4 Baths - House&quot;,
+    &quot;price_formatted&quot;: &quot;$4,500&quot;,
+    &quot;property_bedrooms&quot;: 5,
+    &quot;property_bathrooms&quot;: 4,
+    &quot;property_unit_details&quot;: [&quot;House&quot;, &quot;5 beds · 4 baths&quot;, &quot;Central heating&quot;, &quot;Laundry available&quot;, &quot;Parking available&quot;, &quot;1 Year Lease&quot;, &quot;Dishwasher&quot;],
+    &quot;property_building_details&quot;: [&quot;Pet park&quot;, &quot;Roof deck&quot;],
+    &quot;property_availability&quot;: &quot;Listed 4 hours ago · Available 2026/10/14&quot;,
+    &quot;property_postal_code&quot;: &quot;98001-1203&quot;,
+    &quot;property_walk_score&quot;: 5,
+    &quot;property_transit_score&quot;: 11,
+    &quot;property_bike_score&quot;: 9
+}
+</code></pre>
+<h2>💰 How much does it cost to scrape Facebook Marketplace?</h2>
+<p>You pay only for what you get, per listing delivered. The lower your Apify plan, the more each listing costs:</p>
+<table>
+<thead>
+<tr>
+<th>Apify plan</th>
+<th>Free</th>
+<th>Bronze</th>
+<th>Silver</th>
+<th>Gold</th>
+<th>Platinum</th>
+<th>Diamond</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Per 1,000 listings</td>
+<td>$0.80</td>
+<td>$0.70</td>
+<td>$0.60</td>
+<td>$0.50</td>
+<td>$0.50</td>
+<td>$0.50</td>
+</tr>
+<tr>
+<td>+ full details, per 1,000</td>
+<td>$1.00</td>
+<td>$0.90</td>
+<td>$0.80</td>
+<td>$0.70</td>
+<td>$0.70</td>
+<td>$0.70</td>
+</tr>
+</tbody></table>
+<p>Plus <strong>$0.001 per search</strong> (keyword, category or link) that returns at least one listing. Example: 1,000 listings with full details on the Free plan ≈ <strong>$1.80</strong>.</p>
+<p>Set <strong>Max cost per run</strong> in the run options and the run stops exactly at your budget — you are never charged for listings you don&#39;t receive.</p>
+<h2>🧰 More Facebook tools</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>📝 <a href="https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63">Facebook Posts Scraper</a></td>
+<td>Posts from public pages, profiles and groups — no login</td>
+</tr>
+<tr>
+<td>💬 <a href="https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63">Facebook Comment Scraper</a></td>
+<td>Comments and replies from posts, reels, photos and videos</td>
+</tr>
+<tr>
+<td>📢 <a href="https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63">Facebook Ads Scraper Pro</a></td>
+<td>Ads from the Meta Ad Library: creatives, copy, dates and advertisers</td>
+</tr>
+</tbody></table>
+<h2>❓ FAQ</h2>
+<p><strong>Do I need a Facebook account or cookies?</strong>
+No. The Actor reads public Marketplace listings exactly as a visitor who isn&#39;t logged in sees them. Nothing to export, no account at risk.</p>
+<p><strong>Which countries and cities work?</strong>
+Any place where Facebook Marketplace is available. Prices come in the local currency (USD, GBP, EUR, AUD, …).</p>
+<p><strong>How many listings can I get per search?</strong>
+As many as Facebook returns for that search — often thousands for broad searches in big cities. Set <strong>Max listings per search</strong> to <code>0</code> for everything.</p>
+<p><strong>Why do some results come from far outside my city?</strong>
+When local listings run out, Facebook keeps going with listings from further away. Turn on <strong>Stay inside the radius</strong> to keep only nearby ones.</p>
+<p><strong>Why is a field empty?</strong>
+Sellers fill in different things: not every listing has a description, condition or video, and vehicle and rental fields only exist on those listings. Fields marked &quot;with details&quot; need <strong>Include full listing details</strong>.</p>
+<p><strong>Can I get listings that are already sold?</strong>
+Yes — tick <strong>Include sold listings</strong>.</p>
+<p><strong>Can I scrape one specific listing?</strong>
+Paste its link (<code>https://www.facebook.com/marketplace/item/…</code>) into <strong>Marketplace links</strong>; it is always returned with full details.</p>
+<h2>🔗 Integrations</h2>
+<p>Connect the results to Google Sheets, Slack, Zapier, Make, n8n, webhooks or your own code through the <a href="https://docs.apify.com/api/v2">Apify API</a>. Schedule runs to monitor new listings every hour or every day.</p>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li><strong>Public data only</strong> — processes publicly available data.</li>
+<li><strong>Rate limiting</strong> — respects source-service limits and terms of use.</li>
+<li><strong>Data protection</strong> — no storage of personal information or unauthorized data collection.</li>
+<li><strong>Commercial use</strong> — suitable for business intelligence and research.</li>
+<li>No affiliation with or endorsement by Facebook or Meta is implied.</li>
+</ul>
+<hr>
+<p><em>Facebook Marketplace Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/facebook-marketplace-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

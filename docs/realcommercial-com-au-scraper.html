@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>realcommercial.com.au Scraper — Commercial Property Data | FlowExtract API</title>
+    <meta name="title" content="realcommercial.com.au Scraper — Commercial Property Data | FlowExtract API">
+    <meta name="description" content="🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor &amp; land area, zoning, photos, brochure PDFs, agent &amp; agency phones. Newest first.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/realcommercial-com-au-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="realcommercial.com.au Scraper — Commercial Property Data | FlowExtract API">
+    <meta property="og:description" content="🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor &amp; land area, zoning, photos, brochure PDFs, agent &amp; agency phones. Newest first.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/realcommercial-com-au-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-uXGhGaBBmxehCgs1f-oM9V8J5DWZ-download.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="realcommercial.com.au Scraper — Commercial Property Data | FlowExtract API">
+    <meta name="twitter:description" content="🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor &amp; land area, zoning, photos, brochure PDFs, agent &amp; agency phones. Newest first.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-uXGhGaBBmxehCgs1f-oM9V8J5DWZ-download.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"realcommercial.com.au Scraper 🏢 Sold, Leased & Agent Phones","description":"🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor & land area, zoning, photos, brochure PDFs, agent & agency phones. Newest first.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/realcommercial-com-au-scraper.html","sameAs":"https://apify.com/dz_omar/realcommercial-com-au-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-uXGhGaBBmxehCgs1f-oM9V8J5DWZ-download.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-uXGhGaBBmxehCgs1f-oM9V8J5DWZ-download.png" alt="realcommercial.com.au Scraper 🏢 Sold, Leased &amp; Agent Phones" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">realcommercial.com.au Scraper 🏢 Sold, Leased &amp; Agent Phones</h1>
+                <p class="actor-hero-desc">🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor &amp; land area, zoning, photos, brochure PDFs, agent &amp; agency phones. Newest first.</p>
+                <a href="https://apify.com/dz_omar/realcommercial-com-au-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>realcommercial.com.au Scraper 🏢 Sold, Leased &amp; Agent Phones</h1>
+<p>Scrape <strong>Australian commercial property listings</strong> from realcommercial.com.au — <strong>for sale, for lease, sold and leased</strong> — from any search link or just by typing a suburb, postcode or state. Every listing comes back complete: price, address with GPS, floor and land area, zoning, NABERS rating, photos, floor plans, <strong>brochure PDFs</strong>, and the <strong>agency and agent phone numbers</strong>.</p>
+<ul>
+<li>🔗 <strong>Paste any search link</strong> — suburb, postcode, region or state, with or without a property type. Single listing links work too.</li>
+<li>📍 <strong>Or skip the link</strong> — choose <em>for sale / for lease / sold / leased</em> and type places like <code>Sydney, NSW 2000</code>, <code>3000</code> or <code>VIC</code>.</li>
+<li>🆕 <strong>Newest first</strong> — listings published today are included.</li>
+<li>📞 <strong>Agent &amp; agency phones</strong> on every listing, plus agency address and logo.</li>
+<li>📄 <strong>Documents</strong> — information memorandums and brochures as direct PDF links.</li>
+<li>🔎 <strong>Filters</strong> — property type, keywords, tenure (vacant / tenanted), price, floor area, land area, car spaces.</li>
+<li>🚫 <strong>No login, no cookies.</strong></li>
+</ul>
+<h2>🚀 Quick start</h2>
+<h3>1. Paste a search link (Option A)</h3>
+<p>Open a search on <a href="https://www.realcommercial.com.au">realcommercial.com.au</a>, pick the location and property type, and copy the link from the address bar:</p>
+<pre><code class="language-json">{
+  &quot;startUrls&quot;: [
+    &quot;https://www.realcommercial.com.au/for-sale/sydney-nsw-2000/offices/&quot;,
+    &quot;https://www.realcommercial.com.au/for-lease/toowoomba-greater-region-qld/&quot;,
+    &quot;https://www.realcommercial.com.au/sold/vic/industrial-warehouse/&quot;
+  ],
+  &quot;maxResultsPerSearch&quot;: 100
+}
+</code></pre>
+<h3>2. Type locations instead (Option B)</h3>
+<pre><code class="language-json">{
+  &quot;channel&quot;: &quot;leased&quot;,
+  &quot;locations&quot;: [&quot;Parramatta, NSW 2150&quot;, &quot;3000&quot;, &quot;Fortitude Valley QLD&quot;],
+  &quot;maxResultsPerSearch&quot;: 200
+}
+</code></pre>
+<p>A suburb name alone (<code>&quot;Parramatta&quot;</code>) matches every suburb of that name across Australia.</p>
+<h3>3. Narrow it down with filters (Option C — works with A and B)</h3>
+<pre><code class="language-json">{
+  &quot;channel&quot;: &quot;for-sale&quot;,
+  &quot;locations&quot;: [&quot;NSW&quot;],
+  &quot;propertyTypes&quot;: [&quot;industrial-warehouse&quot;],
+  &quot;tenure&quot;: &quot;tenanted&quot;,
+  &quot;minLandArea&quot;: 2000,
+  &quot;maxPrice&quot;: 5000000,
+  &quot;keywords&quot;: &quot;freehold&quot;
+}
+</code></pre>
+<h3>4. One listing</h3>
+<pre><code class="language-json">{ &quot;startUrls&quot;: [&quot;https://www.realcommercial.com.au/for-sale/property-level-6-250-queen-street-melbourne-vic-3000-505236472&quot;] }
+</code></pre>
+<h2>📋 Input</h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>startUrls</code></td>
+<td>list of links</td>
+<td>Search pages (for sale / for lease / sold / leased; suburb, postcode, region or state; optional property type) or single listing pages</td>
+</tr>
+<tr>
+<td><code>channel</code></td>
+<td>select</td>
+<td>For sale, For lease, Sold or Leased — used with <code>locations</code></td>
+</tr>
+<tr>
+<td><code>locations</code></td>
+<td>list</td>
+<td><code>Suburb, STATE postcode</code>, <code>Suburb STATE</code>, a postcode, or a state code</td>
+</tr>
+<tr>
+<td><code>propertyTypes</code></td>
+<td>multi-select</td>
+<td>Offices, Retail, Industrial / Warehouse, Showrooms / Bulky Goods, Land / Development, Hotel / Leisure, Medical / Consulting, Commercial Farming, Other</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td>text</td>
+<td>Keep listings whose title, description or highlights contain <strong>all</strong> these words</td>
+</tr>
+<tr>
+<td><code>tenure</code></td>
+<td>select</td>
+<td>Any, Vacant possession, Tenanted investment</td>
+</tr>
+<tr>
+<td><code>minPrice</code> / <code>maxPrice</code></td>
+<td>AUD</td>
+<td>Uses the first dollar amount of the advertised price; hidden prices are left out when set</td>
+</tr>
+<tr>
+<td><code>minFloorArea</code> / <code>maxFloorArea</code></td>
+<td>m²</td>
+<td>Floor area range</td>
+</tr>
+<tr>
+<td><code>minLandArea</code> / <code>maxLandArea</code></td>
+<td>m²</td>
+<td>Land area range (hectares are converted)</td>
+</tr>
+<tr>
+<td><code>minCarSpaces</code></td>
+<td>number</td>
+<td>Minimum car spaces</td>
+</tr>
+<tr>
+<td><code>maxResultsPerSearch</code></td>
+<td>number</td>
+<td>Stop each search after this many listings (0 = no limit)</td>
+</tr>
+<tr>
+<td><code>maxResults</code></td>
+<td>number</td>
+<td>Stop the whole run after this many listings (0 = no limit)</td>
+</tr>
+</tbody></table>
+<h2>📤 Output</h2>
+<p>One item per listing. Real example (agent phone masked here):</p>
+<pre><code class="language-json">{
+  &quot;id&quot;: &quot;505086060&quot;,
+  &quot;url&quot;: &quot;https://www.realcommercial.com.au/sold/property-laidley-hotel-112-patrick-street-laidley-qld-4341-505086060&quot;,
+  &quot;channel&quot;: &quot;sold&quot;,
+  &quot;title&quot;: &quot;SOLD BY SCOOTY @ SGW Hotel Broker&quot;,
+  &quot;propertyTypes&quot;: [&quot;Hotel/Leisure&quot;],
+  &quot;tenureType&quot;: &quot;vacant&quot;,
+  &quot;priceText&quot;: &quot;$950,000&quot;,
+  &quot;price&quot;: 950000,
+  &quot;fullAddress&quot;: &quot;LAIDLEY HOTEL, 112 Patrick Street, Laidley, QLD 4341&quot;,
+  &quot;suburb&quot;: &quot;Laidley&quot;,
+  &quot;state&quot;: &quot;QLD&quot;,
+  &quot;postcode&quot;: &quot;4341&quot;,
+  &quot;latitude&quot;: -27.63132504,
+  &quot;longitude&quot;: 152.39415877,
+  &quot;floorAreaSqm&quot;: 931,
+  &quot;landAreaSqm&quot;: 933,
+  &quot;soldDate&quot;: &quot;2026-08-04&quot;,
+  &quot;daysOnSite&quot;: 202,
+  &quot;highlights&quot;: [&quot;COMMERCIAL HOTEL LICENSE+ ACCOMMODATION&quot;, &quot;CREATE FOR THE FUTURE - FRANCHISE OPTION&quot;],
+  &quot;attributes&quot;: {
+    &quot;Zoning&quot;: &quot;Commercial&quot;,
+    &quot;Municipality&quot;: &quot;Lockyer Valley Regional Council&quot;,
+    &quot;NABERS&quot;: &quot;4.0&quot;,
+    &quot;Tenure type&quot;: &quot;Vacant Possession&quot;
+  },
+  &quot;agencyName&quot;: &quot;SGW Hotel Broker&quot;,
+  &quot;agentName&quot;: &quot;SCOTT WILLIAMS&quot;,
+  &quot;agentPhone&quot;: &quot;04xx xxx xxx&quot;,
+  &quot;agencies&quot;: [
+    {
+      &quot;id&quot;: &quot;SFRJVD&quot;,
+      &quot;name&quot;: &quot;SGW Hotel Broker&quot;,
+      &quot;address&quot;: &quot;18 MARY STREET, MOUNT LOFTY, QLD 4350&quot;,
+      &quot;agents&quot;: [{ &quot;id&quot;: &quot;3248328&quot;, &quot;name&quot;: &quot;SCOTT WILLIAMS&quot;, &quot;phone&quot;: &quot;04xx xxx xxx&quot; }]
+    }
+  ],
+  &quot;imageUrl&quot;: &quot;https://i1.au.reastatic.net/1200x900-quality=60,progressive/f158ff1b…/image0.jpg&quot;,
+  &quot;imageCount&quot;: 20,
+  &quot;floorPlans&quot;: [&quot;https://i1.au.reastatic.net/1200x900-quality=60,progressive/452f8e0d…/floorplan0.jpg&quot;],
+  &quot;documents&quot;: [
+    { &quot;name&quot;: &quot;Liquor licence premises details report as at 1 April 2025.pdf&quot;, &quot;url&quot;: &quot;https://i1.au.reastatic.net/d074cc36…/document0.pdf&quot; }
+  ],
+  &quot;websites&quot;: [&quot;http://www.sgwhotelbroker.com.au&quot;],
+  &quot;scrapedAt&quot;: &quot;2026-10-02T23:53:41.000Z&quot;
+}
+</code></pre>
+<p>Every item also carries <code>status</code> (e.g. <em>Under Contract</em>), <code>isPriceHidden</code>, <code>streetAddress</code>, <code>carSpaces</code>, <code>leasedDate</code>, <code>lastUpdatedAt</code>, the full <code>description</code>, all <code>images</code>, <code>virtualTours</code>, <code>listingTier</code> and <code>multipleProperties</code>.</p>
+<h3>📊 Dataset views</h3>
+<ul>
+<li><strong>Overview</strong> — photo, title, type, price, property type, floor and land area, location, agency, agent phone, link.</li>
+<li><strong>Agents &amp; contacts</strong> — agency and agent names and phone numbers with the address, ready for outreach lists.</li>
+</ul>
+<h2>💡 Use cases</h2>
+<ul>
+<li><strong>Commercial agents &amp; brokers</strong> — track new listings and recent sales in your patch every morning.</li>
+<li><strong>Investors</strong> — screen tenanted investments by price, land size and zoning across a whole state.</li>
+<li><strong>Valuers &amp; analysts</strong> — build sold and leased comparables with dates, areas and prices.</li>
+<li><strong>Lead generation</strong> — agency and agent phone numbers by suburb and property type.</li>
+<li><strong>Developers</strong> — find land / development sites above a minimum land area.</li>
+</ul>
+<h2>⚡ Limits &amp; good to know</h2>
+<ul>
+<li>Results come <strong>newest listing first</strong>; <code>maxResultsPerSearch</code> keeps the newest ones.</li>
+<li>Prices on commercial listings are often hidden (<em>Contact Agent</em>). <code>priceText</code> always keeps what the listing shows; <code>price</code> is filled only when a dollar amount is advertised.</li>
+<li>A page number in a pasted link is ignored — collection always starts at the newest listing.</li>
+<li>Sold and leased history is large; set a location or a property type to keep runs short.</li>
+</ul>
+<h2>🚫 Error handling</h2>
+<ul>
+<li>A link that isn&#39;t a realcommercial.com.au search or listing page is skipped with a message in the log.</li>
+<li>With no usable input, the run finishes with one dataset item explaining what to add.</li>
+<li>A listing that can&#39;t be loaded after several attempts is skipped and counted in the log; the run continues.</li>
+</ul>
+<h2>❓ FAQ</h2>
+<p><strong>Do I need an account or cookies?</strong> No — only public listing pages are used.</p>
+<p><strong>Can I get listings from a whole state?</strong> Yes — paste a state link (<code>/for-sale/nsw/</code>) or type <code>NSW</code> in Locations.</p>
+<p><strong>Does it include listings added today?</strong> Yes.</p>
+<p><strong>Why is <code>price</code> empty when <code>priceText</code> says &quot;Contact Agent&quot;?</strong> The agent hasn&#39;t published a price; there is no number to extract.</p>
+<p><strong>Can I schedule it?</strong> Yes — create a task with your input and add a schedule in Apify; each run returns the newest listings first.</p>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li><strong>Public data only</strong> — processes publicly available data.</li>
+<li><strong>Rate limiting</strong> — respects source-service limits and terms of use.</li>
+<li><strong>Data protection</strong> — no storage of personal information or unauthorized data collection.</li>
+<li><strong>Commercial use</strong> — suitable for business intelligence and research.</li>
+<li>No affiliation with or endorsement by realcommercial.com.au or REA Group is implied.</li>
+</ul>
+<h2>🌟 Related Actors by FlowExtract API</h2>
+<ul>
+<li>🏠 <a href="https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63">realestate.com.au Scraper</a> — residential buy, rent and sold listings.</li>
+<li>👥 <a href="https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63">realestate.com.au Agents &amp; Agencies Scraper</a> — agents and agencies with emails, phones and listing stats.</li>
+</ul>
+<hr>
+<p><em>realcommercial.com.au Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/realcommercial-com-au-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

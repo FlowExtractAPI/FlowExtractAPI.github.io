@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>realestate.com.au Agents &amp; Agencies Scraper | FlowExtract API</title>
+    <meta name="title" content="realestate.com.au Agents &amp; Agencies Scraper | FlowExtract API">
+    <meta name="description" content="🧑‍💼 Scrape realestate.com.au real estate agents &amp; agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price &amp; active suburbs. Built for lead lists &amp; market research.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/realestate-com-au-agents-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="realestate.com.au Agents &amp; Agencies Scraper | FlowExtract API">
+    <meta property="og:description" content="🧑‍💼 Scrape realestate.com.au real estate agents &amp; agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price &amp; active suburbs. Built for lead lists &amp; market research.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/realestate-com-au-agents-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YM3c11SKnSWkdd8qH-sgyCrwsyhb-download.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="realestate.com.au Agents &amp; Agencies Scraper | FlowExtract API">
+    <meta name="twitter:description" content="🧑‍💼 Scrape realestate.com.au real estate agents &amp; agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price &amp; active suburbs. Built for lead lists &amp; market research.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YM3c11SKnSWkdd8qH-sgyCrwsyhb-download.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"realestate.com.au Agents & Agencies Scraper","description":"🧑‍💼 Scrape realestate.com.au real estate agents & agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price & active suburbs. Built for lead lists & market research.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/realestate-com-au-agents-scraper.html","sameAs":"https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YM3c11SKnSWkdd8qH-sgyCrwsyhb-download.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-YM3c11SKnSWkdd8qH-sgyCrwsyhb-download.png" alt="realestate.com.au Agents &amp; Agencies Scraper" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Real Estate</span>
+                <h1 class="actor-hero-title">realestate.com.au Agents &amp; Agencies Scraper</h1>
+                <p class="actor-hero-desc">🧑‍💼 Scrape realestate.com.au real estate agents &amp; agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price &amp; active suburbs. Built for lead lists &amp; market research.</p>
+                <a href="https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>🧑‍💼 realestate.com.au Agents &amp; Agencies Scraper</h1>
+<p><strong><a href="https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63">realestate.com.au Agents &amp; Agencies Scraper</a></strong> turns a suburb, a postcode, or any realestate.com.au search URL into a clean, structured directory of <strong>real estate agents and agencies</strong> — with the contact details and performance signals you need for lead lists and market research.</p>
+<p>Every agent record carries their <strong>email and phone</strong>, the agency they work for, how many properties they currently have for sale and for rent, how many they&#39;ve recently sold, their <strong>median sold price</strong>, and the suburbs they&#39;re active in. Every agency record carries its contacts, its team roster, and its listing counts.</p>
+<p>Perfect for <strong>real estate CRMs and lead generation</strong>, <strong>recruiters</strong> shortlisting top producers, <strong>proptech and portals</strong> building agent databases, and <strong>market researchers</strong> mapping who is active where.</p>
+<hr>
+<h2>Why scrape realestate.com.au agents?</h2>
+<p>realestate.com.au is Australia&#39;s largest property portal. Behind every listing is the agent and agency marketing it — which makes it the most complete public picture of who is actively selling and leasing in any suburb, right now.</p>
+<p>Common use cases:</p>
+<ul>
+<li><strong>Lead generation</strong> — build a contact list of agents actively listing in your target suburbs, with email and phone on every row.</li>
+<li><strong>Recruitment &amp; talent scouting</strong> — rank agents by properties sold, median sold price, and days on market, then reach out.</li>
+<li><strong>CRM enrichment</strong> — match agents and agencies to their current activity and contact details.</li>
+<li><strong>Agency intelligence</strong> — pull a whole agency&#39;s team roster and its for-sale / for-rent / sold counts.</li>
+<li><strong>Market mapping</strong> — see which agents and agencies dominate a suburb or region.</li>
+</ul>
+<hr>
+<h2>What data does it extract?</h2>
+<h3>🧑‍💼 Agent records</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>name</code>, <code>jobTitle</code></td>
+<td>Agent name and role</td>
+</tr>
+<tr>
+<td><code>email</code>, <code>emails</code></td>
+<td>Primary email plus every published email address</td>
+</tr>
+<tr>
+<td><code>phone</code>, <code>mobile</code>, <code>officePhone</code></td>
+<td>Contact numbers</td>
+</tr>
+<tr>
+<td><code>agency</code></td>
+<td>The agent&#39;s agency: name, phone, email, website, address, profile link, logo</td>
+</tr>
+<tr>
+<td><code>stats.listingsForSale</code> / <code>listingsForRent</code> / <code>recentlySold</code></td>
+<td>Current and recent activity counts</td>
+</tr>
+<tr>
+<td><code>stats.medianSoldPrice</code></td>
+<td>Median of the agent&#39;s recent sold prices (AUD)</td>
+</tr>
+<tr>
+<td><code>stats.lastSoldDate</code></td>
+<td>Date of their most recent sale</td>
+</tr>
+<tr>
+<td><code>stats.activeSuburbs</code></td>
+<td>Suburbs the agent is currently active in</td>
+</tr>
+<tr>
+<td><code>stats.propertyTypes</code></td>
+<td>Property types they handle</td>
+</tr>
+<tr>
+<td><code>profileUrl</code>, <code>photo</code></td>
+<td>realestate.com.au profile link and headshot</td>
+</tr>
+<tr>
+<td><code>sampleListings</code></td>
+<td>A few of the agent&#39;s current/recent listings for context</td>
+</tr>
+</tbody></table>
+<h3>🏢 Agency records (optional)</h3>
+<p>Name, email(s), phone, website, office address, suburb/state/postcode, profile link, logo, the <strong>full team roster</strong> of agents seen, an <code>agentCount</code>, and listing counts (for sale / for rent / sold) with a median sold price.</p>
+<hr>
+<h2>⚙️ How to use</h2>
+<h3>Mode: <strong>By location</strong></h3>
+<p>List one or more areas as <code>Suburb, STATE, Postcode</code> (postcode optional):</p>
+<pre><code class="language-json">{
+  &quot;mode&quot;: &quot;location&quot;,
+  &quot;locations&quot;: [&quot;Sydney, NSW, 2000&quot;, &quot;Richmond, VIC, 3121&quot;],
+  &quot;channels&quot;: [&quot;buy&quot;, &quot;rent&quot;, &quot;sold&quot;],
+  &quot;includeAgencies&quot;: true,
+  &quot;maxAgents&quot;: 50
+}
+</code></pre>
+<h3>Mode: <strong>By search URL</strong></h3>
+<p>Paste realestate.com.au search URLs straight from your browser — every agent and agency in those results is returned:</p>
+<pre><code class="language-json">{
+  &quot;mode&quot;: &quot;url&quot;,
+  &quot;startUrls&quot;: [
+    { &quot;url&quot;: &quot;https://www.realestate.com.au/buy/in-sydney,+nsw+2000/list-1&quot; }
+  ],
+  &quot;maxAgents&quot;: 100
+}
+</code></pre>
+<h3>Input options</h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Mode</strong></td>
+<td><code>location</code> (list suburbs) or <code>url</code> (paste search URLs). Fields for the other mode are ignored.</td>
+</tr>
+<tr>
+<td><strong>Locations</strong></td>
+<td>location mode — areas as <code>Suburb, STATE, Postcode</code>.</td>
+</tr>
+<tr>
+<td><strong>Listing types to search</strong></td>
+<td>location mode — <code>buy</code>, <code>rent</code>, <code>sold</code> (default all). <code>sold</code> adds real sold-price stats.</td>
+</tr>
+<tr>
+<td><strong>Include surrounding suburbs</strong></td>
+<td>location mode — also include neighbouring suburbs.</td>
+</tr>
+<tr>
+<td><strong>Search URLs</strong></td>
+<td>url mode — realestate.com.au search URLs.</td>
+</tr>
+<tr>
+<td><strong>Also return agencies</strong></td>
+<td>Emit one record per agency, with its team roster and counts.</td>
+</tr>
+<tr>
+<td><strong>Max agents</strong></td>
+<td>Stop after this many agents (<code>0</code> = all found). Agencies are returned in addition.</td>
+</tr>
+<tr>
+<td><strong>Max pages per search</strong></td>
+<td>How deep to scan each search while discovering agents (more = more agents and better stats in big suburbs).</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>How agents and their stats are built</h2>
+<p>The actor walks the live listings for your locations (or URLs) across the buy, rent, and sold channels, and assembles one record per agent and per agency from the people marketing those properties. An agent&#39;s counts, median sold price, and active suburbs are computed from the listings scanned in that run — so scanning more pages (higher <strong>Max pages per search</strong>) yields richer stats in large suburbs. Each agent and each agency is returned, and charged, only once per run, even when they appear on many listings.</p>
+<p>realestate.com.au serves at most 2,000 results per search; for very large areas, split them by suburb or add more specific URLs.</p>
+<hr>
+<h2>💵 Pricing</h2>
+<p>This Actor uses <strong>pay-per-event</strong> pricing:</p>
+<ul>
+<li><strong>Agent record</strong> — charged once per agent returned.</li>
+<li><strong>Agency record</strong> — charged once per agency returned (only when <em>Also return agencies</em> is on).</li>
+</ul>
+<p>You can see current per-tier rates on the Actor&#39;s <strong>Pricing</strong> tab, and cap any run with the <strong>maximum cost per run</strong> setting.</p>
+<hr>
+<h2>📤 Output example</h2>
+<pre><code class="language-json">{
+  &quot;recordType&quot;: &quot;agent&quot;,
+  &quot;agentId&quot;: &quot;2884534&quot;,
+  &quot;name&quot;: &quot;Sample Agent&quot;,
+  &quot;jobTitle&quot;: &quot;Director/Sales Agent&quot;,
+  &quot;email&quot;: &quot;agent@example-realty.com.au&quot;,
+  &quot;emails&quot;: [&quot;agent@example-realty.com.au&quot;, &quot;capture@example-realty.agentboxmail.com.au&quot;],
+  &quot;phone&quot;: &quot;0400000000&quot;,
+  &quot;mobile&quot;: &quot;0400000000&quot;,
+  &quot;officePhone&quot;: &quot;03 0000 0000&quot;,
+  &quot;agency&quot;: {
+    &quot;id&quot;: &quot;AAA000&quot;,
+    &quot;name&quot;: &quot;Example Realty&quot;,
+    &quot;phone&quot;: &quot;03 0000 0000&quot;,
+    &quot;email&quot;: &quot;office@example-realty.com.au&quot;,
+    &quot;website&quot;: &quot;https://www.example-realty.com.au&quot;,
+    &quot;address&quot;: &quot;1 High Street, Sampletown, VIC 3000&quot;,
+    &quot;profileUrl&quot;: &quot;https://www.realestate.com.au/agency/example-realty-AAA000&quot;,
+    &quot;logo&quot;: &quot;https://.../logo.jpg&quot;
+  },
+  &quot;stats&quot;: {
+    &quot;listingsForSale&quot;: 21,
+    &quot;listingsForRent&quot;: 0,
+    &quot;recentlySold&quot;: 30,
+    &quot;totalListings&quot;: 51,
+    &quot;medianSoldPrice&quot;: 675000,
+    &quot;lastSoldDate&quot;: &quot;2026-09-16&quot;,
+    &quot;activeSuburbs&quot;: [&quot;Sampletown&quot;],
+    &quot;propertyTypes&quot;: [&quot;house&quot;, &quot;unit&quot;]
+  },
+  &quot;profileUrl&quot;: &quot;https://www.realestate.com.au/agent/2884534&quot;,
+  &quot;source&quot;: &quot;realestate.com.au&quot;,
+  &quot;scrapedAt&quot;: &quot;2026-01-01T00:00:00.000Z&quot;
+}
+</code></pre>
+<p>Values above are illustrative placeholders, not a real record.</p>
+<hr>
+<h2>🧭 Tips &amp; limits</h2>
+<table>
+<thead>
+<tr>
+<th>Situation</th>
+<th>What you see</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A pasted URL isn&#39;t a recognized realestate.com.au URL</td>
+<td>It&#39;s skipped with a note in the run log</td>
+<td>Copy the URL directly from your browser</td>
+</tr>
+<tr>
+<td>A location entry can&#39;t be read</td>
+<td>It&#39;s skipped with a note in the run log</td>
+<td>Use the <code>Suburb, STATE, Postcode</code> form</td>
+</tr>
+<tr>
+<td>A suburb has fewer agents than <code>Max agents</code></td>
+<td>You get all the agents found</td>
+<td>Add more suburbs/URLs, or raise <em>Max pages per search</em></td>
+</tr>
+<tr>
+<td>Nothing usable in the input</td>
+<td>A single guidance item in the dataset</td>
+<td>Add a location or a search URL</td>
+</tr>
+</tbody></table>
+<hr>
+<h2>🌟 Related Actors</h2>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63">realestate.com.au Scraper</a></strong> — the property listings behind these agents (buy, rent, sold) with full details</li>
+<li><strong><a href="https://apify.com/dz_omar/domain-scraper?fpr=smcx63">domain.com.au Scraper</a></strong> — Australia&#39;s #2 property portal: listings, agents and contacts</li>
+</ul>
+<hr>
+<h2>Support</h2>
+<ul>
+<li>🙋 <strong>Apify Profile</strong>: <a href="https://apify.com/dz_omar?fpr=smcx63">FlowExtract API</a></li>
+<li>🌐 <strong>Website</strong>: <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email</strong>: <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub</strong>: <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn</strong>: <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X</strong>: <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook</strong>: <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok</strong>: <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<hr>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li>Extracts <strong>publicly available agent and agency data only</strong> — the same information any visitor sees without logging in.</li>
+<li>Respects the source site&#39;s rate limits and terms; built for research and analysis, not for overwhelming the site.</li>
+<li>No storage of personal information by the actor beyond your own run&#39;s dataset.</li>
+<li>Suitable for commercial use. You are responsible for using extracted contact details lawfully (e.g. the Australian Privacy Act and Spam Act) — no spam or unsolicited bulk outreach.</li>
+<li>No affiliation with or endorsement by realestate.com.au or REA Group is implied.</li>
+</ul>
+<hr>
+<p><em>realestate.com.au Agents &amp; Agencies Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>
