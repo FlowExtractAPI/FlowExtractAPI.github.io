@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T17:37:25.021Z",
+  "generatedAt": "2026-10-16T07:32:42.137Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -255,6 +255,11 @@
       "hash": "6216826c7ea9c231e1b943e78b0d004ec89fa6af2560af03ba442249bdb9b6aa",
       "syncedAt": "2026-10-15T17:37:24.890Z",
       "readme": "Social-Media/facebook-marketplace-scraper/README.md"
+    },
+    "tiktok-shop-reviews-scraper": {
+      "hash": "0a974e1203e59c91509f140c7cbff0a766837e5d7659aee973b9734e10b197d9",
+      "syncedAt": "2026-10-16T07:32:42.037Z",
+      "readme": "Social-Media/tiktok-shop-reviews-scraper/README.md"
     }
   }
 }

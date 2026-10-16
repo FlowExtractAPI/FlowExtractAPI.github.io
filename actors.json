@@ -621,7 +621,7 @@
     "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png",
     "category": "tools",
     "subcategory": "travel",
-    "description": "Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Free, fast, no API key.",
+    "description": "Scrape live Google Flights fares, schedules, airlines and aircraft. Search by city, country or airport code - one-way, round-trip or multi-city, with infants and any cabin. True round-trip totals plus price history. Fast, no API key.",
     "apifyUrl": "https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63",
     "docsPath": "google-flights-scraper",
     "readmeFile": "google-flights-scraper.md",
@@ -711,6 +711,20 @@
     "readmeFile": "facebook-marketplace-scraper.md",
     "metaTitle": "Facebook Marketplace Scraper — Listings & Sellers, No Login",
     "metaDescription": "Scrape Facebook Marketplace by keyword, category or city without login: prices, sellers, photos, descriptions, vehicle and rental data. Export CSV or JSON.",
+    "featured": false
+  },
+  {
+    "id": "tiktok-shop-reviews-scraper",
+    "name": "TikTok Shop Reviews Scraper ⭐ 16 Markets, Photos & Ratings",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-LT6ZCsidsOcBT5vyu-47LXlXkiJx-Untitled.png",
+    "category": "social",
+    "subcategory": "tiktok",
+    "description": "Scrape TikTok Shop product reviews in 16 markets: US, UK, EU, Brazil, Mexico, Japan and Southeast Asia. Star rating, full text, review photos, verified-purchase and incentivized flags, variant bought, reviewer country and date on every row, plus each product's 1–5 star breakdown.",
+    "apifyUrl": "https://apify.com/dz_omar/tiktok-shop-reviews-scraper?fpr=smcx63",
+    "docsPath": "tiktok-shop-reviews-scraper",
+    "readmeFile": "tiktok-shop-reviews-scraper.md",
+    "metaTitle": "TikTok Shop Reviews Scraper — Ratings, Photos & Text",
+    "metaDescription": "Scrape TikTok Shop product reviews in 16 markets: star rating, review text, photos, verified-purchase flag, variant and date. Export to CSV, JSON or Excel.",
     "featured": false
   }
 ]
