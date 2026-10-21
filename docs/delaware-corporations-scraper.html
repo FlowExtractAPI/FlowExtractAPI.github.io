@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Delaware Business Entity Search &amp; Registered Agent Lookup | FlowExtract API</title>
+    <meta name="title" content="Delaware Business Entity Search &amp; Registered Agent Lookup | FlowExtract API">
+    <meta name="description" content="Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent&#39;s name, address, county and phone.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/delaware-corporations-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Delaware Business Entity Search &amp; Registered Agent Lookup | FlowExtract API">
+    <meta property="og:description" content="Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent&#39;s name, address, county and phone.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/delaware-corporations-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-KSrazN1O0bLXmitFP-ZE26y6d1Uu-Delaware_Corporate_Records_Search_Icon.png">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Delaware Business Entity Search &amp; Registered Agent Lookup | FlowExtract API">
+    <meta name="twitter:description" content="Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent&#39;s name, address, county and phone.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-KSrazN1O0bLXmitFP-ZE26y6d1Uu-Delaware_Corporate_Records_Search_Icon.png">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Delaware Business Search 🏛️ Registered Agents & Bulk Lookup","description":"Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent's name, address, county and phone.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/delaware-corporations-scraper.html","sameAs":"https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-KSrazN1O0bLXmitFP-ZE26y6d1Uu-Delaware_Corporate_Records_Search_Icon.png"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-KSrazN1O0bLXmitFP-ZE26y6d1Uu-Delaware_Corporate_Records_Search_Icon.png" alt="Delaware Business Search 🏛️ Registered Agents &amp; Bulk Lookup" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Lead Generation &amp; Business</span>
+                <h1 class="actor-hero-title">Delaware Business Search 🏛️ Registered Agents &amp; Bulk Lookup</h1>
+                <p class="actor-hero-desc">Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent&#39;s name, address, county and phone.</p>
+                <a href="https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h2>What is Delaware Business Search?</h2>
+<p><strong><a href="https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63">Delaware Business Search</a></strong> looks up companies in the <strong>official Delaware Division of Corporations registry</strong> — the state where most large US companies are incorporated — and returns each entity as clean, structured data. Paste in company names, Delaware file numbers, or both, and get back every match with its <strong>formation date, entity type and registered agent</strong> (name, street address, county, ZIP code and phone).</p>
+<p>It is built for <strong>KYB and compliance teams</strong>, <strong>lead generation and sales research</strong>, <strong>legal and service-of-process work</strong>, and <strong>data teams</strong> who need Delaware company records in bulk instead of one search at a time on the state website.</p>
+<ul>
+<li>🔎 <strong>Bulk lookup</strong> — any number of names and file numbers in one run, in one list</li>
+<li>🏛️ <strong>Registered agent details</strong> — agent name, full address, county and phone for every entity</li>
+<li>📅 <strong>Formation data</strong> — incorporation or formation date (also as an ISO date), entity kind, type, residency and state of formation</li>
+<li>🎯 <strong>Exact or prefix matching</strong> — find every company starting with a name, or exactly one entity</li>
+<li>✅ <strong>Complete rows</strong> — each record says whether its details were included, so nothing is silently missing</li>
+</ul>
+<p>Because it runs on Apify, you also get <strong>API access</strong>, <strong>scheduling</strong> (re-check a watchlist every week), <strong>integrations</strong> with Make, Zapier, Google Sheets, Slack and webhooks, and exports to <strong>JSON, CSV and Excel</strong>. A single file-number lookup with details costs well under one cent.</p>
+<h3>What data can you extract from the Delaware registry?</h3>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Fields</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🆔 Identity</td>
+<td>file number, entity name</td>
+</tr>
+<tr>
+<td>📅 Formation</td>
+<td>formation date (as shown and as ISO <code>YYYY-MM-DD</code>), entity kind (Corporation, Limited Liability Company, Limited Partnership…), entity type (General, Close, Non-Profit…), residency (Domestic / Foreign), state of formation</td>
+</tr>
+<tr>
+<td>🏛️ Registered agent</td>
+<td>name, street address, city, county, state, ZIP code, phone</td>
+</tr>
+<tr>
+<td>🧭 Context</td>
+<td>the search term that found the entity, search type, whether the registry&#39;s 50-match limit was reached, detail status, source page, time of extraction</td>
+</tr>
+</tbody></table>
+<p>The registry sells an entity&#39;s <strong>current status, franchise tax and filing history</strong> separately (from $10 per entity on the state website), so those fields are not part of the public record this Actor returns.</p>
+<h2>How to search Delaware business entities</h2>
+<ol>
+<li>Click <strong>Try</strong> to open the Actor in Apify Console (or add it to your account).</li>
+<li>In <strong>Entity names or file numbers</strong>, enter one search per line:<ul>
+<li>a company name such as <code>Acme Aero</code> — finds every entity whose name <strong>starts with</strong> it;</li>
+<li>a name in quotes such as <code>&quot;Acme Aero LLC&quot;</code> — finds that exact entity only;</li>
+<li>a Delaware file number such as <code>7053653</code> — returns that one entity.</li>
+</ul>
+</li>
+<li><em>(Optional)</em> Turn on <strong>Exact name match</strong> to treat every name as an exact name.</li>
+<li><em>(Optional)</em> Turn off <strong>Include entity details</strong> if you only need file numbers and names — faster and cheaper.</li>
+<li>Set <strong>Maximum entities</strong> to cap the run (0 = no limit), then click <strong>Start</strong>.</li>
+<li>Download the results from the <strong>Output</strong> tab as JSON, CSV or Excel, or fetch them over the API.</li>
+</ol>
+<blockquote>
+<p>💡 The registry shows at most <strong>50 matches per name search</strong>. When a name hits that limit, the rows carry <code>registry_limit_reached: true</code> and the run log says so — use a longer name, quotes, or file numbers to reach the rest.</p>
+</blockquote>
+<h2>How much does it cost to search Delaware companies?</h2>
+<p>This Actor uses <strong>pay-per-event</strong> pricing: you pay for searches and entities delivered, not for compute time.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Run start (per GB of memory; the default counts as one)</td>
+<td>$0.003</td>
+<td>$0.0025</td>
+<td>$0.002</td>
+<td>$0.002</td>
+</tr>
+<tr>
+<td>Search completed (per name or file number)</td>
+<td>$0.001</td>
+<td>$0.0009</td>
+<td>$0.0008</td>
+<td>$0.0007</td>
+</tr>
+<tr>
+<td>Entity found (file number + name)</td>
+<td>$0.0005</td>
+<td>$0.00045</td>
+<td>$0.0004</td>
+<td>$0.00035</td>
+</tr>
+<tr>
+<td>Entity details add-on (formation + registered agent)</td>
+<td>$0.0015</td>
+<td>$0.00135</td>
+<td>$0.0012</td>
+<td>$0.00105</td>
+</tr>
+</tbody></table>
+<p><strong>Example costs on the FREE plan:</strong></p>
+<ul>
+<li>One file-number lookup with details: $0.003 + $0.001 + $0.002 = <strong>$0.006</strong></li>
+<li>100 entities with details from 2 name searches: $0.003 + $0.002 + 100 × $0.002 = <strong>$0.205</strong></li>
+<li>1,000 entities with details from 50 searches: about <strong>$2.05</strong></li>
+<li>1,000 entities without details: about <strong>$0.55</strong></li>
+</ul>
+<p>Details are only charged when they were actually read. Set <strong>Max cost per run</strong> in the run options and the Actor stops cleanly at that budget.</p>
+<h2>Input and output examples</h2>
+<h3>Input</h3>
+<pre><code class="language-json">{
+    &quot;searchTerms&quot;: [&quot;Acme Aero&quot;, &quot;\&quot;Acme Anvils, LLC\&quot;&quot;, &quot;4578811&quot;],
+    &quot;exactMatch&quot;: false,
+    &quot;includeDetails&quot;: true,
+    &quot;maxResults&quot;: 50
+}
+</code></pre>
+<h3>Output</h3>
+<p>One record per entity (real output):</p>
+<pre><code class="language-json">{
+    &quot;file_number&quot;: &quot;4578811&quot;,
+    &quot;entity_name&quot;: &quot;ACME123SPORTS INC.&quot;,
+    &quot;incorporation_date&quot;: &quot;7/23/2008&quot;,
+    &quot;incorporation_date_iso&quot;: &quot;2008-07-23&quot;,
+    &quot;entity_kind&quot;: &quot;Corporation&quot;,
+    &quot;entity_type&quot;: &quot;General&quot;,
+    &quot;residency&quot;: &quot;Domestic&quot;,
+    &quot;state_of_formation&quot;: &quot;Delaware&quot;,
+    &quot;registered_agent_name&quot;: &quot;CORPORATION SERVICE COMPANY&quot;,
+    &quot;registered_agent_address&quot;: &quot;251 LITTLE FALLS DRIVE&quot;,
+    &quot;registered_agent_city&quot;: &quot;WILMINGTON&quot;,
+    &quot;registered_agent_county&quot;: &quot;New Castle&quot;,
+    &quot;registered_agent_state&quot;: &quot;DE&quot;,
+    &quot;registered_agent_postal_code&quot;: &quot;19808&quot;,
+    &quot;registered_agent_phone&quot;: &quot;302-636-5401&quot;,
+    &quot;detail_status&quot;: &quot;ok&quot;,
+    &quot;search_term&quot;: &quot;acme&quot;,
+    &quot;search_type&quot;: &quot;name&quot;,
+    &quot;registry_limit_reached&quot;: true,
+    &quot;source_url&quot;: &quot;https://icis.corp.delaware.gov/ecorp/entitysearch/NameSearch.aspx&quot;,
+    &quot;scraped_at&quot;: &quot;2026-10-21T20:02:56.078Z&quot;
+}
+</code></pre>
+<p>A search that matches nothing adds one <code>{&quot;type&quot;: &quot;not_found&quot;, &quot;search_term&quot;: &quot;…&quot;}</code> row, so every term you entered is accounted for. The Output tab has three views: <strong>Entities</strong>, <strong>Registered agents</strong> and <strong>All fields</strong>.</p>
+<h2>Other business registry Actors</h2>
+<ul>
+<li><strong><a href="https://apify.com/dz_omar/california-bizfile-scraper?fpr=smcx63">California Business &amp; UCC Lien Search</a></strong> — the California Secretary of State registers: entity status, standing and registered agent, plus UCC liens and tax liens, with type, status and date filters.</li>
+</ul>
+<h2>FAQ</h2>
+<h3>Do I need a Delaware account or API key?</h3>
+<p>No. The Actor reads the public registry search. You only need an Apify account.</p>
+<h3>Does it return company status or good standing?</h3>
+<p>No. Delaware sells status ($10) and status with franchise tax and filing history ($20) per entity on its own website; they are not part of the public record. The Actor returns everything the public record shows: formation date, entity kind and type, residency, state of formation and the registered agent.</p>
+<h3>Why do I get only 50 results for a name?</h3>
+<p>The registry itself shows at most 50 matches per name search. Records from such a search are marked <code>registry_limit_reached: true</code>. Narrow the name (for example <code>Acme Aero</code> instead of <code>Acme</code>), put an exact name in quotes, or search by file number.</p>
+<h3>How does name matching work?</h3>
+<p>A name matches every entity whose name <strong>starts with</strong> it, ignoring spaces and punctuation — <code>Acme Aero</code> finds ACME AERO LLC, ACME AEROPLANE INC. and ACME AEROSPACE, INC. Put the name in quotes, or turn on <strong>Exact name match</strong>, to get one exact entity.</p>
+<h3>Can I mix company names and file numbers in one run?</h3>
+<p>Yes. Any line made only of digits is treated as a Delaware file number; everything else is a name. Duplicates across lines are delivered once.</p>
+<h3>What does <code>detail_status</code> mean?</h3>
+<p><code>ok</code> — details included. <code>not_requested</code> — you turned details off. <code>restricted</code> — the registry does not show this entity&#39;s details online. <code>unavailable</code> — the details could not be read during this run (the entity is still delivered with its file number and name, and the details add-on is not charged).</p>
+<h3>Can I use it through the API or on a schedule?</h3>
+<p>Yes. Start runs from the Apify API, any Apify client, Make, Zapier or n8n, and schedule them in Apify Console — for example a weekly re-check of a list of file numbers.</p>
+<h3>What happens if a run stops part-way?</h3>
+<p>Every entity is saved the moment it is read, and the run status message says what happened. If the platform restarts a run, already-delivered entities are not delivered or charged again.</p>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li><strong>Public data only</strong> — processes publicly available data.</li>
+<li><strong>Rate limiting</strong> — respects source-service limits and terms of use.</li>
+<li><strong>Data protection</strong> — no storage of personal information or unauthorized data collection.</li>
+<li><strong>Commercial use</strong> — suitable for business intelligence and research.</li>
+<li>No affiliation with or endorsement by the Delaware Division of Corporations is implied.</li>
+</ul>
+<hr>
+<p><em>Delaware Business Search — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

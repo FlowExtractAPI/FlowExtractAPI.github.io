@@ -513,71 +513,99 @@
 <p><strong><code>notes</code> is worth reading.</strong> It is how the actor reports a clipped tall page, a scroll that stopped at the limit, a recording shortened to stay inside the frame limit, or <code>hideSelectors</code> that matched nothing.</p>
 <hr>
 <h2>💰 Pricing</h2>
-<p><strong>$13 / month</strong>, with a <strong>1-day free trial</strong>. Unlimited runs and unlimited captures for the subscription; you pay the Apify platform usage your runs consume, as with any rented Actor.</p>
-<p>The settings that move platform usage most:</p>
+<p>You pay per capture, not per month, and the Actor&#39;s platform usage is included in the price — there is no separate compute bill for your runs.</p>
+<p>What moves your bill:</p>
 <ul>
-<li><strong><code>waitUntil</code></strong> is the big one. <code>load</code> returned a heavy marketing page in about <strong>5 seconds</strong> where <code>networkidle0</code> took <strong>28</strong> — for a screenshot that differed by a few kilobytes.</li>
-<li><strong>Capture in batches.</strong> Starting a run costs a fixed amount of browser time before the first page opens. Ten addresses in one run use roughly half the platform usage of the same ten as ten separate runs.</li>
-<li><strong>Recordings cost far more than stills</strong>, in proportion to <code>recordSeconds × fps</code>. A 5-second GIF at 10 fps is 50 captures of the page; a 10-second MP4 at 30 fps is 300.</li>
+<li><strong>How many pages you capture.</strong> A still or a PDF is one capture, whatever the page weighs and however long it takes to load. A slow site costs you no more than a fast one.</li>
+<li><strong>Recordings, in proportion to <code>recordSeconds × fps</code>.</strong> A 5-second GIF at 10 fps is 50 frames; a 10-second MP4 at 30 fps is 300. This is by far the largest line on a recording&#39;s bill.</li>
+<li><strong>Sites that refuse datacentre addresses</strong>, which add up to three extra attempts. Almost no page needs any — see <a href="#sites-that-refuse-datacentre-addresses">Sites that refuse datacentre addresses</a>.</li>
 </ul>
-<!-- ══════════════════════════════════════════════════════════════════════════
-▼▼▼ PAY-PER-EVENT PRICING — PARKED UNTIL THE LISTING IS SWITCHED TO PPE ▼▼▼
-
-This actor is currently on the monthly rental plan above. The table below is the
-prepared per-event pricing; it is hidden so that nobody reads prices they are not
-being charged.
-
-TO PUBLISH IT, once the listing has been switched to pay-per-event:
-  1. delete this comment opener and the closer marked ▲▲▲ below
-  2. delete the "$13 / month" paragraph above
-  3. un-comment the billing block in src/delivery.js (same ▼▼▼ / ▲▲▲ banner)
-  4. rename "_payPerEvent_DISABLED_UNTIL_PPE" back to "payPerEvent" in
-     .actor/actor.json
-The numbers below match .actor/pay_per_event.json exactly — change both together.
-
-### Pricing
-
-| Event | FREE | BRONZE | SILVER | GOLD |
-|---|---|---|---|---|
-| **Page capture** (per saved file) | $0.007 | $0.006 | $0.0055 | $0.005 |
-| **Extra attempt** (only when a site refuses us) | $0.005 | $0.0045 | $0.004 | $0.0035 |
-| **Video frame** (per frame of an MP4 or GIF) | $0.00035 | $0.0003 | $0.00028 | $0.00025 |
-
-No start fee, and no charge for browser time — a screenshot costs the same
-whether the page is quick or slow.
-
-**What a run actually costs** — measured on this actor:
-
-| Run | Frames | Total on BRONZE |
-|---|---|---|
-| One screenshot or PDF | — | **$0.006** |
-| Ten screenshots in one run | — | **$0.060** |
-| A 5-second GIF at 10 fps | 50 | ~$0.021 |
-| A 10-second MP4 at 15 fps | 150 | ~$0.051 |
-| A 10-second MP4 at 30 fps | 300 | ~$0.096 |
-
-Still images and PDFs never pay the frame charge.
-
-#### When a site refuses us
-
-A few sites — Facebook's Ad Library is the well-known one — serve an empty page
+<p>Addresses that produce no file are never charged, and neither is a page the site
+refused from every address — you pay only for the attempts in that case.</p>
+<h3>Pricing</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Page capture</strong> (per saved file)</td>
+<td>$0.007</td>
+<td>$0.006</td>
+<td>$0.0055</td>
+<td>$0.005</td>
+</tr>
+<tr>
+<td><strong>Extra attempt</strong> (only when a site refuses us)</td>
+<td>$0.005</td>
+<td>$0.0045</td>
+<td>$0.004</td>
+<td>$0.0035</td>
+</tr>
+<tr>
+<td><strong>Video frame</strong> (per frame of an MP4 or GIF)</td>
+<td>$0.00035</td>
+<td>$0.0003</td>
+<td>$0.00025</td>
+<td>$0.00025</td>
+</tr>
+</tbody></table>
+<p>No start fee, and no charge for browser time — a screenshot costs the same
+whether the page is quick or slow.</p>
+<p><strong>What a run actually costs</strong> — measured on this actor:</p>
+<table>
+<thead>
+<tr>
+<th>Run</th>
+<th>Frames</th>
+<th>Total on BRONZE</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One screenshot or PDF</td>
+<td>—</td>
+<td><strong>$0.006</strong></td>
+</tr>
+<tr>
+<td>Ten screenshots in one run</td>
+<td>—</td>
+<td><strong>$0.060</strong></td>
+</tr>
+<tr>
+<td>A 5-second GIF at 10 fps</td>
+<td>50</td>
+<td>~$0.021</td>
+</tr>
+<tr>
+<td>A 10-second MP4 at 15 fps</td>
+<td>150</td>
+<td>~$0.051</td>
+</tr>
+<tr>
+<td>A 10-second MP4 at 30 fps</td>
+<td>300</td>
+<td>~$0.096</td>
+</tr>
+</tbody></table>
+<p>Still images and PDFs never pay the frame charge.</p>
+<h4>When a site refuses us</h4>
+<p>A few sites — Facebook&#39;s Ad Library is the well-known one — serve an empty page
 to a datacentre address. Waiting longer never fixes that, so the capture is
 retried from a different address, up to three extra times. Each extra attempt is
-charged, because each one is a real page load.
-
-Almost every page needs none of them, so almost every capture costs the page
+charged, because each one is a real page load.</p>
+<p>Almost every page needs none of them, so almost every capture costs the page
 capture fee and nothing more. On the sites that do fight back, expect one or two
 extra attempts: a BRONZE capture of a page like the Ad Library usually lands
-between $0.011 and $0.015 rather than $0.006.
-
-Extra attempts are charged whether or not one of them gets through, because the
+between $0.011 and $0.015 rather than $0.006.</p>
+<p>Extra attempts are charged whether or not one of them gets through, because the
 work happens either way. The page capture fee is the opposite — if every address
 is refused you are not charged for it, so a run that ends with a blank image pays
-only for the attempts. Either way the result row says exactly what happened.
-
-▲▲▲ END OF THE PARKED PAY-PER-EVENT SECTION ▲▲▲
-══════════════════════════════════════════════════════════════════════════ -->
-
+only for the attempts. Either way the result row says exactly what happened.</p>
 <hr>
 <h2>🛟 Limits, and why they exist</h2>
 <p>A browser can be asked to do something that never finishes. These limits mean it does not.</p>

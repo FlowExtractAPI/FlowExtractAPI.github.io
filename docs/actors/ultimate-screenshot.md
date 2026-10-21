@@ -245,28 +245,16 @@ A GIF is filed with video, not with the images — it is a *recording* of the pa
 
 ## 💰 Pricing
 
-**$13 / month**, with a **1-day free trial**. Unlimited runs and unlimited captures for the subscription; you pay the Apify platform usage your runs consume, as with any rented Actor.
+You pay per capture, not per month, and the Actor's platform usage is included in the price — there is no separate compute bill for your runs.
 
-The settings that move platform usage most:
+What moves your bill:
 
-- **`waitUntil`** is the big one. `load` returned a heavy marketing page in about **5 seconds** where `networkidle0` took **28** — for a screenshot that differed by a few kilobytes.
-- **Capture in batches.** Starting a run costs a fixed amount of browser time before the first page opens. Ten addresses in one run use roughly half the platform usage of the same ten as ten separate runs.
-- **Recordings cost far more than stills**, in proportion to `recordSeconds × fps`. A 5-second GIF at 10 fps is 50 captures of the page; a 10-second MP4 at 30 fps is 300.
+- **How many pages you capture.** A still or a PDF is one capture, whatever the page weighs and however long it takes to load. A slow site costs you no more than a fast one.
+- **Recordings, in proportion to `recordSeconds × fps`.** A 5-second GIF at 10 fps is 50 frames; a 10-second MP4 at 30 fps is 300. This is by far the largest line on a recording's bill.
+- **Sites that refuse datacentre addresses**, which add up to three extra attempts. Almost no page needs any — see [Sites that refuse datacentre addresses](#sites-that-refuse-datacentre-addresses).
 
-<!-- ══════════════════════════════════════════════════════════════════════════
-▼▼▼ PAY-PER-EVENT PRICING — PARKED UNTIL THE LISTING IS SWITCHED TO PPE ▼▼▼
-
-This actor is currently on the monthly rental plan above. The table below is the
-prepared per-event pricing; it is hidden so that nobody reads prices they are not
-being charged.
-
-TO PUBLISH IT, once the listing has been switched to pay-per-event:
-  1. delete this comment opener and the closer marked ▲▲▲ below
-  2. delete the "$13 / month" paragraph above
-  3. un-comment the billing block in src/delivery.js (same ▼▼▼ / ▲▲▲ banner)
-  4. rename "_payPerEvent_DISABLED_UNTIL_PPE" back to "payPerEvent" in
-     .actor/actor.json
-The numbers below match .actor/pay_per_event.json exactly — change both together.
+Addresses that produce no file are never charged, and neither is a page the site
+refused from every address — you pay only for the attempts in that case.
 
 ### Pricing
 
@@ -274,7 +262,7 @@ The numbers below match .actor/pay_per_event.json exactly — change both togeth
 |---|---|---|---|---|
 | **Page capture** (per saved file) | $0.007 | $0.006 | $0.0055 | $0.005 |
 | **Extra attempt** (only when a site refuses us) | $0.005 | $0.0045 | $0.004 | $0.0035 |
-| **Video frame** (per frame of an MP4 or GIF) | $0.00035 | $0.0003 | $0.00028 | $0.00025 |
+| **Video frame** (per frame of an MP4 or GIF) | $0.00035 | $0.0003 | $0.00025 | $0.00025 |
 
 No start fee, and no charge for browser time — a screenshot costs the same
 whether the page is quick or slow.
@@ -307,9 +295,6 @@ Extra attempts are charged whether or not one of them gets through, because the
 work happens either way. The page capture fee is the opposite — if every address
 is refused you are not charged for it, so a run that ends with a blank image pays
 only for the attempts. Either way the result row says exactly what happened.
-
-▲▲▲ END OF THE PARKED PAY-PER-EVENT SECTION ▲▲▲
-══════════════════════════════════════════════════════════════════════════ -->
 
 ---
 

@@ -315,13 +315,13 @@
     },
     {
       "slug": "idealista-scraper-api",
-      "name": "Idealista API Scraper",
+      "name": "Idealista Scraper API 🏠 Any Search URL, No Result Cap & France",
       "category": "real-estate",
       "subcategory": "listings",
       "status": "public",
       "apifyUrl": "https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63",
       "image": "https://images.apifyusercontent.com/XnvinShlb4V-qDNRNgTQEOihxGTFPlNCIaQg-HI9d54/rs:fill:250:250/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUU9ZSXRmY2NlOW5tV1pKbkQtYWN0b3Itb0pUUkRYNGl5ZlIzZXJObnYtVjRUN1FwT2pKWC1JZGVhbGlzdGFfU2NyYXBlcl9BUEkucG5n.webp",
-      "description": "Fast, reliable property scraper for Idealista.com, Idealista.pt, and Idealista.it . Optimized for speed and accuracy with multi-country support. Now supports both individual property URLs and listing/search URLs!",
+      "description": "Scrape Idealista property listings from Spain, Portugal, Italy and France. Paste any Idealista URL — property page, search, drawn map area, map pin or multi-zone — and get prices, photos, contacts, GPS and features. Big areas are collected without the usual result cap. Real-time Standby API.",
       "metaTitle": "Idealista Scraper API - Real Estate Data Extraction",
       "metaDescription": "Fast, reliable property scraper for Idealista.com, Idealista.pt, and Idealista.it. Extract property data using official mobile API.",
       "featured": false,
@@ -1049,6 +1049,26 @@
       "source": {
         "dir": "Social-Media/tiktok-shop-reviews-scraper",
         "readme": "Social-Media/tiktok-shop-reviews-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
+    },
+    {
+      "slug": "delaware-corporations-scraper",
+      "name": "Delaware Business Search 🏛️ Registered Agents & Bulk Lookup",
+      "category": "leads",
+      "subcategory": "business",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-KSrazN1O0bLXmitFP-ZE26y6d1Uu-Delaware_Corporate_Records_Search_Icon.png",
+      "description": "Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent's name, address, county and phone.",
+      "metaTitle": "Delaware Business Entity Search & Registered Agent Lookup",
+      "metaDescription": "Search Delaware corporations and LLCs by name or file number. Get formation dates, entity types and registered agent name, address and phone in bulk.",
+      "featured": false,
+      "docsPath": "delaware-corporations-scraper",
+      "source": {
+        "dir": "Tools/delaware-corporations-scraper",
+        "readme": "Tools/delaware-corporations-scraper/README.md",
         "exists": true
       },
       "onSite": true

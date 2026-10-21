@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-16T07:32:42.137Z",
+  "generatedAt": "2026-10-21T21:40:22.417Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -77,8 +77,8 @@
       "readme": "Real-Estate/idealista-scraper/README.md"
     },
     "idealista-scraper-api": {
-      "hash": "31ad747f9a702170bdb2ab347b68ea355a4a89f4a4ed97a0d30f82c172b4b45b",
-      "syncedAt": "2026-09-29T20:16:43.046Z",
+      "hash": "7c8b82ac1da3d32996644421aaa88d10421b03d81a21415b39ce9a6f2f9b6849",
+      "syncedAt": "2026-10-21T21:40:21.170Z",
       "readme": "Real-Estate/idealista-scraper-api/README.md"
     },
     "leboncoin-scraper": {
@@ -157,8 +157,8 @@
       "readme": "Tools/screenshot/README.md"
     },
     "ultimate-screenshot": {
-      "hash": "8d4aa6feb4594126f8b8a125e733d91753de98bf6fe2938591fd00fbae44f762",
-      "syncedAt": "2026-10-01T11:04:48.298Z",
+      "hash": "c75fb36d6bdd5270dc542ab8f789d987ba2fddff28c8d47eccd8d1e4d5287338",
+      "syncedAt": "2026-10-21T21:40:21.302Z",
       "readme": "Tools/ultimate-screenshot/README.md"
     },
     "youtube-scraper-pro": {
@@ -182,8 +182,8 @@
       "readme": "Real-Estate/immobilienscout24/README.md"
     },
     "california-bizfile-scraper": {
-      "hash": "66f0afd4608ab6446cc171faab4520c23c8bc33913cfa036932a6f181959cff9",
-      "syncedAt": "2026-09-29T21:49:44.634Z",
+      "hash": "82001926ee30eb1b21fd87f0a6ccbfbf07fa7db9a718298f12c511f5074b4cef",
+      "syncedAt": "2026-10-21T21:40:21.357Z",
       "readme": "Tools/california-bizfile-scraper/README.md"
     },
     "network-security-scanner": {
@@ -260,6 +260,11 @@
       "hash": "0a974e1203e59c91509f140c7cbff0a766837e5d7659aee973b9734e10b197d9",
       "syncedAt": "2026-10-16T07:32:42.037Z",
       "readme": "Social-Media/tiktok-shop-reviews-scraper/README.md"
+    },
+    "delaware-corporations-scraper": {
+      "hash": "54e244e2272d3caf66672772c656b6b74383fe56628277fef8c7fce267a74680",
+      "syncedAt": "2026-10-21T21:40:21.737Z",
+      "readme": "Tools/delaware-corporations-scraper/README.md"
     }
   }
 }
