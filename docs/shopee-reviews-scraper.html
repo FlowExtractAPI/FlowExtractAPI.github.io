@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>Shopee Reviews Scraper - Ratings, Photos &amp; Videos | FlowExtract API</title>
+    <meta name="title" content="Shopee Reviews Scraper - Ratings, Photos &amp; Videos | FlowExtract API">
+    <meta name="description" content="Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/shopee-reviews-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="Shopee Reviews Scraper - Ratings, Photos &amp; Videos | FlowExtract API">
+    <meta property="og:description" content="Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/shopee-reviews-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shopee Reviews Scraper - Ratings, Photos &amp; Videos | FlowExtract API">
+    <meta name="twitter:description" content="Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Shopee Reviews Scraper ⭐ Photos, Videos & Star-Rating Filters","description":"Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/shopee-reviews-scraper.html","sameAs":"https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg" alt="Shopee Reviews Scraper ⭐ Photos, Videos &amp; Star-Rating Filters" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">Shopee Reviews Scraper ⭐ Photos, Videos &amp; Star-Rating Filters</h1>
+                <p class="actor-hero-desc">Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.</p>
+                <a href="https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <h1>⭐ Shopee Reviews Scraper — Ratings, Text, Photos &amp; Videos from Any Shop or Product</h1>
+<p><strong><a href="https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63">Shopee Reviews Scraper</a></strong> extracts Shopee product and shop reviews into clean, structured rows: the star rating, the written review, the quality / seller / delivery sub-ratings, every photo and video, the variation the buyer ordered, the reviewer and the seller&#39;s reply. Paste a shop URL or a product URL from any of 8 Shopee markets and get every review Shopee shows for it — no Shopee account, no cookies, no setup.</p>
+<p>Perfect for <strong>e-commerce sellers</strong>, <strong>brand and market researchers</strong>, and <strong>data teams</strong> who need Shopee review data at scale without copying it by hand.</p>
+<hr>
+<h2>Why scrape Shopee reviews?</h2>
+<p>Shopee is the largest online marketplace in Southeast Asia and one of the biggest in Brazil and Taiwan, with millions of buyer reviews written every day. Those reviews are the most honest signal of how a product and a seller actually perform — and they are spread across thousands of product pages.</p>
+<p>Here are some of the most common use cases:</p>
+<ul>
+<li><strong>Competitor monitoring</strong>: track what buyers praise and complain about in a rival shop, week after week.</li>
+<li><strong>Product research</strong>: read the 1-star and 2-star reviews of a product before you source or stock it.</li>
+<li><strong>Seller reputation</strong>: measure seller service and delivery sub-ratings across a shop&#39;s whole catalogue.</li>
+<li><strong>Sentiment analysis and AI</strong>: feed thousands of real, labelled reviews (text + stars) into your models.</li>
+<li><strong>Visual quality checks</strong>: collect buyer photos and videos to see what customers actually received.</li>
+</ul>
+<hr>
+<h2>🌏 Supported markets</h2>
+<p>Each market below was confirmed with a real shop&#39;s reviews before this listing was published.</p>
+<table>
+<thead>
+<tr>
+<th>Market</th>
+<th>Storefront</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>🇸🇬 Singapore</td>
+<td>shopee.sg</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇲🇾 Malaysia</td>
+<td>shopee.com.my</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇮🇩 Indonesia</td>
+<td>shopee.co.id</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇵🇭 Philippines</td>
+<td>shopee.ph</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇹🇭 Thailand</td>
+<td>shopee.co.th</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇻🇳 Vietnam</td>
+<td>shopee.vn</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇹🇼 Taiwan</td>
+<td>shopee.tw</td>
+<td>✅ confirmed</td>
+</tr>
+<tr>
+<td>🇧🇷 Brazil</td>
+<td>shopee.com.br</td>
+<td>✅ confirmed</td>
+</tr>
+</tbody></table>
+<p>URLs from Mexico, Colombia, Chile and Argentina are accepted, but those markets are not confirmed yet. You can mix URLs from different markets in one run — the market is read from each URL.</p>
+<hr>
+<h2>What data can Shopee Reviews Scraper extract?</h2>
+<h3>⭐ Rating</h3>
+<ul>
+<li><code>rating</code> — the star rating, 1 to 5</li>
+<li><code>productQuality</code>, <code>sellerService</code>, <code>deliveryService</code> — the three sub-ratings, 1 to 5</li>
+<li><code>lowRatingReasons</code> — the reasons a buyer picked for a low rating (e.g. &quot;Poor quality&quot;)</li>
+<li><code>reviewTags</code> — the topic tags a buyer picked (e.g. &quot;Design&quot;, &quot;Material&quot;)</li>
+</ul>
+<h3>📝 Review</h3>
+<ul>
+<li><code>text</code> — the written review (empty for star-only reviews), and <code>hasText</code></li>
+<li><code>imageUrls</code> — full-size URLs of every photo the buyer attached</li>
+<li><code>videoUrls</code> — URLs of every video the buyer attached (MP4)</li>
+<li><code>sellerReply</code>, <code>sellerReplyAt</code> — the seller&#39;s public reply, when there is one</li>
+<li><code>likeCount</code> — how many shoppers found the review helpful</li>
+<li><code>isHidden</code> — whether Shopee has hidden the review&#39;s text</li>
+</ul>
+<h3>🛍️ Product &amp; order</h3>
+<ul>
+<li><code>productId</code>, <code>productName</code>, <code>productUrl</code> — the product the review is about</li>
+<li><code>variation</code> — the variation the buyer ordered (colour, size, …)</li>
+<li><code>orderId</code>, <code>currency</code>, <code>isRepeatPurchase</code></li>
+</ul>
+<h3>👤 Reviewer</h3>
+<ul>
+<li><code>reviewerName</code> — masked by Shopee when the review is anonymous, and <code>isAnonymous</code></li>
+<li><code>reviewerAvatarUrl</code></li>
+<li><code>buyerRegion</code>, <code>isOverseas</code></li>
+</ul>
+<h3>🏪 Shop</h3>
+<ul>
+<li><code>shopId</code>, <code>shopUrl</code>, <code>country</code></li>
+</ul>
+<h3>📅 Time</h3>
+<ul>
+<li><code>createdAt</code>, <code>updatedAt</code> — ISO 8601, UTC</li>
+</ul>
+<h3>📊 Summary row (one per URL, optional)</h3>
+<ul>
+<li><code>reviewsCollected</code>, <code>reviewsScanned</code>, <code>reviewsByStar</code>, <code>coverage</code> — what was read and returned, and whether Shopee&#39;s depth limit was reached</li>
+</ul>
+<hr>
+<h2>⚙️ How to use Shopee Reviews Scraper</h2>
+<h3>Input options</h3>
+<h4><code>startUrls</code> — Shopee shop or product URLs</h4>
+<table>
+<thead>
+<tr>
+<th>URL you paste</th>
+<th>What you get</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>https://shopee.sg/shop/276679244</code></td>
+<td>Every review of the shop, across all its products</td>
+</tr>
+<tr>
+<td><code>https://shopee.com.my/Product-Name-i.345524236.26828374105</code></td>
+<td>The reviews of that one product</td>
+</tr>
+<tr>
+<td><code>https://shopee.com.br/product/316479116/5055406617</code></td>
+<td>The reviews of that one product (short form)</td>
+</tr>
+</tbody></table>
+<p>Shopee shows reviews per shop, so for a product URL the Actor reads the shop&#39;s reviews and keeps that product&#39;s. Several products from the same shop are read in one pass, so adding more products from one shop costs no extra time.</p>
+<p>A shop link that uses the shop&#39;s name instead of its number (for example <code>shopee.com.br/carrefour</code>) is not supported yet — open any of the shop&#39;s products and paste that product URL, or use the <code>/shop/&lt;number&gt;</code> link.</p>
+<h4><code>maxReviewsPerShop</code> (Integer)</h4>
+<ul>
+<li><strong>Default</strong>: <code>100</code></li>
+<li>Most reviews returned for each URL. <code>0</code> returns everything Shopee shows.</li>
+</ul>
+<h4><code>starRatings</code> (Array)</h4>
+<ul>
+<li><strong>Default</strong>: empty (every rating, newest first)</li>
+<li>Only return reviews with these star ratings, e.g. <code>[&quot;1&quot;, &quot;2&quot;]</code> for complaints only.</li>
+<li>Shopee shows roughly the 1,000 most recent reviews per shop. Each star rating you select is read separately and reaches about 1,000 deep on its own, so <strong>selecting all five star ratings reaches up to about 5,000 reviews per shop</strong>.</li>
+</ul>
+<h4><code>onlyWithText</code> / <code>onlyWithMedia</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>false</code></li>
+<li>Skip star-only reviews, or reviews without a photo or video.</li>
+</ul>
+<h4><code>includeShopSummary</code> (Boolean)</h4>
+<ul>
+<li><strong>Default</strong>: <code>true</code></li>
+<li>Adds one summary row per URL with what was scanned and collected.</li>
+</ul>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [
+        { &quot;url&quot;: &quot;https://shopee.sg/shop/276679244&quot; },
+        { &quot;url&quot;: &quot;https://shopee.com.my/LABER-LEE-Unisex-Leisure-Shoulder-Bag-Multi-Pocket-Messenger-Shoulder-Bag-Large-Capacity-Nylon-Tablet-Netbook-Umbrella-i.345524236.26828374105&quot; }
+    ],
+    &quot;maxReviewsPerShop&quot;: 500,
+    &quot;starRatings&quot;: [&quot;1&quot;, &quot;2&quot;, &quot;3&quot;],
+    &quot;onlyWithText&quot;: true
+}
+</code></pre>
+<h3>🔐 Authentication</h3>
+<p>None. The Actor reads the same reviews any shopper sees on Shopee — you never need a Shopee account, a login or cookies.</p>
+<hr>
+<h2>💰 Pricing</h2>
+<p>How much does it cost to scrape Shopee reviews? You pay per review delivered, plus a small fee per run.</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Review delivered</td>
+<td>$0.0030</td>
+<td>$0.0027</td>
+<td>$0.0024</td>
+<td>$0.0021</td>
+</tr>
+<tr>
+<td>Run start (per GB of memory)</td>
+<td>$0.005</td>
+<td>$0.004</td>
+<td>$0.0035</td>
+<td>$0.003</td>
+</tr>
+</tbody></table>
+<p>Summary rows and guidance rows are never charged.</p>
+<p><strong>Cost estimate examples:</strong></p>
+<ul>
+<li><strong>1,000 reviews</strong> on the FREE plan: ~$3.00 + $0.005 run start</li>
+<li><strong>1,000 reviews</strong> on the GOLD plan: ~$2.10 + $0.003 run start</li>
+</ul>
+<blockquote>
+<p>💡 Tip: set <code>maxReviewsPerShop</code> to <code>10</code> first to check your URLs before a full run. You can also set a maximum cost per run in the run options — the Actor stops before it goes over.</p>
+</blockquote>
+<hr>
+<h2>📊 Sample output</h2>
+<p>A real review row (Singapore):</p>
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;review&quot;,
+    &quot;reviewId&quot;: &quot;2729298164&quot;,
+    &quot;country&quot;: &quot;SG&quot;,
+    &quot;shopId&quot;: &quot;276679244&quot;,
+    &quot;shopUrl&quot;: &quot;https://shopee.sg/shop/276679244&quot;,
+    &quot;productId&quot;: &quot;3152884068&quot;,
+    &quot;productName&quot;: &quot;Creative Outlier Air Wireless Earbuds (Local Singapore Warranty)&quot;,
+    &quot;productUrl&quot;: &quot;https://shopee.sg/product/276679244/3152884068&quot;,
+    &quot;variation&quot;: &quot;Black&quot;,
+    &quot;rating&quot;: 5,
+    &quot;text&quot;: &quot;Works well and worth the price, usage as stated for the product&quot;,
+    &quot;hasText&quot;: true,
+    &quot;imageUrls&quot;: [&quot;https://down-sg.img.susercontent.com/file/25720e19cdfe75d7cb9f615ae08c9925&quot;],
+    &quot;videoUrls&quot;: [],
+    &quot;reviewerName&quot;: &quot;mazlinteo&quot;,
+    &quot;isAnonymous&quot;: false,
+    &quot;createdAt&quot;: &quot;2020-07-23T08:43:28.000Z&quot;,
+    &quot;sellerReply&quot;: null,
+    &quot;buyerRegion&quot;: &quot;SG&quot;,
+    &quot;orderId&quot;: &quot;47750438544185&quot;,
+    &quot;currency&quot;: &quot;SGD&quot;,
+    &quot;reviewTags&quot;: [],
+    &quot;lowRatingReasons&quot;: []
+}
+</code></pre>
+<p>The summary row for a product URL:</p>
+<pre><code class="language-json">{
+    &quot;type&quot;: &quot;shop-summary&quot;,
+    &quot;country&quot;: &quot;MY&quot;,
+    &quot;shopId&quot;: &quot;345524236&quot;,
+    &quot;productId&quot;: &quot;26828374105&quot;,
+    &quot;reviewsCollected&quot;: 13,
+    &quot;reviewsScanned&quot;: 1000,
+    &quot;reviewsByStar&quot;: { &quot;5&quot;: 13 },
+    &quot;coverage&quot;: &quot;Hit Shopee&#39;s ~1,000-review limit on the all-stars feed; choose star ratings to reach older reviews.&quot;,
+    &quot;note&quot;: &quot;Product URL: Shopee publishes no per-product feed, so these are the reviews for this product found in the shop-wide feed.&quot;
+}
+</code></pre>
+<hr>
+<h2>❓ Frequently Asked Questions</h2>
+<p><strong>Do I need a Shopee account to use this Actor?</strong>
+No. It reads the reviews Shopee shows to every visitor. No login, no cookies.</p>
+<p><strong>How much do 1,000 Shopee reviews cost?</strong>
+About $3.00 on the FREE plan and $2.10 on GOLD, plus one run-start fee — see the pricing table above. Apify&#39;s monthly platform credit covers roughly 1,600 reviews.</p>
+<p><strong>How many reviews can I get per shop?</strong>
+Shopee shows about the 1,000 most recent reviews per shop. Select star ratings in <code>starRatings</code> to read each star separately — all five together reach up to about 5,000 reviews per shop.</p>
+<p><strong>Can I get the reviews of a single product?</strong>
+Yes. Paste the product URL. The summary row tells you how many of the shop&#39;s reviews were read to find them.</p>
+<p><strong>Can I scrape several shops or countries in one run?</strong>
+Yes. Add as many URLs as you like, from any of the supported markets, in one run.</p>
+<p><strong>Can I get only negative reviews?</strong>
+Yes. Set <code>starRatings</code> to <code>[&quot;1&quot;, &quot;2&quot;]</code>. Add <code>onlyWithText: true</code> to skip star-only ratings.</p>
+<p><strong>Why is a review&#39;s text empty?</strong>
+Either the buyer left stars only (<code>hasText: false</code>), or Shopee has hidden the review (<code>isHidden: true</code>).</p>
+<p><strong>What happens with a URL I typed wrong?</strong>
+The run does not fail. The URL is skipped, the reason is logged, and the rest of your URLs are still scraped. If no URL is usable, you get one row explaining how to fix the input.</p>
+<hr>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li><strong>Public data only</strong> — processes publicly available data.</li>
+<li><strong>Rate limiting</strong> — respects source-service limits and terms of use.</li>
+<li><strong>Data protection</strong> — no storage of personal information or unauthorized data collection.</li>
+<li><strong>Commercial use</strong> — suitable for business intelligence and research.</li>
+<li>No affiliation with or endorsement by Shopee is implied.</li>
+</ul>
+<hr>
+<p><em>Shopee Reviews Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

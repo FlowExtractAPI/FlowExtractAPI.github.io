@@ -740,5 +740,19 @@
     "metaTitle": "Delaware Business Entity Search & Registered Agent Lookup",
     "metaDescription": "Search Delaware corporations and LLCs by name or file number. Get formation dates, entity types and registered agent name, address and phone in bulk.",
     "featured": false
+  },
+  {
+    "id": "shopee-reviews-scraper",
+    "name": "Shopee Reviews Scraper ⭐ Photos, Videos & Star-Rating Filters",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg",
+    "category": "tools",
+    "subcategory": "shopee",
+    "description": "Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.",
+    "apifyUrl": "https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63",
+    "docsPath": "shopee-reviews-scraper",
+    "readmeFile": "shopee-reviews-scraper.md",
+    "metaTitle": "Shopee Reviews Scraper - Ratings, Photos & Videos",
+    "metaDescription": "Scrape Shopee product and shop reviews: stars, text, sub-ratings, photos and videos across 8 markets. Filter by star rating. No Shopee login needed.",
+    "featured": false
   }
 ]

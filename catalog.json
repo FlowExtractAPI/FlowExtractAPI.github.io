@@ -1072,6 +1072,26 @@
         "exists": true
       },
       "onSite": true
+    },
+    {
+      "slug": "shopee-reviews-scraper",
+      "name": "Shopee Reviews Scraper ⭐ Photos, Videos & Star-Rating Filters",
+      "category": "tools",
+      "subcategory": "shopee",
+      "status": "public",
+      "apifyUrl": "https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63",
+      "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-yfL3LagfH8d0oEMEp-Xjgf1dTd1M-download.jpg",
+      "description": "Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.",
+      "metaTitle": "Shopee Reviews Scraper - Ratings, Photos & Videos",
+      "metaDescription": "Scrape Shopee product and shop reviews: stars, text, sub-ratings, photos and videos across 8 markets. Filter by star rating. No Shopee login needed.",
+      "featured": false,
+      "docsPath": "shopee-reviews-scraper",
+      "source": {
+        "dir": "Tools/shopee-reviews-scraper",
+        "readme": "Tools/shopee-reviews-scraper/README.md",
+        "exists": true
+      },
+      "onSite": true
     }
   ]
 }

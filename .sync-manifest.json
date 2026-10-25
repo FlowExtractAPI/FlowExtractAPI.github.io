@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T21:40:22.417Z",
+  "generatedAt": "2026-10-25T12:18:40.442Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -265,6 +265,11 @@
       "hash": "54e244e2272d3caf66672772c656b6b74383fe56628277fef8c7fce267a74680",
       "syncedAt": "2026-10-21T21:40:21.737Z",
       "readme": "Tools/delaware-corporations-scraper/README.md"
+    },
+    "shopee-reviews-scraper": {
+      "hash": "39a9c76aa9d2fcb6aaf0302e825aea42357fb6b1fb21f38b83bab4edd984faaf",
+      "syncedAt": "2026-10-25T12:18:40.254Z",
+      "readme": "Tools/shopee-reviews-scraper/README.md"
     }
   }
 }
