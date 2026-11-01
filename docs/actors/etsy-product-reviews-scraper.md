@@ -264,6 +264,8 @@ This actor extracts **publicly visible data** from Etsy  the same product and re
 - 💬 **GitHub Issues**: [FlowExtractAPI](https://github.com/FlowExtractAPI)
 
 ### 🌟 Related Actors by FlowExtract API
+- **[Etsy Search Scraper](https://apify.com/dz_omar/etsy-search-scraper?fpr=smcx63)**  Find Etsy listings by keyword — prices, shops, ratings and badges, filterable and sortable
+- **[Etsy Shop Scraper](https://apify.com/dz_omar/etsy-shop-scraper?fpr=smcx63)**  Full Etsy shop profiles plus a shop's complete listing catalog
 - **[Idealista Scraper API](https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63)**  Property data across Spain, Portugal, and Italy
 - **[YouTube Scraper Pro](https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63)**  Channel and playlist extraction
 - **[Facebook Ads Scraper Pro](https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63)**  Facebook ad-library data

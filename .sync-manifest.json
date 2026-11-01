@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T12:18:40.442Z",
+  "generatedAt": "2026-11-01T08:27:51.712Z",
   "actors": {
     "facebook-ads-scraper-pro": {
       "hash": "c7703d5c32c457e093113c4b24416e6c73c67c9294b8a706e29376b6d42c41f0",
@@ -177,8 +177,8 @@
       "readme": "Real-Estate/Realestate.com.au/README.md"
     },
     "immobilienscout24-scraper": {
-      "hash": "d21c44748b93a70a755b50fdf450ed33c4de2862eb63058dddda2419af426e6b",
-      "syncedAt": "2026-07-16T09:26:38.676Z",
+      "hash": "d9d07f5173ba5b64591fd894f4ae911f3f7bb519901f94a6f13e6a3ceb06a3ef",
+      "syncedAt": "2026-11-01T08:27:51.273Z",
       "readme": "Real-Estate/immobilienscout24/README.md"
     },
     "california-bizfile-scraper": {
@@ -202,8 +202,8 @@
       "readme": "Social-Media/product-hunt-pro/README.md"
     },
     "etsy-product-reviews-scraper": {
-      "hash": "d52cc88c4820ae294c6c403dd486357717a3a5e77a768b780bc64300beac051e",
-      "syncedAt": "2026-09-29T21:49:44.741Z",
+      "hash": "0ff43df5500f702a4c9da3a071b5d78f44c7ae04681c064fba720fa577b6ee8c",
+      "syncedAt": "2026-11-01T08:27:51.330Z",
       "readme": "Tools/etsy-product-reviews-scraper/README.md"
     },
     "linkedin-jobs-scraper": {
@@ -270,6 +270,21 @@
       "hash": "39a9c76aa9d2fcb6aaf0302e825aea42357fb6b1fb21f38b83bab4edd984faaf",
       "syncedAt": "2026-10-25T12:18:40.254Z",
       "readme": "Tools/shopee-reviews-scraper/README.md"
+    },
+    "autotrader-uk-scraper": {
+      "hash": "922c2a95f2c70938418613a07837d1a76a503429603101ab4e7eee5147a3639b",
+      "syncedAt": "2026-11-01T08:27:51.437Z",
+      "readme": "Automotive/autotrader-uk-scraper/README.md"
+    },
+    "etsy-search-scraper": {
+      "hash": "f3f9c72f84a2e3c8b453c16fe20639cb2de5e62d0a6cc4e1b934ec9f2468503f",
+      "syncedAt": "2026-11-01T08:27:51.459Z",
+      "readme": "Tools/etsy-search-scraper/README.md"
+    },
+    "etsy-shop-scraper": {
+      "hash": "0d19d001fd7384f585b0e1f48ac176c6f2852ecb726cab9152097e9536e49371",
+      "syncedAt": "2026-11-01T08:27:51.480Z",
+      "readme": "Tools/etsy-shop-scraper/README.md"
     }
   }
 }

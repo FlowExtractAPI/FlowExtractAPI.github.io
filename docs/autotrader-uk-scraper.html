@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary SEO (baked at build time by sync.js) -->
+    <title>AutoTrader UK Scraper - Cars, Vans, Bikes &amp; Motorhomes Data | FlowExtract API</title>
+    <meta name="title" content="AutoTrader UK Scraper - Cars, Vans, Bikes &amp; Motorhomes Data | FlowExtract API">
+    <meta name="description" content="Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.">
+    <link rel="canonical" href="https://flowextractapi.com/docs/autotrader-uk-scraper.html">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="FlowExtract API">
+    <meta property="og:title" content="AutoTrader UK Scraper - Cars, Vans, Bikes &amp; Motorhomes Data | FlowExtract API">
+    <meta property="og:description" content="Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.">
+    <meta property="og:url" content="https://flowextractapi.com/docs/autotrader-uk-scraper.html">
+    <meta property="og:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-H8aqxHthoPGFBJBB6-Lc56f7ZXEv-download.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AutoTrader UK Scraper - Cars, Vans, Bikes &amp; Motorhomes Data | FlowExtract API">
+    <meta name="twitter:description" content="Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.">
+    <meta name="twitter:image" content="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-H8aqxHthoPGFBJBB6-Lc56f7ZXEv-download.jpg">
+
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="docs.css">
+
+    <!-- Structured data: public fields only, no private stats -->
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"AutoTrader UK Scraper 🚗 Cars, Vans, Bikes & Motorhomes","description":"Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://flowextractapi.com/docs/autotrader-uk-scraper.html","sameAs":"https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63","offers":{"@type":"Offer","price":"0","priceCurrency":"USD","category":"pay-per-use"},"publisher":{"@type":"Organization","name":"FlowExtract API","url":"https://flowextractapi.com"},"image":"https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-H8aqxHthoPGFBJBB6-Lc56f7ZXEv-download.jpg"}</script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="docs-nav">
+        <div class="container">
+            <a href="../index.html" class="logo">
+                <svg class="logo-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="100" cy="50" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="50" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <circle cx="150" cy="150" r="25" fill="currentColor" stroke="#5bb5b5" stroke-width="4"/>
+                    <polygon points="100,75 75,137.5 125,137.5" fill="#5bb5b5" opacity="0.7"/>
+                    <line x1="100" y1="75" x2="75" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="100" y1="75" x2="125" y2="125" stroke="#5bb5b5" stroke-width="4"/>
+                    <line x1="75" y1="150" x2="125" y2="150" stroke="#5bb5b5" stroke-width="4"/>
+                </svg>
+                <span>FlowExtract API</span>
+            </a>
+            <a href="../index.html" class="back-link">← Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Actor header band — baked at build time -->
+    <header class="actor-hero">
+        <div class="container actor-hero-inner">
+            <div class="actor-hero-media"><img class="actor-hero-img" src="https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-H8aqxHthoPGFBJBB6-Lc56f7ZXEv-download.jpg" alt="AutoTrader UK Scraper 🚗 Cars, Vans, Bikes &amp; Motorhomes" width="110" height="110"></div>
+            <div class="actor-hero-text">
+                <span class="actor-hero-category">Developer Tools &amp; Utilities</span>
+                <h1 class="actor-hero-title">AutoTrader UK Scraper 🚗 Cars, Vans, Bikes &amp; Motorhomes</h1>
+                <p class="actor-hero-desc">Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.</p>
+                <a href="https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63" class="btn btn-primary actor-hero-launch" target="_blank" rel="noopener">Launch on Apify ↗</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="docs-main">
+        <div class="container">
+            <aside class="docs-sidebar" id="sidebar">
+                <div class="sidebar-header">On this page</div>
+                <nav class="sidebar-nav" id="toc"><!-- built by docs.js from headings --></nav>
+            </aside>
+
+            <article class="docs-content" id="content">
+                <!-- Differentiated, original content (above the README) -->
+                
+
+                <!-- Full actor documentation (pre-rendered from the README) -->
+                <section class="readme-body" id="readme-body">
+                    <p><strong><a href="https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63">AutoTrader UK Scraper</a></strong> extracts <strong>AutoTrader UK listings</strong> from any search link you copy from autotrader.co.uk: <strong>cars, vans, motorbikes, motorhomes, caravans, trucks, farm machinery, plant and electric bikes</strong>. Paste the link, choose how many listings you want, and get <strong>AutoTrader&#39;s own listing data, complete and unchanged</strong> — price, mileage, specs, registration, every seller phone number and address, vehicle checks and high-resolution photos.</p>
+<p>Perfect for <strong>car dealers</strong>, <strong>vehicle traders and auction buyers</strong>, <strong>market analysts</strong> and <strong>lead-generation teams</strong> who need up-to-date UK vehicle stock without copying listings by hand.</p>
+<h2>What does AutoTrader UK Scraper do?</h2>
+<ul>
+<li><strong>Any AutoTrader search link</strong> — set your filters on the website (make, model, price, year, mileage, fuel, gearbox, berths, distance…) and paste the address. The same filters apply to the data.</li>
+<li><strong>Every vehicle type</strong> — cars, vans, bikes, motorhomes, caravans, trucks, farm, plant and electric-bike searches, plus single listing links.</li>
+<li><strong>Large searches collected in full</strong> — when AutoTrader shows thousands of matches, the scraper still reaches them, not just the first pages.</li>
+<li><strong>Complete data, as AutoTrader returns it</strong> — every field of the search result and of the full listing, with AutoTrader&#39;s own field names and nesting. Nothing dropped, renamed or flattened, so new AutoTrader fields appear in your data automatically.</li>
+<li><strong>Full listing details</strong> — registration, every seller phone number and website, description, equipment, history check, price rating against the market, running costs and every photo.</li>
+<li><strong>Working high-resolution photos</strong> — 1280×960 image links that open directly.</li>
+<li><strong>Duplicates removed</strong> — a listing found by several of your links is delivered and charged once.</li>
+</ul>
+<h3>What data can you extract from AutoTrader UK?</h3>
+<p>Each listing has three parts:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>What it holds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>search</code></td>
+<td>The listing exactly as AutoTrader&#39;s search results return it: title, price, mileage, year, make, model, specs, seller name and location, photos, badges.</td>
+</tr>
+<tr>
+<td><code>details</code></td>
+<td>The full listing exactly as AutoTrader returns it: registration, owners, service history, seller contact (<strong>every phone number</strong>, website), description, equipment, vehicle check, price rating against the market, CO2, tax, insurance group, delivery and reservation options, every photo.</td>
+</tr>
+<tr>
+<td><code>_meta</code></td>
+<td>What the scraper adds: listing ID and URL, vehicle type, detail status, <strong>all phone numbers in one list</strong>, working 1280×960 photo links, a short summary (title, price, year, mileage, seller, town) for table views, the source URL and the time.</td>
+</tr>
+</tbody></table>
+<p>Field names inside <code>search</code> and <code>details</code> are AutoTrader&#39;s own, so any field AutoTrader adds or renames shows up as AutoTrader sends it.</p>
+<h3>Why use AutoTrader UK Scraper on Apify?</h3>
+<p>Running it on Apify gives you <strong>API access</strong>, <strong>scheduling</strong>, <strong>monitoring</strong>, <strong>integrations</strong> (Make, Zapier, n8n, Google Sheets, webhooks) and <strong>proxy rotation</strong> without managing any infrastructure. A 100-listing run with full details costs about <strong>$0.08</strong>.</p>
+<h2>How to scrape AutoTrader UK</h2>
+<ol>
+<li>Open <a href="https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63">AutoTrader UK Scraper</a> in Apify Console.</li>
+<li>On autotrader.co.uk, run your search with the filters you want and copy the page address.</li>
+<li>Paste one or more links into <strong>AutoTrader UK search or listing URLs</strong>.</li>
+<li>Set <strong>Maximum listings per URL</strong> for search links (start small: <code>20</code>).</li>
+<li>Click <strong>Start</strong>, then download the results as JSON, CSV or Excel, or fetch them over the API.</li>
+</ol>
+<h2>How much does it cost to scrape AutoTrader UK?</h2>
+<p>Pay only for what you get. Prices per event by Apify plan:</p>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>FREE</th>
+<th>BRONZE</th>
+<th>SILVER</th>
+<th>GOLD+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Listing (search-results data)</td>
+<td>$0.0005</td>
+<td>$0.00049</td>
+<td>$0.00048</td>
+<td>$0.00047</td>
+</tr>
+<tr>
+<td>Listing details add-on</td>
+<td>$0.00025</td>
+<td>$0.00024</td>
+<td>$0.00024</td>
+<td>$0.00023</td>
+</tr>
+<tr>
+<td>Run start (per GB of memory)</td>
+<td>$0.003</td>
+<td>$0.0025</td>
+<td>$0.002</td>
+<td>$0.002</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>1,000 listings with full details</strong> cost about <strong>$0.75</strong> on the free plan and <strong>$0.70</strong> on GOLD (+ the run-start fee).</li>
+<li><strong>1,000 listings without details</strong> cost about <strong>$0.50</strong> (GOLD: $0.47).</li>
+<li><strong>Include full details</strong> applies to <strong>search links</strong>. A <strong>single-listing link always comes with full details</strong> and is charged the listing event plus the details add-on.</li>
+<li>The details add-on is never charged when details are turned off for a search, not offered for that vehicle type (electric bikes), or could not be read.</li>
+<li>Example: 2 search links + 4 listing links, Maximum listings per URL = 10, details off → up to 20 listing events for the searches, plus 4 listing events and 4 details add-ons for the listing links.</li>
+</ul>
+<h2>Input and output examples</h2>
+<h3>Input</h3>
+<pre><code class="language-json">{
+    &quot;startUrls&quot;: [
+        &quot;https://www.autotrader.co.uk/car-search?postcode=SW1A1AA&amp;make=Volkswagen&amp;model=Golf&quot;,
+        &quot;https://www.autotrader.co.uk/motorhome-search?berth=2&amp;make=Benimar&amp;postcode=SW1A1AA&amp;transmission=Automatic&quot;,
+        &quot;https://www.autotrader.co.uk/car-details/202610217203885&quot;
+    ],
+    &quot;maxResults&quot;: 100,
+    &quot;includeDetails&quot;: true
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Input value</th>
+<th>What it extracts</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Search link (<code>…/car-search?…</code>, <code>…/van-search?…</code>, <code>…/electric-bike-search?…</code>, …)</td>
+<td>Up to <strong>Maximum listings per URL</strong> listings matching the link&#39;s filters; empty filters such as <code>make=&amp;model=</code> mean no filter</td>
+</tr>
+<tr>
+<td>Listing link (<code>…/car-details/&lt;number&gt;</code>, <code>…/electric-bike-details/&lt;number&gt;</code>, …)</td>
+<td>That one listing, always with full details (electric bikes: search-result data)</td>
+</tr>
+<tr>
+<td>Link without a postcode</td>
+<td>A UK-wide search</td>
+</tr>
+</tbody></table>
+<p>The run collects up to <strong>Maximum listings per URL × number of search links</strong>, plus one listing per listing link: 10 search links with 100 gives up to 1,000 listings.</p>
+<h3>Output</h3>
+<h3>Listing record</h3>
+<p>A real record from a test run, shortened (<code>…</code>) for the page; phone numbers partly masked here — the dataset has every field in full.</p>
+<pre><code class="language-json">[
+    {
+        &quot;search&quot;: null,
+        &quot;details&quot;: {
+            &quot;advertId&quot;: &quot;202606283692289&quot;,
+            &quot;advertiser&quot;: {
+                &quot;sellerName&quot;: &quot;Bunty Car Sales&quot;,
+                &quot;contact&quot;: {
+                    &quot;phoneNumberOne&quot;: &quot;(07537) ••••••&quot;,
+                    &quot;protectedNumber&quot;: false
+                },
+                &quot;location&quot;: {
+                    &quot;town&quot;: &quot;Oldham&quot;,
+                    &quot;postcode&quot;: &quot;OL2 6UR&quot;,
+                    &quot;latLong&quot;: &quot;53.5863337,-2.1290391&quot;
+                },
+                &quot;…&quot;: &quot;…&quot;
+            },
+            &quot;vehicle&quot;: {
+                &quot;manufacturedYear&quot;: 1997,
+                &quot;mileage&quot;: {
+                    &quot;mileage&quot;: 64000
+                },
+                &quot;colour&quot;: &quot;White&quot;,
+                &quot;…&quot;: &quot;…&quot;
+            },
+            &quot;sale&quot;: {
+                &quot;title&quot;: &quot;Ford Escort (1997)&quot;,
+                &quot;pricing&quot;: {
+                    &quot;price&quot;: 950
+                },
+                &quot;…&quot;: &quot;…&quot;
+            },
+            &quot;specification&quot;: {
+                &quot;make&quot;: &quot;Ford&quot;,
+                &quot;model&quot;: &quot;Escort&quot;,
+                &quot;bodyType&quot;: &quot;Car Derived Van&quot;,
+                &quot;fuel&quot;: &quot;Diesel&quot;,
+                &quot;…&quot;: &quot;…&quot;
+            },
+            &quot;…&quot;: &quot;every other field AutoTrader returns&quot;
+        },
+        &quot;_meta&quot;: {
+            &quot;advert_id&quot;: &quot;202606283692289&quot;,
+            &quot;url&quot;: &quot;https://www.autotrader.co.uk/van-details/202606283692289&quot;,
+            &quot;vehicle_type&quot;: &quot;van&quot;,
+            &quot;detail_status&quot;: &quot;ok&quot;,
+            &quot;phones&quot;: [
+                &quot;(07537) ••••••&quot;
+            ],
+            &quot;image_urls&quot;: [
+                &quot;https://m.atcdn.co.uk/a/media/w1280h960/d95638d102cf47df9bd7c95dbc555920.jpg&quot;,
+                &quot;https://m.atcdn.co.uk/a/media/w1280h960/69efd93fa41e456ebe06bd491030c193.jpg&quot;,
+                &quot;…&quot;
+            ],
+            &quot;title&quot;: &quot;Ford Escort (1997)&quot;,
+            &quot;make&quot;: &quot;Ford&quot;,
+            &quot;model&quot;: &quot;Escort&quot;,
+            &quot;year&quot;: 1997,
+            &quot;mileage&quot;: 64000,
+            &quot;price&quot;: 950,
+            &quot;seller&quot;: &quot;Bunty Car Sales&quot;,
+            &quot;town&quot;: &quot;Oldham&quot;,
+            &quot;main_image&quot;: &quot;https://m.atcdn.co.uk/a/media/w1280h960/d95638d102cf47df9bd7c95dbc555920.jpg&quot;,
+            &quot;source_url&quot;: &quot;https://www.autotrader.co.uk/van-details/202606283692289&quot;,
+            &quot;scraped_at&quot;: &quot;2026-10-27T09:28:01.018Z&quot;,
+            &quot;source&quot;: &quot;autotrader_uk_scraper&quot;
+        }
+    }
+]
+</code></pre>
+<h2>Other Actors you might need</h2>
+<table>
+<thead>
+<tr>
+<th>Actor</th>
+<th>What it adds</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong><a href="https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63">Salvagebid Scraper</a></strong></td>
+<td>Salvage and damaged-vehicle auction listings — useful alongside AutoTrader prices for trade buyers and repairers.</td>
+</tr>
+</tbody></table>
+<h2>Frequently asked questions</h2>
+<h3>Is it legal to scrape AutoTrader UK?</h3>
+<p>The scraper collects publicly available listing data. You are responsible for using it in line with AutoTrader&#39;s terms and with UK GDPR, especially for seller contact details. This is not legal advice.</p>
+<h3>Do I need an AutoTrader account?</h3>
+<p>No. Paste public search or listing links — no login, cookies or API key.</p>
+<h3>Which AutoTrader links are accepted?</h3>
+<p>Search links and single listing links for cars, vans, bikes, motorhomes, caravans, trucks, farm, plant and electric bikes. Links copied without <code>https://</code> work too, and extra website parameters (<code>searchId</code>, <code>page</code>, <code>fromsra</code>…) are ignored. Other websites and other AutoTrader pages are rejected before the run starts, so nothing is charged.</p>
+<h3>Why are some fields empty?</h3>
+<p>The data is AutoTrader&#39;s own, so a field is empty when AutoTrader has nothing for it. Sellers fill in different details, and some fields only come with full details (<code>details</code>: registration, phone numbers, description, equipment, vehicle check). AutoTrader offers no full details for electric bikes, so their rows carry the search-result data (<code>_meta.detail_status: &quot;not_available&quot;</code>) and are never charged the details add-on.</p>
+<h3>Where are the seller&#39;s phone numbers?</h3>
+<p>In <code>details.advertiser.contact</code> (<code>phoneNumberOne</code>, and <code>phoneNumberTwo</code> when the seller has a second number), and all of them together in <code>_meta.phones</code>.</p>
+<h3>What if AutoTrader changes its data?</h3>
+<p><code>search</code> and <code>details</code> are passed through as AutoTrader returns them, so new or renamed fields appear in your data as AutoTrader names them — nothing silently turns empty.</p>
+<h3>Why did my run return fewer listings than I asked for?</h3>
+<p>The search had fewer matches, a listing was already delivered by another of your links, or your max cost per run was reached. The run&#39;s status line and log say which. If more than 1,000 listings share one exact price, the extra ones can&#39;t be reached — narrow the search to get them.</p>
+<h3>In what order do the listings come back?</h3>
+<p>In the link&#39;s sort order, as long as you ask for up to 1,000 listings per link. Above 1,000, a large search is collected in price bands from cheapest to most expensive, so that every listing can be reached.</p>
+<h3>What happens if a link has a filter the scraper can&#39;t apply?</h3>
+<p>The run log names it and the rest of the search runs as normal, so you never get a silently wider search.</p>
+<h3>Can I use AutoTrader UK Scraper in Make, Zapier, n8n or my own code?</h3>
+<p>Yes — through Apify&#39;s integrations, the Apify API and the client libraries for JavaScript and Python.</p>
+<h3>What happens if a run is interrupted?</h3>
+<p>It saves progress and resumes where it left off, without delivering or charging the same listing twice.</p>
+<h2>Support</h2>
+<ul>
+<li>🌐 <strong>Website:</strong> <a href="https://flowextractapi.com">flowextractapi.com</a></li>
+<li>📧 <strong>Email:</strong> <a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></li>
+<li>💬 <strong>GitHub:</strong> <a href="https://github.com/FlowExtractAPI">FlowExtractAPI</a></li>
+<li>💼 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/flowextract-api/">flowextract-api</a></li>
+<li>🐦 <strong>X (Twitter):</strong> <a href="https://x.com/FlowExtractAPI">@FlowExtractAPI</a></li>
+<li>📱 <strong>Facebook:</strong> <a href="https://www.facebook.com/flowextractapi">flowextractapi</a></li>
+<li>🎵 <strong>TikTok:</strong> <a href="https://www.tiktok.com/@flowextractapi">@flowextractapi</a></li>
+</ul>
+<h2>Legal &amp; compliance</h2>
+<ul>
+<li><strong>Public data only</strong> — processes publicly available data.</li>
+<li><strong>Rate limiting</strong> — respects source-service limits and terms of use.</li>
+<li><strong>Data protection</strong> — no storage of personal information or unauthorized data collection.</li>
+<li><strong>Commercial use</strong> — suitable for business intelligence and research.</li>
+<li>No affiliation with or endorsement by AutoTrader is implied.</li>
+</ul>
+<hr>
+<p><em>AutoTrader UK Scraper — by FlowExtract API. Turn any website into structured data.</em></p>
+
+                </section>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer CTA -->
+    <section class="docs-cta">
+        <div class="container">
+            <h2>Ready to Get Started?</h2>
+            <p>Try this actor on Apify or contact us for custom integration</p>
+            <div class="cta-buttons">
+                <a href="https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63" class="btn btn-primary" target="_blank" rel="noopener">Launch on Apify</a>
+                <a href="../index.html#contact" class="btn btn-secondary">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="docs-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2026</span> FlowExtract API. All rights reserved.</p>
+            <p><a href="mailto:flowextractapi@outlook.com">flowextractapi@outlook.com</a></p>
+        </div>
+    </footer>
+
+    <script src="docs.js"></script>
+</body>
+</html>

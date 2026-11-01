@@ -1,101 +1,83 @@
 # 🏠 ImmoScout24 Scraper
 
-Fast, reliable property scraper for **immobilienscout24.de** — Germany's largest real-estate marketplace. Paste any search or property URL and get clean, structured listing data back.
+Fast, reliable property scraper for **immobilienscout24.de** — Germany's largest real-estate marketplace. Paste any search or property URL and get clean, structured, **numeric** listing data back — or turn a search into a **daily change feed** of new listings, price cuts and removed listings.
 
-**Supports every ImmoScout24 URL type — apartment & house search (rent / buy), property sub-types (villa, bungalow, semi-detached, farmhouse…), land, new-development (Neubau) projects, and individual property pages.**
+**Every ImmoScout24 property type — apartments and houses (rent / buy), house sub-types, land, offices, retail, gastronomy, halls, garages, flat-share rooms, furnished stays, investment properties and foreclosure auctions — from region, radius and drawn-area searches, individual property pages and new-build projects.**
 
-> No setup, no login, no browser to babysit. Filter on the ImmoScout24 website, copy the URL from your address bar, paste it in, and run.
+> No setup, no login, no proxy to configure. Filter on the ImmoScout24 website, copy the URL from your address bar, paste it in, and run.
 
 ---
 
 ## 🎯 What This Actor Extracts
 
-Complete property intelligence from ImmoScout24 listings:
+### 📋 Core Property Data (every listing)
+* **Price as a number** — cold rent per month or purchase price, plus the price exactly as shown and its unit
+* **Price per m²** — computed for every listing, or the per-m² rate commercial listings quote
+* **Size & rooms** — living / floor space and room count as numbers
+* **Address** — street, house number, postcode, city, district, latitude and longitude, plus a flag when the seller hides the street
+* **Listing facts** — property type, rent or buy, energy class, publication date, private seller or agency, listing package, new-build project unit, listed only on ImmoScout24
+* **Photos** — main photo and gallery, as working image URLs
 
-### 📋 Core Property Data
-* **Property Details**: listing ID, title, property type, and canonical web link
-* **Pricing**: headline price, plus (in detail mode) base rent, total rent, service charge, and price/m²
-* **Specifications**: rooms, living space, floor / number of floors, construction year
-* **Energy**: energy-efficiency class, energy & heating type, thermal characteristic
-* **Status**: publication state, listing type, private-vs-agency, new-build flag
+### 🔎 Full Details (optional add-on)
+* **Full rent breakdown** — base rent, total rent, service charge, heating costs, deposit, commission
+* **Purchase fees** — broker commission, land transfer tax, notary and land-registry costs with percentages, total purchase cost
+* **Regional price comparison** — ImmoScout24's own €/m² range for the area and for similar properties, and where this listing sits in it
+* **Every feature** — balcony, cellar, lift, fitted kitchen, garden, guest toilet, barrier-free, pets, parking, rented, assisted living
+* **Building & energy** — construction year, condition, interior quality, heating, energy certificate type and consumption
+* **Bedrooms, bathrooms, floor, availability date, apartment type**
+* **Descriptions** — property, furnishing, location and other texts
+* **Documents** — floor plans and PDFs; photos with room captions
+* **Agent** — company, contact name, logo, profile link, verified badge and phone numbers
+* **Project units** — the other units of the same new-build project
 
-### 🖼️ Visual Content
-* **Main Image**: primary listing photo on every result
-* **Full Gallery**: the complete high-resolution image set (detail mode)
-
-### 🏢 Location & Contact
-* **Address**: full line, street, house number, postcode, quarter, region
-* **GPS Coordinates**: latitude and longitude for mapping
-* **Agency & Agent**: company name, agent name, logo, and profile link
-* **Phone**: contact numbers where published
-
-### 🏗️ Building & Amenities
-* **Feature Flags**: balcony/terrace, cellar, lift, fitted kitchen, garden, barrier-free, pets, newly built
-* **Attribute Sections**: itemized “Main criteria”, “Costs”, and “Building details & energy certificate” exactly as shown on the listing
-* **Free-Text Descriptions**: full property description, furnishing, and location write-ups
-
-### ⚡ Advanced Features
-* **Automatic Filter Parsing**: location, property type & sub-type, price, rooms, living space, plot size, construction year, and equipment features are all read straight from the URL
-* **New-Development (Neubau) Support**: developer projects are captured, including their individual units
-* **Individual Property URLs**: a single property link always returns its full detail record
-* **Two Data Modes**: fast search-only, or full detail-page enrichment
-* **Configurable Results**: control max listings per search URL (or collect everything)
-* **Automatic Resume**: long runs continue from where they left off after any interruption
-* **Error Tracking**: unreadable URLs and expired listings are reported as clear error rows
+### 🔁 Monitoring & Change Tracking
+* **New listings only** — after a baseline run, each run returns only listings that appeared since the last one
+* **Price changes** — old price, new price, change in € and %, days on market
+* **Removed listings** — sold, let or delisted, with last price and days on market
+* **Unchanged listings are never charged**
 
 ---
 
 ## 🌐 Supported URL Types
 
-### Search / Listing URLs
-Scrape many properties from a search results page — rent, buy, or new developments:
+### Search URLs
+Copy any search from the website — every filter you set is carried over:
 
-* `https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten`
+* `https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten`
 * `https://www.immobilienscout24.de/Suche/de/bayern/muenchen/haus-kaufen?price=300000.0-900000.0&numberofrooms=3.0-6.0`
-* `https://www.immobilienscout24.de/Suche/de/berlin/berlin/villa-kaufen`
+* `https://www.immobilienscout24.de/Suche/de/berlin/berlin/buero-mieten` (offices, retail, gastronomy, halls…)
+* `https://www.immobilienscout24.de/Suche/radius/wohnung-mieten?geocoordinates=52.51051;13.43068;5.0` (radius search)
+* `https://www.immobilienscout24.de/Suche/shape/wohnung-kaufen?shape=…` (area drawn on the map)
 
-Any filter you apply on the site — property type & sub-type, price, rooms, living space, plot size, construction year, equipment — is carried over automatically. Just copy the address bar.
+If ImmoScout24's app does not accept one of your filters, the actor says so in the log and searches without it — your run never fails because of a filter.
 
 ### Individual Property URLs
-Extract the full detail record from a single property page:
+* `https://www.immobilienscout24.de/expose/167767638` — always returns the full detail record
 
-* `https://www.immobilienscout24.de/expose/167767638`
-
-### New-Development (Neubau) Project URLs
-Capture a developer project and its individual units:
-
+### New-Build (Neubau) Project URLs
 * `https://www.immobilienscout24.de/neubau/<developer>/<project>/132302.html`
 
-The actor detects which type of URL you provide and handles each accordingly. Mix any combination of URL types in a single run.
+Mix any combination of URL types in one run.
 
 ---
 
-## 📊 Two Data Modes
+## ✅ Input
 
-### ⚡ Fast Mode — `Fetch Full Property Details` OFF (default)
-Returns the listing data available from the search results — price, address, rooms, living space, energy class, agency, and main photo. Fast and cost-effective, ideal for building lists and monitoring a market.
+| Field | Type | Default | Description |
+|-------|------|---------|-------------|
+| **startUrls** | array | — | ImmoScout24 search, property or project URLs. |
+| **maxResults** | integer | 25 | Max listings per search URL. `0` = every listing of the search. In monitoring mode it caps new listings; use `0` to also detect removed listings. |
+| **fetchPropertyDetails** | boolean | false | Also fetch each listing's full detail page (add-on per listing). |
+| **excludeProjectUnits** | boolean | false | Skip new-build project units and project cards (not saved, not charged). |
+| **monitoringMode** | boolean | false | Return only what changed since the previous run of the same search. |
+| **reportPriceChanges** | boolean | true | Monitoring: add a row for every price change. |
+| **reportRemovedListings** | boolean | true | Monitoring: add a row for every listing no longer online. |
 
-### 🔎 Full Mode — `Fetch Full Property Details` ON
-For every listing from a search URL, also fetches the complete detail page — full rent breakdown, all features, energy-certificate data, complete descriptions, full image gallery, and agent contact — via one extra request per listing. Richer, more complete data.
-
-> Individual property URLs always return full details, regardless of this setting.
-
----
-
-## ✅ Input Schema
-
-| Field | Type | Required | Default | Description |
-|-------|------|----------|---------|-------------|
-| **startUrls** | array | ✅ Yes | — | One or more ImmoScout24 search or property URLs. Copy straight from the browser after applying filters. |
-| **maxResults** | integer | No | 25 | Max listings per search URL. Set to `0` for every available listing (bounded only by your budget). Individual property URLs always return one result. |
-| **fetchPropertyDetails** | boolean | No | false | 🔎 **Fetch full property details.** OFF: fast search-result fields only. ON: also fetch each property's full detail page (complete description, features, energy certificate, agent contact, exact location, full gallery) — richer, more complete data. Individual property URLs always return full details. |
-
-### Example Input (mixed URLs)
+### Example — scrape a search with full details
 ```json
 {
   "startUrls": [
-    { "url": "https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten" },
-    { "url": "https://www.immobilienscout24.de/Suche/de/bayern/muenchen/haus-kaufen?price=300000.0-900000.0&numberofrooms=3.0-6.0" },
+    { "url": "https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-kaufen" },
     { "url": "https://www.immobilienscout24.de/expose/167767638" }
   ],
   "maxResults": 100,
@@ -103,181 +85,164 @@ For every listing from a search URL, also fetches the complete detail page — f
 }
 ```
 
-**How it works:**
-- Each search URL returns up to `maxResults` listings
-- Each individual property URL returns exactly 1 full record
-- **Total output**: up to `maxResults × (number of search URLs)` + 1 per property URL
+### Example — daily change feed for a district
+Schedule this to run every day:
+```json
+{
+  "startUrls": [
+    { "url": "https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten" }
+  ],
+  "maxResults": 0,
+  "monitoringMode": true
+}
+```
+The first run saves every listing as a baseline. Each run after that returns only `new`, `price_changed` and `removed` rows. The history is kept per search URL in your Apify account, so keep the same Start URL between runs.
 
 ---
 
 ## 📤 Sample Output
 
-### Fast Mode — `fetchPropertyDetails: false`
+### Search row — `fetchPropertyDetails: false`
 ```json
 {
   "type": "property",
-  "listingId": "164526698",
-  "url": "https://www.immobilienscout24.de/expose/164526698",
-  "title": "Neubau 4-Zimmer Wohnung",
+  "listingId": "168052908",
+  "url": "https://www.immobilienscout24.de/expose/168052908",
+  "title": "Living in harmony with nature in a compact 2-room garden apartment",
   "realEstateType": "apartmentrent",
-  "price": "€3,952",
-  "livingSpace": "152 m²",
-  "numberOfRooms": "4 rms",
-  "energyEfficiencyClass": null,
+  "transactionType": "rent",
+  "price": 362,
+  "priceText": "€362",
+  "priceUnit": "per_month",
+  "currency": "EUR",
+  "pricePerSqm": 6.96,
+  "livingSpace": 52,
+  "numberOfRooms": 2,
+  "energyEfficiencyClass": "B",
   "address": {
-    "line": "Wendelsweg 66, 60599 Frankfurt, Sachsenhausen-Süd",
-    "postcode": null,
-    "latitude": 50.09785,
-    "longitude": 8.69708
+    "full": "Hellersdorfer Straße 91, 12619 Berlin, Kaulsdorf (Hellersdorf)",
+    "street": "Hellersdorfer Straße",
+    "houseNumber": "91",
+    "postcode": "12619",
+    "city": "Berlin",
+    "district": "Kaulsdorf (Hellersdorf)",
+    "latitude": 52.52485,
+    "longitude": 13.58695,
+    "isHidden": false
   },
+  "publishedText": "23 days ago",
+  "publishedDaysAgo": 23,
+  "publishedDate": "2026-10-07",
   "listingType": "XL",
-  "published": "7 months ago",
   "isPrivate": false,
-  "agencyName": "Actris GmbH",
-  "mainImage": "https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/ORIG/resize/800x600/format/webp/quality/80",
-  "images": ["https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/..."],
-  "details": null,
+  "isProjectUnit": false,
+  "exclusiveToImmoScout": false,
+  "mainImage": "https://pictures.immobilienscout24.de/listings/7059e813-…/ORIG/resize/800x600>/format/webp/quality/80",
+  "images": ["https://pictures.immobilienscout24.de/listings/7059e813-…/ORIG/legacy_thumbnail/1280x960/format/webp/quality/80"],
   "hasDetailData": false,
-  "source_url": "https://www.immobilienscout24.de/Suche/de/hessen/frankfurt-am-main/wohnung-mieten",
-  "_source": "immobilienscout24_scraper",
-  "scrapedAt": "2026-07-16T08:36:59.316Z"
+  "source_url": "https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten",
+  "scrapedAt": "2026-10-30T05:28:08.983Z"
 }
 ```
 
-### Full Mode — `fetchPropertyDetails: true`
-Everything above, plus a populated `details` object:
+### Full details — `fetchPropertyDetails: true` (excerpt of `details`)
 ```json
 {
-  "listingId": "164526698",
-  "title": "Neubau 4-Zimmer Wohnung",
-  "price": "€3,952",
-  "hasDetailData": true,
+  "listingId": "168812533",
+  "price": 649000,
+  "priceUnit": "purchase",
+  "pricePerSqm": 8057,
   "details": {
-    "baseRent": 3952,
-    "totalRent": 4431,
-    "serviceCharge": 479,
-    "livingSpace": 152,
+    "purchasePrice": 649000,
+    "livingSpace": 80.55,
+    "usableArea": 85,
     "numberOfRooms": 4,
-    "floor": 3,
-    "numberOfFloors": 4,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "floor": 2,
+    "numberOfFloors": 6,
+    "availableFrom": "2028",
     "yearConstructed": 2026,
-    "address": {
-      "street": "Wendelsweg",
-      "houseNumber": "66",
-      "zipCode": "60599",
-      "quarter": "sachsenhausen_süd",
-      "region": "Hessen, Frankfurt_am_Main, Süd",
-      "latitude": 50.09785,
-      "longitude": 8.69708
+    "energyEfficiencyClass": "A",
+    "commission": "3,57 % inkl. 19 % MwSt.",
+    "financeCosts": {
+      "purchasePrice": 649000,
+      "additionalCosts": 75089,
+      "totalCosts": 724089,
+      "brokerCommission": { "value": 23169, "percentage": "3.57 %" },
+      "landTransferTax": { "value": 38940, "percentage": "6 %" },
+      "notaryCosts": { "value": 9735, "percentage": "1.5 %" },
+      "landRegistryEntry": { "value": 3245, "percentage": "0.5 %" }
     },
-    "heatingType": "floor_heating",
-    "condition": "first_time_use",
-    "interiorQuality": "luxury",
-    "features": {
-      "balcony": true, "cellar": true, "lift": true, "fittedKitchen": true,
-      "garden": true, "petsAllowed": null, "barrierFree": true, "newlyBuilt": true
+    "priceComparison": {
+      "regionMinPerSqm": 4200,
+      "regionMaxPerSqm": 17000,
+      "similarMinPerSqm": 5950,
+      "similarMaxPerSqm": 11950,
+      "thisListingPerSqm": 8058,
+      "positionInRange": 0.3
     },
-    "descriptions": {
-      "Property Description": "Wohnen mit Stil und Geschichte – Ihr neues Zuhause im Henninger Park…",
-      "Furnishing": "Modernes Wohnen mit Stil und Eleganz…",
-      "Location": "Zu Hause in den Stadtgärten am Henninger Turm…"
-    },
-    "attributeSections": [
-      { "title": "Main criteria", "items": [
-        { "label": "Apartment type:", "text": "Flat" },
-        { "label": "Floor:", "text": "3 of 4" },
-        { "label": "Balcony/Terrace:", "present": true },
-        { "label": "Elevator:", "present": true }
-      ]},
-      { "title": "Costs", "items": [
-        { "label": "Net rent (plus ancillary costs):", "text": "€3,952" },
-        { "label": "Ancillary costs:", "text": "€479" },
-        { "label": "Total rent:", "text": "€4,431" }
-      ]},
-      { "title": "Building details & energy certificate", "items": [
-        { "label": "Construction year:", "text": "2026" },
-        { "label": "Type of heating:", "text": "Floor heating" }
-      ]}
-    ],
-    "agent": {
-      "company": "Actris GmbH",
-      "name": "Eva Cuadrado",
-      "profileUrl": "https://www.immobilienscout24.de/anbieter/actris-gmbh/ac16e3a0ecb504351db0039"
-    },
-    "phoneNumbers": [],
-    "images": ["https://pictures.immobilienscout24.de/listings/365d83d9-...-2021190120.jpg/..."]
+    "features": { "balcony": true, "lift": true, "cellar": false, "fittedKitchen": false, "newlyBuilt": true },
+    "descriptions": { "Property Description": "…", "Furnishing": "…", "Location": "…" },
+    "agent": { "company": "Progenea GmbH & Co. Liegenschaften KG", "verified": true, "profileUrl": "https://www.immobilienscout24.de/anbieter/…" },
+    "phoneNumbers": ["+49 30 …"],
+    "images": [{ "url": "https://pictures.immobilienscout24.de/listings/…/resize/1500x1000/format/webp/quality/80", "caption": "Visualisierungen" }]
   }
 }
 ```
 
-### New-Development (Neubau) Project Row
+### Monitoring rows
 ```json
-{
-  "type": "project",
-  "projectId": "132302",
-  "projectName": "FOUR Frankfurt",
-  "url": "https://www.immobilienscout24.de/neubau/.../132302.html",
-  "priceRange": "€1,750 - €5,000",
-  "sizeRange": "39 - 100 m²",
-  "address": { "line": "Junghofstraße 5, 60315 Frankfurt am Main", "latitude": 50.1125, "longitude": 8.6748 },
-  "projectObjects": [
-    { "listingId": "167767638", "title": "FOUR: Stillvolle 2-Zimmer Wohnung mit Mainblick", "attributes": ["€2,950", "57 m²", "2 rms"] }
-  ]
-}
+{ "changeType": "new", "listingId": "144387379", "price": 697, "firstSeenAt": "2026-10-30T05:31:50.325Z", "…": "all listing fields" }
+{ "changeType": "price_changed", "listingId": "110190910", "price": 1440, "previousPrice": 1490, "priceDelta": -50, "priceChangePct": -3.36, "daysOnMarket": 10, "…": "all listing fields" }
+{ "changeType": "removed", "listingId": "999999999", "lastPrice": 1234, "firstSeenAt": "2026-10-25T05:31:46.517Z", "lastSeenAt": "2026-10-29T05:31:46.517Z", "daysOnMarket": 5 }
 ```
 
-### Error Row
-```json
-{
-  "_source": "immobilienscout24_scraper",
-  "source_url": "https://www.immobilienscout24.de/expose/000000000",
-  "_error": "Could not fetch this expose: Not found (HTTP 404) — listing may be expired or the id is invalid"
-}
-```
+Three dataset views are ready in the Console: **Listings**, **Full details** and **Market changes (monitoring)**.
 
 ---
-
-<!-- PRICING HIDDEN FOR FREE LAUNCH — uncomment this block to re-enable the pricing section.
 
 ## 💰 Pricing
 
-Pay only for the listings you actually get, on a sliding scale by plan:
+Pay per result, on a sliding scale by Apify plan:
 
-| Event | FREE | BRONZE | SILVER | GOLD |
+| Event | Base | Starter | Scale | Business+ |
 |-------|------|--------|--------|------|
-| **Per listing** (search result saved) | $0.0010 | $0.0007 | $0.00065 | $0.0005 |
-| **Full-details add-on** (per enriched listing) | $0.0025 | $0.0010 | $0.0009 | $0.0008 |
+| **Listing** (per listing saved) | $0.0010 | $0.0009 | $0.0008 | $0.0007 |
+| **Full-details add-on** (per enriched listing) | $0.0008 | $0.0007 | $0.0006 | $0.0005 |
+| **Market change** (monitoring: price change or removed listing) | $0.0005 | $0.00045 | $0.0004 | $0.00035 |
+| **Run start** (once per run) | $0.005 | $0.004 | $0.0035 | $0.003 |
 
-Search-only runs are billed at the per-listing rate. With **Fetch Full Property Details** on (or for individual property URLs), the add-on applies on top per enriched listing. Set a run budget in the Console and the actor never fetches beyond what it covers.
+* 1,000 search listings ≈ **$1.00** · 1,000 listings with full details ≈ **$1.80**
+* Monitoring a 4,500-listing district daily: only new listings and changes are charged — unchanged listings cost nothing.
+* Set a run budget in the Console and the actor never fetches beyond what it covers.
 
 ---
 
--->
-
 ## 🔐 Proxy
 
-No proxy setup is required — it's fully automatic.
-
-* **Free users**: automatic Apify residential proxy, no configuration needed.
-* **Paid users**: a premium proxy with **automatic failover** to the standard proxy — if the premium route has a hiccup, the run switches over seamlessly and keeps going, so a proxy issue never interrupts your results.
+Nothing to configure — every run is routed through a German residential proxy automatically, with automatic failover so a proxy hiccup never interrupts your results.
 
 ---
 
 ## 🔄 Reliability
 
-* **Automatic resume** — after a migration, timeout, or restart, the run continues from the last completed page instead of starting over, so long jobs finish without re-paying for work already done.
-* **Robust retries** — transient network issues are retried transparently.
-* **Clean, typed output** — normalized fields, consistent across every run, with two ready-made dataset views: **Search results (fast)** and **Full details**.
+* **Rate limits handled** — a blocked or rate-limited request is retried on a fresh connection with growing back-off instead of ending the search.
+* **Filter-safe** — a filter the app API does not accept is dropped with a log line; the search carries on.
+* **Automatic resume** — after a migration, timeout or restart the run continues from the last completed page.
+* **No duplicates** — a listing that appears twice within a run is saved once.
+* **Run summary** — every run writes a `RUN_SUMMARY` record (per-URL results, requests, retries) to its key-value store.
+* **Clear error rows** — an unreadable URL or a search that could not be completed is reported as an `_error` row and never charged.
 
 ---
 
 ## 🎯 Perfect For
 
-* 🧑‍💼 **Real-estate agents** building and monitoring listing lists
-* 📈 **Investors & analysts** tracking price, size, and yield across a region
-* 🏢 **Agencies** monitoring competitors and new stock
-* 🤖 **Developers** feeding a CRM, valuation model, or market dashboard
-* 🗺️ **Researchers** collecting full regional datasets for analysis
+* 🧑‍💼 **Real-estate agents** watching a market for new stock and price cuts
+* 📈 **Investors & analysts** comparing €/m², purchase fees and regional price ranges
+* 🏢 **Commercial brokers** tracking offices, retail and halls
+* 🤖 **Developers** feeding a CRM, valuation model or market dashboard
+* 🗺️ **Researchers** collecting full regional datasets with coordinates
 
 ---
 

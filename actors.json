@@ -491,11 +491,11 @@
   },
   {
     "id": "immobilienscout24-scraper",
-    "name": "ImmoScout24 Scraper",
+    "name": "ImmoScout24 Scraper From $0.7/1K 💰 Price Drops & Monitoring",
     "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-BvENHUGmCc9xSNkPN-alNysYXZhR-images.jpg",
     "category": "real-estate",
     "subcategory": "listings",
-    "description": "🏠 Scrape property listings from immobilienscout24.de — paste any search URL (rent, buy, new developments) or an individual property URL and get structured listing data back, with optional full detail-page enrichment.",
+    "description": "🏠 From $0.7/1K 💰 Scrape immobilienscout24.de: every property type incl. commercial, radius & map searches. Numeric price, €/m², address, coordinates, purchase fees & agent. Monitoring mode reports new listings, price cuts and removed listings with days on market.",
     "apifyUrl": "https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63",
     "docsPath": "immobilienscout24-scraper",
     "readmeFile": "immobilienscout24-scraper.md",
@@ -617,7 +617,7 @@
   },
   {
     "id": "google-flights-scraper",
-    "name": "Google Flights Scraper ✈️ Booking Links, Price Graph & Explore",
+    "name": "Google Flights Scraper 💰$0.30/1K — Fares, Booking & Explore",
     "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-8AOiREpsaEl0Xuq0e-0hFhyl2ITZ-20b68fe8-c56c-4c91-8ca9-b89e070ab423.png",
     "category": "tools",
     "subcategory": "travel",
@@ -753,6 +753,48 @@
     "readmeFile": "shopee-reviews-scraper.md",
     "metaTitle": "Shopee Reviews Scraper - Ratings, Photos & Videos",
     "metaDescription": "Scrape Shopee product and shop reviews: stars, text, sub-ratings, photos and videos across 8 markets. Filter by star rating. No Shopee login needed.",
+    "featured": false
+  },
+  {
+    "id": "autotrader-uk-scraper",
+    "name": "AutoTrader UK Scraper 🚗 Cars, Vans, Bikes & Motorhomes",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-H8aqxHthoPGFBJBB6-Lc56f7ZXEv-download.jpg",
+    "category": "tools",
+    "subcategory": "automotive",
+    "description": "Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.",
+    "apifyUrl": "https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63",
+    "docsPath": "autotrader-uk-scraper",
+    "readmeFile": "autotrader-uk-scraper.md",
+    "metaTitle": "AutoTrader UK Scraper - Cars, Vans, Bikes & Motorhomes Data",
+    "metaDescription": "Extract AutoTrader UK listings: price, mileage, specs, registration, photos, vehicle checks, dealer phone and address for cars, vans, bikes and motorhomes.",
+    "featured": false
+  },
+  {
+    "id": "etsy-search-scraper",
+    "name": "Etsy Search Scraper From $0.9/1K 💰 Filters & 1,000+ Results",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-DbJiz8Mg1KDn9j8Tt-mu8cjaIQ9m-Etsy_Shopping_Search_Icon.png",
+    "category": "tools",
+    "subcategory": "etsy",
+    "description": "🛍️ Scrape Etsy search results for any keyword or category — listings with price, sale price, shop, ratings, badges, shipping & images. Sort & filter like the Etsy app; split big searches to go past ~1,000 results. Public data, no login.",
+    "apifyUrl": "https://apify.com/dz_omar/etsy-search-scraper?fpr=smcx63",
+    "docsPath": "etsy-search-scraper",
+    "readmeFile": "etsy-search-scraper.md",
+    "metaTitle": "Etsy Search Scraper - Products by Keyword",
+    "metaDescription": "Scrape Etsy search results by keyword or category — price, sale price, shop, ratings, badges. Filter, sort, go past 1,000 results. Export JSON, CSV, Excel.",
+    "featured": false
+  },
+  {
+    "id": "etsy-shop-scraper",
+    "name": "Etsy Shop Scraper From $1.6/1K 💰 Profiles & Full Catalogs",
+    "image": "https://apify-image-uploads-prod.s3.us-east-1.amazonaws.com/QOYItfcce9nmWZJnD-actor-gkP8i5REq9QeDXwO3-7WKKlr7bap-Vibrant_Storefront_Shopping_Icon.png",
+    "category": "tools",
+    "subcategory": "etsy",
+    "description": "🏪 Scrape any Etsy shop from its URL, name or ID — full shop profile, policies, about story, FAQ, ratings & trust signals — plus its complete 📦 listing catalog with prices, images, shipping & stock. Public data, no login.",
+    "apifyUrl": "https://apify.com/dz_omar/etsy-shop-scraper?fpr=smcx63",
+    "docsPath": "etsy-shop-scraper",
+    "readmeFile": "etsy-shop-scraper.md",
+    "metaTitle": "Etsy Shop Scraper - Shop Profiles & Full Catalog",
+    "metaDescription": "Scrape Etsy shops by URL, name or ID — sales, ratings, policies, about story & trust signals plus every listing with price & stock. Export JSON, CSV, Excel.",
     "featured": false
   }
 ]
