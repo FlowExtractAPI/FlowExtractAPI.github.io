@@ -1,0 +1,25 @@
+{
+  "slug": "ultimate-screenshot",
+  "label": "Website Capture API",
+  "category": "dev-tools",
+  "source": "any website",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "website capture api",
+  "secondaryKeywords": [
+    "screenshot api",
+    "web page to pdf api",
+    "website to video"
+  ],
+  "title": "Website Capture API: Screenshot, PDF, MP4 & GIF",
+  "h1": "Website Capture API (Ultimate Screenshot)",
+  "metaDescription": "Capture any web page as JPEG, PNG, PDF, MP4 or GIF: 131 phone and tablet presets, full-page capture, signed-in sessions, endless-feed scrolling.",
+  "intro": "Capture any web page as a JPEG, PNG, PDF, MP4 or GIF, with 131 phone and tablet presets, full-page capture, signed-in sessions through cookies, and scrolling that stops cleanly on endless feeds.",
+  "useCases": [
+    "Archive pages as PDF for compliance",
+    "Record a scrolling video of a landing page",
+    "Check how a site looks on many phones"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

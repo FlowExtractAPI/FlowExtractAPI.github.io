@@ -1,0 +1,24 @@
+{
+  "slug": "facebook-posts-scraper",
+  "label": "Facebook Posts Scraper",
+  "category": "social",
+  "source": "Facebook",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook posts scraper",
+  "secondaryKeywords": [
+    "facebook page posts scraper",
+    "facebook group posts scraper"
+  ],
+  "title": "Facebook Posts Scraper: Pages, Groups & Profiles",
+  "h1": "Facebook Posts Scraper",
+  "metaDescription": "Scrape posts from public Facebook pages, profiles and groups without login: text, date, reactions by type, comments, shares, video views and media.",
+  "intro": "Give it public Facebook pages, profiles or groups and get their posts: text, date, author, reactions by type, comments, shares, video views, photos, videos and links. No login or cookies; go back years on pages.",
+  "useCases": [
+    "Benchmark engagement across competitor pages",
+    "Archive a page's post history",
+    "Track what a public group talks about"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

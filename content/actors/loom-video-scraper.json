@@ -1,0 +1,29 @@
+{
+  "slug": "loom-video-scraper",
+  "label": "Loom Video Downloader",
+  "category": "video",
+  "source": "Loom",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "loom video downloader",
+  "secondaryKeywords": [
+    "loom transcript api",
+    "loom scraper"
+  ],
+  "title": "Loom Video Downloader: Videos, Transcripts & Folders",
+  "h1": "Loom Video Downloader & Transcript Scraper",
+  "metaDescription": "Download Loom videos and transcripts (SRT, VTT, TXT) with metadata from single videos or whole folders, in bulk.",
+  "intro": "Paste Loom video or folder links and get the videos, transcripts (SRT, VTT, TXT or XML) and metadata, in bulk.",
+  "useCases": [
+    "Archive a team's Loom library before a plan change",
+    "Turn walkthrough videos into searchable text",
+    "Move training videos into another platform"
+  ],
+  "faq": [
+    {
+      "q": "Can you get Loom transcripts through an API?",
+      "a": "Loom does not offer a public API for downloading the transcripts of shared videos. Run this actor through the Apify API with Loom links and you get the transcripts back as files and JSON."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

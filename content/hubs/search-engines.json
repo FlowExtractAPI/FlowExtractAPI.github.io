@@ -1,0 +1,14 @@
+{
+  "id": "search-engines",
+  "kind": "category",
+  "primaryKeyword": "search engine scraper",
+  "secondaryKeywords": [
+    "serp scraper",
+    "reverse image search api"
+  ],
+  "title": "Search Engine Scrapers: Bing, Yandex & Google Trends",
+  "h1": "Search engine scrapers",
+  "metaDescription": "Scrape Bing Images, Bing Copilot answers, reverse image search on Bing and Yandex, and Google Trends data, as JSON or CSV.",
+  "intro": "Search results as data: image search, reverse image search, AI answers with their citations, and search interest over time.",
+  "lastKeywordChange": "2026-11-13"
+}

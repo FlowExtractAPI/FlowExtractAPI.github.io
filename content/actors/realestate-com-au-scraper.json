@@ -1,0 +1,24 @@
+{
+  "slug": "realestate-com-au-scraper",
+  "label": "realestate.com.au Scraper",
+  "category": "real-estate",
+  "source": "realestate.com.au",
+  "sourceHub": "realestate-com-au",
+  "mode": "basic",
+  "primaryKeyword": "realestate.com.au scraper",
+  "secondaryKeywords": [
+    "realestate.com.au api",
+    "rea scraper"
+  ],
+  "title": "realestate.com.au Scraper: Buy, Rent & Sold Listings",
+  "h1": "realestate.com.au Scraper",
+  "metaDescription": "Scrape realestate.com.au buy, rent and sold listings from any search or property URL: price, status, sold dates, features, inspections and agents.",
+  "intro": "Paste a realestate.com.au search or property link (buy, rent or sold) and get price, status, sold dates, features, inspection times, agent and agency contacts and photos for every listing.",
+  "useCases": [
+    "Pull sold results for a suburb",
+    "Track rentals and inspection times",
+    "Compare asking prices across suburbs"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

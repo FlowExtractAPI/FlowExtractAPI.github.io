@@ -1,0 +1,14 @@
+{
+  "id": "travel",
+  "kind": "category",
+  "primaryKeyword": "flight price scraper",
+  "secondaryKeywords": [
+    "flight data api",
+    "airfare scraper"
+  ],
+  "title": "Flight Price Scrapers: Google Flights & Bing Flights",
+  "h1": "Flight price scrapers",
+  "metaDescription": "Scrape live fares from Google Flights and Bing Flights: itineraries, airlines, stops, booking options and price calendars, as JSON or CSV.",
+  "intro": "Track airfares without an airline API: both scrapers read public flight search pages and return itineraries with prices, airlines, stops and the cheapest dates to fly.",
+  "lastKeywordChange": "2026-11-13"
+}

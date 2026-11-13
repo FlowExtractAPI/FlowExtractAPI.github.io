@@ -1,0 +1,24 @@
+{
+  "slug": "facebook-marketplace-scraper",
+  "label": "Facebook Marketplace Scraper",
+  "category": "classifieds",
+  "source": "Facebook Marketplace",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook marketplace scraper",
+  "secondaryKeywords": [
+    "marketplace scraper",
+    "fb marketplace scraper"
+  ],
+  "title": "Facebook Marketplace Scraper: Listings, Sellers & Prices",
+  "h1": "Facebook Marketplace Scraper",
+  "metaDescription": "Scrape Facebook Marketplace by keyword, category, city or link, no login: title, price, seller, photos, condition, vehicle and rental details.",
+  "intro": "Search Facebook Marketplace by keyword, category, city or link without logging in. Every listing comes with title, price, seller, city and photo; add details for the description, condition, all photos, exact location, listing date, and vehicle or rental fields.",
+  "useCases": [
+    "Find under-priced items to resell",
+    "Track used-car prices in your city",
+    "Research rental supply and prices in an area"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

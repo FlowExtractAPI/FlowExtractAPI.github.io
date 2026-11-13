@@ -1,0 +1,30 @@
+{
+  "slug": "skool-scraper-pro",
+  "label": "Skool Scraper Pro",
+  "category": "social",
+  "source": "Skool",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "skool scraper",
+  "secondaryKeywords": [
+    "skool downloader",
+    "skool video downloader",
+    "skool course scraper"
+  ],
+  "title": "Skool Scraper Pro - Course & Community Data Extractor",
+  "h1": "Skool Scraper Pro",
+  "metaDescription": "Extract lessons, videos, posts, comments and community feeds from any Skool community, or discover communities by category or keyword. Resumes if interrupted.",
+  "intro": "Discover Skool communities by keyword or category, then extract courses, lessons, posts, comments and community feeds. Download videos, attachments, PDFs and resources; interrupted runs resume automatically.",
+  "useCases": [
+    "Back up the courses you bought, with videos and files",
+    "Index every lesson across your courses so you can search them",
+    "Research communities in a niche before you join or launch one"
+  ],
+  "faq": [
+    {
+      "q": "Do I need to log in to Skool?",
+      "a": "Discovering communities works on public data. To extract a classroom you are a member of, you add your own Skool session cookie in the input; the actor never asks for your password."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

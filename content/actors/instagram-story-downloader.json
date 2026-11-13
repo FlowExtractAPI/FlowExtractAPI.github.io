@@ -1,0 +1,29 @@
+{
+  "slug": "instagram-story-downloader",
+  "label": "Instagram Story Downloader",
+  "category": "social",
+  "source": "Instagram",
+  "sourceHub": "instagram",
+  "mode": "basic",
+  "primaryKeyword": "instagram story downloader",
+  "secondaryKeywords": [
+    "instagram highlights downloader",
+    "download instagram highlights"
+  ],
+  "title": "Instagram Story Downloader: Highlights to MP4 & JPG",
+  "h1": "Instagram Story & Highlights Downloader",
+  "metaDescription": "Download Story Highlights from public Instagram profiles as permanent MP4 and JPG files, with titles, timestamps and links. No login, no cookies.",
+  "intro": "Give it public Instagram profiles and get their Story Highlights saved as permanent MP4 and JPG files, with titles, timestamps, links, and whether a 24-hour story is live. No login, no cookies.",
+  "useCases": [
+    "Archive a brand's highlights for competitor research",
+    "Save your own highlights as files",
+    "Track when accounts post new stories"
+  ],
+  "faq": [
+    {
+      "q": "Can it download normal 24-hour stories?",
+      "a": "It saves Story Highlights from public profiles and tells you whether a 24-hour story is live. Reading regular stories needs a logged-in session, which this actor does not use."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

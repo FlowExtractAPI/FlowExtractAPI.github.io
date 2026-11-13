@@ -1,0 +1,113 @@
+---
+import Base from '../layouts/Base.astro';
+import { page, actors, site, stats, categoryIds, categoryHub, actorsIn, mostUsed, priceShort, blurb, sourceHub, BASE } from '../lib/site.js';
+
+const c = page('home');
+const popular = mostUsed(6);
+const etsy = sourceHub('etsy');
+const snapDate = stats.snapshotFetchedAt ? String(stats.snapshotFetchedAt).slice(0, 10) : null;
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'Organization', name: site.brand.name, url: BASE, email: site.brand.email, sameAs: Object.values(site.social) },
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: site.brand.name, url: BASE },
+];
+---
+<Base title={c.title} description={c.metaDescription} path="/" jsonLd={ld}>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">Web data, ready to use</p>
+      <h1>{c.h1}</h1>
+      <p class="lede">{c.intro}</p>
+      <div class="cta-row">
+        <a class="btn" href="#actors">Browse {actors.length} scrapers</a>
+        <a class="btn btn-ghost" href={site.brand.storeProfile} rel="noopener">See them on the Apify Store</a>
+      </div>
+      <div class="stats" id="stats">
+        <div class="stat"><b>{actors.length}</b><span>public scrapers</span></div>
+        <div class="stat"><b>{stats.users.display}</b><span>Apify users</span></div>
+        <div class="stat"><b>{stats.runs.display}</b><span>runs</span></div>
+      </div>
+      {snapDate && <p class="muted small">User and run totals across our public actors, from Apify account data of {snapDate}.</p>}
+    </header>
+  </div>
+
+  <section class="section-alt" aria-labelledby="popular-h">
+    <div class="wrap">
+      <h2 id="popular-h">Most used</h2>
+      <ul class="actor-list">
+        {popular.map((a) => <li class="actor-item"><a href={a.url}><strong>{a.label}</strong><span class="blurb">{blurb(a)}</span><span class="price">{priceShort(a)}</span></a></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="actors" aria-labelledby="actors-h">
+    <div class="wrap">
+      <h2 id="actors-h">All scrapers</h2>
+      <p>Grouped by what they collect. Start with the <a href={etsy.url}>Etsy scraper guide</a> if you work with Etsy data.</p>
+      <div class="catalog-tools">
+        <input class="search" type="search" placeholder="Search: zillow, reviews, transcripts…" aria-label="Search scrapers" data-catalog-search />
+        <div class="chips" role="group" aria-label="Filter by category">
+          <button class="chip" type="button" aria-pressed="true" data-cat="">All</button>
+          {categoryIds.map((id) => <button class="chip" type="button" aria-pressed="false" data-cat={id}>{site.categories[id].name}</button>)}
+        </div>
+      </div>
+      {categoryIds.map((id) => (
+        <div class="cat-group" data-group={id}>
+          <h3><a href={categoryHub(id).url}>{site.categories[id].name}</a> <span class="muted small">({actorsIn(id).length})</span></h3>
+          <ul class="actor-list">
+            {actorsIn(id).map((a) => (
+              <li class="actor-item" data-text={`${a.label} ${a.source} ${a.primaryKeyword} ${a.secondaryKeywords.join(' ')}`.toLowerCase()}>
+                <a href={a.url}><strong>{a.label}</strong><span class="blurb">{blurb(a)}</span><span class="price">{priceShort(a)}</span></a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      <p class="empty muted" data-catalog-empty>No scraper matches that search. <a href="/contact.html">Ask for a custom one.</a></p>
+    </div>
+  </section>
+
+  <section id="services" class="section-alt" aria-labelledby="services-h">
+    <div class="wrap">
+      <h2 id="services-h">Need something we don't have?</h2>
+      <ul class="related">
+        {c.services.map((s) => <li><div class="stat"><h3>{s.title}</h3><p>{s.text}</p><ul class="uses small">{s.points.map((p) => <li>{p}</li>)}</ul></div></li>)}
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="contact-h">
+    <div class="wrap">
+      <h2 id="contact-h">Contact</h2>
+      <p>Questions, bugs or a custom scraper: <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a>, or use the <a href="/contact.html">contact page</a>.</p>
+    </div>
+  </section>
+</Base>
+<script>
+  const input = document.querySelector('[data-catalog-search]');
+  const chips = document.querySelectorAll('.chip');
+  const groups = document.querySelectorAll('[data-group]');
+  const empty = document.querySelector('[data-catalog-empty]');
+  let cat = '';
+  function apply() {
+    const q = (input?.value || '').trim().toLowerCase();
+    let shown = 0;
+    for (const g of groups) {
+      let n = 0;
+      const catOk = !cat || g.dataset.group === cat;
+      for (const li of g.querySelectorAll('li')) {
+        const ok = catOk && (!q || li.dataset.text.includes(q));
+        li.hidden = !ok;
+        if (ok) n++;
+      }
+      g.hidden = n === 0;
+      shown += n;
+    }
+    if (empty) empty.style.display = shown ? 'none' : 'block';
+  }
+  input?.addEventListener('input', apply);
+  chips.forEach((c) => c.addEventListener('click', () => {
+    cat = c.dataset.cat || '';
+    chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
+    apply();
+  }));
+</script>

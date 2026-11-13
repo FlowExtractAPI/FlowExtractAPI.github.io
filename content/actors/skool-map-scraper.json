@@ -1,0 +1,24 @@
+{
+  "slug": "skool-map-scraper",
+  "label": "Skool Map Scraper",
+  "category": "social",
+  "source": "Skool",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "skool map scraper",
+  "secondaryKeywords": [
+    "skool member map",
+    "skool members export"
+  ],
+  "title": "Skool Map Scraper: Member Locations & Profiles",
+  "h1": "Skool Map Scraper",
+  "metaDescription": "Extract member locations and profiles from a Skool community map: GPS coordinates, names, bios, social links, level and points.",
+  "intro": "Give it a Skool community and get its member map: GPS coordinates, names, bios, social links, level and points, even for communities with 200,000+ members.",
+  "useCases": [
+    "Plan meetups where your members live",
+    "See where a community's audience is",
+    "Research active members by level and points"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

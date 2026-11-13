@@ -1,0 +1,24 @@
+{
+  "slug": "network-security-scanner",
+  "label": "SSL Certificate Scanner",
+  "category": "dev-tools",
+  "source": "IP ranges",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "ssl certificate scanner",
+  "secondaryKeywords": [
+    "network security scanner",
+    "ssl checker ip range"
+  ],
+  "title": "SSL Certificate Scanner for IPs and Subnets",
+  "h1": "SSL Certificate Scanner (Network Security Scanner)",
+  "metaDescription": "Scan IPs or subnets for SSL certificate details with masscan, plus response headers, page titles and redirect URLs over HTTP and HTTPS.",
+  "intro": "Give it IP addresses or subnets and get SSL certificate details for each host, plus response headers, page titles and redirect URLs over HTTP and HTTPS. Only scan networks you own or are allowed to test.",
+  "useCases": [
+    "Find expiring certificates across your own networks",
+    "Inventory which hosts serve HTTPS",
+    "Audit redirects and titles on your IP ranges"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

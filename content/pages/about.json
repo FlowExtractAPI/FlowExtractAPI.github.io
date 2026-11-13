@@ -1,0 +1,9 @@
+{
+  "id": "about",
+  "primaryKeyword": "about flowextract api",
+  "title": "About FlowExtract API: Who Builds These Scrapers",
+  "h1": "About FlowExtract API",
+  "metaDescription": "FlowExtract API is an independent developer publishing data extraction tools on the Apify Store. How the tools are built, priced and supported.",
+  "intro": "FlowExtract API is an independent developer that builds and maintains data extraction tools (\"actors\") on the Apify Store, under the profile dz_omar. Every tool on this site runs on Apify, which handles the servers, scheduling, storage and billing.",
+  "lastKeywordChange": "2026-11-13"
+}

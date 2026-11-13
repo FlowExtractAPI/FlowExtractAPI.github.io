@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-comments-scraper",
+  "label": "YouTube Comments Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube comments scraper",
+  "secondaryKeywords": [
+    "youtube comment extractor",
+    "scrape youtube comments"
+  ],
+  "title": "YouTube Comments Scraper: Comments, Replies & Likes",
+  "h1": "YouTube Comments Scraper",
+  "metaDescription": "Export YouTube comments with author, likes, timestamps and nested replies from any video. Ready for sentiment analysis and audience research.",
+  "intro": "Give it YouTube video links and get every public comment with its author, likes, timestamp and nested replies, exported as JSON, CSV or Excel.",
+  "useCases": [
+    "Run sentiment analysis on reactions to a launch or an ad",
+    "Find the questions viewers ask to plan new videos",
+    "Audit a comment section or pick giveaway winners"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

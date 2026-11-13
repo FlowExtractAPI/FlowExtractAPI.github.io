@@ -1,0 +1,24 @@
+{
+  "slug": "zimmo-scraper",
+  "label": "Zimmo Scraper",
+  "category": "real-estate",
+  "source": "zimmo.be",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "zimmo scraper",
+  "secondaryKeywords": [
+    "zimmo api",
+    "zimmo.be scraper"
+  ],
+  "title": "Zimmo Scraper API for Belgian Property Data",
+  "h1": "Zimmo Scraper",
+  "metaDescription": "Scrape Belgian property listings from zimmo.be: price, EPC, flood data, planning info, contacts and photos. Paste any zimmo.be search URL.",
+  "intro": "Paste any zimmo.be search link and get each Belgian listing's price, EPC energy score, flooding data, planning information, contacts and photos as structured data.",
+  "useCases": [
+    "Compare asking prices across Belgian municipalities",
+    "Screen listings by EPC score and flood risk",
+    "Track new listings in a search every day"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

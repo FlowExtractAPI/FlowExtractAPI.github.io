@@ -1,0 +1,14 @@
+{
+  "id": "vehicles",
+  "kind": "category",
+  "primaryKeyword": "car listings scraper",
+  "secondaryKeywords": [
+    "used car data api",
+    "car auction scraper"
+  ],
+  "title": "Car Listings Scrapers: AutoTrader UK, Carsales, SalvageBid",
+  "h1": "Car listings scrapers",
+  "metaDescription": "Scrape car listings from AutoTrader UK, carsales.com.au and SalvageBid auctions: price, mileage, specs, VIN, damage and seller details.",
+  "intro": "Price used cars, follow dealer stock or source auction vehicles. Each scraper takes a search link and returns every vehicle with price, mileage or odometer, specs and seller or auction details.",
+  "lastKeywordChange": "2026-11-13"
+}

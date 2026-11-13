@@ -1,0 +1,14 @@
+{
+  "id": "video",
+  "kind": "category",
+  "primaryKeyword": "video scraper api",
+  "secondaryKeywords": [
+    "video downloader api",
+    "transcript scraper"
+  ],
+  "title": "Video Scrapers: YouTube, TikTok, Loom & Zoom Transcripts",
+  "h1": "Video scrapers and downloaders",
+  "metaDescription": "Scrape videos, transcripts and metadata from YouTube, TikTok, Loom and Zoom, or download any file in bulk. Results as JSON, CSV, SRT or MP4.",
+  "intro": "Get the data and the words behind videos: YouTube channels, comments, playlists, Shorts and transcripts; TikTok transcripts; Loom and Zoom recordings with their transcripts; and a downloader for any file link.",
+  "lastKeywordChange": "2026-11-13"
+}

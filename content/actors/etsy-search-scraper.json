@@ -1,0 +1,29 @@
+{
+  "slug": "etsy-search-scraper",
+  "label": "Etsy Search Scraper",
+  "category": "ecommerce",
+  "source": "Etsy",
+  "sourceHub": "etsy",
+  "mode": "basic",
+  "primaryKeyword": "etsy search scraper",
+  "secondaryKeywords": [
+    "scrape etsy search results",
+    "etsy listings scraper"
+  ],
+  "title": "Etsy Search Scraper: Listings by Keyword, Filters & Price",
+  "h1": "Etsy Search Scraper",
+  "metaDescription": "Scrape Etsy search results for any keyword or category: price, sale price, shop, ratings, badges and shipping. Splits big searches past ~1,000 results.",
+  "intro": "Type a keyword or paste an Etsy search link and get every matching listing with price, sale price, shop, rating, badges, shipping and image links. Sort and filter the way the Etsy app does, and split large searches to get past Etsy's ~1,000-result cap.",
+  "useCases": [
+    "Size a niche: how many listings, at which prices, from how many shops",
+    "Find the best-selling shops and price points for a product idea",
+    "Watch prices and discounts in a category week by week"
+  ],
+  "faq": [
+    {
+      "q": "Why do Etsy searches stop at about 1,000 results?",
+      "a": "Etsy only pages through roughly the first 1,000 results of a search. The actor splits a big search into smaller ones (by price range and filters) so you can collect more than that."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

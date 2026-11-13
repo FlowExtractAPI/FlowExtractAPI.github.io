@@ -1,0 +1,24 @@
+{
+  "slug": "realtor-scraper",
+  "label": "Realtor.com Scraper",
+  "category": "real-estate",
+  "source": "Realtor.com",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "realtor.com scraper",
+  "secondaryKeywords": [
+    "realtor.com api",
+    "realtor scraper"
+  ],
+  "title": "Realtor.com Scraper: For Sale, Rentals, Sold & Risk Data",
+  "h1": "Realtor.com Scraper",
+  "metaDescription": "Scrape Realtor.com for sale, rent, sold and off-market homes by link, location or address: price history, taxes, schools, climate risk and agents.",
+  "intro": "Search Realtor.com by link, location or address (for sale, for rent, sold or off market) and get prices, price history, taxes, schools, climate risk, market statistics, value estimates and agent and office contacts.",
+  "useCases": [
+    "Pull comps with price history and taxes",
+    "Screen homes by school and climate risk",
+    "Build agent lists by market"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

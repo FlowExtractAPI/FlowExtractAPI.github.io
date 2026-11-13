@@ -1,0 +1,24 @@
+{
+  "slug": "carsales-scraper",
+  "label": "Carsales Scraper",
+  "category": "vehicles",
+  "source": "carsales.com.au",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "carsales scraper",
+  "secondaryKeywords": [
+    "carsales.com.au scraper",
+    "carsales api"
+  ],
+  "title": "Carsales Scraper: carsales.com.au New & Used Cars",
+  "h1": "Carsales Scraper",
+  "metaDescription": "Scrape carsales.com.au from any search link or filters, past the 440-listing page limit: price, odometer, specs, price rating, photos and dealer details.",
+  "intro": "Paste a carsales.com.au search link or use filters and get every listing, past the 440-listing page limit: price, odometer, specs, price rating, photos, full spec sheet, dealer comments and phone.",
+  "useCases": [
+    "Price used cars in Australia by make, model and year",
+    "Monitor dealer stock and price drops",
+    "Build market reports on new and used supply"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

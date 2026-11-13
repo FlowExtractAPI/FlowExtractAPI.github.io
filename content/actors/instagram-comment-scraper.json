@@ -1,0 +1,24 @@
+{
+  "slug": "instagram-comment-scraper",
+  "label": "Instagram Comment Scraper",
+  "category": "social",
+  "source": "Instagram",
+  "sourceHub": "instagram",
+  "mode": "basic",
+  "primaryKeyword": "instagram comment scraper",
+  "secondaryKeywords": [
+    "instagram comments export",
+    "scrape instagram comments"
+  ],
+  "title": "Instagram Comment Scraper: Reels Comments to CSV",
+  "h1": "Instagram Comment Scraper",
+  "metaDescription": "Extract top-level comments from public Instagram Reels without login: commenter username, text, likes and timestamp, with a per-URL limit.",
+  "intro": "Paste public Instagram Reel links and get their top-level comments: commenter username, text, likes and timestamp, with pagination and a per-link limit. No login.",
+  "useCases": [
+    "Measure reactions to a campaign or a creator's Reel",
+    "Pick giveaway winners from the comments",
+    "Find questions and objections your audience raises"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

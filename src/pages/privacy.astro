@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { page, site } from '../lib/site.js';
+const c = page('privacy');
+const crumbs = [{ name: 'Home', url: '/' }, { name: 'Privacy', url: '/privacy.html' }];
+---
+<Base title={c.title} description={c.metaDescription} path="/privacy.html" breadcrumbs={crumbs}>
+  <div class="wrap prose">
+    <header class="hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
+    <h2>This website</h2>
+    <ul class="uses">
+      <li><b>No cookies, no ads, no trackers.</b></li>
+      <li><b>Page statistics:</b> the site is hosted on Cloudflare. Cloudflare Web Analytics counts page views without cookies and without identifying visitors; we see totals per page, not people.</li>
+      <li><b>Contact form:</b> what you type (name, email, optional company, message) is delivered to our inbox by Formspree and used only to answer you.</li>
+      <li><b>Email:</b> messages to {site.brand.email} are used only to answer you.</li>
+    </ul>
+    <h2>Sample data on this site</h2>
+    <p>Some pages show a small sample of results from a real run. Names, photos, phone numbers, emails and IDs of private individuals are removed or replaced before a sample is published.</p>
+    <h2>The scrapers</h2>
+    <p>The scrapers run on the Apify platform, under your Apify account. Apify's own privacy policy covers your account, runs and stored results. You are responsible for using the data you collect lawfully.</p>
+    <h2>Other policies on this domain</h2>
+    <p>The Simple Merge add-on and the Zoom downloader extension have their own policies at <a href="/simple-merge/privacy.html">/simple-merge/privacy.html</a> and <a href="/zoom-downloader/">/zoom-downloader/</a>.</p>
+    <h2>Questions</h2>
+    <p>Write to <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a>.</p>
+  </div>
+</Base>

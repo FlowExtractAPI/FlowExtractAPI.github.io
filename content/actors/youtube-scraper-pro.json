@@ -1,0 +1,25 @@
+{
+  "slug": "Youtube-Scraper-Pro",
+  "label": "YouTube Channel Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube channel scraper",
+  "secondaryKeywords": [
+    "youtube scraper",
+    "youtube video scraper",
+    "scrape youtube channels"
+  ],
+  "title": "YouTube Channel Scraper: Channels, Videos & Transcripts",
+  "h1": "YouTube Channel & Video Scraper",
+  "metaDescription": "Find YouTube channels by keyword with subscribers, views, country and contact links, or scrape videos, Shorts, live streams and playlists with transcripts.",
+  "intro": "Search YouTube channels by keyword and get subscribers, total views, country, join date and public contact links, or scrape a channel's videos, Shorts, live streams, podcasts, courses and playlists with full metadata and optional transcripts (text, SRT or WebVTT).",
+  "useCases": [
+    "Find creators for influencer outreach by topic and audience size",
+    "Export a channel's full video list with views and dates",
+    "Pull transcripts of a channel's videos for summaries or search"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

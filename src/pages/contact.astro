@@ -1,0 +1,26 @@
+---
+import Base from '../layouts/Base.astro';
+import { page, site } from '../lib/site.js';
+const c = page('contact');
+const crumbs = [{ name: 'Home', url: '/' }, { name: 'Contact', url: '/contact.html' }];
+const s = site.social;
+---
+<Base title={c.title} description={c.metaDescription} path="/contact.html" breadcrumbs={crumbs}>
+  <div class="wrap prose">
+    <header class="hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
+    <p><b>Email:</b> <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a></p>
+    <form class="form" action={site.brand.formEndpoint} method="POST">
+      <label>Name <input name="name" autocomplete="name" required /></label>
+      <label>Email <input type="email" name="email" autocomplete="email" required /></label>
+      <label>Company (optional) <input name="company" autocomplete="organization" /></label>
+      <label>Message <textarea name="message" rows="6" required></textarea></label>
+      <button class="btn" type="submit">Send</button>
+      <p class="muted small">The form is delivered by Formspree. See the <a href="/privacy.html">privacy policy</a>.</p>
+    </form>
+    <h2>Elsewhere</h2>
+    <ul class="uses">
+      <li><a href={site.brand.storeProfile} rel="noopener">Apify Store profile</a></li>
+      <li><a href={s.github} rel="noopener">GitHub</a> · <a href={s.linkedin} rel="noopener">LinkedIn</a> · <a href={s.x} rel="noopener">X</a> · <a href={s.facebook} rel="noopener">Facebook</a> · <a href={s.tiktok} rel="noopener">TikTok</a></li>
+    </ul>
+  </div>
+</Base>

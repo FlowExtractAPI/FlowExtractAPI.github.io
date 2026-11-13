@@ -1,0 +1,14 @@
+{
+  "id": "real-estate",
+  "kind": "category",
+  "primaryKeyword": "real estate scraper",
+  "secondaryKeywords": [
+    "property listings scraper",
+    "real estate data api"
+  ],
+  "title": "Real Estate Scrapers: Listings, Prices & Agents by Country",
+  "h1": "Real estate scrapers",
+  "metaDescription": "Property listing scrapers for Zillow, Realtor.com, Idealista, ImmoScout24, realestate.com.au, Domain, Crexi and more: prices, agents and photos as data.",
+  "intro": "Pick the portal you need and paste a search link: each scraper returns every listing with price, size, address, agent and photos as JSON, CSV or Excel. Together they cover the US, Spain, Portugal, Italy, France, Germany, Belgium, Australia and the Gulf.",
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "salvagebid-scraper",
+  "label": "SalvageBid Scraper",
+  "category": "vehicles",
+  "source": "SalvageBid",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "salvagebid scraper",
+  "secondaryKeywords": [
+    "salvage auction scraper",
+    "salvage car data"
+  ],
+  "title": "SalvageBid Scraper: Salvage Car Auctions, Bids & VINs",
+  "h1": "SalvageBid Scraper",
+  "metaDescription": "Extract salvage vehicle listings from SalvageBid: prices, current bids, VIN specs, damage reports, auction dates, locations and images.",
+  "intro": "Paste SalvageBid searches and get salvage vehicle listings with price, current bid, VIN specs, damage report, auction date, location and images.",
+  "useCases": [
+    "Find repairable vehicles at auction",
+    "Track bid prices by make and damage type",
+    "Build a sourcing feed for a rebuild business"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

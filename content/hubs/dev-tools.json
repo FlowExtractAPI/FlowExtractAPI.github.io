@@ -1,0 +1,13 @@
+{
+  "id": "dev-tools",
+  "kind": "category",
+  "primaryKeyword": "developer tools api",
+  "secondaryKeywords": [
+    "website screenshot tool"
+  ],
+  "title": "Developer Tools: Screenshots, SSL Scans & JSON Translation",
+  "h1": "Developer tools",
+  "metaDescription": "Utility actors for developers: website screenshots and captures (PDF, MP4, GIF), SSL certificate scanning of your own IP ranges and JSON translation.",
+  "intro": "Small tools that slot into a data pipeline: capture pages as images, PDF or video, scan your own networks for certificate details, and translate JSON datasets.",
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,45 @@
+{
+  "input": {
+    "startUrls": [
+      { "url": "https://www.etsy.com/listing/1667678858/personalised-engraved-groomsmen-groom" },
+      { "url": "https://www.etsy.com/listing/1574793663/1st-baby-birthday-crown-party-hats" }
+    ],
+    "includeReviews": true,
+    "maxReviews": 9,
+    "sort": "Most recent"
+  },
+  "maxItems": 20,
+  "maxTotalChargeUsd": 0.5,
+  "typeField": "_type",
+  "project": {
+    "listing_details": {
+      "listing_id": "listing.listing_id",
+      "title": "listing.title",
+      "shop": "listing.shop_name",
+      "price": "listing.price",
+      "currency": "listing.currency_code",
+      "rating": "listing_rating.avg_rating",
+      "rating_count": "listing_rating.total_count",
+      "favorites": "listing.favorites",
+      "bestseller": "listing.is_bestseller",
+      "category": "listing.taxonomy_node.name",
+      "ships_from": "listing.ships_from_country",
+      "shop_rating": "shop_rating.rating",
+      "shop_rating_count": "shop_rating.rating_count",
+      "url": "listing.url"
+    },
+    "review": {
+      "listing_id": "listing_id",
+      "reviewer": { "path": "buyer_real_name_or_login_name", "as": "pseudonym", "label": "Buyer" },
+      "rating": "rating",
+      "date": { "path": "date", "as": "date" },
+      "review": "review",
+      "item_quality": "subratings.item_quality",
+      "shipping": "subratings.shipping",
+      "customer_service": "subratings.seller_customer_service",
+      "seller_replied": { "path": "response.message", "as": "present" },
+      "upvotes": "upvotes_count",
+      "language": "language"
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "slug": "etsy-product-reviews-scraper",
+  "label": "Etsy Reviews Scraper",
+  "category": "ecommerce",
+  "source": "Etsy",
+  "sourceHub": "etsy",
+  "mode": "unique",
+  "primaryKeyword": "etsy reviews scraper",
+  "secondaryKeywords": [
+    "etsy product scraper",
+    "etsy scraper api",
+    "scrape etsy reviews"
+  ],
+  "title": "Etsy Reviews Scraper: Listings & Buyer Reviews to CSV",
+  "h1": "Etsy Reviews Scraper",
+  "metaDescription": "Scrape Etsy listing data and buyer reviews from any listing URL: price, shop, variations, shipping, ratings and review text. Export JSON or CSV.",
+  "intro": "Paste Etsy listing links and get each product's full listing record (price, shop, variations, shipping, policies, ratings) plus, if you switch it on, every buyer review with its star rating, text, photos and date. Public data, no Etsy login.",
+  "useCases": [
+    "See what buyers praise or complain about in a niche before you launch a product",
+    "Monitor reviews on competing listings and on your own shop",
+    "Feed review text into sentiment analysis or product research"
+  ],
+  "faq": [
+    {
+      "q": "Does Etsy have an API for reviews?",
+      "a": "Etsy's Open API v3 needs a registered app and an API key. This actor needs no key: you give it public listing URLs and get the listing and its reviews back as data."
+    }
+  ],
+  "explorer": {
+    "tables": [
+      {
+        "title": "Reviews",
+        "type": "review",
+        "columns": [
+          "listing_id",
+          "reviewer",
+          "rating",
+          "date",
+          "review",
+          "item_quality",
+          "shipping",
+          "customer_service",
+          "seller_replied",
+          "upvotes"
+        ]
+      },
+      {
+        "title": "Listings",
+        "type": "listing_details",
+        "columns": [
+          "listing_id",
+          "title",
+          "shop",
+          "price",
+          "currency",
+          "rating",
+          "rating_count",
+          "favorites",
+          "bestseller",
+          "category",
+          "ships_from",
+          "shop_rating"
+        ]
+      }
+    ],
+    "labels": {
+      "listing_id": "listing ID",
+      "item_quality": "item quality",
+      "customer_service": "service",
+      "seller_replied": "seller replied",
+      "rating_count": "ratings",
+      "shop_rating": "shop rating",
+      "ships_from": "ships from"
+    }
+  },
+  "lastKeywordChange": "2026-11-13"
+}

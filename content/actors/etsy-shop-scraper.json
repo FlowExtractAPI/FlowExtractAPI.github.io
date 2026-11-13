@@ -1,0 +1,24 @@
+{
+  "slug": "etsy-shop-scraper",
+  "label": "Etsy Shop Scraper",
+  "category": "ecommerce",
+  "source": "Etsy",
+  "sourceHub": "etsy",
+  "mode": "basic",
+  "primaryKeyword": "etsy shop scraper",
+  "secondaryKeywords": [
+    "etsy shop data",
+    "scrape etsy shop listings"
+  ],
+  "title": "Etsy Shop Scraper: Shop Profiles & Full Catalogs",
+  "h1": "Etsy Shop Scraper",
+  "metaDescription": "Scrape any Etsy shop by URL, name or ID: profile, policies, about story, ratings and its complete listing catalog with prices, shipping and stock.",
+  "intro": "Give it an Etsy shop URL, name or ID and get the shop's profile (policies, about story, FAQ, ratings, trust signals) and, if you want it, its complete listing catalog with prices, images, shipping and stock. Public data, no login.",
+  "useCases": [
+    "Benchmark competitor shops on catalog size, prices and ratings",
+    "Build a lead list of Etsy sellers in a niche",
+    "Track a shop's catalog changes and new products"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

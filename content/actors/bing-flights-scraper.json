@@ -1,0 +1,24 @@
+{
+  "slug": "bing-flights-scraper",
+  "label": "Bing Flights Scraper",
+  "category": "travel",
+  "source": "Bing",
+  "sourceHub": "bing",
+  "mode": "basic",
+  "primaryKeyword": "bing flights scraper",
+  "secondaryKeywords": [
+    "bing travel flights",
+    "flight fares scraper"
+  ],
+  "title": "Bing Flights Scraper: Fares, Itineraries & Price Calendar",
+  "h1": "Bing Flights Scraper",
+  "metaDescription": "Search Bing Flights for itineraries with prices, airlines, stops and legs in 23 markets, plus Explore destinations and a day-by-day price calendar.",
+  "intro": "Search Bing Flights for real itineraries with price, airlines, stops and every leg, in 23 country markets, so you can compare the same route across currencies. It also lists Explore destinations from any airport and a day-by-day price calendar.",
+  "useCases": [
+    "Compare one route's price across markets and currencies",
+    "Find the cheapest days to fly with the price calendar",
+    "Feed fares into a travel-deals site or an alert"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

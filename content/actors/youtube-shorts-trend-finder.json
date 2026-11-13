@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-shorts-trend-finder",
+  "label": "YouTube Shorts Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube shorts scraper",
+  "secondaryKeywords": [
+    "youtube shorts trend finder",
+    "viral shorts finder"
+  ],
+  "title": "YouTube Shorts Scraper: Trending Shorts by Keyword",
+  "h1": "YouTube Shorts Scraper",
+  "metaDescription": "Find popular YouTube Shorts by keyword, creator or hashtag: exact views, likes, comments, publish date, views per day and a viral score.",
+  "intro": "Search YouTube Shorts by keyword, creator or hashtag and get exact views, likes, comments, publish date, views per day and a viral score, then filter to a real date range and rank by what is trending.",
+  "useCases": [
+    "Find Shorts formats that are taking off in your niche",
+    "Benchmark a creator's Shorts against others",
+    "Plan content around what is trending this week"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

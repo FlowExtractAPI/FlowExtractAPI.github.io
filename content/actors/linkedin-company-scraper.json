@@ -1,0 +1,24 @@
+{
+  "slug": "linkedin-company-scraper",
+  "label": "LinkedIn Company Scraper",
+  "category": "social",
+  "source": "LinkedIn",
+  "sourceHub": "linkedin",
+  "mode": "basic",
+  "primaryKeyword": "linkedin company scraper",
+  "secondaryKeywords": [
+    "linkedin company data",
+    "scrape linkedin company pages"
+  ],
+  "title": "LinkedIn Company Scraper: Industry, Size & Locations",
+  "h1": "LinkedIn Company Scraper",
+  "metaDescription": "Scrape LinkedIn company pages in bulk: description, industry, type, founded, specialties, employee count, followers, HQ, offices and recent posts.",
+  "intro": "Paste LinkedIn company page links in bulk and get name, description, industry, type, founding year, specialties, employee count, followers, headquarters and every office location, recent posts, and similar or affiliated pages.",
+  "useCases": [
+    "Enrich a CRM with company size and industry",
+    "Segment target accounts by headcount and location",
+    "Track competitors' follower growth and posts"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

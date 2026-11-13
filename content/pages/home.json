@@ -1,0 +1,38 @@
+{
+  "id": "home",
+  "primaryKeyword": "data extraction api",
+  "title": "FlowExtract API: Web Data Extraction APIs & Scrapers",
+  "h1": "Data extraction APIs for the sites you need",
+  "metaDescription": "Ready-made scrapers and data extraction APIs for real estate, e-commerce, ads, social media, video and search: paste a link, get JSON, CSV or Excel.",
+  "intro": "FlowExtract API builds ready-to-run scrapers on the Apify platform. Paste a link from the site you need, start the run, and get clean JSON, CSV or Excel, or call it as an API from your own code.",
+  "services": [
+    {
+      "title": "Custom scrapers",
+      "text": "A scraper for a site we don't cover yet, built to your fields and schedule.",
+      "points": [
+        "JavaScript-heavy and protected sites",
+        "Scheduled runs",
+        "Delivery to Sheets, a database or a webhook"
+      ]
+    },
+    {
+      "title": "APIs on top of the data",
+      "text": "The same data behind a stable API, so your app calls one endpoint.",
+      "points": [
+        "JSON over HTTP",
+        "Webhooks when a run ends",
+        "Documentation for your team"
+      ]
+    },
+    {
+      "title": "Automation workflows",
+      "text": "Extraction wired into n8n, Make or Zapier, from run to spreadsheet or CRM.",
+      "points": [
+        "n8n workflows",
+        "Error alerts",
+        "Hands-off schedules"
+      ]
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

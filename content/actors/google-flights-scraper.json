@@ -1,0 +1,29 @@
+{
+  "slug": "google-flights-scraper",
+  "label": "Google Flights Scraper",
+  "category": "travel",
+  "source": "Google Flights",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "google flights scraper",
+  "secondaryKeywords": [
+    "scrape google flights",
+    "google flights api"
+  ],
+  "title": "Google Flights Scraper: Live Fares, Booking & Explore",
+  "h1": "Google Flights Scraper",
+  "metaDescription": "Scrape live Google Flights fares from a link or a form: booking options with seller links, fare names, bag fees, return flights and the price graph.",
+  "intro": "Paste a Google Flights link or fill the form (city, country or airport, with every filter) and get live fares: booking options with seller links, fare names and bag fees, return flights, the price graph and Google Explore's cheapest destinations.",
+  "useCases": [
+    "Track fares on a route and alert on drops",
+    "Compare booking sites for the same flight",
+    "Find the cheapest destinations from an airport"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Google Flights API?",
+      "a": "No. Google shut down its QPX Express flight API in 2018 and has no public Google Flights API. This actor reads the public Google Flights pages and returns the fares as data."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "zillow-scraper",
+  "label": "Zillow Scraper",
+  "category": "real-estate",
+  "source": "Zillow",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "zillow scraper",
+  "secondaryKeywords": [
+    "zillow scraper api",
+    "zillow api"
+  ],
+  "title": "Zillow Scraper: For Sale, Rent & Sold Listings",
+  "h1": "Zillow Scraper",
+  "metaDescription": "Scrape Zillow by location or search URL, for sale, for rent or sold: price, address, beds, baths, size, Zestimate, tax value, agent and photos.",
+  "intro": "Search Zillow by location or paste a search link (for sale, for rent or recently sold) and get price, address, beds, baths, size, Zestimate, tax value, agent and every photo. Large areas are split automatically.",
+  "useCases": [
+    "Pull sold comps for a valuation",
+    "Find rentals and their prices in a ZIP code",
+    "Track new for-sale listings in a market"
+  ],
+  "faq": [
+    {
+      "q": "Does Zillow have a public API?",
+      "a": "Zillow retired its old public APIs in 2021; its data now goes to approved partners through Bridge Interactive. This actor reads the public Zillow pages instead."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

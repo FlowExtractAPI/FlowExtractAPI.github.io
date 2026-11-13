@@ -1,0 +1,29 @@
+{
+  "slug": "leboncoin-scraper",
+  "label": "Leboncoin Scraper",
+  "category": "classifieds",
+  "source": "leboncoin.fr",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "leboncoin scraper",
+  "secondaryKeywords": [
+    "leboncoin api",
+    "api leboncoin"
+  ],
+  "title": "Leboncoin Scraper: leboncoin.fr Listings to JSON & CSV",
+  "h1": "Leboncoin Scraper",
+  "metaDescription": "Scrape any leboncoin.fr search URL: price, location, seller, photos and every category attribute (surface, rooms, energy rating, mileage, fuel).",
+  "intro": "Paste any leboncoin.fr search link and get each ad's price, location, seller, photos and every category-specific attribute, such as surface, rooms and energy rating for property, or mileage and fuel for cars.",
+  "useCases": [
+    "Track second-hand car prices in France",
+    "Watch new property ads in a city",
+    "Research resale prices for a product category"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Leboncoin API?",
+      "a": "Leboncoin does not offer a public API for searching listings. This actor works from public search pages: paste the search URL and get structured data back, also through the Apify API."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

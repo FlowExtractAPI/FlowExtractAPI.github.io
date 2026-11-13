@@ -1,0 +1,42 @@
+---
+import Base from '../../layouts/Base.astro';
+import { site, categoryIds, categoryHub, actorsIn, priceShort, blurb, sourceHub, BASE } from '../../lib/site.js';
+
+export function getStaticPaths() {
+  return categoryIds.map((id) => ({ params: { id }, props: { id } }));
+}
+const { id } = Astro.props;
+const h = categoryHub(id);
+const list = actorsIn(id);
+const sources = [...new Set(list.map((a) => a.sourceHub).filter((s) => s && site.sourceHubs[s]))].map(sourceHub);
+const others = categoryIds.filter((x) => x !== id);
+const crumbs = [{ name: 'Home', url: '/' }, { name: site.categories[id].name, url: h.url }];
+const itemList = {
+  '@context': 'https://schema.org', '@type': 'ItemList', name: h.h1,
+  itemListElement: list.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: BASE + a.url, name: a.label })),
+};
+---
+<Base title={h.title} description={h.metaDescription} path={h.url} breadcrumbs={crumbs} jsonLd={[itemList]}>
+  <div class="wrap">
+    <header class="hero">
+      <p class="eyebrow">{list.length} scrapers</p>
+      <h1>{h.h1}</h1>
+      <p class="lede">{h.intro}</p>
+    </header>
+    {sources.length > 0 && <p class="note">Working with one site? See the {sources.map((s, i) => <>{i ? ', ' : ''}<a href={s.url}>{s.h1.split(':')[0]}</a></>)} guide: which tool to use for which job.</p>}
+    <section aria-labelledby="list-h">
+      <h2 id="list-h">{site.categories[id].name} scrapers</h2>
+      <ul class="actor-list">
+        {list.map((a) => <li class="actor-item"><a href={a.url}><strong>{a.label}</strong><span class="blurb">{a.source}: {blurb(a)}</span><span class="price">{priceShort(a)}</span></a></li>)}
+      </ul>
+    </section>
+    <section aria-labelledby="how-h">
+      <h2 id="how-h">How these scrapers work</h2>
+      <p>Each one is an actor on the Apify platform. You paste a link or a few search terms, start the run, and get the results as JSON, CSV or Excel, or through the Apify API. Apify runs the servers and bills usage; every account gets a monthly free credit to test with.</p>
+    </section>
+    <section aria-labelledby="more-h">
+      <h2 id="more-h">Other categories</h2>
+      <ul class="related">{others.map((o) => <li><a href={categoryHub(o).url}>{site.categories[o].name}</a></li>)}</ul>
+    </section>
+  </div>
+</Base>

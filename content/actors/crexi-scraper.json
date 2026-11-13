@@ -1,0 +1,24 @@
+{
+  "slug": "crexi-scraper",
+  "label": "Crexi Scraper",
+  "category": "real-estate",
+  "source": "Crexi",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "crexi scraper",
+  "secondaryKeywords": [
+    "crexi api",
+    "commercial real estate scraper"
+  ],
+  "title": "Crexi Scraper: Commercial Listings, Cap Rate & Brokers",
+  "h1": "Crexi Scraper",
+  "metaDescription": "Scrape Crexi commercial real estate from any search, city or listing link: price, type, size, address, brokers, plus cap rate, NOI and OM status.",
+  "intro": "Paste a Crexi search, city or listing link and get each commercial property's price, type, size, address and brokers; add details to get the real cap rate, NOI, year built, tenancy, offering-memorandum status, broker of record and phones.",
+  "useCases": [
+    "Screen deals by cap rate and NOI in a market",
+    "Build broker contact lists for a property type",
+    "Track new commercial listings in target cities"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

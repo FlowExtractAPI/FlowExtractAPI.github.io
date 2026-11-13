@@ -1,0 +1,24 @@
+{
+  "slug": "doordash-review-scraper",
+  "label": "DoorDash Reviews API",
+  "category": "ecommerce",
+  "source": "DoorDash",
+  "sourceHub": "doordash",
+  "mode": "basic",
+  "primaryKeyword": "doordash reviews api",
+  "secondaryKeywords": [
+    "doordash reviews scraper",
+    "doordash review export"
+  ],
+  "title": "DoorDash Reviews API: Ratings, Text & Ordered Items",
+  "h1": "DoorDash Reviews Scraper (API)",
+  "metaDescription": "Get customer reviews from any DoorDash store: star rating, review text, reviewer, ordered items with prices, votes and photo attachments.",
+  "intro": "Paste DoorDash store links and get customer reviews: star rating, review text, reviewer profile, ordered items with prices, vote ratings and photo attachments, as JSON or CSV, also through the Apify API.",
+  "useCases": [
+    "Find the dishes customers mention most",
+    "Compare ratings of competing restaurants",
+    "Track review trends after a menu change"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

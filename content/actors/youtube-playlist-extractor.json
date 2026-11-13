@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-playlist-extractor",
+  "label": "YouTube Playlist Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube playlist scraper",
+  "secondaryKeywords": [
+    "youtube playlist extractor",
+    "export youtube playlist"
+  ],
+  "title": "YouTube Playlist Scraper: Every Video in a Playlist",
+  "h1": "YouTube Playlist Scraper",
+  "metaDescription": "Extract every video from any YouTube playlist with title, duration, thumbnail and channel info. Export the playlist to JSON, CSV or Excel.",
+  "intro": "Paste YouTube playlist links and get every video in them with title, duration, thumbnail and channel info.",
+  "useCases": [
+    "Export a course playlist into a study plan",
+    "Back up a playlist's video list",
+    "Compare playlists by total duration"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

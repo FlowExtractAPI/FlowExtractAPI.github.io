@@ -1,0 +1,14 @@
+{
+  "id": "business",
+  "kind": "category",
+  "primaryKeyword": "business registry scraper",
+  "secondaryKeywords": [
+    "company registry api",
+    "ucc lien search"
+  ],
+  "title": "Business Registry Scrapers: California, Delaware & Contacts",
+  "h1": "Business registry scrapers",
+  "metaDescription": "Search state business registries in bulk (California bizfileOnline and UCC liens, Delaware entities) and extract business contacts from company websites.",
+  "intro": "Look up companies in official state registers in bulk, and turn company websites into contact data, for due diligence, lien checks and lead lists.",
+  "lastKeywordChange": "2026-11-13"
+}

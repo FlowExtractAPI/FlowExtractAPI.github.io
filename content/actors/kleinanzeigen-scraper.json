@@ -1,0 +1,24 @@
+{
+  "slug": "kleinanzeigen-scraper",
+  "label": "Kleinanzeigen Scraper",
+  "category": "classifieds",
+  "source": "Kleinanzeigen",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "kleinanzeigen scraper",
+  "secondaryKeywords": [
+    "kleinanzeigen api",
+    "ebay kleinanzeigen scraper"
+  ],
+  "title": "Kleinanzeigen Scraper: Listings, Sellers & Phones",
+  "h1": "Kleinanzeigen Scraper",
+  "metaDescription": "Scrape Kleinanzeigen.de from any search link or keyword + city: price, location, photos, category details and seller info like rating and views.",
+  "intro": "Paste any Kleinanzeigen.de search link (cars, real estate, electronics, with all filters) or use keyword + city, and get price, location, photos and category details, plus optional seller info: rating, active listings, views and business phone numbers.",
+  "useCases": [
+    "Track used-car or electronics prices in Germany",
+    "Find business sellers in a category",
+    "Watch new ads for a search every day"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

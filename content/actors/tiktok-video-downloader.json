@@ -1,0 +1,25 @@
+{
+  "slug": "tiktok-video-downloader",
+  "label": "TikTok Transcript Scraper",
+  "category": "video",
+  "source": "TikTok",
+  "sourceHub": "tiktok",
+  "mode": "basic",
+  "primaryKeyword": "tiktok transcript scraper",
+  "secondaryKeywords": [
+    "tiktok video downloader",
+    "tiktok scraper",
+    "tiktok transcript api"
+  ],
+  "title": "TikTok Transcript Scraper: Captions, Stats & MP4s",
+  "h1": "TikTok Transcript & Video Scraper",
+  "metaDescription": "Extract spoken transcripts from TikTok videos as text, SRT or WebVTT with timestamps, plus 58 fields per video. Optional watermark-free MP4 download.",
+  "intro": "Paste TikTok video links and get the spoken transcript as text, SRT or WebVTT with timestamps, plus 58 fields per video: upload date, views, likes, saves, hashtags, sound and the creator's follower count. Pick a caption language, or download the MP4 without the watermark.",
+  "useCases": [
+    "Turn viral TikToks into text for hook and script research",
+    "Track a creator's views and engagement per video",
+    "Subtitle or translate short videos you have the rights to"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

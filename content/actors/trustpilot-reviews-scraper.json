@@ -1,0 +1,24 @@
+{
+  "slug": "trustpilot-reviews-scraper",
+  "label": "Trustpilot Reviews Scraper",
+  "category": "ecommerce",
+  "source": "Trustpilot",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "trustpilot reviews scraper",
+  "secondaryKeywords": [
+    "trustpilot scraper",
+    "trustpilot api"
+  ],
+  "title": "Trustpilot Reviews Scraper: Ratings, Text & Replies",
+  "h1": "Trustpilot Reviews Scraper",
+  "metaDescription": "Export Trustpilot reviews from company links, websites or brand names: rating, full text, dates, company reply, reviewer country and verification.",
+  "intro": "Give it Trustpilot company links, websites or brand names and get their reviews: rating, full text, dates, the company's reply, reviewer country and verification status, plus the company's profile. No login.",
+  "useCases": [
+    "Benchmark your rating and reply rate against competitors",
+    "Find recurring complaints in a market",
+    "Monitor new reviews on a schedule"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

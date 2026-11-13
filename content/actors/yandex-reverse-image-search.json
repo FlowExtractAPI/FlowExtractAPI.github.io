@@ -1,0 +1,29 @@
+{
+  "slug": "yandex-reverse-image-search",
+  "label": "Yandex Reverse Image Search API",
+  "category": "search-engines",
+  "source": "Yandex",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "yandex reverse image search api",
+  "secondaryKeywords": [
+    "yandex images parser",
+    "yandex image search api"
+  ],
+  "title": "Yandex Reverse Image Search API: Upload, OCR & Tags",
+  "h1": "Yandex Reverse Image Search API",
+  "metaDescription": "Find where an image appears online with Yandex: paste a link or upload a file to get matching pages, similar images, other sizes, OCR text and tags.",
+  "intro": "Search Yandex by picture instead of keywords: paste an image link or upload a file and get the pages where it appears, visually similar images, other resolutions, the text read from the picture and descriptive tags, in all Yandex regions.",
+  "useCases": [
+    "Find copies of your images across the web",
+    "Locate a higher-resolution version of a picture",
+    "Read the text in many images at once (OCR)"
+  ],
+  "faq": [
+    {
+      "q": "How do I send an image file to Yandex reverse image search from code?",
+      "a": "Start the actor through the Apify API with your image as a public link or an uploaded file in the input, then read the results as JSON. You don't call Yandex's upload endpoint yourself."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

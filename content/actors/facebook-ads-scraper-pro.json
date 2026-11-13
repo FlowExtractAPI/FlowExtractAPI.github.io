@@ -1,0 +1,24 @@
+{
+  "slug": "facebook-ads-scraper-pro",
+  "label": "Facebook Ads Scraper",
+  "category": "ads",
+  "source": "Meta Ad Library",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook ads scraper",
+  "secondaryKeywords": [
+    "facebook ad library scraper",
+    "meta ads scraper"
+  ],
+  "title": "Facebook Ads Scraper: Ad Library Creatives & Targeting",
+  "h1": "Facebook Ads Scraper Pro",
+  "metaDescription": "Extract Facebook Ad Library data: ad creatives, copy, media URLs, targeting and reach. Search by keyword, page or Ad Library link.",
+  "intro": "Search the Meta Ad Library by keyword, page or Ad Library link and get each ad's creatives, copy, media URLs, dates, platforms and page details; switch on enrichment for the targeting and reach data Meta publishes.",
+  "useCases": [
+    "See every ad a competitor is running, and since when",
+    "Collect winning ad copy and creatives in a niche",
+    "Track political and issue ads for research"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

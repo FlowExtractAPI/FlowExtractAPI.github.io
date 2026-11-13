@@ -1,0 +1,24 @@
+{
+  "slug": "realcommercial-com-au-scraper",
+  "label": "realcommercial.com.au Scraper",
+  "category": "real-estate",
+  "source": "realcommercial.com.au",
+  "sourceHub": "realestate-com-au",
+  "mode": "basic",
+  "primaryKeyword": "realcommercial scraper",
+  "secondaryKeywords": [
+    "realcommercial.com.au scraper",
+    "commercial property scraper australia"
+  ],
+  "title": "realcommercial.com.au Scraper: Sale, Lease, Sold & Leased",
+  "h1": "realcommercial.com.au Scraper",
+  "metaDescription": "Scrape realcommercial.com.au for sale, lease, sold and leased property by link, suburb, postcode or state: price, area, zoning and agents.",
+  "intro": "Search realcommercial.com.au by link, suburb, postcode or state (for sale, for lease, sold or leased) and get price, address, floor and land area, zoning, photos, brochure PDFs and agent and agency phones.",
+  "useCases": [
+    "Track commercial lease rates in a suburb",
+    "Build lists of commercial agents",
+    "Monitor new offices, shops and warehouses for sale"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

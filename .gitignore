@@ -1,6 +1,5 @@
 # Node modules (if you install any packages later)
 node_modules/
-package-lock.json
 
 # Mac OS
 .DS_Store
@@ -46,3 +45,8 @@ COMPLETE-GUIDE.md
 # Uncomment if you want to ignore generated HTML files
 # docs/*.html
 # !docs/_template.html
+# Astro / Wrangler build output and caches
+dist/
+dist-*/
+.astro/
+.wrangler/

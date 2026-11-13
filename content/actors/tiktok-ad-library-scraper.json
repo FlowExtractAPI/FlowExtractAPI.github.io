@@ -1,0 +1,24 @@
+{
+  "slug": "tiktok-ad-library-scraper",
+  "label": "TikTok Ads Scraper",
+  "category": "ads",
+  "source": "TikTok Ad Library",
+  "sourceHub": "tiktok",
+  "mode": "basic",
+  "primaryKeyword": "tiktok ads scraper",
+  "secondaryKeywords": [
+    "tiktok ad library scraper",
+    "tiktok ads api"
+  ],
+  "title": "TikTok Ads Scraper: Ad Library Creatives & Reach",
+  "h1": "TikTok Ads Scraper (Ad Library)",
+  "metaDescription": "Scrape the TikTok Ad Library by keyword, advertiser or URL: advertiser details, creatives, first and last shown dates, audience size and targeting.",
+  "intro": "Search the TikTok Ad Library by keyword, advertiser name or link and get advertiser details, creatives, first and last shown dates, audience size and targeting data, with the media files saved. No login.",
+  "useCases": [
+    "See which creatives competitors run on TikTok",
+    "Measure how long an ad keeps running",
+    "Research targeting by country and audience"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

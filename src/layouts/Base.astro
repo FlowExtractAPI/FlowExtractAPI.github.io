@@ -1,0 +1,91 @@
+---
+import '../styles/site.css';
+import { site, BASE, categoryIds, categoryHub, breadcrumbJsonLd } from '../lib/site.js';
+
+const { title, description, path, jsonLd = [], breadcrumbs = null, noindex = false } = Astro.props;
+const design = import.meta.env.PUBLIC_DESIGN || 'a';
+const canonical = BASE + path;
+const year = new Date().getFullYear();
+const ld = breadcrumbs ? [breadcrumbJsonLd(breadcrumbs), ...jsonLd] : jsonLd;
+const s = site.social;
+---
+<!doctype html>
+<html lang="en" data-design={design}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    {noindex ? <meta name="robots" content="noindex" /> : <link rel="canonical" href={canonical} />}
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.brand.name} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="theme-color" content={design === 'b' ? '#0b1220' : '#fbfaf7'} />
+    {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap header-row">
+        <a class="logo" href="/" aria-label="FlowExtract API home"><span class="logo-mark">FE</span><span>FlowExtract <b>API</b></span></a>
+        <nav class="top-nav" aria-label="Main">
+          <a href="/#actors">Scrapers</a>
+          <a href="/about.html">About</a>
+          <a href="/contact.html">Contact</a>
+          <a class="nav-store" href={site.brand.storeProfile} rel="noopener">Apify Store</a>
+        </nav>
+      </div>
+    </header>
+    {breadcrumbs && (
+      <nav class="wrap crumbs" aria-label="Breadcrumb">
+        <ol>
+          {breadcrumbs.map((b, i) => (
+            <li>{i < breadcrumbs.length - 1 ? <a href={b.url}>{b.name}</a> : <span aria-current="page">{b.name}</span>}</li>
+          ))}
+        </ol>
+      </nav>
+    )}
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="wrap footer-grid">
+        <div>
+          <p class="logo footer-logo"><span class="logo-mark">FE</span><span>FlowExtract <b>API</b></span></p>
+          <p class="muted">Ready-to-run scrapers and data extraction APIs, running on the Apify platform.</p>
+        </div>
+        <div>
+          <h2 class="footer-h">Scrapers</h2>
+          <ul class="footer-list">
+            {categoryIds.map((id) => <li><a href={categoryHub(id).url}>{site.categories[id].name}</a></li>)}
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-h">FlowExtract API</h2>
+          <ul class="footer-list">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/privacy.html">Privacy</a></li>
+            <li><a href={site.brand.storeProfile} rel="noopener">All actors on Apify</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer-h">Support</h2>
+          <ul class="footer-list">
+            <li><a href={`mailto:${site.brand.email}`}>{site.brand.email}</a></li>
+            <li><a href={s.github} rel="noopener">GitHub</a></li>
+            <li><a href={s.linkedin} rel="noopener">LinkedIn</a></li>
+            <li><a href={s.x} rel="noopener">X</a></li>
+            <li><a href={s.facebook} rel="noopener">Facebook</a></li>
+            <li><a href={s.tiktok} rel="noopener">TikTok</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="wrap muted small">© {year} FlowExtract API. Apify is a trademark of Apify Technologies s.r.o.; site names belong to their owners.</p>
+    </footer>
+  </body>
+</html>

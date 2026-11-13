@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-transcript-metadata-extractor",
+  "label": "YouTube Transcript Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube transcript scraper",
+  "secondaryKeywords": [
+    "youtube transcript api",
+    "youtube transcript extractor"
+  ],
+  "title": "YouTube Transcript Scraper: Timestamps & Video Metadata",
+  "h1": "YouTube Transcript Scraper",
+  "metaDescription": "Extract full YouTube transcripts with precise timestamps plus video metadata from any YouTube video link, in bulk, as JSON or CSV.",
+  "intro": "Paste YouTube video links and get the full transcript with precise timestamps plus the video's metadata, in bulk.",
+  "useCases": [
+    "Summarise or search long videos as text",
+    "Build a quote library from interviews and talks",
+    "Repurpose videos into articles"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

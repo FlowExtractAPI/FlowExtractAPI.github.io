@@ -1,0 +1,14 @@
+{
+  "id": "ads",
+  "kind": "category",
+  "primaryKeyword": "ad scraper",
+  "secondaryKeywords": [
+    "ad library scraper",
+    "competitor ads scraper"
+  ],
+  "title": "Ad Scrapers: Facebook, Google, LinkedIn & TikTok Ads",
+  "h1": "Ad scrapers for the public ad libraries",
+  "metaDescription": "Scrape the public ad libraries of Meta, Google, LinkedIn and TikTok: creatives, copy, dates, reach and targeting for any advertiser or keyword.",
+  "intro": "See the ads any company runs. Each scraper reads one platform's public ad library (Meta Ad Library, Google Ads Transparency Center, LinkedIn Ad Library, TikTok Ad Library) and returns creatives, copy, run dates and the reach or targeting the platform publishes.",
+  "lastKeywordChange": "2026-11-13"
+}

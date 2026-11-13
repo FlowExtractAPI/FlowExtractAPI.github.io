@@ -1,14 +1,19 @@
 {
   "name": "flowextract-api-site",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "FlowExtract API website + build-time docs/SEO generator",
+  "type": "module",
+  "description": "flowextractapi.com: static site built with Astro, deployed to Cloudflare Workers static assets",
   "scripts": {
-    "sync": "node sync.js",
-    "sync:all": "node sync.js --all",
-    "check": "node sync.js --check"
+    "pull": "node scripts/pull-data.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "build": "node scripts/check-content.mjs && node scripts/gen-redirects.mjs && astro build && node scripts/check-dist.mjs",
+    "preview": "astro preview",
+    "parity": "node scripts/parity.mjs",
+    "dev": "astro dev",
+    "refresh-sample": "node scripts/refresh-sample.mjs"
   },
   "dependencies": {
-    "marked": "^12.0.0"
+    "astro": "7.4.12"
   }
 }

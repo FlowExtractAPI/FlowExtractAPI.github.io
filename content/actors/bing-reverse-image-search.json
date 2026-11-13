@@ -1,0 +1,24 @@
+{
+  "slug": "bing-reverse-image-search",
+  "label": "Bing Reverse Image Search API",
+  "category": "search-engines",
+  "source": "Bing",
+  "sourceHub": "bing",
+  "mode": "basic",
+  "primaryKeyword": "bing reverse image search api",
+  "secondaryKeywords": [
+    "bing visual search api",
+    "reverse image search api"
+  ],
+  "title": "Bing Reverse Image Search API: Similar Images & Pages",
+  "h1": "Bing Reverse Image Search API",
+  "metaDescription": "Reverse image search on Bing from a link or an uploaded file: best guess, similar images, pages that carry the image, text in the picture and a description.",
+  "intro": "Give it an image link or upload a file and get Bing's best guess, hundreds of visually similar images with sizes and dates, the pages that carry the image, related searches, the text inside the picture and an AI description.",
+  "useCases": [
+    "Find unlicensed copies of your photos",
+    "Trace the original source of an image",
+    "Identify products or places in a picture"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "idealista-scraper-api",
+  "label": "Idealista Scraper API",
+  "category": "real-estate",
+  "source": "Idealista",
+  "sourceHub": "idealista",
+  "mode": "basic",
+  "primaryKeyword": "idealista scraper api",
+  "secondaryKeywords": [
+    "idealista api",
+    "idealista france scraper"
+  ],
+  "title": "Idealista Scraper API: Spain, Portugal, Italy & France",
+  "h1": "Idealista Scraper API",
+  "metaDescription": "Pay per result: paste any Idealista URL (search, map area or property) and get prices, photos, contacts, GPS and features. Spain, Portugal, Italy, France.",
+  "intro": "Paste any Idealista link (a property page, a search, a drawn map area or a multi-zone search) from Spain, Portugal, Italy or France and get each listing's price, photos, agency contact, GPS position and features. Large areas are collected without the usual result cap, and you pay per property returned.",
+  "useCases": [
+    "Compare asking prices per m² across neighbourhoods",
+    "Send new listings in a drawn map area to a CRM or an alert",
+    "Build a sales or rental dataset for valuation models"
+  ],
+  "faq": [
+    {
+      "q": "How is this different from Idealista Scraper?",
+      "a": "This one charges per property returned, also covers France, and accepts drawn-map and multi-zone links. Idealista Scraper is listed as free on the Apify Store and covers Spain, Portugal and Italy."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "linkedin-ads-scraper",
+  "label": "LinkedIn Ads Scraper",
+  "category": "ads",
+  "source": "LinkedIn Ad Library",
+  "sourceHub": "linkedin",
+  "mode": "basic",
+  "primaryKeyword": "linkedin ads scraper",
+  "secondaryKeywords": [
+    "linkedin ad library scraper",
+    "linkedin ads api"
+  ],
+  "title": "LinkedIn Ads Scraper: Ad Library Creatives & Targeting",
+  "h1": "LinkedIn Ads Scraper",
+  "metaDescription": "Extract LinkedIn Ad Library data: creatives, headlines, copy, advertiser info and targeting. Search by keyword, advertiser or date range.",
+  "intro": "Search the LinkedIn Ad Library by keyword, advertiser or date and get each ad's creative, headline, copy, advertiser and targeting details.",
+  "useCases": [
+    "See how B2B competitors position themselves in ads",
+    "Collect ad copy for messaging research",
+    "Track when competitors start or stop campaigns"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

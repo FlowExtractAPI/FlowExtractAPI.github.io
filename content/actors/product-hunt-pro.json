@@ -1,0 +1,24 @@
+{
+  "slug": "product-hunt-pro",
+  "label": "Product Hunt Scraper",
+  "category": "ecommerce",
+  "source": "Product Hunt",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "product hunt scraper",
+  "secondaryKeywords": [
+    "product hunt api",
+    "product hunt leaderboard scraper"
+  ],
+  "title": "Product Hunt Scraper: Launches, Makers & Reviews",
+  "h1": "Product Hunt Scraper",
+  "metaDescription": "Scrape Product Hunt leaderboards (daily to yearly) with ranks and upvotes, company websites, makers and hunters, reviews, comments and topics.",
+  "intro": "Get Product Hunt launches from daily, weekly, monthly or yearly leaderboards with rank and upvotes, company website, makers and hunters, full reviews with star ratings, comments, topics and media. Search by keyword, topic or link.",
+  "useCases": [
+    "Build lead lists of newly launched startups",
+    "Track launches in your category",
+    "Study what top-ranked launches have in common"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

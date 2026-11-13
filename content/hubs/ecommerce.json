@@ -1,0 +1,14 @@
+{
+  "id": "ecommerce",
+  "kind": "category",
+  "primaryKeyword": "review scraper",
+  "secondaryKeywords": [
+    "product review scraper",
+    "ecommerce scraper"
+  ],
+  "title": "Review Scrapers: Etsy, Shopee, Trustpilot, TikTok Shop",
+  "h1": "Review and e-commerce scrapers",
+  "metaDescription": "Scrape product reviews and store data from Etsy, Shopee, TikTok Shop, Trustpilot, DoorDash and Product Hunt: ratings, text, prices and sellers.",
+  "intro": "Collect what customers say and what sellers charge. These scrapers return reviews with star ratings and text, product listings with prices, and shop or store details, ready for analysis.",
+  "lastKeywordChange": "2026-11-13"
+}

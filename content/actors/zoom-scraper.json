@@ -1,0 +1,25 @@
+{
+  "slug": "zoom-scraper",
+  "label": "Zoom Recording Downloader",
+  "category": "video",
+  "source": "Zoom",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "zoom recording downloader",
+  "secondaryKeywords": [
+    "zoom scraper",
+    "download zoom recording",
+    "zoom transcript download"
+  ],
+  "title": "Zoom Scraper: Recording Downloader & Transcripts",
+  "h1": "Zoom Scraper: Recording Downloader & Transcript",
+  "metaDescription": "Turn shared Zoom recording links into downloadable video files, transcripts and meeting metadata. Works on meetings, webinars, events and clips.",
+  "intro": "Paste shared Zoom recording links (meetings, webinars, events or clips) and get the video file, the transcript and the recording's metadata, ready to archive or repurpose.",
+  "useCases": [
+    "Archive a course or webinar series before the share links expire",
+    "Turn recorded meetings into searchable transcripts",
+    "Repurpose event recordings into clips and posts"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,29 @@
+{
+  "slug": "immobilienscout24-scraper",
+  "label": "ImmoScout24 Scraper",
+  "category": "real-estate",
+  "source": "ImmoScout24",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "immoscout24 scraper",
+  "secondaryKeywords": [
+    "immoscout24 api",
+    "immobilienscout24 scraper"
+  ],
+  "title": "ImmoScout24 Scraper: Listings, €/m² & Price Drops",
+  "h1": "ImmoScout24 Scraper",
+  "metaDescription": "Scrape immobilienscout24.de: all property types, radius and map searches, price, €/m², address, coordinates, fees and agent. Monitoring mode.",
+  "intro": "Paste immobilienscout24.de searches (every property type including commercial, radius and map searches) and get the numeric price, €/m², address, coordinates, purchase fees and agent. Monitoring mode reports new listings, price cuts and removed listings.",
+  "useCases": [
+    "Track price cuts in a German city",
+    "Compare €/m² across districts",
+    "Get alerts for new listings that match a search"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official ImmoScout24 API?",
+      "a": "ImmoScout24's APIs are for registered partners and agents. This actor reads public search results, so you only need a search link."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

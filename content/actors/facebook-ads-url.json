@@ -1,0 +1,23 @@
+{
+  "slug": "facebook-ads-url",
+  "label": "Facebook Ad Library URL Parser",
+  "category": "ads",
+  "source": "Meta Ad Library",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook ad library url parser",
+  "secondaryKeywords": [
+    "facebook ad library url scraper"
+  ],
+  "title": "Facebook Ad Library URL Parser: Paste a Link, Get Ads",
+  "h1": "Facebook Ad Library URL Parser",
+  "metaDescription": "Copy any Facebook Ad Library URL and get its ads as data: no filters to configure, just paste the link and run.",
+  "intro": "Set your filters on Meta's Ad Library, copy the link, paste it here and get the ads it shows as structured data. No filters to rebuild.",
+  "useCases": [
+    "Turn an Ad Library search you already made into a spreadsheet",
+    "Re-run the same search every week",
+    "Share ad research with a team as data"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

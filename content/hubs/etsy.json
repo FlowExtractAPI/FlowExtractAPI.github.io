@@ -1,0 +1,46 @@
+{
+  "id": "etsy",
+  "kind": "source",
+  "primaryKeyword": "etsy scraper",
+  "secondaryKeywords": [
+    "scrape etsy data",
+    "etsy scraper api",
+    "etsy data extraction"
+  ],
+  "title": "Etsy Scraper: Search, Shops, Listings & Reviews",
+  "h1": "Etsy scraper: pick the right tool for your job",
+  "metaDescription": "Three Etsy scrapers cover search results, whole shops, and single listings with buyer reviews. Public data, no Etsy login or API key. Export JSON or CSV.",
+  "intro": "Etsy data comes in three shapes, and each scraper starts from a different link: a search or category (Etsy Search Scraper), a shop (Etsy Shop Scraper), or a listing (Etsy Reviews Scraper, which also returns buyer reviews). All three read public pages, so you need no Etsy login or API key.",
+  "chooser": [
+    {
+      "start": "A keyword, category or search link",
+      "want": "Every matching listing with price, shop and rating",
+      "slug": "etsy-search-scraper"
+    },
+    {
+      "start": "A shop URL, name or ID",
+      "want": "The shop profile and its whole catalog",
+      "slug": "etsy-shop-scraper"
+    },
+    {
+      "start": "One or more listing URLs",
+      "want": "Full listing details and buyer reviews",
+      "slug": "etsy-product-reviews-scraper"
+    }
+  ],
+  "faq": [
+    {
+      "q": "Do I need an Etsy API key?",
+      "a": "No. Etsy's Open API v3 needs a registered app and a key; these scrapers read public Etsy pages, so a link or a keyword is enough."
+    },
+    {
+      "q": "Which Etsy scraper should I start with?",
+      "a": "Start from what you have. A keyword: Etsy Search Scraper. A competitor shop: Etsy Shop Scraper. A product you want reviews for: Etsy Reviews Scraper."
+    },
+    {
+      "q": "Can I combine them?",
+      "a": "Yes. A common chain is search first, then send the shops you found to the shop scraper, or the best listings to the reviews scraper."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

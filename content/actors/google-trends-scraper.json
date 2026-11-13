@@ -1,0 +1,29 @@
+{
+  "slug": "google-trends-scraper",
+  "label": "Google Trends Scraper",
+  "category": "search-engines",
+  "source": "Google Trends",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "google trends scraper",
+  "secondaryKeywords": [
+    "google trends api",
+    "scrape google trends"
+  ],
+  "title": "Google Trends Scraper: Interest, Regions & Related Queries",
+  "h1": "Google Trends Scraper",
+  "metaDescription": "Get Google Trends data with the site's own filters: interest over time for up to 5 terms, interest by region, related queries, topics and Trending now.",
+  "intro": "Get Google Trends data with the site's own filters: interest over time for up to 5 compared terms, interest by region down to city, top and rising related queries, topic suggestions, and Trending now searches with volume, growth and news. Paste Trends links or fill the form.",
+  "useCases": [
+    "Check demand for a product or content idea",
+    "Compare brands' search interest by region",
+    "Catch rising searches early for content planning"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Google Trends API?",
+      "a": "Google opened an alpha Trends API to a small group of testers only. This actor reads the public Trends site with its own filters and returns the same numbers as data."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

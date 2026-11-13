@@ -1,0 +1,62 @@
+---
+// Data explorer: real rows from data/samples/<slug>/sample.json, rendered as plain HTML at build time.
+// A small script adds sort + text filter. No live calls; nothing a visitor does starts a run or costs money.
+const { actor } = Astro.props;
+const { rows, run } = actor.sample;
+const cfg = actor.explorer || { tables: [{ title: 'Results', columns: [...new Set(rows.flatMap((r) => Object.keys(r)))].slice(0, 8) }] };
+const tables = cfg.tables.map((t) => ({ ...t, rows: t.type ? rows.filter((r) => r.record_type === t.type) : rows })).filter((t) => t.rows.length);
+const fmt = (v) => (v === true ? 'yes' : v === false ? 'no' : v == null ? '' : String(v));
+const labels = cfg.labels || {};
+---
+<section class="explorer" id="data" aria-labelledby="data-h">
+  <div class="explorer-head">
+    <h2 id="data-h">Real results: explore the data</h2>
+    <span class="explorer-label">Real results from a run on {run.date} · sample of {rows.length} rows</span>
+  </div>
+  <p class="muted small">Personal details (reviewer names, photos, IDs) are removed or replaced; listing and shop data is shown as returned.</p>
+  <div class="explorer-tools">
+    <input type="search" placeholder="Filter rows…" aria-label="Filter rows" data-explorer-filter />
+    <a class="btn btn-ghost" href={`/data/${actor.pageSlug}/sample.csv`} download>Download CSV</a>
+    <a class="btn btn-ghost" href={`/data/${actor.pageSlug}/sample.json`} download>Download JSON</a>
+  </div>
+  {tables.map((t) => (
+    <>
+      <h3>{t.title} <span class="muted small">({t.rows.length})</span></h3>
+      <div class="table-wrap">
+        <table data-explorer-table>
+          <thead><tr>{t.columns.map((c) => <th scope="col">{labels[c] || c.replace(/_/g, ' ')}</th>)}</tr></thead>
+          <tbody>
+            {t.rows.map((r) => <tr>{t.columns.map((c) => <td class={String(r[c] ?? '').length > 60 ? 'long' : ''}>{fmt(r[c])}</td>)}</tr>)}
+          </tbody>
+        </table>
+      </div>
+    </>
+  ))}
+  <p class="cta-row"><a class="btn" href={actor.facts.storeUrl} rel="noopener">Run it on your own URLs →</a></p>
+</section>
+<script>
+  for (const box of document.querySelectorAll('.explorer')) {
+    const filter = box.querySelector('[data-explorer-filter]');
+    const tables = box.querySelectorAll('[data-explorer-table]');
+    filter?.addEventListener('input', () => {
+      const q = filter.value.trim().toLowerCase();
+      for (const t of tables) for (const tr of t.tBodies[0].rows) tr.hidden = q !== '' && !tr.textContent.toLowerCase().includes(q);
+    });
+    for (const t of tables) {
+      t.tHead.rows[0].querySelectorAll('th').forEach((th, i) => {
+        th.tabIndex = 0;
+        const sort = () => {
+          const dir = th.getAttribute('aria-sort') === 'ascending' ? 'descending' : 'ascending';
+          t.tHead.querySelectorAll('th').forEach((x) => x.removeAttribute('aria-sort'));
+          th.setAttribute('aria-sort', dir);
+          const rows = [...t.tBodies[0].rows];
+          const val = (tr) => { const s = tr.cells[i].textContent.trim(); const n = Number(s); return s !== '' && !Number.isNaN(n) ? n : s.toLowerCase(); };
+          rows.sort((a, b) => { const x = val(a), y = val(b); return (x > y ? 1 : x < y ? -1 : 0) * (dir === 'ascending' ? 1 : -1); });
+          t.tBodies[0].append(...rows);
+        };
+        th.addEventListener('click', sort);
+        th.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); sort(); } });
+      });
+    }
+  }
+</script>

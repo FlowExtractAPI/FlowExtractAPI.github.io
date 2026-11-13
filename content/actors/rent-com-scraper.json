@@ -1,0 +1,24 @@
+{
+  "slug": "rent-com-scraper",
+  "label": "Rent.com Scraper",
+  "category": "real-estate",
+  "source": "Rent.com",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "rent.com scraper",
+  "secondaryKeywords": [
+    "rent.com api",
+    "rental listings scraper"
+  ],
+  "title": "Rent.com Scraper: Rentals, Floor Plans & Availability",
+  "h1": "Rent.com Scraper",
+  "metaDescription": "Scrape Rent.com rentals from any search or listing link: rent, beds, baths, availability, deals, floor plans with unit rents, amenities and fees.",
+  "intro": "Paste a Rent.com search or listing link and get each rental's rent, beds, baths, availability, deals and location, plus floor plans with unit rents, amenities, fees, pet policy and leasing phone. Filters in the link are applied exactly.",
+  "useCases": [
+    "Compare rents per bedroom count across neighbourhoods",
+    "Track concessions and deals in a market",
+    "Build a rental comps dataset"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

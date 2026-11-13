@@ -1,0 +1,24 @@
+{
+  "slug": "doordash-scraper",
+  "label": "DoorDash Scraper",
+  "category": "ecommerce",
+  "source": "DoorDash",
+  "sourceHub": "doordash",
+  "mode": "basic",
+  "primaryKeyword": "doordash scraper",
+  "secondaryKeywords": [
+    "doordash menu scraper",
+    "doordash api"
+  ],
+  "title": "DoorDash Scraper: Stores, Menus, Fees & Reviews",
+  "h1": "DoorDash Scraper",
+  "metaDescription": "Scrape DoorDash stores, full menus, featured items, delivery fees, pickup ETAs and customer reviews, with location-aware search and multi-URL input.",
+  "intro": "Search DoorDash by location or paste store links and get store listings, full menus with prices, featured items, star distribution, delivery fees and pickup ETAs, with optional customer reviews.",
+  "useCases": [
+    "Compare menu prices across restaurants in an area",
+    "Track delivery fees and ETAs by location",
+    "Research a cuisine's competition before opening"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

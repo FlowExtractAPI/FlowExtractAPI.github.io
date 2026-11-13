@@ -1,0 +1,24 @@
+{
+  "slug": "domain-scraper",
+  "label": "Domain.com.au Scraper",
+  "category": "real-estate",
+  "source": "domain.com.au",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "domain.com.au scraper",
+  "secondaryKeywords": [
+    "domain.com.au scraping",
+    "domain api scraper"
+  ],
+  "title": "Domain.com.au Scraper: Listings, Agents & Schools",
+  "h1": "Domain.com.au Scraper",
+  "metaDescription": "Scrape domain.com.au property listings from any search URL: prices, agent contacts, nearby schools, market insights, photos and floor plans.",
+  "intro": "Paste a domain.com.au search link (any filters) and get each listing's price, agent contacts, nearby schools, market insights, photos and floor plans.",
+  "useCases": [
+    "Compare prices and days on market across suburbs",
+    "Build agent contact lists by suburb",
+    "Track new listings that match a buyer's brief"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

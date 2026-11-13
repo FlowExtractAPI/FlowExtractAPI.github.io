@@ -1,0 +1,24 @@
+{
+  "slug": "facebook-comment-scraper",
+  "label": "Facebook Comment Scraper",
+  "category": "social",
+  "source": "Facebook",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook comment scraper",
+  "secondaryKeywords": [
+    "facebook comments export",
+    "scrape facebook comments"
+  ],
+  "title": "Facebook Comment Scraper: Posts, Reels & Group Comments",
+  "h1": "Facebook Comment Scraper",
+  "metaDescription": "Scrape Facebook comments and threaded replies from reels, videos, photos, posts and groups: text, reactions and author. Full pagination, no login.",
+  "intro": "Paste Facebook post, reel, video, photo or group links and get every comment with threaded replies, reactions and author data. Cap the replies per comment to control cost. No login.",
+  "useCases": [
+    "Analyse sentiment on a brand's posts or ads",
+    "Collect customer questions from a page's comments",
+    "Moderate or archive group discussions"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

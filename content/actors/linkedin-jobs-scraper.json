@@ -1,0 +1,24 @@
+{
+  "slug": "linkedin-jobs-scraper",
+  "label": "LinkedIn Jobs Scraper",
+  "category": "social",
+  "source": "LinkedIn",
+  "sourceHub": "linkedin",
+  "mode": "basic",
+  "primaryKeyword": "linkedin jobs scraper",
+  "secondaryKeywords": [
+    "linkedin job scraper api",
+    "scrape linkedin jobs"
+  ],
+  "title": "LinkedIn Jobs Scraper: Postings, Salary & Recruiter",
+  "h1": "LinkedIn Jobs Scraper",
+  "metaDescription": "Scrape LinkedIn job postings in bulk: title, company, date, location, salary min/max, seniority, applicants, full description and the recruiter.",
+  "intro": "Search LinkedIn jobs in bulk and get title, company, exact posting date, location, salary range parsed to min and max, seniority, employment type, industry, applicant count, full description and the recruiter who posted it.",
+  "useCases": [
+    "Find companies that are hiring for roles you sell to",
+    "Track salary ranges for a job title",
+    "Build a job board or alert for a niche"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

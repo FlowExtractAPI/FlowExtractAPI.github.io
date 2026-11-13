@@ -1,0 +1,29 @@
+{
+  "slug": "idealista-scraper",
+  "label": "Idealista Scraper",
+  "category": "real-estate",
+  "source": "Idealista",
+  "sourceHub": "idealista",
+  "mode": "basic",
+  "primaryKeyword": "idealista scraper",
+  "secondaryKeywords": [
+    "scrape idealista",
+    "idealista data"
+  ],
+  "title": "Idealista Scraper: Spain, Portugal & Italy Listings",
+  "h1": "Idealista Scraper",
+  "metaDescription": "Extract Idealista property data from Spain, Portugal and Italy past the 1,800-listing limit: prices, specs, photos and agency contacts.",
+  "intro": "Paste an Idealista search for Spain, Portugal or Italy and get every listing (past Idealista's 1,800-listing limit) with price, specs, photos and agency contact.",
+  "useCases": [
+    "Collect every listing in a city, not just the first 1,800",
+    "Compare prices and sizes across districts",
+    "Build lead lists of agencies by area"
+  ],
+  "faq": [
+    {
+      "q": "How is this different from Idealista Scraper API?",
+      "a": "Idealista Scraper API charges per property returned, also covers France, and accepts drawn-map and multi-zone links. This one is listed as free on the Apify Store and covers Spain, Portugal and Italy."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "propertyfinder-scraper",
+  "label": "Property Finder Scraper",
+  "category": "real-estate",
+  "source": "Property Finder",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "property finder scraper",
+  "secondaryKeywords": [
+    "propertyfinder api",
+    "propertyfinder uae scraper"
+  ],
+  "title": "Property Finder Scraper: UAE, KSA, Qatar, Bahrain, Egypt",
+  "h1": "Property Finder Scraper",
+  "metaDescription": "Extract PropertyFinder listings across the UAE, Saudi Arabia, Bahrain, Egypt and Qatar: prices, locations, agent contacts, amenities and specs.",
+  "intro": "Paste PropertyFinder search links from the UAE, Saudi Arabia, Bahrain, Egypt or Qatar and get each listing's price, location, agent contact, amenities and specs.",
+  "useCases": [
+    "Compare rents and prices across Dubai communities",
+    "Build agent and agency lists by area",
+    "Track new listings in a building or district"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

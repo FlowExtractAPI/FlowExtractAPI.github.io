@@ -1,0 +1,24 @@
+{
+  "slug": "shopee-reviews-scraper",
+  "label": "Shopee Reviews Scraper",
+  "category": "ecommerce",
+  "source": "Shopee",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "shopee reviews scraper",
+  "secondaryKeywords": [
+    "shopee scraper",
+    "shopee review api"
+  ],
+  "title": "Shopee Reviews Scraper: Ratings, Photos & Videos",
+  "h1": "Shopee Reviews Scraper",
+  "metaDescription": "Get Shopee reviews from any shop or product URL in 8 markets: stars, text, sub-ratings, photos, videos, variation and seller reply. No Shopee account.",
+  "intro": "Paste a Shopee shop or product link from any of 8 markets and get its reviews: star rating, text, quality, seller and delivery sub-ratings, photos, videos, the variation bought, the reviewer and the seller's reply. Filter by stars, text or media; no Shopee account needed.",
+  "useCases": [
+    "Spot product defects in 1–2 star reviews before you stock an item",
+    "Compare sellers of the same product on service and delivery",
+    "Collect review text and photos for product research"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

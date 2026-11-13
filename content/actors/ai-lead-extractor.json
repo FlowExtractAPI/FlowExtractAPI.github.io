@@ -1,0 +1,25 @@
+{
+  "slug": "ai-lead-extractor",
+  "label": "AI Website Scraper",
+  "category": "business",
+  "source": "any website",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "business contact extraction",
+  "secondaryKeywords": [
+    "website contact scraper",
+    "ai web scraper",
+    "email extractor from website"
+  ],
+  "title": "AI Website Scraper: Business Contact Extraction",
+  "h1": "AI Business Contact Extraction",
+  "metaDescription": "Crawl company websites with AI to extract emails, phones, job titles and social links from contact, about and team pages, or any field you define.",
+  "intro": "Give it company websites and it crawls their contact, about and team pages to extract emails, phone numbers, job titles and social links; or describe custom fields and let AI fill them, in batch.",
+  "useCases": [
+    "Enrich a list of company domains with contact details",
+    "Extract team members and roles for account research",
+    "Pull custom fields (pricing, services, locations) from many sites"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,13 @@
+{
+  "id": "classifieds",
+  "kind": "category",
+  "primaryKeyword": "classifieds scraper",
+  "secondaryKeywords": [
+    "marketplace scraper api"
+  ],
+  "title": "Classifieds Scrapers: Marketplace, Leboncoin, Kleinanzeigen",
+  "h1": "Classifieds and marketplace scrapers",
+  "metaDescription": "Scrape classified ads from Facebook Marketplace, leboncoin.fr and Kleinanzeigen.de: price, location, photos, seller and category details, no login.",
+  "intro": "Track second-hand prices and new ads on the big classifieds sites. Paste a search link, or a keyword and a city, and get every ad with price, location, seller and the category fields (cars, property, electronics) as data.",
+  "lastKeywordChange": "2026-11-13"
+}

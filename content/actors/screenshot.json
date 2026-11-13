@@ -1,0 +1,24 @@
+{
+  "slug": "screenshot",
+  "label": "Website Screenshot API",
+  "category": "dev-tools",
+  "source": "any website",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "website screenshot api",
+  "secondaryKeywords": [
+    "full page screenshot api",
+    "screenshot scraper"
+  ],
+  "title": "Website Screenshot API: Full-Page & Custom Viewports",
+  "h1": "Website Screenshot API",
+  "metaDescription": "Capture high-quality screenshots of any website with full-page support, custom viewports, cookie sign-in and smart load detection.",
+  "intro": "Give it website URLs and get high-quality screenshots, full page or at a custom viewport, with cookie sign-in and smart detection of when the page has finished loading.",
+  "useCases": [
+    "Monitor competitors' pages visually",
+    "Add page screenshots to reports and docs",
+    "Check layouts after a deploy"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

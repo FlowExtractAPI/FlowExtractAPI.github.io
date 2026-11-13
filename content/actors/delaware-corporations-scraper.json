@@ -1,0 +1,24 @@
+{
+  "slug": "delaware-corporations-scraper",
+  "label": "Delaware Entity Search",
+  "category": "business",
+  "source": "Delaware Division of Corporations",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "delaware entity search",
+  "secondaryKeywords": [
+    "delaware business search",
+    "delaware registered agent lookup"
+  ],
+  "title": "Delaware Entity Search: Bulk Lookup & Registered Agents",
+  "h1": "Delaware Entity Search (Bulk)",
+  "metaDescription": "Search the Delaware Division of Corporations by entity name or file number in bulk: formation date, entity kind and type, and registered agent.",
+  "intro": "Search the Delaware Division of Corporations by entity name or file number, many at once. Each entity comes with its file number, formation date, kind and type, residency, state of formation and the registered agent's name and address.",
+  "useCases": [
+    "Verify that counterparties exist and when they were formed",
+    "Find the registered agent for service of process",
+    "Check a list of company names in one run"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

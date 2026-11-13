@@ -1,0 +1,24 @@
+{
+  "slug": "universal-downloader",
+  "label": "Universal Downloader",
+  "category": "video",
+  "source": "any file URL",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "universal downloader",
+  "secondaryKeywords": [
+    "bulk file downloader",
+    "download files with proxy"
+  ],
+  "title": "Universal Downloader: Download Any File Type in Bulk",
+  "h1": "Universal Downloader",
+  "metaDescription": "Download any file type in bulk with proxy support, automatic retries and cloud storage. Streams large files; standby mode for instant API calls.",
+  "intro": "Give it file links of any type (video, images, PDFs, archives) and it downloads them in bulk to cloud storage, with proxy support, automatic retries and streaming for large files. Standby mode answers API calls instantly.",
+  "useCases": [
+    "Download files that are blocked in your region through a proxy",
+    "Move many files into cloud storage in one run",
+    "Add a reliable download step to an automation"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

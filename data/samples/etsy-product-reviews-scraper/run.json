@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/etsy-product-reviews-scraper",
+  "runId": "toK8ZCSMlqb3SWeLL",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T21:07:51.600Z",
+  "itemCount": 16,
+  "sampleCount": 16,
+  "costUsd": 0.038,
+  "buildNumber": "0.0.42",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

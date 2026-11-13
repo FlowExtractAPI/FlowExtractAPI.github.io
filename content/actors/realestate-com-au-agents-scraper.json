@@ -1,0 +1,24 @@
+{
+  "slug": "realestate-com-au-agents-scraper",
+  "label": "realestate.com.au Agent Scraper",
+  "category": "real-estate",
+  "source": "realestate.com.au",
+  "sourceHub": "realestate-com-au",
+  "mode": "basic",
+  "primaryKeyword": "realestate.com.au agent scraper",
+  "secondaryKeywords": [
+    "real estate agent scraper australia",
+    "rea agents scraper"
+  ],
+  "title": "realestate.com.au Agent Scraper: Agents & Agencies",
+  "h1": "realestate.com.au Agent Scraper",
+  "metaDescription": "Scrape realestate.com.au agents and agencies by suburb, postcode or URL: contact details, agency, listing counts, median sold price and suburbs.",
+  "intro": "Search realestate.com.au agents and agencies by suburb, postcode or search link and get names, contact details, agency, listing counts, median sold price and active suburbs.",
+  "useCases": [
+    "Build agent prospect lists by suburb",
+    "Rank agencies by listings and sold prices",
+    "Map who is active in a postcode"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

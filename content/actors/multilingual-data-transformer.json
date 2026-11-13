@@ -1,0 +1,24 @@
+{
+  "slug": "multilingual-data-transformer",
+  "label": "JSON Data Translator",
+  "category": "dev-tools",
+  "source": "any JSON dataset",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "translate json data",
+  "secondaryKeywords": [
+    "json translator",
+    "dataset translation"
+  ],
+  "title": "Translate JSON Data into 16+ Languages with AI",
+  "h1": "Translate JSON Data (Multilingual Data Transformer)",
+  "metaDescription": "Translate any JSON dataset into 16+ languages with AI while keeping its structure. Built for product catalogs and content localization. Pay per word.",
+  "intro": "Give it JSON data and get it back translated into 16+ languages with AI, with the structure kept intact: useful for product catalogs, content localization and scraped datasets.",
+  "useCases": [
+    "Localize a product catalog for new markets",
+    "Translate scraped reviews before analysis",
+    "Prepare multilingual content feeds"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

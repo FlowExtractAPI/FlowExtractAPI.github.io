@@ -1,0 +1,25 @@
+{
+  "slug": "bing-copilot-ai-mode-scraper",
+  "label": "Bing Copilot Scraper",
+  "category": "search-engines",
+  "source": "Bing",
+  "sourceHub": "bing",
+  "mode": "basic",
+  "primaryKeyword": "bing copilot scraper",
+  "secondaryKeywords": [
+    "bing ai mode scraper",
+    "copilot search api",
+    "ai search citation tracking"
+  ],
+  "title": "Bing Copilot Scraper: AI Mode Answers & Citations",
+  "h1": "Bing Copilot AI Mode Scraper",
+  "metaDescription": "Ask Bing's AI Mode (Copilot Search) any question and get the full answer, its numbered citations and every source it read, as markdown and JSON.",
+  "intro": "Send questions to Bing's AI Mode (Copilot Search) and get the full answer, its numbered citations and every source it read, as markdown and JSON, in 28 markets. Track whether your brand and your domains are cited.",
+  "useCases": [
+    "Track whether AI search cites your brand or your competitors",
+    "See which sources AI answers rely on for your topics",
+    "Monitor the AI answers to your key questions over time"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

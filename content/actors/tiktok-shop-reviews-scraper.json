@@ -1,0 +1,24 @@
+{
+  "slug": "tiktok-shop-reviews-scraper",
+  "label": "TikTok Shop Reviews Scraper",
+  "category": "ecommerce",
+  "source": "TikTok Shop",
+  "sourceHub": "tiktok",
+  "mode": "basic",
+  "primaryKeyword": "tiktok shop reviews scraper",
+  "secondaryKeywords": [
+    "tiktok shop scraper",
+    "tiktok shop reviews api"
+  ],
+  "title": "TikTok Shop Reviews Scraper: 16 Markets, Photos & Ratings",
+  "h1": "TikTok Shop Reviews Scraper",
+  "metaDescription": "Scrape TikTok Shop product reviews in 16 markets: star rating, text, photos, verified-purchase flag, variant, reviewer country and date.",
+  "intro": "Paste TikTok Shop product links from 16 markets (US, UK, EU, Brazil, Mexico, Japan and Southeast Asia) and get every review's star rating, text, photos, verified-purchase and incentivized flags, variant bought, reviewer country and date.",
+  "useCases": [
+    "Vet a product before sourcing it",
+    "Compare reviews of the same product across markets",
+    "Find the complaints behind low ratings"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

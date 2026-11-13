@@ -1,0 +1,33 @@
+{
+  "brand": {
+    "name": "FlowExtract API",
+    "url": "https://flowextractapi.com",
+    "email": "flowextractapi@outlook.com",
+    "storeProfile": "https://apify.com/dz_omar?fpr=smcx63",
+    "formEndpoint": "https://formspree.io/f/mdalkpqj"
+  },
+  "social": {
+    "github": "https://github.com/FlowExtractAPI",
+    "linkedin": "https://www.linkedin.com/in/flowextract-api/",
+    "x": "https://x.com/FlowExtractAPI",
+    "facebook": "https://www.facebook.com/flowextractapi",
+    "tiktok": "https://www.tiktok.com/@flowextractapi"
+  },
+  "categories": {
+    "real-estate": { "name": "Real estate" },
+    "classifieds": { "name": "Classifieds & marketplaces" },
+    "vehicles": { "name": "Vehicles" },
+    "ecommerce": { "name": "E-commerce & reviews" },
+    "ads": { "name": "Ad libraries" },
+    "social": { "name": "Social media & communities" },
+    "video": { "name": "Video & media" },
+    "search-engines": { "name": "Search engines" },
+    "travel": { "name": "Travel" },
+    "business": { "name": "Business registries & leads" },
+    "dev-tools": { "name": "Developer tools" }
+  },
+  "sourceHubs": {
+    "etsy": { "name": "Etsy" }
+  },
+  "plannedSourceHubs": ["youtube", "facebook", "bing", "linkedin", "tiktok", "instagram", "doordash", "realestate-com-au", "idealista"]
+}

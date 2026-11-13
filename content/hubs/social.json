@@ -1,0 +1,13 @@
+{
+  "id": "social",
+  "kind": "category",
+  "primaryKeyword": "social media scraper",
+  "secondaryKeywords": [
+    "social media data api"
+  ],
+  "title": "Social Media Scrapers: Facebook, Instagram, LinkedIn, Skool",
+  "h1": "Social media scrapers",
+  "metaDescription": "Scrape public posts, comments, company pages, jobs and communities from Facebook, Instagram, LinkedIn and Skool, as JSON or CSV.",
+  "intro": "Public social data without logging in: posts and comments from Facebook and Instagram, company pages and jobs from LinkedIn, and course and member data from Skool communities.",
+  "lastKeywordChange": "2026-11-13"
+}

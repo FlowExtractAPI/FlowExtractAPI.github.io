@@ -1,0 +1,30 @@
+{
+  "slug": "california-bizfile-scraper",
+  "label": "California UCC Search",
+  "category": "business",
+  "source": "California bizfileOnline",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "california ucc search",
+  "secondaryKeywords": [
+    "california business search",
+    "california ucc lien search",
+    "bizfile online scraper"
+  ],
+  "title": "California UCC Search & Business Lookup (bizfileOnline)",
+  "h1": "California UCC Search & Business Entity Lookup",
+  "metaDescription": "Search California bizfileOnline in bulk: business entities (status, agent) and UCC filings, judgment and tax liens. Filter by type, status and date.",
+  "intro": "Search the official California Secretary of State bizfileOnline registers in bulk: business entities with status, standing, type and registered agent, or UCC filings including financing statements, judgment liens and state and federal tax liens. Filter by type, status and date.",
+  "useCases": [
+    "Check a borrower or supplier for existing liens",
+    "Build lead lists of newly formed California businesses",
+    "Verify a company's status and registered agent"
+  ],
+  "faq": [
+    {
+      "q": "Does this replace ordering copies from the state?",
+      "a": "No. It returns the public search results and filing details as data. Certified copies are still ordered from the California Secretary of State."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13"
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-subtitle-translator",
+  "label": "YouTube Subtitle Translator",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube subtitle translator",
+  "secondaryKeywords": [
+    "translate youtube subtitles",
+    "youtube srt translation"
+  ],
+  "title": "YouTube Subtitle Translator: SRT in 20+ Languages",
+  "h1": "YouTube Subtitle Translator",
+  "metaDescription": "Extract YouTube transcripts and translate them into 20+ languages with Lingo.dev AI. Get SRT subtitle files with the original timing, in batch.",
+  "intro": "Paste YouTube video links and get their transcripts translated into 20+ languages with Lingo.dev AI, as SRT subtitle files that keep the original timing.",
+  "useCases": [
+    "Publish your videos with subtitles in new languages",
+    "Translate lectures for students abroad",
+    "Batch-translate a channel's back catalogue"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

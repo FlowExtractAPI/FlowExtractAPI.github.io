@@ -1,0 +1,24 @@
+{
+  "slug": "youtube-hashtag-extractor",
+  "label": "YouTube Hashtag Scraper",
+  "category": "video",
+  "source": "YouTube",
+  "sourceHub": "youtube",
+  "mode": "basic",
+  "primaryKeyword": "youtube hashtag scraper",
+  "secondaryKeywords": [
+    "youtube hashtag extractor",
+    "hashtag scraper api"
+  ],
+  "title": "YouTube Hashtag Scraper: Videos & Shorts by Hashtag",
+  "h1": "YouTube Hashtag Scraper",
+  "metaDescription": "Extract videos or Shorts from any YouTube hashtag with full metadata and transcripts: title, channel, views, runtime, description and thumbnail.",
+  "intro": "Give it YouTube hashtags and get the videos or Shorts under each one with title, channel, views, runtime, description, thumbnail and timestamped transcript. Pick a country to control the region.",
+  "useCases": [
+    "See what is published under a campaign hashtag",
+    "Find creators who use a niche hashtag",
+    "Collect transcripts of videos on a topic"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

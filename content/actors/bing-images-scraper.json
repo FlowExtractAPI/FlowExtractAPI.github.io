@@ -1,0 +1,24 @@
+{
+  "slug": "bing-images-scraper",
+  "label": "Bing Images Scraper",
+  "category": "search-engines",
+  "source": "Bing",
+  "sourceHub": "bing",
+  "mode": "basic",
+  "primaryKeyword": "bing images scraper",
+  "secondaryKeywords": [
+    "bing image search api",
+    "scrape bing images"
+  ],
+  "title": "Bing Images Scraper: Image URLs by Keyword & Filters",
+  "h1": "Bing Images Scraper",
+  "metaDescription": "Scrape Bing Images for any keyword: full-size image URLs, thumbnails, source pages, titles and sizes. Filter by size, type, color, license and date.",
+  "intro": "Type a keyword and get Bing Images results: full-size image URL, thumbnail, source page, title and dimensions. Filter by size, type, layout, color, license and date, and go past Bing's ~500-image limit automatically.",
+  "useCases": [
+    "Build image datasets for computer-vision work (check each image's license)",
+    "Find where a product or a logo appears on the web",
+    "Collect reference images by topic and license"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

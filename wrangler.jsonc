@@ -1,0 +1,17 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Static-assets-only Worker for flowextractapi.com. Deploys ONLY the build output folder.
+  // account_id is pinned once the operator names the account that holds the zone (PLAN.md 1.2).
+  // Never list or iterate accounts.
+  "name": "flowextractapi-site",
+  "compatibility_date": "2026-07-13",
+  "assets": {
+    "directory": "./dist",
+    // "none": serve /docs/<slug>.html exactly as indexed (no .html -> extensionless redirect).
+    // Folder indexes (/, /simple-merge/, /zoom-downloader/) are served by 200 rewrites in public/_redirects.
+    "html_handling": "none",
+    "not_found_handling": "404-page"
+  },
+  "workers_dev": true,
+  "preview_urls": true
+}

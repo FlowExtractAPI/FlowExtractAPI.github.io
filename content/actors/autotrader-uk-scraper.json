@@ -1,0 +1,24 @@
+{
+  "slug": "autotrader-uk-scraper",
+  "label": "AutoTrader UK Scraper",
+  "category": "vehicles",
+  "source": "AutoTrader UK",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "autotrader uk scraper",
+  "secondaryKeywords": [
+    "autotrader scraper",
+    "autotrader api"
+  ],
+  "title": "AutoTrader UK Scraper: Cars, Vans & Bikes to CSV",
+  "h1": "AutoTrader UK Scraper",
+  "metaDescription": "Scrape AutoTrader UK cars, vans, bikes and motorhomes from any search link: price, mileage, specs, registration, price rating, photos and seller details.",
+  "intro": "Paste any AutoTrader UK search link (cars, vans, bikes, motorhomes, caravans, trucks, farm or plant) and get each listing's price, mileage, specs, registration, description, equipment, vehicle check, price rating, photos and seller details.",
+  "useCases": [
+    "Price used cars by model, year and mileage",
+    "Find under-priced stock for trading",
+    "Monitor dealer inventory in a region"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}

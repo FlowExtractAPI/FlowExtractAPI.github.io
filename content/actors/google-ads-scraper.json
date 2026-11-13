@@ -1,0 +1,24 @@
+{
+  "slug": "google-ads-scraper",
+  "label": "Google Ads Scraper",
+  "category": "ads",
+  "source": "Google Ads Transparency Center",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "google ads scraper",
+  "secondaryKeywords": [
+    "google ads transparency center scraper",
+    "google ad library scraper"
+  ],
+  "title": "Google Ads Scraper: Ads Transparency Center Data",
+  "h1": "Google Ads Scraper",
+  "metaDescription": "Extract ads from Google's Ads Transparency Center by URL, advertiser or domain, incl. political ads: creatives, spend ranges, impressions, regions.",
+  "intro": "Get ads from Google's Ads Transparency Center by URL, advertiser or domain, including political and election ads: creative previews, spend ranges, impressions, demographics and regions.",
+  "useCases": [
+    "See a competitor's Search, YouTube and Display ads",
+    "Research political ad spend by region",
+    "Collect ad creatives for a market review"
+  ],
+  "faq": [],
+  "lastKeywordChange": "2026-11-13"
+}
