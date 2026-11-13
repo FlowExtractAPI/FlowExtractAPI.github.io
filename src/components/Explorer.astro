@@ -16,8 +16,8 @@ const labels = cfg.labels || {};
   <p class="muted small">Personal details (reviewer names, photos, IDs) are removed or replaced; listing and shop data is shown as returned.</p>
   <div class="explorer-tools">
     <input type="search" placeholder="Filter rows…" aria-label="Filter rows" data-explorer-filter />
-    <a class="btn btn-ghost" href={`/data/${actor.pageSlug}/sample.csv`} download>Download CSV</a>
-    <a class="btn btn-ghost" href={`/data/${actor.pageSlug}/sample.json`} download>Download JSON</a>
+    <a class="btn btn-ghost" href={`/dl/${actor.pageSlug}/sample.csv`} rel="nofollow">Download CSV</a>
+    <a class="btn btn-ghost" href={`/dl/${actor.pageSlug}/sample.json`} rel="nofollow">Download JSON</a>
   </div>
   {tables.map((t) => (
     <>
@@ -32,7 +32,7 @@ const labels = cfg.labels || {};
       </div>
     </>
   ))}
-  <p class="cta-row"><a class="btn" href={actor.facts.storeUrl} rel="noopener">Run it on your own URLs →</a></p>
+  <p class="cta-row"><a class="btn" href={actor.goUrl} rel="nofollow">Run it on your own URLs →</a></p>
 </section>
 <script>
   for (const box of document.querySelectorAll('.explorer')) {

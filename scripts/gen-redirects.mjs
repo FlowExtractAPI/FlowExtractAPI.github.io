@@ -33,3 +33,10 @@ for (const s of actors.sort()) {
 for (const [from, to] of [['/docs/Youtube-Scraper-Pro.html', '/docs/youtube-scraper-pro.html'], ['/docs/actors/Youtube-Scraper-Pro.md', '/docs/youtube-scraper-pro.html']]) lines.push(`${from} ${to} 301`);
 fs.writeFileSync(path.join(ROOT, 'public/_redirects'), lines.join('\n') + '\n');
 console.log(`_redirects: ${lines.filter((l) => !l.startsWith('#')).length} rules`);
+
+// Store-click map for worker/index.js: /go/<page slug> -> Apify Store URL (with fpr)
+const facts = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/actors.json'), 'utf8')).actors;
+const links = Object.fromEntries(facts.map((a) => [a.slug.toLowerCase(), a.storeUrl]));
+fs.mkdirSync(path.join(ROOT, 'worker'), { recursive: true });
+fs.writeFileSync(path.join(ROOT, 'worker/store-links.json'), JSON.stringify(links, null, 2) + '\n');
+console.log(`worker/store-links.json: ${Object.keys(links).length} actors`);

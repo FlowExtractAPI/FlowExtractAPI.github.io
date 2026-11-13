@@ -47,7 +47,7 @@ for (const f of files) {
   for (const m of body.matchAll(/href="(https:\/\/apify\.com\/dz_omar[^"]*)"/g)) if (!decode(m[1]).includes('fpr=smcx63')) err(f, `Store link without fpr: ${m[1]}`);
   if (f !== 'index.html' && f !== '404.html' && !/aria-label="Breadcrumb"/.test(body)) err(f, 'no breadcrumbs');
   if (f.startsWith('docs/')) {
-    if (!/class="btn" href="https:\/\/apify\.com\/dz_omar\//.test(body)) err(f, 'no Store CTA');
+    if (!/class="btn" href="\/go\/[a-z0-9-]+" rel="nofollow"/.test(body)) err(f, 'no Store CTA (/go/<slug>)');
     if (/class="explorer"/.test(body)) {
       const slug = f.replace(/^docs\//, '').replace(/\.html$/, '');
       const run = JSON.parse(fs.readFileSync(path.join(ROOT, 'data/samples', slug, 'run.json'), 'utf8'));

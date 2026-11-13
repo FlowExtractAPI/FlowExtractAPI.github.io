@@ -28,7 +28,7 @@ export const actors = actorContent
   .map((c) => {
     const facts = factsBySlug.get(c.slug);
     const pageSlug = c.slug.toLowerCase();
-    return { ...c, pageSlug, url: `/docs/${pageSlug}.html`, facts, sample: c.mode === 'unique' ? sampleFor(pageSlug) : null };
+    return { ...c, pageSlug, url: `/docs/${pageSlug}.html`, goUrl: `/go/${pageSlug}`, facts, sample: c.mode === 'unique' ? sampleFor(pageSlug) : null };
   })
   .filter((a) => a.facts)
   .sort((a, b) => a.label.localeCompare(b.label));

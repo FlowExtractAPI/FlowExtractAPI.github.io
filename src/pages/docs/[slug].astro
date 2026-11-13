@@ -41,7 +41,7 @@ const toc = [
       <p class="lede">{a.intro}</p>
       <p class="price-line">{priceSummary(a)}</p>
       <div class="cta-row">
-        <a class="btn" href={a.facts.storeUrl} rel="noopener">Run it on Apify →</a>
+        <a class="btn" href={a.goUrl} rel="nofollow">Run it on Apify →</a>
         <a class="btn btn-ghost" href={hasExplorer ? '#data' : '#output'}>{hasExplorer ? 'See real results' : 'See the fields'}</a>
       </div>
     </header>
@@ -54,7 +54,7 @@ const toc = [
         <section id="how" aria-labelledby="how-h">
           <h2 id="how-h">How it works</h2>
           <ol class="steps">
-            <li>Open <a href={a.facts.storeUrl} rel="noopener">{a.label} on the Apify Store</a>{firstInput ? <> and fill in <b>{inputTitle(firstInput)}</b></> : null}.</li>
+            <li>Open <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>{firstInput ? <> and fill in <b>{inputTitle(firstInput)}</b></> : null}.</li>
             <li>Click Start. The run collects the data on Apify's servers; you can close the tab.</li>
             <li>Download JSON, CSV or Excel, or read the results through the Apify API.</li>
           </ol>
@@ -135,7 +135,7 @@ const toc = [
           <ul class="related">
             {rel.map((r) => <li><a href={r.url}><strong>{r.label}</strong><br /><span class="muted small">{r.source}</span></a></li>)}
           </ul>
-          <p>More in <a href={cat.url}>{site.categories[a.category].name.toLowerCase()} scrapers</a>{src ? <> and the <a href={src.url}>{site.sourceHubs[a.sourceHub].name} scraper guide</a></> : null}. Full documentation: <a href={a.facts.storeUrl} rel="noopener">{a.label} on the Apify Store</a>.</p>
+          <p>More in <a href={cat.url}>{site.categories[a.category].name.toLowerCase()} scrapers</a>{src ? <> and the <a href={src.url}>{site.sourceHubs[a.sourceHub].name} scraper guide</a></> : null}. Full documentation: <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>.</p>
         </section>
       </div>
     </div>

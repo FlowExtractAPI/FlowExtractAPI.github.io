@@ -1,17 +1,25 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  // Static-assets-only Worker for flowextractapi.com. Deploys ONLY the build output folder.
+  // One Worker for flowextractapi.com: static assets (the build output folder only) + a tiny edge script that runs
+  // only when no file matches: /go/<slug> (Store-click counter), /dl/<slug>/sample.* (download counter), and the 404
+  // page for everything else. See worker/index.js.
   // account_id is pinned once the operator names the account that holds the zone (PLAN.md 1.2).
   // Never list or iterate accounts.
   "name": "flowextractapi-site",
+  "main": "worker/index.js",
+  // Local workerd (wrangler 4.108) supports compatibility dates up to 2026-07-13.
   "compatibility_date": "2026-07-13",
   "assets": {
     "directory": "./dist",
+    "binding": "ASSETS",
     // "none": serve /docs/<slug>.html exactly as indexed (no .html -> extensionless redirect).
     // Folder indexes (/, /simple-merge/, /zoom-downloader/) are served by 200 rewrites in public/_redirects.
     "html_handling": "none",
-    "not_found_handling": "404-page"
+    // "none": misses go to the script, which serves /404.html with status 404.
+    "not_found_handling": "none"
   },
+  // Free plan: 100,000 data points/day; no personal data is written (see worker/index.js).
+  "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "flowextract_site_events" }],
   "workers_dev": true,
   "preview_urls": true
 }
