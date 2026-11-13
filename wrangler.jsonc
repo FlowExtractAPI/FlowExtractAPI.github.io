@@ -21,6 +21,10 @@
   },
   // Free plan: 100,000 data points/day; no personal data is written (see worker/index.js).
   "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "flowextract_site_events" }],
+  // Cutover 2026-11-14: the apex runs on this Worker through a route. The existing DNS records (GitHub Pages) stay
+  // untouched for 7 days, so ROLLBACK = delete this "routes" block and run `npx wrangler deploy` (traffic goes back to
+  // GitHub Pages at once). www.flowextractapi.com still reaches GitHub Pages, which 301s it to the apex (= this Worker).
+  "routes": [{ "pattern": "flowextractapi.com/*", "zone_name": "flowextractapi.com" }],
   "workers_dev": true,
   "preview_urls": true
 }
