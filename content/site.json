@@ -14,20 +14,55 @@
     "tiktok": "https://www.tiktok.com/@flowextractapi"
   },
   "categories": {
-    "real-estate": { "name": "Real estate" },
-    "classifieds": { "name": "Classifieds & marketplaces" },
-    "vehicles": { "name": "Vehicles" },
-    "ecommerce": { "name": "E-commerce & reviews" },
-    "ads": { "name": "Ad libraries" },
-    "social": { "name": "Social media & communities" },
-    "video": { "name": "Video & media" },
-    "search-engines": { "name": "Search engines" },
-    "travel": { "name": "Travel" },
-    "business": { "name": "Business registries & leads" },
-    "dev-tools": { "name": "Developer tools" }
+    "real-estate": {
+      "name": "Real estate"
+    },
+    "classifieds": {
+      "name": "Classifieds & marketplaces"
+    },
+    "vehicles": {
+      "name": "Vehicles"
+    },
+    "ecommerce": {
+      "name": "E-commerce & reviews"
+    },
+    "ads": {
+      "name": "Ad libraries"
+    },
+    "social": {
+      "name": "Social media & communities"
+    },
+    "video": {
+      "name": "Video & media"
+    },
+    "search-engines": {
+      "name": "Search engines"
+    },
+    "travel": {
+      "name": "Travel"
+    },
+    "business": {
+      "name": "Business registries & leads"
+    },
+    "dev-tools": {
+      "name": "Developer tools"
+    }
   },
   "sourceHubs": {
-    "etsy": { "name": "Etsy" }
+    "etsy": {
+      "name": "Etsy"
+    }
   },
-  "plannedSourceHubs": ["youtube", "facebook", "bing", "linkedin", "tiktok", "instagram", "doordash", "realestate-com-au", "idealista"]
+  "plannedSourceHubs": [
+    "youtube",
+    "facebook",
+    "bing",
+    "linkedin",
+    "tiktok",
+    "instagram",
+    "doordash",
+    "realestate-com-au",
+    "idealista"
+  ],
+  "indexNowKey": "1c8a66ac7a66a0d6458e7dace3bfa9ee"
 }

@@ -11,7 +11,8 @@
     "preview": "astro preview",
     "parity": "node scripts/parity.mjs",
     "dev": "astro dev",
-    "refresh-sample": "node scripts/refresh-sample.mjs"
+    "refresh-sample": "node scripts/refresh-sample.mjs",
+    "deploy": "node scripts/deploy.mjs"
   },
   "dependencies": {
     "@fontsource/inter": "5.2.8",
