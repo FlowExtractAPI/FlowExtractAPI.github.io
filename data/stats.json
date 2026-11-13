@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-11-13T20:58:46.898Z",
-  "snapshotFetchedAt": "2026-11-01T08:26:45.531513+00:00",
+  "generatedAt": "2026-11-13T21:57:18.459Z",
+  "snapshotFetchedAt": "2026-11-13T21:56:35.114793+00:00",
   "actors": {
     "value": 66,
     "display": "66",
     "source": "live Apify Store list"
   },
   "runs": {
-    "value": 1639486,
-    "display": "1.6M+",
+    "value": 1722861,
+    "display": "1.7M+",
     "source": "snapshot, public actors"
   },
   "users": {
-    "value": 11494,
+    "value": 11933,
     "display": "11,000+",
     "source": "snapshot, public actors"
   }
