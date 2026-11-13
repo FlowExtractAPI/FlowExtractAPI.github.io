@@ -20,5 +20,17 @@
     "Track political and issue ads for research"
   ],
   "faq": [],
+  "demo": {
+    "url": "facebook.com/ads/library · search \"coffee\"",
+    "fields": [
+      "advertiser",
+      "page_category",
+      "ad_title",
+      "cta",
+      "start_date",
+      "platforms",
+      "active"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

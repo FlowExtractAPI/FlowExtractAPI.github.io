@@ -97,10 +97,14 @@ function project(items, cfg) {
   for (const it of items) {
     const type = cfg.project[it[typeField]] ? it[typeField] : (cfg.project['*'] ? '*' : null);
     if (!type) continue;
+    // cfg.where: { field: [allowed values] } keeps only matching rows (e.g. business pages only)
+    if (cfg.where && Object.entries(cfg.where).some(([f, ok]) => !ok.includes(getPath(it, f)))) continue;
     const row = { record_type: it[typeField] ?? null };
     for (const [col, spec] of Object.entries(cfg.project[type])) {
       const s = typeof spec === 'string' ? { path: spec } : spec;
       let v = getPath(it, s.path);
+      if (v == null && s.alt) v = getPath(it, s.alt);
+      if (Array.isArray(v) && v.every((x) => x == null || typeof x !== 'object')) v = v.join(', ');
       if (v != null && s.as === 'date') v = new Date((typeof v === 'number' && v < 1e12 ? v * 1000 : v)).toISOString().slice(0, 10);
       if (s.as === 'present') v = v != null && v !== '';
       if (v != null && v !== '' && s.as === 'pseudonym') { if (!people.has(v)) people.set(v, `${s.label || 'Person'} ${people.size + 1}`); v = people.get(v); }
@@ -144,6 +148,11 @@ async function refresh(arg) {
     buildNumber: r.buildNumber || null,
     account: TOKEN_NAME,
   };
+  if (!cfg.project && !cfg.mask) {
+    // No allow-list yet: never write an unmasked sample. Inspect RAW_DIR, add "project", then collect with <slug>@<runId>.
+    console.log(`[${slug}] ${r.status} · run ${r.id} · items ${ds.itemCount} · no "project" in input.json yet: raw copy only (RAW_DIR)`);
+    return { slug, runId: r.id };
+  }
   if (r.status === 'SUCCEEDED' && sample.length) {
     fs.writeFileSync(path.join(dir, 'sample.json'), JSON.stringify(sample, null, 2) + '\n');
     fs.writeFileSync(path.join(dir, 'run.json'), JSON.stringify(runInfo, null, 2) + '\n');

@@ -25,5 +25,17 @@
       "a": "Zillow retired its old public APIs in 2021; its data now goes to approved partners through Bridge Interactive. This actor reads the public Zillow pages instead."
     }
   ],
+  "demo": {
+    "url": "zillow.com/homes/austin-tx",
+    "fields": [
+      "address",
+      "price",
+      "price_cut",
+      "beds",
+      "baths",
+      "living_area_sqft",
+      "status"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

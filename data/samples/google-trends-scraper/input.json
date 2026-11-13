@@ -1,0 +1,37 @@
+{
+  "input": {
+    "searchTerms": [
+      "chatgpt, gemini, claude"
+    ],
+    "location": "US",
+    "timeRange": "past12Months",
+    "searchType": "web",
+    "dataTypes": [
+      "interestOverTime"
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "typeField": "type",
+  "project": {
+    "search_summary": {
+      "terms": "search_terms",
+      "location": "location_name",
+      "time_range": "time_range",
+      "leader": "leader",
+      "avg_chatgpt": "average_interest.chatgpt",
+      "avg_gemini": "average_interest.gemini",
+      "avg_claude": "average_interest.claude",
+      "trend_chatgpt": "trend_direction.chatgpt",
+      "trend_gemini": "trend_direction.gemini",
+      "trend_claude": "trend_direction.claude"
+    },
+    "interest_over_time": {
+      "date": "date",
+      "week": "date_label",
+      "chatgpt": "values.chatgpt",
+      "gemini": "values.gemini",
+      "claude": "values.claude"
+    }
+  }
+}

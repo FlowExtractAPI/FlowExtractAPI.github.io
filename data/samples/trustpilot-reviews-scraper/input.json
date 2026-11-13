@@ -1,0 +1,29 @@
+{
+  "input": {
+    "companies": [
+      "https://www.trustpilot.com/review/apify.com"
+    ],
+    "maxReviewsPerCompany": 12
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "company": "_meta.company.displayName",
+      "rating": "rating",
+      "title": "title",
+      "published": {
+        "path": "dates.publishedDate",
+        "as": "date"
+      },
+      "experienced": {
+        "path": "dates.experiencedDate",
+        "as": "date"
+      },
+      "language": "language",
+      "likes": "likes",
+      "source": "source",
+      "review_url": "_meta.review_url"
+    }
+  }
+}

@@ -138,6 +138,28 @@ function snapshotStats(publicCount) {
   };
 }
 
+// Each actor's own Store icon, self-hosted (no third-party image requests from visitors).
+const ICON_SRC = path.join(ROOT, 'data/icon-sources.json'); // which Store URL each icon came from (not deployed)
+const iconSrc = fs.existsSync(ICON_SRC) ? JSON.parse(fs.readFileSync(ICON_SRC, 'utf8')) : {};
+async function downloadIcon(a) {
+  if (!a.pictureUrl) return null;
+  const rel = `icons/${a.name.toLowerCase()}.webp`;
+  const out = path.join(ROOT, 'public', rel);
+  if (fs.existsSync(out) && iconSrc[a.name] === a.pictureUrl) return '/' + rel;
+  for (let attempt = 1; attempt <= 3; attempt++) {
+    try {
+      const r = await fetch(a.pictureUrl, { signal: AbortSignal.timeout(30000) });
+      if (!r.ok) throw new Error('HTTP ' + r.status);
+      fs.mkdirSync(path.dirname(out), { recursive: true });
+      fs.writeFileSync(out, Buffer.from(await r.arrayBuffer()));
+      iconSrc[a.name] = a.pictureUrl;
+      return '/' + rel;
+    } catch (e) {
+      if (attempt === 3) { console.warn(`icon ${a.name}: ${e.message}`); return fs.existsSync(out) ? '/' + rel : null; }
+    }
+  }
+}
+
 const store = await fetchStore();
 const actors = [];
 const missing = [];
@@ -151,6 +173,7 @@ for (const a of store.sort((x, y) => x.name.localeCompare(y.name))) {
     storeTitle: a.title,
     storeDescription: a.description,
     storeUrl: `https://apify.com/${OWNER}/${a.name}?fpr=${FPR}`,
+    icon: await downloadIcon(a),
     apifyCategories: a.categories || [],
     usersRank: (a.stats && a.stats.totalUsers) || 0, // public Store number; used only to order "most used", never displayed
     pricing: pricing(a.currentPricingInfo),
@@ -159,6 +182,7 @@ for (const a of store.sort((x, y) => x.name.localeCompare(y.name))) {
   });
 }
 fs.mkdirSync(path.join(ROOT, 'data'), { recursive: true });
+fs.writeFileSync(ICON_SRC, JSON.stringify(iconSrc, null, 2) + '\n');
 fs.writeFileSync(path.join(ROOT, 'data/actors.json'), JSON.stringify({ fetchedAt: new Date().toISOString(), owner: OWNER, actors }, null, 2) + '\n');
 const stats = snapshotStats(actors.length);
 if (stats) fs.writeFileSync(path.join(ROOT, 'data/stats.json'), JSON.stringify(stats, null, 2) + '\n');

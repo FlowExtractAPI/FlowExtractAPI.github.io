@@ -25,5 +25,18 @@
       "a": "Google opened an alpha Trends API to a small group of testers only. This actor reads the public Trends site with its own filters and returns the same numbers as data."
     }
   ],
+  "demo": {
+    "url": "trends.google.com/trends/explore?q=chatgpt,gemini,claude",
+    "type": "search_summary",
+    "fields": [
+      "terms",
+      "location",
+      "leader",
+      "avg_chatgpt",
+      "avg_gemini",
+      "avg_claude",
+      "trend_claude"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T21:57:18.424Z",
+  "fetchedAt": "2026-11-13T23:02:21.747Z",
   "owner": "dz_omar",
   "actors": [
     {
@@ -9,6 +9,7 @@
       "storeTitle": "AI Scraper",
       "storeDescription": "Extract information from websites using intelligent AI 🤖from contact details to custom data fields, summaries, and creative content 🌐. Automatically crawl contact, about, and team pages to gather emails, phone numbers, job titles, and social links. Batch process hundreds of URLs efficiently.",
       "storeUrl": "https://apify.com/dz_omar/ai-lead-extractor?fpr=smcx63",
+      "icon": "/icons/ai-lead-extractor.webp",
       "apifyCategories": [
         "AI",
         "MCP_SERVERS",
@@ -171,6 +172,7 @@
       "storeTitle": "AutoTrader UK Scraper 🚗 Cars, Vans, Bikes & Motorhomes",
       "storeDescription": "Scrape AutoTrader UK cars, vans, bikes, motorhomes, caravans, trucks, farm and plant listings from any search link. Get price, mileage, specs, registration, description, equipment, vehicle check, price rating, working HD photos and seller phone, address and ratings.",
       "storeUrl": "https://apify.com/dz_omar/autotrader-uk-scraper?fpr=smcx63",
+      "icon": "/icons/autotrader-uk-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "LEAD_GENERATION",
@@ -260,6 +262,7 @@
       "storeTitle": "Bing Copilot AI Mode Scraper 🤖 Answers & Citations",
       "storeDescription": "🤖 Ask Bing's AI Mode (Copilot Search) any question and get the full answer, its numbered citations and every source it read, as markdown and JSON. Track whether your brand and domains are cited. 28 markets, public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/bing-copilot-ai-mode-scraper?fpr=smcx63",
+      "icon": "/icons/bing-copilot-ai-mode-scraper.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "AI",
@@ -393,6 +396,7 @@
       "storeTitle": "Bing Flights Scraper ✈️ Prices, Itineraries & Explore Deals",
       "storeDescription": "✈️ Search Bing Flights for real itineraries with prices, airlines, stops and every leg, in 23 country markets so you can compare the same route across currencies. Also lists Explore destinations from any airport and a day-by-day price calendar. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/bing-flights-scraper?fpr=smcx63",
+      "icon": "/icons/bing-flights-scraper.webp",
       "apifyCategories": [
         "TRAVEL",
         "AUTOMATION",
@@ -925,6 +929,7 @@
       "storeTitle": "Bing Images Scraper 🖼️ Filters & 1,000s of Images per Search",
       "storeDescription": "🖼️ Scrape Bing Images for any keyword — full-size image URLs, thumbnails, source pages, titles and dimensions. Filter by size, type, layout, color, license and date, and go past Bing's ~500-image limit automatically. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/bing-images-scraper?fpr=smcx63",
+      "icon": "/icons/bing-images-scraper.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "AI",
@@ -1174,6 +1179,7 @@
       "storeTitle": "Bing Reverse Image Search 🔍 Similar Images, Pages & OCR",
       "storeDescription": "🔍 Reverse image search on Bing from an image link or an uploaded file: Bing's best guess, hundreds of visually similar images with sizes and dates, the pages that carry the image, related searches, text inside the picture and an AI description. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/bing-reverse-image-search?fpr=smcx63",
+      "icon": "/icons/bing-reverse-image-search.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "DEVELOPER_TOOLS"
@@ -1603,6 +1609,7 @@
       "storeTitle": "California Business & UCC Lien Search - bizfileOnline",
       "storeDescription": "Search the official California Secretary of State bizfileOnline registers. Look up business entities (status, standing, type, registered agent) or UCC liens (financing statements, judgment liens, state and federal tax liens). Filter by type, status and date. No state API key needed.",
       "storeUrl": "https://apify.com/dz_omar/california-bizfile-scraper?fpr=smcx63",
+      "icon": "/icons/california-bizfile-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "BUSINESS",
@@ -2205,6 +2212,7 @@
       "storeTitle": "Carsales Scraper 💰 $0.47/1K — Australian New & Used Cars",
       "storeDescription": "Scrape carsales.com.au car listings from any search link or from filters, beyond the 440-listing page limit. Get price, odometer, specs, price rating, photos, full spec sheet, dealer comments, phone and listing details exactly as carsales returns them.",
       "storeUrl": "https://apify.com/dz_omar/carsales-scraper?fpr=smcx63",
+      "icon": "/icons/carsales-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "LEAD_GENERATION",
@@ -2431,6 +2439,7 @@
       "storeTitle": "Crexi Scraper 🏢 Cap Rate, NOI, OM Status & Broker Emails",
       "storeDescription": "Scrape Crexi commercial real estate listings from any search link, city or listing link. Get price, type, size, address and brokers, plus optional details: real cap rate, NOI, year built, tenancy, offering-memorandum status, broker of record, phones and brokerage emails.",
       "storeUrl": "https://apify.com/dz_omar/crexi-scraper?fpr=smcx63",
+      "icon": "/icons/crexi-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION"
@@ -2697,6 +2706,7 @@
       "storeTitle": "Delaware Business Search 🏛️ Registered Agents & Bulk Lookup",
       "storeDescription": "Search the Delaware Division of Corporations registry by entity name or file number, many at once. Each entity comes with its file number, formation date, entity kind and type, residency, state of formation, and the registered agent's name, address, county and phone.",
       "storeUrl": "https://apify.com/dz_omar/delaware-corporations-scraper?fpr=smcx63",
+      "icon": "/icons/delaware-corporations-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "AUTOMATION"
@@ -2927,6 +2937,7 @@
       "storeTitle": "domain.com.au",
       "storeDescription": "🏠 Scrape property listings from domain.com.au prices, agent contacts, nearby schools, market insights, images & floor plans. Input any search URL with filters. Full enrichment via property-details API. 🇦🇺",
       "storeUrl": "https://apify.com/dz_omar/domain-scraper?fpr=smcx63",
+      "icon": "/icons/domain-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION",
@@ -3211,6 +3222,7 @@
       "storeTitle": "DoorDash Reviews Scraper Free To Use",
       "storeDescription": "Scrape customer reviews from any DoorDash store 🍔 Extract star ratings ⭐, review text, reviewer profiles 👤, ordered items with prices 🧾, vote ratings, and photo attachments 📸",
       "storeUrl": "https://apify.com/dz_omar/doordash-review-scraper?fpr=smcx63",
+      "icon": "/icons/doordash-review-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "AUTOMATION",
@@ -3397,6 +3409,7 @@
       "storeTitle": "DoorDash Scraper",
       "storeDescription": "🍕 Scrape DoorDash store 🍕 listings, full menus, featured items, and customer 💬 Reviews. Supports location-aware search, multi-URL input, star distribution, delivery fees, pickup ETAs, and optional review extraction with item tagging.",
       "storeUrl": "https://apify.com/dz_omar/doordash-scraper?fpr=smcx63",
+      "icon": "/icons/doordash-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "AUTOMATION",
@@ -3678,6 +3691,7 @@
       "storeTitle": "🛍️ Etsy Product & Reviews Scraper",
       "storeDescription": "🆓 Free for now —🛍️ Scrape full Etsy product & listing data from any URL pricing, shop, variations, shipping, policies, ratings & media plus optional ⭐ buyer reviews with rating, media & sort filters. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63",
+      "icon": "/icons/etsy-product-reviews-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "AUTOMATION",
@@ -4133,6 +4147,7 @@
       "storeTitle": "Etsy Search Scraper From $0.9/1K 💰 Filters & 1,000+ Results",
       "storeDescription": "🛍️ Scrape Etsy search results for any keyword or category — listings with price, sale price, shop, ratings, badges, shipping & images. Sort & filter like the Etsy app; split big searches to go past ~1,000 results. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/etsy-search-scraper?fpr=smcx63",
+      "icon": "/icons/etsy-search-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE"
       ],
@@ -5106,6 +5121,7 @@
       "storeTitle": "Etsy Shop Scraper From $1.6/1K 💰 Profiles & Full Catalogs",
       "storeDescription": "🏪 Scrape any Etsy shop from its URL, name or ID — full shop profile, policies, about story, FAQ, ratings & trust signals — plus its complete 📦 listing catalog with prices, images, shipping & stock. Public data, no login.",
       "storeUrl": "https://apify.com/dz_omar/etsy-shop-scraper?fpr=smcx63",
+      "icon": "/icons/etsy-shop-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE"
       ],
@@ -5772,6 +5788,7 @@
       "storeTitle": "Facebook Ads Scraper Pro",
       "storeDescription": "$0.4/1K💰 Extract Facebook Ad Library data: creatives, targeting & metrics. Successful Ad scrapeds * cheaper & more complete. 📱",
       "storeUrl": "https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63",
+      "icon": "/icons/facebook-ads-scraper-pro.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "LEAD_GENERATION",
@@ -6217,6 +6234,7 @@
       "storeTitle": "Facebook Ads Url Parser- FREE TO USE",
       "storeDescription": "Copy any Facebook Ad Library URL and instantly extract ads data.\nNo setup, no filters to configure just paste the URL and run",
       "storeUrl": "https://apify.com/dz_omar/facebook-ads-url?fpr=smcx63",
+      "icon": "/icons/facebook-ads-url.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "LEAD_GENERATION"
@@ -6396,6 +6414,7 @@
       "storeTitle": "Facebook Comment Scraper",
       "storeDescription": "Scrape Facebook comments from [💲0.35/1K 💰 ] 💬 reels, videos, photos, posts & groups. Threaded\nreplies, bulk URLs, full pagination, reactions & author data 📊 Cap replies per comment to\ncontrol spend ⚡ No login needed.",
       "storeUrl": "https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63",
+      "icon": "/icons/facebook-comment-scraper.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "AUTOMATION",
@@ -6511,6 +6530,7 @@
       "storeTitle": "Facebook Marketplace Scraper 🛒 Sellers, Vehicles & Rentals",
       "storeDescription": "Scrape Facebook Marketplace listings by keyword, category, city or link — no login or cookies. Title, price, seller, city and photo on every listing; add description, condition, all photos, exact location, listing date, vehicle and rental details. Any city worldwide, every filter.",
       "storeUrl": "https://apify.com/dz_omar/facebook-marketplace-scraper?fpr=smcx63",
+      "icon": "/icons/facebook-marketplace-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "LEAD_GENERATION",
@@ -7172,6 +7192,7 @@
       "storeTitle": "📝 Facebook Posts Pages, Groups & Profiles & NO COOKIES",
       "storeDescription": "📝 Scrape posts from public Facebook pages, profiles and public groups — no login or cookies. Get text, date, author, reactions by type, comments, shares, video views, photos, videos and links. Go back years on pages; large jobs run in parallel.",
       "storeUrl": "https://apify.com/dz_omar/facebook-posts-scraper?fpr=smcx63",
+      "icon": "/icons/facebook-posts-scraper.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "AUTOMATION"
@@ -7420,6 +7441,7 @@
       "storeTitle": "Google Ads Scraper",
       "storeDescription": "Extract ads from Google’s Ads Transparency Center [💲0.70/1K 💰] by URL, advertiser, or domain, including political & election ads. Get creative previews, spend ranges, impressions, demographics & regions. Dedicated proxy for paying users; optional Google login.",
       "storeUrl": "https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63",
+      "icon": "/icons/google-ads-scraper.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "LEAD_GENERATION",
@@ -7633,6 +7655,7 @@
       "storeTitle": "Google Flights Scraper 💰$0.30/1K — Fares, Booking & Explore",
       "storeDescription": "Scrape live Google Flights fares from a pasted link or the form, with every filter, by city, country or airport. Get booking options with seller links, fare names and bag fees, return flights, the price graph and Google Explore's cheapest destinations. True round-trip totals.",
       "storeUrl": "https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63",
+      "icon": "/icons/google-flights-scraper.webp",
       "apifyCategories": [
         "TRAVEL",
         "AUTOMATION",
@@ -8176,6 +8199,7 @@
       "storeTitle": "Google Trends Scraper 📈 Interest, Regions, Related & Trending",
       "storeDescription": "📈 Get Google Trends data with the site's own filters: interest over time for up to 5 compared terms, interest by region down to city, top and rising related queries, topic suggestions, and Trending now searches with volume, growth, breakdown and news. Paste Trends URLs or fill the form.",
       "storeUrl": "https://apify.com/dz_omar/google-trends-scraper?fpr=smcx63",
+      "icon": "/icons/google-trends-scraper.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "AI"
@@ -8795,6 +8819,7 @@
       "storeTitle": "Idealista Scraper",
       "storeDescription": "Extract unlimited property data from Idealista (Spain/Portugal/Italy). Bypasses 1,800-listing limit. Gets prices, specs, photos & contacts. Monthly $15 + API costs. One-day free trial.",
       "storeUrl": "https://apify.com/dz_omar/idealista-scraper?fpr=smcx63",
+      "icon": "/icons/idealista-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "REAL_ESTATE",
@@ -9089,6 +9114,7 @@
       "storeTitle": "Idealista Scraper API 🏠 Any Search URL, No Result Cap & France",
       "storeDescription": "Scrape Idealista property listings from Spain, Portugal, Italy and France. Paste any Idealista URL — property page, search, drawn map area, map pin or multi-zone — and get prices, photos, contacts, GPS and features. Big areas are collected without the usual result cap. Real-time Standby API.",
       "storeUrl": "https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63",
+      "icon": "/icons/idealista-scraper-api.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "AUTOMATION",
@@ -9340,6 +9366,7 @@
       "storeTitle": "ImmoScout24 Scraper From $0.7/1K 💰 Price Drops & Monitoring",
       "storeDescription": "🏠 From $0.7/1K 💰 Scrape immobilienscout24.de: every property type incl. commercial, radius & map searches. Numeric price, €/m², address, coordinates, purchase fees & agent. Monitoring mode reports new listings, price cuts and removed listings with days on market.",
       "storeUrl": "https://apify.com/dz_omar/immobilienscout24-scraper?fpr=smcx63",
+      "icon": "/icons/immobilienscout24-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION"
@@ -9759,6 +9786,7 @@
       "storeTitle": "Instagram Comment Scraper",
       "storeDescription": "🗨️Instagram Comment Extract top-level comments from public Instagram Reels for free no login required. Get commenter usernames, text, likes, and timestamps, with pagination and a per-URL comment limit.",
       "storeUrl": "https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63",
+      "icon": "/icons/instagram-comment-scraper.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "LEAD_GENERATION",
@@ -9871,6 +9899,7 @@
       "storeTitle": "Instagram Story Downloader 📥 Highlights to MP4 & JPG, No Login",
       "storeDescription": "Download Instagram Story Highlights from public profiles — every video and photo saved as a permanent MP4/JPG file, plus titles, timestamps, links and whether a 24-hour story is live. No login, no cookies.",
       "storeUrl": "https://apify.com/dz_omar/instagram-story-downloader?fpr=smcx63",
+      "icon": "/icons/instagram-story-downloader.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "VIDEOS",
@@ -10175,6 +10204,7 @@
       "storeTitle": "Kleinanzeigen Scraper 🏷️ Business Phones, Views & No 10k Limit",
       "storeDescription": "🏷️ Scrape Kleinanzeigen.de from any search link with all its filters (cars, real estate, electronics…) or by keyword + city. Get price, location, photos, category details and optional seller info: rating, active listings, views and business phone numbers.",
       "storeUrl": "https://apify.com/dz_omar/kleinanzeigen-scraper?fpr=smcx63",
+      "icon": "/icons/kleinanzeigen-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "LEAD_GENERATION",
@@ -10626,6 +10656,7 @@
       "storeTitle": "Leboncoin.fr Scraper",
       "storeDescription": "🏷️ Scrape listings from any leboncoin.fr search URL price, location, seller, photos, and every category-specific attribute (surface, rooms, energy rating, mileage, fuel type). Paste a search URL and get structured data back.",
       "storeUrl": "https://apify.com/dz_omar/leboncoin-scraper?fpr=smcx63",
+      "icon": "/icons/leboncoin-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "ECOMMERCE",
@@ -10988,6 +11019,7 @@
       "storeTitle": "LinkedIn Ads Scraper",
       "storeDescription": "🔍 Extract comprehensive LinkedIn ads data from the Ad Library. Get ad creatives, headlines, copy, advertiser info, and targeting details. Perfect for competitive intelligence, 📈  market research, and ad campaign analysis. Supports keyword search, date filtering, and multi-country targeting.",
       "storeUrl": "https://apify.com/dz_omar/linkedin-ads-scraper?fpr=smcx63",
+      "icon": "/icons/linkedin-ads-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "SOCIAL_MEDIA",
@@ -11135,6 +11167,7 @@
       "storeTitle": "🏢 LinkedIn Company Scraper - FREE TO USE",
       "storeDescription": "FREE & Bulk 🚀 Scrape LinkedIn company pages in bulk name, description, industry, type, founding year, specialties, employee count, followers, HQ and all office locations, logo, cover image, recent posts, plus employee, similar-company and affiliated-page listings. No login or cookies needed.",
       "storeUrl": "https://apify.com/dz_omar/linkedin-company-scraper?fpr=smcx63",
+      "icon": "/icons/linkedin-company-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "SOCIAL_MEDIA"
@@ -11365,6 +11398,7 @@
       "storeTitle": "💼 LinkedIn Jobs Scraper - Salary & Recruiter Data",
       "storeDescription": "Scrape LinkedIn job postings in bulk — title, company, exact posting date, location, salary range parsed to min/max, seniority, employment type, industry, applicant count, full description, and the recruiter who posted the job. Pay per job returned, with no per-run startup fee. No login needed.",
       "storeUrl": "https://apify.com/dz_omar/linkedin-jobs-scraper?fpr=smcx63",
+      "icon": "/icons/linkedin-jobs-scraper.webp",
       "apifyCategories": [
         "JOBS",
         "LEAD_GENERATION"
@@ -11875,6 +11909,7 @@
       "storeTitle": "Loom Scraper | 🎥Downloader & 📄 Transcript",
       "storeDescription": "🎥 Advanced Loom scraper that extracts & downloads videos, transcripts, and metadata from individual videos and entire 🗂️folders. Supports bulk operations, multiple formats (SRT, VTT, TXT, XML), and authentication. 📚 Ideal for content archiving and knowledge management.",
       "storeUrl": "https://apify.com/dz_omar/loom-video-scraper?fpr=smcx63",
+      "icon": "/icons/loom-video-scraper.webp",
       "apifyCategories": [
         "VIDEOS",
         "DEVELOPER_TOOLS",
@@ -12160,6 +12195,7 @@
       "storeTitle": "Multilingual Data Transformer",
       "storeDescription": "Transform any JSON data into any language with AI-powered translation. Supports 16+ languages. Perfect for e-commerce, content localization, and data processing. Pay-per-word pricing.\nFeatures:\n✨ Universal JSON support \n🌍 16+ languages, French, German, Arabic, and more\n⚡ Fast processing",
       "storeUrl": "https://apify.com/dz_omar/multilingual-data-transformer?fpr=smcx63",
+      "icon": "/icons/multilingual-data-transformer.webp",
       "apifyCategories": [
         "AI",
         "AUTOMATION",
@@ -12233,6 +12269,7 @@
       "storeTitle": "Network Security Scanner",
       "storeDescription": "The SSL Checker actor scans IPs or subnets for SSL certificate details using masscan. It retrieves response headers, titles, and redirected URLs for HTTP and HTTPS. Customize parameters and set result limits for efficient scanning",
       "storeUrl": "https://apify.com/dz_omar/network-security-scanner?fpr=smcx63",
+      "icon": "/icons/network-security-scanner.webp",
       "apifyCategories": [
         "DEVELOPER_TOOLS",
         "AUTOMATION",
@@ -12359,6 +12396,7 @@
       "storeTitle": "Product Hunt",
       "storeDescription": "Scrape Product Hunt launches free: daily, weekly, monthly and yearly leaderboards with ranks and upvotes, company websites, makers and hunters with LinkedIn, full review text with star ratings, comments, topics and media. Search by keyword, topic or URL. No API key needed.",
       "storeUrl": "https://apify.com/dz_omar/product-hunt-pro?fpr=smcx63",
+      "icon": "/icons/product-hunt-pro.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "AUTOMATION",
@@ -12926,6 +12964,7 @@
       "storeTitle": "Propertyfinder Scraper",
       "storeDescription": "Extract property listings from PropertyFinder across the UAE, Saudi Arabia, Bahrain, Egypt & Qatar. Get prices, locations, agent contacts, amenities & specs. Fast, reliable scraping with multi-country support. Perfect for real estate pros & market analysis.",
       "storeUrl": "https://apify.com/dz_omar/propertyfinder-scraper?fpr=smcx63",
+      "icon": "/icons/propertyfinder-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "MCP_SERVERS",
@@ -13171,6 +13210,7 @@
       "storeTitle": "realcommercial.com.au Scraper 🏢 Sold, Leased & Agent Phones",
       "storeDescription": "🏢 Scrape realcommercial.com.au commercial property for sale, for lease, sold and leased — by search link or suburb, postcode or state. Price, address, floor & land area, zoning, photos, brochure PDFs, agent & agency phones. Newest first.",
       "storeUrl": "https://apify.com/dz_omar/realcommercial-com-au-scraper?fpr=smcx63",
+      "icon": "/icons/realcommercial-com-au-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION"
@@ -13576,6 +13616,7 @@
       "storeTitle": "realestate.com.au Agents & Agencies Scraper",
       "storeDescription": "🧑‍💼 Scrape realestate.com.au real estate agents & agencies by suburb, postcode or search URL — names, emails, phones, agency, listing counts, median sold price & active suburbs. Built for lead lists & market research.",
       "storeUrl": "https://apify.com/dz_omar/realestate-com-au-agents-scraper?fpr=smcx63",
+      "icon": "/icons/realestate-com-au-agents-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION",
@@ -13827,6 +13868,7 @@
       "storeTitle": "realestate.com.au Scraper",
       "storeDescription": "🏠 Scrape realestate.com.au buy, rent & sold listings from any search or property URL — full details on every listing: price, status, sold dates, features, inspections, agent & agency contacts, photos. 💰 From $0.50 per 1,000 listings.",
       "storeUrl": "https://apify.com/dz_omar/realestate-com-au-scraper?fpr=smcx63",
+      "icon": "/icons/realestate-com-au-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "AUTOMATION",
@@ -14092,6 +14134,7 @@
       "storeTitle": "Realtor.com Scraper 💰 $0.90/1K — Sold, Rentals & Risk Data",
       "storeDescription": "🏠 Scrape Realtor.com properties for sale, for rent, sold and off market — by search link, location or address. Prices, history, taxes, schools, climate risk, market statistics, AVM estimates, agent and office contacts.",
       "storeUrl": "https://apify.com/dz_omar/realtor-scraper?fpr=smcx63",
+      "icon": "/icons/realtor-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "DEVELOPER_TOOLS",
@@ -14875,6 +14918,7 @@
       "storeTitle": "Rent.com Scraper 🏠 Floor Plans, Photos & Availability",
       "storeDescription": "Scrape Rent.com rental listings from any search link or listing link: rent, beds, baths, availability, deals, location, real photo links, plus floor plans with unit rents, amenities, fees, pet policy and leasing phone. Filters in the link applied exactly.",
       "storeUrl": "https://apify.com/dz_omar/rent-com-scraper?fpr=smcx63",
+      "icon": "/icons/rent-com-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION"
@@ -15338,6 +15382,7 @@
       "storeTitle": "Salvagebid Scraper",
       "storeDescription": "Extract salvage vehicle listings from SalvageBid with prices, bids, VIN specs, damage reports, auction dates, locations, and images. Supports pagination and full detail scraping with structured output.",
       "storeUrl": "https://apify.com/dz_omar/salvagebid-scraper?fpr=smcx63",
+      "icon": "/icons/salvagebid-scraper.webp",
       "apifyCategories": [
         "AUTOMATION",
         "DEVELOPER_TOOLS",
@@ -15757,6 +15802,7 @@
       "storeTitle": "Screenshot",
       "storeDescription": "📸 Capture high-quality screenshots of any website with full-page support, custom viewports, and cookie authentication. Perfect for web monitoring, documentation, competitor analysis, and automated testing. Features smart loading detection and 30-second interval pricing for cost efficiency.",
       "storeUrl": "https://apify.com/dz_omar/screenshot?fpr=smcx63",
+      "icon": "/icons/screenshot.webp",
       "apifyCategories": [
         "AUTOMATION",
         "DEVELOPER_TOOLS",
@@ -15867,6 +15913,7 @@
       "storeTitle": "Shopee Reviews Scraper ⭐ Photos, Videos & Star-Rating Filters",
       "storeDescription": "Get Shopee reviews from any shop or product URL in 8 markets: star rating, review text, quality/seller/delivery sub-ratings, photos, videos, variation, reviewer and seller reply. Filter by stars, text or media. No Shopee account needed.",
       "storeUrl": "https://apify.com/dz_omar/shopee-reviews-scraper?fpr=smcx63",
+      "icon": "/icons/shopee-reviews-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "AUTOMATION"
@@ -16207,6 +16254,7 @@
       "storeTitle": "Skool Map Scraper",
       "storeDescription": "🗺️ Extract member locations & full profiles from any Skool community map GPS coordinates, names, bios, social links, level & points. 📍 Works on communities with 200,000+ members. Perfect for events, outreach & research 🎯",
       "storeUrl": "https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63",
+      "icon": "/icons/skool-map-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "AUTOMATION",
@@ -16474,6 +16522,7 @@
       "storeTitle": "Skool Scraper Pro",
       "storeDescription": "Discover 📚 Skool communities by keyword or category, then extract courses, lessons, posts, comments, and community feeds. 🎥 Download videos, 📎 attachments, PDFs, and resources. Automatically resumes interrupted runs.",
       "storeUrl": "https://apify.com/dz_omar/skool-scraper-pro?fpr=smcx63",
+      "icon": "/icons/skool-scraper-pro.webp",
       "apifyCategories": [
         "AUTOMATION",
         "VIDEOS",
@@ -17084,6 +17133,7 @@
       "storeTitle": "TikTok Ad Library Scraper 📣 Creator Posts, Targeting & Reach",
       "storeDescription": "Scrape ads from the TikTok Ad Library by keyword, advertiser name, or URL. Export advertiser details, creatives, first/last shown dates, audience size, targeting data, and permanently download media files. No login required. ♾️ Unlimited results.",
       "storeUrl": "https://apify.com/dz_omar/tiktok-ad-library-scraper?fpr=smcx63",
+      "icon": "/icons/tiktok-ad-library-scraper.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "AUTOMATION",
@@ -17434,6 +17484,7 @@
       "storeTitle": "TikTok Shop Reviews Scraper ⭐ 16 Markets, Photos & Ratings",
       "storeDescription": "Scrape TikTok Shop product reviews in 16 markets: US, UK, EU, Brazil, Mexico, Japan and Southeast Asia. Star rating, full text, review photos, verified-purchase and incentivized flags, variant bought, reviewer country and date on every row, plus each product's 1–5 star breakdown.",
       "storeUrl": "https://apify.com/dz_omar/tiktok-shop-reviews-scraper?fpr=smcx63",
+      "icon": "/icons/tiktok-shop-reviews-scraper.webp",
       "apifyCategories": [
         "ECOMMERCE",
         "SOCIAL_MEDIA"
@@ -17695,6 +17746,7 @@
       "storeTitle": "TikTok Transcript & Video Scraper",
       "storeDescription": "Extract spoken transcripts from TikTok videos as text, SRT or WebVTT with timestamps. Every video also returns 58 fields: upload date, views, likes, saves, hashtags, sounds, and creator follower counts. Pick a caption language, or download watermark-free MP4s. No login needed.",
       "storeUrl": "https://apify.com/dz_omar/tiktok-video-downloader?fpr=smcx63",
+      "icon": "/icons/tiktok-video-downloader.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "VIDEOS",
@@ -18166,6 +18218,7 @@
       "storeTitle": "Trustpilot Reviews Scraper ⭐ Free, No Login, Company Replies",
       "storeDescription": "Free Trustpilot reviews scraper: export reviews from company links, websites or brand names without logging in. Rating, full text, dates, company reply, reviewer country, verification. Deep coverage, filters, scheduled monitoring and a company profile with Trustpilot's AI summary.",
       "storeUrl": "https://apify.com/dz_omar/trustpilot-reviews-scraper?fpr=smcx63",
+      "icon": "/icons/trustpilot-reviews-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
         "ECOMMERCE",
@@ -18432,6 +18485,7 @@
       "storeTitle": "Ultimate Screenshot",
       "storeDescription": "Capture any web page as a JPEG, PNG, PDF, MP4 or GIF. 131 phone and tablet presets, full-page capture, signed-in sessions with cookies, and scrolling that stops cleanly even on an endless feed.",
       "storeUrl": "https://apify.com/dz_omar/ultimate-screenshot?fpr=smcx63",
+      "icon": "/icons/ultimate-screenshot.webp",
       "apifyCategories": [
         "AUTOMATION",
         "SEO_TOOLS",
@@ -18775,6 +18829,7 @@
       "storeTitle": "Universal Downloader",
       "storeDescription": "Powerful file downloader with proxy support, automatic retries, and cloud storage. Downloads any file type with streaming technology. Supports standby mode for instant API responses. Perfect for bulk downloads, geo-restricted content, and automation workflows.",
       "storeUrl": "https://apify.com/dz_omar/universal-downloader?fpr=smcx63",
+      "icon": "/icons/universal-downloader.webp",
       "apifyCategories": [
         "AUTOMATION",
         "INTEGRATIONS",
@@ -18929,6 +18984,7 @@
       "storeTitle": "Yandex Reverse Image Search 🔍 File Upload, OCR & All Regions",
       "storeDescription": "Find where any image appears online. Search by picture instead of keywords: paste a link or upload a file and get matching pages, visually similar images, other resolutions, text read from the picture, and descriptive tags.",
       "storeUrl": "https://apify.com/dz_omar/yandex-reverse-image-search?fpr=smcx63",
+      "icon": "/icons/yandex-reverse-image-search.webp",
       "apifyCategories": [
         "SEO_TOOLS",
         "DEVELOPER_TOOLS"
@@ -19251,6 +19307,7 @@
       "storeTitle": "💬 YouTube Comments Scraper",
       "storeDescription": "💬 Extract YouTube comments with author info, likes, timestamps, and nested replies. Perfect for sentiment analysis, market research, and content strategy. ⚡ Fast, reliable, and built for scale.",
       "storeUrl": "https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63",
+      "icon": "/icons/youtube-comments-scraper.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "VIDEOS",
@@ -19435,6 +19492,7 @@
       "storeTitle": "YouTube Hashtag Extractor -Free To Use",
       "storeDescription": "Extract videos or Shorts from any YouTube hashtag, with full metadata and transcripts. Get title, channel, views, runtime, description, thumbnail, and timestamped transcript text. Pick a country to control region. Multiple hashtags per run. Pay only per video extracted.",
       "storeUrl": "https://apify.com/dz_omar/youtube-hashtag-extractor?fpr=smcx63",
+      "icon": null,
       "apifyCategories": [
         "VIDEOS",
         "SOCIAL_MEDIA",
@@ -19587,6 +19645,7 @@
       "storeTitle": "🎬 Youtube Playlist Extractor",
       "storeDescription": "Extract complete 🎬 playlist information with all video details from any YouTube playlist -->⚡Fast, reliable, and built for scale. Get video lists, durations, thumbnails, and channel info.",
       "storeUrl": "https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63",
+      "icon": "/icons/youtube-playlist-extractor.webp",
       "apifyCategories": [
         "VIDEOS",
         "SOCIAL_MEDIA",
@@ -19806,6 +19865,7 @@
       "storeTitle": "YouTube Scraper Pro – Channels, Videos & Transcripts",
       "storeDescription": "Find YouTube channels by keyword with subscribers, total views, country, join date and public contact links, or scrape videos, Shorts, live streams, podcasts, courses, playlists and hashtags with full metadata and optional transcripts in text, SRT or WebVTT.",
       "storeUrl": "https://apify.com/dz_omar/Youtube-Scraper-Pro?fpr=smcx63",
+      "icon": "/icons/youtube-scraper-pro.webp",
       "apifyCategories": [
         "VIDEOS",
         "SEO_TOOLS"
@@ -20131,6 +20191,7 @@
       "storeTitle": "YouTube Shorts Scraper - Keyword Search, Views & Date Filter",
       "storeDescription": "Find popular YouTube Shorts by keyword, creator or hashtag. Get exact views, likes, comments, publish dates, views per day and a viral score - then filter to a real date range and rank by what is actually trending.",
       "storeUrl": "https://apify.com/dz_omar/youtube-shorts-trend-finder?fpr=smcx63",
+      "icon": "/icons/youtube-shorts-trend-finder.webp",
       "apifyCategories": [
         "SOCIAL_MEDIA",
         "VIDEOS"
@@ -20365,6 +20426,7 @@
       "storeTitle": "🌍 Youtube Subtitle Translator",
       "storeDescription": "Extract YouTube transcripts and translate into 20+ languages using Lingo.dev AI. Get professional SRT subtitle files with perfect timing. For content creators, educators, and global audiences. Batch processing supported.",
       "storeUrl": "https://apify.com/dz_omar/youtube-subtitle-translator?fpr=smcx63",
+      "icon": "/icons/youtube-subtitle-translator.webp",
       "apifyCategories": [
         "VIDEOS",
         "AUTOMATION",
@@ -20487,6 +20549,7 @@
       "storeTitle": "Youtube Transcript",
       "storeDescription": "🎥Extract complete transcripts with precise timestamps ⏱️ and comprehensive video metadata from any YouTube video —> ⚡Fast, reliable, and ready to use.",
       "storeUrl": "https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63",
+      "icon": "/icons/youtube-transcript-metadata-extractor.webp",
       "apifyCategories": [
         "VIDEOS",
         "MCP_SERVERS",
@@ -20770,6 +20833,7 @@
       "storeTitle": "Zillow Scraper",
       "storeDescription": "🏡 Scrape Zillow listings by location or search URL for sale, for rent, or recently sold. Get price, address, beds, baths, size, Zestimate, tax value, agent and every photo, with large areas handled automatically.",
       "storeUrl": "https://apify.com/dz_omar/zillow-scraper?fpr=smcx63",
+      "icon": "/icons/zillow-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "LEAD_GENERATION"
@@ -21497,6 +21561,7 @@
       "storeTitle": "Zimmo Scraper – Belgian Real Estate Extractor",
       "storeDescription": "Extract complete property listings from zimmo.be including price, EPC, flooding data, planning info, contacts, images, and more. Paste any search URL and get full structured API data for each listing.",
       "storeUrl": "https://apify.com/dz_omar/zimmo-scraper?fpr=smcx63",
+      "icon": "/icons/zimmo-scraper.webp",
       "apifyCategories": [
         "REAL_ESTATE",
         "AUTOMATION",
@@ -21675,6 +21740,7 @@
       "storeTitle": "Zoom Scraper | 🎥Downloader & 📄 Transcript",
       "storeDescription": "Transform Zoom recordings into organized, downloadable archives. Extract videos, transcripts & metadata from meetings, events & clips. Intelligent processing with multi-format support for education, business compliance & content repurposing.",
       "storeUrl": "https://apify.com/dz_omar/zoom-scraper?fpr=smcx63",
+      "icon": "/icons/zoom-scraper.webp",
       "apifyCategories": [
         "AUTOMATION",
         "DEVELOPER_TOOLS",

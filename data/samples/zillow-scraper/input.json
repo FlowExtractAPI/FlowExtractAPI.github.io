@@ -1,0 +1,25 @@
+{
+  "input": {
+    "location": "Austin, TX",
+    "listingType": "buy",
+    "maxResults": 12
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "address": "address",
+      "city": "city",
+      "price": "price",
+      "price_cut": "priceReduction",
+      "beds": "bedrooms",
+      "baths": "bathrooms",
+      "living_area_sqft": "livingArea",
+      "home_type": "homeType",
+      "days_on_zillow": "daysOnZillow",
+      "zestimate": "zestimate",
+      "status": "statusText",
+      "url": "detailUrl"
+    }
+  }
+}

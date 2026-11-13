@@ -7,14 +7,14 @@ const s = site.social;
 ---
 <Base title={c.title} description={c.metaDescription} path="/contact.html" breadcrumbs={crumbs}>
   <div class="wrap prose">
-    <header class="hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
+    <header class="page-hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
     <p><b>Email:</b> <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a></p>
     <form class="form" action={site.brand.formEndpoint} method="POST">
       <label>Name <input name="name" autocomplete="name" required /></label>
       <label>Email <input type="email" name="email" autocomplete="email" required /></label>
       <label>Company (optional) <input name="company" autocomplete="organization" /></label>
       <label>Message <textarea name="message" rows="6" required></textarea></label>
-      <button class="btn" type="submit">Send</button>
+      <button class="btn btn-primary" type="submit">Send</button>
       <p class="muted small">The form is delivered by Formspree. See the <a href="/privacy.html">privacy policy</a>.</p>
     </form>
     <h2>Elsewhere</h2>

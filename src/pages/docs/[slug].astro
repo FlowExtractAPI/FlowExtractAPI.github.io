@@ -1,8 +1,9 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Explorer from '../../components/Explorer.astro';
+import ActorIcon from '../../components/ActorIcon.astro';
 import {
-  actors, site, categoryHub, sourceHub, priceRows, priceSummary, outputFields, inputFields, inputTitle,
+  actors, site, categoryHub, sourceHub, priceRows, priceSummary, priceShort, outputFields, inputFields, inputTitle,
   faqFor, related, softwareJsonLd, faqJsonLd, pricesFetchedAt,
 } from '../../lib/site.js';
 
@@ -11,7 +12,7 @@ export function getStaticPaths() {
 }
 const { a } = Astro.props;
 const cat = categoryHub(a.category);
-const src = a.sourceHub ? sourceHub(a.sourceHub) : null;
+const src = a.sourceHub && site.sourceHubs[a.sourceHub] ? sourceHub(a.sourceHub) : null;
 const crumbs = [
   { name: 'Home', url: '/' },
   { name: site.categories[a.category].name, url: cat.url },
@@ -24,67 +25,73 @@ const OUT_SHOWN = 20;
 const IN_SHOWN = 12;
 const prices = priceRows(a);
 const faq = faqFor(a);
-const rel = related(a);
-const firstInput = (inp.find((f) => f.required) || inp[0]);
-const hasExplorer = a.mode === 'unique' && a.sample;
+const rel = related(a, 6);
+const firstInput = inp.find((f) => f.required) || inp[0];
+const hasExplorer = !!a.sample;
 const toc = [
   ...(hasExplorer ? [['data', 'Real results']] : []),
   ['how', 'How it works'], ['output', 'Data you get'], ['input', 'What you give it'], ['pricing', 'Pricing'],
   ['uses', 'Use cases'], ['faq', 'Questions'], ['related', 'Related scrapers'],
 ];
 ---
-<Base title={a.title} description={a.metaDescription} path={a.url} breadcrumbs={crumbs} jsonLd={[softwareJsonLd(a), faqJsonLd(faq)]}>
-  <div class="wrap">
-    <header class="hero">
-      <p class="eyebrow">{a.source} · {site.categories[a.category].name}</p>
-      <h1>{a.h1}</h1>
+<Base title={a.title} description={a.metaDescription} path={a.url} breadcrumbs={crumbs} jsonLd={[softwareJsonLd(a), faqJsonLd(faq)]} hideCrumbs>
+  <div class="actor-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol>{crumbs.map((b, i) => <li>{i < crumbs.length - 1 ? <a href={b.url}>{b.name}</a> : <span aria-current="page">{b.name}</span>}</li>)}</ol></nav>
+      <div class="ahead">
+        <ActorIcon a={a} size={72} />
+        <div>
+          <p class="eyebrow" style="margin:0 0 6px">{a.source} · {site.categories[a.category].name}</p>
+          <h1>{a.h1}</h1>
+        </div>
+      </div>
       <p class="lede">{a.intro}</p>
-      <p class="price-line">{priceSummary(a)}</p>
-      <div class="cta-row">
-        <a class="btn" href={a.goUrl} rel="nofollow">Run it on Apify →</a>
+      <div class="chips">
+        <span class="chip">{priceShort(a)}</span>
+        {hasExplorer && <span class="chip">Real results below · run {a.sample.run.date}</span>}
+        <span class="chip">JSON · CSV · Excel · API</span>
+      </div>
+      <div class="cta-row" style="margin-bottom:0">
+        <a class="btn btn-primary" href={a.goUrl} rel="nofollow">Run it on Apify →</a>
         <a class="btn btn-ghost" href={hasExplorer ? '#data' : '#output'}>{hasExplorer ? 'See real results' : 'See the fields'}</a>
       </div>
-    </header>
+    </div>
+  </div>
 
-    <div class="actor-layout">
-      <nav class="toc" aria-label="On this page"><ol>{toc.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol></nav>
-      <div class="content">
-        {hasExplorer && <Explorer actor={a} />}
+  <div class="wrap actor-layout">
+    <nav class="toc" aria-label="On this page"><ol>{toc.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol></nav>
+    <div class="content">
+      {hasExplorer && <section style="padding-top:36px"><Explorer actor={a} /></section>}
 
-        <section id="how" aria-labelledby="how-h">
-          <h2 id="how-h">How it works</h2>
-          <ol class="steps">
-            <li>Open <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>{firstInput ? <> and fill in <b>{inputTitle(firstInput)}</b></> : null}.</li>
-            <li>Click Start. The run collects the data on Apify's servers; you can close the tab.</li>
-            <li>Download JSON, CSV or Excel, or read the results through the Apify API.</li>
-          </ol>
-        </section>
+      <section id="how" aria-labelledby="how-h">
+        <h2 id="how-h">How it works</h2>
+        <ol class="steps">
+          <li>Open <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>{firstInput ? <> and fill in <b>{inputTitle(firstInput)}</b></> : null}.</li>
+          <li>Click Start. The run collects the data on Apify's servers; you can close the tab.</li>
+          <li>Download JSON, CSV or Excel, or read the results through the Apify API.</li>
+        </ol>
+      </section>
 
-        {out.length > 0 && (
-          <section id="output" aria-labelledby="output-h">
-            <h2 id="output-h">Data you get</h2>
+      <section id="output" aria-labelledby="output-h">
+        <h2 id="output-h">Data you get</h2>
+        {out.length > 0 ? (
+          <>
             <p>Each record can carry up to {out.length} fields. The most useful ones:</p>
             <div class="table-wrap">
               <table>
                 <thead><tr><th scope="col">Field</th><th scope="col">What it holds</th></tr></thead>
-                <tbody>
-                  {out.slice(0, OUT_SHOWN).map((f) => <tr><td><code>{f.name}</code></td><td>{f.description || f.label || ''}{f.type ? <span class="muted small"> · {f.type}</span> : null}</td></tr>)}
-                </tbody>
+                <tbody>{out.slice(0, OUT_SHOWN).map((f) => <tr><td><code>{f.name}</code></td><td>{f.description || f.label || ''}{f.type ? <span class="muted small"> · {f.type}</span> : null}</td></tr>)}</tbody>
               </table>
             </div>
-            {out.length > OUT_SHOWN && (
-              <details class="more">
-                <summary>All {out.length} fields</summary>
-                <p class="mono small">{out.slice(OUT_SHOWN).map((f) => f.name).join(' · ')}</p>
-              </details>
-            )}
-          </section>
-        )}
-        {out.length === 0 && <section id="output"><h2>Data you get</h2><p>See the output tab on the Apify Store for the full field list.</p></section>}
+            {out.length > OUT_SHOWN && <details class="more"><summary>All {out.length} fields</summary><p class="mono small">{out.slice(OUT_SHOWN).map((f) => f.name).join(' · ')}</p></details>}
+          </>
+        ) : <p>See the output tab on the Apify Store for the full field list.</p>}
+      </section>
 
-        {inp.length > 0 && (
-          <section id="input" aria-labelledby="input-h">
-            <h2 id="input-h">What you give it</h2>
+      <section id="input" aria-labelledby="input-h">
+        <h2 id="input-h">What you give it</h2>
+        {inp.length > 0 ? (
+          <>
             <div class="table-wrap">
               <table>
                 <thead><tr><th scope="col">Setting</th><th scope="col">Type</th><th scope="col">Notes</th></tr></thead>
@@ -100,44 +107,39 @@ const toc = [
               </table>
             </div>
             {inp.length > IN_SHOWN && <p class="muted small">Plus {inp.length - IN_SHOWN} more settings with defaults, listed on the Apify Store.</p>}
-          </section>
+          </>
+        ) : <p>See the input tab on the Apify Store.</p>}
+      </section>
+
+      <section id="pricing" aria-labelledby="pricing-h">
+        <h2 id="pricing-h">Pricing</h2>
+        <p>{priceSummary(a)}</p>
+        {prices.length > 0 && (
+          <div class="table-wrap">
+            <table>
+              <thead><tr><th scope="col">Charged for</th><th scope="col">Apify free plan</th><th scope="col">Lowest plan price</th></tr></thead>
+              <tbody>{prices.map((p) => <tr><td>{p.title}{p.description ? <><br /><span class="muted small">{p.description}</span></> : null}</td><td>{p.free} <span class="muted small">{p.unit}</span></td><td>{p.lowest} <span class="muted small">{p.unit}</span></td></tr>)}</tbody>
+            </table>
+          </div>
         )}
-        {inp.length === 0 && <section id="input"><h2>What you give it</h2><p>See the input tab on the Apify Store.</p></section>}
+        <p class="muted small" style="margin-top:10px">Prices as listed on the Apify Store on {pricesFetchedAt}. The Store page always shows the current price.</p>
+      </section>
 
-        <section id="pricing" aria-labelledby="pricing-h">
-          <h2 id="pricing-h">Pricing</h2>
-          <p>{priceSummary(a)}</p>
-          {prices.length > 0 && (
-            <div class="table-wrap">
-              <table>
-                <thead><tr><th scope="col">Charged for</th><th scope="col">Apify free plan</th><th scope="col">Lowest plan price</th></tr></thead>
-                <tbody>
-                  {prices.map((p) => <tr><td>{p.title}{p.description ? <><br /><span class="muted small">{p.description}</span></> : null}</td><td>{p.free} <span class="muted small">{p.unit}</span></td><td>{p.lowest} <span class="muted small">{p.unit}</span></td></tr>)}
-                </tbody>
-              </table>
-            </div>
-          )}
-          <p class="muted small">Prices as listed on the Apify Store on {pricesFetchedAt}. The Store page always shows the current price.</p>
-        </section>
+      <section id="uses" aria-labelledby="uses-h">
+        <h2 id="uses-h">Use cases</h2>
+        <ul class="uses">{a.useCases.map((u) => <li>{u}</li>)}</ul>
+      </section>
 
-        <section id="uses" aria-labelledby="uses-h">
-          <h2 id="uses-h">Use cases</h2>
-          <ul class="uses">{a.useCases.map((u) => <li>{u}</li>)}</ul>
-        </section>
+      <section id="faq" class="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h">Questions</h2>
+        {faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
+      </section>
 
-        <section id="faq" class="faq" aria-labelledby="faq-h">
-          <h2 id="faq-h">Questions</h2>
-          {faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
-        </section>
-
-        <section id="related" aria-labelledby="related-h">
-          <h2 id="related-h">Related scrapers</h2>
-          <ul class="related">
-            {rel.map((r) => <li><a href={r.url}><strong>{r.label}</strong><br /><span class="muted small">{r.source}</span></a></li>)}
-          </ul>
-          <p>More in <a href={cat.url}>{site.categories[a.category].name.toLowerCase()} scrapers</a>{src ? <> and the <a href={src.url}>{site.sourceHubs[a.sourceHub].name} scraper guide</a></> : null}. Full documentation: <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>.</p>
-        </section>
-      </div>
+      <section id="related" aria-labelledby="related-h">
+        <h2 id="related-h">Related scrapers</h2>
+        <ul class="related">{rel.map((r) => <li><a href={r.url}><ActorIcon a={r} size={30} /><span>{r.label}<small>{r.source}</small></span></a></li>)}</ul>
+        <p>More in <a href={cat.url}>{site.categories[a.category].name.toLowerCase()} scrapers</a>{src ? <> and the <a href={src.url}>{site.sourceHubs[a.sourceHub].name} scraper guide</a></> : null}. Full documentation: <a href={a.goUrl} rel="nofollow">{a.label} on the Apify Store</a>.</p>
+      </section>
     </div>
   </div>
 </Base>

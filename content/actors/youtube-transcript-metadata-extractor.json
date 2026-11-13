@@ -20,5 +20,17 @@
     "Repurpose videos into articles"
   ],
   "faq": [],
+  "demo": {
+    "url": "youtube.com/watch?v=hz9tSv3CP6k",
+    "fields": [
+      "title",
+      "channel",
+      "published",
+      "views",
+      "likes",
+      "transcript_words",
+      "duration"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

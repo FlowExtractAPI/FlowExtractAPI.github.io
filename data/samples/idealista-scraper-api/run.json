@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/idealista-scraper-api",
+  "runId": "nYwMqg061fxinOpNq",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:03:12.978Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.046000000000000006,
+  "buildNumber": "0.3.17",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

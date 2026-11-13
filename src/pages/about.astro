@@ -6,7 +6,7 @@ const crumbs = [{ name: 'Home', url: '/' }, { name: 'About', url: '/about.html' 
 ---
 <Base title={c.title} description={c.metaDescription} path="/about.html" breadcrumbs={crumbs}>
   <div class="wrap prose">
-    <header class="hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
+    <header class="page-hero"><h1>{c.h1}</h1><p class="lede">{c.intro}</p></header>
     <h2>What we build</h2>
     <p>{actors.length} public scrapers across {categoryIds.length} areas: real estate, classifieds, vehicles, e-commerce and reviews, ad libraries, social media, video, search engines, travel, business registries and developer tools. Together they have {stats.users.display} Apify users and {stats.runs.display} runs.</p>
     <h2>How the tools work</h2>

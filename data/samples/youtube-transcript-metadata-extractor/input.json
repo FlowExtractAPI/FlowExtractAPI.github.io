@@ -1,0 +1,30 @@
+{
+  "input": {
+    "youtubeUrl": [
+      {
+        "url": "https://www.youtube.com/watch?v=hz9tSv3CP6k"
+      },
+      {
+        "url": "https://youtu.be/kOO31qFmi9A"
+      }
+    ],
+    "transcriptOnly": false,
+    "includeTimestamps": false
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "Video_title",
+      "channel": "channel.name",
+      "published": "published_Date",
+      "views": "Views",
+      "likes": "likes",
+      "subscribers": "channel.subscribers",
+      "transcript_words": "transcriptWordCount",
+      "duration": "transcriptDuration",
+      "has_transcript": "hasTranscript",
+      "url": "VideoURL"
+    }
+  }
+}

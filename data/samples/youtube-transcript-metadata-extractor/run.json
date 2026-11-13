@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/youtube-transcript-metadata-extractor",
+  "runId": "qTQGWDGyiuMCkAbpW",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:01:50.409Z",
+  "itemCount": 2,
+  "sampleCount": 2,
+  "costUsd": 0.039,
+  "buildNumber": "0.1.23",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

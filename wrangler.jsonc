@@ -3,8 +3,9 @@
   // One Worker for flowextractapi.com: static assets (the build output folder only) + a tiny edge script that runs
   // only when no file matches: /go/<slug> (Store-click counter), /dl/<slug>/sample.* (download counter), and the 404
   // page for everything else. See worker/index.js.
-  // account_id is pinned once the operator names the account that holds the zone (PLAN.md 1.2).
-  // Never list or iterate accounts.
+  // account_id = the account that holds the flowextractapi.com zone, named by the operator 2026-11-13 (PLAN.md 1.2).
+  // Touch only this Worker and the flowextractapi.com DNS records there. Never list or iterate accounts.
+  "account_id": "3f0ee85fc436f30b05dd07e986c87115",
   "name": "flowextractapi-site",
   "main": "worker/index.js",
   // Local workerd (wrangler 4.108) supports compatibility dates up to 2026-07-13.

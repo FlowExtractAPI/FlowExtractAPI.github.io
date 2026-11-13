@@ -25,5 +25,18 @@
       "a": "This one charges per property returned, also covers France, and accepts drawn-map and multi-zone links. Idealista Scraper is listed as free on the Apify Store and covers Spain, Portugal and Italy."
     }
   ],
+  "demo": {
+    "url": "idealista.com/en/venta-viviendas/balears-illes",
+    "fields": [
+      "property_code",
+      "price",
+      "type",
+      "operation",
+      "size_m2",
+      "rooms",
+      "price_per_m2",
+      "municipality"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

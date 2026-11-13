@@ -1,0 +1,8 @@
+---
+// The actor's own Store icon (self-hosted under /icons/), or the FlowExtract mark when it has none.
+import Logo from './Logo.astro';
+const { a, size = 38, class: cls = 'icon' } = Astro.props;
+---
+{a.facts.icon
+  ? <img class={cls} src={a.facts.icon} width={size} height={size} alt="" loading="lazy" decoding="async" />
+  : <span class={cls} style={`display:grid;place-items:center;width:${size}px;height:${size}px`}><Logo size={Math.round(size * .7)} /></span>}

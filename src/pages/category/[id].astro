@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { site, categoryIds, categoryHub, actorsIn, priceShort, blurb, sourceHub, BASE } from '../../lib/site.js';
+import ActorCard from '../../components/ActorCard.astro';
+import CatIcon from '../../components/CatIcon.astro';
+import { site, categoryIds, categoryHub, actorsIn, sourceHub, BASE } from '../../lib/site.js';
 
 export function getStaticPaths() {
   return categoryIds.map((id) => ({ params: { id }, props: { id } }));
@@ -8,6 +10,7 @@ export function getStaticPaths() {
 const { id } = Astro.props;
 const h = categoryHub(id);
 const list = actorsIn(id);
+const withData = list.filter((a) => a.sample).length;
 const sources = [...new Set(list.map((a) => a.sourceHub).filter((s) => s && site.sourceHubs[s]))].map(sourceHub);
 const others = categoryIds.filter((x) => x !== id);
 const crumbs = [{ name: 'Home', url: '/' }, { name: site.categories[id].name, url: h.url }];
@@ -16,27 +19,34 @@ const itemList = {
   itemListElement: list.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: BASE + a.url, name: a.label })),
 };
 ---
-<Base title={h.title} description={h.metaDescription} path={h.url} breadcrumbs={crumbs} jsonLd={[itemList]}>
-  <div class="wrap">
-    <header class="hero">
-      <p class="eyebrow">{list.length} scrapers</p>
-      <h1>{h.h1}</h1>
+<Base title={h.title} description={h.metaDescription} path={h.url} breadcrumbs={crumbs} jsonLd={[itemList]} hideCrumbs>
+  <div class="actor-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol>{crumbs.map((b, i) => <li>{i < crumbs.length - 1 ? <a href={b.url}>{b.name}</a> : <span aria-current="page">{b.name}</span>}</li>)}</ol></nav>
+      <div class="ahead">
+        <span class="icon" style="width:72px;height:72px;display:grid;place-items:center;color:var(--slate)"><CatIcon id={id} size={34} /></span>
+        <div><p class="eyebrow" style="margin:0 0 6px">{list.length} scrapers{withData ? ` · ${withData} with real results` : ''}</p><h1>{h.h1}</h1></div>
+      </div>
       <p class="lede">{h.intro}</p>
-    </header>
-    {sources.length > 0 && <p class="note">Working with one site? See the {sources.map((s, i) => <>{i ? ', ' : ''}<a href={s.url}>{s.h1.split(':')[0]}</a></>)} guide: which tool to use for which job.</p>}
-    <section aria-labelledby="list-h">
-      <h2 id="list-h">{site.categories[id].name} scrapers</h2>
-      <ul class="actor-list">
-        {list.map((a) => <li class="actor-item"><a href={a.url}><strong>{a.label}</strong><span class="blurb">{a.source}: {blurb(a)}</span><span class="price">{priceShort(a)}</span></a></li>)}
-      </ul>
-    </section>
-    <section aria-labelledby="how-h">
-      <h2 id="how-h">How these scrapers work</h2>
-      <p>Each one is an actor on the Apify platform. You paste a link or a few search terms, start the run, and get the results as JSON, CSV or Excel, or through the Apify API. Apify runs the servers and bills usage; every account gets a monthly free credit to test with.</p>
-    </section>
-    <section aria-labelledby="more-h">
-      <h2 id="more-h">Other categories</h2>
-      <ul class="related">{others.map((o) => <li><a href={categoryHub(o).url}>{site.categories[o].name}</a></li>)}</ul>
-    </section>
+      {sources.length > 0 && <p class="note">Working with one site? See the {sources.map((s, i) => <>{i ? ', ' : ''}<a href={s.url}>{site.sourceHubs[s.id].name} scraper guide</a></>)}: which tool to use for which job.</p>}
+    </div>
   </div>
+  <section aria-labelledby="list-h">
+    <div class="wrap">
+      <h2 id="list-h">{site.categories[id].name} scrapers</h2>
+      <ul class="cards">{list.map((a) => <ActorCard a={a} />)}</ul>
+    </div>
+  </section>
+  <section class="band" aria-labelledby="how-h">
+    <div class="wrap">
+      <h2 id="how-h">How these scrapers work</h2>
+      <p class="lede">Each one is an actor on the Apify platform. You paste a link or a few search terms, start the run, and get the results as JSON, CSV or Excel, or through the Apify API. Apify runs the servers and bills usage; every account gets a monthly free credit to test with.</p>
+    </div>
+  </section>
+  <section aria-labelledby="more-h">
+    <div class="wrap">
+      <h2 id="more-h">Other categories</h2>
+      <div class="cats">{others.map((o) => <a class="cat" href={categoryHub(o).url}><span class="ic"><CatIcon id={o} /></span><strong>{site.categories[o].name} <span class="arr">→</span></strong><span class="count">{actorsIn(o).length} scrapers</span></a>)}</div>
+    </div>
+  </section>
 </Base>

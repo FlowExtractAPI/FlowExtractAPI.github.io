@@ -1,90 +1,102 @@
 ---
 import Base from '../layouts/Base.astro';
-import { page, actors, site, stats, categoryIds, categoryHub, actorsIn, mostUsed, priceShort, blurb, sourceHub, BASE } from '../lib/site.js';
+import Demo from '../components/Demo.astro';
+import ActorCard from '../components/ActorCard.astro';
+import CatIcon from '../components/CatIcon.astro';
+import { page, actors, site, stats, categoryIds, categoryHub, actorsIn, mostUsed, demoPool, sourceHub, BASE } from '../lib/site.js';
 
 const c = page('home');
-const popular = mostUsed(6);
+const [h1a, h1b] = c.h1Highlight && c.h1.includes(c.h1Highlight) ? [c.h1.slice(0, c.h1.indexOf(c.h1Highlight)), c.h1Highlight] : [c.h1, ''];
+const popular = mostUsed(8);
 const etsy = sourceHub('etsy');
 const snapDate = stats.snapshotFetchedAt ? String(stats.snapshotFetchedAt).slice(0, 10) : null;
+const hubDesc = (id) => categoryHub(id).metaDescription.split(/(?<=[.:])\s/)[0].replace(/:$/, '.');
 const ld = [
-  { '@context': 'https://schema.org', '@type': 'Organization', name: site.brand.name, url: BASE, email: site.brand.email, sameAs: Object.values(site.social) },
+  { '@context': 'https://schema.org', '@type': 'Organization', name: site.brand.name, url: BASE, logo: BASE + '/favicon.ico', email: site.brand.email, sameAs: Object.values(site.social) },
   { '@context': 'https://schema.org', '@type': 'WebSite', name: site.brand.name, url: BASE },
 ];
 ---
 <Base title={c.title} description={c.metaDescription} path="/" jsonLd={ld}>
-  <div class="wrap">
-    <header class="hero">
-      <p class="eyebrow">Web data, ready to use</p>
-      <h1>{c.h1}</h1>
-      <p class="lede">{c.intro}</p>
-      <div class="cta-row">
-        <a class="btn" href="#actors">Browse {actors.length} scrapers</a>
-        <a class="btn btn-ghost" href={site.brand.storeProfile} rel="noopener">See them on the Apify Store</a>
+  <div class="hero">
+    <div class="blob a"></div><div class="blob b"></div>
+    <svg class="trail" data-trail aria-hidden="true"></svg>
+    <div class="wrap hero-grid">
+      <div>
+        <span class="pill"><span class="dot"><i></i></span>{actors.length} ready-to-run scrapers · pay only for results</span>
+        <h1>{h1a}{h1b && <em>{h1b}<svg viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 10 Q 80 2 150 8 T 298 6" fill="none" stroke="#5bb5b5" stroke-width="4" stroke-linecap="round" /></svg></em>}</h1>
+        <p class="lede">{c.intro}</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="#actors">Find your scraper →</a>
+          <a class="btn btn-ghost" href={site.brand.storeProfile} rel="noopener">Our profile on Apify</a>
+        </div>
+        <div class="facts" id="stats">
+          <div class="fact"><b>{actors.length}</b><span>public scrapers</span></div>
+          <div class="fact"><b>{stats.users.display}</b><span>Apify users</span></div>
+          <div class="fact"><b>{stats.runs.display}</b><span>runs</span></div>
+        </div>
+        {snapDate && <p class="muted small" style="margin-top:14px">User and run totals across our public actors, from Apify account data of {snapDate}.</p>}
       </div>
-      <div class="stats" id="stats">
-        <div class="stat"><b>{actors.length}</b><span>public scrapers</span></div>
-        <div class="stat"><b>{stats.users.display}</b><span>Apify users</span></div>
-        <div class="stat"><b>{stats.runs.display}</b><span>runs</span></div>
-      </div>
-      {snapDate && <p class="muted small">User and run totals across our public actors, from Apify account data of {snapDate}.</p>}
-    </header>
+      <Demo pool={demoPool()} />
+    </div>
   </div>
 
-  <section class="section-alt" aria-labelledby="popular-h">
+  <section aria-labelledby="cats-h">
     <div class="wrap">
-      <h2 id="popular-h">Most used</h2>
-      <ul class="actor-list">
-        {popular.map((a) => <li class="actor-item"><a href={a.url}><strong>{a.label}</strong><span class="blurb">{blurb(a)}</span><span class="price">{priceShort(a)}</span></a></li>)}
-      </ul>
+      <div class="sec-head"><div><div class="eyebrow">Pick what you collect</div><h2 id="cats-h">Scrapers by the data you need</h2></div><p>Every page shows the real fields, the real price and, where we have run it, real results.</p></div>
+      <div class="cats">
+        {categoryIds.map((id) => (
+          <a class="cat" href={categoryHub(id).url}>
+            <span class="ic"><CatIcon id={id} /></span>
+            <strong>{site.categories[id].name} <span class="arr">→</span></strong>
+            <span class="desc">{hubDesc(id)}</span>
+            <span class="count">{actorsIn(id).length} scrapers</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="popular-h">
+    <div class="wrap">
+      <div class="sec-head"><div><div class="eyebrow">Most used</div><h2 id="popular-h">What people run most</h2></div><p>Ordered by how many people use them on Apify.</p></div>
+      <ul class="cards">{popular.map((a) => <ActorCard a={a} />)}</ul>
     </div>
   </section>
 
   <section id="actors" aria-labelledby="actors-h">
     <div class="wrap">
-      <h2 id="actors-h">All scrapers</h2>
-      <p>Grouped by what they collect. Start with the <a href={etsy.url}>Etsy scraper guide</a> if you work with Etsy data.</p>
+      <div class="sec-head"><div><div class="eyebrow">All {actors.length}</div><h2 id="actors-h">Every scraper</h2></div><p>Working with Etsy? Start with the <a href={etsy.url}>Etsy scraper guide</a>.</p></div>
       <div class="catalog-tools">
         <input class="search" type="search" placeholder="Search: zillow, reviews, transcripts…" aria-label="Search scrapers" data-catalog-search />
-        <div class="chips" role="group" aria-label="Filter by category">
-          <button class="chip" type="button" aria-pressed="true" data-cat="">All</button>
-          {categoryIds.map((id) => <button class="chip" type="button" aria-pressed="false" data-cat={id}>{site.categories[id].name}</button>)}
+        <div class="filter-chips" role="group" aria-label="Filter by category">
+          <button class="fchip" type="button" aria-pressed="true" data-cat="">All</button>
+          {categoryIds.map((id) => <button class="fchip" type="button" aria-pressed="false" data-cat={id}>{site.categories[id].name}</button>)}
         </div>
       </div>
       {categoryIds.map((id) => (
         <div class="cat-group" data-group={id}>
-          <h3><a href={categoryHub(id).url}>{site.categories[id].name}</a> <span class="muted small">({actorsIn(id).length})</span></h3>
-          <ul class="actor-list">
-            {actorsIn(id).map((a) => (
-              <li class="actor-item" data-text={`${a.label} ${a.source} ${a.primaryKeyword} ${a.secondaryKeywords.join(' ')}`.toLowerCase()}>
-                <a href={a.url}><strong>{a.label}</strong><span class="blurb">{blurb(a)}</span><span class="price">{priceShort(a)}</span></a>
-              </li>
-            ))}
-          </ul>
+          <h3><span class="ic"><CatIcon id={id} size={18} /></span><a href={categoryHub(id).url}>{site.categories[id].name}</a> <span class="muted small">({actorsIn(id).length})</span></h3>
+          <ul class="cards">{actorsIn(id).map((a) => <ActorCard a={a} search />)}</ul>
         </div>
       ))}
       <p class="empty muted" data-catalog-empty>No scraper matches that search. <a href="/contact.html">Ask for a custom one.</a></p>
     </div>
   </section>
 
-  <section id="services" class="section-alt" aria-labelledby="services-h">
+  <section id="services" class="band" aria-labelledby="services-h">
     <div class="wrap">
-      <h2 id="services-h">Need something we don't have?</h2>
-      <ul class="related">
-        {c.services.map((s) => <li><div class="stat"><h3>{s.title}</h3><p>{s.text}</p><ul class="uses small">{s.points.map((p) => <li>{p}</li>)}</ul></div></li>)}
-      </ul>
+      <div class="sec-head"><div><div class="eyebrow">Custom work</div><h2 id="services-h">Need something we don't have?</h2></div><p>Write to <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a> or use the <a href="/contact.html">contact page</a>.</p></div>
+      <div class="cats">
+        {c.services.map((s) => <div class="cat"><strong>{s.title}</strong><span class="desc">{s.text}</span><ul class="uses small">{s.points.map((p) => <li>{p}</li>)}</ul></div>)}
+      </div>
     </div>
   </section>
-
-  <section id="contact" aria-labelledby="contact-h">
-    <div class="wrap">
-      <h2 id="contact-h">Contact</h2>
-      <p>Questions, bugs or a custom scraper: <a href={`mailto:${site.brand.email}`}>{site.brand.email}</a>, or use the <a href="/contact.html">contact page</a>.</p>
-    </div>
-  </section>
+  <div id="contact"></div>
 </Base>
 <script>
+  // Catalog search + category filter (progressive: without JS everything is listed).
   const input = document.querySelector('[data-catalog-search]');
-  const chips = document.querySelectorAll('.chip');
+  const chips = document.querySelectorAll('.fchip');
   const groups = document.querySelectorAll('[data-group]');
   const empty = document.querySelector('[data-catalog-empty]');
   let cat = '';
@@ -94,20 +106,51 @@ const ld = [
     for (const g of groups) {
       let n = 0;
       const catOk = !cat || g.dataset.group === cat;
-      for (const li of g.querySelectorAll('li')) {
-        const ok = catOk && (!q || li.dataset.text.includes(q));
-        li.hidden = !ok;
-        if (ok) n++;
-      }
-      g.hidden = n === 0;
-      shown += n;
+      for (const li of g.querySelectorAll('li')) { const ok = catOk && (!q || (li.dataset.text || '').includes(q)); li.hidden = !ok; if (ok) n++; }
+      g.hidden = n === 0; shown += n;
     }
     if (empty) empty.style.display = shown ? 'none' : 'block';
   }
   input?.addEventListener('input', apply);
-  chips.forEach((c) => c.addEventListener('click', () => {
-    cat = c.dataset.cat || '';
-    chips.forEach((x) => x.setAttribute('aria-pressed', String(x === c)));
-    apply();
-  }));
+  chips.forEach((ch) => ch.addEventListener('click', () => { cat = ch.dataset.cat || ''; chips.forEach((x) => x.setAttribute('aria-pressed', String(x === ch))); apply(); }));
+
+  // Background "flow trail": the logo's nodes appear one by one along a wandering path, linked by a line that draws
+  // itself; now and then a node lets go of a field name. The trail fades and a new one starts.
+  const svg = document.querySelector('[data-trail]');
+  const NS = 'http://www.w3.org/2000/svg';
+  const FIELDS = ['price', 'title', '★ 4.9', 'address', 'reviews', 'views', 'beds: 3', 'url', 'date', 'rating', 'airline', 'zestimate'];
+  const set = (el, o) => Object.entries(o).forEach(([k, v]) => el.setAttribute(k, String(v)));
+  function trail() {
+    const w = svg.clientWidth, h = svg.clientHeight;
+    if (!w) return;
+    const desktop = w >= 960;
+    const g = document.createElementNS(NS, 'g');
+    g.setAttribute('opacity', desktop ? '1' : '.45');
+    svg.append(g);
+    let x = desktop ? w * (.5 + Math.random() * .08) : -20, y = h * (desktop ? .12 + Math.random() * .7 : .04 + Math.random() * .1);
+    const pts = [];
+    for (let i = 0; i < 9; i++) { x += (desktop ? 40 : 45) + Math.random() * 50; y += (Math.random() - .5) * (desktop ? 90 : 30); y = Math.max(20, Math.min(desktop ? h - 30 : h * .18, y)); pts.push([x, y]); }
+    pts.forEach(([px, py], i) => setTimeout(() => {
+      if (i > 0) {
+        const [qx, qy] = pts[i - 1];
+        const l = document.createElementNS(NS, 'line');
+        set(l, { x1: qx, y1: qy, x2: px, y2: py, stroke: '#7fd4d4', 'stroke-width': 1.5, 'stroke-dasharray': 200, 'stroke-dashoffset': 200, opacity: .55 });
+        l.innerHTML = '<animate attributeName="stroke-dashoffset" from="200" to="0" dur=".5s" fill="freeze"/>';
+        g.append(l);
+      }
+      const n = document.createElementNS(NS, 'circle');
+      set(n, { cx: px, cy: py, r: 0, fill: i % 3 === 0 ? '#2d4a4a' : '#5bb5b5', opacity: .35 });
+      n.innerHTML = '<animate attributeName="r" from="0" to="6" dur=".35s" fill="freeze"/>';
+      g.append(n);
+      if (Math.random() < .35) {
+        const t = document.createElementNS(NS, 'text');
+        set(t, { x: px + 9, y: py - 8, fill: '#3a9494', 'font-size': 11, 'font-family': 'JetBrains Mono, monospace', opacity: 0 });
+        t.textContent = FIELDS[Math.floor(Math.random() * FIELDS.length)];
+        t.innerHTML += `<animate attributeName="opacity" values="0;.8;0" dur="2.4s" fill="freeze"/><animate attributeName="y" from="${py - 8}" to="${py - 30}" dur="2.4s" fill="freeze"/>`;
+        g.append(t);
+      }
+    }, 300 + i * (260 + Math.random() * 220)));
+    setTimeout(() => { g.style.transition = 'opacity 1.2s'; g.style.opacity = '0'; setTimeout(() => g.remove(), 1300); }, 5200);
+  }
+  if (svg && !matchMedia('(prefers-reduced-motion: reduce)').matches) { trail(); setInterval(trail, 3600); setTimeout(() => setInterval(trail, 3600), 1800); }
 </script>

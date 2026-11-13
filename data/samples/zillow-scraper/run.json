@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/zillow-scraper",
+  "runId": "PeWAkdw53G6VRQ9Qo",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:02:12.209Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.029,
+  "buildNumber": "0.3.1",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

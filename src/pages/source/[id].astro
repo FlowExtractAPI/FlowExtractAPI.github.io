@@ -1,6 +1,8 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { site, hubs, actors, actorsFromSource, categoryHub, priceShort, priceSummary, faqJsonLd, BASE } from '../../lib/site.js';
+import ActorCard from '../../components/ActorCard.astro';
+import ActorIcon from '../../components/ActorIcon.astro';
+import { site, hubs, actors, actorsFromSource, categoryHub, priceSummary, faqJsonLd, BASE } from '../../lib/site.js';
 
 export function getStaticPaths() {
   return hubs.filter((h) => h.kind === 'source').map((h) => ({ params: { id: h.id }, props: { h } }));
@@ -9,40 +11,42 @@ const { h } = Astro.props;
 const list = actorsFromSource(h.id);
 const bySlug = (s) => actors.find((a) => a.slug === s);
 const cats = [...new Set(list.map((a) => a.category))];
-const crumbs = [{ name: 'Home', url: '/' }, { name: site.categories[cats[0]].name, url: categoryHub(cats[0]).url }, { name: `${site.sourceHubs[h.id].name} scrapers`, url: h.url }];
+const name = site.sourceHubs[h.id].name;
+const crumbs = [{ name: 'Home', url: '/' }, { name: site.categories[cats[0]].name, url: categoryHub(cats[0]).url }, { name: `${name} scrapers`, url: h.url }];
 const faq = h.faq || [];
 const itemList = {
   '@context': 'https://schema.org', '@type': 'ItemList', name: h.h1,
   itemListElement: list.map((a, i) => ({ '@type': 'ListItem', position: i + 1, url: BASE + a.url, name: a.label })),
 };
 ---
-<Base title={h.title} description={h.metaDescription} path={h.url} breadcrumbs={crumbs} jsonLd={[itemList, ...(faq.length ? [faqJsonLd(faq)] : [])]}>
-  <div class="wrap content">
-    <header class="hero">
-      <p class="eyebrow">{list.length} {site.sourceHubs[h.id].name} scrapers</p>
+<Base title={h.title} description={h.metaDescription} path={h.url} breadcrumbs={crumbs} jsonLd={[itemList, ...(faq.length ? [faqJsonLd(faq)] : [])]} hideCrumbs>
+  <div class="actor-head">
+    <div class="wrap">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol>{crumbs.map((b, i) => <li>{i < crumbs.length - 1 ? <a href={b.url}>{b.name}</a> : <span aria-current="page">{b.name}</span>}</li>)}</ol></nav>
+      <p class="eyebrow" style="margin:18px 0 6px">{list.length} {name} scrapers</p>
       <h1>{h.h1}</h1>
       <p class="lede">{h.intro}</p>
-    </header>
+    </div>
+  </div>
+  <div class="wrap content">
     {h.chooser && (
       <section aria-labelledby="choose-h">
         <h2 id="choose-h">Which one do you need?</h2>
         <div class="table-wrap">
           <table>
             <thead><tr><th scope="col">You start from</th><th scope="col">You want</th><th scope="col">Use</th></tr></thead>
-            <tbody>{h.chooser.map((r) => { const a = bySlug(r.slug); return <tr><td>{r.start}</td><td>{r.want}</td><td><a href={a.url}>{a.label}</a></td></tr>; })}</tbody>
+            <tbody>{h.chooser.map((r) => { const a = bySlug(r.slug); return <tr><td>{r.start}</td><td>{r.want}</td><td><a href={a.url} style="display:inline-flex;gap:8px;align-items:center;font-weight:600"><ActorIcon a={a} size={24} />{a.label}</a></td></tr>; })}</tbody>
           </table>
         </div>
       </section>
     )}
     <section aria-labelledby="tools-h">
-      <h2 id="tools-h">The tools and what they cost</h2>
-      {list.map((a) => (
-        <article class="stat" style="margin-bottom:12px">
-          <h3><a href={a.url}>{a.label}</a></h3>
-          <p>{a.intro}</p>
-          <p class="small muted">{priceSummary(a)}</p>
-        </article>
-      ))}
+      <h2 id="tools-h">The tools</h2>
+      <ul class="cards">{list.map((a) => <ActorCard a={a} />)}</ul>
+    </section>
+    <section aria-labelledby="cost-h">
+      <h2 id="cost-h">What they cost</h2>
+      <ul class="uses">{list.map((a) => <li><a href={a.url}><b>{a.label}</b></a>: {priceSummary(a)}</li>)}</ul>
     </section>
     {faq.length > 0 && (
       <section class="faq" aria-labelledby="faq-h">
@@ -50,6 +54,6 @@ const itemList = {
         {faq.map((f) => <><h3>{f.q}</h3><p>{f.a}</p></>)}
       </section>
     )}
-    <p>More: <a href={categoryHub(cats[0]).url}>all {site.categories[cats[0]].name.toLowerCase()} scrapers</a>.</p>
+    <section><p>More: <a href={categoryHub(cats[0]).url}>all {site.categories[cats[0]].name.toLowerCase()} scrapers</a>.</p></section>
   </div>
 </Base>

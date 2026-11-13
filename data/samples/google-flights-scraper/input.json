@@ -1,0 +1,40 @@
+{
+  "input": {
+    "tripType": "round_trip",
+    "origin": [
+      "New York"
+    ],
+    "destination": [
+      "Paris"
+    ],
+    "departureDate": "2026-12-10",
+    "returnDate": "2026-12-17",
+    "adults": 1,
+    "cabinClass": "economy",
+    "maxResults": 12,
+    "currency": "USD",
+    "market": "US",
+    "language": "en-US"
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "typeField": "rowType",
+  "project": {
+    "flight": {
+      "origin": "origin",
+      "destination": "destination",
+      "departure": "departureTime",
+      "arrival": "arrivalTime",
+      "airline": "airlines",
+      "stops": "stops",
+      "duration": {
+        "path": "totalDuration",
+        "alt": "duration"
+      },
+      "price": "price",
+      "currency": "currency",
+      "cabin": "cabinClass",
+      "trip": "tripType"
+    }
+  }
+}

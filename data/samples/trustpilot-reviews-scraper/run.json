@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/trustpilot-reviews-scraper",
+  "runId": "A1MXpcSoEZKSg9DUk",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:02:59.873Z",
+  "itemCount": 13,
+  "sampleCount": 13,
+  "costUsd": 0.004604467787774073,
+  "buildNumber": "0.0.10",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

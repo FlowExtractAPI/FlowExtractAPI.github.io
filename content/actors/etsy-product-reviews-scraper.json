@@ -73,5 +73,19 @@
       "ships_from": "ships from"
     }
   },
+  "demo": {
+    "url": "etsy.com/listing/1667678858",
+    "type": "review",
+    "row": 2,
+    "fields": [
+      "listing_id",
+      "reviewer",
+      "rating",
+      "date",
+      "review",
+      "item_quality",
+      "seller_replied"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

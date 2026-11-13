@@ -20,5 +20,17 @@
     "Monitor new reviews on a schedule"
   ],
   "faq": [],
+  "demo": {
+    "url": "trustpilot.com/review/apify.com",
+    "fields": [
+      "company",
+      "rating",
+      "title",
+      "published",
+      "language",
+      "source",
+      "likes"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }

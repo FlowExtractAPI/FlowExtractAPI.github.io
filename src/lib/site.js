@@ -28,7 +28,7 @@ export const actors = actorContent
   .map((c) => {
     const facts = factsBySlug.get(c.slug);
     const pageSlug = c.slug.toLowerCase();
-    return { ...c, pageSlug, url: `/docs/${pageSlug}.html`, goUrl: `/go/${pageSlug}`, facts, sample: c.mode === 'unique' ? sampleFor(pageSlug) : null };
+    return { ...c, pageSlug, url: `/docs/${pageSlug}.html`, goUrl: `/go/${pageSlug}`, facts, sample: sampleFor(pageSlug) };
   })
   .filter((a) => a.facts)
   .sort((a, b) => a.label.localeCompare(b.label));
@@ -48,6 +48,8 @@ export function blurb(a) {
   if (t.length > 120) t = t.slice(0, 117).replace(/[\s,;:]+\S*$/, '') + '…';
   return t;
 }
+// Home demo: actors with a real sample and a "demo" block in their content file
+export const demoPool = () => actors.filter((a) => a.demo && a.sample);
 export const mostUsed = (n) => [...actors].sort((a, b) => b.facts.usersRank - a.facts.usersRank).slice(0, n);
 
 // ---------- pricing (real Store pricing, never invented) ----------

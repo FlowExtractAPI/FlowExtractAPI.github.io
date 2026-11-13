@@ -1,0 +1,44 @@
+{
+  "input": {
+    "searchQueries": [
+      "coffee"
+    ],
+    "maxResultsPerQuery": 12,
+    "enrichWithAdDetails": false,
+    "activeStatus": "ACTIVE",
+    "adType": "ALL",
+    "mediaType": "ALL"
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "where": {
+    "page_category": [
+      "Shopping",
+      "Retail company",
+      "Product/service",
+      "Brand",
+      "Company",
+      "Business",
+      "Ecommerce website",
+      "Food & beverage company",
+      "Coffee shop",
+      "Restaurant",
+      "Grocery store"
+    ]
+  },
+  "project": {
+    "*": {
+      "advertiser": "page_name",
+      "page_category": "page_category",
+      "ad_title": "title",
+      "cta": "cta_text",
+      "link_domain": "caption",
+      "start_date": "start_date",
+      "end_date": "end_date",
+      "active": "is_active",
+      "platforms": "platforms",
+      "media_type": "media.type",
+      "ad_url": "ad_url"
+    }
+  }
+}

@@ -4,7 +4,7 @@ import { mostUsed, categoryIds, categoryHub, site } from '../lib/site.js';
 ---
 <Base title="Page not found | FlowExtract API" description="This page does not exist. Browse the FlowExtract API scrapers by category or search the full list." path="/404.html" noindex>
   <div class="wrap prose">
-    <header class="hero"><h1>Page not found</h1><p class="lede">The address may be old or mistyped. The scrapers are all listed on the <a href="/#actors">home page</a>.</p></header>
+    <header class="page-hero"><h1>Page not found</h1><p class="lede">The address may be old or mistyped. The scrapers are all listed on the <a href="/#actors">home page</a>.</p></header>
     <h2>Browse by category</h2>
     <ul class="related">{categoryIds.map((id) => <li><a href={categoryHub(id).url}>{site.categories[id].name}</a></li>)}</ul>
     <h2>Most used</h2>

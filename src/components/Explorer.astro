@@ -3,7 +3,7 @@
 // A small script adds sort + text filter. No live calls; nothing a visitor does starts a run or costs money.
 const { actor } = Astro.props;
 const { rows, run } = actor.sample;
-const cfg = actor.explorer || { tables: [{ title: 'Results', columns: [...new Set(rows.flatMap((r) => Object.keys(r)))].slice(0, 8) }] };
+const cfg = actor.explorer || { tables: [{ title: 'Results', columns: [...new Set(rows.flatMap((r) => Object.keys(r)))].filter((k) => k !== 'record_type').slice(0, 9) }] };
 const tables = cfg.tables.map((t) => ({ ...t, rows: t.type ? rows.filter((r) => r.record_type === t.type) : rows })).filter((t) => t.rows.length);
 const fmt = (v) => (v === true ? 'yes' : v === false ? 'no' : v == null ? '' : String(v));
 const labels = cfg.labels || {};
@@ -13,7 +13,7 @@ const labels = cfg.labels || {};
     <h2 id="data-h">Real results: explore the data</h2>
     <span class="explorer-label">Real results from a run on {run.date} · sample of {rows.length} rows</span>
   </div>
-  <p class="muted small">Personal details (reviewer names, photos, IDs) are removed or replaced; listing and shop data is shown as returned.</p>
+  <p class="muted small">Personal details of private individuals (names, photos, IDs, contacts) are removed or replaced; business and listing data is shown as returned.</p>
   <div class="explorer-tools">
     <input type="search" placeholder="Filter rows…" aria-label="Filter rows" data-explorer-filter />
     <a class="btn btn-ghost" href={`/dl/${actor.pageSlug}/sample.csv`} rel="nofollow">Download CSV</a>
@@ -32,7 +32,7 @@ const labels = cfg.labels || {};
       </div>
     </>
   ))}
-  <p class="cta-row"><a class="btn" href={actor.goUrl} rel="nofollow">Run it on your own URLs →</a></p>
+  <p class="cta-row" style="margin-bottom:0"><a class="btn btn-primary" href={actor.goUrl} rel="nofollow">Run it on your own URLs →</a></p>
 </section>
 <script>
   for (const box of document.querySelectorAll('.explorer')) {

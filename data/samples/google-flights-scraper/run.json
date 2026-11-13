@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/google-flights-scraper",
+  "runId": "DT6fHIJCvgFwbmJ3a",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:02:13.287Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.0122,
+  "buildNumber": "0.1.64",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

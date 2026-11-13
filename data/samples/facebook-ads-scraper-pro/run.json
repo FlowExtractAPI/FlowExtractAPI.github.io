@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/facebook-ads-scraper-pro",
+  "runId": "g2P979CRhBe1i98wJ",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:01:53.921Z",
+  "itemCount": 12,
+  "sampleCount": 11,
+  "costUsd": 0.0072,
+  "buildNumber": "0.1.20",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

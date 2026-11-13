@@ -1,0 +1,30 @@
+{
+  "input": {
+    "Property_urls": [
+      {
+        "url": "https://www.idealista.com/en/venta-viviendas/balears-illes/?ordenado-por=precios-asc"
+      }
+    ],
+    "detailMode": false,
+    "desiredResults": 12
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "property_code": "propertyCode",
+      "price": "price",
+      "type": "propertyType",
+      "operation": "operation",
+      "size_m2": "size",
+      "rooms": "rooms",
+      "bathrooms": "bathrooms",
+      "price_per_m2": "priceByArea",
+      "municipality": "municipality",
+      "district": "district",
+      "neighborhood": "neighborhood",
+      "province": "province",
+      "url": "url"
+    }
+  }
+}

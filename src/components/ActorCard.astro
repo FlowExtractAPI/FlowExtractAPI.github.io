@@ -1,0 +1,16 @@
+---
+import ActorIcon from './ActorIcon.astro';
+import { priceShort, blurb } from '../lib/site.js';
+const { a, search = false } = Astro.props;
+const text = search ? `${a.label} ${a.source} ${a.primaryKeyword} ${a.secondaryKeywords.join(' ')}`.toLowerCase() : undefined;
+---
+<li data-text={text}>
+  <a class="card" href={a.url}>
+    <span class="top">
+      <ActorIcon a={a} />
+      <span><strong>{a.label}</strong><span class="src">{a.source}{a.sample ? <span class="badge">real data</span> : null}</span></span>
+    </span>
+    <span class="blurb">{blurb(a)}</span>
+    <span class="foot"><span class="price">{priceShort(a)}</span><span class="go">Open →</span></span>
+  </a>
+</li>

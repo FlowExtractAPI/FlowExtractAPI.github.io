@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/google-trends-scraper",
+  "runId": "v8ghaeNxI37GdA0gN",
+  "status": "SUCCEEDED",
+  "date": "2026-11-13",
+  "finishedAt": "2026-11-13T23:03:19.669Z",
+  "itemCount": 54,
+  "sampleCount": 20,
+  "costUsd": 0.005,
+  "buildNumber": "0.0.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

@@ -1,0 +1,167 @@
+[
+  {
+    "record_type": "search_summary",
+    "terms": "chatgpt, gemini, claude",
+    "location": "United States",
+    "time_range": "Past 12 months",
+    "leader": "chatgpt",
+    "avg_chatgpt": 78,
+    "avg_gemini": 30,
+    "avg_claude": 21,
+    "trend_chatgpt": "rising",
+    "trend_gemini": "stable",
+    "trend_claude": "rising"
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-11-09",
+    "week": "Nov 9 - 15, 2025",
+    "chatgpt": 100,
+    "gemini": 23,
+    "claude": 7
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-11-16",
+    "week": "Nov 16 - 22, 2025",
+    "chatgpt": 95,
+    "gemini": 26,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-11-23",
+    "week": "Nov 23 - 29, 2025",
+    "chatgpt": 65,
+    "gemini": 21,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-11-30",
+    "week": "Nov 30 - Dec 6, 2025",
+    "chatgpt": 87,
+    "gemini": 27,
+    "claude": 7
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-12-07",
+    "week": "Dec 7 - 13, 2025",
+    "chatgpt": 86,
+    "gemini": 28,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-12-14",
+    "week": "Dec 14 - 20, 2025",
+    "chatgpt": 79,
+    "gemini": 24,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-12-21",
+    "week": "Dec 21 - 27, 2025",
+    "chatgpt": 60,
+    "gemini": 21,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2025-12-28",
+    "week": "Dec 28, 2025 - Jan 3, 2026",
+    "chatgpt": 61,
+    "gemini": 20,
+    "claude": 6
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-01-04",
+    "week": "Jan 4 - 10, 2026",
+    "chatgpt": 76,
+    "gemini": 25,
+    "claude": 9
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-01-11",
+    "week": "Jan 11 - 17, 2026",
+    "chatgpt": 86,
+    "gemini": 27,
+    "claude": 11
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-01-18",
+    "week": "Jan 18 - 24, 2026",
+    "chatgpt": 82,
+    "gemini": 25,
+    "claude": 11
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-01-25",
+    "week": "Jan 25 - 31, 2026",
+    "chatgpt": 82,
+    "gemini": 28,
+    "claude": 12
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-02-01",
+    "week": "Feb 1 - 7, 2026",
+    "chatgpt": 92,
+    "gemini": 28,
+    "claude": 15
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-02-08",
+    "week": "Feb 8 - 14, 2026",
+    "chatgpt": 72,
+    "gemini": 28,
+    "claude": 17
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-02-15",
+    "week": "Feb 15 - 21, 2026",
+    "chatgpt": 78,
+    "gemini": 28,
+    "claude": 18
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-02-22",
+    "week": "Feb 22 - 28, 2026",
+    "chatgpt": 80,
+    "gemini": 30,
+    "claude": 23
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-03-01",
+    "week": "Mar 1 - 7, 2026",
+    "chatgpt": 89,
+    "gemini": 35,
+    "claude": 33
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-03-08",
+    "week": "Mar 8 - 14, 2026",
+    "chatgpt": 84,
+    "gemini": 34,
+    "claude": 29
+  },
+  {
+    "record_type": "interest_over_time",
+    "date": "2026-03-15",
+    "week": "Mar 15 - 21, 2026",
+    "chatgpt": 74,
+    "gemini": 30,
+    "claude": 27
+  }
+]

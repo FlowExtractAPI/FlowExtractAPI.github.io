@@ -25,5 +25,19 @@
       "a": "No. Google shut down its QPX Express flight API in 2018 and has no public Google Flights API. This actor reads the public Google Flights pages and returns the fares as data."
     }
   ],
+  "demo": {
+    "url": "google.com/travel/flights · New York → Paris",
+    "type": "flight",
+    "fields": [
+      "origin",
+      "destination",
+      "departure",
+      "airline",
+      "stops",
+      "duration",
+      "price",
+      "currency"
+    ]
+  },
   "lastKeywordChange": "2026-11-13"
 }
