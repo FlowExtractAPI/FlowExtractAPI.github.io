@@ -2,20 +2,17 @@
 // per-visitor and global limits (one Durable Object, exact counts) → the demo actor's Standby URL (token = Worker
 // secret DEMO_APIFY_TOKEN, run-only account) → allow-listed fields, max 10 rows. The browser never sees a token.
 import { DurableObject } from 'cloudflare:workers';
+import ACTORS from './demo-actors.json';
 
-const LIVE = {
-  idealista: {
-    hosts: /(^|\.)idealista\.(com|pt|it|fr)$/i,
-    upstream: 'https://mourad-22--idealista-demo.apify.actor/',
-    store: 'https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63',
-    // Listing data only: no contact names or phones. The listing photo (operator decision 2026-11-14) is a property
-    // photo shown by URL, not people.
-    fields: { thumbnail: 'image', price: 'price', address: 'address', description: 'description', propertyType: 'type', operation: 'operation', size: 'size_m2', rooms: 'rooms', bathrooms: 'bathrooms', priceByArea: 'price_per_m2', floor: 'floor', exterior: 'exterior', hasLift: 'lift', municipality: 'municipality', district: 'district', neighborhood: 'neighborhood', province: 'province', country: 'country', status: 'condition', newDevelopment: 'new_development', propertyCode: 'property_code', url: 'url' },
-    // How the card view uses the fields (from the actor's dataset_schema "Search" view: image, price, address, description)
-    display: { image: 'image', price: 'price', currency: 'EUR', title: 'address', text: 'description', link: 'url', facts: [['rooms', 'rooms'], ['bathrooms', 'baths'], ['size_m2', 'm²'], ['municipality', '']] },
-  },
-};
-const LIMITS = { perIpHour: 1, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+// Per-actor settings live in demo-actors.json (add an actor there; guide: live-demo/ADD-AN-ACTOR.md).
+const LIVE = Object.fromEntries(Object.entries(ACTORS).filter(([k]) => !k.startsWith('_')).map(([k, v]) => [k, {
+  ...v,
+  hostList: v.hosts,
+  hosts: { test: (host) => v.hosts.some((h) => host === h || host.endsWith('.' + h)) },
+}]));
+// Limits are per visitor ACROSS all demo actors (20/day in total), plus one global daily cap for everyone.
+const LIMITS = { perIpHour: 8, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 
@@ -35,8 +32,8 @@ export class DemoGuard extends DurableObject {
       return Response.json({ ok: true });
     }
     if (g.n >= LIMITS.globalDay) return Response.json({ ok: false, msg: "The live demo has reached today's limit for everyone.", signup: true, kind: 'global' });
-    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used today's ${LIMITS.perIpDay} free live demos.`, signup: true, kind: 'day' });
-    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `That was ${LIMITS.perIpHour} live demos this hour.`, signup: true, kind: 'hour' });
+    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used today's ${plural(LIMITS.perIpDay, 'free live demo', 'free live demos')}.`, signup: true, kind: 'day' });
+    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `You have used this hour's ${plural(LIMITS.perIpHour, 'live demo', 'live demos')}. Try again later.`, signup: true, kind: 'hour' });
     list.push(now); g.n++;
     await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
     await this.ctx.storage.setAlarm(now + 86400000); // tidy up old visitor keys
@@ -63,8 +60,8 @@ export async function handleDemo(request, env, ctx, record) {
   if (!cfg) return json(400, { error: 'This scraper is coming soon to the live demo.' });
   const target = String(body.url || '').trim().slice(0, 1000);
   let host;
-  try { host = new URL(target).hostname; } catch { return json(400, { error: 'Paste a full Idealista link (https://www.idealista.com/…).' }); }
-  if (!cfg.hosts.test(host)) return json(400, { error: 'This demo only accepts Idealista links (Spain, Portugal, Italy, France).' });
+  try { host = new URL(target).hostname; } catch { return json(400, { error: `Paste a full ${cfg.name} link (https://www.${cfg.hostList[0]}/…).` }); }
+  if (!cfg.hosts.test(host)) return json(400, { error: `This demo only accepts ${cfg.name} links (${cfg.hostList.join(', ')}).` });
   if (!env.TURNSTILE_SECRET || !env.DEMO_APIFY_TOKEN) return json(503, { error: 'The live demo is not switched on yet.' });
 
   const ip = request.headers.get('CF-Connecting-IP') || '';
@@ -98,7 +95,7 @@ export async function handleDemo(request, env, ctx, record) {
       let ev; try { ev = JSON.parse(line); } catch { continue; }
       if (ev.type === 'batch' && Array.isArray(ev.data)) rows.push(...ev.data);
       else if (ev.type === 'property' && ev.data && !ev.data.status) rows.push(ev.data);
-      else if ((ev.type === 'failed' || ev.type === 'error') && !error) error = 'Idealista did not return results for this link.';
+      else if ((ev.type === 'failed' || ev.type === 'error') && !error) error = `${cfg.name} returned no results for this link. Check that it opens a search or a single item page.`;
       if (ev.type === 'progress' && ev.total) total = ev.total;
     }
     if (!rows.length && !error && attempt === 1) continue; // empty stream: try once more

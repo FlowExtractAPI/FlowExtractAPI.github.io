@@ -5,22 +5,25 @@
 import '@fontsource/caveat/600.css';
 import { site } from '../lib/site.js';
 // soon: actors shown as "coming soon" chips (home page). Empty on actor pages.
-const { actor, soon = [], title = 'Try it live' } = Astro.props;
+const { actor, others = [], soon = [], title = 'Try it live' } = Astro.props;
 const d = actor.liveDemo;
 const evs = (actor.facts.pricing.events || []).filter((e) => !e.oneTime);
 const main = evs.find((e) => e.primary) || evs[0];
 const ACCENT = { 'idealista-scraper-api': '#d3ef24', 'idealista-scraper': '#d3ef24', 'zillow-scraper': '#006aff', 'facebook-comment-scraper': '#1877f2', 'instagram-comment-scraper': '#e1306c', 'google-flights-scraper': '#4285f4', 'etsy-product-reviews-scraper': '#f1641e', 'youtube-transcript-metadata-extractor': '#ff0000' };
 const accent = d.accent || ACCENT[actor.slug] || '#5bb5b5';
-const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFreePlanUsd) : null; // Apify free plan: $5 credit per month
+// Apify free plan: $5 credit per month → about how many results of the actor's main per-result event
+const freeOf = (a) => { const ev = (a.facts.pricing.events || []).filter((e) => !e.oneTime); const m = ev.find((e) => e.primary) || ev[0]; return m && m.priceFreePlanUsd ? Math.floor(5 / m.priceFreePlanUsd) : null; };
+const freeResults = freeOf(actor);
+const lives = [actor, ...others];
 ---
 <section class="explorer live-demo" id="try" aria-labelledby="try-h" data-demo-actor={d.actor} data-accent={accent} style={`--demo-accent:${accent}`}>
   <div class="explorer-head">
     <h2 id="try-h">{title}</h2>
     <span class="live"><i></i>runs for real · first page only, up to 10 results</span>
   </div>
-  {soon.length > 0 && (
+  {(soon.length > 0 || others.length > 0) && (
     <div class="demo-picker" role="group" aria-label="Scraper">
-      <button type="button" class="pick" aria-pressed="true" data-pick="live" data-accent={accent}>{actor.facts.icon && <img src={actor.facts.icon} alt="" width="26" height="26" />}{actor.source}</button>
+      {lives.map((x, i) => <button type="button" class="pick" aria-pressed={String(i === 0)} data-pick="live" data-demo-id={x.liveDemo.actor} data-sample={x.liveDemo.sample} data-hint={x.liveDemo.hint} data-label={x.liveDemo.label} data-go={x.goUrl} data-name={x.label} data-src={x.source} data-free={freeOf(x) ? freeOf(x).toLocaleString('en') : ''} data-accent={x.liveDemo.accent || ACCENT[x.slug] || '#5bb5b5'}>{x.facts.icon && <img src={x.facts.icon} alt="" width="26" height="26" />}{x.source}</button>)}
       {soon.map((s) => <button type="button" class="pick" aria-pressed="false" data-pick="soon" data-accent={ACCENT[s.slug] || "#5bb5b5"} data-name={s.label} data-url={s.url} data-icon={s.facts.icon || ''}>{s.facts.icon && <img src={s.facts.icon} alt="" width="26" height="26" loading="lazy" />}{s.source}<span class="soon">soon</span></button>)}
     </div>
   )}
@@ -31,15 +34,15 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
     <a class="btn btn-ghost" data-soon-link href="#">Open its page →</a>
   </div>
   <div data-live-part>
-    <p class="muted small">{d.hint}</p>
-    <div class="demo-note" aria-hidden="true"><span>Paste any Idealista link and hit Run:<br>real listings in seconds</span><svg viewBox="0 0 120 70" width="110" height="64"><path d="M6 10 C 40 4, 86 14, 104 52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M92 46 L105 56 L108 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <p class="muted small" data-hint>{d.hint}</p>
+    <div class="demo-note" aria-hidden="true"><span>Paste any <span data-note-src>{actor.source}</span> link and hit Run:<br>real data in seconds</span><svg viewBox="0 0 120 70" width="110" height="64"><path d="M6 10 C 40 4, 86 14, 104 52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M92 46 L105 56 L108 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <form class="explorer-tools demo-form" data-demo-form>
       <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
       <button class="btn btn-primary demo-run" type="submit" data-demo-run>▶ Run it live</button>
     </form>
     <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="always" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
     <p class="demo-quota"><b data-quota>🎁 20 free live runs per day</b><span>same link again = instant answer</span></p>
-    <p class="demo-more">Need more? <a href={actor.goUrl} rel="nofollow" target="_blank">Run it on your own free Apify account →</a> $5 of credit every month{freeResults ? <>, about {freeResults.toLocaleString('en')} results</> : null}, no daily limit.</p>
+    <p class="demo-more">Need more? <a href={actor.goUrl} data-go-link rel="nofollow" target="_blank">Run it on your own free Apify account →</a> $5 of credit every month<span data-free-line>{freeResults ? <>, about <span data-free>{freeResults.toLocaleString('en')}</span> results</> : null}</span>, no daily limit.</p>
     <p class="demo-status" data-demo-status aria-live="polite"></p>
     <div class="demo-results" data-demo-results hidden>
       <div class="demo-bar">
@@ -58,9 +61,9 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
     <div class="demo-signup" data-signup hidden>
       <div>
         <strong data-signup-title>Want all of them?</strong>
-        <p class="small" style="margin:4px 0 0">Create a free Apify account and run <b>{actor.label}</b> yourself. The free plan includes <b>$5 of credit every month</b>{freeResults ? <>, enough for about <b>{freeResults.toLocaleString('en')} results</b></> : null}. No card needed to start.</p>
+        <p class="small" style="margin:4px 0 0">Create a free Apify account and run <b data-actor-label>{actor.label}</b> yourself. The free plan includes <b>$5 of credit every month</b>{freeResults ? <>, enough for about <b>{freeResults.toLocaleString('en')} results</b></> : null}. No card needed to start.</p>
       </div>
-      <a class="btn btn-primary" href={actor.goUrl} rel="nofollow" target="_blank">Run it on Apify, free →</a>
+      <a class="btn btn-primary" href={actor.goUrl} data-go-link rel="nofollow" target="_blank">Run it on Apify, free →</a>
     </div>
   </div>
 </section>
@@ -88,6 +91,18 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
       const live = b.dataset.pick === 'live';
       if (b.dataset.accent) box.style.setProperty('--demo-accent', b.dataset.accent);
       livePart.hidden = !live; soonBox.hidden = live;
+      if (live && b.dataset.demoId) {
+        box.dataset.demoActor = b.dataset.demoId;
+        form.url.value = b.dataset.sample || '';
+        form.url.setAttribute('aria-label', b.dataset.label || 'Link');
+        $('[data-hint]').textContent = b.dataset.hint || '';
+        $('[data-note-src]').textContent = b.dataset.src || '';
+        box.querySelectorAll('[data-go-link]').forEach((a) => { a.href = b.dataset.go; });
+        box.querySelectorAll('[data-actor-label]').forEach((el) => { el.textContent = b.dataset.name; });
+        box.querySelectorAll('[data-free]').forEach((el) => { el.textContent = b.dataset.free; });
+        box.querySelectorAll('[data-free-line]').forEach((el) => { el.hidden = !b.dataset.free; });
+        results.hidden = true; $('[data-signup]').hidden = true; status.textContent = ''; last = null;
+      }
       if (!live) {
         soonBox.querySelector('[data-soon-name]').textContent = b.dataset.name;
         soonBox.querySelector('[data-soon-link]').href = b.dataset.url;

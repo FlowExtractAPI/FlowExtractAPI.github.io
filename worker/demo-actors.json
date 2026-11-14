@@ -1,0 +1,20 @@
+{
+  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). upstream: the demo actor's Standby URL on Tester 1. fields: actor output field -> name shown to visitors (allow-list: NEVER private people's names, phones, emails, profile photos). display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
+  "idealista": {
+    "name": "Idealista",
+    "hosts": ["idealista.com", "idealista.pt", "idealista.it", "idealista.fr"],
+    "upstream": "https://mourad-22--idealista-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63",
+    "fields": {
+      "thumbnail": "image", "price": "price", "address": "address", "description": "description",
+      "propertyType": "type", "operation": "operation", "size": "size_m2", "rooms": "rooms", "bathrooms": "bathrooms",
+      "priceByArea": "price_per_m2", "floor": "floor", "exterior": "exterior", "hasLift": "lift",
+      "municipality": "municipality", "district": "district", "neighborhood": "neighborhood", "province": "province",
+      "country": "country", "status": "condition", "newDevelopment": "new_development", "propertyCode": "property_code", "url": "url"
+    },
+    "display": {
+      "image": "image", "price": "price", "currency": "EUR", "title": "address", "text": "description", "link": "url",
+      "facts": [["rooms", "rooms"], ["bathrooms", "baths"], ["size_m2", "m²"], ["municipality", ""]]
+    }
+  }
+}
