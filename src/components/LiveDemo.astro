@@ -1,0 +1,83 @@
+---
+// "Try it live": the visitor pastes one link and gets the first results from a real run (POST /api/demo on our own
+// Worker: Turnstile + limits + cache; the Worker holds the run-only token). Shown only when the content file has
+// "liveDemo". The static real-results table stays on the page for search engines.
+import { site } from '../lib/site.js';
+// soon: actors shown as "coming soon" chips (home page). Empty on actor pages.
+const { actor, soon = [], title = 'Try it live' } = Astro.props;
+const d = actor.liveDemo;
+---
+<section class="explorer live-demo" id="try" aria-labelledby="try-h" data-demo-actor={d.actor}>
+  <div class="explorer-head">
+    <h2 id="try-h">{title}</h2>
+    <span class="live"><i></i>runs for real · first page only, up to 10 results</span>
+  </div>
+  {soon.length > 0 && (
+    <div class="demo-picker" role="group" aria-label="Scraper">
+      <button type="button" class="pick" aria-pressed="true" data-pick="live">{actor.facts.icon && <img src={actor.facts.icon} alt="" width="26" height="26" />}{actor.source}</button>
+      {soon.map((s) => <button type="button" class="pick" aria-pressed="false" data-pick="soon" data-name={s.label} data-url={s.url} data-icon={s.facts.icon || ''}>{s.facts.icon && <img src={s.facts.icon} alt="" width="26" height="26" loading="lazy" />}{s.source}<span class="soon">soon</span></button>)}
+    </div>
+  )}
+  <div class="soonbox" data-soon hidden>
+    <img data-soon-icon alt="" width="64" height="64" />
+    <h3 data-soon-name></h3>
+    <p class="muted small">Coming soon to the live demo. Its page shows every field it returns and the exact price.</p>
+    <a class="btn btn-ghost" data-soon-link href="#">Open its page →</a>
+  </div>
+  <div data-live-part>
+  <p class="muted small">{d.hint}</p>
+  <form class="explorer-tools" data-demo-form>
+    <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
+    <button class="btn btn-primary" type="submit" data-demo-run>▶ Run it live</button>
+    <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="interaction-only"></div>
+  </form>
+  <p class="muted small" data-demo-status>3 runs per hour per visitor · the same link within 24 h answers instantly.</p>
+  <div class="table-wrap" data-demo-table hidden><table><thead></thead><tbody></tbody></table></div>
+  <p class="cta-row" data-demo-after hidden style="margin-bottom:0"><a class="btn btn-primary" href={actor.goUrl} rel="nofollow">Get every result on Apify →</a></p>
+  </div>
+</section>
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script>
+  const box = document.querySelector('[data-demo-actor]');
+  if (box) {
+    const form = box.querySelector('[data-demo-form]');
+    const status = box.querySelector('[data-demo-status]');
+    const wrap = box.querySelector('[data-demo-table]');
+    const after = box.querySelector('[data-demo-after]');
+    const run = box.querySelector('[data-demo-run]');
+    const livePart = box.querySelector('[data-live-part]');
+    const soonBox = box.querySelector('[data-soon]');
+    box.querySelectorAll('.pick').forEach((b) => b.addEventListener('click', () => {
+      box.querySelectorAll('.pick').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+      const live = b.dataset.pick === 'live';
+      livePart.hidden = !live; soonBox.hidden = live;
+      if (!live) {
+        soonBox.querySelector('[data-soon-name]').textContent = b.dataset.name;
+        soonBox.querySelector('[data-soon-link]').href = b.dataset.url;
+        const img = soonBox.querySelector('[data-soon-icon]');
+        img.hidden = !b.dataset.icon; if (b.dataset.icon) img.src = b.dataset.icon;
+      }
+    }));
+    const COLS = ['price', 'type', 'size_m2', 'rooms', 'bathrooms', 'price_per_m2', 'municipality', 'district', 'neighborhood'];
+    const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const token = form.querySelector('[name="cf-turnstile-response"]')?.value || '';
+      if (!token) { status.textContent = 'One moment: the human check is still loading.'; return; }
+      run.disabled = true; wrap.hidden = true; after.hidden = true;
+      const t0 = Date.now();
+      const tick = setInterval(() => { status.textContent = `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
+      try {
+        const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: token }) });
+        const data = await r.json();
+        if (!r.ok) { status.textContent = data.error || 'No results for this link.'; return; }
+        const cols = COLS.filter((c) => data.rows.some((row) => row[c] !== undefined));
+        wrap.querySelector('thead').innerHTML = '<tr>' + cols.map((c) => `<th>${c.replace(/_/g, ' ')}</th>`).join('') + '</tr>';
+        wrap.querySelector('tbody').innerHTML = data.rows.map((row) => '<tr>' + cols.map((c) => `<td>${esc(row[c] ?? '')}</td>`).join('') + '</tr>').join('');
+        wrap.hidden = false; after.hidden = false;
+        status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${data.total.toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
+      } catch { status.textContent = 'The demo did not answer. Try again in a minute.'; }
+      finally { clearInterval(tick); run.disabled = false; window.turnstile?.reset(); }
+    });
+  }
+</script>

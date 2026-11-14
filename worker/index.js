@@ -6,6 +6,8 @@
 // Counting: one Analytics Engine data point per event (event, slug, file, our own page path). No cookies, no IP,
 // no visitor identifiers. Nothing here calls Apify or any scraper.
 import storeLinks from './store-links.json';
+import { handleDemo, DemoGuard } from './demo.js';
+export { DemoGuard };
 
 function record(env, event, slug, file, request) {
   try {
@@ -22,8 +24,9 @@ async function notFound(request, env) {
 }
 
 export default {
-  async fetch(request, env) {
+  async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    if (url.pathname === '/api/demo') return handleDemo(request, env, ctx, record);
     const go = url.pathname.match(/^\/go\/([a-z0-9-]+)\/?$/);
     if (go && storeLinks[go[1]]) {
       record(env, 'store_click', go[1], '', request);

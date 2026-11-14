@@ -30,7 +30,8 @@
       "likes",
       "transcript_words",
       "duration"
-    ]
+    ],
+    "tab": "YouTube transcripts"
   },
   "lastKeywordChange": "2026-11-13"
 }

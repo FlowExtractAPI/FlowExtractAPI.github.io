@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import Explorer from '../../components/Explorer.astro';
+import LiveDemo from '../../components/LiveDemo.astro';
 import ActorIcon from '../../components/ActorIcon.astro';
 import {
   actors, site, categoryHub, sourceHub, priceRows, priceSummary, priceShort, outputFields, inputFields, inputTitle,
@@ -29,6 +30,7 @@ const rel = related(a, 6);
 const firstInput = inp.find((f) => f.required) || inp[0];
 const hasExplorer = !!a.sample;
 const toc = [
+  ...(a.liveDemo ? [['try', 'Try it live']] : []),
   ...(hasExplorer ? [['data', 'Real results']] : []),
   ['how', 'How it works'], ['output', 'Data you get'], ['input', 'What you give it'], ['pricing', 'Pricing'],
   ...(a.officialApi ? [['official-api', 'Official API']] : []),
@@ -65,6 +67,7 @@ const realCost = run && typeof run.costUsd === 'number' ? `$${run.costUsd < 0.01
   <div class="wrap actor-layout">
     <nav class="toc" aria-label="On this page"><ol>{toc.map(([id, t]) => <li><a href={`#${id}`}>{t}</a></li>)}</ol></nav>
     <div class="content">
+      {a.liveDemo && <section style="padding-top:36px"><LiveDemo actor={a} /></section>}
       {hasExplorer && <section style="padding-top:36px"><Explorer actor={a} /></section>}
 
       <section id="how" aria-labelledby="how-h">

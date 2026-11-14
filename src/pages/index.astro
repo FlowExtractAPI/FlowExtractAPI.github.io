@@ -1,11 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import Demo from '../components/Demo.astro';
+import LiveDemo from '../components/LiveDemo.astro';
 import ActorCard from '../components/ActorCard.astro';
 import CatIcon from '../components/CatIcon.astro';
 import { page, actors, site, stats, categoryIds, categoryHub, actorsIn, mostUsed, demoPool, sourceHub, BASE } from '../lib/site.js';
 
 const c = page('home');
+const liveActor = actors.find((a) => a.slug === 'idealista-scraper-api');
+const soonActors = ['zillow-scraper', 'facebook-comment-scraper', 'instagram-comment-scraper', 'google-flights-scraper', 'etsy-product-reviews-scraper', 'youtube-transcript-metadata-extractor'].map((x) => actors.find((a) => a.slug === x)).filter(Boolean);
 const [h1a, h1b] = c.h1Highlight && c.h1.includes(c.h1Highlight) ? [c.h1.slice(0, c.h1.indexOf(c.h1Highlight)), c.h1Highlight] : [c.h1, ''];
 const popular = mostUsed(8);
 const etsy = sourceHub('etsy');
@@ -39,6 +42,8 @@ const ld = [
       <Demo pool={demoPool()} />
     </div>
   </div>
+
+  <div class="wrap" style="padding-top:8px"><LiveDemo actor={liveActor} soon={soonActors} title="Try it live: paste a link, get real data" /></div>
 
   <section aria-labelledby="cats-h">
     <div class="wrap">

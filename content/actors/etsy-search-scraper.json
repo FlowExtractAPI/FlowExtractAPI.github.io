@@ -44,7 +44,8 @@
       "currency",
       "shop_rating",
       "bestseller"
-    ]
+    ],
+    "tab": "Etsy search"
   },
   "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"

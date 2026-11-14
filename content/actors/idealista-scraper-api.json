@@ -44,9 +44,16 @@
       "rooms",
       "price_per_m2",
       "municipality"
-    ]
+    ],
+    "tab": "Idealista"
   },
   "officialApi": "Idealista runs its own API for approved partners: you apply for access and work within the limits you are given. This scraper needs only a public Idealista link (search, drawn map area, multi-zone or a single property) and covers Spain, Portugal, Italy and France.",
   "updated": "2026-11-14",
+  "liveDemo": {
+    "actor": "idealista",
+    "label": "Idealista link",
+    "sample": "https://www.idealista.com/en/venta-viviendas/balears-illes/?ordenado-por=precios-asc",
+    "hint": "Paste any Idealista search, map-area or property link (Spain, Portugal, Italy or France) and press Run: the demo fetches the first page live and shows up to 10 listings."
+  },
   "lastKeywordChange": "2026-11-13"
 }

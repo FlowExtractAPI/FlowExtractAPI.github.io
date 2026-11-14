@@ -17,7 +17,7 @@ const fmt = (v) => (typeof v === 'string' ? JSON.stringify(v.length > 60 ? v.sli
     const row = rowFor(a);
     const fields = a.demo.fields.filter((f) => row[f] !== undefined && row[f] !== null);
     return (
-      <div class="demo-item" id={`demo-${a.pageSlug}`} data-label={a.source} data-icon={a.facts.icon || ''} hidden={i > 0} role="tabpanel">
+      <div class="demo-item" id={`demo-${a.pageSlug}`} data-label={a.demo.tab || a.source} data-icon={a.facts.icon || ''} hidden={i > 0} role="tabpanel">
         <div class="win">
           <div class="win-bar"><i></i><i></i><i></i><span class="url">{a.demo.url}</span></div>
           <div class="win-body">

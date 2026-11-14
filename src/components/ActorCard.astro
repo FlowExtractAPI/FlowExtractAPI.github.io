@@ -8,7 +8,7 @@ const text = search ? `${a.label} ${a.source} ${a.primaryKeyword} ${a.secondaryK
   <a class="card" href={a.url}>
     <span class="top">
       <ActorIcon a={a} />
-      <span><strong>{a.label}</strong><span class="src">{a.source}{a.sample ? <span class="badge">real data</span> : null}</span></span>
+      <span><strong>{a.label}</strong><span class="src">{a.source}{a.liveDemo ? <span class="badge badge-live">▶ live demo</span> : a.sample ? <span class="badge">real data</span> : null}</span></span>
     </span>
     <span class="blurb">{blurb(a)}</span>
     <span class="foot"><span class="price">{priceShort(a)}</span><span class="go">Open →</span></span>

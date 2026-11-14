@@ -37,7 +37,8 @@
       "duration",
       "price",
       "currency"
-    ]
+    ],
+    "tab": "Google Flights"
   },
   "lastKeywordChange": "2026-11-13"
 }

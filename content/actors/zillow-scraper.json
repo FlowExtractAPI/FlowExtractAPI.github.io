@@ -35,7 +35,8 @@
       "baths",
       "living_area_sqft",
       "status"
-    ]
+    ],
+    "tab": "Zillow"
   },
   "lastKeywordChange": "2026-11-13"
 }

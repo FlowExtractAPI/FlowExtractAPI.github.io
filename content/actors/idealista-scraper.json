@@ -25,5 +25,12 @@
       "a": "Idealista Scraper API charges per property returned, also covers France, and accepts drawn-map and multi-zone links. This one is listed as free on the Apify Store and covers Spain, Portugal and Italy."
     }
   ],
+  "liveDemo": {
+    "actor": "idealista",
+    "label": "Idealista link",
+    "sample": "https://www.idealista.com/en/venta-viviendas/balears-illes/?ordenado-por=precios-asc",
+    "hint": "Paste any Idealista search, map-area or property link (Spain, Portugal or Italy) and press Run: the demo fetches the first page live and shows up to 10 listings."
+  },
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

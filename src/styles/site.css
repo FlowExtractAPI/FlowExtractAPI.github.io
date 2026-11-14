@@ -230,3 +230,16 @@ details.more summary { cursor: pointer; color: var(--teal-d); font-weight: 600; 
 .footer-note { margin-top: 28px; padding-top: 16px; border-top: 1px solid rgba(255, 255, 255, .12); font-size: .82rem; opacity: .75; }
 
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } .trail { display: none; } }
+
+/* "Try it live" box (home + Idealista pages) */
+.card .badge-live { background: var(--slate); color: #fff; }
+.live-demo { border: 2px solid var(--teal); }
+.demo-picker { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0 4px; }
+.pick { display: inline-flex; align-items: center; gap: 8px; padding: 5px 13px 5px 5px; border-radius: 999px; border: 1px solid var(--line); background: #fff; font: 600 .88rem var(--body); color: var(--slate); cursor: pointer; }
+.pick img { width: 26px; height: 26px; border-radius: 7px; }
+.pick[aria-pressed="true"] { background: var(--slate); color: #fff; border-color: var(--slate); }
+.pick .soon { font: 500 .66rem var(--mono); background: var(--mint); color: var(--teal-d); padding: 1px 6px; border-radius: 999px; }
+.soonbox { text-align: center; padding: 28px 12px; }
+.soonbox[hidden], [data-live-part][hidden] { display: none; }
+.soonbox img { border-radius: 16px; border: 1px solid var(--line); }
+.cta-row[hidden] { display: none; }

@@ -36,7 +36,8 @@
       "avg_gemini",
       "avg_claude",
       "trend_claude"
-    ]
+    ],
+    "tab": "Google Trends"
   },
   "lastKeywordChange": "2026-11-13"
 }
