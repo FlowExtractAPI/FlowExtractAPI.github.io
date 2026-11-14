@@ -1,7 +1,7 @@
 ---
 // "Try it live": the visitor pastes one link and gets the first results from a real run (POST /api/demo on our own
-// Worker: Turnstile + limits + cache; the Worker holds the run-only token). Shown only when the content file has
-// "liveDemo". The static real-results table stays on the page for search engines.
+// Worker: Turnstile + limits + cache; the Worker holds the run-only token). Results show as Cards (photo, price,
+// title, text, facts: chosen per actor from its dataset schema), Table or JSON, with JSON/CSV downloads.
 import { site } from '../lib/site.js';
 // soon: actors shown as "coming soon" chips (home page). Empty on actor pages.
 const { actor, soon = [], title = 'Try it live' } = Astro.props;
@@ -25,28 +25,48 @@ const d = actor.liveDemo;
     <a class="btn btn-ghost" data-soon-link href="#">Open its page →</a>
   </div>
   <div data-live-part>
-  <p class="muted small">{d.hint}</p>
-  <form class="explorer-tools" data-demo-form>
-    <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
-    <button class="btn btn-primary" type="submit" data-demo-run>▶ Run it live</button>
-    <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="interaction-only"></div>
-  </form>
-  <p class="muted small" data-demo-status>3 runs per hour per visitor · the same link within 24 h answers instantly.</p>
-  <div class="table-wrap" data-demo-table hidden><table><thead></thead><tbody></tbody></table></div>
-  <p class="cta-row" data-demo-after hidden style="margin-bottom:0"><a class="btn btn-primary" href={actor.goUrl} rel="nofollow">Get every result on Apify →</a></p>
+    <p class="muted small">{d.hint}</p>
+    <form class="explorer-tools" data-demo-form>
+      <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
+      <button class="btn btn-primary" type="submit" data-demo-run>▶ Run it live</button>
+      <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="interaction-only" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
+    </form>
+    <p class="muted small" data-demo-status>3 runs per hour per visitor · the same link within 24 h answers instantly.</p>
+    <div class="demo-results" data-demo-results hidden>
+      <div class="demo-bar">
+        <div class="demo-views" role="tablist" aria-label="View">
+          <button type="button" role="tab" aria-selected="true" data-view="cards">Cards</button>
+          <button type="button" role="tab" aria-selected="false" data-view="table">Table</button>
+          <button type="button" role="tab" aria-selected="false" data-view="json">JSON</button>
+        </div>
+        <div class="demo-dl"><button type="button" class="btn btn-ghost btn-sm" data-dl="json">⬇ JSON</button><button type="button" class="btn btn-ghost btn-sm" data-dl="csv">⬇ CSV</button></div>
+      </div>
+      <div class="demo-cards" data-pane="cards"></div>
+      <div class="table-wrap" data-pane="table" hidden><table><thead></thead><tbody></tbody></table></div>
+      <pre class="json demo-json" data-pane="json" hidden></pre>
+      <p class="cta-row" style="margin-bottom:0"><a class="btn btn-primary" href={actor.goUrl} rel="nofollow">Get every result on Apify →</a></p>
+    </div>
   </div>
 </section>
+<script is:inline>
+  // Turnstile callbacks (global names required by the widget attributes)
+  window.feDemo = { token: '', error: '' };
+  window.feDemoToken = (t) => { window.feDemo.token = t; window.feDemo.error = ''; };
+  window.feDemoError = (code) => { window.feDemo.error = String(code || 'unknown'); return true; };
+  window.feDemoExpired = () => { window.feDemo.token = ''; };
+</script>
 <script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
   const box = document.querySelector('[data-demo-actor]');
   if (box) {
-    const form = box.querySelector('[data-demo-form]');
-    const status = box.querySelector('[data-demo-status]');
-    const wrap = box.querySelector('[data-demo-table]');
-    const after = box.querySelector('[data-demo-after]');
-    const run = box.querySelector('[data-demo-run]');
-    const livePart = box.querySelector('[data-live-part]');
-    const soonBox = box.querySelector('[data-soon]');
+    const $ = (s) => box.querySelector(s);
+    const form = $('[data-demo-form]'), status = $('[data-demo-status]'), run = $('[data-demo-run]');
+    const results = $('[data-demo-results]'), cardsPane = $('[data-pane="cards"]'), tablePane = $('[data-pane="table"]'), jsonPane = $('[data-pane="json"]');
+    let last = null;
+    const esc = (v) => String(v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    // "coming soon" chips (home page)
+    const livePart = $('[data-live-part]'), soonBox = $('[data-soon]');
     box.querySelectorAll('.pick').forEach((b) => b.addEventListener('click', () => {
       box.querySelectorAll('.pick').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       const live = b.dataset.pick === 'live';
@@ -58,26 +78,65 @@ const d = actor.liveDemo;
         img.hidden = !b.dataset.icon; if (b.dataset.icon) img.src = b.dataset.icon;
       }
     }));
-    const COLS = ['price', 'type', 'size_m2', 'rooms', 'bathrooms', 'price_per_m2', 'municipality', 'district', 'neighborhood'];
-    const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+    // view tabs
+    box.querySelectorAll('[data-view]').forEach((t) => t.addEventListener('click', () => {
+      box.querySelectorAll('[data-view]').forEach((x) => x.setAttribute('aria-selected', String(x === t)));
+      for (const p of ['cards', 'table', 'json']) $(`[data-pane="${p}"]`).hidden = p !== t.dataset.view;
+    }));
+
+    // downloads (the rows already on screen; nothing is fetched again)
+    const save = (name, type, text) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000); };
+    const toCsv = (rows) => { const cols = [...new Set(rows.flatMap((r) => Object.keys(r)))]; const q = (v) => { const s = String(v ?? ''); return /[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; }; return '﻿' + [cols.join(','), ...rows.map((r) => cols.map((c) => q(r[c])).join(','))].join('\r\n'); };
+    box.querySelectorAll('[data-dl]').forEach((b) => b.addEventListener('click', () => {
+      if (!last) return;
+      const base = `${box.dataset.demoActor}-live-demo`;
+      if (b.dataset.dl === 'json') save(`${base}.json`, 'application/json', JSON.stringify(last.rows, null, 2));
+      else save(`${base}.csv`, 'text/csv;charset=utf-8', toCsv(last.rows));
+    }));
+
+    const money = (n, cur) => { const x = Number(n); return Number.isFinite(x) ? new Intl.NumberFormat('en', { style: 'currency', currency: cur || 'EUR', maximumFractionDigits: 0 }).format(x) : esc(n); };
+    function render(data) {
+      const d = data.display || {};
+      cardsPane.innerHTML = data.rows.map((r) => `
+        <article class="demo-card">
+          ${d.image && r[d.image] ? `<img src="${esc(r[d.image])}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+          <div class="demo-card-body">
+            ${d.price && r[d.price] !== undefined ? `<div class="demo-price">${money(r[d.price], d.currency)}</div>` : ''}
+            ${d.title && r[d.title] ? `<h3>${esc(r[d.title])}</h3>` : ''}
+            <div class="demo-facts">${(d.facts || []).filter(([k]) => r[k] !== undefined && r[k] !== '').map(([k, label]) => `<span>${esc(r[k])}${label ? ' ' + esc(label) : ''}</span>`).join('')}</div>
+            ${d.text && r[d.text] ? `<p>${esc(r[d.text])}</p>` : ''}
+            ${d.link && r[d.link] ? `<a href="${esc(r[d.link])}" rel="nofollow noopener" target="_blank">View the listing ↗</a>` : ''}
+          </div>
+        </article>`).join('');
+      const cols = [...new Set(data.rows.flatMap((r) => Object.keys(r)))].filter((c) => c !== d.text && c !== d.image);
+      tablePane.querySelector('thead').innerHTML = '<tr>' + cols.map((c) => `<th>${esc(c.replace(/_/g, ' '))}</th>`).join('') + '</tr>';
+      tablePane.querySelector('tbody').innerHTML = data.rows.map((r) => '<tr>' + cols.map((c) => `<td>${esc(r[c])}</td>`).join('') + '</tr>').join('');
+      jsonPane.textContent = JSON.stringify(data.rows, null, 2);
+      results.hidden = false;
+    }
+
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const token = form.querySelector('[name="cf-turnstile-response"]')?.value || '';
-      if (!token) { status.textContent = 'One moment: the human check is still loading.'; return; }
-      run.disabled = true; wrap.hidden = true; after.hidden = true;
+      run.disabled = true;
       const t0 = Date.now();
       const tick = setInterval(() => { status.textContent = `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
+      // wait up to 6 s for the human check; if it fails or never arrives, send without a token (the server decides)
+      for (let i = 0; i < 12 && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
       try {
-        const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: token }) });
+        const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: window.feDemo.token || '' }) });
         const data = await r.json();
-        if (!r.ok) { status.textContent = data.error || 'No results for this link.'; return; }
-        const cols = COLS.filter((c) => data.rows.some((row) => row[c] !== undefined));
-        wrap.querySelector('thead').innerHTML = '<tr>' + cols.map((c) => `<th>${c.replace(/_/g, ' ')}</th>`).join('') + '</tr>';
-        wrap.querySelector('tbody').innerHTML = data.rows.map((row) => '<tr>' + cols.map((c) => `<td>${esc(row[c] ?? '')}</td>`).join('') + '</tr>').join('');
-        wrap.hidden = false; after.hidden = false;
-        status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${data.total.toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
+        if (!r.ok) {
+          status.textContent = (data.error || 'No results for this link.') + (window.feDemo.error ? ` (human check error ${window.feDemo.error})` : '');
+          return;
+        }
+        last = data; render(data);
+        status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${Number(data.total).toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
       } catch { status.textContent = 'The demo did not answer. Try again in a minute.'; }
-      finally { clearInterval(tick); run.disabled = false; window.turnstile?.reset(); }
+      finally {
+        clearInterval(tick); run.disabled = false;
+        window.feDemo.token = ''; try { window.turnstile?.reset(); } catch {}
+      }
     });
   }
 </script>
