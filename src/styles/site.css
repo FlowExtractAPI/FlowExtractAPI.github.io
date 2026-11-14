@@ -280,3 +280,14 @@ details.more summary { cursor: pointer; color: var(--teal-d); font-weight: 600; 
 .demo-quota b { color: #fff; font-size: 1rem; }
 .demo-status { font-weight: 600; color: var(--slate); min-height: 1.4em; margin: 6px 0; }
 .cf-turnstile { width: 100%; max-width: 320px; }
+/* v3: accent per actor, arrow aimed at Run, human check on its own row */
+.live-demo { border-color: var(--demo-accent, var(--teal)); box-shadow: 0 0 0 6px color-mix(in srgb, var(--demo-accent, var(--teal)) 22%, transparent), 0 30px 60px -30px rgba(45,74,74,.45); }
+.demo-note { margin: 4px 66px -14px 0 !important; color: var(--slate); }
+.demo-note span { background: linear-gradient(transparent 58%, color-mix(in srgb, var(--demo-accent, var(--teal)) 70%, transparent) 58%); padding: 0 4px; }
+.demo-note svg { color: var(--demo-accent, var(--teal)); filter: drop-shadow(0 1px 0 rgba(27,46,46,.55)); }
+.demo-note svg path { stroke-width: 4; }
+.demo-form { flex-wrap: nowrap; }
+@media (max-width: 720px) { .demo-form { flex-wrap: wrap; } .demo-note { margin: 4px 0 -6px !important; } }
+.live-demo .cf-turnstile { margin: 2px 0 10px; }
+.demo-more { font-size: .92rem; margin: 4px 0 0; color: var(--slate); }
+.demo-more a { font-weight: 700; }

@@ -15,7 +15,7 @@ const LIVE = {
     display: { image: 'image', price: 'price', currency: 'EUR', title: 'address', text: 'description', link: 'url', facts: [['rooms', 'rooms'], ['bathrooms', 'baths'], ['size_m2', 'm²'], ['municipality', '']] },
   },
 };
-const LIMITS = { perIpHour: 8, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const LIMITS = { perIpHour: 1, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 
@@ -40,7 +40,7 @@ export class DemoGuard extends DurableObject {
     list.push(now); g.n++;
     await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
     await this.ctx.storage.setAlarm(now + 86400000); // tidy up old visitor keys
-    return Response.json({ ok: true });
+    return Response.json({ ok: true, remaining: LIMITS.perIpDay - list.length });
   }
   async alarm() {
     const all = await this.ctx.storage.list({ prefix: 'ip:' });
@@ -83,13 +83,13 @@ export async function handleDemo(request, env, ctx, record) {
 
   const visitor = await sha(ip + '|' + (env.DEMO_IP_SALT || 'flowextract'));
   const ok = await guard(env, { ip: visitor, op: 'take' });
-  if (!ok.ok) { record(env, 'demo_refused', String(body.actor), ok.kind || '', request); return json(429, { error: ok.msg, signup: !!ok.signup }); }
+  if (!ok.ok) { ok.remaining = 0; record(env, 'demo_refused', String(body.actor), ok.kind || '', request); return json(429, { error: ok.msg, signup: !!ok.signup, remaining: 0, limits: { day: LIMITS.perIpDay, hour: LIMITS.perIpHour } }); }
 
   const t0 = Date.now();
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), LIMITS.timeoutMs);
   let rows = [], total = null, error = null;
-  try {
+  for (let attempt = 1; attempt <= 2 && !rows.length && !(error && attempt > 1); attempt++) try {
     const r = await fetch(cfg.upstream, { method: 'POST', signal: ctrl.signal, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ url: target }) });
     const text = await r.text();
     if (!r.ok || !/"type":"batch"/.test(text)) console.log(`demo upstream ${r.status}: ${text.slice(0, 300)}`);
@@ -101,9 +101,11 @@ export async function handleDemo(request, env, ctx, record) {
       else if ((ev.type === 'failed' || ev.type === 'error') && !error) error = 'Idealista did not return results for this link.';
       if (ev.type === 'progress' && ev.total) total = ev.total;
     }
+    if (!rows.length && !error && attempt === 1) continue; // empty stream: try once more
   } catch (e) {
     error = e.name === 'AbortError' ? 'The demo took too long (50 s limit). Try a smaller search.' : 'The demo backend is not reachable right now.';
-  } finally { clearTimeout(timer); }
+  }
+  clearTimeout(timer);
   const trimmed = rows.slice(0, LIMITS.maxRows).map((p) => Object.fromEntries(Object.entries(cfg.fields).filter(([k]) => p[k] !== undefined && p[k] !== null).map(([k, v]) => [v, p[k]])));
   if (!trimmed.length) {
     ctx.waitUntil(guard(env, { ip: visitor, op: 'refund' }));
@@ -111,7 +113,8 @@ export async function handleDemo(request, env, ctx, record) {
     return json(502, { error: error || 'No results for this link.' });
   }
   const out = { actor: body.actor, url: target, rows: trimmed, count: trimmed.length, total, ms: Date.now() - t0, store: cfg.store, display: cfg.display };
+  const extra = { remaining: ok.remaining, limits: { day: LIMITS.perIpDay, hour: LIMITS.perIpHour } };
   ctx.waitUntil(cache.put(cacheKey, new Response(JSON.stringify(out), { headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${LIMITS.cacheSecs}` } })));
   record(env, 'demo_run', body.actor, 'live', request);
-  return json(200, { ...out, cached: false });
+  return json(200, { ...out, ...extra, cached: false });
 }

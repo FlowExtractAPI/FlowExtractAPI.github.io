@@ -9,17 +9,19 @@ const { actor, soon = [], title = 'Try it live' } = Astro.props;
 const d = actor.liveDemo;
 const evs = (actor.facts.pricing.events || []).filter((e) => !e.oneTime);
 const main = evs.find((e) => e.primary) || evs[0];
+const ACCENT = { 'idealista-scraper-api': '#d3ef24', 'idealista-scraper': '#d3ef24', 'zillow-scraper': '#006aff', 'facebook-comment-scraper': '#1877f2', 'instagram-comment-scraper': '#e1306c', 'google-flights-scraper': '#4285f4', 'etsy-product-reviews-scraper': '#f1641e', 'youtube-transcript-metadata-extractor': '#ff0000' };
+const accent = d.accent || ACCENT[actor.slug] || '#5bb5b5';
 const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFreePlanUsd) : null; // Apify free plan: $5 credit per month
 ---
-<section class="explorer live-demo" id="try" aria-labelledby="try-h" data-demo-actor={d.actor}>
+<section class="explorer live-demo" id="try" aria-labelledby="try-h" data-demo-actor={d.actor} data-accent={accent} style={`--demo-accent:${accent}`}>
   <div class="explorer-head">
     <h2 id="try-h">{title}</h2>
     <span class="live"><i></i>runs for real · first page only, up to 10 results</span>
   </div>
   {soon.length > 0 && (
     <div class="demo-picker" role="group" aria-label="Scraper">
-      <button type="button" class="pick" aria-pressed="true" data-pick="live">{actor.facts.icon && <img src={actor.facts.icon} alt="" width="26" height="26" />}{actor.source}</button>
-      {soon.map((s) => <button type="button" class="pick" aria-pressed="false" data-pick="soon" data-name={s.label} data-url={s.url} data-icon={s.facts.icon || ''}>{s.facts.icon && <img src={s.facts.icon} alt="" width="26" height="26" loading="lazy" />}{s.source}<span class="soon">soon</span></button>)}
+      <button type="button" class="pick" aria-pressed="true" data-pick="live" data-accent={accent}>{actor.facts.icon && <img src={actor.facts.icon} alt="" width="26" height="26" />}{actor.source}</button>
+      {soon.map((s) => <button type="button" class="pick" aria-pressed="false" data-pick="soon" data-accent={ACCENT[s.slug] || "#5bb5b5"} data-name={s.label} data-url={s.url} data-icon={s.facts.icon || ''}>{s.facts.icon && <img src={s.facts.icon} alt="" width="26" height="26" loading="lazy" />}{s.source}<span class="soon">soon</span></button>)}
     </div>
   )}
   <div class="soonbox" data-soon hidden>
@@ -34,9 +36,10 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
     <form class="explorer-tools demo-form" data-demo-form>
       <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
       <button class="btn btn-primary demo-run" type="submit" data-demo-run>▶ Run it live</button>
-      <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="always" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
     </form>
-    <p class="demo-quota"><b>🎁 20 free live runs per day</b><span>same link again = instant answer</span></p>
+    <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="always" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
+    <p class="demo-quota"><b data-quota>🎁 20 free live runs per day</b><span>same link again = instant answer</span></p>
+    <p class="demo-more">Need more? <a href={actor.goUrl} rel="nofollow" target="_blank">Run it on your own free Apify account →</a> $5 of credit every month{freeResults ? <>, about {freeResults.toLocaleString('en')} results</> : null}, no daily limit.</p>
     <p class="demo-status" data-demo-status aria-live="polite"></p>
     <div class="demo-results" data-demo-results hidden>
       <div class="demo-bar">
@@ -83,6 +86,7 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
     box.querySelectorAll('.pick').forEach((b) => b.addEventListener('click', () => {
       box.querySelectorAll('.pick').forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
       const live = b.dataset.pick === 'live';
+      if (b.dataset.accent) box.style.setProperty('--demo-accent', b.dataset.accent);
       livePart.hidden = !live; soonBox.hidden = live;
       if (!live) {
         soonBox.querySelector('[data-soon-name]').textContent = b.dataset.name;
@@ -135,11 +139,14 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
       const t0 = Date.now();
       const tick = setInterval(() => { status.textContent = `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
       // wait up to 6 s for the human check; if it fails or never arrives, send without a token (the server decides)
+      window.feDemo.error = '';
       if (!window.feDemo.token) status.textContent = "Checking you are human…";
       for (let i = 0; i < 50 && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
       try {
         const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: window.feDemo.token || '' }) });
         const data = await r.json();
+        const quota = $('[data-quota]');
+        if (typeof data.remaining === 'number' && data.limits) quota.textContent = data.remaining > 0 ? `🎁 ${data.remaining} of ${data.limits.day} free runs left today` : `🎁 No free runs left (${data.limits.day} per day, ${data.limits.hour} per hour)`;
         const signup = $('[data-signup]'), sTitle = $('[data-signup-title]');
         if (!r.ok) {
           if (data.signup) { sTitle.textContent = 'Keep going on your own account'; signup.hidden = false; }
