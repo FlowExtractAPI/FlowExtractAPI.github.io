@@ -73,6 +73,7 @@ export async function handleDemo(request, env, ctx, record) {
   const ts = new FormData();
   ts.append('secret', env.TURNSTILE_SECRET); ts.append('response', String(body.turnstile || '')); ts.append('remoteip', ip);
   const verdict = optional ? { success: true } : await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: ts }).then((r) => r.json()).catch(() => ({ success: false }));
+  if (!verdict.success) console.log(`demo human check failed: token length ${String(body.turnstile || '').length}, codes ${JSON.stringify(verdict['error-codes'] || [])}, hostname ${verdict.hostname || '-'}`);
   if (!verdict.success) { record(env, 'demo_human_failed', String(body.actor), String((verdict['error-codes'] || [])[0] || ''), request); return json(403, { error: 'The human check did not pass. Reload the page and try again.' }); }
 
   const cacheKey = new Request(`https://flowextractapi.com/__demo-cache/v2/${body.actor}/${await sha(target.split('#')[0])}`);

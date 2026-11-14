@@ -2,6 +2,7 @@
 // "Try it live": the visitor pastes one link and gets the first results from a real run (POST /api/demo on our own
 // Worker: Turnstile + limits + cache; the Worker holds the run-only token). Results show as Cards (photo, price,
 // title, text, facts: chosen per actor from its dataset schema), Table or JSON, with JSON/CSV downloads.
+import '@fontsource/caveat/600.css';
 import { site } from '../lib/site.js';
 // soon: actors shown as "coming soon" chips (home page). Empty on actor pages.
 const { actor, soon = [], title = 'Try it live' } = Astro.props;
@@ -29,12 +30,14 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
   </div>
   <div data-live-part>
     <p class="muted small">{d.hint}</p>
-    <form class="explorer-tools" data-demo-form>
+    <div class="demo-note" aria-hidden="true"><span>Paste any Idealista link and hit Run:<br>real listings in seconds</span><svg viewBox="0 0 120 70" width="110" height="64"><path d="M6 10 C 40 4, 86 14, 104 52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M92 46 L105 56 L108 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <form class="explorer-tools demo-form" data-demo-form>
       <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
-      <button class="btn btn-primary" type="submit" data-demo-run>▶ Run it live</button>
+      <button class="btn btn-primary demo-run" type="submit" data-demo-run>▶ Run it live</button>
       <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="interaction-only" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
     </form>
-    <p class="muted small" data-demo-status>10 free live runs per day · the same link within 24 h answers instantly.</p>
+    <p class="demo-quota"><b>🎁 10 free live runs per day</b><span>same link again = instant answer</span></p>
+    <p class="demo-status" data-demo-status aria-live="polite"></p>
     <div class="demo-results" data-demo-results hidden>
       <div class="demo-bar">
         <div class="demo-views" role="tablist" aria-label="View">
