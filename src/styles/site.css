@@ -279,3 +279,4 @@ details.more summary { cursor: pointer; color: var(--teal-d); font-weight: 600; 
 .demo-quota { display: inline-flex; flex-wrap: wrap; gap: 6px 12px; align-items: center; margin: 2px 0 6px; padding: 8px 14px; border-radius: 999px; background: var(--slate); color: #e9f4f2; font-size: .95rem; }
 .demo-quota b { color: #fff; font-size: 1rem; }
 .demo-status { font-weight: 600; color: var(--slate); min-height: 1.4em; margin: 6px 0; }
+.cf-turnstile { width: 100%; max-width: 320px; }

@@ -34,7 +34,7 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
     <form class="explorer-tools demo-form" data-demo-form>
       <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
       <button class="btn btn-primary demo-run" type="submit" data-demo-run>▶ Run it live</button>
-      <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="interaction-only" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
+      <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="always" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
     </form>
     <p class="demo-quota"><b>🎁 20 free live runs per day</b><span>same link again = instant answer</span></p>
     <p class="demo-status" data-demo-status aria-live="polite"></p>
@@ -135,7 +135,8 @@ const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFre
       const t0 = Date.now();
       const tick = setInterval(() => { status.textContent = `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
       // wait up to 6 s for the human check; if it fails or never arrives, send without a token (the server decides)
-      for (let i = 0; i < 12 && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
+      if (!window.feDemo.token) status.textContent = "Checking you are human…";
+      for (let i = 0; i < 50 && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
       try {
         const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: window.feDemo.token || '' }) });
         const data = await r.json();
