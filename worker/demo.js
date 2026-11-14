@@ -15,7 +15,7 @@ const LIVE = {
     display: { image: 'image', price: 'price', currency: 'EUR', title: 'address', text: 'description', link: 'url', facts: [['rooms', 'rooms'], ['bathrooms', 'baths'], ['size_m2', 'm²'], ['municipality', '']] },
   },
 };
-const LIMITS = { perIpHour: 5, perIpDay: 10, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const LIMITS = { perIpHour: 8, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 
