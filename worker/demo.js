@@ -15,7 +15,7 @@ const LIVE = {
     display: { image: 'image', price: 'price', currency: 'EUR', title: 'address', text: 'description', link: 'url', facts: [['rooms', 'rooms'], ['bathrooms', 'baths'], ['size_m2', 'm²'], ['municipality', '']] },
   },
 };
-const LIMITS = { perIpHour: 3, perIpDay: 5, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const LIMITS = { perIpHour: 5, perIpDay: 10, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 
@@ -34,9 +34,9 @@ export class DemoGuard extends DurableObject {
       await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
       return Response.json({ ok: true });
     }
-    if (g.n >= LIMITS.globalDay) return Response.json({ ok: false, msg: "The live demo has reached today's limit for everyone.", signup: true });
-    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used today's ${LIMITS.perIpDay} free live demos.`, signup: true });
-    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `That was ${LIMITS.perIpHour} live demos this hour.`, signup: true });
+    if (g.n >= LIMITS.globalDay) return Response.json({ ok: false, msg: "The live demo has reached today's limit for everyone.", signup: true, kind: 'global' });
+    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used today's ${LIMITS.perIpDay} free live demos.`, signup: true, kind: 'day' });
+    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `That was ${LIMITS.perIpHour} live demos this hour.`, signup: true, kind: 'hour' });
     list.push(now); g.n++;
     await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
     await this.ctx.storage.setAlarm(now + 86400000); // tidy up old visitor keys
@@ -73,7 +73,7 @@ export async function handleDemo(request, env, ctx, record) {
   const ts = new FormData();
   ts.append('secret', env.TURNSTILE_SECRET); ts.append('response', String(body.turnstile || '')); ts.append('remoteip', ip);
   const verdict = optional ? { success: true } : await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', { method: 'POST', body: ts }).then((r) => r.json()).catch(() => ({ success: false }));
-  if (!verdict.success) return json(403, { error: 'The human check did not pass. Reload the page and try again.' });
+  if (!verdict.success) { record(env, 'demo_human_failed', String(body.actor), String((verdict['error-codes'] || [])[0] || ''), request); return json(403, { error: 'The human check did not pass. Reload the page and try again.' }); }
 
   const cacheKey = new Request(`https://flowextractapi.com/__demo-cache/v2/${body.actor}/${await sha(target.split('#')[0])}`);
   const cache = caches.default;
@@ -82,7 +82,7 @@ export async function handleDemo(request, env, ctx, record) {
 
   const visitor = await sha(ip + '|' + (env.DEMO_IP_SALT || 'flowextract'));
   const ok = await guard(env, { ip: visitor, op: 'take' });
-  if (!ok.ok) return json(429, { error: ok.msg, signup: !!ok.signup });
+  if (!ok.ok) { record(env, 'demo_refused', String(body.actor), ok.kind || '', request); return json(429, { error: ok.msg, signup: !!ok.signup }); }
 
   const t0 = Date.now();
   const ctrl = new AbortController();
@@ -105,7 +105,8 @@ export async function handleDemo(request, env, ctx, record) {
   } finally { clearTimeout(timer); }
   const trimmed = rows.slice(0, LIMITS.maxRows).map((p) => Object.fromEntries(Object.entries(cfg.fields).filter(([k]) => p[k] !== undefined && p[k] !== null).map(([k, v]) => [v, p[k]])));
   if (!trimmed.length) {
-    ctx.waitUntil(guard(env, { ip: visitor, op: 'refund' })); // our failure: the visitor keeps the try
+    ctx.waitUntil(guard(env, { ip: visitor, op: 'refund' }));
+    record(env, 'demo_failed', String(body.actor), String(error || 'no rows').slice(0, 60), request); // our failure: the visitor keeps the try
     return json(502, { error: error || 'No results for this link.' });
   }
   const out = { actor: body.actor, url: target, rows: trimmed, count: trimmed.length, total, ms: Date.now() - t0, store: cfg.store, display: cfg.display };
