@@ -1,0 +1,40 @@
+{
+  "input": {
+    "videoUrls": [
+      {
+        "url": "https://www.tiktok.com/@chasseurdesons/video/7470583049239956758",
+        "method": "GET"
+      }
+    ],
+    "includeTranscript": true,
+    "transcriptFormats": [
+      "text"
+    ],
+    "preferredLanguage": "auto",
+    "downloadVideo": false
+  },
+  "maxTotalChargeUsd": 0.05,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "video_id": "videoId",
+      "caption": "title",
+      "created": {
+        "path": "createTime",
+        "as": "date"
+      },
+      "creator": "authorUsername",
+      "creator_followers": "authorFollowers",
+      "views": "viewCount",
+      "likes": "likeCount",
+      "shares": "shareCount",
+      "comments": "commentCount",
+      "saves": "collectCount",
+      "duration_s": "duration",
+      "language": "textLanguage",
+      "transcript_available": "transcript.available",
+      "transcript_words": "transcript.wordCount",
+      "url": "webVideoUrl"
+    }
+  }
+}

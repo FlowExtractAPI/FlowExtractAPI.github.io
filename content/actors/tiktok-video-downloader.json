@@ -4,7 +4,7 @@
   "category": "video",
   "source": "TikTok",
   "sourceHub": "tiktok",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "tiktok transcript scraper",
   "secondaryKeywords": [
     "tiktok video downloader",
@@ -20,6 +20,17 @@
     "Track a creator's views and engagement per video",
     "Subtitle or translate short videos you have the rights to"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Does every TikTok video have a transcript?",
+      "a": "No. Transcripts come from the captions TikTok has for a video. A video without speech, like the sample above, has none, and the row says transcript_available: false."
+    },
+    {
+      "q": "Can I download TikTok videos without the watermark?",
+      "a": "Yes. Switch video download on and the actor saves the MP4 without the watermark."
+    }
+  ],
+  "officialApi": "TikTok's Research API is limited to approved academic researchers, and its Display API only covers accounts that log in to your own app. This actor works from public video links, with no TikTok account.",
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

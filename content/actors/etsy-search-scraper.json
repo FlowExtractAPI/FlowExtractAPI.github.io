@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "Etsy",
   "sourceHub": "etsy",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "etsy search scraper",
   "secondaryKeywords": [
     "scrape etsy search results",
@@ -23,7 +23,29 @@
     {
       "q": "Why do Etsy searches stop at about 1,000 results?",
       "a": "Etsy only pages through roughly the first 1,000 results of a search. The actor splits a big search into smaller ones (by price range and filters) so you can collect more than that."
+    },
+    {
+      "q": "Can I track where a listing ranks for a keyword?",
+      "a": "Yes. Results come back in the order Etsy shows them for your search and sort, so the row order is the position on that search. Schedule the same search to follow it over time."
+    },
+    {
+      "q": "Do I need an Etsy account or an API key?",
+      "a": "No. Type a keyword or paste a search link; the actor reads public search pages."
     }
   ],
+  "officialApi": "Etsy's Open API v3 is free, but you register an app, get an API key and work within its rate limits and endpoint shapes. These scrapers need no key: they return what the public Etsy pages show, ready to export. This one returns the listings exactly as an Etsy search shows them, with its filters and sort orders.",
+  "demo": {
+    "url": "etsy.com/search?q=leather+wallet",
+    "fields": [
+      "listing_id",
+      "title",
+      "shop",
+      "price",
+      "currency",
+      "shop_rating",
+      "bestseller"
+    ]
+  },
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

@@ -31,8 +31,12 @@ const hasExplorer = !!a.sample;
 const toc = [
   ...(hasExplorer ? [['data', 'Real results']] : []),
   ['how', 'How it works'], ['output', 'Data you get'], ['input', 'What you give it'], ['pricing', 'Pricing'],
+  ...(a.officialApi ? [['official-api', 'Official API']] : []),
   ['uses', 'Use cases'], ['faq', 'Questions'], ['related', 'Related scrapers'],
 ];
+// Real cost of the run behind the data table (Apify's own numbers from run.json), never estimated.
+const run = a.sample && a.sample.run;
+const realCost = run && typeof run.costUsd === 'number' ? `$${run.costUsd < 0.01 ? run.costUsd.toFixed(4) : run.costUsd.toFixed(3)}` : null;
 ---
 <Base title={a.title} description={a.metaDescription} path={a.url} breadcrumbs={crumbs} jsonLd={[softwareJsonLd(a), faqJsonLd(faq)]} hideCrumbs>
   <div class="actor-head">
@@ -122,8 +126,14 @@ const toc = [
             </table>
           </div>
         )}
+        {realCost && <p class="note" style="margin-top:14px"><b>Real cost check:</b> the test run behind the table above ({run.date}) returned {run.itemCount} results and cost our test account {realCost} in total, on Apify's free plan.</p>}
         <p class="muted small" style="margin-top:10px">Prices as listed on the Apify Store on {pricesFetchedAt}. The Store page always shows the current price.</p>
       </section>
+
+      {a.officialApi && <section id="official-api" aria-labelledby="official-api-h">
+        <h2 id="official-api-h">{a.source} official API vs this scraper</h2>
+        <p>{a.officialApi}</p>
+      </section>}
 
       <section id="uses" aria-labelledby="uses-h">
         <h2 id="uses-h">Use cases</h2>

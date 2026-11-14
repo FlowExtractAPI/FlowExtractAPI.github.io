@@ -1,0 +1,29 @@
+{
+  "input": {
+    "searchKeywords": [
+      "web scraping tutorial"
+    ],
+    "resultsType": "channels",
+    "channelsFrom": "both",
+    "includeChannelProfile": true,
+    "maxResults": 10,
+    "includeTranscript": false
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "channel": "channel.title",
+      "handle": "channel.handle",
+      "subscribers": "metrics.subscribers",
+      "videos": "metrics.videos",
+      "total_views": "metrics.totalViews",
+      "country": "profile.country",
+      "joined": "profile.joinedDate",
+      "verified": "channel.isVerified",
+      "search_rank": "discoverySource.rank",
+      "found_via_video": "sourceVideo.title",
+      "url": "channel.url"
+    }
+  }
+}

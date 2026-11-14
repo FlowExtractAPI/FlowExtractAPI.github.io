@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/youtube-comments-scraper",
+  "runId": "PsaThDv4MtcaJUgTo",
+  "status": "SUCCEEDED",
+  "date": "2026-11-14",
+  "finishedAt": "2026-11-14T11:24:46.815Z",
+  "itemCount": 20,
+  "sampleCount": 20,
+  "costUsd": 0.06999999999999999,
+  "buildNumber": "0.0.5",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

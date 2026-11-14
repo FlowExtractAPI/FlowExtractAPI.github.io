@@ -4,7 +4,7 @@
   "category": "video",
   "source": "YouTube",
   "sourceHub": "youtube",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "youtube channel scraper",
   "secondaryKeywords": [
     "youtube scraper",
@@ -20,6 +20,29 @@
     "Export a channel's full video list with views and dates",
     "Pull transcripts of a channel's videos for summaries or search"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "How do I find YouTube channels by keyword with subscriber counts?",
+      "a": "Enter one or more keywords and choose channels as the result type. Each channel comes with subscribers, video count, total views, country and join date, as in the sample above."
+    },
+    {
+      "q": "Can it get transcripts too?",
+      "a": "Yes. When you scrape videos, switch transcripts on and pick text, SRT or WebVTT."
+    }
+  ],
+  "officialApi": "The YouTube Data API v3 is free but metered: 10,000 quota units a day by default, and one search call costs 100 units, so about 100 searches a day. This scraper has no daily quota; you pay per channel profile or video returned.",
+  "demo": {
+    "url": "youtube.com/results?search_query=web+scraping+tutorial",
+    "fields": [
+      "channel",
+      "handle",
+      "subscribers",
+      "videos",
+      "total_views",
+      "country",
+      "joined"
+    ]
+  },
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

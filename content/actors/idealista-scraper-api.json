@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Idealista",
   "sourceHub": "idealista",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "idealista scraper api",
   "secondaryKeywords": [
     "idealista api",
@@ -23,6 +23,14 @@
     {
       "q": "How is this different from Idealista Scraper?",
       "a": "This one charges per property returned, also covers France, and accepts drawn-map and multi-zone links. Idealista Scraper is listed as free on the Apify Store and covers Spain, Portugal and Italy."
+    },
+    {
+      "q": "Is there an official Idealista API?",
+      "a": "Yes, for approved partners: you apply to Idealista and use it within its limits. If you only need the listings a public search shows, this actor returns them from the link alone."
+    },
+    {
+      "q": "How do businesses get property insights from Idealista?",
+      "a": "They collect the listings for an area (price, size, price per m², location, features) and analyze them: average price per m² by district, new listings per week, price changes over time. The table above is a real sample from the Balearic Islands."
     }
   ],
   "demo": {
@@ -38,5 +46,7 @@
       "municipality"
     ]
   },
+  "officialApi": "Idealista runs its own API for approved partners: you apply for access and work within the limits you are given. This scraper needs only a public Idealista link (search, drawn map area, multi-zone or a single property) and covers Spain, Portugal, Italy and France.",
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

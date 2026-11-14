@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "Etsy",
   "sourceHub": "etsy",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "etsy shop scraper",
   "secondaryKeywords": [
     "etsy shop data",
@@ -19,6 +19,66 @@
     "Build a lead list of Etsy sellers in a niche",
     "Track a shop's catalog changes and new products"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Can I see how many sales an Etsy shop has?",
+      "a": "Yes, when the shop shows it: the profile row includes the sold count Etsy displays. In the sample above, MarHappiness shows 49,088 sales."
+    },
+    {
+      "q": "Can I get every listing in a shop?",
+      "a": "Yes. Switch listings on and set the maximum; the actor pages through the shop catalog and returns each listing with price, stock and variations."
+    }
+  ],
+  "officialApi": "Etsy's Open API v3 is free, but you register an app, get an API key and work within its rate limits and endpoint shapes. These scrapers need no key: they return what the public Etsy pages show, ready to export. This one returns a whole shop (profile, ratings, sold count and catalog) from a shop URL or name.",
+  "explorer": {
+    "tables": [
+      {
+        "title": "Shop profile",
+        "type": "shop_profile",
+        "columns": [
+          "shop",
+          "sold",
+          "active_listings",
+          "favorites",
+          "rating",
+          "ratings",
+          "country",
+          "opened"
+        ]
+      },
+      {
+        "title": "Listings",
+        "type": "listing",
+        "columns": [
+          "listing_id",
+          "title",
+          "price",
+          "currency",
+          "quantity",
+          "variations",
+          "created"
+        ]
+      }
+    ],
+    "labels": {
+      "active_listings": "active listings",
+      "listing_id": "listing ID"
+    }
+  },
+  "demo": {
+    "url": "etsy.com/shop/MarHappiness",
+    "type": "shop_profile",
+    "fields": [
+      "shop",
+      "sold",
+      "active_listings",
+      "favorites",
+      "rating",
+      "ratings",
+      "country",
+      "opened"
+    ]
+  },
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

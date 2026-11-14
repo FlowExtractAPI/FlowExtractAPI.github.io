@@ -16,9 +16,12 @@ const FPR = 'smcx63';
 const sources = JSON.parse(fs.readFileSync(path.join(ROOT, 'scripts/sources.json'), 'utf8'));
 
 const readJSON = (p) => JSON.parse(fs.readFileSync(p, 'utf8').replace(/^\uFEFF/, ''));
+// Repairs UTF-8 text that was decoded as Windows-1252 somewhere upstream ("â€”" → "—"). Seen in an actor schema.
+const MOJIBAKE = [['â€”', '—'], ['â€“', '–'], ['â€™', '’'], ['â€˜', '‘'], ['â€œ', '“'], ['â€\u009d', '”'], ['â€¦', '…'], ['â†’', '→'], ['Â·', '·'], ['Â ', ' ']];
+const demojibake = (s) => MOJIBAKE.reduce((t, [bad, good]) => t.split(bad).join(good), s);
 const clean = (s, max = 220) => {
   if (!s) return '';
-  let t = String(s)
+  let t = demojibake(String(s))
     .replace(/<[^>]+>/g, ' ')
     .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
     .replace(/[*_`#>]+/g, '')

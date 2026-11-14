@@ -94,7 +94,16 @@ export function priceShort(a) {
 }
 
 // ---------- fields ----------
-export const outputFields = (a) => a.facts.output.filter((f) => !f.name.startsWith('_') && !['includeReviews', 'error', 'etsy_error'].includes(f.name));
+// Most useful first: fields the actor's own dataset views label, then the rest; diagnostics and run bookkeeping last.
+const DIAG = /^(error|etsy_error|hint|warning|status_?message|shops?_(requested|delivered)|listings?_delivered|scraped_|source_url|source_ref|include[A-Z]|catalog_position|run_|charged|_)/i;
+export const outputFields = (a) => {
+  const all = a.facts.output.filter((f) => !f.name.startsWith('_') && !['includeReviews', 'error', 'etsy_error'].includes(f.name));
+  return [
+    ...all.filter((f) => f.label && !DIAG.test(f.name)),
+    ...all.filter((f) => !f.label && !DIAG.test(f.name)),
+    ...all.filter((f) => DIAG.test(f.name)),
+  ];
+};
 export const inputFields = (a) => a.facts.input;
 const human = (s) => s.replace(/[_-]+/g, ' ').replace(/([a-z])([A-Z])/g, '$1 $2').toLowerCase();
 const stripEmoji = (s) => s.replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{27BF}\u{FE0F}\u{200D}]/gu, '').replace(/\s+/g, ' ').trim();

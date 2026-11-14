@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-13T23:02:21.747Z",
+  "fetchedAt": "2026-11-14T11:28:17.541Z",
   "owner": "dz_omar",
   "actors": [
     {
@@ -268,7 +268,7 @@
         "AI",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 2,
+      "usersRank": 3,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3697,7 +3697,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 101,
+      "usersRank": 103,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -5261,55 +5261,55 @@
           "name": "scraped_shop_ref",
           "label": "Shop reference",
           "type": "string",
-          "description": "On not-found records â€” the shop name or id as parsed from the input."
+          "description": "On not-found records — the shop name or id as parsed from the input."
         },
         {
           "name": "includeListings",
           "label": "Listings requested",
           "type": "boolean",
-          "description": "On shopprofile records â€” whether the listing catalog was requested for this run."
+          "description": "On shopprofile records — whether the listing catalog was requested for this run."
         },
         {
           "name": "error",
           "label": "Error (not found)",
           "type": "string",
-          "description": "On not-found records â€” human-readable reason."
+          "description": "On not-found records — human-readable reason."
         },
         {
           "name": "etsy_error",
           "label": "Etsy error",
           "type": "string",
-          "description": "On not-found records â€” Etsy's raw error response, preserved for debugging."
+          "description": "On not-found records — Etsy's raw error response, preserved for debugging."
         },
         {
           "name": "catalog_position",
           "label": "Catalog position",
           "type": "integer",
-          "description": "On listing records â€” 1-based position in the shop's catalog under the reported sort order; null on listings recovered by the completeness check."
+          "description": "On listing records — 1-based position in the shop's catalog under the reported sort order; null on listings recovered by the completeness check."
         },
         {
           "name": "_guidance",
           "label": "Guidance",
           "type": "string",
-          "description": "On guidance and runincomplete rows â€” what happened and what to do."
+          "description": "On guidance and runincomplete rows — what happened and what to do."
         },
         {
           "name": "hint",
           "label": "Hint",
           "type": "string",
-          "description": "On guidance rows â€” how to fix the input."
+          "description": "On guidance rows — how to fix the input."
         },
         {
           "name": "error_type",
           "label": "Error type",
           "type": "string",
-          "description": "On runincomplete rows â€” exception class name."
+          "description": "On runincomplete rows — exception class name."
         },
         {
           "name": "error_message",
           "label": "Error message",
           "type": "string",
-          "description": "On runincomplete rows â€” redacted error text."
+          "description": "On runincomplete rows — redacted error text."
         },
         {
           "name": "shops_requested",
@@ -5333,7 +5333,7 @@
           "name": "shop",
           "label": "Shop",
           "type": "",
-          "description": "Full shop object â€” id, name, URL, owner, sales count, listing count, favorites, ratings, location, languages, currency, badges, star-seller data, icon and banner."
+          "description": "Full shop object — id, name, URL, owner, sales count, listing count, favorites, ratings, location, languages, currency, badges, star-seller data, icon and banner."
         },
         {
           "name": "policies",
@@ -5351,7 +5351,7 @@
           "name": "shop_about",
           "label": "Shop about",
           "type": "",
-          "description": "About section â€” story headline, story, images, videos, related links and team members."
+          "description": "About section — story headline, story, images, videos, related links and team members."
         },
         {
           "name": "featured_listings",
@@ -5375,13 +5375,13 @@
           "name": "sections",
           "label": "Sections",
           "type": "",
-          "description": "Shop sections â€” id, title, active listing count, rank and listingids (the full listing objects arrive as listing records)."
+          "description": "Shop sections — id, title, active listing count, rank and listingids (the full listing objects arrive as listing records)."
         },
         {
           "name": "reviews",
           "label": "Reviews",
           "type": "",
-          "description": "Shop-level reviews block â€” total count and the recent reviews Etsy embeds on the shop home."
+          "description": "Shop-level reviews block — total count and the recent reviews Etsy embeds on the shop home."
         },
         {
           "name": "review_filters",
@@ -5399,7 +5399,7 @@
           "name": "signals",
           "label": "Signals",
           "type": "",
-          "description": "Trust signals â€” orders shipped on time, message response rate, buy-again, reliability."
+          "description": "Trust signals — orders shipped on time, message response rate, buy-again, reliability."
         },
         {
           "name": "return_policies",
@@ -5794,7 +5794,7 @@
         "LEAD_GENERATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 1574,
+      "usersRank": 1578,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -6420,7 +6420,7 @@
         "AUTOMATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 598,
+      "usersRank": 602,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7447,7 +7447,7 @@
         "LEAD_GENERATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 823,
+      "usersRank": 824,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9120,7 +9120,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1416,
+      "usersRank": 1418,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9792,7 +9792,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 667,
+      "usersRank": 668,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -18224,7 +18224,7 @@
         "ECOMMERCE",
         "AUTOMATION"
       ],
-      "usersRank": 3,
+      "usersRank": 1,
       "pricing": {
         "model": "FREE",
         "events": []
@@ -18835,7 +18835,7 @@
         "INTEGRATIONS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 996,
+      "usersRank": 1001,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -18989,7 +18989,7 @@
         "SEO_TOOLS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 53,
+      "usersRank": 55,
       "pricing": {
         "model": "FREE",
         "events": []
@@ -19492,7 +19492,7 @@
       "storeTitle": "YouTube Hashtag Extractor -Free To Use",
       "storeDescription": "Extract videos or Shorts from any YouTube hashtag, with full metadata and transcripts. Get title, channel, views, runtime, description, thumbnail, and timestamped transcript text. Pick a country to control region. Multiple hashtags per run. Pay only per video extracted.",
       "storeUrl": "https://apify.com/dz_omar/youtube-hashtag-extractor?fpr=smcx63",
-      "icon": null,
+      "icon": "/icons/youtube-hashtag-extractor.webp",
       "apifyCategories": [
         "VIDEOS",
         "SOCIAL_MEDIA",
@@ -19651,7 +19651,7 @@
         "SOCIAL_MEDIA",
         "MCP_SERVERS"
       ],
-      "usersRank": 531,
+      "usersRank": 533,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -21746,7 +21746,7 @@
         "DEVELOPER_TOOLS",
         "VIDEOS"
       ],
-      "usersRank": 250,
+      "usersRank": 256,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [

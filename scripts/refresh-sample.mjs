@@ -161,8 +161,13 @@ async function refresh(arg) {
   return runInfo;
 }
 
-const slugs = process.argv.slice(2);
-if (!slugs.length) { console.error('usage: node scripts/refresh-sample.mjs <slug> [...]'); process.exit(2); }
+// --all = every actor that has data/samples/<slug>/input.json (the monthly refresh)
+let slugs = process.argv.slice(2);
+if (slugs.includes('--all')) {
+  const dir = path.join(ROOT, 'data/samples');
+  slugs = fs.readdirSync(dir).filter((d) => fs.existsSync(path.join(dir, d, 'input.json')));
+}
+if (!slugs.length) { console.error('usage: node scripts/refresh-sample.mjs <slug> [...] | --all'); process.exit(2); }
 const before = await usage('before');
 if (before.used >= before.max) { console.error('credit limit reached; stopping'); process.exit(1); }
 const results = [];

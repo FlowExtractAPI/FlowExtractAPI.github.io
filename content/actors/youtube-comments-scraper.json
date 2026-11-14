@@ -4,7 +4,7 @@
   "category": "video",
   "source": "YouTube",
   "sourceHub": "youtube",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "youtube comments scraper",
   "secondaryKeywords": [
     "youtube comment extractor",
@@ -19,6 +19,29 @@
     "Find the questions viewers ask to plan new videos",
     "Audit a comment section or pick giveaway winners"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Can I get replies to comments too?",
+      "a": "Yes. Set the maximum replies per comment above 0 and each comment comes with its nested replies."
+    },
+    {
+      "q": "How many comments can I get per video?",
+      "a": "You set the maximum per video (at least 10). The actor pages through the comments YouTube shows publicly, sorted by top or newest."
+    }
+  ],
+  "officialApi": "The YouTube Data API v3 can list comments, but you need a Google Cloud project and an API key, and you stay within 10,000 quota units a day by default. This scraper needs no key and no quota.",
+  "demo": {
+    "url": "youtube.com/watch?v=hz9tSv3CP6k",
+    "row": 1,
+    "fields": [
+      "video_id",
+      "author",
+      "comment",
+      "likes",
+      "replies",
+      "published"
+    ]
+  },
+  "updated": "2026-11-14",
   "lastKeywordChange": "2026-11-13"
 }

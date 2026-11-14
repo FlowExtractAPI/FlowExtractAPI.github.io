@@ -1,0 +1,34 @@
+{
+  "input": {
+    "youtubeUrls": [
+      {
+        "url": "https://youtu.be/hz9tSv3CP6k"
+      },
+      {
+        "url": "https://www.youtube.com/watch?v=8uvHH-ocSes"
+      }
+    ],
+    "sortBy": "top",
+    "maxComments": 10,
+    "maxRepliesPerComment": 0
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "video_id": "videoId",
+      "author": {
+        "path": "authorName",
+        "as": "pseudonym",
+        "label": "Viewer"
+      },
+      "comment": "text",
+      "likes": "likeCount",
+      "replies": "replyCount",
+      "published": "publishedTime",
+      "pinned": "isPinned",
+      "hearted_by_creator": "isHearted",
+      "by_channel_owner": "isCreator"
+    }
+  }
+}

@@ -5,8 +5,8 @@ const max = (...d) => d.filter(Boolean).sort().slice(-1)[0];
 export function GET() {
   const urls = [
     { loc: '/', lastmod: page('home').lastKeywordChange },
-    ...hubs.map((h) => ({ loc: h.url, lastmod: h.lastKeywordChange })),
-    ...actors.map((a) => ({ loc: a.url, lastmod: max(a.lastKeywordChange, a.sample && a.sample.run.date) })),
+    ...hubs.map((h) => ({ loc: h.url, lastmod: max(h.lastKeywordChange, h.updated) })),
+    ...actors.map((a) => ({ loc: a.url, lastmod: max(a.lastKeywordChange, a.updated, a.sample && a.sample.run.date) })),
     ...['about', 'contact', 'privacy'].map((id) => ({ loc: `/${id}.html`, lastmod: page(id).lastKeywordChange })),
     { loc: '/zoom-downloader/' },
   ];

@@ -1,0 +1,44 @@
+{
+  "input": {
+    "shops": [
+      "MarHappiness"
+    ],
+    "includeListings": true,
+    "maxListings": 12,
+    "includeReviews": false
+  },
+  "maxTotalChargeUsd": 0.15,
+  "maxItems": 20,
+  "typeField": "_type",
+  "project": {
+    "shop_profile": {
+      "shop": "shop.shop_name",
+      "sold": "shop.sold_count",
+      "active_listings": "shop.active_listing_count",
+      "favorites": "shop.favorites_count",
+      "rating": "shop.average_rating",
+      "ratings": "shop.total_rating_count",
+      "country": "shop.country_code",
+      "currency": "shop.currency_code",
+      "opened": {
+        "path": "shop.open_date",
+        "as": "date"
+      },
+      "url": "shop.url"
+    },
+    "listing": {
+      "listing_id": "listing_id",
+      "shop": "shop_name",
+      "title": "title",
+      "price": "price",
+      "currency": "currency_code",
+      "quantity": "quantity",
+      "variations": "has_variations",
+      "created": {
+        "path": "create_date",
+        "as": "date"
+      },
+      "url": "url"
+    }
+  }
+}

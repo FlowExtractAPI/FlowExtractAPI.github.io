@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/Youtube-Scraper-Pro",
+  "runId": "JeJkUYIMtoLCOadPr",
+  "status": "SUCCEEDED",
+  "date": "2026-11-14",
+  "finishedAt": "2026-11-14T11:23:19.522Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.0045,
+  "buildNumber": "1.1.23",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

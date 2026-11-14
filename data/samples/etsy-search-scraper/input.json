@@ -1,0 +1,32 @@
+{
+  "input": {
+    "searchTerms": [
+      "leather wallet"
+    ],
+    "maxResults": 12,
+    "sort": "Relevance",
+    "category": "all",
+    "shipTo": "US",
+    "includeSponsored": false,
+    "splitLargeSearches": false,
+    "enrichWithDetails": false
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "listing_id": "listing_id",
+      "title": "title",
+      "shop": "shop_name",
+      "price": "price_unformatted",
+      "currency": "currency_code",
+      "shop_rating": "shop_average_rating",
+      "shop_ratings": "shop_total_rating_count",
+      "bestseller": "is_bestseller",
+      "handmade": "is_handmade",
+      "variations": "has_variations",
+      "free_shipping_to": "free_shipping_countries",
+      "url": "url"
+    }
+  }
+}

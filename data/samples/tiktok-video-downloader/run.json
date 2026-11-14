@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/tiktok-video-downloader",
+  "runId": "rVjlBXYWMY7T2HWbq",
+  "status": "SUCCEEDED",
+  "date": "2026-11-14",
+  "finishedAt": "2026-11-14T11:23:18.140Z",
+  "itemCount": 1,
+  "sampleCount": 1,
+  "costUsd": 0.006,
+  "buildNumber": "1.1.9",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

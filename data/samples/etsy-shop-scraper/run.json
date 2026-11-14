@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/etsy-shop-scraper",
+  "runId": "3eIzymTReW90ZZHwT",
+  "status": "SUCCEEDED",
+  "date": "2026-11-14",
+  "finishedAt": "2026-11-14T11:23:17.990Z",
+  "itemCount": 13,
+  "sampleCount": 13,
+  "costUsd": 0.05600000000000001,
+  "buildNumber": "0.0.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}
