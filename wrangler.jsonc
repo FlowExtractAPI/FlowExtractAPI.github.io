@@ -23,8 +23,8 @@
   "analytics_engine_datasets": [{ "binding": "EVENTS", "dataset": "flowextract_site_events" }],
   // "Try it live" (/api/demo): exact per-visitor and daily counters. Secrets (wrangler secret put):
   // DEMO_APIFY_TOKEN (run-only demo account), TURNSTILE_SECRET. Site key is public (content/site.json).
-  // TESTING (2026-11-14): requests without a Turnstile token are allowed while Turnstile is being fixed. Set to "0" after.
-  "vars": { "DEMO_TURNSTILE_OPTIONAL": "1" },
+  // "1" = allow requests without a Turnstile token (testing only). Strict ("0") since 2026-11-14.
+  "vars": { "DEMO_TURNSTILE_OPTIONAL": "0" },
   "durable_objects": { "bindings": [{ "name": "DEMO_GUARD", "class_name": "DemoGuard" }] },
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DemoGuard"] }],
   // Cutover 2026-11-14: the apex runs on this Worker through a route. The existing DNS records (GitHub Pages) stay

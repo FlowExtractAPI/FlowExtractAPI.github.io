@@ -261,3 +261,8 @@ details.more summary { cursor: pointer; color: var(--teal-d); font-weight: 600; 
 .demo-card a { margin-top: auto; font-size: .85rem; font-weight: 600; }
 .demo-json { max-height: 520px; overflow: auto; white-space: pre; }
 @keyframes rowin { from { opacity: 0; transform: translateY(6px); } }
+.demo-signup { display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 16px; padding: 16px 18px; border-radius: 14px; background: var(--slate); color: #e9f4f2; }
+.demo-signup[hidden] { display: none; }
+.demo-signup strong { font: 600 1.1rem var(--head); color: #fff; }
+.demo-signup b { color: #fff; }
+.demo-signup .btn-primary { background: var(--teal); color: #0d2a2a; box-shadow: none; }

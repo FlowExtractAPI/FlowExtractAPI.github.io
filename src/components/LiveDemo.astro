@@ -6,6 +6,9 @@ import { site } from '../lib/site.js';
 // soon: actors shown as "coming soon" chips (home page). Empty on actor pages.
 const { actor, soon = [], title = 'Try it live' } = Astro.props;
 const d = actor.liveDemo;
+const evs = (actor.facts.pricing.events || []).filter((e) => !e.oneTime);
+const main = evs.find((e) => e.primary) || evs[0];
+const freeResults = main && main.priceFreePlanUsd ? Math.floor(5 / main.priceFreePlanUsd) : null; // Apify free plan: $5 credit per month
 ---
 <section class="explorer live-demo" id="try" aria-labelledby="try-h" data-demo-actor={d.actor}>
   <div class="explorer-head">
@@ -44,7 +47,14 @@ const d = actor.liveDemo;
       <div class="demo-cards" data-pane="cards"></div>
       <div class="table-wrap" data-pane="table" hidden><table><thead></thead><tbody></tbody></table></div>
       <pre class="json demo-json" data-pane="json" hidden></pre>
-      <p class="cta-row" style="margin-bottom:0"><a class="btn btn-primary" href={actor.goUrl} rel="nofollow">Get every result on Apify →</a></p>
+      
+    </div>
+    <div class="demo-signup" data-signup hidden>
+      <div>
+        <strong data-signup-title>Want all of them?</strong>
+        <p class="small" style="margin:4px 0 0">Create a free Apify account and run <b>{actor.label}</b> yourself. The free plan includes <b>$5 of credit every month</b>{freeResults ? <>, enough for about <b>{freeResults.toLocaleString('en')} results</b></> : null}. No card needed to start.</p>
+      </div>
+      <a class="btn btn-primary" href={actor.goUrl} rel="nofollow" target="_blank">Run it on Apify, free →</a>
     </div>
   </div>
 </section>
@@ -126,11 +136,15 @@ const d = actor.liveDemo;
       try {
         const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: window.feDemo.token || '' }) });
         const data = await r.json();
+        const signup = $('[data-signup]'), sTitle = $('[data-signup-title]');
         if (!r.ok) {
+          if (data.signup) { sTitle.textContent = 'Keep going on your own account'; signup.hidden = false; }
           status.textContent = (data.error || 'No results for this link.') + (window.feDemo.error ? ` (human check error ${window.feDemo.error})` : '');
           return;
         }
         last = data; render(data);
+        sTitle.textContent = data.total ? `This search has ${Number(data.total).toLocaleString('en')} results. You saw ${data.count}.` : 'Want all of them?';
+        signup.hidden = false;
         status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${Number(data.total).toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
       } catch { status.textContent = 'The demo did not answer. Try again in a minute.'; }
       finally {

@@ -15,7 +15,7 @@ const LIVE = {
     display: { image: 'image', price: 'price', currency: 'EUR', title: 'address', text: 'description', link: 'url', facts: [['rooms', 'rooms'], ['bathrooms', 'baths'], ['size_m2', 'm²'], ['municipality', '']] },
   },
 };
-const LIMITS = { perIpHour: 3, perIpDay: 10, globalDay: 200, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const LIMITS = { perIpHour: 3, perIpDay: 5, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
 
@@ -34,9 +34,9 @@ export class DemoGuard extends DurableObject {
       await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
       return Response.json({ ok: true });
     }
-    if (g.n >= LIMITS.globalDay) return Response.json({ ok: false, msg: 'The live demo is resting for today (daily limit reached). Try again tomorrow.' });
-    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used your ${LIMITS.perIpDay} demo runs for today.` });
-    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `${LIMITS.perIpHour} demo runs per hour: try again a bit later.` });
+    if (g.n >= LIMITS.globalDay) return Response.json({ ok: false, msg: "The live demo has reached today's limit for everyone.", signup: true });
+    if (list.length >= LIMITS.perIpDay) return Response.json({ ok: false, msg: `You have used today's ${LIMITS.perIpDay} free live demos.`, signup: true });
+    if (list.filter((t) => now - t < 3600000).length >= LIMITS.perIpHour) return Response.json({ ok: false, msg: `That was ${LIMITS.perIpHour} live demos this hour.`, signup: true });
     list.push(now); g.n++;
     await this.ctx.storage.put(key, list); await this.ctx.storage.put('global', g);
     await this.ctx.storage.setAlarm(now + 86400000); // tidy up old visitor keys
@@ -82,7 +82,7 @@ export async function handleDemo(request, env, ctx, record) {
 
   const visitor = await sha(ip + '|' + (env.DEMO_IP_SALT || 'flowextract'));
   const ok = await guard(env, { ip: visitor, op: 'take' });
-  if (!ok.ok) return json(429, { error: ok.msg });
+  if (!ok.ok) return json(429, { error: ok.msg, signup: !!ok.signup });
 
   const t0 = Date.now();
   const ctrl = new AbortController();
