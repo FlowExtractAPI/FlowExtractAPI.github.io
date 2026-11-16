@@ -9,12 +9,20 @@ import storeLinks from './store-links.json';
 import { handleDemo, DemoGuard } from './demo.js';
 export { DemoGuard };
 
+// blob5 = 'human' when a browser sends a user-activated navigation (Sec-Fetch-User: ?1, set only when a person clicks)
+// and the user agent is not a known bot; otherwise 'bot'. Crawlers and link checkers that ignore robots.txt land in 'bot'.
+const BOT_UA = /bot|crawl|spider|slurp|preview|fetch|monitor|headless|python|curl|wget|httpclient|axios|node|go-http|java|scrapy|lighthouse|facebookexternalhit|embedly/i;
+function who(request) {
+  const ua = request.headers.get('user-agent') || '';
+  return request.headers.get('sec-fetch-user') === '?1' && ua && !BOT_UA.test(ua) ? 'human' : 'bot';
+}
+
 function record(env, event, slug, file, request) {
   try {
     let from = '';
     const ref = request.headers.get('referer');
     if (ref) { const u = new URL(ref); if (u.hostname.endsWith('flowextractapi.com')) from = u.pathname; }
-    env.EVENTS?.writeDataPoint({ blobs: [event, slug, file, from], doubles: [1], indexes: [slug] });
+    env.EVENTS?.writeDataPoint({ blobs: [event, slug, file, from, event.startsWith('demo_') ? 'human' : who(request)], doubles: [1], indexes: [slug] });
   } catch { /* counting must never break a request */ }
 }
 
