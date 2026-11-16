@@ -1,0 +1,45 @@
+{
+  "slug": "facebook-reviews-scraper",
+  "label": "Facebook Reviews Scraper",
+  "category": "social",
+  "source": "Facebook",
+  "sourceHub": "facebook",
+  "mode": "basic",
+  "primaryKeyword": "facebook reviews scraper",
+  "secondaryKeywords": [
+    "scrape facebook reviews",
+    "facebook page reviews export"
+  ],
+  "title": "Facebook Reviews Scraper: Recommendations & Owner Replies",
+  "h1": "Facebook Reviews Scraper",
+  "metaDescription": "Scrape reviews from any public Facebook page: text, date, recommends or not, tags, reactions, comments and the owner's replies. No login or cookies.",
+  "intro": "Paste public Facebook page links and get each review's text, date, whether the reviewer recommends the page, tags, photos, reactions and comments, plus the page owner's replies and the page's recommend score. Filter by date or by recommended / not recommended. No login or cookies.",
+  "useCases": [
+    "Track what customers say about your restaurants, shops or clinics",
+    "Compare competitors' recommend scores and complaints",
+    "Find unanswered negative reviews to reply to"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Facebook reviews API?",
+      "a": "Meta's Graph API returns a page's ratings only to that page's own admins, with a page access token. This actor reads the reviews any visitor can see on a public page, so it works for any page, including competitors'."
+    },
+    {
+      "q": "Why do I get fewer reviews than the page shows?",
+      "a": "Facebook shows logged-out visitors only part of a big page's reviews feed, newest first, and then stops. The actor returns everything that feed shows; pages that hide reviews from visitors return none."
+    }
+  ],
+  "demo": {
+    "url": "facebook.com/copperkettleyqr",
+    "fields": [
+      "reviewer",
+      "date",
+      "recommends",
+      "review",
+      "tags",
+      "owner_replied"
+    ],
+    "tab": "Facebook reviews"
+  },
+  "lastKeywordChange": "2026-11-16"
+}

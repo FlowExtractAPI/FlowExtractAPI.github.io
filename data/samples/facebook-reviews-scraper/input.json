@@ -1,0 +1,38 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.facebook.com/copperkettleyqr"
+      }
+    ],
+    "resultsLimit": 12,
+    "recommendation": "all"
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "page": "pageName",
+      "reviewer": {
+        "path": "user.name",
+        "as": "pseudonym",
+        "label": "Reviewer"
+      },
+      "date": {
+        "path": "date",
+        "as": "date"
+      },
+      "recommends": "isRecommended",
+      "review": "text",
+      "tags": "tags",
+      "likes": "likesCount",
+      "comments": "commentsCount",
+      "owner_replied": {
+        "path": "ownerReply",
+        "as": "present"
+      },
+      "page_recommend_pct": "pageRecommendPercent",
+      "page_reviews": "pageReviewsCount"
+    }
+  }
+}

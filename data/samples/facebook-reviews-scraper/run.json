@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/facebook-reviews-scraper",
+  "runId": "JZxvQW7hX6OvCLy4M",
+  "status": "SUCCEEDED",
+  "date": "2026-11-16",
+  "finishedAt": "2026-11-16T15:25:21.413Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.028000000000000004,
+  "buildNumber": "0.0.9",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

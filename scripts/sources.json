@@ -20,6 +20,7 @@
   "facebook-comment-scraper": "Social-Media/facebook-comment-scraper",
   "facebook-marketplace-scraper": "Social-Media/facebook-marketplace-scraper",
   "facebook-posts-scraper": "Social-Media/facebook-posts-scraper",
+  "facebook-reviews-scraper": "Social-Media/facebook-reviews-scraper",
   "google-ads-scraper": "Ad-Scrapers/google-ads-scraper",
   "google-flights-scraper": "Travel/google-flights-scraper",
   "google-trends-scraper": "Tools/google-trends-scraper",

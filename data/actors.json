@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-14T11:28:17.541Z",
+  "fetchedAt": "2026-11-16T15:24:59.349Z",
   "owner": "dz_omar",
   "actors": [
     {
@@ -268,7 +268,7 @@
         "AI",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 3,
+      "usersRank": 4,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -1615,7 +1615,7 @@
         "BUSINESS",
         "AUTOMATION"
       ],
-      "usersRank": 61,
+      "usersRank": 62,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3415,7 +3415,7 @@
         "AUTOMATION",
         "LEAD_GENERATION"
       ],
-      "usersRank": 128,
+      "usersRank": 131,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3697,7 +3697,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 103,
+      "usersRank": 106,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -4151,7 +4151,7 @@
       "apifyCategories": [
         "ECOMMERCE"
       ],
-      "usersRank": 2,
+      "usersRank": 3,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -5125,7 +5125,7 @@
       "apifyCategories": [
         "ECOMMERCE"
       ],
-      "usersRank": 2,
+      "usersRank": 3,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -5794,7 +5794,7 @@
         "LEAD_GENERATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 1578,
+      "usersRank": 1579,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -6420,7 +6420,7 @@
         "AUTOMATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 602,
+      "usersRank": 610,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7435,6 +7435,252 @@
       ]
     },
     {
+      "slug": "facebook-reviews-scraper",
+      "pageSlug": "facebook-reviews-scraper",
+      "id": "SoPtrtYrLuvsYXVU5",
+      "storeTitle": "Facebook Reviews Scraper 👍 Recommendations & Owner Replies",
+      "storeDescription": "Scrape reviews from any public Facebook page, no login or cookies. Get each review's text, date, recommends or not, reviewer, photos, reactions and comments, including the page owner's replies. Filter by date or by recommended / not recommended. Paste page links, get clean data.",
+      "storeUrl": "https://apify.com/dz_omar/facebook-reviews-scraper?fpr=smcx63",
+      "icon": "/icons/facebook-reviews-scraper.webp",
+      "apifyCategories": [
+        "SOCIAL_MEDIA",
+        "ECOMMERCE",
+        "AUTOMATION"
+      ],
+      "usersRank": 3,
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "events": [
+          {
+            "id": "review",
+            "title": "Review",
+            "description": "Each Facebook review delivered to the dataset.",
+            "oneTime": false,
+            "primary": true,
+            "priceFreePlanUsd": 0.002,
+            "priceLowestUsd": 0.0011
+          },
+          {
+            "id": "page-scraped",
+            "title": "Page scraped",
+            "description": "Once per Facebook page that returns at least one review in the run.",
+            "oneTime": false,
+            "primary": false,
+            "priceFreePlanUsd": 0.002,
+            "priceLowestUsd": 0.002
+          },
+          {
+            "id": "apify-actor-start",
+            "title": "Actor Start",
+            "description": "Charged when the Actor starts running.",
+            "oneTime": true,
+            "primary": false,
+            "priceFreePlanUsd": 0.002,
+            "priceLowestUsd": 0.002
+          }
+        ]
+      },
+      "input": [
+        {
+          "name": "startUrls",
+          "title": "🔗 Facebook pages",
+          "type": "array",
+          "required": true,
+          "description": "The link of each Facebook page, for example https://www.facebook.com/nasa ."
+        },
+        {
+          "name": "resultsLimit",
+          "title": "🔢 Maximum reviews per page",
+          "type": "integer",
+          "required": false,
+          "description": "Newest reviews first."
+        },
+        {
+          "name": "onlyReviewsNewerThan",
+          "title": "📅 Only reviews newer than",
+          "type": "string",
+          "required": false,
+          "description": "Skip older reviews. Use a date like 2025-01-31 or a relative value like 3 months or 2 weeks ."
+        },
+        {
+          "name": "recommendation",
+          "title": "👍 Which reviews",
+          "type": "string",
+          "required": false,
+          "description": "Facebook reviews are not star ratings: each reviewer either recommends the page or does not recommend it.",
+          "options": [
+            "all",
+            "recommended",
+            "not_recommended"
+          ]
+        }
+      ],
+      "output": [
+        {
+          "name": "facebookUrl",
+          "label": "Link",
+          "type": "string",
+          "description": "Link to the Facebook page the review is about."
+        },
+        {
+          "name": "id",
+          "label": "Review ID",
+          "type": "string",
+          "description": "Facebook's identifier of the review."
+        },
+        {
+          "name": "legacyId",
+          "label": "Review number",
+          "type": "string",
+          "description": "Numeric post id of the review."
+        },
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "string",
+          "description": "Link to the review on Facebook."
+        },
+        {
+          "name": "date",
+          "label": "Date",
+          "type": "string",
+          "description": "When the review was written (ISO 8601, UTC)."
+        },
+        {
+          "name": "timestamp",
+          "label": "Timestamp",
+          "type": "integer",
+          "description": "The review date as a Unix timestamp in seconds."
+        },
+        {
+          "name": "isRecommended",
+          "label": "Recommends",
+          "type": "boolean",
+          "description": "true when the reviewer recommends the page, false when they do not."
+        },
+        {
+          "name": "text",
+          "label": "Review",
+          "type": "string",
+          "description": "What the reviewer wrote."
+        },
+        {
+          "name": "tags",
+          "label": "Tags",
+          "type": "array",
+          "description": "Tags the reviewer picked, such as Cosy atmosphere or Fast delivery."
+        },
+        {
+          "name": "photos",
+          "label": "Photos",
+          "type": "array",
+          "description": "Photos attached to the review."
+        },
+        {
+          "name": "likesCount",
+          "label": "Reactions",
+          "type": "integer",
+          "description": "Total reactions on the review."
+        },
+        {
+          "name": "reactions",
+          "label": "Reactions by type",
+          "type": "object",
+          "description": "Reaction counts by type, such as like or love."
+        },
+        {
+          "name": "commentsCount",
+          "label": "Comments",
+          "type": "integer",
+          "description": "Total comments on the review."
+        },
+        {
+          "name": "sharesCount",
+          "label": "Shares",
+          "type": "integer",
+          "description": "Times the review was shared."
+        },
+        {
+          "name": "ownerReply",
+          "label": "Page's reply",
+          "type": "object",
+          "description": "The page's own answer to the review, when it wrote one."
+        },
+        {
+          "name": "comments",
+          "label": "Comments on the review",
+          "type": "array",
+          "description": "The comments Facebook shows with the review, with their replies."
+        },
+        {
+          "name": "user",
+          "label": "Reviewer",
+          "type": "object",
+          "description": "Who wrote the review: id, name, profile link and profile picture."
+        },
+        {
+          "name": "facebookId",
+          "label": "Page ID",
+          "type": "string",
+          "description": "Facebook's numeric id of the page."
+        },
+        {
+          "name": "pageName",
+          "label": "Page",
+          "type": "string",
+          "description": "Name of the page."
+        },
+        {
+          "name": "pageRecommendPercent",
+          "label": "Recommend %",
+          "type": "integer",
+          "description": "Share of reviewers who recommend the page, as Facebook shows it."
+        },
+        {
+          "name": "pageReviewsCount",
+          "label": "Reviews on the page",
+          "type": "integer",
+          "description": "How many reviews Facebook says the page has."
+        },
+        {
+          "name": "inputUrl",
+          "label": "Your input",
+          "type": "string",
+          "description": "The link you gave for this page."
+        },
+        {
+          "name": "notice",
+          "label": "Notice",
+          "type": "string",
+          "description": "Present only on rows that explain a link that could not be read, instead of a review."
+        },
+        {
+          "name": "code",
+          "label": "Notice code",
+          "type": "string",
+          "description": "Machine-readable reason on guidance rows, for example NOVALIDPAGES or BUDGETTOOLOW."
+        },
+        {
+          "name": "message",
+          "label": "Notice message",
+          "type": "string",
+          "description": "What the notice means and what to do."
+        },
+        {
+          "name": "_source",
+          "label": "Source",
+          "type": "string",
+          "description": "The Actor that produced the row."
+        },
+        {
+          "name": "source_url",
+          "label": "Source link",
+          "type": "string",
+          "description": "The page the review belongs to."
+        }
+      ]
+    },
+    {
       "slug": "google-ads-scraper",
       "pageSlug": "google-ads-scraper",
       "id": "MDWIobBUUyp5f2eJ8",
@@ -7447,7 +7693,7 @@
         "LEAD_GENERATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 824,
+      "usersRank": 827,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7661,7 +7907,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 63,
+      "usersRank": 64,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9120,7 +9366,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1418,
+      "usersRank": 1423,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9371,7 +9617,7 @@
         "REAL_ESTATE",
         "LEAD_GENERATION"
       ],
-      "usersRank": 5,
+      "usersRank": 6,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9792,7 +10038,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 668,
+      "usersRank": 672,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9905,7 +10151,7 @@
         "VIDEOS",
         "AUTOMATION"
       ],
-      "usersRank": 4,
+      "usersRank": 5,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -11025,7 +11271,7 @@
         "SOCIAL_MEDIA",
         "SEO_TOOLS"
       ],
-      "usersRank": 184,
+      "usersRank": 185,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -13215,10 +13461,29 @@
         "REAL_ESTATE",
         "LEAD_GENERATION"
       ],
-      "usersRank": 4,
+      "usersRank": 5,
       "pricing": {
-        "model": "FREE",
-        "events": []
+        "model": "PAY_PER_EVENT",
+        "events": [
+          {
+            "id": "apify-actor-start",
+            "title": "Actor Start",
+            "description": "Charged when the Actor starts running.",
+            "oneTime": true,
+            "primary": false,
+            "priceFreePlanUsd": 0.003,
+            "priceLowestUsd": 0.003
+          },
+          {
+            "id": "listing",
+            "title": "Listing",
+            "description": "One commercial property listing delivered to your dataset with its full record: price, address and GPS, floor and land area, attributes, photos, floor plans, documents, agency and agent phone numbers.",
+            "oneTime": false,
+            "primary": true,
+            "priceFreePlanUsd": 0.0012,
+            "priceLowestUsd": 0.0008
+          }
+        ]
       },
       "input": [
         {
@@ -13622,7 +13887,7 @@
         "LEAD_GENERATION",
         "AGENTS"
       ],
-      "usersRank": 11,
+      "usersRank": 13,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -14140,7 +14405,7 @@
         "DEVELOPER_TOOLS",
         "AUTOMATION"
       ],
-      "usersRank": 55,
+      "usersRank": 56,
       "pricing": {
         "model": "FREE",
         "events": []
@@ -15808,7 +16073,7 @@
         "DEVELOPER_TOOLS",
         "SEO_TOOLS"
       ],
-      "usersRank": 340,
+      "usersRank": 341,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -16528,7 +16793,7 @@
         "VIDEOS",
         "SOCIAL_MEDIA"
       ],
-      "usersRank": 690,
+      "usersRank": 691,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -17139,7 +17404,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 64,
+      "usersRank": 66,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -17489,7 +17754,7 @@
         "ECOMMERCE",
         "SOCIAL_MEDIA"
       ],
-      "usersRank": 4,
+      "usersRank": 5,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -17752,7 +18017,7 @@
         "VIDEOS",
         "AUTOMATION"
       ],
-      "usersRank": 173,
+      "usersRank": 176,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -18491,7 +18756,7 @@
         "SEO_TOOLS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 271,
+      "usersRank": 272,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -18835,7 +19100,7 @@
         "INTEGRATIONS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1001,
+      "usersRank": 1006,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -19651,7 +19916,7 @@
         "SOCIAL_MEDIA",
         "MCP_SERVERS"
       ],
-      "usersRank": 533,
+      "usersRank": 538,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -19870,7 +20135,7 @@
         "VIDEOS",
         "SEO_TOOLS"
       ],
-      "usersRank": 171,
+      "usersRank": 172,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -21746,7 +22011,7 @@
         "DEVELOPER_TOOLS",
         "VIDEOS"
       ],
-      "usersRank": 256,
+      "usersRank": 264,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
