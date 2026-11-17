@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/kw-scraper",
+  "runId": "EOFHXMaN9gOz3KK8y",
+  "status": "SUCCEEDED",
+  "date": "2026-11-17",
+  "finishedAt": "2026-11-17T17:44:05.061Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.021,
+  "buildNumber": "0.0.9",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

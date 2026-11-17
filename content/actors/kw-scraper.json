@@ -1,0 +1,46 @@
+{
+  "slug": "kw-scraper",
+  "label": "Keller Williams Scraper",
+  "category": "real-estate",
+  "source": "Keller Williams",
+  "sourceHub": null,
+  "mode": "basic",
+  "primaryKeyword": "keller williams scraper",
+  "secondaryKeywords": [
+    "kw.com scraper",
+    "scrape kw.com listings"
+  ],
+  "title": "Keller Williams Scraper: kw.com Sale, Rent & Sold Listings",
+  "h1": "Keller Williams Scraper",
+  "metaDescription": "Scrape kw.com listings for sale, for rent and sold: prices, photos, features, HOA, schools, agent contacts and price history. Paste a search link or a place.",
+  "intro": "Paste a kw.com search or property link, or type a place, and get Keller Williams listings for sale, for rent and sold: price, address, beds, baths, size, photos, features, HOA, nearby schools, price and tax history, open houses and the listing agent. Search links keep every filter you set on kw.com.",
+  "useCases": [
+    "Build lead lists of listing agents in a city",
+    "Track prices, price cuts and sold prices in a neighborhood",
+    "Feed a property database or valuation model with fresh listings"
+  ],
+  "faq": [
+    {
+      "q": "Is there an official Keller Williams listings API?",
+      "a": "No public one. Listing data normally comes through MLS feeds, which need a broker or MLS membership. This actor reads the listings any visitor can see on kw.com."
+    },
+    {
+      "q": "Can I use my own kw.com search?",
+      "a": "Yes. Set your filters on kw.com (price, beds, property type, keywords, open houses, price reduced…), copy the link and paste it; the actor applies the same filters."
+    }
+  ],
+  "demo": {
+    "url": "kw.com · Austin, TX · for sale",
+    "fields": [
+      "address",
+      "price",
+      "type",
+      "beds",
+      "baths",
+      "living_area",
+      "listed"
+    ],
+    "tab": "Keller Williams"
+  },
+  "lastKeywordChange": "2026-11-17"
+}

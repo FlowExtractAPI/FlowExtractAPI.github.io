@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-16T15:24:59.349Z",
+  "fetchedAt": "2026-11-17T17:43:57.405Z",
   "owner": "dz_omar",
   "actors": [
     {
@@ -268,7 +268,7 @@
         "AI",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 4,
+      "usersRank": 1,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -1615,7 +1615,7 @@
         "BUSINESS",
         "AUTOMATION"
       ],
-      "usersRank": 62,
+      "usersRank": 65,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -2711,7 +2711,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 8,
+      "usersRank": 9,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3415,7 +3415,7 @@
         "AUTOMATION",
         "LEAD_GENERATION"
       ],
-      "usersRank": 131,
+      "usersRank": 133,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3697,7 +3697,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 106,
+      "usersRank": 108,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -5794,7 +5794,7 @@
         "LEAD_GENERATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 1579,
+      "usersRank": 1588,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -6239,7 +6239,7 @@
         "SOCIAL_MEDIA",
         "LEAD_GENERATION"
       ],
-      "usersRank": 16,
+      "usersRank": 18,
       "pricing": {
         "model": "FREE",
         "events": []
@@ -6420,7 +6420,7 @@
         "AUTOMATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 610,
+      "usersRank": 612,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -6536,7 +6536,7 @@
         "LEAD_GENERATION",
         "REAL_ESTATE"
       ],
-      "usersRank": 10,
+      "usersRank": 11,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7447,7 +7447,7 @@
         "ECOMMERCE",
         "AUTOMATION"
       ],
-      "usersRank": 3,
+      "usersRank": 1,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7907,7 +7907,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 64,
+      "usersRank": 66,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9366,7 +9366,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1423,
+      "usersRank": 1426,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -10038,7 +10038,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 672,
+      "usersRank": 674,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -10896,6 +10896,607 @@
       ]
     },
     {
+      "slug": "kw-scraper",
+      "pageSlug": "kw-scraper",
+      "id": "KgsrevfB8jK2coWgZ",
+      "storeTitle": "Keller Williams Scraper 🏠 kw.com Sale, Rent & Sold Listings",
+      "storeDescription": "🏠 Scrape Keller Williams (kw.com) listings for sale, for rent and sold — from a pasted search or property link, or by place. Prices, photos, features, HOA, schools, agent contacts and neighborhood statistics.",
+      "storeUrl": "https://apify.com/dz_omar/kw-scraper?fpr=smcx63",
+      "icon": "/icons/kw-scraper.webp",
+      "apifyCategories": [
+        "REAL_ESTATE",
+        "LEAD_GENERATION"
+      ],
+      "usersRank": 2,
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "events": [
+          {
+            "id": "apify-actor-start",
+            "title": "Actor Start",
+            "description": "Charged when the Actor starts running.",
+            "oneTime": true,
+            "primary": false,
+            "priceFreePlanUsd": 0.003,
+            "priceLowestUsd": 0.003
+          },
+          {
+            "id": "listing",
+            "title": "Listing",
+            "description": "One listing delivered with its full record: price and price history, photos, features, HOA, schools, agent and brokerage contacts, open houses, neighborhood statistics.",
+            "oneTime": false,
+            "primary": true,
+            "priceFreePlanUsd": 0.0015,
+            "priceLowestUsd": 0.0009
+          },
+          {
+            "id": "listing-summary",
+            "title": "Listing (summary)",
+            "description": "One listing delivered with the search-result record only (address, price, status, size, photos, agent firm): the fast, small option.",
+            "oneTime": false,
+            "primary": false,
+            "priceFreePlanUsd": 0.0006,
+            "priceLowestUsd": 0.0004
+          }
+        ]
+      },
+      "input": [
+        {
+          "name": "startUrls",
+          "title": "🔗 kw.com links — property or search",
+          "type": "array",
+          "required": false,
+          "description": "Paste links straight from kw.com."
+        },
+        {
+          "name": "locations",
+          "title": "📍 Places to search",
+          "type": "array",
+          "required": false,
+          "description": "Cities, ZIP codes, counties, neighborhoods, school zones or whole states: \"Austin, TX\", \"78701\", \"Travis County, TX\", \"Zilker\", \"Texas\"."
+        },
+        {
+          "name": "listingType",
+          "title": "🏷️ Listing type · places only",
+          "type": "string",
+          "required": false,
+          "description": "What to search for in each place.",
+          "options": [
+            "sale",
+            "rent",
+            "sold"
+          ]
+        },
+        {
+          "name": "saleStatuses",
+          "title": "🚦 Sale statuses · For sale only",
+          "type": "array",
+          "required": false,
+          "description": "Which for-sale statuses to include."
+        },
+        {
+          "name": "priceMin",
+          "title": "💲 Min price",
+          "type": "integer",
+          "required": false,
+          "description": "Lowest price in US dollars (monthly rent on a rent search, sold price on a sold search)."
+        },
+        {
+          "name": "priceMax",
+          "title": "💲 Max price",
+          "type": "integer",
+          "required": false,
+          "description": "Highest price in US dollars."
+        },
+        {
+          "name": "bedroomsMin",
+          "title": "🛏️ Bedrooms",
+          "type": "integer",
+          "required": false,
+          "description": "At least this many bedrooms."
+        },
+        {
+          "name": "bedroomsExact",
+          "title": "🛏️ Exactly this many bedrooms",
+          "type": "boolean",
+          "required": false,
+          "description": "On: exactly the number above instead of \"or more\"."
+        },
+        {
+          "name": "bathroomsMin",
+          "title": "🛁 Bathrooms",
+          "type": "integer",
+          "required": false,
+          "description": "At least this many bathrooms."
+        },
+        {
+          "name": "bathroomsExact",
+          "title": "🛁 Exactly this many bathrooms",
+          "type": "boolean",
+          "required": false,
+          "description": "On: exactly the number above instead of \"or more\"."
+        },
+        {
+          "name": "propertyTypes",
+          "title": "🏘️ Property types",
+          "type": "array",
+          "required": false,
+          "description": "Only these property types."
+        },
+        {
+          "name": "livingAreaMin",
+          "title": "📐 Min living area",
+          "type": "integer",
+          "required": false,
+          "description": "Smallest living area in square feet."
+        },
+        {
+          "name": "livingAreaMax",
+          "title": "📐 Max living area",
+          "type": "integer",
+          "required": false,
+          "description": "Largest living area in square feet."
+        },
+        {
+          "name": "lotSizeMin",
+          "title": "🌳 Min lot size",
+          "type": "number",
+          "required": false,
+          "description": "Smallest lot in acres (1 acre = 43,560 sq ft)."
+        },
+        {
+          "name": "lotSizeMax",
+          "title": "🌳 Max lot size",
+          "type": "number",
+          "required": false,
+          "description": "Largest lot in acres."
+        },
+        {
+          "name": "yearBuiltMin",
+          "title": "📅 Built from year",
+          "type": "integer",
+          "required": false,
+          "description": "Earliest year built, e.g."
+        },
+        {
+          "name": "yearBuiltMax",
+          "title": "📅 Built up to year",
+          "type": "integer",
+          "required": false,
+          "description": "Latest year built, e.g."
+        },
+        {
+          "name": "features",
+          "title": "✨ Must have all of these features",
+          "type": "array",
+          "required": false,
+          "description": "A listing must have EVERY feature chosen here."
+        },
+        {
+          "name": "listingTags",
+          "title": "🏗️ Listing tags (any of)",
+          "type": "array",
+          "required": false,
+          "description": "Only listings with at least ONE of the chosen tags."
+        },
+        {
+          "name": "keywords",
+          "title": "🔤 Description keywords",
+          "type": "array",
+          "required": false,
+          "description": "Words that must appear in the listing text, e.g."
+        },
+        {
+          "name": "openHouseOnly",
+          "title": "🏡 Open house only",
+          "type": "boolean",
+          "required": false,
+          "description": "Only listings with an upcoming open house."
+        },
+        {
+          "name": "priceReducedOnly",
+          "title": "📉 Price reduced only",
+          "type": "boolean",
+          "required": false,
+          "description": "Only listings whose price was reduced in the last 7 days."
+        },
+        {
+          "name": "maxItems",
+          "title": "🔢 Maximum results per search",
+          "type": "integer",
+          "required": false,
+          "description": "How many listings to deliver per search (each search link and each place); 0 = all of them."
+        },
+        {
+          "name": "sortBy",
+          "title": "↕️ Sort by · places, and links without a sort",
+          "type": "string",
+          "required": false,
+          "description": "Order of each place's results.",
+          "options": [
+            "updated",
+            "price",
+            "livingArea",
+            "pricePerLivingArea",
+            "daysOnSite"
+          ]
+        },
+        {
+          "name": "sortDirection",
+          "title": "↕️ Sort direction · places and links",
+          "type": "string",
+          "required": false,
+          "description": "Highest first, or lowest first.",
+          "options": [
+            "desc",
+            "asc"
+          ]
+        },
+        {
+          "name": "detailLevel",
+          "title": "🧾 Detail level",
+          "type": "string",
+          "required": false,
+          "description": "Full: the complete record per listing (photos, features, HOA, schools, agent, neighborhood statistics, open houses).",
+          "options": [
+            "full",
+            "summary"
+          ]
+        },
+        {
+          "name": "includeHistory",
+          "title": "🧮 Add tax and sales history · full detail only",
+          "type": "boolean",
+          "required": false,
+          "description": "Adds the county tax history and recorded sales to each full record (one more request per listing)."
+        }
+      ],
+      "output": [
+        {
+          "name": "activityHistory",
+          "label": "Activity",
+          "type": "object",
+          "description": "How often the listing was viewed, shared and saved to portfolios on kw.com."
+        },
+        {
+          "name": "address",
+          "label": "Address (search record)",
+          "type": "object",
+          "description": "Display address, street, ZIP, city, state, unit and country (summary level and search results)."
+        },
+        {
+          "name": "agent",
+          "label": "Listing agent",
+          "type": "object",
+          "description": "Listing agent: name, license, phone numbers, email, photo and state."
+        },
+        {
+          "name": "boundaries",
+          "label": "Neighborhood statistics",
+          "type": "array",
+          "description": "The areas the listing sits in (neighborhood, city, ZIP, county…) with walkability and market statistics: listings for sale / pending, average days on market and average prices."
+        },
+        {
+          "name": "closeDate",
+          "label": "Close date",
+          "type": "string",
+          "description": "Closing date of a sold listing."
+        },
+        {
+          "name": "co2Level",
+          "label": "CO2 level",
+          "type": "",
+          "description": "Carbon emission level when reported."
+        },
+        {
+          "name": "complianceLogo",
+          "label": "MLS logo (search record)",
+          "type": "object",
+          "description": "MLS logo required next to the listing."
+        },
+        {
+          "name": "coordinates",
+          "label": "Coordinates",
+          "type": "array",
+          "description": "Longitude and latitude of the listing."
+        },
+        {
+          "name": "coreFeatures",
+          "label": "Core features",
+          "type": "object",
+          "description": "Bedrooms, bathrooms, living area and lot size with units (full records)."
+        },
+        {
+          "name": "courtesy",
+          "label": "Courtesy",
+          "type": "string",
+          "description": "Listing brokerage and agent line shown on the search card."
+        },
+        {
+          "name": "courtesyOf",
+          "label": "Courtesy of",
+          "type": "object",
+          "description": "Listing brokerage line and listing agent name."
+        },
+        {
+          "name": "description",
+          "label": "Description",
+          "type": "string",
+          "description": "The listing text as written by the agent."
+        },
+        {
+          "name": "descriptionEn",
+          "label": "Description (English)",
+          "type": "",
+          "description": "The listing text in English when the original is in another language."
+        },
+        {
+          "name": "energyGradeLevel",
+          "label": "Energy grade",
+          "type": "",
+          "description": "Energy efficiency grade when reported."
+        },
+        {
+          "name": "example_locations",
+          "label": "Example places",
+          "type": "array",
+          "description": "Only on a guidance row."
+        },
+        {
+          "name": "example_startUrls",
+          "label": "Example links",
+          "type": "array",
+          "description": "Only on a guidance row."
+        },
+        {
+          "name": "facets",
+          "label": "Size and rooms (search record)",
+          "type": "object",
+          "description": "Bedrooms, bathrooms, living area and lot size (summary level)."
+        },
+        {
+          "name": "features",
+          "label": "Features",
+          "type": "object",
+          "description": "Year built, listing date, heating / cooling, appliances, utilities, roof, builder, stories, parking, interior and exterior features, HOA, commissions and structure details."
+        },
+        {
+          "name": "geometry",
+          "label": "Geometry",
+          "type": "object",
+          "description": "Point geometry of the listing (GeoJSON-style)."
+        },
+        {
+          "name": "hasVirtualTour",
+          "label": "Has virtual tour",
+          "type": "boolean",
+          "description": "Whether a virtual tour is available."
+        },
+        {
+          "name": "id",
+          "label": "Listing ID",
+          "type": "string",
+          "description": "kw.com listing number (the long number at the end of the property link)."
+        },
+        {
+          "name": "images",
+          "label": "Photos",
+          "type": "array",
+          "description": "Links to all listing photos."
+        },
+        {
+          "name": "isKwwListing",
+          "label": "KW listing",
+          "type": "boolean",
+          "description": "Whether the listing is held by a Keller Williams office."
+        },
+        {
+          "name": "legalInfo",
+          "label": "Legal info",
+          "type": "object",
+          "description": "Legal notices attached to the listing."
+        },
+        {
+          "name": "listKwUid",
+          "label": "KW agent ID",
+          "type": "string",
+          "description": "Keller Williams id of the listing agent when the listing is a KW listing."
+        },
+        {
+          "name": "listingCategory",
+          "label": "Category",
+          "type": "string",
+          "description": "sale, rent or sold."
+        },
+        {
+          "name": "listingCompliance",
+          "label": "MLS compliance",
+          "type": "object",
+          "description": "MLS name, logo and the disclaimer text that goes with the listing."
+        },
+        {
+          "name": "listingDate",
+          "label": "Listed",
+          "type": "string",
+          "description": "When the listing was published (milliseconds since 1970 or ISO date as returned)."
+        },
+        {
+          "name": "listingStatus",
+          "label": "Status",
+          "type": "string",
+          "description": "active, comingSoon, pending… as shown on kw.com."
+        },
+        {
+          "name": "localeId",
+          "label": "Locale",
+          "type": "string",
+          "description": "Locale of the listing text, e.g."
+        },
+        {
+          "name": "mlsId",
+          "label": "MLS source",
+          "type": "string",
+          "description": "Identifier of the MLS the listing comes from."
+        },
+        {
+          "name": "mlsListStatus",
+          "label": "MLS status",
+          "type": "string",
+          "description": "Status text as reported by the MLS."
+        },
+        {
+          "name": "mlsNumber",
+          "label": "MLS number",
+          "type": "string",
+          "description": "The listing number in the MLS it comes from."
+        },
+        {
+          "name": "mlsPropertyType",
+          "label": "MLS property type",
+          "type": "string",
+          "description": "Property type as reported by the MLS."
+        },
+        {
+          "name": "not_found",
+          "label": "Listings not found",
+          "type": "array",
+          "description": "Only on a noresults row: lookups that found nothing."
+        },
+        {
+          "name": "openHouse",
+          "label": "Has open house",
+          "type": "string",
+          "description": "Whether an open house is scheduled."
+        },
+        {
+          "name": "openHouses",
+          "label": "Open houses",
+          "type": "array",
+          "description": "Upcoming open houses with start and end time."
+        },
+        {
+          "name": "priceHistory",
+          "label": "Price history",
+          "type": "array",
+          "description": "Price changes on the current listing: new price, previous price, percent change and the date of the change (milliseconds since 1970)."
+        },
+        {
+          "name": "pricing",
+          "label": "Pricing",
+          "type": "object",
+          "description": "Sale, rent and sold amounts with currency (an amount is null when it does not apply; some states do not disclose sold prices)."
+        },
+        {
+          "name": "primaryImage",
+          "label": "Photo",
+          "type": "string",
+          "description": "Link to the first listing photo (shown as a picture in the table views)."
+        },
+        {
+          "name": "propertyAddress",
+          "label": "Address",
+          "type": "object",
+          "description": "Street address, city, state, ZIP, unit and country (full records)."
+        },
+        {
+          "name": "propertySubtype",
+          "label": "Type",
+          "type": "string",
+          "description": "Subtype: house, condo, townhouse, land…"
+        },
+        {
+          "name": "propertySubtypeId",
+          "label": "Property subtype ID",
+          "type": "number",
+          "description": "Numeric id of the subtype."
+        },
+        {
+          "name": "propertyType",
+          "label": "Type",
+          "type": "string",
+          "description": "Property type group, e.g."
+        },
+        {
+          "name": "propertyTypeId",
+          "label": "Property type ID",
+          "type": "number",
+          "description": "Numeric id of the property type."
+        },
+        {
+          "name": "publicSchools",
+          "label": "Public schools",
+          "type": "array",
+          "description": "Assigned public schools with type, grade range, student-teacher ratio and ranking score."
+        },
+        {
+          "name": "requiresLogin",
+          "label": "Requires login",
+          "type": "boolean",
+          "description": "Whether kw.com asks visitors to log in to see the listing."
+        },
+        {
+          "name": "salesHistory",
+          "label": "Sales history",
+          "type": "array",
+          "description": "Recorded sales with price and contract date (only with \"Add tax and sales history\")."
+        },
+        {
+          "name": "searches",
+          "label": "Searches that matched nothing",
+          "type": "array",
+          "description": "Only on a noresults row: each empty search with its filters and the single filters that, left out, would bring listings back."
+        },
+        {
+          "name": "source_url",
+          "label": "Link",
+          "type": "string",
+          "description": "The listing page on kw.com (null on guidance rows)."
+        },
+        {
+          "name": "taxHistory",
+          "label": "Tax history",
+          "type": "array",
+          "description": "Yearly assessed values and property tax (only with \"Add tax and sales history\")."
+        },
+        {
+          "name": "title",
+          "label": "Guidance title",
+          "type": "string",
+          "description": "Only on a guidance row: what to change."
+        },
+        {
+          "name": "uiFlags",
+          "label": "Display flags",
+          "type": "object",
+          "description": "Whether the page shows a payment calculator, fair-housing notice, the address, and whether the listing is hidden from the map."
+        },
+        {
+          "name": "urlPath",
+          "label": "Page path",
+          "type": "string",
+          "description": "Path of the listing page on kw.com (add https://kw.com in front)."
+        },
+        {
+          "name": "virtualTours",
+          "label": "Virtual tours",
+          "type": "array",
+          "description": "Virtual tour links with description, branded link and last update."
+        },
+        {
+          "name": "_meta",
+          "label": "Run details",
+          "type": "object",
+          "description": "search (which search produced it), rank (position in it), level (full / summary / unavailable), scrapedAt, and — on pay-per-event runs — charged / chargeSkipReason."
+        },
+        {
+          "name": "_source",
+          "label": "Source tag",
+          "type": "string",
+          "description": "Which Actor produced the row."
+        }
+      ]
+    },
+    {
       "slug": "leboncoin-scraper",
       "pageSlug": "leboncoin-scraper",
       "id": "6nFfgbqBI9kumVTSl",
@@ -10908,7 +11509,7 @@
         "ECOMMERCE",
         "LEAD_GENERATION"
       ],
-      "usersRank": 75,
+      "usersRank": 76,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -11271,7 +11872,7 @@
         "SOCIAL_MEDIA",
         "SEO_TOOLS"
       ],
-      "usersRank": 185,
+      "usersRank": 186,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -14407,8 +15008,36 @@
       ],
       "usersRank": 56,
       "pricing": {
-        "model": "FREE",
-        "events": []
+        "model": "PAY_PER_EVENT",
+        "events": [
+          {
+            "id": "apify-actor-start",
+            "title": "Actor Start",
+            "description": "Charged when the Actor starts running.",
+            "oneTime": true,
+            "primary": false,
+            "priceFreePlanUsd": 0.003,
+            "priceLowestUsd": 0.003
+          },
+          {
+            "id": "property",
+            "title": "Property",
+            "description": "One property delivered with its full record: price and listing history, taxes, value estimates, schools, climate risk, local market statistics, agent and office contacts, photos.",
+            "oneTime": false,
+            "primary": true,
+            "priceFreePlanUsd": 0.0015,
+            "priceLowestUsd": 0.0009
+          },
+          {
+            "id": "property-summary",
+            "title": "Property (summary)",
+            "description": "One property delivered with the search-result record only (address, price, status, size, photo, agent): the fast, small option.",
+            "oneTime": false,
+            "primary": false,
+            "priceFreePlanUsd": 0.0006,
+            "priceLowestUsd": 0.0004
+          }
+        ]
       },
       "input": [
         {
@@ -16516,16 +17145,16 @@
       "slug": "skool-map-scraper",
       "pageSlug": "skool-map-scraper",
       "id": "PFKiw9SUWTqmu1Izi",
-      "storeTitle": "Skool Map Scraper",
-      "storeDescription": "🗺️ Extract member locations & full profiles from any Skool community map GPS coordinates, names, bios, social links, level & points. 📍 Works on communities with 200,000+ members. Perfect for events, outreach & research 🎯",
+      "storeTitle": "Skool Members Scraper 📍 Map Location, Country Filter & Socials",
+      "storeDescription": "📍 Export Skool community members with their exact map location and country, not just the profile text most members leave blank. Filter by country before you pay, and get name, bio, emails in bio, LinkedIn, Instagram, YouTube, website, role, level, points and activity dates. CSV, JSON, Excel or API.",
       "storeUrl": "https://apify.com/dz_omar/skool-map-scraper?fpr=smcx63",
       "icon": "/icons/skool-map-scraper.webp",
       "apifyCategories": [
         "LEAD_GENERATION",
-        "AUTOMATION",
-        "SOCIAL_MEDIA"
+        "SOCIAL_MEDIA",
+        "AUTOMATION"
       ],
-      "usersRank": 34,
+      "usersRank": 35,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -16542,241 +17171,268 @@
       },
       "input": [
         {
-          "name": "communityUrl",
-          "title": "🗺️ Skool Community URLs",
+          "name": "communityUrls",
+          "title": "🔗 Skool community URLs",
           "type": "array",
           "required": true,
-          "description": "One or more Skool community URLs."
+          "description": "Communities to extract members from."
         },
         {
-          "name": "userPreviewConcurrency",
-          "title": "⚡ Parallel requests",
-          "type": "integer",
-          "required": false,
-          "description": "How many user profile requests to fire simultaneously."
-        },
-        {
-          "name": "maxMembersPerCommunity",
-          "title": "👥 Max members per community",
-          "type": "integer",
-          "required": false,
-          "description": "Maximum number of member profiles to extract from EACH community."
-        },
-        {
-          "name": "filterCountries",
-          "title": "🌍 Filter by Country",
-          "type": "array",
-          "required": false,
-          "description": "Only extract members located in these countries."
-        },
-        {
-          "name": "email",
-          "title": "📧 Email (optional)",
+          "name": "skoolCookie",
+          "title": "🍪 Skool login cookie (required)",
           "type": "string",
           "required": false,
-          "description": "Your Skool account email for automatic login."
+          "description": "Skool shows the member map only to logged-in members, so the actor needs your session cookie."
         },
         {
-          "name": "password",
-          "title": "🔑 Password (optional)",
-          "type": "string",
+          "name": "maxMembers",
+          "title": "🔢 Max members per community",
+          "type": "integer",
           "required": false,
-          "description": "Your Skool account password."
+          "description": "Stop after this many members in each community."
         },
         {
-          "name": "cookies",
-          "title": "🍪 Browser Cookies (optional)",
+          "name": "countries",
+          "title": "🌍 Only members in these countries",
           "type": "array",
           "required": false,
-          "description": "Fallback if email+password login fails or is not provided."
+          "description": "Keep only members whose map pin is in one of these countries."
         }
       ],
       "output": [
         {
+          "name": "_source",
+          "label": "Source",
+          "type": "string",
+          "description": "Actor that produced the row."
+        },
+        {
+          "name": "source_url",
+          "label": "Map URL",
+          "type": "string",
+          "description": "Member map page of the community."
+        },
+        {
           "name": "community",
-          "label": "Community",
-          "type": "",
-          "description": ""
+          "label": "Community slug",
+          "type": "string",
+          "description": "Community identifier from its URL."
         },
         {
-          "name": "userName",
-          "label": "Username",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "fullName",
-          "label": "Full Name",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "role",
-          "label": "Role",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "level",
-          "label": "Level",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "points",
-          "label": "Points",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "latitude",
-          "label": "Latitude",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "longitude",
-          "label": "Longitude",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "profileUrl",
-          "label": "Profile URL",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "extractedAt",
-          "label": "Extracted At",
-          "type": "",
-          "description": ""
+          "name": "communityName",
+          "label": "Community name",
+          "type": "string",
+          "description": "Display name of the community."
         },
         {
           "name": "communityId",
           "label": "Community ID",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Skool's internal community ID."
         },
         {
           "name": "userId",
           "label": "User ID",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Skool's internal member ID."
+        },
+        {
+          "name": "userName",
+          "label": "Username",
+          "type": "string",
+          "description": "Profile handle (the part after @ in the profile URL)."
+        },
+        {
+          "name": "fullName",
+          "label": "Full name",
+          "type": "string",
+          "description": "First and last name."
         },
         {
           "name": "firstName",
-          "label": "First Name",
-          "type": "",
-          "description": ""
+          "label": "First name",
+          "type": "string",
+          "description": "First name."
         },
         {
           "name": "lastName",
-          "label": "Last Name",
-          "type": "",
-          "description": ""
+          "label": "Last name",
+          "type": "string",
+          "description": "Last name."
         },
         {
-          "name": "avatarUrl",
-          "label": "Avatar URL",
-          "type": "",
-          "description": ""
+          "name": "profileUrl",
+          "label": "Profile URL",
+          "type": "string",
+          "description": "Public Skool profile."
         },
         {
-          "name": "avatarThumbUrl",
-          "label": "Avatar Thumbnail",
-          "type": "",
-          "description": ""
+          "name": "latitude",
+          "label": "Latitude",
+          "type": "number",
+          "description": "Latitude of the member's map pin."
+        },
+        {
+          "name": "longitude",
+          "label": "Longitude",
+          "type": "number",
+          "description": "Longitude of the member's map pin."
+        },
+        {
+          "name": "countryCode",
+          "label": "Country code",
+          "type": "string",
+          "description": "ISO 3166-1 alpha-2 country of the map pin; null when the pin is at sea."
+        },
+        {
+          "name": "country",
+          "label": "Country",
+          "type": "string",
+          "description": "Country name of the map pin."
+        },
+        {
+          "name": "location",
+          "label": "Location (profile)",
+          "type": "string",
+          "description": "Free-text location the member typed on their profile."
+        },
+        {
+          "name": "timeZone",
+          "label": "Time zone",
+          "type": "string",
+          "description": "Member's time zone."
         },
         {
           "name": "bio",
           "label": "Bio",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Profile bio."
         },
         {
-          "name": "location",
-          "label": "Location",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "joinedAt",
-          "label": "Joined At",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "approvedAt",
-          "label": "Approved At",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "lastOffline",
-          "label": "Last Offline",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "memberCreatedAt",
-          "label": "Account Created",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "totalGroupsMemberOf",
-          "label": "Groups Member Of",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "totalGroupsCreated",
-          "label": "Groups Created",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "totalSharedGroups",
-          "label": "Shared Groups",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "linkFacebook",
-          "label": "Facebook",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "linkInstagram",
-          "label": "Instagram",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "linkLinkedIn",
-          "label": "LinkedIn",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "linkTwitter",
-          "label": "Twitter",
-          "type": "",
-          "description": ""
+          "name": "bioEmails",
+          "label": "Emails in bio",
+          "type": "array",
+          "description": "Email addresses written in the bio (empty list when none)."
         },
         {
           "name": "linkWebsite",
           "label": "Website",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Website link from the profile."
+        },
+        {
+          "name": "linkLinkedIn",
+          "label": "LinkedIn",
+          "type": "string",
+          "description": "LinkedIn link from the profile."
+        },
+        {
+          "name": "linkInstagram",
+          "label": "Instagram",
+          "type": "string",
+          "description": "Instagram link from the profile."
         },
         {
           "name": "linkYoutube",
           "label": "YouTube",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "YouTube link from the profile."
+        },
+        {
+          "name": "linkTwitter",
+          "label": "X / Twitter",
+          "type": "string",
+          "description": "X / Twitter link from the profile."
+        },
+        {
+          "name": "linkFacebook",
+          "label": "Facebook",
+          "type": "string",
+          "description": "Facebook link from the profile."
+        },
+        {
+          "name": "role",
+          "label": "Role",
+          "type": "string",
+          "description": "Role in this community (member, group-admin, owner…)."
+        },
+        {
+          "name": "level",
+          "label": "Level",
+          "type": "integer",
+          "description": "Gamification level in this community."
+        },
+        {
+          "name": "points",
+          "label": "Points",
+          "type": "integer",
+          "description": "Gamification points in this community."
+        },
+        {
+          "name": "postsCount",
+          "label": "Posts",
+          "type": "integer",
+          "description": "Posts the member wrote in this community."
+        },
+        {
+          "name": "joinedAt",
+          "label": "Joined at",
+          "type": "string",
+          "description": "When the member was approved into the community."
+        },
+        {
+          "name": "lastActiveAt",
+          "label": "Last active",
+          "type": "string",
+          "description": "When the member was last online in the community."
+        },
+        {
+          "name": "accountCreatedAt",
+          "label": "Account created",
+          "type": "string",
+          "description": "When the Skool account was created."
+        },
+        {
+          "name": "totalGroupsMemberOf",
+          "label": "Communities joined",
+          "type": "integer",
+          "description": "Number of Skool communities the member belongs to."
+        },
+        {
+          "name": "totalGroupsCreated",
+          "label": "Communities created",
+          "type": "integer",
+          "description": "Number of Skool communities the member created."
+        },
+        {
+          "name": "avatarUrl",
+          "label": "Avatar",
+          "type": "string",
+          "description": "Full-size profile picture."
+        },
+        {
+          "name": "avatarThumbUrl",
+          "label": "Avatar thumbnail",
+          "type": "string",
+          "description": "Small profile picture."
+        },
+        {
+          "name": "notice",
+          "label": "Notice",
+          "type": "string",
+          "description": "Only on notice rows: why nothing (or not everything) was extracted."
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "type": "string",
+          "description": "Only on notice rows: what happened and what to do."
+        },
+        {
+          "name": "extractedAt",
+          "label": "Extracted at",
+          "type": "string",
+          "description": "When the row was produced."
         }
       ]
     },
@@ -17404,7 +18060,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 66,
+      "usersRank": 67,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -19100,7 +19756,7 @@
         "INTEGRATIONS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1006,
+      "usersRank": 1009,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -19916,7 +20572,7 @@
         "SOCIAL_MEDIA",
         "MCP_SERVERS"
       ],
-      "usersRank": 538,
+      "usersRank": 537,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -20820,7 +21476,7 @@
         "MCP_SERVERS",
         "SOCIAL_MEDIA"
       ],
-      "usersRank": 1059,
+      "usersRank": 1060,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -22011,7 +22667,7 @@
         "DEVELOPER_TOOLS",
         "VIDEOS"
       ],
-      "usersRank": 264,
+      "usersRank": 273,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [

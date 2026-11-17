@@ -1,0 +1,32 @@
+{
+  "input": {
+    "locations": [
+      "Austin, TX"
+    ],
+    "listingType": "sale",
+    "maxItems": 12,
+    "detailLevel": "full"
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "address": "propertyAddress.primaryAddress",
+      "city": "propertyAddress.city",
+      "state": "propertyAddress.state",
+      "zip": "propertyAddress.postalCode",
+      "price": "pricing.sale.amount",
+      "status": "listingStatus",
+      "type": "propertySubtype",
+      "beds": "coreFeatures.bedrooms",
+      "baths": "coreFeatures.bathrooms",
+      "living_area": "coreFeatures.livingArea.value",
+      "listed": {
+        "path": "listingDate",
+        "as": "date"
+      },
+      "mls_number": "mlsNumber",
+      "url": "source_url"
+    }
+  }
+}
