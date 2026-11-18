@@ -89,11 +89,24 @@ export async function handleDemo(request, env, ctx, record) {
   // Retry once when the first answer came back quickly with nothing (empty stream, source said 429…): a new
   // request gets a fresh proxy IP. Never retry a slow failure (visitor already waited) or "all demos busy".
   let busy = false;
-  for (let attempt = 1; attempt <= 2 && !rows.length && !busy && !(attempt === 2 && Date.now() - t0 > 25000); attempt++) try {
+  // Backends in order: Google Cloud Run (DEMO_CLOUDRUN_URLS; only this Worker knows DEMO_CLOUDRUN_SECRET, sent as
+  // X-Demo-Secret) first, then Apify Standby (cfg.upstream, run-only token) as the fallback. One backend only: it
+  // gets the quick retry. Plan: REBUILD/CLOUD-RUN-DEMO-PLAN.md
+  const backends = [];
+  // Cloud Run URLs live in the Worker secret DEMO_CLOUDRUN_URLS ({"<actor id>": "https://…run.app"}), never in this public repo
+  let cloudrun = ''; try { cloudrun = JSON.parse(env.DEMO_CLOUDRUN_URLS || '{}')[body.actor] || ''; } catch {}
+  if (cloudrun && env.DEMO_CLOUDRUN_SECRET) backends.push({ name: 'cloudrun', url: cloudrun, headers: { 'X-Demo-Secret': env.DEMO_CLOUDRUN_SECRET }, ms: 45000 });
+  if (cfg.upstream && env.DEMO_APIFY_TOKEN) backends.push({ name: 'apify', url: cfg.upstream, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}` }, ms: LIMITS.timeoutMs });
+  if (backends.length === 1) backends.push(backends[0]);
+  let served = '';
+  for (let i = 0; i < backends.length && !rows.length && !busy && !(i > 0 && backends[i] === backends[i - 1] && Date.now() - t0 > 25000); i++) try {
     error = null;
-    const r = await fetch(cfg.upstream, { method: 'POST', signal: ctrl.signal, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ url: target }) });
+    const b = backends[i];
+    const signal = AbortSignal.any([ctrl.signal, AbortSignal.timeout(b.ms)]);
+    const r = await fetch(b.url, { method: 'POST', signal, headers: { ...b.headers, 'Content-Type': 'application/json' }, body: JSON.stringify({ url: target }) });
     const text = await r.text();
-    if (!r.ok || !/"type":"batch"/.test(text)) console.log(`demo upstream ${r.status}: ${text.slice(0, 300)}`);
+    if (!r.ok || !/"type":"batch"/.test(text)) console.log(`demo ${b.name} ${r.status}: ${text.slice(0, 300)}`);
+    if (/"type":"batch"/.test(text)) served = b.name;
     // Apify refuses new Standby containers when the run-only account is at its concurrent-run limit
     if (!r.ok && /cannot-start-actor-runs|concurrent/i.test(text)) { busy = true; error = 'All live demos are busy right now. Please try again in a minute.'; break; }
     for (const line of text.split('\n')) {
@@ -104,9 +117,8 @@ export async function handleDemo(request, env, ctx, record) {
       else if ((ev.type === 'failed' || ev.type === 'error') && !error) error = `${cfg.name} returned no results for this link. Check that it opens a search or a single item page.`;
       if (ev.type === 'progress' && ev.total) total = ev.total;
     }
-    if (!rows.length && !error && attempt === 1) continue; // empty stream: try once more
   } catch (e) {
-    error = e.name === 'AbortError' ? 'The demo took too long (70 s limit). Try another link.' : 'The demo backend is not reachable right now.';
+    error = e.name === 'AbortError' || e.name === 'TimeoutError' ? 'The demo took too long. Try another link.' : 'The demo backend is not reachable right now.';
   }
   clearTimeout(timer);
   // fields: { "<actor output path, dots for nesting>": "<name shown>" }; pseudonymize: shown names whose values are
@@ -133,6 +145,6 @@ export async function handleDemo(request, env, ctx, record) {
   const out = { actor: body.actor, url: target, rows: trimmed, count: trimmed.length, total, ms: Date.now() - t0, store: cfg.store, display: cfg.display };
   const extra = { remaining: ok.remaining, limits: { day: LIMITS.perIpDay, hour: LIMITS.perIpHour } };
   ctx.waitUntil(cache.put(cacheKey, new Response(JSON.stringify(out), { headers: { 'Content-Type': 'application/json', 'Cache-Control': `public, max-age=${LIMITS.cacheSecs}` } })));
-  record(env, 'demo_run', body.actor, 'live', request);
+  record(env, 'demo_run', body.actor, served === 'cloudrun' ? 'live-cloudrun' : 'live', request);
   return json(200, { ...out, ...extra, cached: false });
 }

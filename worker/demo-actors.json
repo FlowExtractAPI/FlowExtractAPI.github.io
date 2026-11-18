@@ -1,5 +1,5 @@
 {
-  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). upstream: the demo actor's Standby URL on Tester 1. fields: actor output path (dots for nesting) -> name shown (allow-list: NEVER private people's real names, phones, emails, profile photos). pseudonymize: shown names replaced by '<pseudonymLabel> 1, 2…'. dates: shown names formatted YYYY-MM-DD. display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
+  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). Google Cloud Run URLs (tried first) are NOT here: Worker secret DEMO_CLOUDRUN_URLS (live-demo/deployed-cloudrun/). upstream: the Apify Standby URL on Tester 1 (fallback). fields: actor output path (dots for nesting) -> name shown (allow-list: NEVER private people's real names, phones, emails, profile photos). pseudonymize: shown names replaced by '<pseudonymLabel> 1, 2…'. dates: shown names formatted YYYY-MM-DD. display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
   "idealista": {
     "name": "Idealista",
     "hosts": [
