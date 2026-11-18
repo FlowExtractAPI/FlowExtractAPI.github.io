@@ -1,0 +1,23 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "startUrls": [
+      "https://www.carsales.com.au/cars/mazda/cx-5/"
+    ],
+    "maxResults": 12,
+    "includeDetails": false
+  },
+  "project": {
+    "*": {
+      "title": "_meta.title",
+      "price": "_meta.price",
+      "year": "_meta.year",
+      "odometer_km": "_meta.odometer_km",
+      "state": "_meta.state",
+      "condition": "_meta.condition",
+      "seller_type": "_meta.seller_type",
+      "url": "_meta.url"
+    }
+  }
+}

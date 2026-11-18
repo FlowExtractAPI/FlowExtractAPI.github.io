@@ -1,0 +1,21 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "queries": [
+      "red car"
+    ],
+    "maxResults": 12,
+    "splitLargeSearches": false
+  },
+  "project": {
+    "*": {
+      "title": "t",
+      "width": "_meta.width",
+      "height": "_meta.height",
+      "domain": "_meta.domain",
+      "page_url": "purl",
+      "query": "_meta.query"
+    }
+  }
+}

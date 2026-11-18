@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/crexi-scraper",
+  "runId": "GfRGBWwr2QP2rkAcE",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:20:00.216Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.008,
+  "buildNumber": "0.0.20",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

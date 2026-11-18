@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/zoom-scraper",
+  "runId": "6NKLGW7RaSWEoK1Ly",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:12:10.120Z",
+  "itemCount": 1,
+  "sampleCount": 1,
+  "costUsd": 0.011,
+  "buildNumber": "1.0.10",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

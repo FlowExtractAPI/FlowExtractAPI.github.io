@@ -1,0 +1,42 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://shopee.com.my/LABER-LEE-Unisex-Leisure-Shoulder-Bag-Multi-Pocket-Messenger-Shoulder-Bag-Large-Capacity-Nylon-Tablet-Netbook-Umbrella-i.345524236.26828374105"
+      }
+    ],
+    "maxReviewsPerShop": 12,
+    "includeShopSummary": false
+  },
+  "project": {
+    "*": {
+      "product": "productName",
+      "reviewer": {
+        "path": "reviewerName",
+        "as": "pseudonym",
+        "label": "Buyer"
+      },
+      "rating": "rating",
+      "review": "text",
+      "variation": "variation",
+      "quality": "productQuality",
+      "seller_service": "sellerService",
+      "delivery": "deliveryService",
+      "has_photos": {
+        "path": "imageUrls",
+        "as": "present"
+      },
+      "seller_replied": {
+        "path": "sellerReply",
+        "as": "present"
+      },
+      "date": {
+        "path": "createdAt",
+        "as": "date"
+      },
+      "country": "country"
+    }
+  }
+}

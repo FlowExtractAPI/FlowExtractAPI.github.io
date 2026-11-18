@@ -4,7 +4,7 @@
   "category": "video",
   "source": "Zoom",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "zoom recording downloader",
   "secondaryKeywords": [
     "zoom scraper",
@@ -14,12 +14,53 @@
   "title": "Zoom Scraper: Recording Downloader & Transcripts",
   "h1": "Zoom Scraper: Recording Downloader & Transcript",
   "metaDescription": "Turn shared Zoom recording links into downloadable video files, transcripts and meeting metadata. Works on meetings, webinars, events and clips.",
-  "intro": "Paste shared Zoom recording links (meetings, webinars, events or clips) and get the video file, the transcript and the recording's metadata, ready to archive or repurpose.",
+  "intro": "Paste shared Zoom recording links (cloud recordings on zoom.us or zoomgov.com, Zoom Events and Zoom Clips) and get a direct MP4 download link, the transcript as SRT, VTT, TXT or XML, and the recording's title, date, duration and size. No Zoom account, no browser extension.",
   "useCases": [
     "Archive a course or webinar series before the share links expire",
-    "Turn recorded meetings into searchable transcripts",
+    "Turn recorded meetings into searchable transcripts and subtitles",
+    "Download public government meetings from zoomgov.com for records or reporting",
     "Repurpose event recordings into clips and posts"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "How do I extract the MP4 from a Zoom recording link?",
+      "a": "Paste the shared link (it contains /rec/play/, /rec/share/ or /clips/share/) and keep \"Download videos\" on. The result has a direct video_url to the MP4 file plus its size, so you can save it or send it to storage."
+    },
+    {
+      "q": "Can I download a recording from zoomgov.com?",
+      "a": "Yes. Government tenants such as www.zoomgov.com and agency subdomains (usdot.zoomgov.com and similar) work the same way as zoom.us links."
+    },
+    {
+      "q": "How do I get the transcript of a Zoom recording?",
+      "a": "Turn on \"Download transcript\" and pick SRT, VTT, TXT or XML. You get the transcript when the host enabled Zoom's audio transcript for that recording; has_transcript tells you if one exists."
+    },
+    {
+      "q": "Does it work on passcode-protected or private recordings?",
+      "a": "No. It reads what the shared link shows to any visitor. A recording that asks for a passcode or a sign-in, or one that was deleted or expired, comes back with status failed and the reason."
+    },
+    {
+      "q": "Do I need a browser extension or a Zoom account?",
+      "a": "No. It runs on Apify from the link alone, so you can process a whole list of links at once, schedule it, or call it from an API or Make, Zapier or n8n."
+    },
+    {
+      "q": "Can it record or screen-scrape a live Zoom meeting?",
+      "a": "No. It works on recordings that were already saved to the Zoom cloud and shared as a link, not on live meetings."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Zoom's Cloud Recording API lets an account's owner or admins list and download their own recordings, after creating an OAuth app and getting it approved. It cannot open a recording someone else shared with you. This actor works from the shared link alone, for any recording that opens without a passcode.",
+  "demo": {
+    "url": "zoom.us/clips/share/…",
+    "fields": [
+      "title",
+      "type",
+      "recorded",
+      "duration",
+      "source_size_mb",
+      "has_transcript",
+      "status"
+    ],
+    "tab": "Zoom"
+  },
+  "updated": "2026-11-18"
 }

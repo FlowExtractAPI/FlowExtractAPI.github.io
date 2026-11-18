@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/bing-images-scraper",
+  "runId": "4dAPKxxx5hwq0QhKa",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:13:28.415Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.03,
+  "buildNumber": "0.0.8",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

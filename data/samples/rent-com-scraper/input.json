@@ -1,0 +1,28 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "searchUrls": [
+      {
+        "url": "https://www.rent.com/california/counties/el-dorado/apartments_townhouses_condos_houses"
+      }
+    ],
+    "maxItems": 12,
+    "findContactEmails": false
+  },
+  "project": {
+    "*": {
+      "name": "name",
+      "type": "propertyType",
+      "rent_from": "rentMin",
+      "beds": "bedsText",
+      "baths": "bathsText",
+      "sqft": "sqftText",
+      "city": "city",
+      "state": "state",
+      "zip": "zip",
+      "availability": "availability",
+      "url": "url"
+    }
+  }
+}

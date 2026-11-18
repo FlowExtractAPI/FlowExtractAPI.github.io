@@ -4,7 +4,7 @@
   "category": "vehicles",
   "source": "carsales.com.au",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "carsales scraper",
   "secondaryKeywords": [
     "carsales.com.au scraper",
@@ -19,6 +19,42 @@
     "Monitor dealer stock and price drops",
     "Build market reports on new and used supply"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Can I get more than carsales' 440-listing limit?",
+      "a": "Yes. carsales stops a single search at about 440 listings; the scraper splits big searches by year, state and price so tens of thousands of matches can be collected."
+    },
+    {
+      "q": "Do I need a search link?",
+      "a": "No. Paste a carsales search, make or model link, or build the search from filters: make, model, condition, seller type, state, body style, fuel, transmission, price, year and odometer."
+    },
+    {
+      "q": "What does the full listing add?",
+      "a": "The specification sheet, features, warranty and service, dealer comments, dealer profile and licence, and the dealer's phone number."
+    },
+    {
+      "q": "Can I scrape one car by its listing number?",
+      "a": "Yes. Paste a listing link or just the number, for example SSE-AD-19119170."
+    },
+    {
+      "q": "Are duplicates removed?",
+      "a": "Yes. A listing found by several of your searches is delivered and charged once."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "carsales offers data feeds and APIs to dealers and commercial partners under contract, not to the public. This actor returns the listings any visitor sees on carsales.com.au, with carsales' own field names.",
+  "demo": {
+    "url": "carsales.com.au/cars/mazda/cx-5",
+    "fields": [
+      "title",
+      "price",
+      "year",
+      "odometer_km",
+      "state",
+      "condition",
+      "seller_type"
+    ],
+    "tab": "carsales"
+  },
+  "updated": "2026-11-18"
 }

@@ -4,7 +4,7 @@
   "category": "search-engines",
   "source": "Bing",
   "sourceHub": "bing",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "bing reverse image search api",
   "secondaryKeywords": [
     "bing visual search api",
@@ -19,6 +19,41 @@
     "Trace the original source of an image",
     "Identify products or places in a picture"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "How do I reverse image search with Bing in bulk?",
+      "a": "Give it a list of image links (or upload files) and it returns, for each picture, Bing's best guess, visually similar images and the pages where the picture appears."
+    },
+    {
+      "q": "Can I find where my photos are used online?",
+      "a": "Yes. The \"pages with this image\" results list the web pages carrying the picture, with titles and dates, which is how photographers and brands trace reuse."
+    },
+    {
+      "q": "Does it read text in the picture?",
+      "a": "Yes. Every line of text Bing can read, with where it sits on the picture, plus Bing's short AI description with sources."
+    },
+    {
+      "q": "Can I upload a file instead of a link?",
+      "a": "Yes: image links, uploaded files or data: links. Large pictures are resized automatically."
+    },
+    {
+      "q": "Do I need a Bing Visual Search API key?",
+      "a": "No. That API was retired in 2025; this actor needs no Azure key."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Microsoft retired the Bing Search APIs, including Image Search and Visual Search, in August 2025; the replacement 'Grounding with Bing' only works inside Azure AI agents and returns no raw results. This actor gives you Bing's visual search results for any image, no key.",
+  "demo": {
+    "url": "bing.com/images · search by image (Google logo)",
+    "fields": [
+      "title",
+      "source",
+      "width",
+      "height",
+      "format",
+      "published"
+    ],
+    "tab": "Bing reverse image"
+  },
+  "updated": "2026-11-18"
 }

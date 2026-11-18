@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "Shopee",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "shopee reviews scraper",
   "secondaryKeywords": [
     "shopee scraper",
@@ -19,6 +19,42 @@
     "Compare sellers of the same product on service and delivery",
     "Collect review text and photos for product research"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Which Shopee countries does it support?",
+      "a": "Singapore, Malaysia, Indonesia, the Philippines, Thailand, Vietnam, Taiwan and Brazil. Each market was checked with a real shop before release."
+    },
+    {
+      "q": "Can I scrape all reviews of a whole shop?",
+      "a": "Yes. Paste a shop link to get reviews across the shop's products, or a product link for one product, and set the maximum number of reviews per shop."
+    },
+    {
+      "q": "Can I get only 1- and 2-star reviews?",
+      "a": "Yes. Pick the star ratings you want, and optionally keep only reviews with text or with photos and videos."
+    },
+    {
+      "q": "Does it include the buyer's photos and the seller's reply?",
+      "a": "Yes. Each review has its photo and video links and the seller's reply when there is one, plus the product quality, seller service and delivery sub-ratings."
+    },
+    {
+      "q": "Do I need a Shopee account?",
+      "a": "No. Paste product or shop links; no login or cookies."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "The Shopee Open Platform API is for sellers and approved partners managing their own shops; it does not give you the reviews of other shops. This actor reads the reviews any shopper can see, for any product or shop.",
+  "demo": {
+    "url": "shopee.com.my · one product",
+    "fields": [
+      "product",
+      "rating",
+      "variation",
+      "quality",
+      "delivery",
+      "seller_replied",
+      "date"
+    ],
+    "tab": "Shopee reviews"
+  },
+  "updated": "2026-11-18"
 }

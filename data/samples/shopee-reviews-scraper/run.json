@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/shopee-reviews-scraper",
+  "runId": "sMHjf6Mx071rbmCZZ",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:15:16.071Z",
+  "itemCount": 6,
+  "sampleCount": 6,
+  "costUsd": 0.023000000000000003,
+  "buildNumber": "0.0.12",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

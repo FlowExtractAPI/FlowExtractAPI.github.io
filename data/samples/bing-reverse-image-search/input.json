@@ -1,0 +1,43 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "imageUrls": [
+      "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+    ],
+    "resultTypes": [
+      "similarImages",
+      "pagesWithImage"
+    ],
+    "maxResults": 12
+  },
+  "project": {
+    "similar_image": {
+      "position": "position",
+      "title": "title",
+      "source": "source",
+      "width": "originalWidth",
+      "height": "originalHeight",
+      "format": "format",
+      "published": {
+        "path": "datePublished",
+        "as": "date"
+      },
+      "link": "link"
+    },
+    "matching_page": {
+      "position": "position",
+      "title": "title",
+      "source": "source",
+      "width": "originalWidth",
+      "height": "originalHeight",
+      "format": "format",
+      "published": {
+        "path": "datePublished",
+        "as": "date"
+      },
+      "link": "link"
+    }
+  },
+  "typeField": "resultType"
+}

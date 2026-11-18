@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "Trustpilot",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "trustpilot reviews scraper",
   "secondaryKeywords": [
     "trustpilot scraper",
@@ -19,7 +19,28 @@
     "Find recurring complaints in a market",
     "Monitor new reviews on a schedule"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Is it really free?",
+      "a": "There are no per-review or per-company charges; a run only uses your own Apify platform credits, which the free Apify plan covers for small jobs."
+    },
+    {
+      "q": "Can I scrape all reviews of a big company?",
+      "a": "It reads a company's review history in depth, combines everything without duplicates and reports how many matching reviews it read, for example 800 of 834."
+    },
+    {
+      "q": "Can I filter by rating, language or keyword?",
+      "a": "Yes, with the same filters as Trustpilot's \"Filter by\" panel: rating, verified, replies, date posted, top mentions, keyword search and language."
+    },
+    {
+      "q": "What do I put in the input?",
+      "a": "Trustpilot links from any country site, company websites (example.com) or brand names, one per line. Reviewer profile links work too."
+    },
+    {
+      "q": "Do I get the TrustScore and company details?",
+      "a": "Yes. One company row per company: TrustScore, rating split, review counts per language, reply rate and speed, categories, published contact details and Trustpilot's AI summary."
+    }
+  ],
   "demo": {
     "url": "trustpilot.com/review/apify.com",
     "fields": [
@@ -33,5 +54,7 @@
     ],
     "tab": "Trustpilot"
   },
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Trustpilot's APIs are for businesses with a paid Trustpilot plan, mainly to manage and show their own reviews, and need API keys. This actor reads the reviews anyone can see on Trustpilot, for any company.",
+  "updated": "2026-11-18"
 }

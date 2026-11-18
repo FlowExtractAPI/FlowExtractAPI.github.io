@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/bing-reverse-image-search",
+  "runId": "rnxexqEQxbVDnwxLB",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:13:52.031Z",
+  "itemCount": 25,
+  "sampleCount": 19,
+  "costUsd": 0.028,
+  "buildNumber": "0.0.3",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

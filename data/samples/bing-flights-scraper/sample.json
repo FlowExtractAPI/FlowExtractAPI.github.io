@@ -1,0 +1,134 @@
+[
+  {
+    "record_type": null,
+    "position": 1,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 69.91,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 2,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 82,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 3,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 81,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 4,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 87,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 5,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 89.97,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 6,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 96,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 7,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 122,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 8,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 89,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 9,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 97,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 10,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 93,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 11,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 95,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  },
+  {
+    "record_type": null,
+    "position": 12,
+    "origin": "LON",
+    "destination": "PAR",
+    "departure": "2026-12-18",
+    "price": 95,
+    "currency": "USD",
+    "price_advice": "Buy",
+    "market": "us"
+  }
+]

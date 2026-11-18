@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Crexi",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "crexi scraper",
   "secondaryKeywords": [
     "crexi api",
@@ -19,6 +19,42 @@
     "Build broker contact lists for a property type",
     "Track new commercial listings in target cities"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Can I use my own Crexi search?",
+      "a": "Yes. Set your filters on crexi.com (property type, price, cap rate, occupancy, place, for sale or for lease), copy the address and paste it. Every filter in the link is applied."
+    },
+    {
+      "q": "Is there a limit to how many listings I can get?",
+      "a": "One Crexi search shows at most 100,000 listings; bigger searches are split automatically. You can also set a limit per link, or 0 for everything it matches."
+    },
+    {
+      "q": "Can I get the brokers' emails?",
+      "a": "Optionally. The actor reads business emails from each brokerage's own public website, limited to the listing's brokers and the firm's general address."
+    },
+    {
+      "q": "Does it cover lease listings too?",
+      "a": "Yes. For sale and for lease, every Crexi property type: land, retail, office, industrial, multifamily, hospitality and more."
+    },
+    {
+      "q": "Do I need a Crexi account?",
+      "a": "No. A listing that needs a Crexi login is still delivered and marked, and the run ends successfully."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Crexi has no public API for its listings. This actor returns the commercial listings any visitor can see, with Crexi's own fields.",
+  "demo": {
+    "url": "crexi.com/search · Alaska recreational land",
+    "fields": [
+      "title",
+      "type",
+      "price",
+      "acres",
+      "city",
+      "state",
+      "brokerage"
+    ],
+    "tab": "Crexi"
+  },
+  "updated": "2026-11-18"
 }

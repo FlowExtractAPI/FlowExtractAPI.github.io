@@ -4,7 +4,7 @@
   "category": "search-engines",
   "source": "Google Trends",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "google trends scraper",
   "secondaryKeywords": [
     "google trends api",
@@ -23,6 +23,22 @@
     {
       "q": "Is there an official Google Trends API?",
       "a": "Google opened an alpha Trends API to a small group of testers only. This actor reads the public Trends site with its own filters and returns the same numbers as data."
+    },
+    {
+      "q": "Can I compare several terms?",
+      "a": "Yes, up to 5 terms on one line share one 0–100 scale, exactly like \"Add comparison\" on the site. Each period comes back as one row with all terms side by side."
+    },
+    {
+      "q": "Can I get interest by city?",
+      "a": "Yes. Interest by region down to country, subregion, metro or city, with each term's share and its own 0–100 interest, plus city coordinates."
+    },
+    {
+      "q": "Does it return related and rising queries?",
+      "a": "Yes: top and rising related searches per term, with value and the \"Breakout\" flag, plus the topics Google matches each term to."
+    },
+    {
+      "q": "Can I get today's trending searches?",
+      "a": "Yes. Trending now for 125 countries: search volume, % increase, start and end time, categories, the trend breakdown and news articles."
     }
   ],
   "demo": {
@@ -39,5 +55,7 @@
     ],
     "tab": "Google Trends"
   },
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "updated": "2026-11-18",
+  "officialApi": "Google's Trends API is an alpha open to a small group of approved testers. This actor returns the numbers the public Google Trends site shows, with every filter the site has."
 }

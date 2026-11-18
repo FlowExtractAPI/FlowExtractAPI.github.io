@@ -1,0 +1,27 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.crexi.com/search?searchType=Sales&propertyAttributes.type_tree_Land=Hunting%252FRecreational&mapZoom=4&mapCenter=62.96,-152.48&address_value=Alaska%252C%2520USA"
+      }
+    ],
+    "maxItemsPerLink": 12,
+    "includeDetails": false,
+    "findBrokerageEmails": false
+  },
+  "project": {
+    "*": {
+      "title": "_meta.title",
+      "type": "_meta.property_type",
+      "price": "_meta.price",
+      "acres": "_meta.acres",
+      "city": "_meta.city",
+      "state": "_meta.state",
+      "status": "_meta.status",
+      "brokerage": "_meta.brokerage",
+      "url": "_meta.listing_url"
+    }
+  }
+}

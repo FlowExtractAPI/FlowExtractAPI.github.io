@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/rent-com-scraper",
+  "runId": "ysV3Xaucahh39AQI2",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:20:03.641Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.0128,
+  "buildNumber": "0.0.13",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

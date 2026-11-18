@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Rent.com",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "rent.com scraper",
   "secondaryKeywords": [
     "rent.com api",
@@ -19,6 +19,42 @@
     "Track concessions and deals in a market",
     "Build a rental comps dataset"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Can I use my own Rent.com search?",
+      "a": "Yes. Set your filters on rent.com (city, ZIP, neighborhood, county, college or military base; price, bedrooms, bathrooms, property type, pets, amenities, move-in date), copy the link and paste it."
+    },
+    {
+      "q": "Does it show the rent for the floor plan I want?",
+      "a": "Yes. On a search with bedroom, bathroom, price or size filters, each row says which floor plans match and the lowest and highest matching rent, not only the building's range."
+    },
+    {
+      "q": "Can I scrape a single apartment or house?",
+      "a": "Yes. Paste a property link or a single unit link in the same box as your search links."
+    },
+    {
+      "q": "How many listings can I get?",
+      "a": "You set a maximum per run, from 1 to 100,000. Listings that were taken down or links that cannot be used become marked, unpaid rows."
+    },
+    {
+      "q": "Do I need a Rent.com account?",
+      "a": "No. It reads public listings; no login or cookies."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Rent.com has no public listings API. This actor returns the rentals any visitor sees, with rents, floor plans, amenities and the leasing office details.",
+  "demo": {
+    "url": "rent.com · El Dorado County, CA",
+    "fields": [
+      "name",
+      "type",
+      "rent_from",
+      "beds",
+      "baths",
+      "city",
+      "availability"
+    ],
+    "tab": "Rent.com"
+  },
+  "updated": "2026-11-18"
 }

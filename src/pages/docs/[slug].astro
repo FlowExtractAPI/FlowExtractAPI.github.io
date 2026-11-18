@@ -129,7 +129,7 @@ const realCost = run && typeof run.costUsd === 'number' ? `$${run.costUsd < 0.01
             </table>
           </div>
         )}
-        {realCost && <p class="note" style="margin-top:14px"><b>Real cost check:</b> the test run behind the table above ({run.date}) returned {run.itemCount} results and cost our test account {realCost} in total, on Apify's free plan.</p>}
+        {realCost && <p class="note" style="margin-top:14px"><b>Real cost check:</b> the test run behind the table above ({run.date}) returned {run.itemCount} {run.itemCount === 1 ? 'result' : 'results'} and cost our test account {realCost} in total, on Apify's free plan.</p>}
         <p class="muted small" style="margin-top:10px">Prices as listed on the Apify Store on {pricesFetchedAt}. The Store page always shows the current price.</p>
       </section>
 

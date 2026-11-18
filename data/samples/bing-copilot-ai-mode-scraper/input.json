@@ -1,0 +1,18 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "prompts": [
+      "best crm for a small business"
+    ],
+    "market": "us"
+  },
+  "project": {
+    "*": {
+      "query": "query",
+      "title": "title",
+      "summary": "summary",
+      "market": "_meta.market"
+    }
+  }
+}

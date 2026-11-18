@@ -1,0 +1,23 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "tripType": "one_way",
+    "origin": "London",
+    "destination": "Paris",
+    "departureDate": "30 days",
+    "maxResults": 12
+  },
+  "project": {
+    "*": {
+      "position": "position",
+      "origin": "origin",
+      "destination": "destination",
+      "departure": "departureDate",
+      "price": "price",
+      "currency": "currency",
+      "price_advice": "priceAdvice",
+      "market": "market"
+    }
+  }
+}

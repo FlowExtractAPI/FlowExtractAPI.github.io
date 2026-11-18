@@ -4,7 +4,7 @@
   "category": "search-engines",
   "source": "Bing",
   "sourceHub": "bing",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "bing copilot scraper",
   "secondaryKeywords": [
     "bing ai mode scraper",
@@ -20,6 +20,39 @@
     "See which sources AI answers rely on for your topics",
     "Monitor the AI answers to your key questions over time"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "What does it return for each question?",
+      "a": "The whole Bing AI Mode (Copilot Search) answer: headline, summary, sections, lists and tables as markdown and plain text, the numbered citations, and every source page Bing read."
+    },
+    {
+      "q": "Can I track whether my brand or site is cited?",
+      "a": "Yes. List the brands and domains you care about; each answer reports mentions per brand and, per domain, whether Bing cited it and at which citation number. That is the core of GEO / AEO tracking."
+    },
+    {
+      "q": "Which countries and languages?",
+      "a": "28 markets; Bing answers in that market's country and language."
+    },
+    {
+      "q": "How fast is it?",
+      "a": "A typical answer takes about 20 seconds without a browser, and several questions run side by side."
+    },
+    {
+      "q": "Do I need a Microsoft account or API key?",
+      "a": "No. It works from your questions alone."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Microsoft retired the Bing Search APIs, including Image Search and Visual Search, in August 2025; the replacement 'Grounding with Bing' only works inside Azure AI agents and returns no raw results. There is no API for Bing's AI Mode answers; this actor collects them with their citations.",
+  "demo": {
+    "url": "bing.com AI Mode · \"best crm for a small business\"",
+    "fields": [
+      "query",
+      "title",
+      "summary",
+      "market"
+    ],
+    "tab": "Bing AI Mode"
+  },
+  "updated": "2026-11-18"
 }

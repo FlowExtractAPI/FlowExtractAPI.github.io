@@ -4,7 +4,7 @@
   "category": "travel",
   "source": "Bing",
   "sourceHub": "bing",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "bing flights scraper",
   "secondaryKeywords": [
     "bing travel flights",
@@ -19,6 +19,42 @@
     "Find the cheapest days to fly with the price calendar",
     "Feed fares into a travel-deals site or an alert"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Can I paste a Bing Flights link?",
+      "a": "Yes. Each link copied from bing.com/travel is one search, read exactly as Bing reads it (route, dates, one way or round trip, cabin, travellers). Or fill in one search with From, To and dates."
+    },
+    {
+      "q": "Can I track a fare every day?",
+      "a": "Yes. Use a relative date such as \"30 days\" and schedule the run: each day it searches 30 days ahead, so you follow the same window over time."
+    },
+    {
+      "q": "Does it give booking sites and prices?",
+      "a": "Yes. Turn on booking options to get the sellers on a flight's Bing booking page with price, rating, booking link, change rule and fare details."
+    },
+    {
+      "q": "What is the price advice?",
+      "a": "Bing's \"Book now / Wait\" advice for the route, with its confidence, returned with the flights."
+    },
+    {
+      "q": "Can I search \"anywhere\"?",
+      "a": "Yes. Leave To empty (or write Anywhere) for Bing's Explore: where you can fly from your airport, cheapest, quickest or most popular first. A price calendar for the next ~80 days is optional."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Bing Flights has no public API. Flight price APIs from airlines and aggregators need partner contracts; this actor returns the prices Bing Flights shows, in 23 markets and their currencies.",
+  "demo": {
+    "url": "bing.com/travel/flight-search · London → Paris",
+    "fields": [
+      "position",
+      "origin",
+      "destination",
+      "departure",
+      "price",
+      "currency",
+      "price_advice"
+    ],
+    "tab": "Bing Flights"
+  },
+  "updated": "2026-11-18"
 }

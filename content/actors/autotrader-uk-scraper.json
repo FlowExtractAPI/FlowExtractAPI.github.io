@@ -4,7 +4,7 @@
   "category": "vehicles",
   "source": "AutoTrader UK",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "autotrader uk scraper",
   "secondaryKeywords": [
     "autotrader scraper",
@@ -19,6 +19,41 @@
     "Find under-priced stock for trading",
     "Monitor dealer inventory in a region"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Can I use my own AutoTrader search?",
+      "a": "Yes. Set your filters on autotrader.co.uk (make, model, price, year, mileage, fuel, gearbox, distance…), copy the address and paste it. The same filters apply to the data."
+    },
+    {
+      "q": "Does it work for vans, motorbikes and motorhomes?",
+      "a": "Yes: cars, vans, motorbikes, motorhomes, caravans, trucks, farm, plant and electric bikes, plus single listing links."
+    },
+    {
+      "q": "Can it get every listing when a search has thousands of results?",
+      "a": "Yes. Large searches are collected in full, not just the first pages, and a listing found by several of your links is delivered and charged once."
+    },
+    {
+      "q": "What does \"full details\" add?",
+      "a": "Registration, owners, service history, every seller phone number and website, description, equipment, the vehicle check, AutoTrader's price rating against the market, running costs and every photo in 1280×960."
+    },
+    {
+      "q": "Do I need an AutoTrader account?",
+      "a": "No. It reads public search and listing pages; no login or cookies."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "AutoTrader UK's Connect APIs are for retailers and approved partners managing their own stock; they are not open to the public for searching other sellers' listings. This actor returns what any visitor sees on autotrader.co.uk, with AutoTrader's own field names.",
+  "demo": {
+    "url": "autotrader.co.uk/car-search · VW Golf",
+    "fields": [
+      "title",
+      "price",
+      "year",
+      "mileage",
+      "town",
+      "vehicle_type"
+    ],
+    "tab": "AutoTrader UK"
+  },
+  "updated": "2026-11-18"
 }

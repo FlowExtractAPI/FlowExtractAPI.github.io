@@ -4,7 +4,7 @@
   "category": "search-engines",
   "source": "Bing",
   "sourceHub": "bing",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "bing images scraper",
   "secondaryKeywords": [
     "bing image search api",
@@ -19,6 +19,40 @@
     "Find where a product or a logo appears on the web",
     "Collect reference images by topic and license"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "How many images can I get per search?",
+      "a": "Bing stops at around 500 images per search. Ask for 2,000 or 5,000 and the actor keeps going automatically, without duplicates, and every image still matches your query and filters."
+    },
+    {
+      "q": "Which filters are supported?",
+      "a": "Bing's own: size (or a minimum width and height), image type, layout, color, people, date and license, plus 18 markets and all three SafeSearch levels."
+    },
+    {
+      "q": "Do I get the full-size image URL?",
+      "a": "Yes: the full-size image URL, the Bing thumbnail, the page the image was found on, its domain, title and width and height."
+    },
+    {
+      "q": "Can I build a dataset for AI or computer vision?",
+      "a": "Yes. Width and height come with each result, so you can filter by size before downloading any file, and the license filter helps you stay within reuse rights."
+    },
+    {
+      "q": "Do I need a Bing API key?",
+      "a": "No. It works from keywords alone; no Azure key or Bing account."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Microsoft retired the Bing Search APIs, including Image Search and Visual Search, in August 2025; the replacement 'Grounding with Bing' only works inside Azure AI agents and returns no raw results. This actor returns Bing Images results from your keywords, with Bing's filters, and no key.",
+  "demo": {
+    "url": "bing.com/images/search?q=red+car",
+    "fields": [
+      "title",
+      "width",
+      "height",
+      "domain",
+      "page_url"
+    ],
+    "tab": "Bing Images"
+  },
+  "updated": "2026-11-18"
 }

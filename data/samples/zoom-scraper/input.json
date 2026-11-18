@@ -1,0 +1,23 @@
+{
+  "input": {
+    "zoom_urls": [
+      { "url": "https://zoom.us/clips/share/fCRF3_4rHSwIWeTsbCC8liNDNJiBgAatqliI3jtK8g0H69WU19Hx41N4WWQ0rs0nXRm-WA.wxheKNdahKbinClx" }
+    ],
+    "download_videos": false,
+    "downloadTranscript": true,
+    "outputFormat": "srt"
+  },
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "type": "recordingType",
+      "recorded": { "path": "startTime", "as": "date" },
+      "duration": "duration",
+      "duration_seconds": "duration_seconds",
+      "source_size_mb": "source_size_mb",
+      "has_transcript": "has_transcript",
+      "status": "status"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/carsales-scraper",
+  "runId": "DyVljflmcKsKuMPS2",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:20:09.259Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.009000000000000001,
+  "buildNumber": "0.0.8",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

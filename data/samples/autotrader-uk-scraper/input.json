@@ -1,0 +1,22 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "startUrls": [
+      "https://www.autotrader.co.uk/car-search?postcode=SW1A%201AA&make=Volkswagen&model=Golf&sort=relevance"
+    ],
+    "maxResults": 12,
+    "includeDetails": false
+  },
+  "project": {
+    "*": {
+      "title": "_meta.title",
+      "price": "_meta.price",
+      "year": "_meta.year",
+      "mileage": "_meta.mileage",
+      "town": "_meta.town",
+      "vehicle_type": "_meta.vehicle_type",
+      "url": "_meta.url"
+    }
+  }
+}
