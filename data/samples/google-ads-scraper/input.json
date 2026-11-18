@@ -1,0 +1,28 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "adUrls": [
+      {
+        "url": "https://adstransparency.google.com/advertiser/AR04619580580634296321"
+      }
+    ],
+    "maxResults": 12
+  },
+  "project": {
+    "*": {
+      "advertiser": "advertiserName",
+      "format": "format",
+      "first_shown": {
+        "path": "firstShown",
+        "as": "date"
+      },
+      "last_shown": {
+        "path": "lastShown",
+        "as": "date"
+      },
+      "days_ran": "daysRan",
+      "ad_url": "adTransparencyUrl"
+    }
+  }
+}

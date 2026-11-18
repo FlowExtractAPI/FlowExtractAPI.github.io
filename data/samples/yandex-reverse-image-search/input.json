@@ -1,0 +1,25 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "imageUrl": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png",
+    "searchRegions": [
+      "yandex.com"
+    ],
+    "resultTypes": [
+      "matchingPages",
+      "similarImages"
+    ],
+    "maxResults": 12
+  },
+  "project": {
+    "*": {
+      "type": "resultType",
+      "position": "position",
+      "title": "title",
+      "source": "source",
+      "duplicates": "duplicateCount",
+      "link": "link"
+    }
+  }
+}

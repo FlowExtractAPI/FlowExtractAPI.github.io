@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Idealista",
   "sourceHub": "idealista",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "idealista scraper",
   "secondaryKeywords": [
     "scrape idealista",
@@ -27,8 +27,33 @@
     {
       "q": "Do I need an Idealista link?",
       "a": "No. Type a town, district or province as written on Idealista (for example Madrid, Chamberí, Lisboa or Milano) and pick the filters. A filter that does not exist for your property type is skipped and noted in the log."
+    },
+    {
+      "q": "Which filters are there?",
+      "a": "140+ options, as in the Idealista app: price, size, bedrooms, bathrooms, condition, occupancy (vacant, tenanted, bare ownership…), floor, energy rating, 27 features, listing extras and publication date, plus filters for rooms, offices, premises and land."
+    },
+    {
+      "q": "Can I get a whole city past the 2,500-listing cap?",
+      "a": "Yes. Large areas are split into districts and neighbourhoods automatically, without duplicates."
+    },
+    {
+      "q": "How is a run billed?",
+      "a": "Listings are collected by the Idealista Scraper API engine in your account at its per-listing price ($0.003 each on the free plan), plus a small fee per location searched from 2026-12-01."
     }
   ],
   "updated": "2026-11-18",
-  "lastKeywordChange": "2026-11-18"
+  "lastKeywordChange": "2026-11-18",
+  "officialApi": "Idealista's official API is granted on request, mainly to partners, with low request quotas and fewer fields than the website. This actor needs no API key and returns what Idealista shows, with every filter of its app.",
+  "demo": {
+    "url": "idealista.com · Madrid, homes for sale",
+    "fields": [
+      "title",
+      "price",
+      "type",
+      "size_m2",
+      "rooms",
+      "bathrooms"
+    ],
+    "tab": "Idealista"
+  }
 }

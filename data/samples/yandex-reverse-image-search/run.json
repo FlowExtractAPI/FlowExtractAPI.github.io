@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/yandex-reverse-image-search",
+  "runId": "Ka0cGvoimLeBaEiRr",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:23:18.122Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.00026051789237558845,
+  "buildNumber": "0.0.14",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

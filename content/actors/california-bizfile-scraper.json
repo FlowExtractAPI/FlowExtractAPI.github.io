@@ -4,7 +4,7 @@
   "category": "business",
   "source": "California bizfileOnline",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "california ucc search",
   "secondaryKeywords": [
     "california business search",
@@ -22,9 +22,39 @@
   ],
   "faq": [
     {
-      "q": "Does this replace ordering copies from the state?",
-      "a": "No. It returns the public search results and filing details as data. Certified copies are still ordered from the California Secretary of State."
+      "q": "What can I search on California bizfile?",
+      "a": "Business entities by name or entity number, and UCC filings: financing statements, judgment liens, state and federal tax liens and attachments, each with debtor, secured party and file date."
+    },
+    {
+      "q": "Can I verify that a company is active and in good standing?",
+      "a": "Yes. Each entity comes with status, standing, entity type, jurisdiction, filing date, the Statement of Information due date and the registered agent for service of process."
+    },
+    {
+      "q": "Can I find newly formed companies for lead generation?",
+      "a": "Yes. Search by entity type and formation month to pull new companies with their addresses."
+    },
+    {
+      "q": "Can I find businesses with tax liens?",
+      "a": "Yes. Search UCC filings by lien type and date range, for example every federal tax lien filed in a month, for collections or credit risk work."
+    },
+    {
+      "q": "Do I need a bizfile account?",
+      "a": "No. It reads the public California Secretary of State bizfile Online search."
     }
   ],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "The California Secretary of State sells bulk data products, but there is no free public API for live bizfile searches. This actor returns the same records bizfile Online shows, as data.",
+  "demo": {
+    "url": "bizfile.sos.ca.gov · \"DEL TACO\"",
+    "fields": [
+      "name",
+      "entity_number",
+      "status",
+      "standing",
+      "entity_type",
+      "filed"
+    ],
+    "tab": "California bizfile"
+  },
+  "updated": "2026-11-18"
 }

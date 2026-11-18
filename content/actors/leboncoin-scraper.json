@@ -4,7 +4,7 @@
   "category": "classifieds",
   "source": "leboncoin.fr",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "leboncoin scraper",
   "secondaryKeywords": [
     "leboncoin api",
@@ -21,9 +21,40 @@
   ],
   "faq": [
     {
-      "q": "Is there an official Leboncoin API?",
-      "a": "Leboncoin does not offer a public API for searching listings. This actor works from public search pages: paste the search URL and get structured data back, also through the Apify API."
+      "q": "Can I use my own leboncoin search?",
+      "a": "Yes. Set your filters on leboncoin.fr (category, location, price, property type, rooms, surface, energy rating, fuel, gearbox, mileage…) and paste the search link."
+    },
+    {
+      "q": "Which categories work?",
+      "a": "All of them: real estate, cars, jobs and every other category, with each category's own attributes."
+    },
+    {
+      "q": "Can I get every page of a search?",
+      "a": "Yes. The scraper pages through the whole search, and several links can run in one go."
+    },
+    {
+      "q": "Can I tell professional from private sellers?",
+      "a": "Yes. Each ad says whether the seller is a professional or a private person."
+    },
+    {
+      "q": "Do I need a leboncoin account?",
+      "a": "No. It reads public search results; no login or cookies."
     }
   ],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "leboncoin has no public API for searching ads; its partner APIs are for professional advertisers posting their own listings. This actor returns the ads any visitor sees, with every category attribute.",
+  "demo": {
+    "url": "leboncoin.fr/recherche · Paris apartments for sale",
+    "fields": [
+      "title",
+      "price",
+      "city",
+      "zipcode",
+      "seller_type",
+      "photos",
+      "published"
+    ],
+    "tab": "leboncoin"
+  },
+  "updated": "2026-11-18"
 }

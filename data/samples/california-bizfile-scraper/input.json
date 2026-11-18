@@ -1,0 +1,25 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "registers": [
+      "business"
+    ],
+    "searchQueries": [
+      "DEL TACO"
+    ],
+    "detailLevel": "basic",
+    "maxResultsPerQuery": 12
+  },
+  "project": {
+    "*": {
+      "name": "name",
+      "entity_number": "entityNumber",
+      "status": "status",
+      "standing": "standing",
+      "entity_type": "entityType",
+      "formed_in": "formedIn",
+      "filed": "initialFilingDate"
+    }
+  }
+}

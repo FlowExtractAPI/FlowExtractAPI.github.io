@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/leboncoin-scraper",
+  "runId": "lkdda847y7Y8eWfis",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:23:22.953Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.012,
+  "buildNumber": "0.0.17",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

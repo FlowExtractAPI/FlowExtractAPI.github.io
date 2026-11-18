@@ -1,0 +1,28 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "country": "es",
+    "operation": "sale",
+    "propertyType": "homes",
+    "locations": [
+      "Madrid"
+    ],
+    "maxItems": 12,
+    "sortBy": "relevance",
+    "language": "en"
+  },
+  "project": {
+    "*": {
+      "title": "suggestedTexts.title",
+      "price": "price",
+      "municipality": "municipality",
+      "province": "province",
+      "type": "propertyType",
+      "size_m2": "size",
+      "rooms": "rooms",
+      "bathrooms": "bathrooms",
+      "url": "url"
+    }
+  }
+}

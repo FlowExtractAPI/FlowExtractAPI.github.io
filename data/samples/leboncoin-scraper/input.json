@@ -1,0 +1,28 @@
+{
+  "maxTotalChargeUsd": 0.2,
+  "maxItems": 20,
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.leboncoin.fr/recherche?category=9&locations=Paris_75001__48.8566_2.3522_10000_10000&real_estate_type=2"
+      }
+    ],
+    "maxResults": 12
+  },
+  "project": {
+    "*": {
+      "title": "subject",
+      "price": "price",
+      "city": "city",
+      "zipcode": "zipcode",
+      "category": "category_name",
+      "seller_type": "poster_type",
+      "photos": "image_count",
+      "published": {
+        "path": "first_publication_date",
+        "as": "date"
+      },
+      "url": "url"
+    }
+  }
+}

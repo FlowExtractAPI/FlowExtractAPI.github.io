@@ -4,7 +4,7 @@
   "category": "ads",
   "source": "Google Ads Transparency Center",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "google ads scraper",
   "secondaryKeywords": [
     "google ads transparency center scraper",
@@ -19,6 +19,40 @@
     "Research political ad spend by region",
     "Collect ad creatives for a market review"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "How do I see a competitor's Google ads?",
+      "a": "Paste their Google Ads Transparency Center advertiser link or search by domain or name; you get every ad with format, first and last shown dates and days active."
+    },
+    {
+      "q": "Can I get the ad text and video?",
+      "a": "Yes. Turn on \"Extract ad copy\" for the headline, description, call to action, click and display URL, thumbnail and video length; preview URLs come for video, image and text ads."
+    },
+    {
+      "q": "Does it show where and how long an ad ran?",
+      "a": "Yes: first and last shown dates and total days on every ad, and with full details the regions and countries where it ran."
+    },
+    {
+      "q": "Can I see spend and impressions?",
+      "a": "Only for political and election ads, where Google publishes spend and impression ranges and demographic targeting."
+    },
+    {
+      "q": "Do I need a Google Ads account?",
+      "a": "No. The Ads Transparency Center is public; no login."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Google publishes political ads data in BigQuery, but there is no public API for the Ads Transparency Center's commercial ads. This actor returns what the Transparency Center shows for any advertiser.",
+  "demo": {
+    "url": "adstransparency.google.com · one advertiser",
+    "fields": [
+      "advertiser",
+      "format",
+      "first_shown",
+      "last_shown",
+      "days_ran"
+    ],
+    "tab": "Google Ads"
+  },
+  "updated": "2026-11-18"
 }

@@ -1,0 +1,16 @@
+{
+  "actor": "dz_omar/idealista-scraper",
+  "runId": "LV91iYjXWH5yj6jsA",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:23:36.360Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.037,
+  "buildNumber": "0.0.9",
+  "account": "APIFY_TOKEN_TESTER_1",
+  "engineRuns": [
+    "V1LkHXTWneaY9dvFY"
+  ],
+  "costNote": "this run ($0.0010) + 12 listings at the Idealista Scraper API engine's free-plan search price ($0.003 each), billed by the engine in your account"
+}

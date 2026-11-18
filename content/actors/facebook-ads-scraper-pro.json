@@ -4,7 +4,7 @@
   "category": "ads",
   "source": "Meta Ad Library",
   "sourceHub": "facebook",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "facebook ads scraper",
   "secondaryKeywords": [
     "facebook ad library scraper",
@@ -19,7 +19,28 @@
     "Collect winning ad copy and creatives in a niche",
     "Track political and issue ads for research"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "How do I search the Meta Ad Library in bulk?",
+      "a": "Give it keywords, advertiser names or page IDs, or paste Ad Library links with your filters; each returns the matching ads with creatives, copy, dates and platforms."
+    },
+    {
+      "q": "Can I see an ad's targeting and reach?",
+      "a": "For ads shown in the EU, yes: location audience, age and gender breakdown, total EU reach, and who paid for and benefits from the ad, as Meta publishes it."
+    },
+    {
+      "q": "Can I get only active ads, or only videos?",
+      "a": "Yes. Filter by active status, ad type, media type, country and language, and sort by total impressions or date."
+    },
+    {
+      "q": "Is there a limit on the free plan?",
+      "a": "On a free Apify plan a run returns at most 200 ads in total (a sample); on a paid plan there is no limit. The run detects the plan by itself."
+    },
+    {
+      "q": "Do I need a Facebook account?",
+      "a": "No. The Ad Library is public; no login or cookies."
+    }
+  ],
   "demo": {
     "url": "facebook.com/ads/library · search \"coffee\"",
     "fields": [
@@ -33,5 +54,7 @@
     ],
     "tab": "Facebook ads"
   },
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Meta's Ad Library API needs a verified identity and a developer app, and for most countries returns only political and social-issue ads. This actor returns every ad type the public Ad Library shows, with no app or token.",
+  "updated": "2026-11-18"
 }

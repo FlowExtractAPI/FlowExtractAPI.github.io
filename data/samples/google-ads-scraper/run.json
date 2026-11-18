@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/google-ads-scraper",
+  "runId": "fybXEjLJw5zTbbELp",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T11:23:16.701Z",
+  "itemCount": 12,
+  "sampleCount": 12,
+  "costUsd": 0.0216,
+  "buildNumber": "0.0.10",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

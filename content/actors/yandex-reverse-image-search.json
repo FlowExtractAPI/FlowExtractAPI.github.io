@@ -4,7 +4,7 @@
   "category": "search-engines",
   "source": "Yandex",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "yandex reverse image search api",
   "secondaryKeywords": [
     "yandex images parser",
@@ -21,9 +21,38 @@
   ],
   "faq": [
     {
-      "q": "How do I send an image file to Yandex reverse image search from code?",
-      "a": "Start the actor through the Apify API with your image as a public link or an uploaded file in the input, then read the results as JSON. You don't call Yandex's upload endpoint yourself."
+      "q": "Why use Yandex for reverse image search?",
+      "a": "Yandex is often better than Google or Bing at finding faces, places and older or cropped copies of a picture, so it is the usual second check for image provenance."
+    },
+    {
+      "q": "Can I find where my images are used?",
+      "a": "Yes. \"Matching pages\" lists the sites showing your picture, with title, source and link; duplicates of the same page are merged and counted."
+    },
+    {
+      "q": "Can I search several Yandex regions?",
+      "a": "Yes. Pick regions such as yandex.com and yandex.com.tr; each can return different matches."
+    },
+    {
+      "q": "Does it read text in the picture?",
+      "a": "Yes, text recognised in the image can be returned, which helps with screenshots in bulk. Shopping matches, barcodes and detected objects are empty for most pictures."
+    },
+    {
+      "q": "Do I need a Yandex account or API key?",
+      "a": "No. Paste an image link; no account or key."
     }
   ],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Yandex has no public reverse image search API. This actor returns the matches Yandex's image search shows for a picture.",
+  "demo": {
+    "url": "yandex.com/images · search by image (Google logo)",
+    "fields": [
+      "type",
+      "position",
+      "title",
+      "source",
+      "duplicates"
+    ],
+    "tab": "Yandex"
+  },
+  "updated": "2026-11-18"
 }
