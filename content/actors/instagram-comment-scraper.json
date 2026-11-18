@@ -20,5 +20,14 @@
     "Find questions and objections your audience raises"
   ],
   "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "updated": "2026-11-18",
+  "liveDemoPending": {
+    "actor": "instagram-comments",
+    "label": "Instagram post or reel link",
+    "sample": "https://www.instagram.com/reels/DTvy2W3ErPl/",
+    "hint": "Paste a public Instagram post or reel link and press Run: the demo fetches the first comments live (up to 10). Commenter names are hidden.",
+    "accent": "#e1306c",
+    "chip": "Instagram comments"
+  }
 }

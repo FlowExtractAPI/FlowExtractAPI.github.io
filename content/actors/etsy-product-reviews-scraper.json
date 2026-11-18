@@ -97,6 +97,14 @@
     "tab": "Etsy reviews"
   },
   "officialApi": "Etsy's Open API v3 is free, but you register an app, get an API key and work within its rate limits and endpoint shapes. These scrapers need no key: they return what the public Etsy pages show, ready to export. This one returns a listing and its buyer reviews in one run from a plain listing URL.",
-  "updated": "2026-11-14",
-  "lastKeywordChange": "2026-11-13"
+  "updated": "2026-11-18",
+  "lastKeywordChange": "2026-11-13",
+  "liveDemoPending": {
+    "actor": "etsy-reviews",
+    "label": "Etsy listing link",
+    "sample": "https://www.etsy.com/listing/1667678858/personalised-engraved-groomsmen-groom",
+    "hint": "Paste an Etsy listing link and press Run: the demo fetches the first reviews live (up to 10). Buyer names are hidden.",
+    "accent": "#f1641e",
+    "chip": "Etsy reviews"
+  }
 }

@@ -54,5 +54,13 @@
     ],
     "tab": "Google Ads"
   },
-  "updated": "2026-11-18"
+  "updated": "2026-11-18",
+  "liveDemoPending": {
+    "actor": "google-ads",
+    "label": "Ads Transparency Center link",
+    "sample": "https://adstransparency.google.com/advertiser/AR04619580580634296321",
+    "hint": "Paste a Google Ads Transparency Center advertiser link and press Run: the demo fetches the first 10 ads live.",
+    "accent": "#4285f4",
+    "chip": "Google Ads"
+  }
 }

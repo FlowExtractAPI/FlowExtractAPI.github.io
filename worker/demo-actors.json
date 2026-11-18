@@ -1,20 +1,352 @@
 {
-  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). upstream: the demo actor's Standby URL on Tester 1. fields: actor output field -> name shown to visitors (allow-list: NEVER private people's names, phones, emails, profile photos). display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
+  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). upstream: the demo actor's Standby URL on Tester 1. fields: actor output path (dots for nesting) -> name shown (allow-list: NEVER private people's real names, phones, emails, profile photos). pseudonymize: shown names replaced by '<pseudonymLabel> 1, 2…'. dates: shown names formatted YYYY-MM-DD. display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
   "idealista": {
     "name": "Idealista",
-    "hosts": ["idealista.com", "idealista.pt", "idealista.it", "idealista.fr"],
+    "hosts": [
+      "idealista.com",
+      "idealista.pt",
+      "idealista.it",
+      "idealista.fr"
+    ],
     "upstream": "https://mourad-22--idealista-demo.apify.actor/",
     "store": "https://apify.com/dz_omar/idealista-scraper-api?fpr=smcx63",
     "fields": {
-      "thumbnail": "image", "price": "price", "address": "address", "description": "description",
-      "propertyType": "type", "operation": "operation", "size": "size_m2", "rooms": "rooms", "bathrooms": "bathrooms",
-      "priceByArea": "price_per_m2", "floor": "floor", "exterior": "exterior", "hasLift": "lift",
-      "municipality": "municipality", "district": "district", "neighborhood": "neighborhood", "province": "province",
-      "country": "country", "status": "condition", "newDevelopment": "new_development", "propertyCode": "property_code", "url": "url"
+      "thumbnail": "image",
+      "price": "price",
+      "address": "address",
+      "description": "description",
+      "propertyType": "type",
+      "operation": "operation",
+      "size": "size_m2",
+      "rooms": "rooms",
+      "bathrooms": "bathrooms",
+      "priceByArea": "price_per_m2",
+      "floor": "floor",
+      "exterior": "exterior",
+      "hasLift": "lift",
+      "municipality": "municipality",
+      "district": "district",
+      "neighborhood": "neighborhood",
+      "province": "province",
+      "country": "country",
+      "status": "condition",
+      "newDevelopment": "new_development",
+      "propertyCode": "property_code",
+      "url": "url"
     },
     "display": {
-      "image": "image", "price": "price", "currency": "EUR", "title": "address", "text": "description", "link": "url",
-      "facts": [["rooms", "rooms"], ["bathrooms", "baths"], ["size_m2", "m²"], ["municipality", ""]]
+      "image": "image",
+      "price": "price",
+      "currency": "EUR",
+      "title": "address",
+      "text": "description",
+      "link": "url",
+      "facts": [
+        [
+          "rooms",
+          "rooms"
+        ],
+        [
+          "bathrooms",
+          "baths"
+        ],
+        [
+          "size_m2",
+          "m²"
+        ],
+        [
+          "municipality",
+          ""
+        ]
+      ]
+    }
+  },
+  "facebook-ads": {
+    "name": "Meta Ad Library",
+    "hosts": [
+      "facebook.com"
+    ],
+    "upstream": "https://mourad-22--facebook-ads-scraper-pro-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/facebook-ads-scraper-pro?fpr=smcx63",
+    "fields": {
+      "media.primary_thumbnail": "image",
+      "page_name": "advertiser",
+      "title": "title",
+      "text": "text",
+      "cta_text": "cta",
+      "start_date": "started",
+      "end_date": "ended",
+      "is_active": "active",
+      "platforms": "platforms",
+      "page_likes": "page_likes",
+      "ad_category": "category",
+      "ad_url": "url"
+    },
+    "dates": [
+      "started",
+      "ended"
+    ],
+    "display": {
+      "image": "image",
+      "title": "advertiser",
+      "text": "text",
+      "link": "url",
+      "facts": [
+        [
+          "started",
+          ""
+        ],
+        [
+          "platforms",
+          ""
+        ],
+        [
+          "page_likes",
+          "page likes"
+        ]
+      ]
+    }
+  },
+  "youtube-transcript": {
+    "name": "YouTube",
+    "hosts": [
+      "youtube.com",
+      "youtu.be"
+    ],
+    "upstream": "https://mourad-22--youtube-transcript-metadata-extractor-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/youtube-transcript-metadata-extractor?fpr=smcx63",
+    "fields": {
+      "thumbnail": "image",
+      "Video_title": "title",
+      "channel.name": "channel",
+      "Views": "views",
+      "likes": "likes",
+      "published_Date": "published",
+      "transcriptWordCount": "words",
+      "transcriptDuration": "duration",
+      "transcriptText": "transcript",
+      "VideoURL": "url"
+    },
+    "dates": [
+      "published"
+    ],
+    "display": {
+      "image": "image",
+      "title": "title",
+      "text": "transcript",
+      "link": "url",
+      "facts": [
+        [
+          "channel",
+          ""
+        ],
+        [
+          "views",
+          "views"
+        ],
+        [
+          "words",
+          "words"
+        ]
+      ]
+    }
+  },
+  "youtube-comments": {
+    "name": "YouTube",
+    "hosts": [
+      "youtube.com",
+      "youtu.be"
+    ],
+    "upstream": "https://mourad-22--youtube-comments-scraper-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/youtube-comments-scraper?fpr=smcx63",
+    "fields": {
+      "authorName": "author",
+      "text": "comment",
+      "likeCount": "likes",
+      "replyCount": "replies",
+      "publishedTime": "published",
+      "isPinned": "pinned",
+      "isHearted": "hearted",
+      "videoUrl": "video"
+    },
+    "pseudonymize": [
+      "author"
+    ],
+    "pseudonymLabel": "Viewer",
+    "display": {
+      "title": "author",
+      "text": "comment",
+      "facts": [
+        [
+          "likes",
+          "likes"
+        ],
+        [
+          "replies",
+          "replies"
+        ],
+        [
+          "published",
+          ""
+        ]
+      ]
+    }
+  },
+  "instagram-comments": {
+    "name": "Instagram",
+    "hosts": [
+      "instagram.com"
+    ],
+    "upstream": "https://mourad-22--instagram-comment-scraper-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/instagram-comment-scraper?fpr=smcx63",
+    "fields": {
+      "user.username": "author",
+      "text": "comment",
+      "like_count": "likes",
+      "child_comment_count": "replies",
+      "created_at": "posted",
+      "source_url": "post"
+    },
+    "pseudonymize": [
+      "author"
+    ],
+    "pseudonymLabel": "Commenter",
+    "dates": [
+      "posted"
+    ],
+    "display": {
+      "title": "author",
+      "text": "comment",
+      "facts": [
+        [
+          "likes",
+          "likes"
+        ],
+        [
+          "replies",
+          "replies"
+        ],
+        [
+          "posted",
+          ""
+        ]
+      ]
+    }
+  },
+  "youtube-playlist": {
+    "name": "YouTube",
+    "hosts": [
+      "youtube.com",
+      "youtu.be"
+    ],
+    "upstream": "https://mourad-22--youtube-playlist-extractor-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/youtube-playlist-extractor?fpr=smcx63",
+    "fields": {
+      "position": "position",
+      "title": "title",
+      "duration": "duration",
+      "playlistInfo.playlistTitle": "playlist",
+      "videoUrl": "url"
+    },
+    "display": {
+      "title": "title",
+      "link": "url",
+      "facts": [
+        [
+          "position",
+          "#"
+        ],
+        [
+          "duration",
+          ""
+        ],
+        [
+          "playlist",
+          ""
+        ]
+      ]
+    }
+  },
+  "google-ads": {
+    "name": "Google Ads Transparency Center",
+    "hosts": [
+      "adstransparency.google.com"
+    ],
+    "upstream": "https://mourad-22--google-ads-scraper-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/google-ads-scraper?fpr=smcx63",
+    "fields": {
+      "advertiserName": "advertiser",
+      "format": "format",
+      "firstShown": "first_shown",
+      "lastShown": "last_shown",
+      "daysRan": "days",
+      "creativeRegions": "regions",
+      "adTransparencyUrl": "url"
+    },
+    "dates": [
+      "first_shown",
+      "last_shown"
+    ],
+    "display": {
+      "title": "advertiser",
+      "link": "url",
+      "facts": [
+        [
+          "format",
+          ""
+        ],
+        [
+          "days",
+          "days"
+        ],
+        [
+          "first_shown",
+          ""
+        ]
+      ]
+    }
+  },
+  "etsy-reviews": {
+    "name": "Etsy",
+    "hosts": [
+      "etsy.com"
+    ],
+    "upstream": "https://mourad-22--etsy-product-reviews-scraper-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/etsy-product-reviews-scraper?fpr=smcx63",
+    "fields": {
+      "buyer_real_name": "buyer",
+      "rating": "rating",
+      "review": "review",
+      "date": "date",
+      "language": "language",
+      "subratings.item_quality": "quality",
+      "subratings.shipping": "shipping",
+      "upvotes_count": "upvotes"
+    },
+    "pseudonymize": [
+      "buyer"
+    ],
+    "pseudonymLabel": "Buyer",
+    "dates": [
+      "date"
+    ],
+    "display": {
+      "title": "buyer",
+      "text": "review",
+      "facts": [
+        [
+          "rating",
+          "★"
+        ],
+        [
+          "quality",
+          "quality"
+        ],
+        [
+          "date",
+          ""
+        ]
+      ]
     }
   }
 }

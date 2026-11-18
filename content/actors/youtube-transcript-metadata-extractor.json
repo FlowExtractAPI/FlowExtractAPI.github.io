@@ -33,5 +33,14 @@
     ],
     "tab": "YouTube transcripts"
   },
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "updated": "2026-11-18",
+  "liveDemoPending": {
+    "actor": "youtube-transcript",
+    "label": "YouTube video link",
+    "sample": "https://www.youtube.com/watch?v=hz9tSv3CP6k",
+    "hint": "Paste any YouTube video link and press Run: the demo fetches its transcript and video details live.",
+    "accent": "#ff0000",
+    "chip": "YouTube transcript"
+  }
 }

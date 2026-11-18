@@ -11,7 +11,7 @@ const LIVE = Object.fromEntries(Object.entries(ACTORS).filter(([k]) => !k.starts
   hosts: { test: (host) => v.hosts.some((h) => host === h || host.endsWith('.' + h)) },
 }]));
 // Limits are per visitor ACROSS all demo actors (20/day in total), plus one global daily cap for everyone.
-const LIMITS = { perIpHour: 8, perIpDay: 20, globalDay: 500, timeoutMs: 50000, cacheSecs: 86400, maxRows: 10 };
+const LIMITS = { perIpHour: 8, perIpDay: 20, globalDay: 500, timeoutMs: 70000, cacheSecs: 86400, maxRows: 10 };
 const plural = (n, one, many) => `${n} ${n === 1 ? one : many}`;
 
 const json = (status, obj) => new Response(JSON.stringify(obj), { status, headers: { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' } });
@@ -86,10 +86,16 @@ export async function handleDemo(request, env, ctx, record) {
   const ctrl = new AbortController();
   const timer = setTimeout(() => ctrl.abort(), LIMITS.timeoutMs);
   let rows = [], total = null, error = null;
-  for (let attempt = 1; attempt <= 2 && !rows.length && !(error && attempt > 1); attempt++) try {
+  // Retry once when the first answer came back quickly with nothing (empty stream, source said 429…): a new
+  // request gets a fresh proxy IP. Never retry a slow failure (visitor already waited) or "all demos busy".
+  let busy = false;
+  for (let attempt = 1; attempt <= 2 && !rows.length && !busy && !(attempt === 2 && Date.now() - t0 > 25000); attempt++) try {
+    error = null;
     const r = await fetch(cfg.upstream, { method: 'POST', signal: ctrl.signal, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ url: target }) });
     const text = await r.text();
     if (!r.ok || !/"type":"batch"/.test(text)) console.log(`demo upstream ${r.status}: ${text.slice(0, 300)}`);
+    // Apify refuses new Standby containers when the run-only account is at its concurrent-run limit
+    if (!r.ok && /cannot-start-actor-runs|concurrent/i.test(text)) { busy = true; error = 'All live demos are busy right now. Please try again in a minute.'; break; }
     for (const line of text.split('\n')) {
       if (!line.trim()) continue;
       let ev; try { ev = JSON.parse(line); } catch { continue; }
@@ -100,10 +106,25 @@ export async function handleDemo(request, env, ctx, record) {
     }
     if (!rows.length && !error && attempt === 1) continue; // empty stream: try once more
   } catch (e) {
-    error = e.name === 'AbortError' ? 'The demo took too long (50 s limit). Try a smaller search.' : 'The demo backend is not reachable right now.';
+    error = e.name === 'AbortError' ? 'The demo took too long (70 s limit). Try another link.' : 'The demo backend is not reachable right now.';
   }
   clearTimeout(timer);
-  const trimmed = rows.slice(0, LIMITS.maxRows).map((p) => Object.fromEntries(Object.entries(cfg.fields).filter(([k]) => p[k] !== undefined && p[k] !== null).map(([k, v]) => [v, p[k]])));
+  // fields: { "<actor output path, dots for nesting>": "<name shown>" }; pseudonymize: shown names whose values are
+  // private people (commenters, reviewers) → "Viewer 1", "Viewer 2"… (label: cfg.pseudonymLabel); dates: shown names
+  // turned into YYYY-MM-DD (unix seconds/ms or ISO strings)
+  const pick = (o, p) => p.split('.').reduce((x, k) => (x == null ? undefined : x[k]), o);
+  const people = new Map();
+  const trimmed = rows.slice(0, LIMITS.maxRows).map((p) => {
+    const row = {};
+    for (const [k, v] of Object.entries(cfg.fields)) {
+      let val = pick(p, k);
+      if (val === undefined || val === null || val === '') continue;
+      if ((cfg.dates || []).includes(v)) { const d = typeof val === 'number' ? new Date(val < 1e12 ? val * 1000 : val) : new Date(val); if (!isNaN(d)) val = d.toISOString().slice(0, 10); }
+      if ((cfg.pseudonymize || []).includes(v)) { if (!people.has(val)) people.set(val, `${cfg.pseudonymLabel || 'Person'} ${people.size + 1}`); val = people.get(val); }
+      row[v] = val;
+    }
+    return row;
+  }).filter((row) => Object.keys(row).length >= 2); // a row with almost none of the allow-listed fields (e.g. a summary row) is not shown
   if (!trimmed.length) {
     ctx.waitUntil(guard(env, { ip: visitor, op: 'refund' }));
     record(env, 'demo_failed', String(body.actor), String(error || 'no rows').slice(0, 60), request); // our failure: the visitor keeps the try

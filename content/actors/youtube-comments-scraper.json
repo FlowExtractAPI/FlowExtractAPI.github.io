@@ -43,6 +43,14 @@
     ],
     "tab": "YouTube comments"
   },
-  "updated": "2026-11-14",
-  "lastKeywordChange": "2026-11-13"
+  "updated": "2026-11-18",
+  "lastKeywordChange": "2026-11-13",
+  "liveDemoPending": {
+    "actor": "youtube-comments",
+    "label": "YouTube video link",
+    "sample": "https://www.youtube.com/watch?v=hz9tSv3CP6k",
+    "hint": "Paste any YouTube video link and press Run: the demo fetches the first page of top comments live (up to 10). Commenter names are hidden.",
+    "accent": "#ff0000",
+    "chip": "YouTube comments"
+  }
 }

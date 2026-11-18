@@ -23,7 +23,7 @@ const lives = [actor, ...others];
   </div>
   {(soon.length > 0 || others.length > 0) && (
     <div class="demo-picker" role="group" aria-label="Scraper">
-      {lives.map((x, i) => <button type="button" class="pick" aria-pressed={String(i === 0)} data-pick="live" data-demo-id={x.liveDemo.actor} data-sample={x.liveDemo.sample} data-hint={x.liveDemo.hint} data-label={x.liveDemo.label} data-go={x.goUrl} data-name={x.label} data-src={x.source} data-free={freeOf(x) ? freeOf(x).toLocaleString('en') : ''} data-accent={x.liveDemo.accent || ACCENT[x.slug] || '#5bb5b5'}>{x.facts.icon && <img src={x.facts.icon} alt="" width="26" height="26" />}{x.source}</button>)}
+      {lives.map((x, i) => <button type="button" class="pick" aria-pressed={String(i === 0)} data-pick="live" data-demo-id={x.liveDemo.actor} data-sample={x.liveDemo.sample} data-hint={x.liveDemo.hint} data-label={x.liveDemo.label} data-go={x.goUrl} data-name={x.label} data-src={x.source} data-free={freeOf(x) ? freeOf(x).toLocaleString('en') : ''} data-accent={x.liveDemo.accent || ACCENT[x.slug] || '#5bb5b5'}>{x.facts.icon && <img src={x.facts.icon} alt="" width="26" height="26" />}{x.liveDemo.chip || x.source}</button>)}
       {soon.map((s) => <button type="button" class="pick" aria-pressed="false" data-pick="soon" data-accent={ACCENT[s.slug] || "#5bb5b5"} data-name={s.label} data-url={s.url} data-icon={s.facts.icon || ''}>{s.facts.icon && <img src={s.facts.icon} alt="" width="26" height="26" loading="lazy" />}{s.source}<span class="soon">soon</span></button>)}
     </div>
   )}

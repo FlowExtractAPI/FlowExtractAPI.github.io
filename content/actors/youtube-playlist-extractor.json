@@ -20,5 +20,14 @@
     "Compare playlists by total duration"
   ],
   "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "updated": "2026-11-18",
+  "liveDemoPending": {
+    "actor": "youtube-playlist",
+    "label": "YouTube playlist link",
+    "sample": "https://www.youtube.com/watch?v=I-beHln9Gus&list=PLObrtcm1Kw6Odq5ks2R3bbJUGVVwQF-vw&pp=0gcJCaIEOCosWNin",
+    "hint": "Paste a YouTube playlist link (or a video link with &list=) and press Run: the demo lists the first 10 videos live.",
+    "accent": "#ff0000",
+    "chip": "YouTube playlist"
+  }
 }
