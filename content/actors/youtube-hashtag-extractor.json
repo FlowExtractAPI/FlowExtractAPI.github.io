@@ -4,7 +4,7 @@
   "category": "video",
   "source": "YouTube",
   "sourceHub": "youtube",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "youtube hashtag scraper",
   "secondaryKeywords": [
     "youtube hashtag extractor",
@@ -19,6 +19,32 @@
     "Find creators who use a niche hashtag",
     "Collect transcripts of videos on a topic"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "How do I get all videos for a YouTube hashtag?",
+      "a": "Give it one or more hashtags and it returns the videos or Shorts listed on each hashtag page, with title, channel, views, runtime and publish date, and the transcript where one exists."
+    },
+    {
+      "q": "Is there a YouTube hashtag API?",
+      "a": "Not in the official YouTube Data API. This actor reads the hashtag pages, no key or quota needed."
+    },
+    {
+      "q": "Can I use it as a YouTube hashtag API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "The YouTube Data API has no hashtag endpoint and its search calls cost 100 quota units each. This actor reads the public hashtag pages directly.",
+  "demo": {
+    "url": "youtube.com/hashtag/travel",
+    "fields": [
+      "title",
+      "channel",
+      "views",
+      "runtime",
+      "published"
+    ],
+    "tab": "YouTube hashtags"
+  },
+  "updated": "2026-11-18"
 }

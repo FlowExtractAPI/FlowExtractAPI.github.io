@@ -2,7 +2,7 @@
   "input": {
     "startUrls": [
       {
-        "url": "https://www.zimmo.be/nl/zoeken/?search=eyJmaWx0ZXIiOnsic3RhdHVzIjp7ImluIjpbIkZPUl9TQUxFIiwiVEFLRV9PVkVSIl19LCJwbGFjZUlkIjp7ImluIjpbMTExOF19fX0%3D#gallery"
+        "url": "https://www.zimmo.be/nl/zoeken/?search=eyJmaWx0ZXIiOnsic3RhdHVzIjp7ImluIjpbIkZPUl9TQUxFIl19LCJwbGFjZUlkIjp7ImluIjpbMTExOF19fX0="
       }
     ],
     "maxResults": 10,
@@ -12,5 +12,23 @@
     }
   },
   "maxTotalChargeUsd": 0.1,
-  "maxItems": 20
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "estate.title.nl",
+      "type": "estate.type",
+      "status": "estate.status",
+      "price_eur": "estate.price.value",
+      "street": "estate.location.street",
+      "postcode": "estate.location.postalCode",
+      "town": "estate.location.locality.nl",
+      "living_area_m2": "estate.floorspaceSurface.value",
+      "plot_m2": "estate.plot.plotSurface.value",
+      "epc_label": "estate.certificate.epcCertificate.energyLabel",
+      "epc_kwh_m2": "estate.certificate.epcCertificate.epcValue.value",
+      "heating": "estate.heatingGenerationTypes",
+      "sold_by": "estate.soldBy",
+      "zimmo_code": "extra.zimmoCode"
+    }
+  }
 }

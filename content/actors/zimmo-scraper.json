@@ -4,13 +4,13 @@
   "category": "real-estate",
   "source": "zimmo.be",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "zimmo scraper",
   "secondaryKeywords": [
     "zimmo api",
     "zimmo.be scraper"
   ],
-  "title": "Zimmo Scraper API for Belgian Property Data",
+  "title": "Zimmo Scraper: Belgian Listings, EPC Scores & Prices",
   "h1": "Zimmo Scraper",
   "metaDescription": "Scrape Belgian property listings from zimmo.be: price, EPC, flood data, planning info, contacts and photos. Paste any zimmo.be search URL.",
   "intro": "Paste any zimmo.be search link and get each Belgian listing's price, EPC energy score, flooding data, planning information, contacts and photos as structured data.",
@@ -19,6 +19,37 @@
     "Screen listings by EPC score and flood risk",
     "Track new listings in a search every day"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a Zimmo API?",
+      "a": "No public one. This actor works as a Zimmo API: paste a zimmo.be search link (Dutch or French) and get every listing as JSON, CSV or Excel."
+    },
+    {
+      "q": "How do I scrape zimmo.be without code?",
+      "a": "Search on zimmo.be with your filters, copy the link from the address bar (it looks like zimmo.be/nl/zoeken/?search=…), paste it and press Start."
+    },
+    {
+      "q": "What Belgian property data do I get?",
+      "a": "Price, type and status, address, living and plot area, EPC label and score, heating, flood and planning information, the agency and the photos."
+    },
+    {
+      "q": "Can I use it as a Zimmo API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Zimmo has no public API for its listings. This actor reads any public zimmo.be search, including the EPC, flood and planning data shown on each listing.",
+  "demo": {
+    "url": "zimmo.be · houses for sale · Assebroek (Bruges)",
+    "fields": [
+      "title",
+      "price_eur",
+      "town",
+      "living_area_m2",
+      "epc_label",
+      "plot_m2"
+    ],
+    "tab": "Zimmo"
+  },
+  "updated": "2026-11-18"
 }

@@ -3,10 +3,25 @@
     "maxResults": 10,
     "urls": [
       {
-        "url": "https://www.linkedin.com/ad-library/search?accountOwner=nivide&payer=nivide&keyword=nivide"
+        "url": "https://www.linkedin.com/ad-library/search?keyword=hubspot"
       }
     ]
   },
   "maxTotalChargeUsd": 0.1,
-  "maxItems": 20
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "advertiser": {
+        "path": "advertiserName",
+        "as": "pseudonym",
+        "label": "Advertiser"
+      },
+      "format": "creativeType",
+      "promoted": "isPromoted",
+      "headline": "headline",
+      "ad_text": "adText",
+      "cta": "ctaText",
+      "url": "detailPageUrl"
+    }
+  }
 }

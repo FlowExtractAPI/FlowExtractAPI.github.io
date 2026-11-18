@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/youtube-hashtag-extractor",
+  "runId": "jipb0hSBQBpMhKkqa",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:21:01.002Z",
+  "itemCount": 4,
+  "sampleCount": 4,
+  "costUsd": 0.003454669723378288,
+  "buildNumber": "0.0.1",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/zimmo-scraper",
+  "runId": "ohBmgq6UHZI9HSseK",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:22:25.826Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.08,
+  "buildNumber": "0.0.5",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

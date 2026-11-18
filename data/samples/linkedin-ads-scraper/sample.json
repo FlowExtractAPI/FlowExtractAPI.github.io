@@ -1,0 +1,102 @@
+[
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 1",
+    "format": "SPONSORED_UPDATE_LINKEDIN_ARTICLE",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "So, I've started a newsletter! 👀 Mission Improbable is a collection of my unsolicited observations on business, leader…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620726143?trk=ad_library_ad_preview_article_content"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 2",
+    "format": "SPONSORED_STATUS_UPDATE",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "You’re three weeks into your new VP Marketing gig. The last guy to do your job is gone, but you’re still living with hi…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620813433?trk=ad_library_ad_preview_content_image"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 3",
+    "format": "SPONSORED_VIDEO",
+    "promoted": true,
+    "headline": "Agende uma demonstração",
+    "ad_text": "Seu time ainda copia informações do WhatsApp para o CRM na mão? Isso custa tempo, gera erro e deixa dado importante pel…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620881163"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 2",
+    "format": "SPONSORED_STATUS_UPDATE",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "You’re three weeks into your new VP Marketing gig. The last guy to do your job is gone, but you’re still living with hi…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620755613?trk=ad_library_ad_preview_content_image"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 4",
+    "format": "SPONSORED_STATUS_UPDATE",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "Field Marketer: \"Hey! Super last minute, but we went to an event last week and I need the scans added to HubSpot ASAP so…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1690828636"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 5",
+    "format": "SPONSORED_VIDEO",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "Mamma Mia, PostHog Sources is here - Sync from 700+ sources like Stripe, Postgres, HubSpot and Salesforce into any ware…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620734943"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 6",
+    "format": "SPONSORED_INMAILS",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "Hi %FIRSTNAME%,Im Lysa, co-founder of Cabal.Were launching our Manchester founder peer chapter in January, and were looking for just anbsp;couple more founders to complete the room.Its a small peer group, curated with curiosity and ambition at the heart of this chapter, led by a Chair who has built and sold a business. You meet monthly, and theres a two-day growth retreat each year.A 30-minute call with our membership team is the first step. Youll know whos in the group and whether youd qualify.Lysa",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620752193"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 7",
+    "format": "SPONSORED_VIDEO",
+    "promoted": true,
+    "headline": "Dedicated sales pods already supporting the top 1% of Gameday clinics.",
+    "ad_text": "Gameday clinics with Hire Hangar's sales team are 6.5x more likely to book appointments. Our dedicated sales team respon…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620795013"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 8",
+    "format": "SPONSORED_STATUS_UPDATE",
+    "promoted": true,
+    "headline": "Any CRM to HubSpot in 7 days",
+    "ad_text": "HubSpot AEs: “How long will the migration take?” is where deals start to slip. With OneMetric, your answer is one week.…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1690698166?trk=ad_library_ad_preview_content_image"
+  },
+  {
+    "record_type": null,
+    "advertiser": "Advertiser 9",
+    "format": "SPONSORED_UPDATE_CAROUSEL",
+    "promoted": true,
+    "headline": "",
+    "ad_text": "You chose the dbt platform so your team doesn’t have to run dbt infrastructure. Fivetran brings the same logic to data m…",
+    "cta": "View details",
+    "url": "https://www.linkedin.com/ad-library/detail/1620754393"
+  }
+]

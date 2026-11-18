@@ -1,9 +1,24 @@
 {
   "input": {
     "hashtag": [
-      "#example"
+      "#travel"
     ]
   },
   "maxTotalChargeUsd": 0.1,
-  "maxItems": 20
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "hashtag": "hashtag",
+      "title": "Video_title",
+      "channel": "Channel_Name",
+      "views": "Views",
+      "runtime": "Runtime",
+      "published": {
+        "path": "published_Date",
+        "as": "date"
+      },
+      "has_transcript": "hasTranscript",
+      "url": "VideoURL"
+    }
+  }
 }

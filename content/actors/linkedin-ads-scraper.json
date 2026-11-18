@@ -4,7 +4,7 @@
   "category": "ads",
   "source": "LinkedIn Ad Library",
   "sourceHub": "linkedin",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "linkedin ads scraper",
   "secondaryKeywords": [
     "linkedin ad library scraper",
@@ -19,6 +19,32 @@
     "Collect ad copy for messaging research",
     "Track when competitors start or stop campaigns"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a LinkedIn Ad Library API?",
+      "a": "No. LinkedIn's Marketing APIs only return your own ad accounts. This actor searches the public Ad Library by keyword, advertiser or date and returns each ad's creative, copy and details."
+    },
+    {
+      "q": "Can I see a competitor's LinkedIn ads?",
+      "a": "Yes: search by the company name or paste an Ad Library search link; every ad they ran in the window comes back with its format, copy and call to action."
+    },
+    {
+      "q": "Can I use it as a LinkedIn Ad Library API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "LinkedIn's Ad Library has no public API; LinkedIn's Marketing APIs only cover your own ad accounts. This actor reads the public Ad Library search.",
+  "demo": {
+    "url": "linkedin.com/ad-library · \"hubspot\"",
+    "fields": [
+      "advertiser",
+      "format",
+      "headline",
+      "ad_text",
+      "cta"
+    ],
+    "tab": "LinkedIn ads"
+  },
+  "updated": "2026-11-18"
 }
