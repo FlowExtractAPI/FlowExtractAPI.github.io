@@ -8,8 +8,16 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..').replace(/^([a-z]):/, (m, d) => d.toUpperCase() + ':');
+// PUBLIC_CF_WEB_ANALYTICS_TOKEN (public by design): site/.env wins (Astro reads it); otherwise it is taken from
+// live-demo/.env, where the operator keeps the project's other keys. Never printed.
+import fs from 'node:fs';
+if (!process.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN) {
+  const read = (f) => { try { return (fs.readFileSync(f, 'utf8').split(/\r?\n/).find((l) => l.startsWith('PUBLIC_CF_WEB_ANALYTICS_TOKEN=')) || '').split('=').slice(1).join('=').trim().replace(/^['"]|['"]$/g, ''); } catch { return ''; } };
+  const tok = read(path.join(ROOT, '.env')) || read(path.join(ROOT, '..', 'live-demo', '.env'));
+  if (tok) process.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN = tok;
+}
 const run = (cmd, args) => {
-  const r = spawnSync(cmd, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32' });
+  const r = spawnSync(cmd, args, { cwd: ROOT, stdio: 'inherit', shell: process.platform === 'win32', env: process.env });
   if (r.status !== 0) process.exit(r.status || 1);
 };
 run('node', ['scripts/check-content.mjs']);
