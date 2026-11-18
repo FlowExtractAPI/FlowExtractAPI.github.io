@@ -45,7 +45,7 @@
   },
   "updated": "2026-11-18",
   "lastKeywordChange": "2026-11-13",
-  "liveDemoPending": {
+  "liveDemo": {
     "actor": "youtube-comments",
     "label": "YouTube video link",
     "sample": "https://www.youtube.com/watch?v=hz9tSv3CP6k",

@@ -57,7 +57,7 @@
   "lastKeywordChange": "2026-11-13",
   "officialApi": "Meta's Ad Library API needs a verified identity and a developer app, and for most countries returns only political and social-issue ads. This actor returns every ad type the public Ad Library shows, with no app or token.",
   "updated": "2026-11-18",
-  "liveDemoPending": {
+  "liveDemo": {
     "actor": "facebook-ads",
     "label": "Meta Ad Library link",
     "sample": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&content_languages[0]=en&country=ALL&is_targeted_country=false&media_type=video&publisher_platforms[0]=facebook&q=pokemon&search_type=keyword_unordered&sort_data[mode]=relevancy_monthly_grouped&sort_data[direction]=desc&source=fb-logo&start_date[min]=2026-01-27&start_date[max]=2026-01-28",

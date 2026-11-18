@@ -55,7 +55,7 @@
     "tab": "Google Ads"
   },
   "updated": "2026-11-18",
-  "liveDemoPending": {
+  "liveDemo": {
     "actor": "google-ads",
     "label": "Ads Transparency Center link",
     "sample": "https://adstransparency.google.com/advertiser/AR04619580580634296321",
