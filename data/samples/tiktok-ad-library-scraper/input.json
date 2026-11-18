@@ -1,0 +1,22 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://library.tiktok.com/ads?region=DE&adv_name=nike&sort_type=last_shown_date,desc"
+      }
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "advertiser": "name",
+      "format": "type",
+      "first_shown": "first_shown",
+      "last_shown": "last_shown",
+      "days_running": "days_running",
+      "audience": "estimated_audience",
+      "region": "region"
+    }
+  }
+}

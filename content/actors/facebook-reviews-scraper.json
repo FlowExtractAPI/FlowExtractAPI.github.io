@@ -4,7 +4,7 @@
   "category": "social",
   "source": "Facebook",
   "sourceHub": "facebook",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "facebook reviews scraper",
   "secondaryKeywords": [
     "scrape facebook reviews",
@@ -27,6 +27,10 @@
     {
       "q": "Why do I get fewer reviews than the page shows?",
       "a": "Facebook shows logged-out visitors only part of a big page's reviews feed, newest first, and then stops. The actor returns everything that feed shows; pages that hide reviews from visitors return none."
+    },
+    {
+      "q": "Can I use it as a Facebook Reviews API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
   "demo": {
@@ -41,5 +45,7 @@
     ],
     "tab": "Facebook reviews"
   },
-  "lastKeywordChange": "2026-11-16"
+  "lastKeywordChange": "2026-11-16",
+  "officialApi": "Facebook's Graph API returns a page's ratings only to that page's own admins (page access token). This actor reads the public reviews any visitor can see on a page, without login.",
+  "updated": "2026-11-18"
 }

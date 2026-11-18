@@ -4,7 +4,7 @@
   "category": "social",
   "source": "Facebook",
   "sourceHub": "facebook",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "facebook posts scraper",
   "secondaryKeywords": [
     "facebook page posts scraper",
@@ -19,6 +19,33 @@
     "Archive a page's post history",
     "Track what a public group talks about"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there an official API for Facebook page posts?",
+      "a": "Only for pages you manage or after Meta's app review. This actor reads any public page's posts with text, date, reactions by type, comments, shares and media, without login."
+    },
+    {
+      "q": "How far back can it go?",
+      "a": "On public pages it can page back through years of posts; set a date range or a maximum number of posts per page."
+    },
+    {
+      "q": "Can I use it as a Facebook posts API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Facebook's Graph API returns posts only for pages you manage, or with Page Public Content Access after app review. This actor reads the public posts of any public page, profile or group.",
+  "demo": {
+    "url": "facebook.com/nasa",
+    "fields": [
+      "page",
+      "posted",
+      "text",
+      "reactions",
+      "comments",
+      "shares"
+    ],
+    "tab": "Facebook posts"
+  },
+  "updated": "2026-11-18"
 }

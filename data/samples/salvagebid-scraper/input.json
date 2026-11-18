@@ -1,0 +1,32 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.salvagebid.com/salvage-suvs-for-sale/toyota?page=1"
+      }
+    ],
+    "maxResults": 10,
+    "proxyConfiguration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": []
+    }
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "vehicle": "vehicle_name",
+      "year": "year",
+      "make": "make",
+      "model": "model",
+      "odometer": "odometer_value",
+      "damage": "primary_damage",
+      "start_code": "start_code",
+      "title": "title_name",
+      "title_state": "title_state",
+      "current_bid": "current_bid_value",
+      "retail_value": "retail_value",
+      "auction": "auction_type_str"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "input": {
+    "searchTerms": [
+      "Acme Aero",
+      "4578811"
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "entity_name": "entity_name",
+      "file_number": "file_number",
+      "incorporated": "incorporation_date_iso",
+      "entity_kind": "entity_kind",
+      "entity_type": "entity_type",
+      "residency": "residency",
+      "registered_agent": "registered_agent_name",
+      "search_term": "search_term"
+    }
+  }
+}

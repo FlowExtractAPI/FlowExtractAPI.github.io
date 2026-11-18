@@ -4,7 +4,7 @@
   "category": "video",
   "source": "YouTube",
   "sourceHub": "youtube",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "youtube transcript scraper",
   "secondaryKeywords": [
     "youtube transcript api",
@@ -19,7 +19,28 @@
     "Build a quote library from interviews and talks",
     "Repurpose videos into articles"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Is there a YouTube transcript API?",
+      "a": "Only for your own videos: the YouTube Data API caption download needs the channel owner's permission. This actor returns the public transcript of any video that has one, with no API key."
+    },
+    {
+      "q": "Does it include timestamps?",
+      "a": "Yes, the full text plus a per-segment timestamp array (turn timestamps off for a smaller result; word count and duration are still returned)."
+    },
+    {
+      "q": "Which links work?",
+      "a": "Standard watch links, youtu.be short links, Shorts and live videos, many at once in one run."
+    },
+    {
+      "q": "What metadata comes with the transcript?",
+      "a": "Title, channel and its subscriber count, publish date, views, likes, duration and thumbnails, so the text and its context arrive in one row."
+    },
+    {
+      "q": "Can I use it as a YouTube transcript API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
   "demo": {
     "url": "youtube.com/watch?v=hz9tSv3CP6k",
     "fields": [
@@ -42,5 +63,6 @@
     "hint": "Paste any YouTube video link and press Run: the demo fetches its transcript and video details live.",
     "accent": "#ff0000",
     "chip": "YouTube transcript"
-  }
+  },
+  "officialApi": "The YouTube Data API only lets a channel owner download captions of their own videos (OAuth required). This actor reads the public transcript YouTube shows under any video, together with the video's metadata."
 }

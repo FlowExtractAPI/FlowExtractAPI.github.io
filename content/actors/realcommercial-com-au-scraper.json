@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "realcommercial.com.au",
   "sourceHub": "realestate-com-au",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "realcommercial scraper",
   "secondaryKeywords": [
     "realcommercial.com.au scraper",
@@ -19,6 +19,28 @@
     "Build lists of commercial agents",
     "Monitor new offices, shops and warehouses for sale"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a realcommercial.com.au API?",
+      "a": "Only for agencies publishing listings. This actor searches by link, suburb, postcode or state (for sale, for lease, sold or leased) and returns every commercial listing."
+    },
+    {
+      "q": "Can I use it as a realcommercial.com.au API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "REA Group offers APIs to agencies for publishing listings, not for public data. This actor reads the public realcommercial.com.au search results.",
+  "demo": {
+    "url": "realcommercial.com.au · Sydney offices for sale",
+    "fields": [
+      "title",
+      "property_types",
+      "price",
+      "address",
+      "floor_area_sqm"
+    ],
+    "tab": "realcommercial"
+  },
+  "updated": "2026-11-18"
 }

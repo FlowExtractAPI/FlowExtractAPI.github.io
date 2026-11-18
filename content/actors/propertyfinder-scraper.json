@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Property Finder",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "property finder scraper",
   "secondaryKeywords": [
     "propertyfinder api",
@@ -19,6 +19,33 @@
     "Build agent and agency lists by area",
     "Track new listings in a building or district"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a Property Finder API?",
+      "a": "Only for agents managing their own listings. This actor reads any public Property Finder search link and returns each listing with price, location, size, rooms and amenities."
+    },
+    {
+      "q": "Which countries work?",
+      "a": "The UAE, Saudi Arabia, Qatar, Bahrain and Egypt: paste a search link from that country's Property Finder site."
+    },
+    {
+      "q": "Can I use it as a Property Finder API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Property Finder offers APIs to agents for managing their own listings, not public listing data. This actor reads public search results in the UAE, Saudi Arabia, Qatar, Bahrain and Egypt.",
+  "demo": {
+    "url": "propertyfinder.bh · for sale",
+    "fields": [
+      "title",
+      "price",
+      "currency",
+      "location",
+      "beds",
+      "size_sqm"
+    ],
+    "tab": "Property Finder"
+  },
+  "updated": "2026-11-18"
 }

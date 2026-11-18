@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/youtube-shorts-trend-finder",
+  "runId": "CaV2i1B99cEHm3Fxd",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:09:26.731Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.0044381791294929055,
+  "buildNumber": "0.0.17",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

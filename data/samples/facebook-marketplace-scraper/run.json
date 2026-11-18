@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/facebook-marketplace-scraper",
+  "runId": "DQ4zhpbfYnmdJAUCW",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:58:24.571Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.009000000000000001,
+  "buildNumber": "0.0.14",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

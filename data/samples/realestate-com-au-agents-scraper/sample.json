@@ -1,0 +1,112 @@
+[
+  {
+    "record_type": "agent",
+    "agent": "Brenden Taliana",
+    "job_title": "Sales",
+    "agency": "Sydney Cove Property - The Rocks",
+    "for_sale": 3,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/2622282"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Bryn Fowler",
+    "job_title": "Executive Sales",
+    "agency": "Sydney Cove Property - The Rocks",
+    "for_sale": 6,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/132261"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Cathy Yuan Tian",
+    "job_title": "LREA & Partner - Green Square",
+    "agency": "McConnell Bourn - Sydney",
+    "for_sale": 2,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/2545434"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Cora Yixuan Zhou",
+    "job_title": "Residential Sales Associate - Green Square",
+    "agency": "McConnell Bourn - Sydney",
+    "for_sale": 1,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/3915176"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Calvin Cheung",
+    "job_title": "Principal / Licensee",
+    "agency": "Bosland Properties",
+    "for_sale": 1,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/2821490"
+  },
+  {
+    "record_type": "agent",
+    "agent": "(Lavin) Li Wai Tong",
+    "job_title": "Director",
+    "agency": "Bosland Properties",
+    "for_sale": 1,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/2708390"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Adrian Wilson",
+    "job_title": "Principal & Director",
+    "agency": "Ayre Real Estate",
+    "for_sale": 3,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/2281102"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Triston Lim",
+    "job_title": null,
+    "agency": "McConnell Bourn - Sydney",
+    "for_sale": 1,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/4114024"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Mitchell Meier",
+    "job_title": "HEAD OF RESIDENTIAL",
+    "agency": "Boston Projects",
+    "for_sale": 1,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/4110184"
+  },
+  {
+    "record_type": "agent",
+    "agent": "Ettiene West",
+    "job_title": "Sales Executive",
+    "agency": "Morton Real Estate - Sydney",
+    "for_sale": 6,
+    "for_rent": 0,
+    "recently_sold": 0,
+    "suburbs": "Sydney",
+    "profile": "https://www.realestate.com.au/agent/82932"
+  }
+]

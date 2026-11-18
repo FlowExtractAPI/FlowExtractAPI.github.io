@@ -1,0 +1,25 @@
+{
+  "input": {
+    "profiles": [
+      "nasa"
+    ],
+    "maxItems": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "profile": {
+      "username": "username",
+      "full_name": "full_name",
+      "verified": "is_verified",
+      "followers": "follower_count",
+      "has_active_story": "has_active_story",
+      "latest_story": {
+        "path": "latest_story_at",
+        "as": "date"
+      },
+      "highlights": "highlight_count"
+    }
+  },
+  "typeField": "type"
+}

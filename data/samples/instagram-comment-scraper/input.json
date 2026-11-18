@@ -1,0 +1,28 @@
+{
+  "input": {
+    "urls": [
+      {
+        "url": "https://www.instagram.com/reels/DTvy2W3ErPl/"
+      }
+    ],
+    "maxCommentsPerUrl": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "author": {
+        "path": "user.username",
+        "as": "pseudonym",
+        "label": "Commenter"
+      },
+      "comment": "text",
+      "posted": {
+        "path": "created_at",
+        "as": "date"
+      },
+      "likes": "like_count",
+      "verified_author": "user.is_verified"
+    }
+  }
+}

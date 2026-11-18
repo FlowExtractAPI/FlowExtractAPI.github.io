@@ -1,0 +1,31 @@
+{
+  "input": {
+    "searchUrls": [
+      "https://www.linkedin.com/jobs/search/?keywords=Software%20Engineer&location=London&geoId=100495523&f_TPR=r2592000"
+    ],
+    "keywords": [
+      "Software Engineer"
+    ],
+    "locations": [
+      "London"
+    ],
+    "maxItems": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "company": "company_name",
+      "location": "location",
+      "posted": "posted_date",
+      "employment_type": "employment_type",
+      "seniority": "seniority_level",
+      "workplace": "workplace_type",
+      "salary": "salary",
+      "applicants": "applicants_count",
+      "easy_apply": "is_easy_apply",
+      "url": "job_url"
+    }
+  }
+}

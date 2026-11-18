@@ -1,0 +1,24 @@
+[
+  {
+    "record_type": null,
+    "url": "https://download.samplelib.com/mp4/sample-5s.mp4",
+    "status": "success",
+    "file_name": "video-5s.mp4",
+    "size": "2.72 MB",
+    "content_type": "video/mp4",
+    "http_status": 200,
+    "took": "830ms",
+    "method": "direct"
+  },
+  {
+    "record_type": null,
+    "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "status": "success",
+    "file_name": "doc-dummy-c42db5.pdf",
+    "size": "12.95 KB",
+    "content_type": "application/pdf; qs=0.001",
+    "http_status": 200,
+    "took": "121ms",
+    "method": "direct"
+  }
+]

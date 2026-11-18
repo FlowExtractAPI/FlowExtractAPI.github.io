@@ -4,7 +4,7 @@
   "category": "social",
   "source": "Quora",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "quora question finder",
   "secondaryKeywords": [
     "quora scraper",
@@ -27,6 +27,10 @@
     {
       "q": "How is the opportunity score worked out?",
       "a": "Followers and the top answer's views raise it; the number of answers already written lowers it. Sort by it to find questions with demand and little competition."
+    },
+    {
+      "q": "Can I use it as a Quora Question API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
   "demo": {
@@ -41,5 +45,7 @@
     ],
     "tab": "Quora"
   },
-  "lastKeywordChange": "2026-11-18"
+  "lastKeywordChange": "2026-11-18",
+  "officialApi": "Quora has no public API. This actor reads the public question pages and the related questions Quora lists under them.",
+  "updated": "2026-11-18"
 }

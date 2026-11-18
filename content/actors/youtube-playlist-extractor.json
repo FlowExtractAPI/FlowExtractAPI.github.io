@@ -4,7 +4,7 @@
   "category": "video",
   "source": "YouTube",
   "sourceHub": "youtube",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "youtube playlist scraper",
   "secondaryKeywords": [
     "youtube playlist extractor",
@@ -19,7 +19,16 @@
     "Back up a playlist's video list",
     "Compare playlists by total duration"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Do I need a YouTube API key?",
+      "a": "No. The official YouTube Data API needs a key and counts every call against a daily quota; this actor reads the public playlist page instead."
+    },
+    {
+      "q": "Can I use it as a YouTube playlist API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
   "lastKeywordChange": "2026-11-13",
   "updated": "2026-11-18",
   "liveDemo": {
@@ -29,5 +38,17 @@
     "hint": "Paste a YouTube playlist link (or a video link with &list=) and press Run: the demo lists the first 10 videos live.",
     "accent": "#ff0000",
     "chip": "YouTube playlist"
+  },
+  "officialApi": "The YouTube Data API lists playlist items with an API key and a daily quota (10,000 units by default). This actor needs no key and no quota.",
+  "demo": {
+    "url": "youtube.com/playlist?list=PLObrtcm1Kw6…",
+    "fields": [
+      "position",
+      "title",
+      "duration",
+      "channel",
+      "info"
+    ],
+    "tab": "YouTube playlist"
   }
 }

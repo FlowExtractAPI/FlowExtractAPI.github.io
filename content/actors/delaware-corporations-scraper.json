@@ -4,7 +4,7 @@
   "category": "business",
   "source": "Delaware Division of Corporations",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "delaware entity search",
   "secondaryKeywords": [
     "delaware business search",
@@ -19,6 +19,36 @@
     "Find the registered agent for service of process",
     "Check a list of company names in one run"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there an official Delaware entity search API?",
+      "a": "No. Delaware offers the entity search only as a web page. This actor runs the same search by name or file number, many at once, and returns structured rows."
+    },
+    {
+      "q": "Can I find new company incorporations in Delaware?",
+      "a": "Each result includes the formation date, so you can search a list of names or file numbers and sort or filter by incorporation date. The registry does not publish a feed of all new filings."
+    },
+    {
+      "q": "What does each result contain?",
+      "a": "Entity name, file number, formation date, entity kind and type, residency, state of formation and the registered agent."
+    },
+    {
+      "q": "Can I use it as a Delaware entity search API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "The Delaware Division of Corporations has no public API; its entity search is a web form, and certified documents are sold through registered agents. This actor runs that public search for you in bulk.",
+  "demo": {
+    "url": "icis.corp.delaware.gov · \"Acme Aero\"",
+    "fields": [
+      "entity_name",
+      "file_number",
+      "incorporated",
+      "entity_kind",
+      "registered_agent"
+    ],
+    "tab": "Delaware"
+  },
+  "updated": "2026-11-18"
 }

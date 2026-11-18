@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "DoorDash",
   "sourceHub": "doordash",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "doordash scraper",
   "secondaryKeywords": [
     "doordash menu scraper",
@@ -19,7 +19,20 @@
     "Track delivery fees and ETAs by location",
     "Research a cuisine's competition before opening"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Is there a DoorDash API for menus and stores?",
+      "a": "Not for public data. This actor returns stores, ratings, delivery fees and times, and full menus with prices for any DoorDash search or store link."
+    },
+    {
+      "q": "Why do results depend on the address?",
+      "a": "DoorDash shows different stores, fees and times for each delivery address. Set the address in the input (default: downtown Chicago) to see what customers there see."
+    },
+    {
+      "q": "Can I use it as a DoorDash API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
   "lastKeywordChange": "2026-11-13",
   "liveDemo": {
     "actor": "doordash",
@@ -29,5 +42,18 @@
     "sample": "https://www.doordash.com/search/store/pizza?event_type=search",
     "hint": "Paste a DoorDash search or store link and press Run: the demo fetches the first stores live (up to 10). Delivery address: Chicago by default."
   },
-  "updated": "2026-11-18"
+  "updated": "2026-11-18",
+  "officialApi": "DoorDash has no public API for store or menu data; its developer APIs are for merchants and delivery partners. This actor reads the public DoorDash search and store pages for a delivery address.",
+  "demo": {
+    "url": "doordash.com/search/store/pizza · Chicago",
+    "fields": [
+      "name",
+      "cuisine",
+      "rating",
+      "price_range",
+      "delivery_fee",
+      "delivery_minutes"
+    ],
+    "tab": "DoorDash"
+  }
 }

@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/delaware-corporations-scraper",
+  "runId": "MKAxOcqJm5TfDGP7K",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:57:59.140Z",
+  "itemCount": 5,
+  "sampleCount": 5,
+  "costUsd": 0.015,
+  "buildNumber": "0.0.4",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

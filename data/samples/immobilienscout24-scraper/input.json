@@ -1,0 +1,28 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.immobilienscout24.de/Suche/de/berlin/berlin/wohnung-mieten"
+      }
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "type": "realEstateType",
+      "deal": "transactionType",
+      "price": "price",
+      "price_unit": "priceUnit",
+      "price_per_sqm": "pricePerSqm",
+      "living_space_sqm": "livingSpace",
+      "rooms": "numberOfRooms",
+      "energy_class": "energyEfficiencyClass",
+      "address": "address.full",
+      "published": "publishedDate",
+      "url": "url"
+    }
+  }
+}

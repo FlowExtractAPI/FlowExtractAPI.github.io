@@ -1,0 +1,32 @@
+{
+  "input": {
+    "mode": "today",
+    "productUrls": [
+      {
+        "url": "https://www.producthunt.com/search?q=apify"
+      },
+      {
+        "url": "https://www.producthunt.com/leaderboard/yearly/2022"
+      }
+    ],
+    "maxFollowers": 10,
+    "maxFollowing": 10,
+    "maxItems": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "name": "name",
+      "tagline": "tagline",
+      "rank": "dailyRank",
+      "upvotes": "upvotes",
+      "comments": "commentsCount",
+      "launch_date": "launchDate",
+      "topics": "topics",
+      "pricing": "pricingType",
+      "website": "websiteUrl",
+      "url": "productHuntUrl"
+    }
+  }
+}

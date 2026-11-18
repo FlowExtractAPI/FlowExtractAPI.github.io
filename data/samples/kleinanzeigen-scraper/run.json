@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/kleinanzeigen-scraper",
+  "runId": "MWaXzHlbaeF2Nf6Iv",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:59:06.619Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.01,
+  "buildNumber": "0.1.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

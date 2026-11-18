@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/realestate-com-au-scraper",
+  "runId": "5ZsRKFLgcPAa5SVUw",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:05:39.720Z",
+  "itemCount": 11,
+  "sampleCount": 11,
+  "costUsd": 0.0135,
+  "buildNumber": "0.0.18",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

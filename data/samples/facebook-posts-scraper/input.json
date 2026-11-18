@@ -1,0 +1,30 @@
+{
+  "input": {
+    "startUrls": [
+      "https://www.facebook.com/nasa"
+    ],
+    "resultsLimit": 10,
+    "proxyConfiguration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": [
+        "RESIDENTIAL"
+      ]
+    }
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "page": "pageName",
+      "posted": {
+        "path": "time",
+        "as": "date"
+      },
+      "text": "text",
+      "reactions": "reactionsCount",
+      "comments": "commentsCount",
+      "shares": "sharesCount",
+      "url": "url"
+    }
+  }
+}

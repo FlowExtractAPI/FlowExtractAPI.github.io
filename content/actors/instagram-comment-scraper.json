@@ -4,7 +4,7 @@
   "category": "social",
   "source": "Instagram",
   "sourceHub": "instagram",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "instagram comment scraper",
   "secondaryKeywords": [
     "instagram comments export",
@@ -19,7 +19,20 @@
     "Pick giveaway winners from the comments",
     "Find questions and objections your audience raises"
   ],
-  "faq": [],
+  "faq": [
+    {
+      "q": "Is there an official Instagram comments API?",
+      "a": "Only for your own business or creator account's posts. This actor reads public comments on any public Reel or post without login."
+    },
+    {
+      "q": "What does each comment contain?",
+      "a": "Commenter username, text, like count and timestamp, with a per-link limit so you control how many you collect."
+    },
+    {
+      "q": "Can I use it as a Instagram comments API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
   "lastKeywordChange": "2026-11-13",
   "updated": "2026-11-18",
   "liveDemo": {
@@ -29,5 +42,16 @@
     "hint": "Paste a public Instagram post or reel link and press Run: the demo fetches the first comments live (up to 10). Commenter names are hidden.",
     "accent": "#e1306c",
     "chip": "Instagram comments"
+  },
+  "officialApi": "The Instagram Graph API returns comments only for media of your own business or creator account. This actor reads the public comments under any public Reel or post.",
+  "demo": {
+    "url": "instagram.com/reels/DTvy2W3ErPl",
+    "fields": [
+      "author",
+      "comment",
+      "posted",
+      "likes"
+    ],
+    "tab": "Instagram comments"
   }
 }

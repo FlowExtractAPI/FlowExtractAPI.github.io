@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/domain-scraper",
+  "runId": "pxxV53Brfu9ubymI4",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:57:08.228Z",
+  "itemCount": 11,
+  "sampleCount": 11,
+  "costUsd": 0.011,
+  "buildNumber": "0.1.4",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

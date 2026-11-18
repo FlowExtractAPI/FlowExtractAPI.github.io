@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "TikTok Shop",
   "sourceHub": "tiktok",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "tiktok shop reviews scraper",
   "secondaryKeywords": [
     "tiktok shop scraper",
@@ -19,6 +19,28 @@
     "Compare reviews of the same product across markets",
     "Find the complaints behind low ratings"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a TikTok Shop reviews API?",
+      "a": "Only for sellers managing their own shop. This actor reads every public review of any product: rating, text, photos, verified-purchase and incentivized flags, variant and date."
+    },
+    {
+      "q": "Can I use it as a TikTok Shop reviews API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "TikTok Shop's Partner API is for sellers managing their own shop. This actor reads the public reviews on any TikTok Shop product page in 16 markets.",
+  "demo": {
+    "url": "shop.tiktok.com · cat nail clipper",
+    "fields": [
+      "rating",
+      "review",
+      "reviewed",
+      "verified_purchase",
+      "variant"
+    ],
+    "tab": "TikTok Shop"
+  },
+  "updated": "2026-11-18"
 }

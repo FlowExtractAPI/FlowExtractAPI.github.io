@@ -1,0 +1,16 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.zimmo.be/nl/zoeken/?search=eyJmaWx0ZXIiOnsic3RhdHVzIjp7ImluIjpbIkZPUl9TQUxFIiwiVEFLRV9PVkVSIl19LCJwbGFjZUlkIjp7ImluIjpbMTExOF19fX0%3D#gallery"
+      }
+    ],
+    "maxResults": 10,
+    "proxyConfiguration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": []
+    }
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

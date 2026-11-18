@@ -26,6 +26,10 @@
   // "1" = allow requests without a Turnstile token (testing only). Strict ("0") since 2026-11-14.
   "vars": { "DEMO_TURNSTILE_OPTIONAL": "0", "DEMO_BACKEND": "cloudrun" },
   "durable_objects": { "bindings": [{ "name": "DEMO_GUARD", "class_name": "DemoGuard" }] },
+  // "Try it live" default links: answered from this KV (global), refreshed twice a day (04:17 + 16:17 UTC) by the cron below (worker/demo.js
+  // refreshSamples). Free plan: 1,000 writes/day; we write one key per demo per day.
+  "kv_namespaces": [{ "binding": "DEMO_SAMPLES", "id": "fce2e2a8f37a44eb8b658aec5295ece0" }],
+  "triggers": { "crons": ["17 4 * * *", "17 16 * * *"] },
   "migrations": [{ "tag": "v1", "new_sqlite_classes": ["DemoGuard"] }],
   // Cutover 2026-11-14: the apex runs on this Worker through a route. The existing DNS records (GitHub Pages) stay
   // untouched for 7 days, so ROLLBACK = delete this "routes" block and run `npx wrangler deploy` (traffic goes back to

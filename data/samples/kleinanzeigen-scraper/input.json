@@ -1,0 +1,28 @@
+{
+  "input": {
+    "startUrls": [
+      "https://www.kleinanzeigen.de/s-berlin/iphone/k0l3331"
+    ],
+    "maxResultsPerSearch": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "price": "price",
+      "price_type": "priceType",
+      "category": "categoryName",
+      "city": "city",
+      "region": "region",
+      "zip": "zipCode",
+      "seller_type": "sellerType",
+      "posted": {
+        "path": "postedAt",
+        "as": "date"
+      },
+      "attributes": "attributes",
+      "url": "url"
+    }
+  }
+}

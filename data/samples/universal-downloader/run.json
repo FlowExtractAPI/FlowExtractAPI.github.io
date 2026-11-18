@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/universal-downloader",
+  "runId": "fzPmQyH0rytnSHAWn",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:06:52.932Z",
+  "itemCount": 2,
+  "sampleCount": 2,
+  "costUsd": 0.018479251904699536,
+  "buildNumber": "0.2.13",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

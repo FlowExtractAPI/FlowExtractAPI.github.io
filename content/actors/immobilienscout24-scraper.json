@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "ImmoScout24",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "immoscout24 scraper",
   "secondaryKeywords": [
     "immoscout24 api",
@@ -22,8 +22,34 @@
   "faq": [
     {
       "q": "Is there an official ImmoScout24 API?",
-      "a": "ImmoScout24's APIs are for registered partners and agents. This actor reads public search results, so you only need a search link."
+      "a": "Yes, but only for registered partners managing their own listings. This actor reads any immobilienscout24.de search: paste the link and get every listing with price, €/m², size, rooms and address."
+    },
+    {
+      "q": "Can I scrape immobilienscout24.de without code?",
+      "a": "Yes. Search on immobilienscout24.de with your filters (radius and map searches included), copy the link, paste it and press Start. Download JSON, CSV or Excel."
+    },
+    {
+      "q": "Can it watch for new listings and price cuts?",
+      "a": "Yes. Monitoring mode compares each run with the previous one and reports new listings, price cuts and removed listings."
+    },
+    {
+      "q": "Can I use it as a ImmoScout24 API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "ImmoScout24 offers its API to registered partners (agents and software vendors) for managing their own listings, not for market data. This actor reads the public search results on immobilienscout24.de.",
+  "demo": {
+    "url": "immobilienscout24.de · Berlin · apartments to rent",
+    "fields": [
+      "title",
+      "price",
+      "price_per_sqm",
+      "living_space_sqm",
+      "rooms",
+      "address"
+    ],
+    "tab": "ImmoScout24"
+  },
+  "updated": "2026-11-18"
 }

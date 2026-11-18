@@ -1,0 +1,22 @@
+{
+  "input": {
+    "linkUrls": [
+      "https://apify.com"
+    ],
+    "maxScrollSeconds": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "page": "finalUrl",
+      "title": "pageTitle",
+      "status": "status",
+      "format": "format",
+      "width": "width",
+      "height": "height",
+      "file_size_bytes": "fileSizeBytes",
+      "capture_ms": "captureMs"
+    }
+  }
+}

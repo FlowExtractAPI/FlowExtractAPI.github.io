@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/facebook-posts-scraper",
+  "runId": "BP5kFOQN8tWwlYg85",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:58:23.858Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.029000000000000005,
+  "buildNumber": "0.1.6",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

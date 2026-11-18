@@ -4,7 +4,7 @@
   "category": "ecommerce",
   "source": "DoorDash",
   "sourceHub": "doordash",
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "doordash reviews api",
   "secondaryKeywords": [
     "doordash reviews scraper",
@@ -19,6 +19,32 @@
     "Compare ratings of competing restaurants",
     "Track review trends after a menu change"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a DoorDash reviews API?",
+      "a": "Not a public one: DoorDash's APIs serve merchants and delivery partners, not review data. This actor works like a DoorDash reviews API: send store links, get every review as JSON."
+    },
+    {
+      "q": "What does each review contain?",
+      "a": "Star rating, review text, date, verified-order flag, helpful votes, the items the customer ordered and any photos. Reviewer names can be left out of your export."
+    },
+    {
+      "q": "Can I use it as a DoorDash reviews API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "DoorDash's APIs (Drive, Marketplace) are for merchants and delivery partners and do not return public store reviews. This actor reads the reviews shown on DoorDash store pages.",
+  "demo": {
+    "url": "doordash.com/store/mcdonalds-20919",
+    "fields": [
+      "reviewer",
+      "stars",
+      "review",
+      "reviewed",
+      "verified"
+    ],
+    "tab": "DoorDash reviews"
+  },
+  "updated": "2026-11-18"
 }

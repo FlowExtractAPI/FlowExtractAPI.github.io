@@ -1,0 +1,29 @@
+{
+  "input": {
+    "locations": [
+      "Sydney, NSW, 2000"
+    ],
+    "startUrls": [
+      {
+        "url": "https://www.realestate.com.au/buy/in-sydney,+nsw+2000/list-1"
+      }
+    ],
+    "maxAgents": 10,
+    "maxSearchPages": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "agent": {
+      "agent": "name",
+      "job_title": "jobTitle",
+      "agency": "agency.name",
+      "for_sale": "stats.listingsForSale",
+      "for_rent": "stats.listingsForRent",
+      "recently_sold": "stats.recentlySold",
+      "suburbs": "stats.activeSuburbs",
+      "profile": "profileUrl"
+    }
+  },
+  "typeField": "recordType"
+}

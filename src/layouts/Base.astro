@@ -15,6 +15,8 @@ const canonical = BASE + path;
 const year = new Date().getFullYear();
 const ld = breadcrumbs ? [breadcrumbJsonLd(breadcrumbs), ...jsonLd] : jsonLd;
 const s = site.social;
+// Cloudflare Web Analytics token: site/.env PUBLIC_CF_WEB_ANALYTICS_TOKEN (see .env.example), else content/site.json
+const waToken = import.meta.env.PUBLIC_CF_WEB_ANALYTICS_TOKEN || site.webAnalyticsToken || '';
 ---
 <!doctype html>
 <html lang="en">
@@ -34,8 +36,8 @@ const s = site.social;
     <meta name="theme-color" content="#f7fbfa" />
     <script is:inline>document.documentElement.classList.add('js');</script>
     {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
-    {/* Cloudflare Web Analytics (page views, referrers, countries, speed; no cookies). Token = content/site.json webAnalyticsToken, public by design. */}
-    {site.webAnalyticsToken && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: site.webAnalyticsToken })}></script>}
+    {/* Cloudflare Web Analytics (page views, referrers, countries, speed; no cookies). Token = waToken above, public by design. */}
+    {waToken && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: waToken })}></script>}
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>

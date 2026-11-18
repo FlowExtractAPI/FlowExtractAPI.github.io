@@ -82,6 +82,7 @@ const lives = [actor, ...others];
     const form = $('[data-demo-form]'), status = $('[data-demo-status]'), run = $('[data-demo-run]');
     const results = $('[data-demo-results]'), cardsPane = $('[data-pane="cards"]'), tablePane = $('[data-pane="table"]'), jsonPane = $('[data-pane="json"]');
     let last = null;
+    let currentSample = form.url.value.trim(); // the box's default link: answered ready-made, no human check needed
     const esc = (v) => String(Array.isArray(v) ? v.join(', ') : v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
     // "coming soon" chips (home page)
@@ -94,6 +95,7 @@ const lives = [actor, ...others];
       if (live && b.dataset.demoId) {
         box.dataset.demoActor = b.dataset.demoId;
         form.url.value = b.dataset.sample || '';
+        currentSample = form.url.value.trim();
         form.url.setAttribute('aria-label', b.dataset.label || 'Link');
         $('[data-hint-text]').textContent = b.dataset.hint || '';
         $('[data-note-src]').textContent = b.dataset.src || '';
@@ -157,8 +159,9 @@ const lives = [actor, ...others];
       const tick = setInterval(() => { status.textContent = !window.feDemo.token && !window.feDemo.error ? 'Checking you are human…' : `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
       // wait up to 6 s for the human check; if it fails or never arrives, send without a token (the server decides)
       window.feDemo.error = '';
-      if (!window.feDemo.token) status.textContent = "Checking you are human…";
-      for (let i = 0; i < 50 && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
+      const isSample = form.url.value.trim() === currentSample;
+      if (!window.feDemo.token && !isSample) status.textContent = "Checking you are human…";
+      for (let i = 0; i < 50 && !isSample && !window.feDemo.token && !window.feDemo.error; i++) await new Promise((r) => setTimeout(r, 500));
       try {
         const r = await fetch('/api/demo', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ actor: box.dataset.demoActor, url: form.url.value.trim(), turnstile: window.feDemo.token || '' }) });
         const data = await r.json();
@@ -174,7 +177,7 @@ const lives = [actor, ...others];
         last = data; render(data);
         sTitle.textContent = data.total ? `This search has ${Number(data.total).toLocaleString('en')} results. You saw ${data.count}.` : 'Want all of them?';
         signup.hidden = false;
-        status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${Number(data.total).toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
+        status.textContent = data.sample ? `${data.count} results from a real run of this example link (${data.refreshedAt ? 'refreshed ' + data.refreshedAt.slice(0, 10) : 'refreshed daily'}). Paste your own link to run it live.` : `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${Number(data.total).toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
       } catch (err) { status.textContent = 'The demo did not answer. Try again in a minute.'; window.feReport?.(`demo ${box.dataset.demoActor} no answer`, String(err && err.message || err)); }
       finally {
         clearInterval(tick); run.disabled = false;

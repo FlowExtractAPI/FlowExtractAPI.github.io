@@ -1,0 +1,37 @@
+{
+  "input": {
+    "searchBy": "links",
+    "startUrls": [
+      {
+        "url": "https://www.realtor.com/realestateandhomes-search/Las-Vegas_NV/type-single-family-home/beds-2-3/price-200000-400000"
+      }
+    ],
+    "locations": [
+      "Austin, TX"
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "address": "location.address.line",
+      "city": "location.address.city",
+      "state": "location.address.state_code",
+      "zip": "location.address.postal_code",
+      "status": "status",
+      "price": "list_price",
+      "beds": "description.beds",
+      "baths": "description.baths",
+      "sqft": "description.sqft",
+      "year_built": "description.year_built",
+      "type": "description.type",
+      "price_per_sqft": "price_per_sqft",
+      "listed": {
+        "path": "list_date",
+        "as": "date"
+      },
+      "url": "href"
+    }
+  }
+}

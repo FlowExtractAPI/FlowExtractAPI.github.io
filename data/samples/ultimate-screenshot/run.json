@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/ultimate-screenshot",
+  "runId": "kS03RrOfObGH2APT5",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:07:59.402Z",
+  "itemCount": 1,
+  "sampleCount": 1,
+  "costUsd": 0.007,
+  "buildNumber": "2.0.32",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

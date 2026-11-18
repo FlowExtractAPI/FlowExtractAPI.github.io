@@ -1,0 +1,29 @@
+{
+  "input": {
+    "searchQueries": [
+      "iphone 13"
+    ],
+    "location": "New York, NY",
+    "maxResultsPerSearch": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "price": "price",
+      "price_text": "price_formatted",
+      "sold": "is_sold",
+      "city": "city",
+      "state": "state",
+      "delivery": "delivery_types",
+      "seller": {
+        "path": "seller_name",
+        "as": "pseudonym",
+        "label": "Seller"
+      },
+      "search": "search_query",
+      "url": "url"
+    }
+  }
+}

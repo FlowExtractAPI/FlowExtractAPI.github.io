@@ -1,0 +1,31 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.realestate.com.au/buy/property-townhouse-size-200-5000-between-50000-15000000-in-adelaide+-+greater+region,+sa;+adelaide+hills,+sa;+adelaide,+sa+5000/list-1"
+      },
+      {
+        "url": "https://www.realestate.com.au/property-acreage+semi-rural-nsw-blackmans+point-149898944"
+      }
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "type": "propertyType",
+      "price": "price",
+      "address": "address.streetAddress",
+      "suburb": "address.suburb",
+      "state": "address.state",
+      "beds": "bedrooms",
+      "baths": "bathrooms",
+      "parking": "parkingSpaces",
+      "land_size": "landSize",
+      "agency": "agencyName",
+      "url": "url"
+    }
+  }
+}

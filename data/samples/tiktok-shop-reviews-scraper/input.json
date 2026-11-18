@@ -1,0 +1,25 @@
+{
+  "input": {
+    "productUrls": [
+      "https://shop.tiktok.com/us/pdp/cat-nail-clipper-by-potaroma-adjustable-sizes-built-in-file-safe-for-kittens-cats/1731578642912612516"
+    ],
+    "maxReviewsPerProduct": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "review": {
+      "product": "product_name",
+      "rating": "rating",
+      "review": "review_text",
+      "reviewed": {
+        "path": "review_time",
+        "as": "date"
+      },
+      "verified_purchase": "is_verified_purchase",
+      "variant": "sku_specification",
+      "country": "review_country"
+    }
+  },
+  "typeField": "type"
+}

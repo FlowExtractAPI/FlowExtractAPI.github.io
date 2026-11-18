@@ -7,7 +7,7 @@
 // Counting: one Analytics Engine data point per event (event, slug, file, our own page path). No cookies, no IP,
 // no visitor identifiers. Nothing here calls Apify or any scraper.
 import storeLinks from './store-links.json';
-import { handleDemo, DemoGuard } from './demo.js';
+import { handleDemo, DemoGuard, refreshSamples } from './demo.js';
 export { DemoGuard };
 
 // blob5 = 'human' when a browser sends a user-activated navigation (Sec-Fetch-User: ?1, set only when a person clicks)
@@ -50,6 +50,8 @@ async function notFound(request, env) {
 }
 
 export default {
+  // daily cron (wrangler.jsonc triggers): refresh the ready-made answers of the live demos' default links
+  async scheduled(event, env, ctx) { ctx.waitUntil(refreshSamples(env)); },
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/demo') return handleDemo(request, env, ctx, record);

@@ -1,0 +1,12 @@
+{
+  "input": {
+    "maxResults": 10,
+    "urls": [
+      {
+        "url": "https://www.linkedin.com/ad-library/search?accountOwner=nivide&payer=nivide&keyword=nivide"
+      }
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

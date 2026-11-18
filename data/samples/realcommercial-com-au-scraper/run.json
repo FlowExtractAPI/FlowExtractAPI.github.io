@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/realcommercial-com-au-scraper",
+  "runId": "bN0R3E34rY4BvH8c7",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:05:15.300Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.015,
+  "buildNumber": "0.0.11",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

@@ -4,7 +4,7 @@
   "category": "travel",
   "source": "Google Flights",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "google flights scraper",
   "secondaryKeywords": [
     "scrape google flights",
@@ -22,7 +22,23 @@
   "faq": [
     {
       "q": "Is there an official Google Flights API?",
-      "a": "No. Google shut down its QPX Express flight API in 2018 and has no public Google Flights API. This actor reads the public Google Flights pages and returns the fares as data."
+      "a": "No. Google shut down QPX Express in 2018 and offers no public Google Flights API. This actor returns what Google Flights shows for your search, one row per flight option."
+    },
+    {
+      "q": "How do I scrape Google Flights without code?",
+      "a": "Search on Google Flights, copy the link from the address bar (it contains tfs=) and paste it as the input; or fill origin, destination and dates in the form. Press Start and download JSON, CSV or Excel."
+    },
+    {
+      "q": "Which trips does it support?",
+      "a": "One way, round trip and multi-city, every cabin class, travellers and filters, in any currency and market. A Google Explore link returns the cheapest destinations, one row per destination."
+    },
+    {
+      "q": "Does it return the total price?",
+      "a": "Yes: the total price for all travellers in your currency, plus every segment, airline, aircraft, duration, stops and CO2. Booking options, return flights and the price graph can be added."
+    },
+    {
+      "q": "Can I use it as a Google Flights API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
   "demo": {
@@ -49,5 +65,6 @@
     "sample": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTMwagcIARIDTEdLcgcIARIDU0lOGh4SCjIwMjctMDEtMjhqBwgBEgNTSU5yBwgBEgNMR0tAAUgBcAGCAQsI____________AZgBAQ",
     "hint": "Search on Google Flights, copy the link from the address bar (it contains tfs=) and press Run: the demo fetches the first flights live (up to 10)."
   },
-  "updated": "2026-11-18"
+  "updated": "2026-11-18",
+  "officialApi": "Google closed its only flight search API (QPX Express) in 2018 and Google Flights has no public API. This actor reads the same results Google Flights shows for a link or a route, with the real total price."
 }

@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/doordash-review-scraper",
+  "runId": "tXqCyNO6TZAl2Kgt2",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:57:58.764Z",
+  "itemCount": 20,
+  "sampleCount": 20,
+  "costUsd": 0.001839417696416378,
+  "buildNumber": "0.0.1",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/salvagebid-scraper",
+  "runId": "fg8rf18R7vYiGv2zd",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:05:52.676Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.05,
+  "buildNumber": "0.0.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

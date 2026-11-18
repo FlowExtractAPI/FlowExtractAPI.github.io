@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Realtor.com",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "realtor.com scraper",
   "secondaryKeywords": [
     "realtor.com api",
@@ -19,6 +19,29 @@
     "Screen homes by school and climate risk",
     "Build agent lists by market"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a Realtor.com API?",
+      "a": "No public one. This actor searches by link, location or address (for sale, for rent, sold or off market) and returns prices, price history, taxes and value estimates."
+    },
+    {
+      "q": "Can I use it as a Realtor.com API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Realtor.com has no public API; its listing data comes from MLS feeds licensed to brokers and partners. This actor reads the public search and property pages on realtor.com.",
+  "demo": {
+    "url": "realtor.com · Las Vegas, NV · single-family",
+    "fields": [
+      "address",
+      "price",
+      "beds",
+      "baths",
+      "sqft",
+      "status"
+    ],
+    "tab": "Realtor.com"
+  },
+  "updated": "2026-11-18"
 }

@@ -1,0 +1,35 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.doordash.com/store/mcdonalds-20919"
+      },
+      {
+        "url": "https://www.doordash.com/store/the-cheesecake-factory-atlanta-24546/94546964/"
+      }
+    ],
+    "maxReviews": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "store_id": "store_id",
+      "reviewer": {
+        "path": "reviewer_name",
+        "as": "pseudonym",
+        "label": "Customer"
+      },
+      "stars": "num_stars",
+      "review": "review_text",
+      "reviewed": {
+        "path": "reviewed_at",
+        "as": "date"
+      },
+      "verified": "is_verified",
+      "helpful": "helpful_count",
+      "source": "review_source"
+    }
+  },
+  "typeField": "record_type"
+}

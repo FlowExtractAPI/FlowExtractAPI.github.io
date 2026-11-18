@@ -1,0 +1,23 @@
+{
+  "input": {
+    "startUrls": [
+      "https://www.realcommercial.com.au/for-sale/sydney-nsw-2000/offices/"
+    ],
+    "maxResultsPerSearch": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "channel": "channel",
+      "property_types": "propertyTypes",
+      "price": "priceText",
+      "address": "fullAddress",
+      "floor_area_sqm": "floorAreaSqm",
+      "days_on_site": "daysOnSite",
+      "agency": "agencyName",
+      "url": "url"
+    }
+  }
+}

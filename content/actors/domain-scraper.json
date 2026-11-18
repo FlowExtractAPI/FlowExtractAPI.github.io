@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "domain.com.au",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "domain.com.au scraper",
   "secondaryKeywords": [
     "domain.com.au scraping",
@@ -19,6 +19,33 @@
     "Build agent contact lists by suburb",
     "Track new listings that match a buyer's brief"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Does Domain.com.au have an API?",
+      "a": "Yes, Domain runs a developer portal, but listing data in production needs an approved plan. This actor needs no key: paste any domain.com.au search link and it returns every listing in it."
+    },
+    {
+      "q": "Can I keep my filters from domain.com.au?",
+      "a": "Yes. Set price, bedrooms, property type and area on domain.com.au, copy the link and paste it; every filter carries over. Buy, rent and sold searches all work."
+    },
+    {
+      "q": "Can I use it as a domain.com.au API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Domain offers a developer API with a sandbox; production listing data needs an approved plan. This actor reads the public search results on domain.com.au for any search link.",
+  "demo": {
+    "url": "domain.com.au/rent · 2+ bedrooms",
+    "fields": [
+      "address",
+      "price",
+      "type",
+      "beds",
+      "baths",
+      "parking"
+    ],
+    "tab": "Domain"
+  },
+  "updated": "2026-11-18"
 }

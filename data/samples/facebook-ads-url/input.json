@@ -1,0 +1,11 @@
+{
+  "input": {
+    "URLAds": [
+      {
+        "url": "https://www.facebook.com/ads/library/?active_status=inactive&ad_type=all&content_languages[0]=ar&country=ALL&is_targeted_country=false&media_type=meme&publisher_platforms[0]=threads&publisher_platforms[1]=whatsapp&publisher_platforms[2]=messenger&q=nike&search_type=keyword_unordered&sort_data[mode]=total_impressions&sort_data[direction]=desc&source=fb-logo&start_date[min]&start_date[max]=2026-01-08"
+      }
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

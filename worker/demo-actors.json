@@ -1,5 +1,5 @@
 {
-  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). Google Cloud Run URLs (tried first) are NOT here: Worker secret DEMO_CLOUDRUN_URLS (live-demo/deployed-cloudrun/). upstream: the Apify Standby URL on Tester 1 (fallback). fields: actor output path (dots for nesting) -> name shown (allow-list: NEVER private people's real names, phones, emails, profile photos). pseudonymize: shown names replaced by '<pseudonymLabel> 1, 2…'. dates: shown names formatted YYYY-MM-DD. display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
+  "_readme": "One entry per actor in the 'Try it live' box. Key = the id the page sends (content file liveDemo.actor). hosts: allowed link domains (subdomains included). Google Cloud Run URLs (tried first) are NOT here: Worker secret DEMO_CLOUDRUN_URLS (live-demo/deployed-cloudrun/). upstream: the Apify Standby URL on Tester 1 (fallback). sample: the default link shown in the box (= content liveDemo.sample; answered from KV DEMO_SAMPLES, refreshed daily). fields: actor output path (dots for nesting) -> name shown (allow-list: NEVER private people's real names, phones, emails, profile photos). pseudonymize: shown names replaced by '<pseudonymLabel> 1, 2…'. dates: shown names formatted YYYY-MM-DD. display: which shown fields fill the card. Guide: D:/Dev/FlowExtract-API/live-demo/ADD-AN-ACTOR.md",
   "idealista": {
     "name": "Idealista",
     "hosts": [
@@ -59,7 +59,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.idealista.com/en/venta-viviendas/balears-illes/?ordenado-por=precios-asc"
   },
   "facebook-ads": {
     "name": "Meta Ad Library",
@@ -105,7 +106,8 @@
           "page likes"
         ]
       ]
-    }
+    },
+    "sample": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&content_languages[0]=en&country=ALL&is_targeted_country=false&media_type=video&publisher_platforms[0]=facebook&q=pokemon&search_type=keyword_unordered&sort_data[mode]=relevancy_monthly_grouped&sort_data[direction]=desc&source=fb-logo&start_date[min]=2026-01-27&start_date[max]=2026-01-28"
   },
   "youtube-transcript": {
     "name": "YouTube",
@@ -149,7 +151,8 @@
           "words"
         ]
       ]
-    }
+    },
+    "sample": "https://www.youtube.com/watch?v=hz9tSv3CP6k"
   },
   "youtube-comments": {
     "name": "YouTube",
@@ -190,7 +193,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.youtube.com/watch?v=hz9tSv3CP6k"
   },
   "instagram-comments": {
     "name": "Instagram",
@@ -231,7 +235,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.instagram.com/reels/DTvy2W3ErPl/"
   },
   "youtube-playlist": {
     "name": "YouTube",
@@ -265,7 +270,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.youtube.com/watch?v=I-beHln9Gus&list=PLObrtcm1Kw6Odq5ks2R3bbJUGVVwQF-vw&pp=0gcJCaIEOCosWNin"
   },
   "google-ads": {
     "name": "Google Ads Transparency Center",
@@ -304,7 +310,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://adstransparency.google.com/advertiser/AR04619580580634296321"
   },
   "etsy-reviews": {
     "name": "Etsy",
@@ -347,7 +354,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.etsy.com/listing/1667678858/personalised-engraved-groomsmen-groom"
   },
   "doordash": {
     "name": "DoorDash",
@@ -392,7 +400,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.doordash.com/search/store/pizza?event_type=search"
   },
   "zillow": {
     "name": "Zillow",
@@ -447,7 +456,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.zillow.com/austin-tx/"
   },
   "facebook-comments": {
     "name": "Facebook",
@@ -489,7 +499,8 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.facebook.com/watch?v=1312736054237897"
   },
   "google-flights": {
     "name": "Google Flights",
@@ -542,6 +553,7 @@
           ""
         ]
       ]
-    }
+    },
+    "sample": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTMwagcIARIDTEdLcgcIARIDU0lOGh4SCjIwMjctMDEtMjhqBwgBEgNTSU5yBwgBEgNMR0tAAUgBcAGCAQsI____________AZgBAQ"
   }
 }

@@ -39,6 +39,12 @@ for (const { kind, file, doc } of pages) {
     if (doc.sourceHub && !sourceHubs.has(doc.sourceHub) && !(site.plannedSourceHubs || []).includes(doc.sourceHub)) errors.push(`${name}: unknown sourceHub "${doc.sourceHub}"`);
     if (!['basic', 'unique'].includes(doc.mode)) errors.push(`${name}: mode must be basic or unique`);
     if (!actors.some((a) => a.slug === doc.slug)) errors.push(`${name}: slug "${doc.slug}" is not a public actor in data/actors.json`);
+    if (doc.liveDemo) {
+      // the default link is answered from KV by the Worker: demo-actors.json must name the same link
+      const demo = JSON.parse(fs.readFileSync(path.join(ROOT, 'worker/demo-actors.json'), 'utf8'))[doc.liveDemo.actor];
+      if (!demo) errors.push(`${name}: liveDemo.actor "${doc.liveDemo.actor}" missing in worker/demo-actors.json`);
+      else if (demo.sample !== doc.liveDemo.sample) errors.push(`${name}: liveDemo.sample differs from worker/demo-actors.json "${doc.liveDemo.actor}".sample`);
+    }
     if (doc.mode === 'unique') {
       const run = path.join(ROOT, 'data/samples', doc.slug.toLowerCase(), 'run.json');
       if (!fs.existsSync(run)) errors.push(`${name}: unique mode needs data/samples/${doc.slug.toLowerCase()}/run.json`);

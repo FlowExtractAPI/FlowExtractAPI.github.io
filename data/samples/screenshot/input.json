@@ -1,0 +1,11 @@
+{
+  "input": {
+    "link_urls": [
+      {
+        "url": "https://apify.com/"
+      }
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

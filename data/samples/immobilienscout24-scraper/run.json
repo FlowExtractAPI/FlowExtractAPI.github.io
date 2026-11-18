@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/immobilienscout24-scraper",
+  "runId": "yOHz6TMNRl7938I2l",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:58:22.978Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.015,
+  "buildNumber": "0.0.12",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

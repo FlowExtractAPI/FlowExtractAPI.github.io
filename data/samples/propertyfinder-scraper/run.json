@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/propertyfinder-scraper",
+  "runId": "MI06QBDmgb63WJO1E",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:01:16.843Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.06,
+  "buildNumber": "0.0.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

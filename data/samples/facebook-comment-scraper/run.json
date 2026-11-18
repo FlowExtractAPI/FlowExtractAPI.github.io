@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/facebook-comment-scraper",
+  "runId": "IEVdLZZneAevAHSIO",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:58:47.131Z",
+  "itemCount": 19,
+  "sampleCount": 19,
+  "costUsd": 0.0485,
+  "buildNumber": "0.1.29",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

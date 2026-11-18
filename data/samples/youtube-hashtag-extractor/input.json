@@ -1,0 +1,9 @@
+{
+  "input": {
+    "hashtag": [
+      "#example"
+    ]
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

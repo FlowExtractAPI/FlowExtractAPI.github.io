@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Keller Williams",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "keller williams scraper",
   "secondaryKeywords": [
     "kw.com scraper",
@@ -27,6 +27,10 @@
     {
       "q": "Can I use my own kw.com search?",
       "a": "Yes. Set your filters on kw.com (price, beds, property type, keywords, open houses, price reduced…), copy the link and paste it; the actor applies the same filters."
+    },
+    {
+      "q": "Can I use it as a Keller Williams API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
   "demo": {
@@ -42,5 +46,7 @@
     ],
     "tab": "Keller Williams"
   },
-  "lastKeywordChange": "2026-11-17"
+  "lastKeywordChange": "2026-11-17",
+  "officialApi": "Keller Williams has no public listings API; its listings come from MLS/IDX feeds that only member brokers can use. This actor reads the public listings on kw.com.",
+  "updated": "2026-11-18"
 }

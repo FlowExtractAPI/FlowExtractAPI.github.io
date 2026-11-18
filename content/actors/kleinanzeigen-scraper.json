@@ -4,7 +4,7 @@
   "category": "classifieds",
   "source": "Kleinanzeigen",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "kleinanzeigen scraper",
   "secondaryKeywords": [
     "kleinanzeigen api",
@@ -19,6 +19,33 @@
     "Find business sellers in a category",
     "Watch new ads for a search every day"
   ],
-  "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "faq": [
+    {
+      "q": "Is there a Kleinanzeigen API?",
+      "a": "No public one. Paste any kleinanzeigen.de search link (cars, real estate, electronics, with every filter) or use keyword + city, and get each ad as structured data."
+    },
+    {
+      "q": "Can I tell private sellers from businesses?",
+      "a": "Yes. Each ad says whether the seller is private or commercial; seller details such as rating and active listings can be added."
+    },
+    {
+      "q": "Can I use it as a Kleinanzeigen API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input also runs in the Apify Console, on a schedule, or from Make, Zapier and n8n."
+    }
+  ],
+  "lastKeywordChange": "2026-11-13",
+  "officialApi": "Kleinanzeigen.de has no public API. This actor reads its public search results for any search link or keyword and city.",
+  "demo": {
+    "url": "kleinanzeigen.de/s-berlin/iphone",
+    "fields": [
+      "title",
+      "price",
+      "category",
+      "city",
+      "seller_type",
+      "posted"
+    ],
+    "tab": "Kleinanzeigen"
+  },
+  "updated": "2026-11-18"
 }

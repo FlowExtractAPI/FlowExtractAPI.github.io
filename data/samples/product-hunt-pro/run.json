@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/product-hunt-pro",
+  "runId": "vUJC2QdK27qewOgew",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:00:13.711Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.0004952850423372454,
+  "buildNumber": "1.0.16",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

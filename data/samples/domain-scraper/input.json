@@ -1,0 +1,28 @@
+{
+  "input": {
+    "start_urls": [
+      {
+        "url": "https://www.domain.com.au/rent/?bedrooms=2-any&bathrooms=1&price=50-5000&carspaces=1-any&landsize=0-5000000&landsizeunit=ha"
+      },
+      {
+        "url": "https://www.domain.com.au/342-whale-beach-road-palm-beach-nsw-2108-2020501730"
+      }
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "address": "address",
+      "price": "price",
+      "type": "dwelling_type",
+      "beds": "bedroom_count",
+      "baths": "bathroom_count",
+      "parking": "carspace_count",
+      "suburb": "metadata.address_components.suburb",
+      "state": "metadata.address_components.state",
+      "url": "seo_url"
+    }
+  }
+}

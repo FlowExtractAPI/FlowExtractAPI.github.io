@@ -1,0 +1,10 @@
+{
+  "input": {
+    "url": [
+      "https://www.loom.com/share/954d916643754027a3889fd5bf7f24dd"
+    ],
+    "pollMultiplier": 0.02
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20
+}

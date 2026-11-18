@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/linkedin-jobs-scraper",
+  "runId": "oRcW8kfJMPVQqAMd5",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:00:46.094Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.007,
+  "buildNumber": "0.2.7",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

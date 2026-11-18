@@ -1,0 +1,57 @@
+[
+  {
+    "record_type": null,
+    "entity_name": "ACME AEROPLANE INC.",
+    "file_number": "2468640",
+    "incorporated": "1995-01-10",
+    "entity_kind": "Corporation",
+    "entity_type": "General",
+    "residency": "Domestic",
+    "registered_agent": "CORPORATION SERVICE COMPANY",
+    "search_term": "Acme Aero"
+  },
+  {
+    "record_type": null,
+    "entity_name": "ACME AERO LLC",
+    "file_number": "7053653",
+    "incorporated": "2018-09-12",
+    "entity_kind": "Limited Liability Company",
+    "entity_type": "General",
+    "residency": "Domestic",
+    "registered_agent": "DELAWARE SECRETARY OF STATE",
+    "search_term": "Acme Aero"
+  },
+  {
+    "record_type": null,
+    "entity_name": "ACME AEROSPACE, INC.",
+    "file_number": "4708154",
+    "incorporated": "2009-07-10",
+    "entity_kind": "Corporation",
+    "entity_type": "General",
+    "residency": "Domestic",
+    "registered_agent": "THE CORPORATION TRUST COMPANY",
+    "search_term": "Acme Aero"
+  },
+  {
+    "record_type": null,
+    "entity_name": "ACME AERO INC.",
+    "file_number": "5242412",
+    "incorporated": "2012-11-14",
+    "entity_kind": "Corporation",
+    "entity_type": "General",
+    "residency": "Domestic",
+    "registered_agent": "ACME FILINGS CORP.",
+    "search_term": "Acme Aero"
+  },
+  {
+    "record_type": null,
+    "entity_name": "ACME123SPORTS INC.",
+    "file_number": "4578811",
+    "incorporated": "2008-07-23",
+    "entity_kind": "Corporation",
+    "entity_type": "General",
+    "residency": "Domestic",
+    "registered_agent": "CORPORATION SERVICE COMPANY",
+    "search_term": "4578811"
+  }
+]

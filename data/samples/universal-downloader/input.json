@@ -1,0 +1,36 @@
+{
+  "input": {
+    "URLItem": [
+      {
+        "url": "https://download.samplelib.com/mp4/sample-5s.mp4",
+        "method": "GET",
+        "headers": {},
+        "fileName": "5s.mp4"
+      },
+      {
+        "url": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+        "method": "GET",
+        "headers": {
+          "User-Agent": "Custom-Downloader/1.0"
+        }
+      }
+    ],
+    "proxyConfig": {
+      "useApifyProxy": false
+    }
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "url": "url",
+      "status": "status",
+      "file_name": "fileName",
+      "size": "fileSizeHuman",
+      "content_type": "contentType",
+      "http_status": "httpStatusCode",
+      "took": "durationHuman",
+      "method": "method"
+    }
+  }
+}

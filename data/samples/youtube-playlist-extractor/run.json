@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/youtube-playlist-extractor",
+  "runId": "CfGR3y90aEOMDWr2V",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T19:08:19.157Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.055,
+  "buildNumber": "0.1.6",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

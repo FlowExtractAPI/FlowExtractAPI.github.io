@@ -1,0 +1,24 @@
+{
+  "input": {
+    "queries": [
+      "IShowSpeed"
+    ],
+    "maxResults": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "channel": "channelName",
+      "views": "views",
+      "likes": "likes",
+      "comments": "comments",
+      "views_per_day": "viewsPerDay",
+      "engagement_pct": "engagementRate",
+      "age_days": "ageDays",
+      "duration_s": "durationSeconds",
+      "url": "url"
+    }
+  }
+}

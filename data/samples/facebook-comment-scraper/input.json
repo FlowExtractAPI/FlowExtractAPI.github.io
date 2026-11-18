@@ -1,0 +1,33 @@
+{
+  "input": {
+    "urls": [
+      {
+        "url": "https://www.facebook.com/reel/4364570517119853"
+      },
+      {
+        "url": "https://www.facebook.com/watch?v=1312736054237897"
+      }
+    ],
+    "maxCommentsPerUrl": 10
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "post_type": "source.type",
+      "author": {
+        "path": "comment.author.name",
+        "as": "pseudonym",
+        "label": "Commenter"
+      },
+      "comment": "comment.text",
+      "posted": {
+        "path": "comment.created_at",
+        "as": "date"
+      },
+      "reactions": "comment.total_reactions",
+      "replies": "comment.reply_count",
+      "language": "comment.source_language"
+    }
+  }
+}

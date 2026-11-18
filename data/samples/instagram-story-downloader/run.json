@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/instagram-story-downloader",
+  "runId": "NATzfaC61mTryH97o",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:59:37.960Z",
+  "itemCount": 10,
+  "sampleCount": 1,
+  "costUsd": 0.0177,
+  "buildNumber": "0.0.6",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

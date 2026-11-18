@@ -1,0 +1,34 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.propertyfinder.bh/en/search?c=1&fu=0&ob=mr"
+      }
+    ],
+    "maxResults": 10,
+    "proxyConfiguration": {
+      "useApifyProxy": true,
+      "apifyProxyGroups": []
+    }
+  },
+  "maxTotalChargeUsd": 0.1,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "type": "type",
+      "price": "price.value",
+      "currency": "price.currency",
+      "location": "location.full_name",
+      "beds": "bedrooms",
+      "baths": "bathrooms",
+      "size_sqm": "size.value",
+      "furnished": "furnished",
+      "listed": {
+        "path": "listed_date",
+        "as": "date"
+      },
+      "broker": "broker.name"
+    }
+  }
+}

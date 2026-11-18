@@ -1,0 +1,12 @@
+{
+  "actor": "dz_omar/instagram-comment-scraper",
+  "runId": "GvdJs4QC95cDbaO0V",
+  "status": "SUCCEEDED",
+  "date": "2026-11-18",
+  "finishedAt": "2026-11-18T18:59:10.635Z",
+  "itemCount": 10,
+  "sampleCount": 10,
+  "costUsd": 0.02,
+  "buildNumber": "0.0.15",
+  "account": "APIFY_TOKEN_TESTER_1"
+}

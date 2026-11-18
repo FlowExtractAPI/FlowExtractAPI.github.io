@@ -4,7 +4,7 @@
   "category": "real-estate",
   "source": "Zillow",
   "sourceHub": null,
-  "mode": "basic",
+  "mode": "unique",
   "primaryKeyword": "zillow scraper",
   "secondaryKeywords": [
     "zillow scraper api",
@@ -22,7 +22,23 @@
   "faq": [
     {
       "q": "Does Zillow have a public API?",
-      "a": "Zillow retired its old public APIs in 2021; its data now goes to approved partners through Bridge Interactive. This actor reads the public Zillow pages instead."
+      "a": "Not any more. Zillow retired its public APIs (including the Zestimate API) in 2021, and its Bridge feeds are limited to approved partners. This actor reads Zillow's search results instead."
+    },
+    {
+      "q": "How do I scrape Zillow listings without code?",
+      "a": "Type a city, ZIP or neighbourhood, or paste a Zillow search link with your filters, choose for sale, for rent or sold, and press Start. Results come as JSON, CSV or Excel."
+    },
+    {
+      "q": "Can I get sold homes and rentals?",
+      "a": "Yes. Pick for sale, for rent or recently sold; each listing has price, address, beds, baths, size, Zestimate, tax value, days on Zillow and photos."
+    },
+    {
+      "q": "Why does Zillow stop at about 800 results?",
+      "a": "Zillow serves roughly 800 listings per search. With \"Split large areas\" on, the actor divides a big area into smaller ones and searches each, so it reaches listings that paging alone cannot."
+    },
+    {
+      "q": "Can I use it as a Zillow API?",
+      "a": "Yes. Start a run from your own code with Apify's REST API (or the JavaScript and Python clients) and read the results as JSON; the run-sync endpoint returns the items in the same HTTP call. The same input works in the Apify Console, on a schedule, or from Make, Zapier and n8n."
     }
   ],
   "demo": {
@@ -47,5 +63,6 @@
     "sample": "https://www.zillow.com/austin-tx/",
     "hint": "Paste a Zillow search link (a city, ZIP or map search) and press Run: the demo fetches the first listings live (up to 10)."
   },
-  "updated": "2026-11-18"
+  "updated": "2026-11-18",
+  "officialApi": "Zillow retired its public APIs in 2021; its data feeds (Bridge Interactive) are only for approved real-estate partners. This actor returns what Zillow shows on its search pages for a location or a search link."
 }
