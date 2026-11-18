@@ -348,5 +348,50 @@
         ]
       ]
     }
+  },
+  "doordash": {
+    "name": "DoorDash",
+    "hosts": [
+      "doordash.com"
+    ],
+    "upstream": "https://mourad-22--doordash-scraper-demo.apify.actor/",
+    "store": "https://apify.com/dz_omar/doordash-scraper?fpr=smcx63",
+    "fields": {
+      "cover_image": "image",
+      "name": "store",
+      "rating": "rating",
+      "num_ratings_display": "ratings",
+      "price_range_display": "price_range",
+      "delivery_fee_display": "delivery_fee",
+      "asap_minutes": "delivery_minutes",
+      "is_open": "open",
+      "is_dashpass": "dashpass",
+      "city": "city",
+      "state": "state",
+      "url": "url"
+    },
+    "display": {
+      "image": "image",
+      "title": "store",
+      "link": "url",
+      "facts": [
+        [
+          "rating",
+          "★"
+        ],
+        [
+          "delivery_minutes",
+          "min"
+        ],
+        [
+          "delivery_fee",
+          ""
+        ],
+        [
+          "city",
+          ""
+        ]
+      ]
+    }
   }
 }

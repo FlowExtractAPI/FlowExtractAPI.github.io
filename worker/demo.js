@@ -62,7 +62,17 @@ export async function handleDemo(request, env, ctx, record) {
   let host;
   try { host = new URL(target).hostname; } catch { return json(400, { error: `Paste a full ${cfg.name} link (https://www.${cfg.hostList[0]}/…).` }); }
   if (!cfg.hosts.test(host)) return json(400, { error: `This demo only accepts ${cfg.name} links (${cfg.hostList.join(', ')}).` });
-  if (!env.TURNSTILE_SECRET || !env.DEMO_APIFY_TOKEN) return json(503, { error: 'The live demo is not switched on yet.' });
+  // Which backend runs the demos: vars.DEMO_BACKEND in wrangler.jsonc = "cloudrun" (default, Google Cloud Run) |
+  // "apify" (Apify Standby, cfg.upstream + run-only token) | "cloudrun+apify" (Cloud Run, then Apify on failure).
+  // Moving back to Apify: live-demo/README.md, section "Switch backend". Cloud Run URLs: Worker secret
+  // DEMO_CLOUDRUN_URLS ({"<actor id>": "https://…run.app"}), never in this public repo; X-Demo-Secret = DEMO_CLOUDRUN_SECRET.
+  const mode = String(env.DEMO_BACKEND || 'cloudrun');
+  let cloudrun = ''; try { cloudrun = JSON.parse(env.DEMO_CLOUDRUN_URLS || '{}')[body.actor] || ''; } catch {}
+  const backends = [];
+  if (mode.includes('cloudrun') && cloudrun && env.DEMO_CLOUDRUN_SECRET) backends.push({ name: 'cloudrun', url: cloudrun, headers: { 'X-Demo-Secret': env.DEMO_CLOUDRUN_SECRET }, ms: mode === 'cloudrun' ? LIMITS.timeoutMs : 45000 });
+  if (mode.includes('apify') && cfg.upstream && env.DEMO_APIFY_TOKEN) backends.push({ name: 'apify', url: cfg.upstream, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}` }, ms: LIMITS.timeoutMs });
+  if (backends.length === 1) backends.push(backends[0]); // one backend: it gets the quick retry
+  if (!env.TURNSTILE_SECRET || !backends.length) return json(503, { error: 'The live demo is not switched on yet.' });
 
   const ip = request.headers.get('CF-Connecting-IP') || '';
   // DEMO_TURNSTILE_OPTIONAL=1 (testing): a request without a token is allowed; a token that is sent must still be valid.
@@ -89,15 +99,6 @@ export async function handleDemo(request, env, ctx, record) {
   // Retry once when the first answer came back quickly with nothing (empty stream, source said 429…): a new
   // request gets a fresh proxy IP. Never retry a slow failure (visitor already waited) or "all demos busy".
   let busy = false;
-  // Backends in order: Google Cloud Run (DEMO_CLOUDRUN_URLS; only this Worker knows DEMO_CLOUDRUN_SECRET, sent as
-  // X-Demo-Secret) first, then Apify Standby (cfg.upstream, run-only token) as the fallback. One backend only: it
-  // gets the quick retry. Plan: REBUILD/CLOUD-RUN-DEMO-PLAN.md
-  const backends = [];
-  // Cloud Run URLs live in the Worker secret DEMO_CLOUDRUN_URLS ({"<actor id>": "https://…run.app"}), never in this public repo
-  let cloudrun = ''; try { cloudrun = JSON.parse(env.DEMO_CLOUDRUN_URLS || '{}')[body.actor] || ''; } catch {}
-  if (cloudrun && env.DEMO_CLOUDRUN_SECRET) backends.push({ name: 'cloudrun', url: cloudrun, headers: { 'X-Demo-Secret': env.DEMO_CLOUDRUN_SECRET }, ms: 45000 });
-  if (cfg.upstream && env.DEMO_APIFY_TOKEN) backends.push({ name: 'apify', url: cfg.upstream, headers: { Authorization: `Bearer ${env.DEMO_APIFY_TOKEN}` }, ms: LIMITS.timeoutMs });
-  if (backends.length === 1) backends.push(backends[0]);
   let served = '';
   for (let i = 0; i < backends.length && !rows.length && !busy && !(i > 0 && backends[i] === backends[i - 1] && Date.now() - t0 > 25000); i++) try {
     error = null;

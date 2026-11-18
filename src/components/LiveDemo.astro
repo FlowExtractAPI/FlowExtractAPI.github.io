@@ -34,7 +34,7 @@ const lives = [actor, ...others];
     <a class="btn btn-ghost" data-soon-link href="#">Open its page →</a>
   </div>
   <div data-live-part>
-    <p class="muted small" data-hint>{d.hint}</p>
+    <p class="muted small" data-hint-text>{d.hint}</p>
     <div class="demo-note" aria-hidden="true"><span>Paste any <span data-note-src>{actor.source}</span> link and hit Run:<br>real data in seconds</span><svg viewBox="0 0 120 70" width="110" height="64"><path d="M6 10 C 40 4, 86 14, 104 52" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/><path d="M92 46 L105 56 L108 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     <form class="explorer-tools demo-form" data-demo-form>
       <input type="url" name="url" required value={d.sample} aria-label={d.label} spellcheck="false" />
@@ -42,7 +42,7 @@ const lives = [actor, ...others];
     </form>
     <div class="cf-turnstile" data-sitekey={site.turnstileSiteKey} data-size="flexible" data-appearance="always" data-callback="feDemoToken" data-error-callback="feDemoError" data-expired-callback="feDemoExpired"></div>
     <p class="demo-quota"><b data-quota>🎁 20 free live runs per day</b><span>same link again = instant answer</span></p>
-    <p class="demo-more">Need more? <a href={actor.goUrl} data-go-link rel="nofollow" target="_blank">Run it on your own free Apify account →</a> $5 of credit every month<span data-free-line>{freeResults ? <>, about <span data-free>{freeResults.toLocaleString('en')}</span> results</> : null}</span>, no daily limit.</p>
+    <p class="demo-more">Need more? <a href={actor.goUrl} data-go-link rel="nofollow" target="_blank">Run it on your own free Apify account →</a> $5 of credit every month<span data-free-line>{freeResults ? <>, about <span data-free-count>{freeResults.toLocaleString('en')}</span> results</> : null}</span>, no daily limit.</p>
     <p class="demo-status" data-demo-status aria-live="polite"></p>
     <div class="demo-results" data-demo-results hidden>
       <div class="demo-bar">
@@ -95,11 +95,11 @@ const lives = [actor, ...others];
         box.dataset.demoActor = b.dataset.demoId;
         form.url.value = b.dataset.sample || '';
         form.url.setAttribute('aria-label', b.dataset.label || 'Link');
-        $('[data-hint]').textContent = b.dataset.hint || '';
+        $('[data-hint-text]').textContent = b.dataset.hint || '';
         $('[data-note-src]').textContent = b.dataset.src || '';
         box.querySelectorAll('[data-go-link]').forEach((a) => { a.href = b.dataset.go; });
         box.querySelectorAll('[data-actor-label]').forEach((el) => { el.textContent = b.dataset.name; });
-        box.querySelectorAll('[data-free]').forEach((el) => { el.textContent = b.dataset.free; });
+        box.querySelectorAll('[data-free-count]').forEach((el) => { el.textContent = b.dataset.free; });
         box.querySelectorAll('[data-free-line]').forEach((el) => { el.hidden = !b.dataset.free; });
         results.hidden = true; $('[data-signup]').hidden = true; status.textContent = ''; last = null;
       }

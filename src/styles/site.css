@@ -147,7 +147,7 @@ section { padding: 56px 0; }
 .card .blurb { margin: 0 0 14px; font-size: .9rem; color: var(--muted); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
 .card .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
 .card .go { font-size: .85rem; font-weight: 600; color: var(--teal-d); }
-.card .badge { font: 500 .72rem var(--mono); color: var(--slate); background: var(--mint-2); padding: 2px 7px; border-radius: 999px; margin-left: 6px; }
+.card .badge { display: inline-block; white-space: nowrap; vertical-align: 1px; font: 500 .72rem var(--mono); color: var(--slate); background: var(--mint-2); padding: 2px 7px; border-radius: 999px; margin-left: 6px; }
 
 /* catalog tools */
 .catalog-tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 22px; }

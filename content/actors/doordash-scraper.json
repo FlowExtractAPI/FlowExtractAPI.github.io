@@ -20,5 +20,14 @@
     "Research a cuisine's competition before opening"
   ],
   "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "liveDemo": {
+    "actor": "doordash",
+    "label": "DoorDash search or store link",
+    "chip": "DoorDash",
+    "accent": "#ff3008",
+    "sample": "https://www.doordash.com/search/store/pizza?event_type=search",
+    "hint": "Paste a DoorDash search or store link and press Run: the demo fetches the first stores live (up to 10). Delivery address: Chicago by default."
+  },
+  "updated": "2026-11-18"
 }

@@ -50,3 +50,7 @@ dist/
 dist-*/
 .astro/
 .wrangler/
+
+# local Worker secrets for wrangler dev (never commit)
+.dev.vars
+.dev.vars.*
