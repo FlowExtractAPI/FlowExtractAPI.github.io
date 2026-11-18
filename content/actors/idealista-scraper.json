@@ -8,29 +8,27 @@
   "primaryKeyword": "idealista scraper",
   "secondaryKeywords": [
     "scrape idealista",
-    "idealista data"
+    "idealista filters"
   ],
-  "title": "Idealista Scraper: Spain, Portugal & Italy Listings",
+  "title": "Idealista Scraper by Filters: Spain, Portugal & Italy",
   "h1": "Idealista Scraper",
-  "metaDescription": "Extract Idealista property data from Spain, Portugal and Italy past the 1,800-listing limit: prices, specs, photos and agency contacts.",
-  "intro": "Paste an Idealista search for Spain, Portugal or Italy and get every listing (past Idealista's 1,800-listing limit) with price, specs, photos and agency contact.",
+  "metaDescription": "Scrape Idealista without URLs: pick a place, buy or rent and 140+ filters for homes, rooms, offices, premises, garages and land in Spain, Portugal and Italy.",
+  "intro": "Search Idealista Spain, Portugal and Italy with filters instead of links: type a place, choose buy or rent and the property type, and tick the filters you need (price, size, bedrooms, condition, energy rating, 27 features and more). Covers all 10 Idealista property types, including rooms, offices, premises, garages and land, and splits big areas into districts to get past the 2,500-listing cap.",
   "useCases": [
-    "Collect every listing in a city, not just the first 1,800",
-    "Compare prices and sizes across districts",
-    "Build lead lists of agencies by area"
+    "Collect every listing in a city that matches your filters, past the 2,500-listing cap",
+    "Track new listings and price drops in a district every day",
+    "Research rooms, offices, premises or land, not just homes"
   ],
   "faq": [
     {
       "q": "How is this different from Idealista Scraper API?",
-      "a": "Idealista Scraper API charges per property returned, also covers France, and accepts drawn-map and multi-zone links. This one is listed as free on the Apify Store and covers Spain, Portugal and Italy."
+      "a": "This one needs no links: you fill a form with a place and filters, for all 10 property types in Spain, Portugal and Italy. Idealista Scraper API takes Idealista links (search, drawn map, multi-zone or a single property) and also covers France."
+    },
+    {
+      "q": "Do I need an Idealista link?",
+      "a": "No. Type a town, district or province as written on Idealista (for example Madrid, Chamberí, Lisboa or Milano) and pick the filters. A filter that does not exist for your property type is skipped and noted in the log."
     }
   ],
-  "liveDemo": {
-    "actor": "idealista",
-    "label": "Idealista link",
-    "sample": "https://www.idealista.com/en/venta-viviendas/balears-illes/?ordenado-por=precios-asc",
-    "hint": "Paste any Idealista search, map-area or property link (Spain, Portugal or Italy) and press Run: the demo fetches the first page live and shows up to 10 listings."
-  },
-  "updated": "2026-11-14",
-  "lastKeywordChange": "2026-11-13"
+  "updated": "2026-11-18",
+  "lastKeywordChange": "2026-11-18"
 }

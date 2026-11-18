@@ -132,6 +132,10 @@ async function refresh(arg) {
   while (!['SUCCEEDED', 'FAILED', 'ABORTED', 'TIMED-OUT'].includes(r.status)) {
     ({ data: r } = await api('GET', `/actor-runs/${run.id}?waitForFinish=60`));
   }
+  // Apify fills the dataset count and the run's cost a few seconds AFTER the run finishes; read them once settled,
+  // otherwise run.json says "0 results, start fee only" and the page's "Real cost check" is wrong.
+  await new Promise((ok) => setTimeout(ok, 15000));
+  ({ data: r } = await api('GET', `/actor-runs/${run.id}`));
   const { data: ds } = await api('GET', `/datasets/${r.defaultDatasetId}`);
   const items = await api('GET', `/datasets/${r.defaultDatasetId}/items?clean=true&limit=${maxItems}`);
   if (process.env.RAW_DIR) fs.writeFileSync(path.join(process.env.RAW_DIR, `${slug.toLowerCase()}-raw.json`), JSON.stringify(items, null, 2)); // local review only, never in the repo

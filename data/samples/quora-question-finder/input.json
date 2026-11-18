@@ -1,0 +1,27 @@
+{
+  "input": {
+    "startUrls": [
+      {
+        "url": "https://www.quora.com/How-do-I-start-a-small-business"
+      }
+    ],
+    "maxQuestions": 12,
+    "followRelatedQuestions": true,
+    "includeTopAnswers": false
+  },
+  "maxTotalChargeUsd": 0.15,
+  "maxItems": 20,
+  "project": {
+    "*": {
+      "title": "title",
+      "answers": "answerCount",
+      "followers": "followerCount",
+      "top_answer_views": "topAnswerViews",
+      "opportunity": "opportunityScore",
+      "unanswered": "isUnanswered",
+      "topics": "topics",
+      "depth": "depth",
+      "url": "url"
+    }
+  }
+}

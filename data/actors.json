@@ -1,5 +1,5 @@
 {
-  "fetchedAt": "2026-11-17T17:43:57.405Z",
+  "fetchedAt": "2026-11-18T11:05:15.769Z",
   "owner": "dz_omar",
   "actors": [
     {
@@ -15,7 +15,7 @@
         "MCP_SERVERS",
         "SEO_TOOLS"
       ],
-      "usersRank": 187,
+      "usersRank": 188,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -268,7 +268,7 @@
         "AI",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1,
+      "usersRank": 2,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -2943,7 +2943,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 86,
+      "usersRank": 87,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3415,7 +3415,7 @@
         "AUTOMATION",
         "LEAD_GENERATION"
       ],
-      "usersRank": 133,
+      "usersRank": 134,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -3697,7 +3697,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 108,
+      "usersRank": 109,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -4151,7 +4151,7 @@
       "apifyCategories": [
         "ECOMMERCE"
       ],
-      "usersRank": 3,
+      "usersRank": 4,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -5794,7 +5794,7 @@
         "LEAD_GENERATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 1588,
+      "usersRank": 1592,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -6420,7 +6420,7 @@
         "AUTOMATION",
         "SEO_TOOLS"
       ],
-      "usersRank": 612,
+      "usersRank": 615,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7693,7 +7693,7 @@
         "LEAD_GENERATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 827,
+      "usersRank": 828,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -7907,7 +7907,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 66,
+      "usersRank": 69,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -9062,14 +9062,13 @@
       "slug": "idealista-scraper",
       "pageSlug": "idealista-scraper",
       "id": "GWh7Xd12MDFp9LDmh",
-      "storeTitle": "Idealista Scraper",
-      "storeDescription": "Extract unlimited property data from Idealista (Spain/Portugal/Italy). Bypasses 1,800-listing limit. Gets prices, specs, photos & contacts. Monthly $15 + API costs. One-day free trial.",
+      "storeTitle": "Idealista Scraper 🏠 No URLs, 140+ Filters, 10 Property Types",
+      "storeDescription": "Search Idealista Spain, Portugal and Italy without URLs. Pick a place, buy or rent and the filters you need: price, size, bedrooms, features, energy rating, rooms in shared flats, offices, premises, land and more. Large areas are split automatically past the 2,500-listing cap.",
       "storeUrl": "https://apify.com/dz_omar/idealista-scraper?fpr=smcx63",
       "icon": "/icons/idealista-scraper.webp",
       "apifyCategories": [
-        "LEAD_GENERATION",
         "REAL_ESTATE",
-        "SEO_TOOLS"
+        "LEAD_GENERATION"
       ],
       "usersRank": 285,
       "pricing": {
@@ -9078,278 +9077,866 @@
       },
       "input": [
         {
-          "name": "Url",
-          "title": "🔗 Search URLs",
-          "type": "array",
-          "required": true,
-          "description": "Idealista search URLs to scrape."
+          "name": "country",
+          "title": "Country",
+          "type": "string",
+          "required": false,
+          "description": "Which Idealista site to search.",
+          "options": [
+            "es",
+            "pt",
+            "it"
+          ]
         },
         {
-          "name": "desiredResults",
-          "title": "📊 Max Results",
+          "name": "operation",
+          "title": "Buy or rent",
+          "type": "string",
+          "required": false,
+          "description": "Rooms in shared flats are always rent; business transfers ignore this choice.",
+          "options": [
+            "sale",
+            "rent"
+          ]
+        },
+        {
+          "name": "propertyType",
+          "title": "Property type",
+          "type": "string",
+          "required": false,
+          "description": "Each type has its own filters below (rooms, offices, premises, land…).",
+          "options": [
+            "homes",
+            "newDevelopments",
+            "bedrooms",
+            "offices",
+            "premises",
+            "transfers",
+            "garages",
+            "lands",
+            "storageRooms",
+            "buildings"
+          ]
+        },
+        {
+          "name": "locations",
+          "title": "Locations",
+          "type": "array",
+          "required": true,
+          "description": "One place per line — a town, district, neighbourhood or province, written as on Idealista (\"Madrid\", \"Chamberí, Madrid\", \"Málaga\", \"Lisboa\", \"Milano\")."
+        },
+        {
+          "name": "maxItems",
+          "title": "Max listings per location",
           "type": "integer",
           "required": false,
-          "description": "Maximum properties to scrape per URL"
+          "description": "Idealista stops at about 2,500 listings per search."
+        },
+        {
+          "name": "sortBy",
+          "title": "Sort by",
+          "type": "string",
+          "required": false,
+          "description": "Order in which Idealista returns the listings — matters when you collect fewer listings than exist.",
+          "options": [
+            "relevance",
+            "newest",
+            "oldest",
+            "priceLowToHigh",
+            "priceHighToLow",
+            "biggestPriceDrop",
+            "pricePerM2LowToHigh",
+            "pricePerM2HighToLow",
+            "biggest",
+            "smallest",
+            "highestFloor",
+            "lowestFloor"
+          ]
+        },
+        {
+          "name": "language",
+          "title": "Language of the listing texts",
+          "type": "string",
+          "required": false,
+          "description": "Descriptions are machine-translated by Idealista when the advertiser didn't write one in this language.",
+          "options": [
+            "en",
+            "es",
+            "ca",
+            "pt",
+            "it",
+            "fr",
+            "de",
+            "nl"
+          ]
+        },
+        {
+          "name": "minPrice",
+          "title": "Min price",
+          "type": "integer",
+          "required": false,
+          "description": "Leave empty for no minimum."
+        },
+        {
+          "name": "maxPrice",
+          "title": "Max price",
+          "type": "integer",
+          "required": false,
+          "description": "For business transfers this is the rent of the premises (or the sale price when you pick only \"Property and business\")."
+        },
+        {
+          "name": "minSize",
+          "title": "Min size",
+          "type": "integer",
+          "required": false,
+          "description": "Not available for garages and rooms."
+        },
+        {
+          "name": "maxSize",
+          "title": "Max size",
+          "type": "integer",
+          "required": false,
+          "description": "Leave empty for no maximum."
+        },
+        {
+          "name": "publishedWithin",
+          "title": "Published within",
+          "type": "string",
+          "required": false,
+          "description": "Idealista uses 48 hours for sales and 24 hours for rentals — the right one is picked for you.",
+          "options": [
+            "any",
+            "last48Hours",
+            "lastWeek",
+            "lastMonth"
+          ]
+        },
+        {
+          "name": "homeTypes",
+          "title": "Home types",
+          "type": "array",
+          "required": false,
+          "description": "Leave empty for all types."
+        },
+        {
+          "name": "bedrooms",
+          "title": "Bedrooms",
+          "type": "array",
+          "required": false,
+          "description": "Pick one or more. In Italy Idealista counts all rooms, not bedrooms, from 1 to 5+."
+        },
+        {
+          "name": "bathrooms",
+          "title": "Bathrooms",
+          "type": "array",
+          "required": false,
+          "description": "Pick one or more."
+        },
+        {
+          "name": "condition",
+          "title": "Condition",
+          "type": "array",
+          "required": false,
+          "description": "Homes only."
+        },
+        {
+          "name": "occupancy",
+          "title": "Current status (buy)",
+          "type": "array",
+          "required": false,
+          "description": "For buying homes. Leave empty to include all."
+        },
+        {
+          "name": "rentalTerm",
+          "title": "Rental type (rent)",
+          "type": "array",
+          "required": false,
+          "description": "For renting homes. Leave empty to include both."
+        },
+        {
+          "name": "furnished",
+          "title": "Furnished (rent)",
+          "type": "string",
+          "required": false,
+          "description": "For renting homes.",
+          "options": [
+            "any",
+            "furnishedKitchen",
+            "furnished"
+          ]
+        },
+        {
+          "name": "floors",
+          "title": "Floor",
+          "type": "array",
+          "required": false,
+          "description": "Homes and rooms."
+        },
+        {
+          "name": "energyRating",
+          "title": "Energy rating",
+          "type": "array",
+          "required": false,
+          "description": "Energy certificate bands as Idealista groups them."
+        },
+        {
+          "name": "features",
+          "title": "Features",
+          "type": "array",
+          "required": false,
+          "description": "Listings must have every feature you tick."
+        },
+        {
+          "name": "listingOptions",
+          "title": "Listing extras",
+          "type": "array",
+          "required": false,
+          "description": "Only listings that have these extras."
+        },
+        {
+          "name": "auction",
+          "title": "Auctions (Italy)",
+          "type": "string",
+          "required": false,
+          "description": "Italian homes only.",
+          "options": [
+            "any",
+            "excludeAuctions",
+            "onlyAuctions"
+          ]
+        },
+        {
+          "name": "newHomeOptions",
+          "title": "New homes",
+          "type": "array",
+          "required": false,
+          "description": "Only for the New homes property type."
+        },
+        {
+          "name": "roomSeekerGender",
+          "title": "You are",
+          "type": "string",
+          "required": false,
+          "description": "Shows only rooms open to this gender.",
+          "options": [
+            "any",
+            "male",
+            "female"
+          ]
+        },
+        {
+          "name": "flatmates",
+          "title": "Number of flatmates",
+          "type": "array",
+          "required": false,
+          "description": "How many people already live in the flat."
+        },
+        {
+          "name": "flatmatesAre",
+          "title": "Flatmates are",
+          "type": "string",
+          "required": false,
+          "description": "Who the current flatmates are.",
+          "options": [
+            "any",
+            "students",
+            "workers"
+          ]
+        },
+        {
+          "name": "smokingPolicy",
+          "title": "Smoking",
+          "type": "string",
+          "required": false,
+          "description": "House rule on smoking.",
+          "options": [
+            "any",
+            "allowed",
+            "disallowed"
+          ]
+        },
+        {
+          "name": "petsPolicy",
+          "title": "Pets",
+          "type": "string",
+          "required": false,
+          "description": "House rule on pets.",
+          "options": [
+            "any",
+            "allowed",
+            "disallowed"
+          ]
+        },
+        {
+          "name": "bedType",
+          "title": "Bed",
+          "type": "string",
+          "required": false,
+          "description": "What the room comes with.",
+          "options": [
+            "any",
+            "single",
+            "double",
+            "twoBeds",
+            "none"
+          ]
+        },
+        {
+          "name": "roomOptions",
+          "title": "Room and flat",
+          "type": "array",
+          "required": false,
+          "description": "The room or flat must offer every option you tick."
+        },
+        {
+          "name": "officeTypes",
+          "title": "Office type",
+          "type": "array",
+          "required": false,
+          "description": "Leave empty for all office types."
+        },
+        {
+          "name": "officeLayout",
+          "title": "Layout",
+          "type": "string",
+          "required": false,
+          "description": "How the space is divided.",
+          "options": [
+            "any",
+            "openPlan",
+            "withWalls"
+          ]
+        },
+        {
+          "name": "officeBuilding",
+          "title": "Building",
+          "type": "string",
+          "required": false,
+          "description": "Who else uses the building.",
+          "options": [
+            "any",
+            "exclusive",
+            "mixed"
+          ]
+        },
+        {
+          "name": "premisesTypes",
+          "title": "Premises type",
+          "type": "array",
+          "required": false,
+          "description": "Leave empty for both."
+        },
+        {
+          "name": "dealTypes",
+          "title": "Type of deal",
+          "type": "array",
+          "required": false,
+          "description": "Buy: property only, property and business, or with a paying tenant."
+        },
+        {
+          "name": "businessActivities",
+          "title": "Current business activity",
+          "type": "array",
+          "required": false,
+          "description": "The activity currently run in the premises."
+        },
+        {
+          "name": "premisesPosition",
+          "title": "Position",
+          "type": "array",
+          "required": false,
+          "description": "Where the premises are in the building."
+        },
+        {
+          "name": "minTransferPrice",
+          "title": "Min transfer fee (traspaso)",
+          "type": "integer",
+          "required": false,
+          "description": "Business transfers only: the price for taking over the business."
+        },
+        {
+          "name": "maxTransferPrice",
+          "title": "Max transfer fee (traspaso)",
+          "type": "integer",
+          "required": false,
+          "description": "Leave empty for no maximum."
+        },
+        {
+          "name": "landTypes",
+          "title": "Land type",
+          "type": "array",
+          "required": false,
+          "description": "Leave empty for all land."
         }
       ],
       "output": [
         {
-          "name": "thumbnail",
-          "label": "🖼️ Image",
-          "type": "",
-          "description": ""
+          "name": "_source",
+          "label": "Row type",
+          "type": "string",
+          "description": "\"listing\" for a property, \"notice\" for a run message (no results, unknown place…)."
         },
         {
-          "name": "suggestedTexts.title",
-          "label": "🏠 Title",
-          "type": "",
-          "description": ""
+          "name": "_notice",
+          "label": "Notice",
+          "type": "string",
+          "description": "Only on notice rows: noresults, locationnotfound, filterrejected, urlinputnotsupported, nolocation, runerror."
         },
         {
-          "name": "suggestedTexts.subtitle",
-          "label": "📍 Subtitle",
-          "type": "",
-          "description": ""
+          "name": "message",
+          "label": "Message",
+          "type": "string",
+          "description": "Only on notice rows: what happened and what to do."
         },
         {
-          "name": "price",
-          "label": "💰 Price",
-          "type": "",
-          "description": ""
+          "name": "location",
+          "label": "Location",
+          "type": "string",
+          "description": "Only on notice rows: the location the notice is about."
         },
         {
-          "name": "priceInfo.price.currencySuffix",
-          "label": "💱 Currency",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "address",
-          "label": "📍 Address",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "municipality",
-          "label": "🏙️ Municipality",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "province",
-          "label": "🗺️ Province",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "propertyType",
-          "label": "🏡 Property Type",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "operation",
-          "label": "🔑 Operation",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "size",
-          "label": "📐 Size (m²)",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "rooms",
-          "label": "🛏️ Rooms",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "bathrooms",
-          "label": "🚿 Bathrooms",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "contactInfo.phone1.phoneNumberForMobileDialing",
-          "label": "📞 Contact Phone",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "url",
-          "label": "🔗 Listing URL",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "scrapedAt",
-          "label": "🕐 Scraped At",
-          "type": "",
-          "description": ""
+          "name": "urls",
+          "label": "URLs given",
+          "type": "array",
+          "description": "Only on the urlinputnotsupported notice: the URLs from an old saved input."
         },
         {
           "name": "propertyCode",
           "label": "🆔 Property Code",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Idealista listing ID."
         },
         {
-          "name": "externalReference",
-          "label": "🔢 External Reference",
-          "type": "",
-          "description": ""
+          "name": "url",
+          "label": "🔗 Listing URL",
+          "type": "string",
+          "description": "Link to the listing on Idealista."
+        },
+        {
+          "name": "price",
+          "label": "💰 Price",
+          "type": "number",
+          "description": "Asking price in euros (monthly for rentals)."
+        },
+        {
+          "name": "priceInfo",
+          "label": "Price details",
+          "type": "object",
+          "description": "Price with currency and, when lowered, the previous price and drop."
         },
         {
           "name": "priceByArea",
           "label": "💵 Price per m²",
-          "type": "",
-          "description": ""
+          "type": "number",
+          "description": "Price divided by size."
+        },
+        {
+          "name": "propertyType",
+          "label": "🏡 Property Type",
+          "type": "string",
+          "description": "Idealista type: flat, chalet, penthouse, office, premise, garage, land, room…"
+        },
+        {
+          "name": "detailedType",
+          "label": "Detailed type",
+          "type": "object",
+          "description": "Type and subtype as Idealista classifies the listing."
+        },
+        {
+          "name": "operation",
+          "label": "🔑 Operation",
+          "type": "string",
+          "description": "sale or rent."
+        },
+        {
+          "name": "size",
+          "label": "📐 Size (m²)",
+          "type": "number",
+          "description": "Built area in square metres."
+        },
+        {
+          "name": "rooms",
+          "label": "🛏️ Rooms",
+          "type": "number",
+          "description": "Bedrooms (rooms in Italy)."
+        },
+        {
+          "name": "bathrooms",
+          "label": "🚿 Bathrooms",
+          "type": "number",
+          "description": "Number of bathrooms."
+        },
+        {
+          "name": "floor",
+          "label": "Floor",
+          "type": "string",
+          "description": "Floor as Idealista writes it (\"3\", \"bj\" ground, \"en\" mezzanine, \"st\" basement)."
+        },
+        {
+          "name": "exterior",
+          "label": "Exterior",
+          "type": "boolean",
+          "description": "Faces the street."
+        },
+        {
+          "name": "hasLift",
+          "label": "Lift",
+          "type": "boolean",
+          "description": "Building has a lift."
+        },
+        {
+          "name": "parkingSpace",
+          "label": "Parking",
+          "type": "object",
+          "description": "Parking space info when included or optional."
+        },
+        {
+          "name": "address",
+          "label": "📍 Address",
+          "type": "string",
+          "description": "Address or street as published."
+        },
+        {
+          "name": "municipality",
+          "label": "🏙️ Municipality",
+          "type": "string",
+          "description": "Municipality."
+        },
+        {
+          "name": "district",
+          "label": "District",
+          "type": "string",
+          "description": "District."
+        },
+        {
+          "name": "neighborhood",
+          "label": "Neighbourhood",
+          "type": "string",
+          "description": "Neighbourhood."
+        },
+        {
+          "name": "province",
+          "label": "🗺️ Province",
+          "type": "string",
+          "description": "Province."
         },
         {
           "name": "country",
           "label": "🌍 Country",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "latitude",
-          "label": "🧭 Latitude",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "longitude",
-          "label": "🧭 Longitude",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "detailedType.typology",
-          "label": "🏘️ Typology",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "description",
-          "label": "📝 Description",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "numPhotos",
-          "label": "📷 Number of Photos",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "hasVideo",
-          "label": "🎥 Has Video",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "has3DTour",
-          "label": "🏢 Has 3D Tour",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "has360",
-          "label": "🔄 Has 360° View",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "hasStaging",
-          "label": "🎨 Has Staging",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "features.hasSwimmingPool",
-          "label": "🏊 Swimming Pool",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "features.hasAirConditioning",
-          "label": "❄️ Air Conditioning",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "features.hasGarden",
-          "label": "🌳 Garden",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "contactInfo.commercialName",
-          "label": "🏢 Agency Name",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "contactInfo.userType",
-          "label": "👤 User Type",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "status",
-          "label": "📊 Status",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "newProperty",
-          "label": "✨ New Property",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "newDevelopment",
-          "label": "🏗️ New Development",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "topHighlight",
-          "label": "⭐ Top Highlight",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "sourceUrl",
-          "label": "🌐 Source URL",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "topPlus",
-          "label": "➕ Top Plus",
-          "type": "",
-          "description": ""
-        },
-        {
-          "name": "highlight.groupDescription",
-          "label": "🏆 Highlight Group",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Country code of the listing."
         },
         {
           "name": "locationId",
           "label": "📌 Location ID",
-          "type": "",
-          "description": ""
+          "type": "string",
+          "description": "Idealista location ID of the listing's area."
         },
         {
-          "name": "error",
-          "label": "⚠️ Error",
-          "type": "",
-          "description": ""
+          "name": "latitude",
+          "label": "🧭 Latitude",
+          "type": "number",
+          "description": "Latitude."
+        },
+        {
+          "name": "longitude",
+          "label": "🧭 Longitude",
+          "type": "number",
+          "description": "Longitude."
+        },
+        {
+          "name": "showAddress",
+          "label": "Exact address shown",
+          "type": "boolean",
+          "description": "Whether the advertiser shows the exact address."
+        },
+        {
+          "name": "description",
+          "label": "📝 Description",
+          "type": "string",
+          "description": "Listing description, in the language you picked when available."
+        },
+        {
+          "name": "thumbnail",
+          "label": "🖼️ Image",
+          "type": "string",
+          "description": "URL of the main photo."
+        },
+        {
+          "name": "numPhotos",
+          "label": "📷 Number of Photos",
+          "type": "number",
+          "description": "Number of photos."
+        },
+        {
+          "name": "multimedia",
+          "label": "Photos and videos",
+          "type": "object",
+          "description": "All photos (and videos) of the listing."
+        },
+        {
+          "name": "contactInfo",
+          "label": "Contact",
+          "type": "object",
+          "description": "Advertiser name, type (private/professional), phone and agency details."
+        },
+        {
+          "name": "newDevelopment",
+          "label": "🏗️ New Development",
+          "type": "boolean",
+          "description": "Part of a new-build development."
+        },
+        {
+          "name": "features",
+          "label": "Features",
+          "type": "object",
+          "description": "Feature flags Idealista shows on the card (pool, terrace, AC…)."
+        },
+        {
+          "name": "suggestedTexts",
+          "label": "Title",
+          "type": "object",
+          "description": "Card title and subtitle as shown on Idealista."
+        },
+        {
+          "name": "hasPlan",
+          "label": "Floor plan",
+          "type": "boolean",
+          "description": "Has a floor plan."
+        },
+        {
+          "name": "has3DTour",
+          "label": "🏢 Has 3D Tour",
+          "type": "boolean",
+          "description": "Has a 3D tour."
+        },
+        {
+          "name": "has360",
+          "label": "🔄 Has 360° View",
+          "type": "boolean",
+          "description": "Has 360° photos."
+        },
+        {
+          "name": "hasVideo",
+          "label": "🎥 Has Video",
+          "type": "boolean",
+          "description": "Has a video."
+        },
+        {
+          "name": "externalReference",
+          "label": "🔢 External Reference",
+          "type": "string",
+          "description": "The advertiser's own reference."
+        },
+        {
+          "name": "status",
+          "label": "📊 Status",
+          "type": "string",
+          "description": "Listing status when not plain active (e.g."
+        },
+        {
+          "name": "sourceUrl",
+          "label": "🌐 Source URL",
+          "type": "string",
+          "description": "Which search found the listing (country/operation/type/location ID)."
+        },
+        {
+          "name": "searchQuery",
+          "label": "Search filters",
+          "type": "object",
+          "description": "Country, operation, property type and location of the search that found this listing."
+        },
+        {
+          "name": "scrapedAt",
+          "label": "🕐 Scraped At",
+          "type": "string",
+          "description": "When the listing was collected (ISO 8601)."
+        },
+        {
+          "name": "dropDate",
+          "label": "dropDate",
+          "type": "number",
+          "description": "Idealista field dropDate as returned by the search."
+        },
+        {
+          "name": "favourite",
+          "label": "favourite",
+          "type": "boolean",
+          "description": "Idealista field favourite as returned by the search."
+        },
+        {
+          "name": "firstActivationDate",
+          "label": "firstActivationDate",
+          "type": "number",
+          "description": "Idealista field firstActivationDate as returned by the search."
+        },
+        {
+          "name": "flatMatesNumber",
+          "label": "flatMatesNumber",
+          "type": "number",
+          "description": "Idealista field flatMatesNumber as returned by the search."
+        },
+        {
+          "name": "hasAccess24h",
+          "label": "hasAccess24h",
+          "type": "boolean",
+          "description": "Idealista field hasAccess24h as returned by the search."
+        },
+        {
+          "name": "hasStaging",
+          "label": "🎨 Has Staging",
+          "type": "boolean",
+          "description": "Idealista field hasStaging as returned by the search."
+        },
+        {
+          "name": "hasTenants",
+          "label": "hasTenants",
+          "type": "boolean",
+          "description": "Idealista field hasTenants as returned by the search."
+        },
+        {
+          "name": "highlight",
+          "label": "highlight",
+          "type": "object",
+          "description": "Idealista field highlight as returned by the search."
+        },
+        {
+          "name": "isOnlineBookingActive",
+          "label": "isOnlineBookingActive",
+          "type": "boolean",
+          "description": "Idealista field isOnlineBookingActive as returned by the search."
+        },
+        {
+          "name": "isRentToOwn",
+          "label": "isRentToOwn",
+          "type": "boolean",
+          "description": "Idealista field isRentToOwn as returned by the search."
+        },
+        {
+          "name": "isSmokingAllowed",
+          "label": "isSmokingAllowed",
+          "type": "boolean",
+          "description": "Idealista field isSmokingAllowed as returned by the search."
+        },
+        {
+          "name": "labels",
+          "label": "labels",
+          "type": "array",
+          "description": "Idealista field labels as returned by the search."
+        },
+        {
+          "name": "luxuryVisibility",
+          "label": "luxuryVisibility",
+          "type": "string",
+          "description": "Idealista field luxuryVisibility as returned by the search."
+        },
+        {
+          "name": "newDevelopmentFinished",
+          "label": "newDevelopmentFinished",
+          "type": "boolean",
+          "description": "Idealista field newDevelopmentFinished as returned by the search."
+        },
+        {
+          "name": "newDevelopmentHighlight",
+          "label": "newDevelopmentHighlight",
+          "type": "boolean",
+          "description": "Idealista field newDevelopmentHighlight as returned by the search."
+        },
+        {
+          "name": "newProperty",
+          "label": "✨ New Property",
+          "type": "boolean",
+          "description": "Idealista field newProperty as returned by the search."
+        },
+        {
+          "name": "notes",
+          "label": "notes",
+          "type": "array",
+          "description": "Idealista field notes as returned by the search."
+        },
+        {
+          "name": "preferenceHighlight",
+          "label": "preferenceHighlight",
+          "type": "boolean",
+          "description": "Idealista field preferenceHighlight as returned by the search."
+        },
+        {
+          "name": "priceDropPercentage",
+          "label": "priceDropPercentage",
+          "type": "number",
+          "description": "Idealista field priceDropPercentage as returned by the search."
+        },
+        {
+          "name": "priceDropValue",
+          "label": "priceDropValue",
+          "type": "number",
+          "description": "Idealista field priceDropValue as returned by the search."
+        },
+        {
+          "name": "promoName",
+          "label": "promoName",
+          "type": "string",
+          "description": "Idealista field promoName as returned by the search."
+        },
+        {
+          "name": "ribbons",
+          "label": "ribbons",
+          "type": "array",
+          "description": "Idealista field ribbons as returned by the search."
+        },
+        {
+          "name": "savedAd",
+          "label": "savedAd",
+          "type": "object",
+          "description": "Idealista field savedAd as returned by the search."
+        },
+        {
+          "name": "tenantGender",
+          "label": "tenantGender",
+          "type": "string",
+          "description": "Idealista field tenantGender as returned by the search."
+        },
+        {
+          "name": "tenantNumber",
+          "label": "tenantNumber",
+          "type": "number",
+          "description": "Idealista field tenantNumber as returned by the search."
+        },
+        {
+          "name": "topHighlight",
+          "label": "⭐ Top Highlight",
+          "type": "boolean",
+          "description": "Idealista field topHighlight as returned by the search."
+        },
+        {
+          "name": "topNewDevelopment",
+          "label": "topNewDevelopment",
+          "type": "boolean",
+          "description": "Idealista field topNewDevelopment as returned by the search."
+        },
+        {
+          "name": "topPlus",
+          "label": "➕ Top Plus",
+          "type": "boolean",
+          "description": "Idealista field topPlus as returned by the search."
+        },
+        {
+          "name": "ubicationInfo",
+          "label": "ubicationInfo",
+          "type": "object",
+          "description": "Idealista field ubicationInfo as returned by the search."
+        },
+        {
+          "name": "urgentVisualHighlight",
+          "label": "urgentVisualHighlight",
+          "type": "boolean",
+          "description": "Idealista field urgentVisualHighlight as returned by the search."
+        },
+        {
+          "name": "visualHighlight",
+          "label": "visualHighlight",
+          "type": "boolean",
+          "description": "Idealista field visualHighlight as returned by the search."
         }
       ]
     },
@@ -9366,7 +9953,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1426,
+      "usersRank": 1428,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -10038,7 +10625,7 @@
         "LEAD_GENERATION",
         "AUTOMATION"
       ],
-      "usersRank": 674,
+      "usersRank": 675,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -10907,7 +11494,7 @@
         "REAL_ESTATE",
         "LEAD_GENERATION"
       ],
-      "usersRank": 2,
+      "usersRank": 3,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -11872,7 +12459,7 @@
         "SOCIAL_MEDIA",
         "SEO_TOOLS"
       ],
-      "usersRank": 186,
+      "usersRank": 187,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -12762,7 +13349,7 @@
         "DEVELOPER_TOOLS",
         "AUTOMATION"
       ],
-      "usersRank": 282,
+      "usersRank": 283,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -14051,6 +14638,221 @@
       ]
     },
     {
+      "slug": "quora-question-finder",
+      "pageSlug": "quora-question-finder",
+      "id": "kmzUubPTbkwvSLfIa",
+      "storeTitle": "Quora Question Finder 🔎 Related Questions, Answers & Topics",
+      "storeDescription": "Find Quora questions worth answering, no login or cookies. Start from any question and get related questions with answer and follower counts, topics, top answers with views and upvotes, and an opportunity score. Paste question links, get clean data.",
+      "storeUrl": "https://apify.com/dz_omar/quora-question-finder?fpr=smcx63",
+      "icon": "/icons/quora-question-finder.webp",
+      "apifyCategories": [
+        "SOCIAL_MEDIA",
+        "LEAD_GENERATION",
+        "AUTOMATION"
+      ],
+      "usersRank": 3,
+      "pricing": {
+        "model": "PAY_PER_EVENT",
+        "events": [
+          {
+            "id": "question",
+            "title": "Question",
+            "description": "Each Quora question delivered to the dataset, with its counts, topics, top answers and related questions.",
+            "oneTime": false,
+            "primary": true,
+            "priceFreePlanUsd": 0.005,
+            "priceLowestUsd": 0.0035
+          },
+          {
+            "id": "apify-actor-start",
+            "title": "Actor Start",
+            "description": "Charged when the Actor starts running.",
+            "oneTime": true,
+            "primary": false,
+            "priceFreePlanUsd": 0.0005,
+            "priceLowestUsd": 0.0005
+          }
+        ]
+      },
+      "input": [
+        {
+          "name": "startUrls",
+          "title": "🔗 Starting questions",
+          "type": "array",
+          "required": true,
+          "description": "One or more Quora questions in your niche, for example https://www.quora.com/How-do-I-start-a-small-business ."
+        },
+        {
+          "name": "maxQuestions",
+          "title": "🔢 Maximum questions",
+          "type": "integer",
+          "required": false,
+          "description": "How many questions to return in total, starting questions included."
+        },
+        {
+          "name": "followRelatedQuestions",
+          "title": "🔀 Follow related questions",
+          "type": "boolean",
+          "required": false,
+          "description": "On: after the starting questions, keep going with the related questions Quora lists under each one (closest first) until the maximum is reached."
+        },
+        {
+          "name": "maxAnswerCount",
+          "title": "🎯 Only questions with at most this many answers",
+          "type": "integer",
+          "required": false,
+          "description": "Return only questions that have this many answers or fewer: low-competition questions that are easier to rank an answer on."
+        },
+        {
+          "name": "includeTopAnswers",
+          "title": "⭐ Include top answers",
+          "type": "boolean",
+          "required": false,
+          "description": "Add the top answers Quora shows on each question (author, credential, views, upvotes, a text preview)."
+        }
+      ],
+      "output": [
+        {
+          "name": "questionId",
+          "label": "Question ID",
+          "type": "integer",
+          "description": "Quora's number for the question."
+        },
+        {
+          "name": "url",
+          "label": "Link",
+          "type": "string",
+          "description": "Link to the question on Quora."
+        },
+        {
+          "name": "title",
+          "label": "Question",
+          "type": "string",
+          "description": "The question's title."
+        },
+        {
+          "name": "answerCount",
+          "label": "Answers",
+          "type": "integer",
+          "description": "How many answers the question has."
+        },
+        {
+          "name": "followerCount",
+          "label": "Followers",
+          "type": "integer",
+          "description": "How many people follow the question (a measure of demand)."
+        },
+        {
+          "name": "isUnanswered",
+          "label": "Unanswered",
+          "type": "boolean",
+          "description": "true when the question has no answer yet."
+        },
+        {
+          "name": "topics",
+          "label": "Topics",
+          "type": "array",
+          "description": "Topics Quora files the question under."
+        },
+        {
+          "name": "topAnswerViews",
+          "label": "Top answer views",
+          "type": "integer",
+          "description": "Views of the most-viewed answer shown on the question (a measure of the traffic the question gets)."
+        },
+        {
+          "name": "topAnswerUpvotes",
+          "label": "Top answer upvotes",
+          "type": "integer",
+          "description": "Upvotes of that answer."
+        },
+        {
+          "name": "hasAiAnswer",
+          "label": "Has a Quora AI answer",
+          "type": "boolean",
+          "description": "true when Quora shows a machine-generated answer on the question."
+        },
+        {
+          "name": "opportunityScore",
+          "label": "Opportunity",
+          "type": "integer",
+          "description": "0-100: how worth answering the question looks."
+        },
+        {
+          "name": "topAnswers",
+          "label": "Top answers",
+          "type": "array",
+          "description": "The top answers Quora shows on the question (written for this question, AI answers left out)."
+        },
+        {
+          "name": "relatedQuestions",
+          "label": "Related questions",
+          "type": "array",
+          "description": "The related questions Quora lists under this question."
+        },
+        {
+          "name": "relatedCount",
+          "label": "Related",
+          "type": "integer",
+          "description": "How many related questions Quora lists under the question."
+        },
+        {
+          "name": "language",
+          "label": "Language",
+          "type": "string",
+          "description": "Language code of the Quora edition, when an answer shows it."
+        },
+        {
+          "name": "depth",
+          "label": "Steps",
+          "type": "integer",
+          "description": "0 for a question you pasted, 1 for a question related to it, and so on."
+        },
+        {
+          "name": "foundFrom",
+          "label": "Found from",
+          "type": "string",
+          "description": "The question this one was listed under."
+        },
+        {
+          "name": "inputUrl",
+          "label": "Starting question",
+          "type": "string",
+          "description": "The starting question this row descends from."
+        },
+        {
+          "name": "notice",
+          "label": "Notice",
+          "type": "string",
+          "description": "Only on notice rows (never charged): notfound, notaquestion, unavailable, empty or guidance."
+        },
+        {
+          "name": "message",
+          "label": "Notice message",
+          "type": "string",
+          "description": "Only on notice rows: what happened, in plain words."
+        },
+        {
+          "name": "code",
+          "label": "Notice code",
+          "type": "string",
+          "description": "Only on guidance rows: a stable code for the input problem."
+        },
+        {
+          "name": "_source",
+          "label": "Source",
+          "type": "string",
+          "description": "Which Actor produced the row."
+        },
+        {
+          "name": "source_url",
+          "label": "Source link",
+          "type": "string",
+          "description": "The page the row's data comes from."
+        }
+      ]
+    },
+    {
       "slug": "realcommercial-com-au-scraper",
       "pageSlug": "realcommercial-com-au-scraper",
       "id": "uXGhGaBBmxehCgs1f",
@@ -14488,7 +15290,7 @@
         "LEAD_GENERATION",
         "AGENTS"
       ],
-      "usersRank": 13,
+      "usersRank": 18,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -14740,7 +15542,7 @@
         "AUTOMATION",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 51,
+      "usersRank": 53,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -15006,7 +15808,7 @@
         "DEVELOPER_TOOLS",
         "AUTOMATION"
       ],
-      "usersRank": 56,
+      "usersRank": 57,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -19756,7 +20558,7 @@
         "INTEGRATIONS",
         "DEVELOPER_TOOLS"
       ],
-      "usersRank": 1009,
+      "usersRank": 1015,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -20234,7 +21036,7 @@
         "VIDEOS",
         "MCP_SERVERS"
       ],
-      "usersRank": 100,
+      "usersRank": 101,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -20572,7 +21374,7 @@
         "SOCIAL_MEDIA",
         "MCP_SERVERS"
       ],
-      "usersRank": 537,
+      "usersRank": 541,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [
@@ -21117,7 +21919,7 @@
         "SOCIAL_MEDIA",
         "VIDEOS"
       ],
-      "usersRank": 19,
+      "usersRank": 20,
       "pricing": {
         "model": "FREE",
         "events": []
@@ -22667,7 +23469,7 @@
         "DEVELOPER_TOOLS",
         "VIDEOS"
       ],
-      "usersRank": 273,
+      "usersRank": 279,
       "pricing": {
         "model": "PAY_PER_EVENT",
         "events": [

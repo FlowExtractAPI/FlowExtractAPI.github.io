@@ -22,7 +22,7 @@
   "faq": [
     {
       "q": "How is this different from Idealista Scraper?",
-      "a": "This one charges per property returned, also covers France, and accepts drawn-map and multi-zone links. Idealista Scraper is listed as free on the Apify Store and covers Spain, Portugal and Italy."
+      "a": "This one takes Idealista links (any search, drawn-map, multi-zone or property link), charges per property returned and also covers France. Idealista Scraper needs no links: you pick a place and 140+ filters in a form, for Spain, Portugal and Italy."
     },
     {
       "q": "Is there an official Idealista API?",
@@ -48,7 +48,7 @@
     "tab": "Idealista"
   },
   "officialApi": "Idealista runs its own API for approved partners: you apply for access and work within the limits you are given. This scraper needs only a public Idealista link (search, drawn map area, multi-zone or a single property) and covers Spain, Portugal, Italy and France.",
-  "updated": "2026-11-14",
+  "updated": "2026-11-18",
   "liveDemo": {
     "actor": "idealista",
     "label": "Idealista link",
