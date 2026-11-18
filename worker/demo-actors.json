@@ -393,5 +393,155 @@
         ]
       ]
     }
+  },
+  "zillow": {
+    "name": "Zillow",
+    "hosts": [
+      "zillow.com"
+    ],
+    "upstream": "",
+    "store": "https://apify.com/dz_omar/zillow-scraper?fpr=smcx63",
+    "fields": {
+      "mainImage": "image",
+      "price": "price",
+      "address": "address",
+      "homeType": "type",
+      "statusText": "status",
+      "bedrooms": "beds",
+      "bathrooms": "baths",
+      "livingArea": "sqft",
+      "lotAreaValue": "lot_size",
+      "lotAreaUnit": "lot_unit",
+      "zestimate": "zestimate",
+      "rentZestimate": "rent_zestimate",
+      "daysOnZillow": "days_on_zillow",
+      "brokerName": "broker",
+      "city": "city",
+      "state": "state",
+      "zipcode": "zip",
+      "latitude": "latitude",
+      "longitude": "longitude",
+      "detailUrl": "url"
+    },
+    "display": {
+      "image": "image",
+      "price": "price",
+      "currency": "USD",
+      "title": "address",
+      "link": "url",
+      "facts": [
+        [
+          "beds",
+          "beds"
+        ],
+        [
+          "baths",
+          "baths"
+        ],
+        [
+          "sqft",
+          "sqft"
+        ],
+        [
+          "status",
+          ""
+        ]
+      ]
+    }
+  },
+  "facebook-comments": {
+    "name": "Facebook",
+    "hosts": [
+      "facebook.com",
+      "fb.watch"
+    ],
+    "upstream": "",
+    "store": "https://apify.com/dz_omar/facebook-comment-scraper?fpr=smcx63",
+    "fields": {
+      "comment.author.name": "author",
+      "comment.text": "comment",
+      "comment.total_reactions": "reactions",
+      "comment.reply_count": "replies",
+      "comment.created_at": "posted",
+      "source.type": "post_type"
+    },
+    "pseudonymize": [
+      "author"
+    ],
+    "pseudonymLabel": "Commenter",
+    "dates": [
+      "posted"
+    ],
+    "display": {
+      "title": "author",
+      "text": "comment",
+      "facts": [
+        [
+          "reactions",
+          "reactions"
+        ],
+        [
+          "replies",
+          "replies"
+        ],
+        [
+          "posted",
+          ""
+        ]
+      ]
+    }
+  },
+  "google-flights": {
+    "name": "Google Flights",
+    "hosts": [
+      "google.com"
+    ],
+    "upstream": "",
+    "store": "https://apify.com/dz_omar/google-flights-scraper?fpr=smcx63",
+    "fields": {
+      "airlines": "airlines",
+      "price": "price",
+      "currency": "currency",
+      "origin": "from",
+      "destination": "to",
+      "departureTime": "departs",
+      "arrivalTime": "arrives",
+      "duration": "duration",
+      "stopsLabel": "stops",
+      "cabinClass": "cabin",
+      "tripType": "trip",
+      "carbonEmissionsGrams": "co2_grams",
+      "segments.0.flightNumber": "flight",
+      "segments.0.aircraft": "aircraft",
+      "googleFlightsUrl": "url"
+    },
+    "display": {
+      "price": "price",
+      "currency": "currency",
+      "title": "airlines",
+      "link": "url",
+      "facts": [
+        [
+          "from",
+          "→"
+        ],
+        [
+          "to",
+          ""
+        ],
+        [
+          "departs",
+          ""
+        ],
+        [
+          "duration",
+          ""
+        ],
+        [
+          "stops",
+          ""
+        ]
+      ]
+    }
   }
 }

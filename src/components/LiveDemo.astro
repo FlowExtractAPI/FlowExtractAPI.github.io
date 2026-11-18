@@ -82,7 +82,7 @@ const lives = [actor, ...others];
     const form = $('[data-demo-form]'), status = $('[data-demo-status]'), run = $('[data-demo-run]');
     const results = $('[data-demo-results]'), cardsPane = $('[data-pane="cards"]'), tablePane = $('[data-pane="table"]'), jsonPane = $('[data-pane="json"]');
     let last = null;
-    const esc = (v) => String(v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+    const esc = (v) => String(Array.isArray(v) ? v.join(', ') : v ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
     // "coming soon" chips (home page)
     const livePart = $('[data-live-part]'), soonBox = $('[data-soon]');
@@ -127,18 +127,20 @@ const lives = [actor, ...others];
       else save(`${base}.csv`, 'text/csv;charset=utf-8', toCsv(last.rows));
     }));
 
-    const money = (n, cur) => { const x = Number(n); return Number.isFinite(x) ? new Intl.NumberFormat('en', { style: 'currency', currency: cur || 'EUR', maximumFractionDigits: 0 }).format(x) : esc(n); };
+    const money = (n, cur) => { const x = Number(n); if (!Number.isFinite(x)) return esc(n); try { return new Intl.NumberFormat('en', { style: 'currency', currency: cur || 'EUR', maximumFractionDigits: 0 }).format(x); } catch { return esc(`${x.toLocaleString('en')} ${cur || ''}`.trim()); } };
+    // only http(s) addresses from scraped data become links or images (never javascript: or data:)
+    const safeUrl = (u) => { try { const x = new URL(String(u)); return /^https?:$/.test(x.protocol) ? x.href : ''; } catch { return ''; } };
     function render(data) {
       const d = data.display || {};
       cardsPane.innerHTML = data.rows.map((r) => `
         <article class="demo-card">
-          ${d.image && r[d.image] ? `<img src="${esc(r[d.image])}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
+          ${d.image && safeUrl(r[d.image]) ? `<img src="${esc(safeUrl(r[d.image]))}" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">` : ''}
           <div class="demo-card-body">
-            ${d.price && r[d.price] !== undefined ? `<div class="demo-price">${money(r[d.price], d.currency)}</div>` : ''}
+            ${d.price && r[d.price] !== undefined ? `<div class="demo-price">${money(r[d.price], r[d.currency] || d.currency)}</div>` : ''}
             ${d.title && r[d.title] ? `<h3>${esc(r[d.title])}</h3>` : ''}
             <div class="demo-facts">${(d.facts || []).filter(([k]) => r[k] !== undefined && r[k] !== '').map(([k, label]) => `<span>${esc(r[k])}${label ? ' ' + esc(label) : ''}</span>`).join('')}</div>
             ${d.text && r[d.text] ? `<p>${esc(r[d.text])}</p>` : ''}
-            ${d.link && r[d.link] ? `<a href="${esc(r[d.link])}" rel="nofollow noopener" target="_blank">View the listing ↗</a>` : ''}
+            ${d.link && safeUrl(r[d.link]) ? `<a href="${esc(safeUrl(r[d.link]))}" rel="nofollow noopener" target="_blank">Open the original ↗</a>` : ''}
           </div>
         </article>`).join('');
       const cols = [...new Set(data.rows.flatMap((r) => Object.keys(r)))].filter((c) => c !== d.text && c !== d.image);
@@ -152,7 +154,7 @@ const lives = [actor, ...others];
       e.preventDefault();
       run.disabled = true;
       const t0 = Date.now();
-      const tick = setInterval(() => { status.textContent = `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
+      const tick = setInterval(() => { status.textContent = !window.feDemo.token && !window.feDemo.error ? 'Checking you are human…' : `Running on the live site… ${Math.round((Date.now() - t0) / 1000)} s`; }, 500);
       // wait up to 6 s for the human check; if it fails or never arrives, send without a token (the server decides)
       window.feDemo.error = '';
       if (!window.feDemo.token) status.textContent = "Checking you are human…";
@@ -166,13 +168,14 @@ const lives = [actor, ...others];
         if (!r.ok) {
           if (data.signup) { sTitle.textContent = 'Keep going on your own account'; signup.hidden = false; }
           status.textContent = (data.error || 'No results for this link.') + (window.feDemo.error ? ` (human check error ${window.feDemo.error})` : '');
+          if (r.status >= 500 || r.status === 403) window.feReport?.(`demo ${box.dataset.demoActor} HTTP ${r.status}`, (data.error || '') + (window.feDemo.error ? ` · turnstile ${window.feDemo.error}` : ''));
           return;
         }
         last = data; render(data);
         sTitle.textContent = data.total ? `This search has ${Number(data.total).toLocaleString('en')} results. You saw ${data.count}.` : 'Want all of them?';
         signup.hidden = false;
         status.textContent = `${data.count} results in ${(data.ms / 1000).toFixed(1)} s${data.cached ? ' (from the last 24 h)' : ''}${data.total ? ` · this search has ${Number(data.total).toLocaleString('en')} listings; the demo shows the first ${data.count}` : ''}.`;
-      } catch { status.textContent = 'The demo did not answer. Try again in a minute.'; }
+      } catch (err) { status.textContent = 'The demo did not answer. Try again in a minute.'; window.feReport?.(`demo ${box.dataset.demoActor} no answer`, String(err && err.message || err)); }
       finally {
         clearInterval(tick); run.disabled = false;
         window.feDemo.token = ''; try { window.turnstile?.reset(); } catch {}

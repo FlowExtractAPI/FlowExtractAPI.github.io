@@ -34,6 +34,8 @@ const s = site.social;
     <meta name="theme-color" content="#f7fbfa" />
     <script is:inline>document.documentElement.classList.add('js');</script>
     {ld.map((o) => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+    {/* Cloudflare Web Analytics (page views, referrers, countries, speed; no cookies). Token = content/site.json webAnalyticsToken, public by design. */}
+    {site.webAnalyticsToken && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: site.webAnalyticsToken })}></script>}
   </head>
   <body>
     <a class="skip" href="#main">Skip to content</a>
@@ -89,5 +91,36 @@ const s = site.social;
         <p class="footer-note">© {year} FlowExtract API. Apify is a trademark of Apify Technologies s.r.o.; site names belong to their owners.</p>
       </div>
     </footer>
+    <script is:inline>
+      // Cookie-free usage counts (privacy page "Clicks and errors"): which link/button was clicked on which page, and
+      // browser errors, sent to our own Worker (/e → Analytics Engine). No cookie, no identifier, never what people type.
+      // Read with: node scripts/site-stats.mjs [days]
+      (function () {
+        var sent = 0, errs = 0;
+        function send(t, l, d) {
+          if (sent > 60) return; sent++;
+          try { var b = JSON.stringify({ t: t, p: location.pathname, l: String(l || '').slice(0, 96), d: String(d || '').slice(0, 160) });
+            if (!(navigator.sendBeacon && navigator.sendBeacon('/e', new Blob([b], { type: 'text/plain' })))) fetch('/e', { method: 'POST', body: b, keepalive: true }); } catch (e) {}
+        }
+        window.feReport = function (label, detail) { if (errs++ < 5) send('ui_error', label, detail); };
+        document.addEventListener('click', function (e) {
+          var el = e.target.closest && e.target.closest('[data-track],a,button,summary');
+          if (!el) return;
+          var txt = (el.getAttribute('aria-label') || el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 50), l;
+          if (el.dataset.track) l = el.dataset.track;
+          else if (el.tagName === 'A') { var u = new URL(el.href, location.href); l = u.origin === location.origin ? (u.pathname.indexOf('/go/') === 0 ? 'store:' + u.pathname.slice(4) : 'link:' + u.pathname + u.hash) : 'out:' + u.hostname; }
+          else if (el.tagName === 'SUMMARY') l = 'open:' + txt;
+          else l = 'button:' + (el.dataset.demoId ? 'demo ' + el.dataset.demoId : txt);
+          send('ui_click', l, el.tagName === 'A' ? txt : '');
+        }, true);
+        window.addEventListener('error', function (e) {
+          var t = e.target;
+          if (t && t !== window && t.closest && t.closest('.demo-card')) return; // scraped thumbnails that expired: not our error
+          if (t && t !== window && (t.src || t.href)) window.feReport('resource ' + t.tagName.toLowerCase(), t.src || t.href);
+          else window.feReport('js: ' + (e.message || 'error'), (e.filename || '').replace(location.origin, '') + ':' + (e.lineno || 0));
+        }, true);
+        window.addEventListener('unhandledrejection', function (e) { var r = e.reason; window.feReport('promise: ' + ((r && r.message) || String(r)).slice(0, 80), ''); });
+      })();
+    </script>
   </body>
 </html>

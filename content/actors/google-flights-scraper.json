@@ -40,5 +40,14 @@
     ],
     "tab": "Google Flights"
   },
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "liveDemo": {
+    "actor": "google-flights",
+    "label": "Google Flights search link",
+    "chip": "Google Flights",
+    "accent": "#1a73e8",
+    "sample": "https://www.google.com/travel/flights/search?tfs=CBwQAhoeEgoyMDI2LTEyLTMwagcIARIDTEdLcgcIARIDU0lOGh4SCjIwMjctMDEtMjhqBwgBEgNTSU5yBwgBEgNMR0tAAUgBcAGCAQsI____________AZgBAQ",
+    "hint": "Search on Google Flights, copy the link from the address bar (it contains tfs=) and press Run: the demo fetches the first flights live (up to 10)."
+  },
+  "updated": "2026-11-18"
 }

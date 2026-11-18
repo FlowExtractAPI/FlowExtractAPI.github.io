@@ -20,5 +20,14 @@
     "Moderate or archive group discussions"
   ],
   "faq": [],
-  "lastKeywordChange": "2026-11-13"
+  "lastKeywordChange": "2026-11-13",
+  "liveDemo": {
+    "actor": "facebook-comments",
+    "label": "Facebook post, video or reel link",
+    "chip": "Facebook comments",
+    "accent": "#1877f2",
+    "sample": "https://www.facebook.com/watch?v=1312736054237897",
+    "hint": "Paste a public Facebook post, video or reel link and press Run: the demo fetches the first comments live (up to 10). Commenter names are hidden."
+  },
+  "updated": "2026-11-18"
 }

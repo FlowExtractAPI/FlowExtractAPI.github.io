@@ -2,6 +2,7 @@
 // file; this script only runs for addresses that are NOT files:
 //   /go/<slug>                 -> count a Store click, 302 to the actor's Apify Store page (with ?fpr)
 //   /dl/<slug>/sample.csv|json -> count a data-explorer download, serve /data/<slug>/sample.* as a download
+//   /e (POST)                  -> count a click or a browser error sent by the page script (usage() below)
 //   anything else              -> the site's 404 page with status 404
 // Counting: one Analytics Engine data point per event (event, slug, file, our own page path). No cookies, no IP,
 // no visitor identifiers. Nothing here calls Apify or any scraper.
@@ -26,6 +27,23 @@ function record(env, event, slug, file, request) {
   } catch { /* counting must never break a request */ }
 }
 
+// POST /e from the page script in src/layouts/Base.astro: { t: 'ui_click'|'ui_error', p: page path, l: label, d: detail }.
+// Same-site only, small bodies only; one data point: blobs [event, label, detail, page, who]. No cookie, IP or id.
+async function usage(request, env) {
+  const site = request.headers.get('sec-fetch-site');
+  const origin = request.headers.get('origin') || '';
+  if (request.method !== 'POST' || (site && site !== 'same-origin') || (origin && !/^https:\/\/(www\.)?flowextractapi\.com$|^http:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin))) return new Response(null, { status: 204 });
+  try {
+    const raw = await request.text();
+    if (raw.length > 1200) return new Response(null, { status: 204 });
+    const m = JSON.parse(raw);
+    const event = m.t === 'ui_error' ? 'ui_error' : 'ui_click';
+    const ua = request.headers.get('user-agent') || '';
+    env.EVENTS?.writeDataPoint({ blobs: [event, String(m.l || '').slice(0, 96), String(m.d || '').slice(0, 160), String(m.p || '').slice(0, 120), ua && !BOT_UA.test(ua) ? 'human' : 'bot'], doubles: [1], indexes: [event] });
+  } catch { /* counting must never break anything */ }
+  return new Response(null, { status: 204 });
+}
+
 async function notFound(request, env) {
   const page = await env.ASSETS.fetch(new Request(new URL('/404.html', request.url)));
   return new Response(page.body, { status: 404, headers: { 'Content-Type': 'text/html; charset=utf-8' } });
@@ -35,6 +53,7 @@ export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
     if (url.pathname === '/api/demo') return handleDemo(request, env, ctx, record);
+    if (url.pathname === '/e') return usage(request, env);
     const go = url.pathname.match(/^\/go\/([a-z0-9-]+)\/?$/);
     if (go && storeLinks[go[1]]) {
       record(env, 'store_click', go[1], '', request);
