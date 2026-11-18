@@ -23,8 +23,8 @@ async function liveSitemap() {
 }
 
 const before = await liveSitemap();
-execSync('npm run build', { cwd: ROOT, stdio: 'inherit' });
-execSync('npx wrangler deploy', { cwd: ROOT, stdio: 'inherit' });
+execSync('npm run build', { cwd: ROOT.replace(/^([a-z]):/, (m, d) => d.toUpperCase() + ':'), stdio: 'inherit' });
+execSync('npx wrangler deploy', { cwd: ROOT.replace(/^([a-z]):/, (m, d) => d.toUpperCase() + ':'), stdio: 'inherit' });
 const after = parse(fs.readFileSync(path.join(ROOT, 'dist/sitemap.xml'), 'utf8'));
 const changed = [...after].filter(([loc, mod]) => all || !before.has(loc) || before.get(loc) !== mod).map(([loc]) => loc);
 if (!changed.length) { console.log('IndexNow: no new or changed URLs'); process.exit(0); }

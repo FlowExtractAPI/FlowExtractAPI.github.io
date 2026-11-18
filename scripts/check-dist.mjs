@@ -25,6 +25,10 @@ for (const f of files) {
   if (f.startsWith('data/') && fs.statSync(full).size > 100 * 1024) err(f, 'sample file over 100 KB');
   if (!f.endsWith('.html')) continue;
   pages++;
+  // styling: every page links the site stylesheet and the file exists (2026-11-18 a deploy shipped pages without it)
+  const css = [...body.matchAll(/<link rel="stylesheet" href="\/(_astro\/[^"]+\.css)"/g)].map((m) => m[1]);
+  if (!css.length) err(f, 'no stylesheet <link> (page would render unstyled)');
+  for (const c of css) if (!fs.existsSync(path.join(DIST, c))) err(f, `stylesheet ${c} missing from dist`);
   const h1 = (body.match(/<h1[\s>]/g) || []).length;
   if (h1 !== 1) err(f, `${h1} <h1> elements`);
   const title = decode((body.match(/<title>([^<]*)<\/title>/) || [])[1] || '');

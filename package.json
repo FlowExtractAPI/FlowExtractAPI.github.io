@@ -7,7 +7,7 @@
   "scripts": {
     "pull": "node scripts/pull-data.mjs",
     "check:content": "node scripts/check-content.mjs",
-    "build": "node scripts/check-content.mjs && node scripts/gen-redirects.mjs && astro build && node scripts/check-dist.mjs",
+    "build": "node scripts/build.mjs",
     "preview": "astro preview",
     "parity": "node scripts/parity.mjs",
     "dev": "astro dev",
